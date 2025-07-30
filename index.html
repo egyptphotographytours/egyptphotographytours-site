@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book professional guided photography tours in Egypt. Visit the Pyramids, Cairo, Alexandria & more with a local expert." />
+  <meta name="keywords" content="Egypt tours, photography tour, pyramids tour, Cairo guide, Alexandria tour, Giza photo tour, Egypt travel" />
+  <meta name="author" content="Egypt Photography Tours" />
+  <title>Egypt Photography Tours</title>
+  <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1Plqk4fjCHD3iJ1AUrLbp4k1kzV5YbTCz">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #000; color: #fff; padding: 20px; text-align: center; }
+    header img { height: 50px; }
+    .tour-section { padding: 40px 20px; max-width: 1000px; margin: auto; background: #fff; margin-top: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: relative; }
+    .tour-section img { width: 100%; border-radius: 10px; }
+    .book-now { position: absolute; top: 10px; right: 10px; background: #d2232a; color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: bold; text-decoration: none; }
+    .calendar { margin-top: 20px; }
+    .calendar input[type="date"] { padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; }
+    .price { font-weight: 600; font-size: 18px; color: #222; margin-top: 10px; }
+    footer { background: #000; color: #fff; padding: 30px 20px; text-align: center; margin-top: 40px; }
+    form { max-width: 600px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    form input, form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+    form button { background: #d2232a; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    .lang-switcher { text-align: center; margin: 20px; }
+    .lang-switcher select { font-size: 16px; padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://drive.google.com/uc?export=view&id=1Plqk4fjCHD3iJ1AUrLbp4k1kzV5YbTCz" alt="Egypt Photography Tours Logo">
+    <h1>Egypt Photography Tours</h1>
+    <p>Capture unforgettable memories across Egypt with a local guide & professional photographer.</p>
+  </header>
+
+  <div class="lang-switcher">
+    <label for="language">🌍 Language: </label>
+    <select id="language" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italiano</option>
+      <option value="pt">Português</option>
+      <option value="zh">中文</option>
+      <option value="ko">한국어</option>
+    </select>
+  </div>
+
+  <div class="tour-section">
+    <img src="https://drive.google.com/uc?export=view&id=1vwhHg1Y7XQVRkZkMXyI4D1ZlqYMSuh0M" alt="Pyramids Photography Tour">
+    <a href="#" class="book-now snipcart-add-item"
+       data-item-id="pyramids-solo"
+       data-item-name="Pyramids Photography Tour (Solo)"
+       data-item-price="150"
+       data-item-url="/"
+       data-item-description="Private pyramids photography tour">
+       Book Now
+    </a>
+    <div class="price">$150 – Solo</div>
+    <div class="calendar">
+      <label>Select your date: </label>
+      <input type="date" />
+    </div>
+  </div>
+
+  <form id="booking-form">
+    <h2>📩 Contact Us</h2>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="tel" name="phone" placeholder="Your Phone Number (optional)">
+    <textarea name="message" rows="5" placeholder="Your Message or Question" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <footer>
+    <p>&copy; 2025 Egypt Photography Tours. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function changeLanguage(lang) {
+      alert("Language switch to '" + lang + "' is coming soon!");
+    }
+
+    document.getElementById("booking-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("✅ Thank you for contacting us! We'll get back to you shortly.");
+      this.reset();
+    });
+  </script>
+
+  <div hidden id="snipcart" data-api-key="YzhiNTE1NDctZmU3YS00ZTQ4LWFlNmMtNWZhYjViMjNmNTI3NjM4ODk0NzM0NjE2NTQyNTM0"></div>
+  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+</body>
+</html>
