@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">Our Photography Tours - Egypt Photography Tours</title>
+    <meta name="description" content="Explore our diverse range of photography tours in Egypt, from private Pyramids photoshoots to multi-day cultural expeditions across Cairo, Giza, Alexandria, and Luxor.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .text-primary-dark { color: #2C3E50; }
+        .bg-accent-light { background-color: #FFD700; }
+        .text-accent-light { color: #FFD700; }
+        .bg-accent-dark { background-color: #E2B700; }
+        .text-accent-dark { color: #E2B700; }
+        .bg-primary-dark { background-color: #1a202c; }
+        .sale-tag {
+            background-color: #E74C3C; /* Red for attention */
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px; /* Pill shape */
+            font-weight: bold;
+            font-size: 0.75rem; /* text-xs */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+        }
+        /* Custom styles for solo/couple/date input within cards */
+        .selection-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .selection-group button {
+            flex: 1; /* Make buttons take equal width */
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        .selection-group button.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .selection-group button:not(.selected):hover {
+            background-color: #e0e0e0;
+        }
+        input[type="date"] {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.375rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .paypal-buy-button {
+            display: block; /* Make the button take full width */
+            width: 100%;
+            background-color: #28a745; /* Green for buy now */
+            color: white;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 9999px; /* Pill shape */
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .paypal-buy-button:hover {
+            background-color: #218838;
+        }
+        .paypal-buy-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        /* Language switcher specific styles */
+        .lang-switcher-btn {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .lang-switcher-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .lang-switcher-btn span {
+            margin-right: 0.5rem;
+        }
+        .lang-dropdown {
+            position: absolute;
+            right: 0;
+            top: 100%; /* Position below the button */
+            margin-top: 0.5rem;
+            background-color: #333;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            min-width: 150px;
+            z-index: 1000; /* Ensure it's above other content */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        }
+        .lang-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .lang-dropdown a {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .lang-dropdown a:hover {
+            background-color: #444;
+        }
+        .lang-dropdown a .flag-icon {
+            margin-right: 0.75rem;
+            font-size: 1.25rem; /* Adjust flag size */
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full">
+                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
+            </div>
+            <p class="text-md md:text-lg mt-2 md:mt-0 italic" data-i18n="slogan">Capture the Wonders of Egypt Through Your Lens.</p>
+        </div>
+    </header>
+
+    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
+            <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
+                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="navHome">Home</a></li>
+                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="navAbout">About Us</a></li>
+                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="navTours">Our Tours</a></li>
+                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="navGallery">Gallery</a></li>
+                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="navContact">Contact Us</a></li>
+                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="navFAQs">FAQs</a></li>
+            </ul>
+            <div class="mt-3 md:mt-0 flex items-center space-x-4 relative">
+                <button id="languageSwitcherBtn" class="lang-switcher-btn">
+                    <span id="currentLangFlag" class="flag-icon">🇬🇧</span>
+                    <span id="currentLangText">English</span>
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="languageDropdown" class="lang-dropdown">
+                    <a href="#" data-lang="en"><span class="flag-icon">🇬🇧</span> English</a>
+                    <a href="#" data-lang="es"><span class="flag-icon">🇪🇸</span> Español</a>
+                    <a href="#" data-lang="pt"><span class="flag-icon">🇵🇹</span> Português</a>
+                    <a href="#" data-lang="ar"><span class="flag-icon">🇪🇬</span> العربية</a>
+                    <a href="#" data-lang="zh"><span class="flag-icon">🇨🇳</span> 中文</a>
+                    <a href="#" data-lang="ko"><span class="flag-icon">🇰🇷</span> 한국어</a>
+                    <a href="#" data-lang="ja"><span class="flag-icon">🇯🇵</span> 日本語</a>
+                    <a href="#" data-lang="fr"><span class="flag-icon">🇫🇷</span> Français</a>
+                    <a href="#" data-lang="it"><span class="flag-icon">🇮🇹</span> Italiano</a>
+                    <a href="#" data-lang="de"><span class="flag-icon">🇩🇪</span> Deutsch</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-6 py-16">
+        <h1 class="text-5xl font-extrabold text-primary-dark text-center mb-12" data-i18n="mainHeading">Our Exclusive Photography Tours in Egypt</h1>
+        <p class="text-lg leading-relaxed max-w-4xl mx-auto text-center text-gray-700 mb-12" data-i18n="mainDescription">
+            Explore our curated selection of photography tours, designed to immerse you in the magic of Egypt while capturing stunning, professional-grade images. From iconic ancient wonders to vibrant local life, find the perfect adventure that suits your photographic aspirations.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative" data-tour-id="pyramids-private">
+                <span class="sale-tag" data-i18n="specialOffer">Special Offer!</span>
+                <img src="images/pyramids-private-tour.jpg" alt="Private Guided Tour of Giza Pyramids and Sphinx with professional photography" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-primary-dark mb-2" data-i18n="tour1Title">📸 Capture the Magic: Private Pyramids Guided Tour + Professional Photography</h3>
+                    <p class="text-gray-700 mb-4 text-left" data-i18n="tour1Desc">Step into ancient history on this immersive one-day private tour of the Great Pyramids of Giza and the Sphinx, guided by a passionate local expert. Capture unforgettable moments with a professional photo session and hear the real stories behind the stones.</p>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc list-inside text-left">
+                        <li data-i18n="tour1Feature1">✔️ Great Pyramid, Khafre & Menkaure</li>
+                        <li data-i18n="tour1Feature2">✔️ Sphinx & Valley Temple</li>
+                        <li data-i18n="tour1Feature3">✔️ Desert panorama viewpoint</li>
+                        <li data-i18n="tour1Feature4">✔️ Professional photography included</li>
+                    </ul>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-sm text-gray-500" data-i18n="duration">Duration:</span>
+                        <span class="text-sm text-gray-500">4-5 hours</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-md font-semibold text-gray-800 mb-2" data-i18n="participantType">Participant Type:</label>
+                        <div class="selection-group">
+                            <button class="type-btn" data-type="solo" data-i18n="soloTraveler">Solo Traveler</button>
+                            <button class="type-btn" data-type="couple" data-i18n="coupleTraveler">Couple / Two Persons</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-md font-semibold text-gray-800 mb-2" data-i18n="selectDate">Select Date:</label>
+                        <input type="date" class="date-input">
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-lg font-bold text-accent-dark" data-i18n="price">Price: <span class="display-price">$0.00 USD</span></span>
+                    </div>
+                    
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="hossam0114@hotmail.com"> <input type="hidden" name="item_name" value="Private Pyramids Tour">
+                        <input type="hidden" name="amount" value="0.00"> <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="on0" value="Booking Type">
+                        <input type="hidden" name="os0" value=""> <input type="hidden" name="on1" value="Booking Date">
+                        <input type="hidden" name="os1" value=""> <input type="hidden" name="return" value="https://your-domain.com/payment-success.html"> <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html"> <input type="hidden" name="no_shipping" value="1"> <button type="submit" class="paypal-buy-button" disabled data-i18n="selectOptionsToBook">Select Options to Book</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative" data-tour-id="cairo-giza-2day">
+                <span class="sale-tag" data-i18n="limitedSlots">Limited Slots!</span>
+                <img src="images/cairo-giza-2day.jpg" alt="Two-day premium private tour itinerary covering Cairo and Giza landmarks" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-primary-dark mb-2" data-i18n="tour2Title">2-Day Premium Private Tour: Cairo & Giza Photography Expedition</h3>
+                    <p class="text-gray-700 mb-4 text-left" data-i18n="tour2Desc">Immerse yourself in Egypt's vibrant capital and ancient wonders over two unforgettable days. Explore the majestic Pyramids, bustling Old Cairo, and the impressive National Museum of Egyptian Civilization, all with your private guide and photographer.</p>
+                     <ul class="text-sm text-gray-600 mb-4 list-disc list-inside text-left">
+                        <li data-i18n="tour2Feature1">✅ Day 1: Giza Pyramids, Sphinx & Desert Adventure</li>
+                        <li data-i18n="tour2Feature2">✅ Day 2: Cairo Old City + National Museum of Egyptian Civilization (NMEC)</li>
+                        <li data-i18n="tour2Feature3">✅ Private guide & air-conditioned transport</li>
+                        <li data-i18n="tour2Feature4">✅ Photography package (100+ edited photos)</li>
+                    </ul>
+                     <div class="flex items-center justify-between mb-4">
+                        <span class="text-sm text-gray-500" data-i18n="duration">Duration:</span>
+                        <span class="text-sm text-gray-500">2 days</span>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-md font-semibold text-gray-800 mb-2" data-i18n="participantType">Participant Type:</label>
+                        <div class="selection-group">
+                            <button class="type-btn" data-type="solo" data-i18n="soloTraveler">Solo Traveler</button>
+                            <button class="type-btn" data-type="couple" data-i18n="coupleTraveler">Couple / Two Persons</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-md font-semibold text-gray-800 mb-2" data-i18n="selectDate">Select Date:</label>
+                        <input type="date" class="date-input">
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-lg font-bold text-accent-dark" data-i18n="price">Price: <span class="display-price">$0.00 USD</span></span>
+                    </div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="hossam0114@hotmail.com"> <input type="hidden" name="item_name" value="2-Day Cairo & Giza Tour">
+                        <input type="hidden" name="amount" value="0.00"> <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="on0" value="Booking Type">
+                        <input type="hidden" name="os0" value=""> <input type="hidden" name="on1" value="Booking Date">
+                        <input type="hidden" name="os1" value=""> <input type="hidden" name="return" value="https://your-domain.com/payment-success.html"> <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html"> <input type="hidden" name="no_shipping" value="1">
+                        <button type="submit" class="paypal-buy-button" disabled data-i18n="selectOptionsToBook">Select Options to Book</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative" data-tour-id="alexandria-tour">
+                <span class="sale-tag" data-i18n="bookNow">Book Now!</span>
+                <img src="images/alexandria-tour.jpg" alt="Private coastal day tour to Alexandria from Cairo with sea views and local vibes" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-primary-dark mb-2" data-i18n="tour3Title">Discover Alexandria: Private Coastal Day Tour from Cairo</h3>
+                    <p class="text-gray-700 mb-4 text-left" data-i18n="tour3Desc">Trade Cairo’s desert dust for the fresh breeze of the Mediterranean on this unforgettable private day tour to Alexandria. Discover a mix of Greek, Roman, Islamic, and modern treasures with a passionate local guide and capture stunning coastal views.</p>
+                     <ul class="text-sm text-gray-600 mb-4 list-disc list-inside text-left">
+                        <li data-i18n="tour3Feature1">✅ Transportation from Cairo & back</li>
+                        <li data-i18n="tour3Feature2">✅ Expert local guide</li>
+                        <li data-i18n="tour3Feature3">✅ All entrance tickets & seafood lunch</li>
+                        <li data-i18n="tour3Feature4">✅ Photo session at key spots</li>
+                    </ul>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-sm text-gray-500" data-i18n="duration">Duration:</span>
+                        <span class="text-sm text-gray-500">1 day</span>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-md font-semibold text-gray-800 mb-2" data-i18n="participantType">Participant Type:</label>
+                        <div class="selection-group">
+                            <button class="type-btn" data-type="solo" data-i18n="soloTraveler">Solo Traveler</button>
+                            <button class="type-btn" data-type="couple" data-i18n="coupleTraveler">Couple / Two Persons</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-md font-semibold text-gray-800 mb-2" data-i18n="selectDate">Select Date:</label>
+                        <input type="date" class="date-input">
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-lg font-bold text-accent-dark" data-i18n="price">Price: <span class="display-price">$0.00 USD</span></span>
+                    </div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="hossam0114@hotmail.com"> <input type="hidden" name="item_name" value="Alexandria Day Tour">
+                        <input type="hidden" name="amount" value="0.00"> <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="on0" value="Booking Type">
+                        <input type="hidden" name="os0" value=""> <input type="hidden" name="on1" value="Booking Date">
+                        <input type="hidden" name="os1" value=""> <input type="hidden" name="return" value="https://your-domain.com/payment-success.html"> <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html"> <input type="hidden" name="no_shipping" value="1">
+                        <button type="submit" class="paypal-buy-button" disabled data-i18n="selectOptionsToBook">Select Options to Book</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative" data-tour-id="egypt-discovery-7day">
+                <span class="sale-tag" data-i18n="newAdventure">New Adventure!</span>
+                <img src="images/egypt-discovery-7day.jpg" alt="7-Day Egypt Discovery Tour covering Cairo, Giza, Alexandria, and Luxor" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-primary-dark mb-2" data-i18n="tour4Title">7-Day Egypt Discovery Tour: Cairo, Giza, Alexandria & Luxor</h3>
+                    <p class="text-gray-700 mb-4 text-left" data-i18n="tour4Desc">Experience the wonders of ancient and modern Egypt on this immersive 7-day guided journey. From the towering Pyramids to the Mediterranean charm of Alexandria and the majestic temples of Luxor — this trip brings Egypt's soul to life.</p>
+                     <ul class="text-sm text-gray-600 mb-4 list-disc list-inside text-left">
+                        <li data-i18n="tour4Feature1">✅ Licensed Egyptologist & private local guide</li>
+                        <li data-i18n="tour4Feature2">✅ All entrance fees to major sites</li>
+                        <li data-i18n="tour4Feature3">✅ Domestic Transportation (Cairo–Luxor–Alexandria)</li>
+                        <li data-i18n="tour4Feature4">✅ Professional photography at key sites</li>
+                    </ul>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-sm text-gray-500" data-i18n="duration">Duration:</span>
+                        <span class="text-sm text-gray-500">7 days</span>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-md font-semibold text-gray-800 mb-2" data-i18n="participantType">Participant Type:</label>
+                        <div class="selection-group">
+                            <button class="type-btn" data-type="solo" data-i18n="soloTraveler">Solo Traveler</button>
+                            <button class="type-btn" data-type="couple" data-i18n="coupleTraveler">Couple / Two Persons</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-md font-semibold text-gray-800 mb-2" data-i18n="selectDate">Select Date:</label>
+                        <input type="date" class="date-input">
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-lg font-bold text-accent-dark" data-i18n="price">Price: <span class="display-price">$0.00 USD</span></span>
+                    </div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="hossam0114@hotmail.com"> <input type="hidden" name="item_name" value="7-Day Egypt Discovery Tour">
+                        <input type="hidden" name="amount" value="0.00"> <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="on0" value="Booking Type">
+                        <input type="hidden" name="os0" value=""> <input type="hidden" name="on1" value="Booking Date">
+                        <input type="hidden" name="os1" value=""> <input type="hidden" name="return" value="https://your-domain.com/payment-success.html"> <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html"> <input type="hidden" name="no_shipping" value="1">
+                        <button type="submit" class="paypal-buy-button" disabled data-i18n="selectOptionsToBook">Select Options to Book</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary-dark text-white py-10 mt-auto">
+        <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-accent-light mb-2" data-i18n="footerTitle">Egypt Photography Tours</h3>
+                <p class="text-sm" data-i18n="footerCopyright">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="font-semibold text-accent-light mb-2" data-i18n="quickLinks">Quick Links</h4>
+                <ul class="text-sm">
+                    <li><a href="index.html" class="hover:text-accent-light transition duration-300" data-i18n="navHome">Home</a></li>
+                    <li><a href="about.html" class="hover:text-accent-light transition duration-300" data-i18n="navAbout">About Us</a></li>
+                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300" data-i18n="navTours">Our Tours</a></li>
+                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300" data-i18n="navGallery">Gallery</a></li>
+                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300" data-i18n="navContact">Contact Us</a></li>
+                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300" data-i18n="navFAQs">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-accent-light mb-2" data-i18n="connectWithUs">Connect With Us</h4>
+                <p class="text-sm" data-i18n="email">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
+                <p class="text-sm" data-i18n="address">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+                <div class="flex justify-center md:justify-start space-x-4 mt-3">
+                    <a href="#" class="text-white hover:text-accent-light transition duration-300" aria-label="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 .27-2.5h2.16V2.36C16.89 2.22 15.53 2 13.92 2c-3.1 0-5.18 1.95-5.18 5.37V9.5H6v4h2.75V22h4.5V13.5z"/></svg></a>
+                    <a href="#" class="text-white hover:text-accent-light transition duration-300" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 4A2.88 2.88 0 005 7.8v8.4c0 1.6.87 2.3 2.1 2.3h8.2c1.23 0 2.1-.7 2.1-2.3V7.8c0-1.6-.87-2.3-2.1-2.3H7.6zm9.6.25a1.25 1.25 0 01-1.25 1.25 1.25 1.25 0 01-1.25-1.25 1.25 1.25 0 011.25-1.25 1.25 1.25 0 011.25 1.25zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/></svg></a>
+                    <a href="#" class="text-white hover:text-accent-light transition duration-300" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.9 2.06c-1.87-.2-6.5-.2-8.4 0-.67.07-1.34.29-1.9.72-.88.66-1.5 1.5-1.9 2.5-.2.5-.4 1-.4 1.5-.06.87-.06 2.33-.06 3.23v1.86c0 .9.06 2.36.06 3.23 0 .5.2 1 .4 1.5.4 1 1.02 1.84 1.9 2.5.56.43 1.23.65 1.9.72 1.9.2 6.5.2 8.4 0 .67-.07 1.34-.29 1.9-.72.88-.66 1.5-1.5 1.9-2.5.2-.5.4-1 .4-1.5.06-.87.06-2.33.06-3.23v-1.86c0-.9-.06-2.36-.06-3.23 0-.5-.2-1-.4-1.5-.4-1-1.02-1.84-1.9-2.5-.56-.43-1.23-.65-1.9-.72zm-7.9 14.5c-.3 0-.6 0-.9-.02-1.2-.07-2-.22-2.5-.6-.3-.2-.5-.5-.6-.8-.06-.3-.06-.5-.06-.8V9.5c0-.3.02-.5.06-.8.1-.3.3-.6.6-.8.5-.4 1.3-.53 2.5-.6.3-.02.6-.02.9-.02 1.2 0 2 .02 2.5.06.3.06.5.3.6.6.06.3.06.5.06.8v4.5c0 .3-.02.5-.06.8-.1.3-.3.6-.6.8-.5.4-1.3.53-2.5.6-.3.02-.6.02-.9.02z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Booking Logic (Existing) ---
+        const tourId = 'egypt-discovery-7day'; // Define the specific tour ID for this page, assuming this script is specific to a tour detail page for that ID. For the main tours.html, this is less relevant, but kept for context.
+
+        const tourPrices = {
+            'pyramids-private': { solo: 150.00, couple: 250.00 },
+            'cairo-giza-2day': { solo: 350.00, couple: 600.00 },
+            'alexandria-tour': { solo: 220.00, couple: 380.00 },
+            'egypt-discovery-7day': { solo: 1900.00, couple: 3500.00 }
+        };
+
+        // Select all elements related to booking for ALL tour cards
+        const tourCards = document.querySelectorAll('[data-tour-id]');
+
+        tourCards.forEach(card => {
+            const currentTourId = card.dataset.tourId;
+            const typeButtons = card.querySelectorAll('.type-btn');
+            const dateInput = card.querySelector('.date-input');
+            const displayPriceElement = card.querySelector('.display-price');
+            const paypalForm = card.querySelector('.paypal-form');
+            const buyButton = paypalForm.querySelector('.paypal-buy-button');
+            const itemNameInput = paypalForm.querySelector('input[name="item_name"]');
+            const amountInput = paypalForm.querySelector('input[name="amount"]');
+            const os0Input = paypalForm.querySelector('input[name="os0"]');
+            const os1Input = paypalForm.querySelector('input[name="os1"]');
+
+            let selectedType = null;
+            let selectedDate = null;
+
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const minDate = `${yyyy}-${mm}-${dd}`;
+            dateInput.min = minDate;
+
+            function updateBuyButtonState() {
+                if (selectedType && selectedDate) {
+                    buyButton.removeAttribute('disabled');
+                    // Update the button text based on current language
+                    const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+                    buyButton.textContent = translations[currentLang]['bookNowPaypal'];
+                } else {
+                    buyButton.setAttribute('disabled', 'true');
+                    const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+                    buyButton.textContent = translations[currentLang]['selectOptionsToBook'];
+                }
+            }
+
+            function updatePriceAndPayPalForm() {
+                let currentPrice = 0;
+                if (selectedType && tourPrices[currentTourId]) {
+                    currentPrice = tourPrices[currentTourId][selectedType];
+                }
+                displayPriceElement.textContent = `$${currentPrice.toFixed(2)} USD`;
+                amountInput.value = currentPrice.toFixed(2);
+            }
+
+            function updatePayPalCustomFields() {
+                const baseItemName = itemNameInput.value.split(' (')[0]; // Get original item name before type suffix
+                
+                if (selectedType) {
+                    os0Input.value = selectedType.charAt(0).toUpperCase() + selectedType.slice(1);
+                    itemNameInput.value = `${baseItemName} (${os0Input.value})`;
+                } else {
+                    os0Input.value = '';
+                    itemNameInput.value = baseItemName; // Reset to base if no type
+                }
+
+                if (selectedDate) {
+                    os1Input.value = selectedDate;
+                } else {
+                    os1Input.value = '';
+                }
+            }
+
+            typeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    selectedType = button.dataset.type;
+                    typeButtons.forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    updatePriceAndPayPalForm();
+                    updatePayPalCustomFields();
+                    updateBuyButtonState();
+                });
+            });
+
+            dateInput.addEventListener('change', () => {
+                selectedDate = dateInput.value;
+                updatePayPalCustomFields();
+                updateBuyButtonState();
+            });
+
+            // Initial updates for each card
+            updatePriceAndPayPalForm();
+            updatePayPalCustomFields();
+            updateBuyButtonState();
+        });
+
+
+        // --- Language Switcher Logic ---
+
+        const translations = {
+            en: {
+                pageTitle: "Our Photography Tours - Egypt Photography Tours",
+                slogan: "Capture the Wonders of Egypt Through Your Lens.",
+                navHome: "Home",
+                navAbout: "About Us",
+                navTours: "Our Tours",
+                navGallery: "Gallery",
+                navContact: "Contact Us",
+                navFAQs: "FAQs",
+                mainHeading: "Our Exclusive Photography Tours in Egypt",
+                mainDescription: "Explore our curated selection of photography tours, designed to immerse you in the magic of Egypt while capturing stunning, professional-grade images. From iconic ancient wonders to vibrant local life, find the perfect adventure that suits your photographic aspirations.",
+                specialOffer: "Special Offer!",
+                limitedSlots: "Limited Slots!",
+                bookNow: "Book Now!",
+                newAdventure: "New Adventure!",
+                tour1Title: "📸 Capture the Magic: Private Pyramids Guided Tour + Professional Photography",
+                tour1Desc: "Step into ancient history on this immersive one-day private tour of the Great Pyramids of Giza and the Sphinx, guided by a passionate local expert. Capture unforgettable moments with a professional photo session and hear the real stories behind the stones.",
+                tour1Feature1: "✔️ Great Pyramid, Khafre & Menkaure",
+                tour1Feature2: "✔️ Sphinx & Valley Temple",
+                tour1Feature3: "✔️ Desert panorama viewpoint",
+                tour1Feature4: "✔️ Professional photography included",
+                tour2Title: "2-Day Premium Private Tour: Cairo & Giza Photography Expedition",
+                tour2Desc: "Immerse yourself in Egypt's vibrant capital and ancient wonders over two unforgettable days. Explore the majestic Pyramids, bustling Old Cairo, and the impressive National Museum of Egyptian Civilization, all with your private guide and photographer.",
+                tour2Feature1: "✅ Day 1: Giza Pyramids, Sphinx & Desert Adventure",
+                tour2Feature2: "✅ Day 2: Cairo Old City + National Museum of Egyptian Civilization (NMEC)",
+                tour2Feature3: "✅ Private guide & air-conditioned transport",
+                tour2Feature4: "✅ Photography package (100+ edited photos)",
+                tour3Title: "Discover Alexandria: Private Coastal Day Tour from Cairo",
+                tour3Desc: "Trade Cairo’s desert dust for the fresh breeze of the Mediterranean on this unforgettable private day tour to Alexandria. Discover a mix of Greek, Roman, Islamic, and modern treasures with a passionate local guide and capture stunning coastal views.",
+                tour3Feature1: "✅ Transportation from Cairo & back",
+                tour3Feature2: "✅ Expert local guide",
+                tour3Feature3: "✅ All entrance tickets & seafood lunch",
+                tour3Feature4: "✅ Photo session at key spots",
+                tour4Title: "7-Day Egypt Discovery Tour: Cairo, Giza, Alexandria & Luxor",
+                tour4Desc: "Experience the wonders of ancient and modern Egypt on this immersive 7-day guided journey. From the towering Pyramids to the Mediterranean charm of Alexandria and the majestic temples of Luxor — this trip brings Egypt's soul to life.",
+                tour4Feature1: "✅ Licensed Egyptologist & private local guide",
+                tour4Feature2: "✅ All entrance fees to major sites",
+                tour4Feature3: "✅ Domestic Transportation (Cairo–Luxor–Alexandria)",
+                tour4Feature4: "✅ Professional photography at key sites",
+                duration: "Duration:",
+                participantType: "Participant Type:",
+                soloTraveler: "Solo Traveler",
+                coupleTraveler: "Couple / Two Persons",
+                selectDate: "Select Date:",
+                price: "Price:",
+                selectOptionsToBook: "Select Options to Book",
+                bookNowPaypal: "Book Now via PayPal", // New string for the PayPal button
+                footerTitle: "Egypt Photography Tours",
+                footerCopyright: "&copy; 2025 Egypt Photography Tours. All Rights Reserved.",
+                quickLinks: "Quick Links",
+                connectWithUs: "Connect With Us",
+                email: "Email:",
+                address: "Address:"
+            },
+            es: {
+                pageTitle: "Nuestros Tours de Fotografía - Tours de Fotografía de Egipto",
+                slogan: "Captura las Maravillas de Egipto a Través de Tu Lente.",
+                navHome: "Inicio",
+                navAbout: "Sobre Nosotros",
+                navTours: "Nuestros Tours",
+                navGallery: "Galería",
+                navContact: "Contáctenos",
+                navFAQs: "Preguntas Frecuentes",
+                mainHeading: "Nuestros Exclusivos Tours de Fotografía en Egipto",
+                mainDescription: "Explore nuestra selecta gama de tours de fotografía, diseñados para sumergirle en la magia de Egipto mientras captura imágenes impresionantes y de calidad profesional. Desde las icónicas maravillas antiguas hasta la vibrante vida local, encuentre la aventura perfecta que se adapte a sus aspiraciones fotográficas.",
+                specialOffer: "¡Oferta Especial!",
+                limitedSlots: "¡Cupos Limitados!",
+                bookNow: "¡Reserve Ahora!",
+                newAdventure: "¡Nueva Aventura!",
+                tour1Title: "📸 Captura la Magia: Tour Privado por las Pirámides + Fotografía Profesional",
+                tour1Desc: "Adéntrate en la historia antigua con este inmersivo tour privado de un día por las Grandes Pirámides de Giza y la Esfinge, guiado por un experto local apasionado. Captura momentos inolvidables con una sesión de fotos profesional y escucha las verdaderas historias detrás de las piedras.",
+                tour1Feature1: "✔️ Gran Pirámide, Khafre y Menkaure",
+                tour1Feature2: "✔️ Esfinge y Templo del Valle",
+                tour1Feature3: "✔️ Mirador del panorama del desierto",
+                tour1Feature4: "✔️ Fotografía profesional incluida",
+                tour2Title: "Tour Privado Premium de 2 Días: Expedición Fotográfica El Cairo y Giza",
+                tour2Desc: "Sumérjase en la vibrante capital de Egipto y sus antiguas maravillas durante dos días inolvidables. Explore las majestuosas Pirámides, el bullicioso Viejo Cairo y el impresionante Museo Nacional de la Civilización Egipcia, todo con su guía privado y fotógrafo.",
+                tour2Feature1: "✅ Día 1: Pirámides de Giza, Esfinge y Aventura en el Desierto",
+                tour2Feature2: "✅ Día 2: Ciudad Vieja de El Cairo + Museo Nacional de la Civilización Egipcia (NMEC)",
+                tour2Feature3: "✅ Guía privado y transporte con aire acondicionado",
+                tour2Feature4: "✅ Paquete de fotografía (más de 100 fotos editadas)",
+                tour3Title: "Descubre Alejandría: Tour Privado de un Día por la Costa desde El Cairo",
+                tour3Desc: "Cambie el polvo del desierto de El Cairo por la fresca brisa del Mediterráneo en este inolvidable tour privado de un día a Alejandría. Descubra una mezcla de tesoros griegos, romanos, islámicos y modernos con un guía local apasionado y capture impresionantes vistas costeras.",
+                tour3Feature1: "✅ Transporte desde y hacia El Cairo",
+                tour3Feature2: "✅ Guía experto local",
+                tour3Feature3: "✅ Todas las entradas y almuerzo de mariscos",
+                tour3Feature4: "✅ Sesión de fotos en lugares clave",
+                tour4Title: "Tour de Descubrimiento de Egipto de 7 Días: El Cairo, Giza, Alejandría y Luxor",
+                tour4Desc: "Experimente las maravillas del Egipto antiguo y moderno en este inmersivo viaje guiado de 7 días. Desde las imponentes Pirámides hasta el encanto mediterráneo de Alejandría y los majestuosos templos de Luxor, este viaje da vida al alma de Egipto.",
+                tour4Feature1: "✅ Egiptólogo licenciado y guía local privado",
+                tour4Feature2: "✅ Todas las entradas a los principales sitios",
+                tour4Feature3: "✅ Transporte doméstico (El Cairo–Luxor–Alejandría)",
+                tour4Feature4: "✅ Fotografía profesional en sitios clave",
+                duration: "Duración:",
+                participantType: "Tipo de Participante:",
+                soloTraveler: "Viajero Solo",
+                coupleTraveler: "Pareja / Dos Personas",
+                selectDate: "Seleccionar Fecha:",
+                price: "Precio:",
+                selectOptionsToBook: "Seleccione Opciones para Reservar",
+                bookNowPaypal: "Reservar Ahora vía PayPal",
+                footerTitle: "Tours de Fotografía de Egipto",
+                footerCopyright: "&copy; 2025 Tours de Fotografía de Egipto. Todos los derechos reservados.",
+                quickLinks: "Enlaces Rápidos",
+                connectWithUs: "Conéctese con Nosotros",
+                email: "Correo Electrónico:",
+                address: "Dirección:"
+            },
+            pt: {
+                pageTitle: "Nossos Passeios de Fotografia - Passeios de Fotografia no Egito",
+                slogan: "Capture as Maravilhas do Egito Através da Sua Lente.",
+                navHome: "Início",
+                navAbout: "Sobre Nós",
+                navTours: "Nossos Passeios",
+                navGallery: "Galeria",
+                navContact: "Fale Conosco",
+                navFAQs: "FAQs",
+                mainHeading: "Nossos Passeios de Fotografia Exclusivos no Egito",
+                mainDescription: "Explore nossa seleção curada de passeios de fotografia, projetados para imergi-lo na magia do Egito enquanto captura imagens impressionantes e de nível profissional. De maravilhas antigas icônicas à vibrante vida local, encontre a aventura perfeita que se adapta às suas aspirações fotográficas.",
+                specialOffer: "Oferta Especial!",
+                limitedSlots: "Vagas Limitadas!",
+                bookNow: "Reserve Agora!",
+                newAdventure: "Nova Aventura!",
+                tour1Title: "📸 Capture a Magia: Tour Privado pelas Pirâmides + Fotografia Profissional",
+                tour1Desc: "Entre na história antiga neste imersivo tour privado de um dia pelas Grandes Pirâmides de Gizé e pela Esfinge, guiado por um especialista local apaixonado. Capture momentos inesquecíveis com uma sessão de fotos profissional e ouça as verdadeiras histórias por trás das pedras.",
+                tour1Feature1: "✔️ Grande Pirâmide, Khafre e Miquerinos",
+                tour1Feature2: "✔️ Esfinge e Templo do Vale",
+                tour1Feature3: "✔️ Ponto de vista panorâmico do deserto",
+                tour1Feature4: "✔️ Fotografia profissional incluída",
+                tour2Title: "Tour Privado Premium de 2 Dias: Expedição Fotográfica Cairo e Gizé",
+                tour2Desc: "Mergulhe na vibrante capital do Egito e nas maravilhas antigas durante dois dias inesquecíveis. Explore as majestosas Pirâmides, o agitado Antigo Cairo e o impressionante Museu Nacional da Civilização Egípcia, tudo com seu guia particular e fotógrafo.",
+                tour2Feature1: "✅ Dia 1: Pirâmides de Gizé, Esfinge e Aventura no Deserto",
+                tour2Feature2: "✅ Dia 2: Cidade Antiga do Cairo + Museu Nacional da Civilização Egípcia (NMEC)",
+                tour2Feature3: "✅ Guia particular e transporte com ar condicionado",
+                tour2Feature4: "✅ Pacote de fotografia (mais de 100 fotos editadas)",
+                tour3Title: "Descubra Alexandria: Tour Privado Costeiro de um Dia a Partir do Cairo",
+                tour3Desc: "Troque a poeira do deserto do Cairo pela brisa fresca do Mediterrâneo neste inesquecível tour privado de um dia para Alexandria. Descubra uma mistura de tesouros gregos, romanos, islâmicos e modernos com um guia local apaixonado e capture vistas costeiras deslumbrantes.",
+                tour3Feature1: "✅ Transporte de ida e volta do Cairo",
+                tour3Feature2: "✅ Guia local especialista",
+                tour3Feature3: "✅ Todas as entradas e almoço de frutos do mar",
+                tour3Feature4: "✅ Sessão de fotos em pontos-chave",
+                tour4Title: "Tour de Descoberta do Egito de 7 Dias: Cairo, Gizé, Alexandria e Luxor",
+                tour4Desc: "Experimente as maravilhas do Egito antigo e moderno nesta imersiva jornada guiada de 7 dias. Das imponentes Pirâmides ao charme mediterrâneo de Alexandria e aos majestosos templos de Luxor — esta viagem dá vida à alma do Egito.",
+                tour4Feature1: "✅ Egiptólogo licenciado e guia local particular",
+                tour4Feature2: "✅ Todas as taxas de entrada para os principais locais",
+                tour4Feature3: "✅ Transporte doméstico (Cairo–Luxor–Alexandria)",
+                tour4Feature4: "✅ Fotografia profissional em locais-chave",
+                duration: "Duração:",
+                participantType: "Tipo de Participante:",
+                soloTraveler: "Viajante Individual",
+                coupleTraveler: "Casal / Duas Pessoas",
+                selectDate: "Selecionar Data:",
+                price: "Preço:",
+                selectOptionsToBook: "Selecione Opções para Reservar",
+                bookNowPaypal: "Reserve Agora via PayPal",
+                footerTitle: "Passeios de Fotografia no Egito",
+                footerCopyright: "&copy; 2025 Passeios de Fotografia no Egito. Todos os Direitos Reservados.",
+                quickLinks: "Links Rápidos",
+                connectWithUs: "Conecte-se Conosco",
+                email: "Email:",
+                address: "Endereço:"
+            },
+            ar: {
+                pageTitle: "جولاتنا للتصوير الفوتوغرافي - جولات التصوير الفوتوغرافي في مصر",
+                slogan: "التقط عجائب مصر بعدستك.",
+                navHome: "الرئيسية",
+                navAbout: "عنا",
+                navTours: "جولاتنا",
+                navGallery: "المعرض",
+                navContact: "اتصل بنا",
+                navFAQs: "الأسئلة الشائعة",
+                mainHeading: "جولاتنا الحصرية للتصوير الفوتوغرافي في مصر",
+                mainDescription: "استكشف مجموعتنا المنسقة من جولات التصوير الفوتوغرافي، المصممة لتغمرك في سحر مصر أثناء التقاط صور مذهلة واحترافية. من العجائب القديمة الشهيرة إلى الحياة المحلية النابضة بالحياة، ابحث عن المغامرة المثالية التي تناسب طموحاتك الفوتوغرافية.",
+                specialOffer: "عرض خاص!",
+                limitedSlots: "أماكن محدودة!",
+                bookNow: "احجز الآن!",
+                newAdventure: "مغامرة جديدة!",
+                tour1Title: "📸 التقط السحر: جولة الأهرامات الخاصة + تصوير احترافي",
+                tour1Desc: "ادخل إلى التاريخ القديم في هذه الجولة الخاصة الغامرة ليوم واحد لأهرامات الجيزة الكبرى وأبو الهول، بقيادة خبير محلي شغوف. التقط لحظات لا تُنسى بجلسة تصوير احترافية واستمع إلى القصص الحقيقية وراء الأحجار.",
+                tour1Feature1: "✔️ الهرم الأكبر، خفرع ومنقرع",
+                tour1Feature2: "✔️ أبو الهول ومعبد الوادي",
+                tour1Feature3: "✔️ نقطة مشاهدة بانورامية للصحراء",
+                tour1Feature4: "✔️ يشمل التصوير الفوتوغرافي الاحترافي",
+                tour2Title: "جولة خاصة مميزة ليومين: رحلة تصوير القاهرة والجيزة",
+                tour2Desc: "انغمس في عاصمة مصر النابضة بالحياة وعجائبها القديمة على مدار يومين لا يُنسيان. استكشف الأهرامات المهيبة، والقاهرة القديمة الصاخبة، والمتحف القومي للحضارة المصرية المثير للإعجاب، كل ذلك مع دليلك الخاص والمصور.",
+                tour2Feature1: "✅ اليوم الأول: أهرامات الجيزة، أبو الهول ومغامرة الصحراء",
+                tour2Feature2: "✅ اليوم الثاني: القاهرة القديمة + المتحف القومي للحضارة المصرية (NMEC)",
+                tour2Feature3: "✅ مرشد خاص ووسيلة نقل مكيفة",
+                tour2Feature4: "✅ باقة تصوير (100+ صورة معدلة)",
+                tour3Title: "اكتشف الإسكندرية: جولة ساحلية خاصة ليوم واحد من القاهرة",
+                tour3Desc: "استبدل غبار صحراء القاهرة بنسيم البحر الأبيض المتوسط ​​المنعش في هذه الجولة الخاصة التي لا تُنسى ليوم واحد إلى الإسكندرية. اكتشف مزيجًا من كنوز اليونانية والرومانية والإسلامية والحديثة مع مرشد محلي شغوف والتقط مناظر ساحلية خلابة.",
+                tour3Feature1: "✅ المواصلات من القاهرة وإليها",
+                tour3Feature2: "✅ مرشد محلي خبير",
+                tour3Feature3: "✅ جميع تذاكر الدخول وغداء المأكولات البحرية",
+                tour3Feature4: "✅ جلسة تصوير في المواقع الرئيسية",
+                tour4Title: "جولة اكتشاف مصر لمدة 7 أيام: القاهرة، الجيزة، الإسكندرية والأقصر",
+                tour4Desc: "اختبر عجائب مصر القديمة والحديثة في هذه الرحلة المصحوبة بمرشدين لمدة 7 أيام. من الأهرامات الشاهقة إلى سحر الإسكندرية المتوسطي ومعابد الأقصر المهيبة - هذه الرحلة تحيي روح مصر.",
+                tour4Feature1: "✅ عالم مصريات مرخص ومرشد محلي خاص",
+                tour4Feature2: "✅ جميع رسوم الدخول للمواقع الرئيسية",
+                tour4Feature3: "✅ النقل الداخلي (القاهرة – الأقصر – الإسكندرية)",
+                tour4Feature4: "✅ تصوير احترافي في المواقع الرئيسية",
+                duration: "المدة:",
+                participantType: "نوع المشارك:",
+                soloTraveler: "مسافر فردي",
+                coupleTraveler: "زوجين / شخصين",
+                selectDate: "اختر التاريخ:",
+                price: "السعر:",
+                selectOptionsToBook: "اختر الخيارات للحجز",
+                bookNowPaypal: "احجز الآن عبر PayPal",
+                footerTitle: "جولات التصوير الفوتوغرافي في مصر",
+                footerCopyright: "&copy; 2025 جولات التصوير الفوتوغرافي في مصر. جميع الحقوق محفوظة.",
+                quickLinks: "روابط سريعة",
+                connectWithUs: "تواصل معنا",
+                email: "البريد الإلكتروني:",
+                address: "العنوان:"
+            },
+            zh: {
+                pageTitle: "我们的摄影之旅 - 埃及摄影之旅",
+                slogan: "透过你的镜头捕捉埃及的奇迹。",
+                navHome: "首页",
+                navAbout: "关于我们",
+                navTours: "我们的旅行",
+                navGallery: "画廊",
+                navContact: "联系我们",
+                navFAQs: "常见问题",
+                mainHeading: "我们在埃及的独家摄影之旅",
+                mainDescription: "探索我们精选的摄影之旅，旨在让您沉浸在埃及的魔力中，同时捕捉令人惊叹的专业级图像。从标志性的古代奇观到充满活力的当地生活，找到适合您摄影抱负的完美冒险。",
+                specialOffer: "特惠！",
+                limitedSlots: "名额有限！",
+                bookNow: "立即预订！",
+                newAdventure: "新冒险！",
+                tour1Title: "📸 捕捉魔力：金字塔私人导览 + 专业摄影",
+                tour1Desc: "参加这个沉浸式的一日金字塔和狮身人面像私人旅行，在热情的当地专家的指导下，走进古老的历史。通过专业的摄影会话捕捉难忘的瞬间，并聆听石头背后的真实故事。",
+                tour1Feature1: "✔️ 大金字塔、卡夫拉金字塔和孟卡拉金字塔",
+                tour1Feature2: "✔️ 狮身人面像和河谷神庙",
+                tour1Feature3: "✔️ 沙漠全景观景点",
+                tour1Feature4: "✔️ 包含专业摄影",
+                tour2Title: "2日高级私人游：开罗与吉萨摄影探险",
+                tour2Desc: "在两天难忘的日子里，沉浸在埃及充满活力的首都和古老奇迹中。在您的私人导游和摄影师的陪同下，探索雄伟的金字塔、繁华的开罗老城和令人印象深刻的埃及文明国家博物馆。",
+                tour2Feature1: "✅ 第1天：吉萨金字塔、狮身人面像和沙漠冒险",
+                tour2Feature2: "✅ 第2天：开罗老城 + 埃及文明国家博物馆（NMEC）",
+                tour2Feature3: "✅ 私人导游和空调交通",
+                tour2Feature4: "✅ 摄影套餐（100多张编辑照片）",
+                tour3Title: "探索亚历山大：开罗出发的私人海岸一日游",
+                tour3Desc: "参加这个难忘的亚历山大私人一日游，将开罗的沙漠尘埃换成地中海的清新海风。在热情的当地导游的带领下，探索希腊、罗马、伊斯兰和现代宝藏的混合，并捕捉令人惊叹的海岸景色。",
+                tour3Feature1: "✅ 开罗往返交通",
+                tour3Feature2: "✅ 专家当地导游",
+                tour3Feature3: "✅ 所有门票和海鲜午餐",
+                tour3Feature4: "✅ 在关键景点进行照片拍摄",
+                tour4Title: "7日埃及发现之旅：开罗、吉萨、亚历山大和卢克索",
+                tour4Desc: "在这个为期7天的沉浸式导览之旅中体验古埃及和现代埃及的奇迹。从高耸的金字塔到亚历山大的地中海魅力和卢克索雄伟的寺庙——这次旅行将埃及的灵魂带入生活。",
+                tour4Feature1: "✅ 持牌埃及学家和私人当地导游",
+                tour4Feature2: "✅ 所有主要景点的门票",
+                tour4Feature3: "✅ 国内交通（开罗-卢克索-亚历山大）",
+                tour4Feature4: "✅ 关键地点的专业摄影",
+                duration: "时长：",
+                participantType: "参与者类型：",
+                soloTraveler: "单独旅行者",
+                coupleTraveler: "情侣/两人",
+                selectDate: "选择日期：",
+                price: "价格：",
+                selectOptionsToBook: "选择选项进行预订",
+                bookNowPaypal: "通过PayPal立即预订",
+                footerTitle: "埃及摄影之旅",
+                footerCopyright: "&copy; 2025 埃及摄影之旅。保留所有权利。",
+                quickLinks: "快速链接",
+                connectWithUs: "联系我们",
+                email: "电子邮件：",
+                address: "地址："
+            },
+            ko: {
+                pageTitle: "우리의 사진 투어 - 이집트 사진 투어",
+                slogan: "렌즈를 통해 이집트의 경이로움을 포착하세요.",
+                navHome: "홈",
+                navAbout: "회사 소개",
+                navTours: "우리의 투어",
+                navGallery: "갤러리",
+                navContact: "문의하기",
+                navFAQs: "자주 묻는 질문",
+                mainHeading: "이집트 독점 사진 투어",
+                mainDescription: "이집트의 마법에 빠져들고 멋진 전문가급 이미지를 촬영할 수 있도록 설계된 엄선된 사진 투어를 탐색하십시오. 상징적인 고대 경이로움부터 활기찬 현지 생활까지, 당신의 사진 열망에 맞는 완벽한 모험을 찾아보세요.",
+                specialOffer: "특별 행사!",
+                limitedSlots: "제한된 슬롯!",
+                bookNow: "지금 예약!",
+                newAdventure: "새로운 모험!",
+                tour1Title: "📸 마법을 포착하세요: 피라미드 개인 가이드 투어 + 전문 사진 촬영",
+                tour1Desc: "열정적인 현지 전문가의 안내를 받아 기자의 대피라미드와 스핑크스에 대한 몰입형 하루 개인 투어에 참여하여 고대 역사 속으로 들어가십시오. 전문 사진 촬영으로 잊을 수 없는 순간을 포착하고 돌 뒤에 숨겨진 실제 이야기를 들어보세요.",
+                tour1Feature1: "✔️ 대피라미드, 카프레 & 멘카우레",
+                tour1Feature2: "✔️ 스핑크스 & 계곡 사원",
+                tour1Feature3: "✔️ 사막 파노라마 전망대",
+                tour1Feature4: "✔️ 전문 사진 촬영 포함",
+                tour2Title: "2일 프리미엄 개인 투어: 카이로 & 기자의 사진 탐험",
+                tour2Desc: "잊을 수 없는 이틀 동안 이집트의 활기찬 수도와 고대 경이로움에 흠뻑 빠져보세요. 웅장한 피라미드, 번화한 올드 카이로, 인상적인 이집트 문명 국립 박물관을 개인 가이드 및 사진작가와 함께 탐험하세요.",
+                tour2Feature1: "✅ 1일차: 기자 피라미드, 스핑크스 & 사막 모험",
+                tour2Feature2: "✅ 2일차: 카이로 올드 시티 + 이집트 문명 국립 박물관 (NMEC)",
+                tour2Feature3: "✅ 개인 가이드 & 에어컨 교통편",
+                tour2Feature4: "✅ 사진 패키지 (100개 이상 보정된 사진)",
+                tour3Title: "알렉산드리아 발견: 카이로 출발 개인 해안 당일 투어",
+                tour3Desc: "잊을 수 없는 알렉산드리아 개인 당일 투어를 통해 카이로의 사막 먼지를 지중해의 신선한 바람으로 바꾸세요. 열정적인 현지 가이드와 함께 그리스, 로마, 이슬람 및 현대 보물의 혼합을 발견하고 멋진 해안 풍경을 포착하세요.",
+                tour3Feature1: "✅ 카이로 왕복 교통편",
+                tour3Feature2: "✅ 전문 현지 가이드",
+                tour3Feature3: "✅ 모든 입장권 & 해산물 점심",
+                tour3Feature4: "✅ 주요 장소에서 사진 촬영",
+                tour4Title: "7일 이집트 발견 투어: 카이로, 기자, 알렉산드리아 & 룩소르",
+                tour4Desc: "이 몰입형 7일 가이드 여행으로 고대 및 현대 이집트의 경이로움을 경험하세요. 솟아오른 피라미드에서부터 알렉산드리아의 지중해 매력, 그리고 룩소르의 웅장한 사원에 이르기까지 — 이 여행은 이집트의 영혼을 생생하게 만듭니다.",
+                tour4Feature1: "✅ 공인 이집트학자 & 개인 현지 가이드",
+                tour4Feature2: "✅ 주요 유적지 모든 입장료",
+                tour4Feature3: "✅ 국내 교통편 (카이로–룩소르–알렉산드리아)",
+                tour4Feature4: "✅ 주요 유적지 전문 사진 촬영",
+                duration: "기간:",
+                participantType: "참가자 유형:",
+                soloTraveler: "단독 여행객",
+                coupleTraveler: "커플 / 2인",
+                selectDate: "날짜 선택:",
+                price: "가격:",
+                selectOptionsToBook: "예약 옵션 선택",
+                bookNowPaypal: "PayPal로 지금 예약하기",
+                footerTitle: "이집트 사진 투어",
+                footerCopyright: "&copy; 2025 이집트 사진 투어. 모든 권리 보유.",
+                quickLinks: "빠른 링크",
+                connectWithUs: "저희와 연결",
+                email: "이메일:",
+                address: "주소:"
+            },
+            ja: {
+                pageTitle: "写真ツアー - エジプト写真ツアー",
+                slogan: "レンズを通してエジプトの驚異を捉えましょう。",
+                navHome: "ホーム",
+                navAbout: "会社概要",
+                navTours: "ツアー",
+                navGallery: "ギャラリー",
+                navContact: "お問い合わせ",
+                navFAQs: "よくある質問",
+                mainHeading: "エジプトの排他的写真ツアー",
+                mainDescription: "エジプトの魔法に浸り、素晴らしいプロレベルの写真を撮影するためにデザインされた、厳選された写真ツアーをご覧ください。象徴的な古代の驚異から活気に満ちた地元の生活まで、あなたの写真の願望に合った完璧な冒険を見つけてください。",
+                specialOffer: "特別オファー！",
+                limitedSlots: "限定スロット！",
+                bookNow: "今すぐ予約！",
+                newAdventure: "新しい冒険！",
+                tour1Title: "📸 魔法を捉える：ピラミッドプライベートガイドツアー + プロ写真撮影",
+                tour1Desc: "情熱的な地元専門家によるガイド付きギザの大ピラミッドとスフィンクスの一日プライベートツアーで、古代の歴史に足を踏み入れましょう。プロの写真セッションで忘れられない瞬間を捉え、石の裏にある本当の物語を聞いてください。",
+                tour1Feature1: "✔️ 大ピラミッド、カフラー王、メンカウラー王",
+                tour1Feature2: "✔️ スフィンクスと谷の神殿",
+                tour1Feature3: "✔️ 砂漠パノラマ展望台",
+                tour1Feature4: "✔️ プロ写真撮影込み",
+                tour2Title: "2日間プレミアムプライベートツアー：カイロ＆ギザ写真探検",
+                tour2Desc: "忘れられない2日間で、エジプトの活気ある首都と古代の驚異に没頭しましょう。あなたのプライベートガイドと写真家と一緒に、壮大なピラミッド、賑やかな旧カイロ、そして印象的なエジプト文明国立博物館を探索してください。",
+                tour2Feature1: "✅ 1日目：ギザのピラミッド、スフィンクス＆砂漠の冒険",
+                tour2Feature2: "✅ 2日目：カイロ旧市街 + エジプト文明国立博物館（NMEC）",
+                tour2Feature3: "✅ プライベートガイド＆エアコン付き交通機関",
+                tour2Feature4: "✅ 写真パッケージ（100枚以上の編集済み写真）",
+                tour3Title: "アレクサンドリアを発見：カイロ発プライベート海岸日帰りツアー",
+                tour3Desc: "カイロの砂漠の埃を地中海の新鮮な風に変える、忘れられないアレクサンドリアへのプライベート日帰りツアーです。情熱的な地元ガイドと一緒に、ギリシャ、ローマ、イスラム、そして現代の宝物の混合を発見し、素晴らしい海岸の景色を撮影してください。",
+                tour3Feature1: "✅ カイロからの往復送迎",
+                tour3Feature2: "✅ 専門の地元ガイド",
+                tour3Feature3: "✅ すべての入場券とシーフードランチ",
+                tour3Feature4: "✅ 主要スポットでの写真撮影",
+                tour4Title: "7日間エジプト発見ツアー：カイロ、ギザ、アレクサンドリア、ルクソール",
+                tour4Desc: "この没入型7日間のガイド付き旅行で、古代と現代エジプトの驚異を体験してください。そびえ立つピラミッドから、アレクサンドリアの地中海の魅力、ルクソールの壮大な寺院まで、この旅はエジプトの魂を生き生きとさせます。",
+                tour4Feature1: "✅ 認可されたエジプト学者とプライベート地元ガイド",
+                tour4Feature2: "✅ 主要遺跡へのすべての入場料",
+                tour4Feature3: "✅ 国内交通機関（カイロ–ルクソール–アレクサンドリア）",
+                tour4Feature4: "✅ 主要遺跡でのプロ写真撮影",
+                duration: "期間：",
+                participantType: "参加者タイプ：",
+                soloTraveler: "一人旅",
+                coupleTraveler: "カップル / 二人",
+                selectDate: "日付を選択：",
+                price: "価格：",
+                selectOptionsToBook: "オプションを選択して予約",
+                bookNowPaypal: "PayPalで今すぐ予約",
+                footerTitle: "エジプト写真ツアー",
+                footerCopyright: "&copy; 2025 エジプト写真ツアー。全著作権所有。",
+                quickLinks: "クイックリンク",
+                connectWithUs: "お問い合わせ",
+                email: "Eメール：",
+                address: "住所："
+            },
+            fr: {
+                pageTitle: "Nos Tours de Photographie - Tours de Photographie en Égypte",
+                slogan: "Capturez les Merveilles de l'Égypte à Travers Votre Objectif.",
+                navHome: "Accueil",
+                navAbout: "À Propos",
+                navTours: "Nos Tours",
+                navGallery: "Galerie",
+                navContact: "Contactez-nous",
+                navFAQs: "FAQ",
+                mainHeading: "Nos Tours de Photographie Exclusifs en Égypte",
+                mainDescription: "Découvrez notre sélection de tours de photographie, conçus pour vous immerger dans la magie de l'Égypte tout en capturant des images époustouflantes et de qualité professionnelle. Des merveilles antiques emblématiques à la vie locale vibrante, trouvez l'aventure parfaite qui correspond à vos aspirations photographiques.",
+                specialOffer: "Offre Spéciale !",
+                limitedSlots: "Places Limitées !",
+                bookNow: "Réservez Maintenant !",
+                newAdventure: "Nouvelle Aventure !",
+                tour1Title: "📸 Capturez la Magie : Visite Guidée Privée des Pyramides + Photographie Professionnelle",
+                tour1Desc: "Plongez dans l'histoire ancienne lors de cette visite privée immersive d'une journée des Grandes Pyramides de Gizeh et du Sphinx, guidée par un expert local passionné. Capturez des moments inoubliables avec une séance photo professionnelle et découvrez les véritables histoires derrière les pierres.",
+                tour1Feature1: "✔️ Grande Pyramide, Khéphren & Mykérinos",
+                tour1Feature2: "✔️ Sphinx & Temple de la Vallée",
+                tour1Feature3: "✔️ Point de vue panoramique du désert",
+                tour1Feature4: "✔️ Photographie professionnelle incluse",
+                tour2Title: "Tour Privé Premium de 2 Jours : Expédition Photographique au Caire et à Gizeh",
+                tour2Desc: "Plongez dans la vibrante capitale égyptienne et ses merveilles antiques pendant deux jours inoubliables. Explorez les majestueuses Pyramides, le quartier animé du Vieux Caire et l'impressionnant Musée National de la Civilisation Égyptienne, le tout avec votre guide privé et photographe.",
+                tour2Feature1: "✅ Jour 1 : Pyramides de Gizeh, Sphinx & Aventure dans le Désert",
+                tour2Feature2: "✅ Jour 2 : Vieille Ville du Caire + Musée National de la Civilisation Égyptienne (NMEC)",
+                tour2Feature3: "✅ Guide privé & transport climatisé",
+                tour2Feature4: "✅ Forfait photo (plus de 100 photos éditées)",
+                tour3Title: "Découvrez Alexandrie : Tour Privé Côtier d'une Journée depuis le Caire",
+                tour3Desc: "Échangez la poussière du désert du Caire contre la brise fraîche de la Méditerranée lors de cette inoubliable excursion privée d'une journée à Alexandrie. Découvrez un mélange de trésors grecs, romains, islamiques et modernes avec un guide local passionné et capturez des vues côtières imprenables.",
+                tour3Feature1: "✅ Transport depuis et vers le Caire",
+                tour3Feature2: "✅ Guide local expert",
+                tour3Feature3: "✅ Tous les billets d'entrée & déjeuner de fruits de mer",
+                tour3Feature4: "✅ Séance photo aux endroits clés",
+                tour4Title: "Tour de Découverte de l'Égypte de 7 Jours : Caire, Gizeh, Alexandrie & Louxor",
+                tour4Desc: "Découvrez les merveilles de l'Égypte ancienne et moderne lors de ce voyage guidé immersif de 7 jours. Des imposantes Pyramides au charme méditerranéen d'Alexandrie et aux majestueux temples de Louxor — ce voyage donne vie à l'âme de l'Égypte.",
+                tour4Feature1: "✅ Égyptologue agréé & guide local privé",
+                tour4Feature2: "✅ Tous les frais d'entrée aux sites majeurs",
+                tour4Feature3: "✅ Transport intérieur (Le Caire–Louxor–Alexandrie)",
+                tour4Feature4: "✅ Photographie professionnelle sur les sites clés",
+                duration: "Durée :",
+                participantType: "Type de Participant :",
+                soloTraveler: "Voyageur Solo",
+                coupleTraveler: "Couple / Deux Personnes",
+                selectDate: "Sélectionner la Date :",
+                price: "Prix :",
+                selectOptionsToBook: "Sélectionnez les Options pour Réserver",
+                bookNowPaypal: "Réservez Maintenant via PayPal",
+                footerTitle: "Tours de Photographie en Égypte",
+                footerCopyright: "&copy; 2025 Tours de Photographie en Égypte. Tous droits réservés.",
+                quickLinks: "Liens Rapides",
+                connectWithUs: "Connectez-vous avec Nous",
+                email: "E-mail :",
+                address: "Adresse :"
+            },
+            it: {
+                pageTitle: "I Nostri Tour Fotografici - Tour Fotografici in Egitto",
+                slogan: "Cattura le Meraviglie dell'Egitto Attraverso la Tua Lente.",
+                navHome: "Home",
+                navAbout: "Chi Siamo",
+                navTours: "I Nostri Tour",
+                navGallery: "Galleria",
+                navContact: "Contattaci",
+                navFAQs: "FAQ",
+                mainHeading: "I Nostri Esclusivi Tour Fotografici in Egitto",
+                mainDescription: "Esplora la nostra selezione curata di tour fotografici, pensati per immergerti nella magia dell'Egitto catturando immagini mozzafiato e di qualità professionale. Dalle iconiche meraviglie antiche alla vibrante vita locale, trova l'avventura perfetta che si adatta alle tue aspirazioni fotografiche.",
+                specialOffer: "Offerta Speciale!",
+                limitedSlots: "Posti Limitati!",
+                bookNow: "Prenota Ora!",
+                newAdventure: "Nuova Avventura!",
+                tour1Title: "📸 Cattura la Magia: Tour Guidato Privato delle Piramidi + Fotografia Professionale",
+                tour1Desc: "Entra nella storia antica con questo coinvolgente tour privato di un giorno delle Grandi Piramidi di Giza e della Sfinge, guidato da un esperto locale appassionato. Cattura momenti indimenticabili con una sessione fotografica professionale e ascolta le vere storie dietro le pietre.",
+                tour1Feature1: "✔️ Grande Piramide, Chefren e Micerino",
+                tour1Feature2: "✔️ Sfinge e Tempio a Valle",
+                tour1Feature3: "✔️ Punto panoramico sul deserto",
+                tour1Feature4: "✔️ Fotografia professionale inclusa",
+                tour2Title: "Tour Privato Premium di 2 Giorni: Spedizione Fotografica Cairo e Giza",
+                tour2Desc: "Immergiti nella vivace capitale egiziana e nelle meraviglie antiche per due giorni indimenticabili. Esplora le maestose Piramidi, il vivace Vecchio Cairo e l'impressionante Museo Nazionale della Civiltà Egiziana, il tutto con la tua guida privata e fotografo.",
+                tour2Feature1: "✅ Giorno 1: Piramidi di Giza, Sfinge e Avventura nel Deserto",
+                tour2Feature2: "✅ Giorno 2: Città Vecchia del Cairo + Museo Nazionale della Civiltà Egiziana (NMEC)",
+                tour2Feature3: "✅ Guida privata e trasporto con aria condizionata",
+                tour2Feature4: "✅ Pacchetto fotografico (oltre 100 foto modificate)",
+                tour3Title: "Scopri Alessandria: Tour Privato Costiero di un Giorno dal Cairo",
+                tour3Desc: "Scambia la polvere del deserto del Cairo con la fresca brezza del Mediterraneo in questo indimenticabile tour privato di un giorno ad Alessandria. Scopri un mix di tesori greci, romani, islamici e moderni con una guida locale appassionata e cattura splendide viste costiere.",
+                tour3Feature1: "✅ Trasporto da e per Il Cairo",
+                tour3Feature2: "✅ Guida locale esperta",
+                tour3Feature3: "✅ Tutti i biglietti d'ingresso e pranzo a base di pesce",
+                tour3Feature4: "✅ Sessione fotografica in punti chiave",
+                tour4Title: "Tour di Scoperta dell'Egitto di 7 Giorni: Cairo, Giza, Alessandria e Luxor",
+                tour4Desc: "Vivi le meraviglie dell'Egitto antico e moderno in questo coinvolgente viaggio guidato di 7 giorni. Dalle imponenti Piramidi al fascino mediterraneo di Alessandria e ai maestosi templi di Luxor — questo viaggio dà vita all'anima dell'Egitto.",
+                tour4Feature1: "✅ Egittologo con licenza e guida locale privata",
+                tour4Feature2: "✅ Tutte le tasse d'ingresso ai siti principali",
+                tour4Feature3: "✅ Trasporto interno (Cairo–Luxor–Alessandria)",
+                tour4Feature4: "✅ Fotografia professionale nei siti chiave",
+                duration: "Durata:",
+                participantType: "Tipo di Partecipante:",
+                soloTraveler: "Viaggiatore Singolo",
+                coupleTraveler: "Coppia / Due Persone",
+                selectDate: "Seleziona Data:",
+                price: "Prezzo:",
+                selectOptionsToBook: "Seleziona Opzioni per Prenotare",
+                bookNowPaypal: "Prenota Ora tramite PayPal",
+                footerTitle: "Tour Fotografici in Egitto",
+                footerCopyright: "&copy; 2025 Tour Fotografici in Egitto. Tutti i diritti riservati.",
+                quickLinks: "Link Rapidi",
+                connectWithUs: "Connettiti con Noi",
+                email: "Email:",
+                address: "Indirizzo:"
+            },
+            de: {
+                pageTitle: "Unsere Fototouren - Ägypten Fototouren",
+                slogan: "Fangen Sie die Wunder Ägyptens durch Ihr Objektiv ein.",
+                navHome: "Startseite",
+                navAbout: "Über Uns",
+                navTours: "Unsere Touren",
+                navGallery: "Galerie",
+                navContact: "Kontakt",
+                navFAQs: "FAQs",
+                mainHeading: "Unsere Exklusiven Fototouren in Ägypten",
+                mainDescription: "Entdecken Sie unsere kuratierte Auswahl an Fototouren, die darauf ausgelegt sind, Sie in den Zauber Ägyptens eintauchen zu lassen, während Sie atemberaubende, professionelle Bilder aufnehmen. Von ikonischen antiken Wundern bis hin zum lebendigen lokalen Leben finden Sie das perfekte Abenteuer, das Ihren fotografischen Ambitionen entspricht.",
+                specialOffer: "Sonderangebot!",
+                limitedSlots: "Begrenzte Plätze!",
+                bookNow: "Jetzt buchen!",
+                newAdventure: "Neues Abenteuer!",
+                tour1Title: "📸 Den Zauber einfangen: Private Pyramidenführung + professionelle Fotografie",
+                tour1Desc: "Tauchen Sie ein in die antike Geschichte bei dieser immersiven eintägigen privaten Tour zu den Großen Pyramiden von Gizeh und der Sphinx, geführt von einem leidenschaftlichen lokalen Experten. Halten Sie unvergessliche Momente mit einer professionellen Fotosession fest und hören Sie die wahren Geschichten hinter den Steinen.",
+                tour1Feature1: "✔️ Große Pyramide, Chephren & Mykerinos",
+                tour1Feature2: "✔️ Sphinx & Taltempel",
+                tour1Feature3: "✔️ Wüstenpanorama-Aussichtspunkt",
+                tour1Feature4: "✔️ Professionelle Fotografie inbegriffen",
+                tour2Title: "2-tägige Premium-Privattour: Kairo & Gizeh Fotoexpedition",
+                tour2Desc: "Tauchen Sie zwei unvergessliche Tage lang in Ägyptens pulsierende Hauptstadt und antike Wunder ein. Erkunden Sie die majestätischen Pyramiden, das geschäftige Alt-Kairo und das beeindruckende Nationalmuseum der Ägyptischen Zivilisation, alles mit Ihrem privaten Guide und Fotografen.",
+                tour2Feature1: "✅ Tag 1: Pyramiden von Gizeh, Sphinx & Wüstenabenteuer",
+                tour2Feature2: "✅ Tag 2: Altstadt von Kairo + Nationalmuseum der Ägyptischen Zivilisation (NMEC)",
+                tour2Feature3: "✅ Privater Guide & klimatisierter Transport",
+                tour2Feature4: "✅ Fotopaket (100+ bearbeitete Fotos)",
+                tour3Title: "Alexandria entdecken: Private Küsten-Tagestour von Kairo aus",
+                tour3Desc: "Tauschen Sie den Wüstenstaub Kairos gegen die frische Brise des Mittelmeers bei dieser unvergesslichen privaten Tagestour nach Alexandria. Entdecken Sie eine Mischung aus griechischen, römischen, islamischen und modernen Schätzen mit einem leidenschaftlichen lokalen Guide und fangen Sie atemberaubende Küstenansichten ein.",
+                tour3Feature1: "✅ Transport von und nach Kairo",
+                tour3Feature2: "✅ Erfahrener lokaler Guide",
+                tour3Feature3: "✅ Alle Eintrittskarten & Meeresfrüchte-Mittagessen",
+                tour3Feature4: "✅ Fotosession an wichtigen Orten",
+                tour4Title: "7-tägige Ägypten-Entdeckungstour: Kairo, Gizeh, Alexandria & Luxor",
+                tour4Desc: "Erleben Sie die Wunder des alten und modernen Ägypten auf dieser immersiven 7-tägigen geführten Reise. Von den aufragenden Pyramiden bis zum mediterranen Charme Alexandrias und den majestätischen Tempeln von Luxor – diese Reise erweckt die Seele Ägyptens zum Leben.",
+                tour4Feature1: "✅ Lizenzierter Ägyptologe & privater lokaler Guide",
+                tour4Feature2: "✅ Alle Eintrittsgelder zu wichtigen Stätten",
+                tour4Feature3: "✅ Inlandstransport (Kairo–Luxor–Alexandria)",
+                tour4Feature4: "✅ Professionelle Fotografie an wichtigen Orten",
+                duration: "Dauer:",
+                participantType: "Teilnehmertyp:",
+                soloTraveler: "Alleinreisender",
+                coupleTraveler: "Paar / Zwei Personen",
+                selectDate: "Datum auswählen:",
+                price: "Preis:",
+                selectOptionsToBook: "Optionen zur Buchung auswählen",
+                bookNowPaypal: "Jetzt via PayPal buchen",
+                footerTitle: "Ägypten Fototouren",
+                footerCopyright: "&copy; 2025 Ägypten Fototouren. Alle Rechte vorbehalten.",
+                quickLinks: "Schnell-Links",
+                connectWithUs: "Verbinden Sie sich mit uns",
+                email: "E-Mail:",
+                address: "Adresse:"
+            }
+        };
+
+        const langFlags = {
+            en: '🇬🇧',
+            es: '🇪🇸',
+            pt: '🇵🇹',
+            ar: '🇪🇬', // Using Egypt flag for Arabic in this context
+            zh: '🇨🇳',
+            ko: '🇰🇷',
+            ja: '🇯🇵',
+            fr: '🇫🇷',
+            it: '🇮🇹',
+            de: '🇩🇪'
+        };
+
+        const langNames = {
+            en: 'English',
+            es: 'Español',
+            pt: 'Português',
+            ar: 'العربية',
+            zh: '中文',
+            ko: '한국어',
+            ja: '日本語',
+            fr: 'Français',
+            it: 'Italiano',
+            de: 'Deutsch'
+        };
+
+        const languageSwitcherBtn = document.getElementById('languageSwitcherBtn');
+        const languageDropdown = document.getElementById('languageDropdown');
+        const currentLangFlag = document.getElementById('currentLangFlag');
+        const currentLangText = document.getElementById('currentLangText');
+        const htmlElement = document.documentElement;
+
+        // Function to apply translations
+        function switchLanguage(lang) {
+            // Validate language
+            if (!translations[lang]) {
+                console.warn(`Translation for language code "${lang}" not found. Defaulting to English.`);
+                lang = 'en';
+            }
+
+            // Set HTML lang attribute for better accessibility and SEO
+            htmlElement.setAttribute('lang', lang);
+
+            // Update elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'TITLE') {
+                        document.title = translations[lang][key];
+                    } else if (element.tagName === 'META' && element.name === 'description') {
+                        element.setAttribute('content', translations[lang][key]);
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update specific elements that need more complex handling (e.g., footer email/address)
+            const emailElement = document.querySelector('[data-i18n="email"]');
+            if (emailElement) {
+                 const emailAddress = "info@egyptphotographytours.com"; // Keep email static
+                 emailElement.innerHTML = `${translations[lang]['email']} <a href="mailto:${emailAddress}" class="hover:text-accent-light transition duration-300">${emailAddress}</a>`;
+            }
+            const addressElement = document.querySelector('[data-i18n="address"]');
+            if (addressElement) {
+                const physicalAddress = "Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557"; // Keep address static
+                addressElement.textContent = `${translations[lang]['address']} ${physicalAddress}`;
+            }
+
+            // Update current language display in the switcher button
+            currentLangFlag.textContent = langFlags[lang];
+            currentLangText.textContent = langNames[lang];
+
+            // Store preference in local storage
+            localStorage.setItem('selectedLanguage', lang);
+
+            // Re-run booking button state update to translate its text if language changes
+            document.querySelectorAll('[data-tour-id]').forEach(card => {
+                const buyButton = card.querySelector('.paypal-buy-button');
+                const selectedType = card.querySelector('.selection-group .selected')?.dataset.type; // Get selected type if any
+                const selectedDate = card.querySelector('.date-input').value; // Get selected date if any
+
+                if (selectedType && selectedDate) {
+                    buyButton.textContent = translations[lang]['bookNowPaypal'];
+                } else {
+                    buyButton.textContent = translations[lang]['selectOptionsToBook'];
+                }
+            });
+        }
+
+        // Toggle language dropdown
+        languageSwitcherBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent document click from closing it immediately
+            languageDropdown.classList.toggle('show');
+        });
+
+        // Handle language selection
+        languageDropdown.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedLang = event.currentTarget.dataset.lang;
+                switchLanguage(selectedLang);
+                languageDropdown.classList.remove('show'); // Hide dropdown after selection
+            });
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener('click', (event) => {
+            if (!languageDropdown.contains(event.target) && !languageSwitcherBtn.contains(event.target)) {
+                languageDropdown.classList.remove('show');
+            }
+        });
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en'; // Default to English
+            switchLanguage(savedLanguage);
+
+            // Re-apply correct button text on load based on currently selected language
+            document.querySelectorAll('[data-tour-id]').forEach(card => {
+                const buyButton = card.querySelector('.paypal-buy-button');
+                const selectedType = card.querySelector('.selection-group .selected')?.dataset.type;
+                const selectedDate = card.querySelector('.date-input').value;
+
+                if (selectedType && selectedDate) {
+                    buyButton.textContent = translations[savedLanguage]['bookNowPaypal'];
+                } else {
+                    buyButton.textContent = translations[savedLanguage]['selectOptionsToBook'];
+                }
+            });
+        });
+    </script>
+</body>
+</html>
