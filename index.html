@@ -80,7 +80,36 @@
                 </button>
             </div>
         </div>
-    </nav>
+    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
+        <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
+            <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
+            <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1">About Us</a></li>
+            <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Our Tours</a></li>
+            <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contact Us</a></li>
+            <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
+        </ul>
+        <div class="mt-3 md:mt-0 flex items-center space-x-4">
+            <div class="relative group">
+                <button class="flex items-center text-white hover:text-accent-light focus:outline-none">
+                    <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M3 17h12M17 6v12M17 6h2M17 18h2M17 18v-6"></path></svg>
+                    English
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute right-0 mt-2 w-32 bg-gray-700 rounded-md shadow-lg py-1 hidden group-hover:block">
+                    <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">English</a>
+                    <a href="index-ar.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">العربية</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">Deutsch (Coming Soon)</a>
+                </div>
+            </div>
+            <button class="snipcart-checkout flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                Cart (<span class="snipcart-total-items"></span>)
+            </button>
+        </div>
+    </div>
+</nav>
 
     <main class="flex-grow">
         <section class="relative bg-cover bg-center h-screen-75 flex items-center justify-center text-center p-6"style="background-image: url('images/hero-image.jpg');"
