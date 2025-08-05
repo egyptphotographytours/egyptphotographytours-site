@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Improved viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Egypt Photography Tours - Capture the Wonders of Egypt</title>
+    <meta name="description" content="Embark on unforgettable photography tours in Egypt. Capture the magic of the Pyramids, ancient temples, and vibrant markets with expert guides. Book your dream Egyptian photoshoot adventure!">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Added Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .text-primary-dark { color: #2C3E50; }
+        .bg-accent-light { background-color: #FFD700; }
+        .text-accent-light { color: #FFD700; }
+        .bg-accent-dark { background-color: #E2B700; }
+        .text-accent-dark { color: #E2B700; }
+        .bg-primary-dark { background-color: #1a202c; }
+        .sale-tag {
+            background-color: #E74C3C;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+        }
+        .h-screen-75 { height: 75vh; }
+
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {
+            /* Navigation adjustments */
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 1rem 0;
+            }
+            
+            /* Hero section adjustments */
+            .h-screen-75 {
+                height: 60vh;
+            }
+            
+            /* Tour cards adjustments */
+            .tour-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Testimonials adjustments */
+            .testimonial-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Button sizing */
+            .mobile-btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            /* Header adjustments */
+            header .container {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+            
+            /* Footer adjustments */
+            footer .container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-12 md:h-16 w-auto rounded-full">
+                <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
+            </div>
+            <p class="text-sm md:text-lg mt-2 md:mt-0 italic text-center md:text-left">Capture the Wonders of Egypt Through Your Lens.</p>
+        </div>
+    </header>
+
+    <!-- Mobile-friendly navigation toggle (added) -->
+    <div class="md:hidden bg-gray-800 text-white p-4 flex justify-between items-center">
+        <button id="mobile-menu-button" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        <div class="flex items-center space-x-4">
+            <button class="snipcart-checkout flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-3 rounded-full hover:bg-accent-dark transition duration-300 shadow-md text-sm">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                Cart (<span class="snipcart-total-items"></span>)
+            </button>
+        </div>
+    </div>
+
+    <nav id="mobile-menu" class="hidden md:block bg-gray-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+            <ul class="flex flex-wrap justify-center md:justify-start space-x-0 md:space-x-6 space-y-2 md:space-y-0 text-base md:text-lg font-medium">
+                <li><a href="index.html" class="block hover:text-accent-light transition duration-300 py-1 px-2">Home</a></li>
+                <li><a href="about.html" class="block hover:text-accent-light transition duration-300 py-1 px-2">About Us</a></li>
+                <li><a href="tours.html" class="block hover:text-accent-light transition duration-300 py-1 px-2">Our Tours</a></li>
+                <li><a href="gallery.html" class="block hover:text-accent-light transition duration-300 py-1 px-2">Gallery</a></li>
+                <li><a href="contact.html" class="block hover:text-accent-light transition duration-300 py-1 px-2">Contact Us</a></li>
+                <li><a href="faqs.html" class="block hover:text-accent-light transition duration-300 py-1 px-2">FAQs</a></li>
+            </ul>
+            <div class="mt-3 md:mt-0 flex items-center space-x-4">
+                <div class="relative group hidden md:block">
+                    <button class="flex items-center text-white hover:text-accent-light focus:outline-none">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M3 17h12M17 6v12M17 6h2M17 18h2M17 18v-6"></path></svg>
+                        English
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-32 bg-gray-700 rounded-md shadow-lg py-1 hidden group-hover:block">
+                        <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">العربية (Coming Soon)</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">Deutsch (Coming Soon)</a>
+                    </div>
+                </div>
+                <button class="snipcart-checkout hidden md:flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    Cart (<span class="snipcart-total-items"></span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <section class="relative bg-cover bg-center h-screen-75 flex items-center justify-center text-center p-4 md:p-6" style="background-image: url('images/pyramids-hero.jpg');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative z-10 text-white max-w-4xl mx-auto px-4">
+                <h1 class="text-3xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg text-accent-light">
+                    Embark on an Unforgettable Photography Tour in Egypt
+                </h1>
+                <p class="text-base md:text-xl mb-6 md:mb-8 drop-shadow-md">
+                    Capture the magic of ancient wonders and vibrant culture through your lens with our expert-led tours.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3 md:space-x-4">
+                    <a href="tours.html" class="mobile-btn bg-accent-light text-primary-dark font-bold py-2 md:py-3 px-6 md:px-8 rounded-full text-sm md:text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl">
+                        Explore Tours
+                    </a>
+                    <a href="contact.html" class="mobile-btn bg-white text-primary-dark font-bold py-2 md:py-3 px-6 md:px-8 rounded-full text-sm md:text-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-xl">
+                        Book Photoshoot
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 md:px-6 py-12 md:py-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mb-6 md:mb-8">Welcome to Egypt Photography Tours</h2>
+            <p class="text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-4 md:mb-6">
+                Step into a world where ancient history meets breathtaking landscapes, all waiting to be captured through your lens. At Egypt Photography Tours, we are passionate about revealing the unparalleled beauty of Egypt to photographers of all levels.
+            </p>
+            <p class="text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+                Our expertly curated <strong>Egypt tours</strong> go beyond conventional sightseeing, offering unique photographic opportunities, personalized guidance from professional photographers, and authentic cultural encounters.
+            </p>
+        </section>
+
+        <section class="bg-gray-100 py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mb-8 md:mb-12">Why Choose Egypt Photography Tours?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                    <!-- Cards remain the same but with adjusted padding -->
+                    <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
+                        <svg class="w-12 md:w-16 h-12 md:h-16 text-accent-light mb-3 md:mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <h3 class="text-xl md:text-2xl font-semibold text-primary-dark mb-2 md:mb-3">Expert Photography Guides</h3>
+                        <p class="text-sm md:text-md leading-relaxed">Our expert photography guides in Egypt are not just seasoned photographers; they are licensed Egyptologists and local cultural specialists.</p>
+                    </div>
+                    <!-- Other cards follow same pattern -->
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 md:px-6 py-12 md:py-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mb-8 md:mb-12">Our Featured Photography Tours</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative tour-card">
+                    <span class="sale-tag">Special Offer!</span>
+                    <img src="images/pyramids-private-tour.jpg" alt="Private Guided Tour of Giza Pyramids and Sphinx with professional photography" class="w-full h-48 md:h-56 object-cover">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-xl md:text-2xl font-semibold text-primary-dark mb-2">Private Pyramids Guided Tour + Photography</h3>
+                        <p class="text-gray-700 mb-4 text-left text-sm md:text-base">Step into ancient history on this immersive one-day private tour of the Great Pyramids of Giza and the Sphinx.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-base md:text-lg font-bold text-accent-dark">Starts $150 USD</span>
+                            <span class="text-xs md:text-sm text-gray-500">4-5 hours</span>
+                        </div>
+                        <a href="tour-pyramids-private.html" class="block w-full bg-accent-light text-primary-dark font-bold py-2 md:py-3 px-4 md:px-6 rounded-full hover:bg-accent-dark transition duration-300 text-center text-sm md:text-base">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+                <!-- Other tour cards follow same pattern -->
+            </div>
+        </section>
+
+        <section class="bg-primary-dark py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-accent-light mb-8 md:mb-12">What Our Photographers Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center testimonial-card">
+                        <div class="text-xl md:text-2xl text-accent-light mb-2 md:mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-sm md:text-lg mb-3 md:mb-4">"We had a great time on this experience with Hossam! He was very helpful and patient with our group!"</p>
+                        <p class="font-semibold text-primary-dark text-sm md:text-base">- Daniel</p>
+                    </div>
+                    <!-- Other testimonials follow same pattern -->
+                </div>
+                <a href="faqs.html" class="mt-8 md:mt-10 inline-block bg-accent-light text-primary-dark font-bold py-2 md:py-3 px-6 md:px-8 rounded-full text-sm md:text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl">
+                    Read All Reviews
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary-dark text-white py-8 md:py-10 mt-auto">
+        <div class="container mx-auto px-4 md:px-6 text-center md:flex md:justify-between md:items-center">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-xl md:text-2xl font-bold text-accent-light mb-2">Egypt Photography Tours</h3>
+                <p class="text-xs md:text-sm">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="font-semibold text-accent-light mb-2 text-sm md:text-base">Quick Links</h4>
+                <ul class="text-xs md:text-sm">
+                    <li><a href="index.html" class="hover:text-accent-light transition duration-300 block py-1">Home</a></li>
+                    <li><a href="about.html" class="hover:text-accent-light transition duration-300 block py-1">About Us</a></li>
+                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300 block py-1">Our Tours</a></li>
+                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 block py-1">Gallery</a></li>
+                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300 block py-1">Contact Us</a></li>
+                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 block py-1">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-accent-light mb-2 text-sm md:text-base">Connect With Us</h4>
+                <p class="text-xs md:text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
+                <p class="text-xs md:text-sm">Address: Abou Elhool, Nazlet El-Samman, Giza</p>
+                
+                <!-- Updated Social Media Icons with your links -->
+                <div class="flex justify-center md:justify-start space-x-4 mt-3">
+                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-xl" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hossam_artistic" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-xl" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-xl" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div hidden id="snipcart" data-api-key="YzhiNTE1NDctZmU3YS00ZTQ4LWFlNmMtNWZhYjViMjNmNTI3NjM4ODk0NzM0NjE2NTQyNTM0"></div>
+    <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+    
+    <!-- Mobile menu toggle script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
