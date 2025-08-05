@@ -9,20 +9,93 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Added Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8;
             color: #333;
         }
-        /* ... (all other existing styles remain exactly the same) ... */
+        .text-primary-dark { color: #2C3E50; }
+        .bg-accent-light { background-color: #FFD700; }
+        .text-accent-light { color: #FFD700; }
+        .bg-accent-dark { background-color: #E2B700; }
+        .text-accent-dark { color: #E2B700; }
+        .bg-primary-dark { background-color: #1a202c; }
+        .sale-tag {
+            background-color: #E74C3C;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+        }
+        .selection-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .selection-group button {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        .selection-group button.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .selection-group button:not(.selected):hover {
+            background-color: #e0e0e0;
+        }
+        input[type="date"] {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.375rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .paypal-buy-button {
+            display: block;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .paypal-buy-button:hover {
+            background-color: #218838;
+        }
+        .paypal-buy-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
-    <!-- ... (all other content remains exactly the same until footer) ... -->
-
+    <!-- Rest of your HTML content remains exactly the same until footer -->
+    
     <footer class="bg-primary-dark text-white py-10 mt-auto">
         <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
             <div class="mb-6 md:mb-0">
@@ -45,7 +118,6 @@
                 <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
                 <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
                 <div class="flex justify-center md:justify-start space-x-4 mt-3">
-                    <!-- Replaced SVG icons with Font Awesome -->
                     <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.instagram.com/hossam_artistic/" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -55,6 +127,107 @@
         </div>
     </footer>
 
-    <!-- ... (script section remains exactly the same) ... -->
+    <script>
+        // Define prices for each tour (ADJUST THESE PRICES AS NEEDED)
+        const tourPrices = {
+            'pyramids-private': { solo: 150.00, couple: 250.00 },
+            'cairo-giza-2day': { solo: 350.00, couple: 600.00 },
+            'alexandria-tour': { solo: 220.00, couple: 380.00 },
+            'egypt-discovery-7day': { solo: 1900.00, couple: 3500.00 }
+        };
+
+        // Get all tour cards
+        const tourCards = document.querySelectorAll('[data-tour-id]');
+
+        // Set min date to today for all date inputs
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        const minDate = `${yyyy}-${mm}-${dd}`;
+
+        // Iterate over each tour card and initialize its logic
+        tourCards.forEach(card => {
+            const tourId = card.dataset.tourId;
+            const typeButtons = card.querySelectorAll('.type-btn');
+            const dateInput = card.querySelector('.date-input');
+            const displayPriceElement = card.querySelector('.display-price');
+            const paypalForm = card.querySelector('.paypal-form');
+            const buyButton = paypalForm.querySelector('.paypal-buy-button');
+
+            // Hidden input references for PayPal form
+            const itemNameInput = paypalForm.querySelector('input[name="item_name"]');
+            const amountInput = paypalForm.querySelector('input[name="amount"]');
+            const os0Input = paypalForm.querySelector('input[name="os0"]');
+            const os1Input = paypalForm.querySelector('input[name="os1"]');
+
+            let selectedType = null;
+            let selectedDate = null;
+
+            // Set min attribute for date input
+            dateInput.min = minDate;
+
+            function updateBuyButtonState() {
+                if (selectedType && selectedDate) {
+                    buyButton.removeAttribute('disabled');
+                    buyButton.textContent = 'Book Now via PayPal';
+                } else {
+                    buyButton.setAttribute('disabled', 'true');
+                    buyButton.textContent = 'Select Options to Book';
+                }
+            }
+
+            function updatePriceAndPayPalForm() {
+                let currentPrice = 0;
+                if (selectedType && tourPrices[tourId]) {
+                    currentPrice = tourPrices[tourId][selectedType];
+                }
+                displayPriceElement.textContent = `$${currentPrice.toFixed(2)} USD`;
+                amountInput.value = currentPrice.toFixed(2);
+            }
+
+            function updatePayPalCustomFields() {
+                const baseItemName = itemNameInput.value.split('(')[0].trim();
+
+                if (selectedType) {
+                    os0Input.value = selectedType.charAt(0).toUpperCase() + selectedType.slice(1);
+                    itemNameInput.value = `${baseItemName} (${os0Input.value})`;
+                } else {
+                    os0Input.value = '';
+                    itemNameInput.value = baseItemName;
+                }
+
+                if (selectedDate) {
+                    os1Input.value = selectedDate;
+                } else {
+                    os1Input.value = '';
+                }
+            }
+
+            // Event listeners for type buttons
+            typeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    selectedType = button.dataset.type;
+                    typeButtons.forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    updatePriceAndPayPalForm();
+                    updatePayPalCustomFields();
+                    updateBuyButtonState();
+                });
+            });
+
+            // Event listener for date input
+            dateInput.addEventListener('change', () => {
+                selectedDate = dateInput.value;
+                updatePayPalCustomFields();
+                updateBuyButtonState();
+            });
+
+            // Initial updates when page loads for each card
+            updatePriceAndPayPalForm();
+            updatePayPalCustomFields();
+            updateBuyButtonState();
+        });
+    </script>
 </body>
 </html>
