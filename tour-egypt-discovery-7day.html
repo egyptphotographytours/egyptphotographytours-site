@@ -5,15 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-Day Egypt Discovery Tour - Egypt Photography Tours</title>
     <meta name="description" content="Embark on an epic 7-day photography adventure through Egypt, covering Cairo, Luxor, and Aswan.">
+    <meta name="keywords" content="Egypt photography tour, Nile cruise photography, Luxor photography, Aswan photography, Egypt travel package">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.egyptphotographytours.com/7-day-egypt-discovery.html">
+    <meta property="og:title" content="Ultimate 7-Day Egypt Discovery Photography Tour">
+    <meta property="og:description" content="Capture Egypt's ancient wonders on a 7-day photography adventure through Cairo, Luxor, and Aswan.">
+    <meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.egyptphotographytours.com/7-day-egypt-discovery.html">
+    <meta property="twitter:title" content="Ultimate 7-Day Egypt Discovery Photography Tour">
+    <meta property="twitter:description" content="Capture Egypt's ancient wonders on a 7-day photography adventure through Cairo, Luxor, and Aswan.">
+    <meta property="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.egyptphotographytours.com/7-day-egypt-discovery.html">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristTrip",
+        "name": "Ultimate 7-Day Egypt Discovery Photography Tour",
+        "description": "Comprehensive photography tour covering Cairo, Luxor, Aswan and Nile cruise with expert guidance.",
+        "image": "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
+        "url": "https://www.egyptphotographytours.com/7-day-egypt-discovery.html",
+        "offers": {
+            "@type": "Offer",
+            "price": "1900.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-01-01"
+        },
+        "itinerary": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Pyramids of Giza and Sphinx"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Egyptian Museum / NMEC"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Karnak Temple"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Valley of the Kings"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Philae Temple"
+                    }
+                }
+            ]
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Egypt Photography Tours",
+            "url": "https://www.egyptphotographytours.com",
+            "sameAs": [
+                "https://www.facebook.com/egyptphotographytours",
+                "https://www.instagram.com/hossam_artistic",
+                "https://www.tiktok.com/@egyptphotographytours",
+                "https://www.youtube.com/@egyptphotographytours"
+            ]
+        },
+        "departureTime": "08:00",
+        "arrivalTime": "18:00",
+        "duration": "P7D"
+    }
+    </script>
+    
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8;
             color: #333;
+            background-image: linear-gradient(to bottom, #f8f8f8, #eef2f7);
         }
         .text-primary-dark { color: #2C3E50; }
         .bg-accent-light { background-color: #FFD700; }
@@ -22,12 +124,12 @@
         .text-accent-dark { color: #E2B700; }
         .bg-primary-dark { background-color: #1a202c; }
         .sale-tag {
-            background-color: #E74C3C; /* Red for attention */
+            background-color: #E74C3C;
             color: white;
             padding: 0.25rem 0.75rem;
-            border-radius: 9999px; /* Pill shape */
+            border-radius: 9999px;
             font-weight: bold;
-            font-size: 0.75rem; /* text-xs */
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             position: absolute;
@@ -35,7 +137,6 @@
             left: 1rem;
             z-index: 10;
         }
-        /* Custom styles for solo/couple/date input */
         .selection-group {
             display: flex;
             gap: 0.5rem;
@@ -90,6 +191,81 @@
             background-color: #cccccc;
             cursor: not-allowed;
         }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .social-icons a {
+            color: white;
+            transition: color 0.3s ease;
+            font-size: 1.5rem;
+        }
+        .social-icons a:hover {
+            color: #FFD700;
+        }
+        .itinerary-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .itinerary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .day-label {
+            background-color: #2C3E50;
+            color: white;
+            padding: 8px 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 20px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #FFD700;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2C3E50;
+            border: 3px solid #FFD700;
+        }
+        .photo-icon {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+        .package-badge {
+            background: #FFD700;
+            color: #2C3E50;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -131,80 +307,180 @@
     </nav>
 
     <main class="flex-grow container mx-auto px-6 py-16">
-        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden relative">
+        <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden relative">
             <span class="sale-tag">Best Seller!</span>
             <img src="images/egypt-discovery-7day.jpg" alt="7-Day Egypt Discovery Photography Tour covering Cairo, Luxor, and Aswan" class="w-full h-96 object-cover">
             <div class="p-8">
-                <h1 class="text-4xl font-extrabold text-primary-dark mb-4">Ultimate 7-Day Egypt Discovery Photography Tour (Cairo, Luxor, Aswan)</h1>
-                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                    Embark on the ultimate Egyptian adventure designed for avid photographers and history buffs! This comprehensive 7-day tour takes you through the most iconic historical sites in Cairo, Luxor, and Aswan, including a magical Nile River cruise. With expert guidance and dedicated photography sessions, you'll capture the essence of ancient Egypt like never before.
+                <h1 class="text-4xl font-extrabold text-primary-dark mb-4">Ultimate 7-Day Egypt Discovery Photography Tour</h1>
+                <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                    Experience the ultimate Egyptian adventure designed for photographers! This comprehensive tour takes you through Cairo, Luxor, and Aswan, including a magical Nile River cruise. Capture stunning images of ancient wonders with expert photography guidance.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div>
-                        <h2 class="text-2xl font-semibold text-primary-dark mb-3">Tour Itinerary Highlights:</h2>
-                        <ul class="text-gray-700 list-disc list-inside space-y-2">
-                            <li>**Day 1-2: Cairo & Giza:** Pyramids, Sphinx, Egyptian Museum/NMEC, Khan el-Khalili Bazaar.</li>
-                            <li>**Day 3-5: Luxor & Nile Cruise:** Luxor Temple, Karnak Temple, Valley of the Kings, Hatshepsut Temple. Enjoy a traditional Nile cruise experience.</li>
-                            <li>**Day 5-6: Aswan:** High Dam, Philae Temple, Unfinished Obelisk, relaxing felucca ride.</li>
-                            <li>**Day 7: Departure:** Transfer back to Cairo for departure.</li>
-                            <li>Internal flights (Cairo-Luxor, Aswan-Cairo) included.</li>
-                            <li>Daily professional photography sessions at key locations.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-semibold text-primary-dark mb-3">Inclusions:</h2>
-                        <ul class="text-gray-700 list-disc list-inside space-y-2">
-                            <li>✅ Expert Egyptologist guide throughout the tour.</li>
-                            <li>✅ All domestic flights within Egypt (Cairo-Luxor, Aswan-Cairo).</li>
-                            <li>✅ All entrance fees to mentioned sites.</li>
-                            <li>✅ 3-night 5-star Nile Cruise (full board).</li>
-                            <li>✅ All private, modern, air-conditioned transfers.</li>
-                            <li>✅ Professional photography service (extensive digital photo package).</li>
-                            <li>✅ Bottled water during tours.</li>
-                        </ul>
-                        <h2 class="text-2xl font-semibold text-primary-dark mt-6 mb-3">Exclusions:</h2>
-                        <ul class="text-gray-700 list-disc list-inside space-y-2">
-                            <li>❌ International flights.</li>
-                            <li>❌ Accommodation in Cairo (can be added upon request).</li>
-                            <li>❌ Lunches/Dinners not specified on cruise.</li>
-                            <li>❌ Gratuities (recommended).</li>
-                            <li>❌ Optional activities (e.g., Hot Air Balloon ride in Luxor).</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="border-t border-gray-200 pt-6 mt-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-lg text-gray-800 font-semibold">Duration:</span>
-                        <span class="text-xl font-bold text-primary-dark">7 Days / 6 Nights</span>
-                    </div>
-
-                    <div class="mb-4" data-tour-id="egypt-discovery-7day">
-                        <label class="block text-xl font-semibold text-gray-800 mb-2">Participant Type:</label>
-                        <div class="selection-group">
-                            <button class="type-btn" data-type="solo">Solo Traveler</button>
-                            <button class="type-btn" data-type="couple">Couple / Two Persons</button>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="lg:col-span-2">
+                        <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+                            <h2 class="text-2xl font-semibold text-primary-dark mb-4">Tour Highlights</h2>
+                            <ul class="text-gray-700 list-disc pl-6 space-y-3">
+                                <li>Private guided tour of the Giza Plateau with Egyptologist</li>
+                                <li>Exclusive photography sessions at each historical site</li>
+                                <li>3-night luxury Nile cruise with full-board accommodation</li>
+                                <li>Domestic flights between Cairo, Luxor and Aswan</li>
+                                <li>Professional photography guidance throughout the tour</li>
+                                <li>Digital delivery of edited photos after the tour</li>
+                            </ul>
+                        </div>
+                        
+                        <h2 class="text-2xl font-semibold text-primary-dark mb-6 border-b pb-3">Detailed Itinerary</h2>
+                        
+                        <div class="space-y-6">
+                            <!-- Day 1 -->
+                            <div class="itinerary-card">
+                                <div class="day-label">Day 1: Cairo Arrival</div>
+                                <div class="p-5">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-camera photo-icon"></i>Pyramids & Sphinx Photography</div>
+                                            <p class="text-gray-600">Morning session at Giza Plateau capturing the pyramids and Sphinx in golden light.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-landmark photo-icon"></i>Egyptian Museum/NMEC</div>
+                                            <p class="text-gray-600">Explore ancient artifacts with special access for photography.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-shopping-cart photo-icon"></i>Khan el-Khalili Bazaar</div>
+                                            <p class="text-gray-600">Capture vibrant market scenes and traditional crafts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Day 2 -->
+                            <div class="itinerary-card">
+                                <div class="day-label">Day 2: Cairo to Luxor</div>
+                                <div class="p-5">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-plane photo-icon"></i>Flight to Luxor</div>
+                                            <p class="text-gray-600">Morning transfer to airport for flight to Luxor.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-monument photo-icon"></i>Luxor Temple</div>
+                                            <p class="text-gray-600">Sunset photography session at Luxor Temple.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-ship photo-icon"></i>Nile Cruise Check-in</div>
+                                            <p class="text-gray-600">Board your luxury Nile cruise ship for 3-night journey.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Day 3 -->
+                            <div class="itinerary-card">
+                                <div class="day-label">Day 3: Luxor West Bank</div>
+                                <div class="p-5">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-landmark photo-icon"></i>Valley of the Kings</div>
+                                            <p class="text-gray-600">Morning exploration and photography in ancient tombs.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-mountain photo-icon"></i>Hatshepsut Temple</div>
+                                            <p class="text-gray-600">Capture this unique mortuary temple against mountain backdrop.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-archway photo-icon"></i>Karnak Temple Complex</div>
+                                            <p class="text-gray-600">Sunset photography at Egypt's largest ancient religious site.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Day 4-7 -->
+                            <div class="itinerary-card">
+                                <div class="day-label">Days 4-7: Nile Cruise & Aswan</div>
+                                <div class="p-5">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-water photo-icon"></i>Nile River Photography</div>
+                                            <p class="text-gray-600">Capture daily life along the Nile during cruise sailing.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-gopuram photo-icon"></i>Edfu & Kom Ombo Temples</div>
+                                            <p class="text-gray-600">Visit and photograph these unique riverside temples.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-dam photo-icon"></i>Aswan Highlights</div>
+                                            <p class="text-gray-600">High Dam, Philae Temple, and Unfinished Obelisk photography.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-sailboat photo-icon"></i>Felucca Ride at Sunset</div>
+                                            <p class="text-gray-600">Golden hour photography during traditional boat ride.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-plane-departure photo-icon"></i>Return to Cairo</div>
+                                            <p class="text-gray-600">Flight back to Cairo for international departure.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-xl font-semibold text-gray-800 mb-2">Select Your Preferred Start Date:</label>
-                        <input type="date" class="date-input">
-                    </div>
+                    
+                    <div>
+                        <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 sticky top-6">
+                            <h2 class="text-2xl font-semibold text-primary-dark mb-6 text-center">Book Your Adventure</h2>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-lg text-gray-800 font-semibold">Duration:</span>
+                                <span class="text-xl font-bold text-primary-dark">7 Days / 6 Nights</span>
+                            </div>
+                            
+                            <div class="mb-4" data-tour-id="egypt-discovery-7day">
+                                <label class="block text-xl font-semibold text-gray-800 mb-2">Participant Type:</label>
+                                <div class="selection-group">
+                                    <button class="type-btn" data-type="solo">Solo Traveler</button>
+                                    <button class="type-btn" data-type="couple">Couple / Two Persons</button>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-xl font-semibold text-gray-800 mb-2">Select Your Preferred Start Date:</label>
+                                <input type="date" class="date-input w-full p-3 border border-gray-300 rounded-lg">
+                            </div>
+                            
+                            <div class="flex items-center justify-between mt-6 mb-6">
+                                <span class="text-2xl font-bold text-accent-dark">Total Price: <span class="display-price">$0.00 USD</span></span>
+                            </div>
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                                <h3 class="font-semibold text-blue-800 mb-2">What's Included:</h3>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>All domestic flights within Egypt</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>3-night 5-star Nile Cruise</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Professional photography service</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>All entrance fees to sites</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private air-conditioned transportation</li>
+                                </ul>
+                            </div>
 
-                    <div class="flex items-center justify-between mt-6 mb-6">
-                        <span class="text-2xl font-bold text-accent-dark">Total Price: <span class="display-price">$0.00 USD</span></span>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                                <input type="hidden" name="cmd" value="_xclick">
+                                <input type="hidden" name="business" value="hossam0114@hotmail.com"> 
+                                <input type="hidden" name="item_name" value="7-Day Egypt Discovery Tour">
+                                <input type="hidden" name="amount" value="0.00"> 
+                                <input type="hidden" name="currency_code" value="USD">
+                                <input type="hidden" name="on0" value="Booking Type">
+                                <input type="hidden" name="os0" value=""> 
+                                <input type="hidden" name="on1" value="Booking Date">
+                                <input type="hidden" name="os1" value=""> 
+                                <input type="hidden" name="return" value="https://your-domain.com/payment-success.html"> 
+                                <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html"> 
+                                <input type="hidden" name="no_shipping" value="1">
+                                <button type="submit" class="paypal-buy-button" disabled>Select Options to Book</button>
+                            </form>
+                        </div>
                     </div>
-
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="hossam0114@hotmail.com"> <input type="hidden" name="item_name" value="7-Day Egypt Discovery Tour">
-                        <input type="hidden" name="amount" value="0.00"> <input type="hidden" name="currency_code" value="USD">
-                        <input type="hidden" name="on0" value="Booking Type">
-                        <input type="hidden" name="os0" value=""> <input type="hidden" name="on1" value="Booking Date">
-                        <input type="hidden" name="os1" value=""> <input type="hidden" name="return" value="https://your-domain.com/payment-success.html"> <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html"> <input type="hidden" name="no_shipping" value="1">
-                        <button type="submit" class="paypal-buy-button" disabled>Select Options to Book</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -231,17 +507,26 @@
                 <h4 class="font-semibold text-accent-light mb-2">Connect With Us</h4>
                 <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
                 <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <div class="flex justify-center md:justify-start space-x-4 mt-3">
-                    <a href="#" class="text-white hover:text-accent-light transition duration-300" aria-label="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 .27-2.5h2.16V2.36C16.89 2.22 15.53 2 13.92 2c-3.1 0-5.18 1.95-5.18 5.37V9.5H6v4h2.75V22h4.5V13.5z"/></svg></a>
-                    <a href="#" class="text-white hover:text-accent-light transition duration-300" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 4A2.88 2.88 0 005 7.8v8.4c0 1.6.87 2.3 2.1 2.3h8.2c1.23 0 2.1-.7 2.1-2.3V7.8c0-1.6-.87-2.3-2.1-2.3H7.6zm9.6.25a1.25 1.25 0 01-1.25 1.25 1.25 1.25 0 01-1.25-1.25 1.25 1.25 0 011.25-1.25 1.25 1.25 0 011.25 1.25zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/></svg></a>
-                    <a href="#" class="text-white hover:text-accent-light transition duration-300" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.9 2.06c-1.87-.2-6.5-.2-8.4 0-.67.07-1.34.29-1.9.72-.88.66-1.5 1.5-1.9 2.5-.2.5-.4 1-.4 1.5-.06.87-.06 2.33-.06 3.23v1.86c0 .9.06 2.36.06 3.23 0 .5.2 1 .4 1.5.4 1 1.02 1.84 1.9 2.5.56.43 1.23.65 1.9.72 1.9.2 6.5.2 8.4 0 .67-.07 1.34-.29 1.9-.72.88-.66 1.5-1.5 1.9-2.5.2-.5.4-1 .4-1.5.06-.87.06-2.33.06-3.23v-1.86c0-.9-.06-2.36-.06-3.23 0-.5-.2-1-.4-1.5-.4-1-1.02-1.84-1.9-2.5-.56-.43-1.23-.65-1.9-.72zm-7.9 14.5c-.3 0-.6 0-.9-.02-1.2-.07-2-.22-2.5-.6-.3-.2-.5-.5-.6-.8-.06-.3-.06-.5-.06-.8V9.5c0-.3.02-.5.06-.8.1-.3.3-.6.6-.8.5-.4 1.3-.53 2.5-.6.3-.02.6-.02.9-.02 1.2 0 2 .02 2.5.06.3.06.5.3.6.6.06.3.06.5.06.8v4.5c0 .3-.02.5-.06.8-.1.3-.3.6-.6.8-.5.4-1.3.53-2.5.6-.3.02-.6.02-.9.02z"/></svg></a>
+                <div class="social-icons mt-3">
+                    <a href="https://www.facebook.com/egyptphotographytours" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hossam_artistic" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" rel="noopener" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" rel="noopener" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        const tourId = 'egypt-discovery-7day'; // Define the specific tour ID for this page
+        const tourId = 'egypt-discovery-7day';
 
         const tourPrices = {
             'pyramids-private': { solo: 150.00, couple: 250.00 },
@@ -291,7 +576,7 @@
         }
 
         function updatePayPalCustomFields() {
-            const baseItemName = "7-Day Egypt Discovery Tour"; // Fixed base name for this specific tour
+            const baseItemName = "7-Day Egypt Discovery Tour";
 
             if (selectedType) {
                 os0Input.value = selectedType.charAt(0).toUpperCase() + selectedType.slice(1);
