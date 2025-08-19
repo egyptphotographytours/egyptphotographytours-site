@@ -1,58 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ Optimized Title Tag -->
   <title>Egypt Photography Tours | Pyramids, Cairo & Alexandria</title>
-  <!-- Other meta tags and structured data remain unchanged -->
+
+  <!-- ✅ SEO Meta Description -->
+  <meta name="description" content="Book private Egypt photography tours with expert guides. Capture the Pyramids, Cairo & Alexandria. Professional photos, daily tours. Book now!">
+
+  <!-- ✅ Robots -->
+  <meta name="robots" content="index, follow">
+
+  <!-- ✅ Canonical URL -->
+  <link rel="canonical" href="https://www.egyptphotographytours.com/" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- ✅ Social (OG Tags) -->
+  <meta property="og:title" content="Photography Tours in Egypt | Pyramids, Cairo & Alexandria Photo Adventures">
+  <meta property="og:description" content="Explore Egypt through your lens with private guided photography tours at the Pyramids, Cairo, Alexandria, and more.">
+  <meta property="og:image" content="https://www.egyptphotographytours.com/logo.png">
+  <meta property="og:url" content="https://www.egyptphotographytours.com/">
+  <meta property="og:type" content="website">
+
+  <!-- ✅ Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Egypt Photography Tours",
+    "image": "https://www.egyptphotographytours.com/logo.png",
+    "description": "Private guided photography tours in Egypt including the Pyramids, Cairo, Alexandria, and more. Professional photo sessions and expert local guides.",
+    "url": "https://www.egyptphotographytours.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+      "addressLocality": "Giza",
+      "addressRegion": "Giza Governorate",
+      "postalCode": "12557",
+      "addressCountry": "EG"
+    },
+    "openingHours": "Mo-Su 09:00-18:00",
+    "priceRange": "$$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "27",
+      "bestRating": "5"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": "Daniel",
+        "datePublished": "2024-05-15",
+        "reviewBody": "We had a great time on this experience with Hossam! He was very helpful and patient with our group!",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": "Cristina",
+        "datePublished": "2024-04-22",
+        "reviewBody": "Hossam is a brilliant photographer with amazing skills. Plenty of fantastic pictures with the astonishing view of the pyramids.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": "Eduardo",
+        "datePublished": "2024-03-30",
+        "reviewBody": "Hossam provided a magnificent tour of the Giza Pyramids. Always thoughtful, communicative and knowledgeable.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/EgyptPhotographyTours",
+      "https://www.instagram.com/hossam_artistic/",
+      "https://www.tiktok.com/@egyptphotographytours",
+      "https://www.youtube.com/@Egyptphotographytours"
+    ]
+  }
+  </script>
+
+  <!-- ✅ TouristAttraction Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": "Pyramids of Giza",
+    "description": "The Great Pyramid of Giza is the oldest and largest of the three pyramids in the Giza pyramid complex.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+      "addressLocality": "Giza",
+      "addressRegion": "Giza Governorate",
+      "postalCode": "12557",
+      "addressCountry": "EG"
+    },
+    "image": "https://www.egyptphotographytours.com/images/pyramids-of-giza.jpg"
+  }
+  </script>
+
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* Existing styles remain unchanged */
-    
-    /* Language Switcher Styles */
-    .language-switcher-container {
-      position: relative;
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f8f8;
+        color: #333;
     }
-    
-    .language-dropdown {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 180px;
-      background: rgba(31, 41, 55, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-top: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      display: none;
-      z-index: 1000;
+    .text-primary-dark { color: #2C3E50; }
+    .bg-accent-light { background-color: #FFD700; }
+    .text-accent-light { color: #FFD700; }
+    .bg-accent-dark { background-color: #E2B700; }
+    .text-accent-dark { color: #E2B700; }
+    .bg-primary-dark { background-color: #1a202c; }
+    .sale-tag {
+        background-color: #E74C3C;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-weight: bold;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
     }
-    
-    .language-dropdown.show {
-      display: block;
-    }
-    
-    .language-option {
-      padding: 12px 20px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
-    
-    .language-option:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    
-    .language-option i {
-      margin-right: 10px;
-      font-size: 1.2rem;
-    }
+    .h-screen-75 { height: 75vh; }
   </style>
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
@@ -70,51 +160,27 @@
     <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
             <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
-                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_home">Home</a></li>
-                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_about">About Us</a></li>
-                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_tours">Our Tours</a></li>
-                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_contact">Contact Us</a></li>
-                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_faqs">FAQs</a></li>
+                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
+                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1">About Us</a></li>
+                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Our Tours</a></li>
+                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1">Gallery</a></li>
+                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contact Us</a></li>
+                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <div class="language-switcher-container relative group">
-                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none">
+                <div class="relative group">
+                    <button class="flex items-center text-white hover:text-accent-light focus:outline-none">
                         <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M3 17h12M17 6v12M17 6h2M17 18h2M17 18v-6"></path></svg>
-                        <span id="current-language">English</span>
+                        English
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div id="language-dropdown" class="language-dropdown">
-                        <div class="language-option" data-lang="en">
-                            <i class="flag-icon flag-us"></i> English
-                        </div>
-                        <div class="language-option" data-lang="es">
-                            <i class="flag-icon flag-es"></i> Español
-                        </div>
-                        <div class="language-option" data-lang="zh">
-                            <i class="flag-icon flag-cn"></i> 中文 (Chinese)
-                        </div>
-                        <div class="language-option" data-lang="ar">
-                            <i class="flag-icon flag-sa"></i> العربية (Arabic)
-                        </div>
-                        <div class="language-option" data-lang="ko">
-                            <i class="flag-icon flag-kr"></i> 한국어 (Korean)
-                        </div>
-                        <div class="language-option" data-lang="pt">
-                            <i class="flag-icon flag-pt"></i> Português
-                        </div>
-                        <div class="language-option" data-lang="fr">
-                            <i class="flag-icon flag-fr"></i> Français
-                        </div>
-                        <div class="language-option" data-lang="de">
-                            <i class="flag-icon flag-de"></i> Deutsch
-                        </div>
-                        <div class="language-option" data-lang="it">
-                            <i class="flag-icon flag-it"></i> Italiano
-                        </div>
+                    <div class="absolute right-0 mt-2 w-32 bg-gray-700 rounded-md shadow-lg py-1 hidden group-hover:block">
+                        <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">العربية (Coming Soon)</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">Deutsch (Coming Soon)</a>
                     </div>
                 </div>
-                <button class="snipcart-checkout flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md" data-i18n="nav_cart">
+                <button class="snipcart-checkout flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     Cart (<span class="snipcart-total-items"></span>)
                 </button>
@@ -126,17 +192,17 @@
         <section class="relative bg-cover bg-center h-screen-75 flex items-center justify-center text-center p-6" style="background-image: url('images/hero-image.jpg');">
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="relative z-10 text-white max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg text-accent-light" data-i18n="hero_title">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg text-accent-light">
                     Embark on unforgettable photography tours in Egypt.
                 </h1>
-                <p class="text-lg md:text-xl mb-8 drop-shadow-md" data-i18n="hero_subtitle">
+                <p class="text-lg md:text-xl mb-8 drop-shadow-md">
                     Capture the magic of the Pyramids, ancient temples, and vibrant markets with expert guides. Book your dream Egyptian photoshoot adventure!
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="tours.html" class="bg-accent-light text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl" data-i18n="hero_button1">
+                    <a href="tours.html" class="bg-accent-light text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl">
                         Explore Our Egypt Photography Tours
                     </a>
-                    <a href="contact.html" class="bg-white text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-xl" data-i18n="hero_button2">
+                    <a href="contact.html" class="bg-white text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-xl">
                         Book Your Dream Pyramids Photoshoot
                     </a>
                 </div>
@@ -144,81 +210,166 @@
         </section>
 
         <section class="container mx-auto px-6 py-16 text-center">
-            <h2 class="text-4xl font-bold text-primary-dark mb-8" data-i18n="welcome_title">Welcome to Egypt Photography Tours</h2>
-            <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-6" data-i18n="welcome_p1">
-                Step into a world where ancient history meets breathtaking landscapes, all waiting to be captured through your lens. At Egypt Photography Tours, we are passionate about revealing the unparalleled beauty of Egypt to photographers of all levels. From the iconic Pyramids of Giza to the serene flow of the Nile River and the bustling charm of Cairo's historic streets, we design immersive journeys that ensure you not only see Egypt but truly capture its soul.
+            <h2 class="text-4xl font-bold text-primary-dark mb-8">Welcome to Egypt Photography Tours</h2>
+            <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+                Step into a world where ancient history meets breathtaking landscapes, all waiting to be captured through your lens. At Egypt Photography Tours, we are passionate about revealing the unparalleled beauty of Egypt to photographers of all levels. From the iconic **Pyramids of Giza** to the serene flow of the **Nile River** and the bustling charm of **Cairo's historic streets**, we design immersive journeys that ensure you not only see Egypt but truly *capture* its soul.
             </p>
-            <p class="text-lg leading-relaxed max-w-3xl mx-auto" data-i18n="welcome_p2">
-                Our expertly curated Egypt tours go beyond conventional sightseeing, offering unique photographic opportunities, personalized guidance from professional photographers, and authentic cultural encounters. Whether you're a seasoned pro looking for exclusive access or a budding enthusiast eager to master your craft, embark on an unforgettable Egyptian photography adventure with us. Let's make your next masterpiece together.
+            <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                Our expertly curated **Egypt tours** go beyond conventional sightseeing, offering unique photographic opportunities, personalized guidance from professional photographers, and authentic cultural encounters. Whether you're a seasoned pro looking for exclusive access or a budding enthusiast eager to master your craft, embark on an **unforgettable Egyptian photography adventure** with us. Let's make your next masterpiece together.
             </p>
         </section>
 
         <section class="bg-gray-100 py-16">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-primary-dark mb-12" data-i18n="why_title">Why Choose Egypt Photography Tours for Your Unforgettable Journey?</h2>
+                <h2 class="text-4xl font-bold text-primary-dark mb-12">Why Choose Egypt Photography Tours for Your Unforgettable Journey?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        <h3 class="text-2xl font-semibold text-primary-dark mb-3" data-i18n="why1_title">Expert Photography Guides, Local Insights</h3>
-                        <p class="text-md leading-relaxed" data-i18n="why1_desc">Our expert photography guides in Egypt are not just seasoned photographers; they are licensed Egyptologists and local cultural specialists. They know the best angles, the perfect lighting conditions, and hidden gems for that unique Pyramids photoshoot or a captivating Nile photography scene. Benefit from personalized coaching and unparalleled insights into Egyptian history and culture.</p>
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-3">Expert Photography Guides, Local Insights</h3>
+                        <p class="text-md leading-relaxed">Our **expert photography guides in Egypt** are not just seasoned photographers; they are licensed Egyptologists and local cultural specialists. They know the best angles, the perfect lighting conditions, and hidden gems for that unique **Pyramids photoshoot** or a captivating **Nile photography** scene. Benefit from personalized coaching and unparalleled insights into Egyptian history and culture.</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <h3 class="text-2xl font-semibold text-primary-dark mb-3" data-i18n="why2_title">Exclusive Access & Unique Vantage Points</h3>
-                        <p class="text-md leading-relaxed" data-i18n="why2_desc">Imagine capturing the Luxor Temples at dawn without crowds, or finding the perfect spot for a stunning Egyptian sunset landscape. We leverage our deep local connections to provide exclusive access in Egypt, offering unique photographic vantage points often unavailable to general tourists. Get that shot you've always dreamed of, from the vibrant markets of Cairo to the serene landscapes of the Sinai desert.</p>
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-3">Exclusive Access & Unique Vantage Points</h3>
+                        <p class="text-md leading-relaxed">Imagine capturing the **Luxor Temples** at dawn without crowds, or finding the perfect spot for a stunning **Egyptian sunset landscape**. We leverage our deep local connections to provide **exclusive access in Egypt**, offering unique photographic vantage points often unavailable to general tourists. Get that shot you've always dreamed of, from the vibrant markets of **Cairo** to the serene landscapes of the **Sinai desert**.</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
-                        <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <h3 class="text-2xl font-semibold text-primary-dark mb-3" data-i18n="why3_title">Tailored Itineraries for Every Photographer</h3>
-                        <p class="text-md leading-relaxed" data-i18n="why3_desc">Whether you're interested in ancient architecture, street photography, portraiture, or the vast desert landscapes of Egypt, our tailored photography itineraries are designed with your passion in mind. We meticulously plan each day to optimize lighting and photographic opportunities, ensuring your focus remains on creating incredible images. From a focused Pyramids photography tour to an extensive ancient Egypt photography expedition, your journey is custom-built.</p>
+                        <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-3">Tailored Itineraries for Every Photographer</h3>
+                        <p class="text-md leading-relaxed">Whether you're interested in ancient architecture, street photography, portraiture, or the vast **desert landscapes of Egypt**, our **tailored photography itineraries** are designed with your passion in mind. We meticulously plan each day to optimize lighting and photographic opportunities, ensuring your focus remains on creating incredible images. From a focused **Pyramids photography tour** to an extensive **ancient Egypt photography expedition**, your journey is custom-built.</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
-                        <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path></svg>
-                        <h3 class="text-2xl font-semibold text-primary-dark mb-3" data-i18n="why4_title">Small Group, Personalized Learning</h3>
-                        <p class="text-md leading-relaxed" data-i18n="why4_desc">We believe in quality over quantity. Our small group Egypt tours guarantee personalized attention and ample one-on-one time with your photography guide. This intimate setting fosters a supportive environment where you can refine your skills, share experiences, and truly connect with fellow photographers. Experience the magic of Egypt travel photography with a community of like-minded individuals.</p>
+                        <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M7 12h.01M7 16h.01M16 16h.01M12 16h.01M12 12h.01M12 8h.01M7 8h.01M16 8h.01M21 21l-4.5-4.5"></path></svg>
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-3">Small Group, Personalized Learning</h3>
+                        <p class="text-md leading-relaxed">We believe in quality over quantity. Our **small group Egypt tours** guarantee personalized attention and ample one-on-one time with your photography guide. This intimate setting fosters a supportive environment where you can refine your skills, share experiences, and truly connect with fellow photographers. Experience the magic of **Egypt travel photography** with a community of like-minded individuals.</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c.045 4.095 1.563 7.844 4.368 10.053L12 21.466l4.688-2.413A12.001 12.001 0 0021.056 12c-.045-4.095-1.563-7.844-4.368-10.053z"></path></svg>
-                        <h3 class="text-2xl font-semibold text-primary-dark mb-3" data-i18n="why5_title">Seamless Logistics & Secure Travel in Egypt</h3>
-                        <p class="text-md leading-relaxed" data-i18n="why5_desc">Your peace of mind is our priority. We handle all the intricate details – from luxurious accommodations and private, air-conditioned transport to all permits and entrance fees. Our commitment to safe Egypt tours means you can focus entirely on your photography and cultural immersion. Enjoy a hassle-free Egypt photography adventure from start to finish.</p>
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-3">Seamless Logistics & Secure Travel in Egypt</h3>
+                        <p class="text-md leading-relaxed">Your peace of mind is our priority. We handle all the intricate details – from luxurious accommodations and private, air-conditioned transport to all permits and entrance fees. Our commitment to **safe Egypt tours** means you can focus entirely on your photography and cultural immersion. Enjoy a **hassle-free Egypt photography adventure** from start to finish.</p>
                     </div>
                      <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
-                        <h3 class="text-2xl font-semibold text-primary-dark mb-3" data-i18n="why6_title">Authentic Cultural Immersion</h3>
-                        <p class="text-md leading-relaxed" data-i18n="why6_desc">Beyond just capturing stunning photographs, our tours offer deep authentic cultural immersion in Egypt. Engage with locals, explore traditional markets, and savor authentic cuisine. This holistic experience ensures your photographs tell a richer story, reflecting the true spirit of Egypt and its people.</p>
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-3">Authentic Cultural Immersion</h3>
+                        <p class="text-md leading-relaxed">Beyond just capturing stunning photographs, our tours offer deep **authentic cultural immersion in Egypt**. Engage with locals, explore traditional markets, and savor authentic cuisine. This holistic experience ensures your photographs tell a richer story, reflecting the true spirit of Egypt and its people.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="container mx-auto px-6 py-16 text-center">
-            <h2 class="text-4xl font-bold text-primary-dark mb-12" data-i18n="tours_title">Our Featured Photography Tours</h2>
+            <h2 class="text-4xl font-bold text-primary-dark mb-12">Our Featured Photography Tours</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative">
-                    <span class="sale-tag" data-i18n="tour_special">Special Offer!</span>
+                    <span class="sale-tag">Special Offer!</span>
                     <img src="images/pyramids-private-tour.jpg" alt="Private Guided Tour of Giza Pyramids and Sphinx with professional photography" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-primary-dark mb-2" data-i18n="tour1_title">📸 Capture the Magic: Private Pyramids Guided Tour + Professional Photography</h3>
-                        <p class="text-gray-700 mb-4 text-left" data-i18n="tour1_desc">Step into ancient history on this immersive one-day private tour of the Great Pyramids of Giza and the Sphinx, guided by a passionate local expert. Capture unforgettable moments with a professional photo session and hear the real stories behind the stones.</p>
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-2">📸 Capture the Magic: Private Pyramids Guided Tour + Professional Photography</h3>
+                        <p class="text-gray-700 mb-4 text-left">Step into ancient history on this immersive one-day private tour of the Great Pyramids of Giza and the Sphinx, guided by a passionate local expert. Capture unforgettable moments with a professional photo session and hear the real stories behind the stones.</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-lg font-bold text-accent-dark" data-i18n="tour_price">Starts $150 USD</span>
-                            <span class="text-sm text-gray-500" data-i18n="tour_duration">Duration: 4-5 hours</span>
+                            <span class="text-lg font-bold text-accent-dark">Starts $150 USD</span>
+                            <span class="text-sm text-gray-500">Duration: 4-5 hours</span>
                         </div>
-                        <a href="tour-pyramids-private.html" class="block w-full bg-accent-light text-primary-dark font-bold py-3 px-6 rounded-full hover:bg-accent-dark transition duration-300 text-center" data-i18n="tour_button">View Details & Book</a>
+                        <a href="tour-pyramids-private.html" class="block w-full bg-accent-light text-primary-dark font-bold py-3 px-6 rounded-full hover:bg-accent-dark transition duration-300 text-center">View Details & Book</a>
                     </div>
                 </div>
 
-                <!-- Other tour cards with data-i18n attributes -->
-                <!-- ... -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative">
+                    <span class="sale-tag">Limited Slots!</span>
+                    <img src="images/cairo-giza-2day.jpg" alt="Two-day premium private tour itinerary covering Cairo and Giza landmarks" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-2">2-Day Premium Private Tour: Cairo & Giza Photography Expedition</h3>
+                        <p class="text-gray-700 mb-4 text-left">Immerse yourself in Egypt's vibrant capital and ancient wonders over two unforgettable days. Explore the majestic Pyramids, bustling Old Cairo, and the impressive National Museum of Egyptian Civilization, all with your private guide and photographer.</p>
+                         <div class="flex items-center justify-between mb-4">
+                            <span class="text-lg font-bold text-accent-dark">Starts $350 USD</span>
+                            <span class="text-sm text-gray-500">Duration: 2 days</span>
+                        </div>
+                        <a href="tour-cairo-giza-2day.html" class="block w-full bg-accent-light text-primary-dark font-bold py-3 px-6 rounded-full hover:bg-accent-dark transition duration-300 text-center">View Details & Book</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative">
+                    <span class="sale-tag">Book Now!</span>
+                    <img src="images/alexandria-tour.jpg" alt="Private coastal day tour to Alexandria from Cairo with sea views and local vibes" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-2">Discover Alexandria: Private Coastal Day Tour from Cairo</h3>
+                        <p class="text-gray-700 mb-4 text-left">Trade Cairo's desert dust for the fresh breeze of the Mediterranean on this unforgettable private day tour to Alexandria. Discover a mix of Greek, Roman, Islamic, and modern treasures with a passionate local guide and capture stunning coastal views.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-lg font-bold text-accent-dark">Starts $220 USD</span>
+                            <span class="text-sm text-gray-500">Duration: 1 day</span>
+                        </div>
+                        <a href="tour-alexandria.html" class="block w-full bg-accent-light text-primary-dark font-bold py-3 px-6 rounded-full hover:bg-accent-dark transition duration-300 text-center">View Details & Book</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative">
+                    <span class="sale-tag">New Adventure!</span>
+                    <img src="images/egypt-discovery-7day.jpg" alt="7-Day Egypt Discovery Tour covering Cairo, Giza, Alexandria, and Luxor" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary-dark mb-2">7-Day Egypt Discovery Tour: Cairo, Giza, Alexandria & Luxor</h3>
+                        <p class="text-gray-700 mb-4 text-left">Experience the wonders of ancient and modern Egypt on this immersive 7-day guided journey. From the towering Pyramids to the Mediterranean charm of Alexandria and the majestic temples of Luxor — this trip brings Egypt's soul to life.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-lg font-bold text-accent-dark">Starts $1900 USD</span>
+                            <span class="text-sm text-gray-500">Duration: 7 days</span>
+                        </div>
+                        <a href="tour-egypt-discovery-7day.html" class="block w-full bg-accent-light text-primary-dark font-bold py-3 px-6 rounded-full hover:bg-accent-dark transition duration-300 text-center">View Details & Book</a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="bg-primary-dark py-16">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-accent-light mb-12" data-i18n="testimonials_title">What Our Amazing Clients Say</h2>
-                <!-- Testimonials remain unchanged -->
-                <a href="faqs.html" class="mt-10 inline-block bg-accent-light text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl" data-i18n="testimonials_button">
-                    Read All Reviews & FAQs
+                <h2 class="text-4xl font-bold text-accent-light mb-12">What Our Amazing Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"We had a great time on this experience with Hossam! He was very helpful and patient with our group! The whole experience was a fun time for us and he made us feel very comfortable. We enjoyed all of it!"</p>
+                        <p class="font-semibold text-primary-dark">- Daniel</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"It was an unforgettable experience from start to finish. Hossam is a brilliant photographer and have amazing skills. Amazing experience, excellent treatment, great job, plenty of fantastic pictures with the astonishing view of the pyramids. I am very happy with the result, and I totally recommend."</p>
+                        <p class="font-semibold text-primary-dark">- Cristina</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"Hossam provided a magnificent tour of the Giza Pyramids and the surrounding area. Hossam was always thoughtful, communicative, knowledgeable, and molded the tour accordingly to what you'd want to do. Not only did he show me around the Giza pyramids, but after he adjusted his schedule to also do one of the Museums as well! From the start to finish, Hossam did an amazing job. Glad I booked this tour and made a new friend in Hossam!"</p>
+                        <p class="font-semibold text-primary-dark">- Eduardo</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"Muy bien la sesión, me gustó mucho que los spots son sin gente. Tuve que reservar este tour porque hice uno anteriormente y las fotos fueron muy malas. Ahora bien, solo consideren que hay que pagar un costo extra por el camello y las entradas al recinto (lo cual lo especifica en el post del anuncio)"</p>
+                        <p class="font-semibold text-primary-dark">- Lucy</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"프라이빗 투어로 남편과 둘이서 투어 참가했는데, 관광객이 많지 않은 좋은 스팟으로 안내해줘서 멋진 사진 많이 건질 수 있었어요! 사진 촬영뿐 아니라 피라미드나 스핑크스에 대한 간단한 역사 이야기도 해줘서 더 유익했습니다☺️ 카이로 토박이 출신이라 추천할 만한 레스토랑이나 스팟들도 많이 알려줬고, 비싸기만 한 곳은 비추해주기도 해서 이집트에 처음 오는 입장에서 여행에 많은 도움이 된 것 같아요 간단한 스토리텔링 투어+사진 촬영 원하시는 분들께 추천합니다!"</p>
+                        <p class="font-semibold text-primary-dark">- 소연 이</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"This was one of the best experiences ever. Hossam is kind, attentive and open to suggestions. He's also knowledgeable and super helpful. You'll experience only the top stuff with him."</p>
+                        <p class="font-semibold text-primary-dark">- Meslem</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"Hossam is simply the best. Why? Because he is very kind, very knowledgeable and truly loves his culture and his country. I had the privilege of spending a day and half with Hossam on a private tour. He went above and beyond to ensure I was happy, safe and at ease. This is no doubt Hossam is one of the best guides I've ever had. Thank you for showing me the best of Cairo and for creating an unforgettable experience I will treasure for many more years to come."</p>
+                        <p class="font-semibold text-primary-dark">- ARI</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"If you’re visiting the Pyramids of Giza and want an unforgettable experience, I highly recommend booking a photography tour with Hassam. From start to finish, he was professional, friendly, and incredibly knowledgeable. Not only did he take absolutely stunning photos that captured the magic of the pyramids perfectly, but he also shared a wealth of historical information and interesting stories that made the tour even more special. Hassam truly knows the best spots for unique shots and angles, and he made sure I felt comfortable and enjoyed every moment. The value for the price is outstanding — you get high-quality photography, a personalized tour, and a deep dive into the history of one of the world’s greatest wonders. This was easily one of the highlights of my trip to Egypt!"</p>
+                        <p class="font-semibold text-primary-dark">- Erik </p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
+                        <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
+                        <p class="italic text-lg mb-4">"Great experience, very professional, makes you feel comfortable even if you’re not used to being in front of a camera. Attention to detail and had great information about the pyramids and surrounding areas. Was so easy and comfortable to work with I decided to book a day trip tour with Hossam to Alexandria sorting my visit here as well."</p>
+                        <p class="font-semibold text-primary-dark">- Jamie </p>
+                    </div>
+                </div>
+                <a href="faqs.html" class="mt-10 inline-block bg-accent-light text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl">
+                        Read All Reviews & FAQs
                 </a>
             </div>
         </section>
@@ -228,503 +379,34 @@
         <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
             <div class="mb-6 md:mb-0">
                 <h3 class="text-2xl font-bold text-accent-light mb-2">Egypt Photography Tours</h3>
-                <p class="text-sm">&copy; <span data-i18n="footer_copyright">2025 Egypt Photography Tours. All Rights Reserved.</span></p>
+                <p class="text-sm">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
             </div>
             <div class="mb-6 md:mb-0">
-                <h4 class="font-semibold text-accent-light mb-2" data-i18n="footer_quick_links">Quick Links</h4>
+                <h4 class="font-semibold text-accent-light mb-2">Quick Links</h4>
                 <ul class="text-sm">
-                    <li><a href="index.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_home">Home</a></li>
-                    <li><a href="about.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_about">About Us</a></li>
-                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_tours">Our Tours</a></li>
-                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_gallery">Gallery</a></li>
-                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_contact">Contact Us</a></li>
-                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_faqs">FAQs</a></li>
+                    <li><a href="index.html" class="hover:text-accent-light transition duration-300">Home</a></li>
+                    <li><a href="about.html" class="hover:text-accent-light transition duration-300">About Us</a></li>
+                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300">Our Tours</a></li>
+                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300">Gallery</a></li>
+                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300">Contact Us</a></li>
+                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300">FAQs</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-accent-light mb-2" data-i18n="footer_connect">Connect With Us</h4>
+                <h4 class="font-semibold text-accent-light mb-2">Connect With Us</h4>
                 <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
-                <p class="text-sm" data-i18n="footer_address">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+                <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
                 <div class="flex justify-center md:justify-start space-x-4 mt-3">
                     <a href="https://www.facebook.com/EgyptPhotographyTours" class="text-white hover:text-accent-light transition duration-300" aria-label="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
                     <a href="https://www.instagram.com/hossam_artistic/" class="text-white hover:text-accent-light transition duration-300" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
                     <a href="https://www.tiktok.com/@egyptphotographytours" class="text-white hover:text-accent-light transition duration-300" aria-label="TikTok"><i class="fab fa-tiktok text-xl"></i></a>
                     <a href="https://www.youtube.com/@Egyptphotographytours" class="text-white hover:text-accent-light transition duration-300" aria-label="YouTube"><i class="fab fa-youtube text-xl"></i></a>
-                </div>
+                    </div>
             </div>
         </div>
     </footer>
 
     <div hidden id="snipcart" data-api-key="YzhiNTE1NDctZmU3YS00ZTQ4LWFlNmMtNWZhYjViMjNmNTI3NjM4ODk0NzM0NjE2NTQyNTM0"></div>
     <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-    
-    <!-- Language Translation Script -->
-    <script>
-        // Language translation dictionary
-        const translations = {
-            en: {
-                // Navigation
-                "nav_home": "Home",
-                "nav_about": "About Us",
-                "nav_tours": "Our Tours",
-                "nav_gallery": "Gallery",
-                "nav_contact": "Contact Us",
-                "nav_faqs": "FAQs",
-                "nav_cart": "Cart",
-                
-                // Hero Section
-                "hero_title": "Embark on unforgettable photography tours in Egypt.",
-                "hero_subtitle": "Capture the magic of the Pyramids, ancient temples, and vibrant markets with expert guides. Book your dream Egyptian photoshoot adventure!",
-                "hero_button1": "Explore Our Egypt Photography Tours",
-                "hero_button2": "Book Your Dream Pyramids Photoshoot",
-                
-                // Welcome Section
-                "welcome_title": "Welcome to Egypt Photography Tours",
-                "welcome_p1": "Step into a world where ancient history meets breathtaking landscapes, all waiting to be captured through your lens. At Egypt Photography Tours, we are passionate about revealing the unparalleled beauty of Egypt to photographers of all levels. From the iconic Pyramids of Giza to the serene flow of the Nile River and the bustling charm of Cairo's historic streets, we design immersive journeys that ensure you not only see Egypt but truly capture its soul.",
-                "welcome_p2": "Our expertly curated Egypt tours go beyond conventional sightseeing, offering unique photographic opportunities, personalized guidance from professional photographers, and authentic cultural encounters. Whether you're a seasoned pro looking for exclusive access or a budding enthusiast eager to master your craft, embark on an unforgettable Egyptian photography adventure with us. Let's make your next masterpiece together.",
-                
-                // Why Choose Us
-                "why_title": "Why Choose Egypt Photography Tours for Your Unforgettable Journey?",
-                "why1_title": "Expert Photography Guides, Local Insights",
-                "why1_desc": "Our expert photography guides in Egypt are not just seasoned photographers; they are licensed Egyptologists and local cultural specialists. They know the best angles, the perfect lighting conditions, and hidden gems for that unique Pyramids photoshoot or a captivating Nile photography scene. Benefit from personalized coaching and unparalleled insights into Egyptian history and culture.",
-                "why2_title": "Exclusive Access & Unique Vantage Points",
-                "why2_desc": "Imagine capturing the Luxor Temples at dawn without crowds, or finding the perfect spot for a stunning Egyptian sunset landscape. We leverage our deep local connections to provide exclusive access in Egypt, offering unique photographic vantage points often unavailable to general tourists. Get that shot you've always dreamed of, from the vibrant markets of Cairo to the serene landscapes of the Sinai desert.",
-                "why3_title": "Tailored Itineraries for Every Photographer",
-                "why3_desc": "Whether you're interested in ancient architecture, street photography, portraiture, or the vast desert landscapes of Egypt, our tailored photography itineraries are designed with your passion in mind. We meticulously plan each day to optimize lighting and photographic opportunities, ensuring your focus remains on creating incredible images. From a focused Pyramids photography tour to an extensive ancient Egypt photography expedition, your journey is custom-built.",
-                "why4_title": "Small Group, Personalized Learning",
-                "why4_desc": "We believe in quality over quantity. Our small group Egypt tours guarantee personalized attention and ample one-on-one time with your photography guide. This intimate setting fosters a supportive environment where you can refine your skills, share experiences, and truly connect with fellow photographers. Experience the magic of Egypt travel photography with a community of like-minded individuals.",
-                "why5_title": "Seamless Logistics & Secure Travel in Egypt",
-                "why5_desc": "Your peace of mind is our priority. We handle all the intricate details – from luxurious accommodations and private, air-conditioned transport to all permits and entrance fees. Our commitment to safe Egypt tours means you can focus entirely on your photography and cultural immersion. Enjoy a hassle-free Egypt photography adventure from start to finish.",
-                "why6_title": "Authentic Cultural Immersion",
-                "why6_desc": "Beyond just capturing stunning photographs, our tours offer deep authentic cultural immersion in Egypt. Engage with locals, explore traditional markets, and savor authentic cuisine. This holistic experience ensures your photographs tell a richer story, reflecting the true spirit of Egypt and its people.",
-                
-                // Tours
-                "tours_title": "Our Featured Photography Tours",
-                "tour_special": "Special Offer!",
-                "tour1_title": "📸 Capture the Magic: Private Pyramids Guided Tour + Professional Photography",
-                "tour1_desc": "Step into ancient history on this immersive one-day private tour of the Great Pyramids of Giza and the Sphinx, guided by a passionate local expert. Capture unforgettable moments with a professional photo session and hear the real stories behind the stones.",
-                "tour_price": "Starts $150 USD",
-                "tour_duration": "Duration: 4-5 hours",
-                "tour_button": "View Details & Book",
-                
-                // Testimonials
-                "testimonials_title": "What Our Amazing Clients Say",
-                "testimonials_button": "Read All Reviews & FAQs",
-                
-                // Footer
-                "footer_copyright": "2025 Egypt Photography Tours. All Rights Reserved.",
-                "footer_quick_links": "Quick Links",
-                "footer_connect": "Connect With Us",
-                "footer_address": "Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557"
-            },
-            es: {
-                "nav_home": "Inicio",
-                "nav_about": "Sobre Nosotros",
-                "nav_tours": "Nuestros Tours",
-                "nav_gallery": "Galería",
-                "nav_contact": "Contáctenos",
-                "nav_faqs": "Preguntas Frecuentes",
-                "nav_cart": "Carrito",
-                "hero_title": "Embárquese en inolvidables tours fotográficos en Egipto.",
-                "hero_subtitle": "Capture la magia de las Pirámides, templos antiguos y mercados vibrantes con guías expertos. ¡Reserve su aventura fotográfica egipcia soñada!",
-                "hero_button1": "Explore Nuestros Tours Fotográficos en Egipto",
-                "hero_button2": "Reserve Su Sesión Fotográfica en las Pirámides",
-                "welcome_title": "Bienvenido a Egypt Photography Tours",
-                "welcome_p1": "Adéntrese en un mundo donde la historia antigua se encuentra con paisajes impresionantes, todo esperando ser capturado a través de su lente. En Egypt Photography Tours, nos apasiona revelar la belleza incomparable de Egipto a fotógrafos de todos los niveles. Desde las icónicas Pirámides de Giza hasta el sereno flujo del río Nilo y el bullicioso encanto de las calles históricas de El Cairo, diseñamos viajes inmersivos que garantizan que no solo vea Egipto, sino que verdaderamente capture su esencia.",
-                "welcome_p2": "Nuestros tours de Egipto, curados con experiencia, van más allá del turismo convencional, ofreciendo oportunidades fotográficas únicas, orientación personalizada de fotógrafos profesionales y encuentros culturales auténticos. Ya sea un profesional experimentado que busca acceso exclusivo o un entusiasta novato ansioso por dominar su arte, emprenda una inolvidable aventura fotográfica egipcia con nosotros. Hagamos juntos su próxima obra maestra.",
-                "why_title": "¿Por qué elegir Egypt Photography Tours para su viaje inolvidable?",
-                "why1_title": "Guías Fotográficos Expertos, Perspectivas Locales",
-                "why1_desc": "Nuestros guías fotográficos expertos en Egipto no son solo fotógrafos experimentados; son egiptólogos con licencia y especialistas culturales locales. Conocen los mejores ángulos, las condiciones de iluminación perfectas y joyas ocultas para esa sesión fotográfica única en las Pirámides o una escena cautivadora del Nilo. Benefíciese de la tutoría personalizada y perspectivas inigualables sobre la historia y cultura egipcias.",
-                "why2_title": "Acceso Exclusivo y Puntos de Vista Únicos",
-                "why2_desc": "Imagine capturar los Templos de Luxor al amanecer sin multitudes, o encontrar el lugar perfecto para un impresionante paisaje del atardecer egipcio. Aprovechamos nuestras profundas conexiones locales para brindar acceso exclusivo en Egipto, ofreciendo puntos de vista fotográficos únicos que a menudo no están disponibles para turistas en general. Obtenga esa toma que siempre ha soñado, desde los vibrantes mercados de El Cairo hasta los serenos paisajes del desierto del Sinaí.",
-                "why3_title": "Itinerarios Personalizados para Cada Fotógrafo",
-                "why3_desc": "Ya sea que le interese la arquitectura antigua, la fotografía callejera, el retrato o los vastos paisajes desérticos de Egipto, nuestros itinerarios fotográficos personalizados están diseñados pensando en su pasión. Planificamos meticulosamente cada día para optimizar la iluminación y las oportunidades fotográficas, asegurando que su atención permanezca en crear imágenes increíbles. Desde un tour fotográfico centrado en las Pirámides hasta una expedición fotográfica extensa por el antiguo Egipto, su viaje está hecho a medida.",
-                "why4_title": "Grupos Pequeños, Aprendizaje Personalizado",
-                "why4_desc": "Creemos en la calidad sobre la cantidad. Nuestros tours en pequeños grupos en Egipto garantizan atención personalizada y tiempo individual suficiente con su guía fotográfico. Este entorno íntimo fomenta un ambiente de apoyo donde puede perfeccionar sus habilidades, compartir experiencias y conectar verdaderamente con otros fotógrafos. Experimente la magia de la fotografía de viajes en Egipto con una comunidad de personas con ideas afines.",
-                "why5_title": "Logística Sin Problemas y Viaje Seguro en Egipto",
-                "why5_desc": "Su tranquilidad es nuestra prioridad. Nos ocupamos de todos los detalles intrincados, desde alojamientos de lujo y transporte privado con aire acondicionado hasta todos los permisos y tarifas de entrada. Nuestro compromiso con los tours seguros en Egipto significa que puede concentrarse completamente en su fotografía e inmersión cultural. Disfrute de una aventura fotográfica en Egipto sin complicaciones de principio a fin.",
-                "why6_title": "Inmersión Cultural Auténtica",
-                "why6_desc": "Más allá de capturar fotografías impresionantes, nuestros tours ofrecen una profunda inmersión cultural auténtica en Egipto. Interactúe con los lugareños, explore mercados tradicionales y saboree la cocina auténtica. Esta experiencia holística asegura que sus fotografías cuenten una historia más rica, reflejando el verdadero espíritu de Egipto y su gente.",
-                "tours_title": "Nuestros Tours Fotográficos Destacados",
-                "tour_special": "¡Oferta Especial!",
-                "tour1_title": "📸 Captura la Magia: Tour Privado de las Pirámides + Fotografía Profesional",
-                "tour1_desc": "Adéntrese en la historia antigua en este tour privado inmersivo de un día por las Grandes Pirámides de Giza y la Esfinge, guiado por un apasionado experto local. Capture momentos inolvidables con una sesión fotográfica profesional y escuche las historias reales detrás de las piedras.",
-                "tour_price": "Desde $150 USD",
-                "tour_duration": "Duración: 4-5 horas",
-                "tour_button": "Ver Detalles y Reservar",
-                "testimonials_title": "Lo Que Dicen Nuestros Increíbles Clientes",
-                "testimonials_button": "Leer Todas las Reseñas y Preguntas Frecuentes",
-                "footer_copyright": "2025 Egypt Photography Tours. Todos los derechos reservados.",
-                "footer_quick_links": "Enlaces Rápidos",
-                "footer_connect": "Conéctate Con Nosotros",
-                "footer_address": "Dirección: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Gobernación de Giza 12557"
-            },
-            zh: {
-                "nav_home": "首页",
-                "nav_about": "关于我们",
-                "nav_tours": "我们的行程",
-                "nav_gallery": "画廊",
-                "nav_contact": "联系我们",
-                "nav_faqs": "常见问题",
-                "nav_cart": "购物车",
-                "hero_title": "踏上难忘的埃及摄影之旅",
-                "hero_subtitle": "在专家指导下捕捉金字塔、古寺庙和繁华市场的魅力。立即预订您梦想中的埃及摄影之旅！",
-                "hero_button1": "探索我们的埃及摄影之旅",
-                "hero_button2": "预订您的金字塔摄影之旅",
-                "welcome_title": "欢迎来到埃及摄影之旅",
-                "welcome_p1": "踏入一个古老历史与壮丽景观相遇的世界，等待您通过镜头捕捉。在埃及摄影之旅，我们热衷于向各级摄影师展示埃及无与伦比的美丽。从标志性的吉萨金字塔到宁静的尼罗河，以及开罗历史街道的繁华魅力，我们设计了沉浸式旅程，确保您不仅看到埃及，更能真正捕捉其灵魂。",
-                "welcome_p2": "我们精心策划的埃及之旅超越了传统观光，提供独特的摄影机会、专业摄影师的个性化指导以及真实的文化体验。无论您是寻求独家访问的专业人士，还是渴望掌握技艺的新手爱好者，都请与我们一同踏上难忘的埃及摄影冒险之旅。让我们一起创作您的下一部杰作。",
-                "why_title": "为什么选择埃及摄影之旅开启难忘旅程？",
-                "why1_title": "专业摄影向导，本地视角",
-                "why1_desc": "我们的埃及专业摄影向导不仅是经验丰富的摄影师；他们还是持牌埃及学家和当地文化专家。他们了解金字塔摄影或迷人的尼罗河场景的最佳角度、完美光线条件和隐藏宝藏。从个性化指导到对埃及历史和文化的无与伦比的洞察，让您受益匪浅。",
-                "why2_title": "独家通道与独特视角",
-                "why2_desc": "想象在黎明时分捕捉卢克索神庙，没有人群，或找到完美的埃及日落景观位置。我们利用深厚的本地人脉提供埃及独家通道，提供普通游客通常无法获得的独特摄影视角。从开罗繁华的市场到西奈沙漠宁静的景观，获得您一直梦寐以求的拍摄机会。",
-                "why3_title": "为每位摄影师量身定制的行程",
-                "why3_desc": "无论您对古建筑、街头摄影、人像摄影还是埃及广阔的沙漠景观感兴趣，我们量身定制的摄影行程都围绕您的热情设计。我们精心规划每一天，以优化光线和摄影机会，确保您专注于创作惊艳影像。从专注的金字塔摄影之旅到广泛的古埃及摄影探险，您的旅程都是量身定制的。",
-                "why4_title": "小团体，个性化学习",
-                "why4_desc": "我们相信质量胜过数量。我们的小团体埃及之旅保证个性化关注和与摄影向导充分的单独时间。这种亲密的环境营造了一个支持性氛围，您可以在这里精进技能、分享经验，并真正与其他摄影师建立联系。在志同道合者的社区中体验埃及旅行摄影的魅力。",
-                "why5_title": "无缝后勤与安全旅行",
-                "why5_desc": "您的安心是我们的首要任务。我们处理所有复杂细节——从豪华住宿和私人空调交通到所有许可证和入场费。我们对埃及安全旅行的承诺意味着您可以完全专注于摄影和文化沉浸。享受从始至终无忧无虑的埃及摄影冒险。",
-                "why6_title": "真实文化沉浸",
-                "why6_desc": "除了捕捉惊艳照片，我们的旅行还提供深厚的真实埃及文化沉浸体验。与当地人互动，探索传统市场，品尝地道美食。这种全面的体验确保您的照片讲述更丰富的故事，反映埃及及其人民的真正精神。",
-                "tours_title": "我们的特色摄影之旅",
-                "tour_special": "特别优惠！",
-                "tour1_title": "📸 捕捉魔法：私人金字塔导览游+专业摄影",
-                "tour1_desc": "在充满热情的当地专家带领下，踏上为期一天的吉萨大金字塔和狮身人面像私人导览游，沉浸在古代历史中。通过专业摄影捕捉难忘时刻，聆听石头背后的真实故事。",
-                "tour_price": "起价$150美元",
-                "tour_duration": "时长：4-5小时",
-                "tour_button": "查看详情并预订",
-                "testimonials_title": "我们客户的评价",
-                "testimonials_button": "阅读所有评价与常见问题",
-                "footer_copyright": "2025 埃及摄影之旅 版权所有",
-                "footer_quick_links": "快速链接",
-                "footer_connect": "联系我们",
-                "footer_address": "地址：Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557"
-            },
-            ar: {
-                "nav_home": "الصفحة الرئيسية",
-                "nav_about": "من نحن",
-                "nav_tours": "جولاتنا",
-                "nav_gallery": "المعرض",
-                "nav_contact": "اتصل بنا",
-                "nav_faqs": "الأسئلة الشائعة",
-                "nav_cart": "سلة التسوق",
-                "hero_title": "انطلق في جولات تصوير لا تُنسى في مصر",
-                "hero_subtitle": "التقط سحر الأهرامات والمعابد القديمة والأسواق النابضة بالحياة مع مرشدين خبراء. احجز مغامرة التصوير المصرية التي تحلم بها!",
-                "hero_button1": "استكشف جولات التصوير لدينا في مصر",
-                "hero_button2": "احجز جلسة التصوير الخاصة بك في الأهرامات",
-                "welcome_title": "مرحبًا بكم في جولات التصوير المصرية",
-                "welcome_p1": "ادخل عالمًا حيث يجتمع التاريخ القديم مع المناظر الطبيعية الخلابة، كلها في انتظار التقاطها من خلال عدستك. في جولات التصوير المصرية، نحن شغوفون بكشف الجمال الفريد لمصر للمصورين من جميع المستويات. من أهرامات الجيزة الشهيرة إلى تدفق نهر النيل الهادئ وسحر شوارع القاهرة التاريخية النابضة بالحياة، نصمم رحلات غامرة تضمن لك ليس فقط رؤية مصر بل التقاط روحها الحقيقية.",
-                "welcome_p2": "تتجاوز جولاتنا المصرية التي تم اختيارها بعناية السياحة التقليدية، حيث تقدم فرص تصوير فريدة، إرشادات مخصصة من مصورين محترفين، ومواجهات ثقافية أصيلة. سواء كنت محترفًا متمرسًا تبحث عن وصول حصري أو هاويًا متحمسًا يتوق لإتقان حرفته، انطلق في مغامرة تصوير مصرية لا تُنسى معنا. لنصنع تحفتك القادمة معًا.",
-                "why_title": "لماذا تختار جولات التصوير المصرية لرحلتك التي لا تُنسى؟",
-                "why1_title": "مرشدو التصوير الخبراء، رؤى محلية",
-                "why1_desc": "مرشدو التصوير الخبراء لدينا في مصر ليسوا فقط مصورين متمرسين؛ بل هم علماء مصريات مرخصون ومتخصصون ثقافيون محليون. يعرفون أفضل الزوايا، ظروف الإضاءة المثالية، والجواهر المخفية لجلسة التصوير الفريدة عند الأهرامات أو مشهد التصوير الجذاب لنهر النيل. استفد من التدريب الشخصي ورؤى لا مثيل لها في التاريخ والثقافة المصرية.",
-                "why2_title": "وصول حصري ونقاط مشاهدة فريدة",
-                "why2_desc": "تخيل التقاط معابد الأقصر عند الفجر بدون حشود، أو العثور على البقعة المثالية لمنظر غروب مصري مذهل. نستفيد من علاقاتنا المحلية العميقة لتوفير وصول حصري في مصر، مما يوفر نقاط مشاهدة تصوير فريدة غالبًا ما تكون غير متاحة للسياح العاديين. احصل على تلك اللقطة التي طالما حلمت بها، من أسواق القاهرة النابضة بالحياة إلى مناظر صحراء سيناء الهادئة.",
-                "why3_title": "برامج رحلات مخصصة لكل مصور",
-                "why3_desc": "سواء كنت مهتمًا بالهندسة المعمارية القديمة، التصوير الفوتوغرافي للشوارع، التصوير الشخصي، أو المناظر الصحراوية الشاسعة في مصر، فإن برامج رحلات التصوير المخصصة لدينا مصممة مع مراعاة شغفك. نخطط بعناية لكل يوم لتحسين الإضاءة وفرص التصوير، مما يضمن بقاء تركيزك على إنشاء صور مذهلة. من جولة تصوير مركزة عند الأهرامات إلى رحلة تصوير موسعة لمصر القديمة، رحلتك مصممة حسب الطلب.",
-                "why4_title": "مجموعات صغيرة، تعلم شخصي",
-                "why4_desc": "نؤمن بالجودة فوق الكمية. تضمن جولاتنا المصرية الصغيرة الاهتمام الشخصي والوقت الكافي مع مرشد التصوير الخاص بك. هذا الإعداد الحميم يعزز بيئة داعمة حيث يمكنك صقل مهاراتك، مشاركة التجارب، والتواصل حقًا مع زملائك المصورين. اختبر سحر التصوير الفوتوغرافي للسفر في مصر مع مجتمع من الأشخاص المتشابهين في التفكير.",
-                "why5_title": "لوجستيات سلسة وسفر آمن في مصر",
-                "why5_desc": "راحة بالك هي أولويتنا. نحن نتعامل مع جميع التفاصيل المعقدة - من الإقامات الفاخرة والنقل الخاص المكيف إلى جميع التصاريح ورسوم الدخول. التزامنا بجولات مصر الآمنة يعني أنه يمكنك التركيز تمامًا على التصوير الفوتوغرافي والانغماس الثقافي. استمتع بمغامرة تصوير مصرية خالية من المتاعب من البداية إلى النهاية.",
-                "why6_title": "انغماس ثقافي أصيل",
-                "why6_desc": "أبعد من مجرد التقاط صور مذهلة، تقدم جولاتنا انغماسًا ثقافيًا أصيلًا عميقًا في مصر. تفاعل مع السكان المحليين، استكشف الأسواق التقليدية، وتذوق المأكولات الأصيلة. تضمن هذه التجربة الشاملة أن صورك تحكي قصة أغنى، تعكس الروح الحقيقية لمصر وشعبها.",
-                "tours_title": "جولات التصوير البارزة لدينا",
-                "tour_special": "عرض خاص!",
-                "tour1_title": "📸 التقط السحر: جولة إرشادية خاصة للأهرامات + تصوير احترافي",
-                "tour1_desc": "انغمس في التاريخ القديم في هذه الجولة الإرشادية الخاصة لمدة يوم واحد لأهرامات الجيزة العظيمة وأبو الهول، بإرشاد خبير محلي شغوف. التقط لحظات لا تُنسى مع جلسة تصوير احترافية واستمع إلى القصص الحقيقية وراء الأحجار.",
-                "tour_price": "تبدأ من 150 دولارًا أمريكيًا",
-                "tour_duration": "المدة: 4-5 ساعات",
-                "tour_button": "عرض التفاصيل والحجز",
-                "testimonials_title": "ما يقوله عملاؤنا الرائعون",
-                "testimonials_button": "اقرأ جميع التقييمات والأسئلة الشائعة",
-                "footer_copyright": "2025 جولات التصوير المصرية. جميع الحقوق محفوظة.",
-                "footer_quick_links": "روابط سريعة",
-                "footer_connect": "تواصل معنا",
-                "footer_address": "العنوان: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557"
-            },
-            ko: {
-                "nav_home": "홈",
-                "nav_about": "회사 소개",
-                "nav_tours": "투어 상품",
-                "nav_gallery": "갤러리",
-                "nav_contact": "문의하기",
-                "nav_faqs": "자주 묻는 질문",
-                "nav_cart": "장바구니",
-                "hero_title": "이집트에서 잊지 못할 사진 투어를 시작하세요",
-                "hero_subtitle": "전문 가이드와 함께 피라미드, 고대 사원, 활기찬 시장의 매력을 담아보세요. 꿈에 그리던 이집트 사진 촬영을 예약하세요!",
-                "hero_button1": "이집트 사진 투어 둘러보기",
-                "hero_button2": "피라미드 사진 촬영 예약하기",
-                "welcome_title": "이집트 사진 투어에 오신 것을 환영합니다",
-                "welcome_p1": "고대 역사와 숨막히는 풍경이 만나는 세계로 들어가 렌즈를 통해 담아보세요. 이집트 사진 투어는 모든 수준의 사진가에게 이집트의 비교할 수 없는 아름다움을 보여주는 데 열정을 쏟고 있습니다. 상징적인 기자 피라미드부터 평화로운 나일 강, 카이로 역사적 거리의 활기 넘치는 매력까지, 우리는 이집트를 단순히 보는 것이 아니라 그 영혼을 진정으로 담아낼 수 있는 몰입형 여정을 설계합니다.",
-                "welcome_p2": "전문가가 엄선한 이집트 투어는 전통적인 관광을 넘어 독특한 사진 기회, 전문 사진가의 맞춤 지도, 진정한 문화 체험을 제공합니다. 독점적인 접근을 원하는 노련한 전문가이든 기술을 익히고 싶어 하는 초보 애호가이든, 우리와 함께 잊지 못할 이집트 사진 모험을 시작하세요. 함께 다음 걸작을 만들어 봅시다.",
-                "why_title": "왜 잊지 못할 여행을 위해 이집트 사진 투어를 선택해야 할까요?",
-                "why1_title": "전문 사진 가이드, 현지 통찰력",
-                "why1_desc": "이집트의 전문 사진 가이드는 단순히 경험 많은 사진가가 아닙니다; 면허를 가진 이집트학자이자 현지 문화 전문가입니다. 독특한 피라미드 사진 촬영이나 매혹적인 나일 강 사진 장면을 위한 최적의 각도, 완벽한 조명 조건, 숨겨진 보석 같은 장소를 알고 있습니다. 맞춤형 코칭과 이집트 역사 및 문화에 대한 탁월한 통찰력을 누려보세요.",
-                "why2_title": "독점 접근과 특별한 전망 지점",
-                "why2_desc": "군중 없이 새벽에 룩소르 신전을 담거나 숨막히는 이집트 일몰 풍경을 위한 완벽한 장소를 찾는 상상을 해보세요. 우리는 깊은 현지 인맥을 활용하여 이집트에서 독점적인 접근을 제공하며, 일반 관광객에게는 흔히 제공되지 않는 독특한 사진 전망 지점을 제공합니다. 카이로의 활기찬 시장부터 시나이 사막의 고요한 풍경까지, 오랫동안 꿈꿔 온 그 장면을 담아보세요.",
-                "why3_title": "모든 사진가를 위한 맞춤형 일정",
-                "why3_desc": "고대 건축물, 스트리트 사진, 인물 사진, 이집트의 광활한 사막 풍경에 관심이 있든, 우리의 맞춤형 사진 일정은 여러분의 열정을 염두에 두고 설계되었습니다. 우리는 조명과 사진 기회를 최적화하기 위해 매일을 꼼꼼히 계획하여 여러분이 놀라운 이미지 제작에 집중할 수 있도록 합니다. 피라미드 사진 투어에 집중하거나 고대 이집트 사진 탐험을 확장하든, 여러분의 여정은 맞춤 제작됩니다.",
-                "why4_title": "소규모 그룹, 개인 맞춤 학습",
-                "why4_desc": "우리는 양보다 질을 믿습니다. 우리의 소규모 이집트 투어는 개인별 관심과 사진 가이드와의 충분한 1:1 시간을 보장합니다. 이 친밀한 환경은 기술을 연마하고 경험을 공유하며 동료 사진가와 진정으로 연결할 수 있는 지원적인 분위기를 조성합니다. 생각이 비슷한 사람들의 커뮤니티와 함께 이집트 여행 사진의 마법을 경험해 보세요.",
-                "why5_title": "원활한 로지스틱스 및 안전한 이집트 여행",
-                "why5_desc": "여러분의 안심이 우리 최우선 과제입니다. 우리는 고급 숙소와 개인용 에어컨 차량부터 모든 허가 및 입장료에 이르기까지 모든 복잡한 세부 사항을 처리합니다. 안전한 이집트 투어에 대한 우리의 약속은 여러분이 사진과 문화 체험에 완전히 집중할 수 있음을 의미합니다. 시작부터 끝까지 번거로움 없는 이집트 사진 모험을 즐기세요.",
-                "why6_title": "진정한 문화 체험",
-                "why6_desc": "놀라운 사진을 담는 것 이상으로, 우리 투어는 이집트에서 깊이 있는 진정한 문화 체험을 제공합니다. 현지인과 교류하고 전통 시장을 탐험하며 정통 요리를 맛보세요. 이 종합적인 경험은 여러분의 사진이 더 풍부한 이야기를 전하고 이집트와 그 국민의 진정한 정신을 반영하도록 보장합니다.",
-                "tours_title": "추천 사진 투어",
-                "tour_special": "특별 할인!",
-                "tour1_title": "📸 마법을 담다: 프라이빗 피라미드 가이드 투어 + 전문 사진 촬영",
-                "tour1_desc": "열정적인 현지 전문가와 함께 기자 대피라미드와 스핑크스의 하루 종일 프라이빗 투어에 몰입해 보세요. 전문 사진 촬영으로 잊지 못할 순간을 담고 돌 뒤에 숨겨진 진짜 이야기를 들어보세요.",
-                "tour_price": "150달러부터 시작",
-                "tour_duration": "소요 시간: 4-5시간",
-                "tour_button": "상세 정보 및 예약",
-                "testimonials_title": "고객님들의 소중한 후기",
-                "testimonials_button": "모든 후기 및 자주 묻는 질문 보기",
-                "footer_copyright": "2025 이집트 사진 투어. 판권 소유.",
-                "footer_quick_links": "빠른 링크",
-                "footer_connect": "연락처",
-                "footer_address": "주소: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557"
-            },
-            pt: {
-                "nav_home": "Início",
-                "nav_about": "Sobre Nós",
-                "nav_tours": "Nossos Passeios",
-                "nav_gallery": "Galeria",
-                "nav_contact": "Contate-nos",
-                "nav_faqs": "Perguntas Frequentes",
-                "nav_cart": "Carrinho",
-                "hero_title": "Embarque em passeios fotográficos inesquecíveis no Egito.",
-                "hero_subtitle": "Capture a magia das Pirâmides, templos antigos e mercados vibrantes com guias especializados. Reserve sua aventura fotográfica egípcia dos sonhos!",
-                "hero_button1": "Explore Nossos Passeios Fotográficos no Egito",
-                "hero_button2": "Reserve Sua Sessão Fotográfica nas Pirâmides",
-                "welcome_title": "Bem-vindo ao Egypt Photography Tours",
-                "welcome_p1": "Entre em um mundo onde a história antiga encontra paisagens deslumbrantes, tudo esperando para ser capturado através de sua lente. Na Egypt Photography Tours, somos apaixonados por revelar a beleza incomparável do Egito para fotógrafos de todos os níveis. Das icônicas Pirâmides de Gizé ao fluxo sereno do Rio Nilo e ao charme vibrante das ruas históricas do Cairo, projetamos jornadas imersivas que garantem que você não apenas veja o Egito, mas verdadeiramente capture sua essência.",
-                "welcome_p2": "Nossos passeios egípcios curados por especialistas vão além do turismo convencional, oferecendo oportunidades fotográficas únicas, orientação personalizada de fotógrafos profissionais e encontros culturais autênticos. Seja você um profissional experiente em busca de acesso exclusivo ou um entusiasta iniciante ansioso para dominar sua arte, embarque em uma inesquecível aventura fotográfica egípcia conosco. Vamos criar sua próxima obra-prima juntos.",
-                "why_title": "Por que escolher o Egypt Photography Tours para sua jornada inesquecível?",
-                "why1_title": "Guias Fotográficos Especializados, Insights Locais",
-                "why1_desc": "Nossos guias fotográficos especializados no Egito não são apenas fotógrafos experientes; eles são egiptólogos licenciados e especialistas culturais locais. Eles conhecem os melhores ângulos, as condições de iluminação perfeitas e joias escondidas para aquela sessão fotográfica única nas Pirâmides ou uma cena fotográfica cativante do Nilo. Beneficie-se de orientação personalizada e insights incomparáveis sobre a história e cultura egípcias.",
-                "why2_title": "Acesso Exclusivo e Pontos de Vista Únicos",
-                "why2_desc": "Imagine capturar os Templos de Luxor ao amanhecer sem multidões, ou encontrar o local perfeito para uma paisagem deslumbrante do pôr do sol egípcio. Aproveitamos nossas profundas conexões locais para fornecer acesso exclusivo no Egito, oferecendo pontos de vista fotográficos únicos, muitas vezes indisponíveis para turistas em geral. Obtenha aquela foto que você sempre sonhou, desde os vibrantes mercados do Cairo até as paisagens serenas do deserto do Sinai.",
-                "why3_title": "Roteiros Personalizados para Cada Fotógrafo",
-                "why3_desc": "Seja você interessado em arquitetura antiga, fotografia de rua, retratos ou as vastas paisagens desérticas do Egito, nossos roteiros fotográficos personalizados são projetados com sua paixão em mente. Planejamos meticulosamente cada dia para otimizar a iluminação e as oportunidades fotográficas, garantindo que seu foco permaneça na criação de imagens incríveis. De um passeio fotográfico focado nas Pirâmides a uma expedição fotográfica extensa pelo Egito Antigo, sua jornada é feita sob medida.",
-                "why4_title": "Grupos Pequenos, Aprendizado Personalizado",
-                "why4_desc": "Acreditamos em qualidade acima de quantidade. Nossos passeios em pequenos grupos no Egito garantem atenção personalizada e tempo individual suficiente com seu guia fotográfico. Este ambiente íntimo promove um ambiente de apoio onde você pode aprimorar suas habilidades, compartilhar experiências e se conectar verdadeiramente com outros fotógrafos. Experimente a magia da fotografia de viagem no Egito com uma comunidade de pessoas com ideias semelhantes.",
-                "why5_title": "Logística Perfeita e Viagem Segura no Egito",
-                "why5_desc": "Sua tranquilidade é nossa prioridade. Lidamos com todos os detalhes intrincados - desde acomodações luxuosas e transporte privado com ar-condicionado até todas as permissões e taxas de entrada. Nosso compromisso com passeios seguros no Egito significa que você pode se concentrar inteiramente em sua fotografia e imersão cultural. Aproveite uma aventura fotográfica no Egito sem complicações do início ao fim.",
-                "why6_title": "Imersão Cultural Autêntica",
-                "why6_desc": "Além de capturar fotografias impressionantes, nossos passeios oferecem profunda imersão cultural autêntica no Egito. Interaja com os locais, explore mercados tradicionais e saboreie culinária autêntica. Esta experiência holística garante que suas fotografias contem uma história mais rica, refletindo o verdadeiro espírito do Egito e seu povo.",
-                "tours_title": "Nossos Passeios Fotográficos em Destaque",
-                "tour_special": "Oferta Especial!",
-                "tour1_title": "📸 Capture a Magia: Tour Privado nas Pirâmides + Fotografia Profissional",
-                "tour1_desc": "Mergulhe na história antiga neste tour privado imersivo de um dia pelas Grandes Pirâmides de Gizé e a Esfinge, guiado por um especialista local apaixonado. Capture momentos inesquecíveis com uma sessão fotográfica profissional e ouça as histórias reais por trás das pedras.",
-                "tour_price": "A partir de $150 USD",
-                "tour_duration": "Duração: 4-5 horas",
-                "tour_button": "Ver Detalhes e Reservar",
-                "testimonials_title": "O Que Nossos Incríveis Clientes Dizem",
-                "testimonials_button": "Ler Todas as Avaliações e Perguntas Frequentes",
-                "footer_copyright": "2025 Egypt Photography Tours. Todos os direitos reservados.",
-                "footer_quick_links": "Links Rápidos",
-                "footer_connect": "Conecte-se Conosco",
-                "footer_address": "Endereço: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Governadoria de Giza 12557"
-            },
-            fr: {
-                "nav_home": "Accueil",
-                "nav_about": "À propos",
-                "nav_tours": "Nos circuits",
-                "nav_gallery": "Galerie",
-                "nav_contact": "Contactez-nous",
-                "nav_faqs": "FAQ",
-                "nav_cart": "Panier",
-                "hero_title": "Partez pour des circuits photo inoubliables en Égypte.",
-                "hero_subtitle": "Capturez la magie des Pyramides, des temples anciens et des marchés animés avec des guides experts. Réservez votre aventure photoshoot égyptienne de rêve !",
-                "hero_button1": "Découvrez nos circuits photo en Égypte",
-                "hero_button2": "Réservez votre séance photo aux Pyramides",
-                "welcome_title": "Bienvenue chez Egypt Photography Tours",
-                "welcome_p1": "Entrez dans un monde où l'histoire ancienne rencontre des paysages à couper le souffle, tous prêts à être capturés à travers votre objectif. Chez Egypt Photography Tours, nous sommes passionnés par la révélation de la beauté incomparable de l'Égypte aux photographes de tous niveaux. Des icônes Pyramides de Gizeh au cours serein du Nil et au charme animé des rues historiques du Caire, nous concevons des voyages immersifs qui garantissent que vous ne faites pas que voir l'Égypte, mais que vous en capturez véritablement l'âme.",
-                "welcome_p2": "Nos circuits égyptiens sélectionnés par des experts vont au-delà du tourisme conventionnel, offrant des opportunités photographiques uniques, un accompagnement personnalisé de photographes professionnels et des rencontres culturelles authentiques. Que vous soyez un professionnel chevronné à la recherche d'un accès exclusif ou un passionné débutant désireux de maîtriser son art, embarquez pour une aventure photographique égyptienne inoubliable avec nous. Créons ensemble votre prochain chef-d'œuvre.",
-                "why_title": "Pourquoi choisir Egypt Photography Tours pour votre voyage inoubliable ?",
-                "why1_title": "Guides Photographes Experts, Connaissances Locales",
-                "why1_desc": "Nos guides photographes experts en Égypte ne sont pas seulement des photographes chevronnés ; ce sont des égyptologues diplômés et des spécialistes culturels locaux. Ils connaissent les meilleurs angles, les conditions d'éclairage parfaites et les joyaux cachés pour cette séance photo unique aux Pyramides ou une scène photographique captivante du Nil. Bénéficiez d'un coaching personnalisé et de connaissances inégalées sur l'histoire et la culture égyptiennes.",
-                "why2_title": "Accès Exclusif et Points de Vue Uniques",
-                "why2_desc": "Imaginez capturer les Temples de Louxor à l'aube sans foule, ou trouver l'endroit parfait pour un paysage de coucher de soleil égyptien époustouflant. Nous tirons parti de nos profondes connexions locales pour fournir un accès exclusif en Égypte, offrant des points de vue photographiques uniques souvent indisponibles pour les touristes ordinaires. Obtenez ce cliché dont vous avez toujours rêvé, des marchés animés du Caire aux paysages sereins du désert du Sinaï.",
-                "why3_title": "Itinéraires Sur Mesure pour Chaque Photographe",
-                "why3_desc": "Que vous soyez intéressé par l'architecture ancienne, la photographie de rue, le portrait ou les vastes paysages désertiques de l'Égypte, nos itinéraires photographiques sur mesure sont conçus en fonction de votre passion. Nous planifions méticuleusement chaque journée pour optimiser l'éclairage et les opportunités photographiques, garantissant que votre concentration reste sur la création d'images incroyables. D'un circuit photo axé sur les Pyramides à une expédition photographique étendue dans l'Égypte ancienne, votre voyage est entièrement personnalisé.",
-                "why4_title": "Petits Groupes, Apprentissage Personnalisé",
-                "why4_desc": "Nous croyons en la qualité plutôt qu'en la quantité. Nos circuits égyptiens en petits groupes garantissent une attention personnalisée et un temps individuel suffisant avec votre guide photographe. Ce cadre intime favorise un environnement de soutien où vous pouvez perfectionner vos compétences, partager des expériences et vraiment vous connecter avec d'autres photographes. Vivez la magie de la photographie de voyage en Égypte avec une communauté de personnes partageant les mêmes idées.",
-                "why5_title": "Logistique Transparente et Voyage Sécurisé en Égypte",
-                "why5_desc": "Votre tranquillité d'esprit est notre priorité. Nous gérons tous les détails complexes - des hébergements luxueux et du transport privé climatisé à tous les permis et frais d'entrée. Notre engagement envers des circuits égyptiens sûrs signifie que vous pouvez vous concentrer entièrement sur votre photographie et votre immersion culturelle. Profitez d'une aventure photographique égyptienne sans tracas du début à la fin.",
-                "why6_title": "Immersion Culturelle Authentique",
-                "why6_desc": "Au-delà de la simple capture de photos époustouflantes, nos circuits offrent une immersion culturelle authentique et profonde en Égypte. Engagez-vous avec les habitants, explorez les marchés traditionnels et savourez une cuisine authentique. Cette expérience holistique garantit que vos photos racontent une histoire plus riche, reflétant le véritable esprit de l'Égypte et de son peuple.",
-                "tours_title": "Nos Circuits Photographiques en Vedette",
-                "tour_special": "Offre Spéciale !",
-                "tour1_title": "📸 Capturez la Magie : Visite Guidée Privée des Pyramides + Photographie Professionnelle",
-                "tour1_desc": "Plongez dans l'histoire ancienne lors de cette visite privée immersive d'une journée des Grandes Pyramides de Gizeh et du Sphinx, guidée par un expert local passionné. Capturez des moments inoubliables avec une séance photo professionnelle et écoutez les véritables histoires derrière les pierres.",
-                "tour_price": "À partir de 150 USD",
-                "tour_duration": "Durée : 4-5 heures",
-                "tour_button": "Voir les détails et réserver",
-                "testimonials_title": "Ce que disent nos formidables clients",
-                "testimonials_button": "Lire tous les avis et FAQ",
-                "footer_copyright": "2025 Egypt Photography Tours. Tous droits réservés.",
-                "footer_quick_links": "Liens Rapides",
-                "footer_connect": "Connectez-vous avec nous",
-                "footer_address": "Adresse : Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Gouvernorat de Gizeh 12557"
-            },
-            de: {
-                "nav_home": "Startseite",
-                "nav_about": "Über uns",
-                "nav_tours": "Unsere Touren",
-                "nav_gallery": "Galerie",
-                "nav_contact": "Kontakt",
-                "nav_faqs": "Häufige Fragen",
-                "nav_cart": "Warenkorb",
-                "hero_title": "Beginnen Sie unvergessliche Fototouren in Ägypten.",
-                "hero_subtitle": "Erfassen Sie die Magie der Pyramiden, antiken Tempel und lebendigen Märkte mit erfahrenen Führern. Buchen Sie Ihr Traum-Fotoshooting in Ägypten!",
-                "hero_button1": "Entdecken Sie unsere Fototouren in Ägypten",
-                "hero_button2": "Buchen Sie Ihr Traum-Pyramiden-Fotoshooting",
-                "welcome_title": "Willkommen bei Egypt Photography Tours",
-                "welcome_p1": "Betreten Sie eine Welt, in der alte Geschichte auf atemberaubende Landschaften trifft, alles bereit, durch Ihre Linse eingefangen zu werden. Bei Egypt Photography Tours sind wir leidenschaftlich daran interessiert, die unvergleichliche Schönheit Ägyptens Fotografen aller Niveaus zu zeigen. Von den ikonischen Pyramiden von Gizeh bis zum ruhigen Fluss des Nils und dem lebendigen Charme der historischen Straßen Kairos entwerfen wir immersive Reisen, die sicherstellen, dass Sie Ägypten nicht nur sehen, sondern seine Seele wirklich einfangen.",
-                "welcome_p2": "Unsere von Experten kuratierten Ägypten-Touren gehen über konventionelles Sightseeing hinaus und bieten einzigartige fotografische Möglichkeiten, persönliche Anleitung durch professionelle Fotografen und authentische kulturelle Begegnungen. Ob Sie ein erfahrener Profi sind, der exklusiven Zugang sucht, oder ein aufstrebender Enthusiast, der sein Handwerk meistern möchte, begeben Sie sich mit uns auf ein unvergessliches fotografisches Abenteuer in Ägypten. Lassen Sie uns gemeinsam Ihr nächstes Meisterwerk erschaffen.",
-                "why_title": "Warum sollten Sie Egypt Photography Tours für Ihre unvergessliche Reise wählen?",
-                "why1_title": "Experten-Fotografie-Führer, lokale Einblicke",
-                "why1_desc": "Unsere erfahrenen Fotografie-Führer in Ägypten sind nicht nur versierte Fotografen; Sie sind lizenzierte Ägyptologen und lokale Kulturspezialisten. Sie kennen die besten Winkel, die perfekten Lichtverhältnisse und versteckte Juwelen für dieses einzigartige Pyramiden-Fotoshooting oder eine fesselnde Nil-Fotografie-Szene. Profitieren Sie von persönlichem Coaching und beispiellosen Einblicken in die ägyptische Geschichte und Kultur.",
-                "why2_title": "Exklusiver Zugang & einzigartige Aussichtspunkte",
-                "why2_desc": "Stellen Sie sich vor, Sie fotografieren die Tempel von Luxor im Morgengrauen ohne Menschenmassen oder finden den perfekten Ort für eine atemberaubende ägyptische Sonnenuntergangslandschaft. Wir nutzen unsere tiefen lokalen Verbindungen, um exklusiven Zugang in Ägypten zu bieten, mit einzigartigen fotografischen Aussichtspunkten, die oft für normale Touristen nicht verfügbar sind. Holen Sie sich diese Aufnahme, von der Sie immer geträumt haben, von den lebendigen Märkten Kairos bis zu den ruhigen Landschaften der Sinai-Wüste.",
-                "why3_title": "Maßgeschneiderte Reisepläne für jeden Fotografen",
-                "why3_desc": "Egal, ob Sie sich für antike Architektur, Streetfotografie, Porträtfotografie oder die weiten Wüstenlandschaften Ägyptens interessieren, unsere maßgeschneiderten Fotografie-Reisepläne sind auf Ihre Leidenschaft zugeschnitten. Wir planen jeden Tag sorgfältig, um Licht und fotografische Möglichkeiten zu optimieren und sicherzustellen, dass Sie sich auf das Erstellen unglaublicher Bilder konzentrieren können. Von einer fokussierten Pyramiden-Fototour bis zu einer umfangreichen Fotografie-Expedition im alten Ägypten – Ihre Reise ist maßgeschneidert.",
-                "why4_title": "Kleine Gruppen, persönliches Lernen",
-                "why4_desc": "Wir glauben an Qualität vor Quantität. Unsere Kleingruppen-Touren in Ägypten garantieren persönliche Aufmerksamkeit und ausreichend Einzelzeit mit Ihrem Fotografie-Führer. Diese intime Umgebung fördert eine unterstützende Atmosphäre, in der Sie Ihre Fähigkeiten verfeinern, Erfahrungen austauschen und echte Verbindungen zu anderen Fotografen knüpfen können. Erleben Sie die Magie der Ägypten-Reisefotografie mit einer Gemeinschaft Gleichgesinnter.",
-                "why5_title": "Nahtlose Logistik & sicheres Reisen in Ägypten",
-                "why5_desc": "Ihre Zufriedenheit hat für uns Priorität. Wir kümmern uns um alle komplizierten Details – von luxuriösen Unterkünften und privaten klimatisierten Transportmitteln bis hin zu allen Genehmigungen und Eintrittsgebühren. Unser Engagement für sichere Ägypten-Touren bedeutet, dass Sie sich voll und ganz auf Ihre Fotografie und kulturelle Erfahrung konzentrieren können. Genießen Sie ein reibungsloses Fotografie-Abenteuer in Ägypten von Anfang bis Ende.",
-                "why6_title": "Authentisches kulturelles Eintauchen",
-                "why6_desc": "Über das Einfangen atemberaubender Fotos hinaus bieten unsere Touren ein tiefes authentisches kulturelles Eintauchen in Ägypten. Treten Sie mit Einheimischen in Kontakt, erkunden Sie traditionelle Märkte und genießen Sie authentische Küche. Dieses ganzheitliche Erlebnis stellt sicher, dass Ihre Fotos eine reichere Geschichte erzählen und den wahren Geist Ägyptens und seiner Menschen widerspiegeln.",
-                "tours_title": "Unsere empfohlenen Fototouren",
-                "tour_special": "Sonderangebot!",
-                "tour1_title": "📸 Fangen Sie die Magie ein: Private Pyramidenführung + Professionelles Fotoshooting",
-                "tour1_desc": "Tauchen Sie ein in die alte Geschichte bei dieser eintägigen privaten Tour zu den Großen Pyramiden von Gizeh und der Sphinx, geleitet von einem leidenschaftlichen lokalen Experten. Erfassen Sie unvergessliche Momente mit einem professionellen Fotoshooting und hören Sie die wahren Geschichten hinter den Steinen.",
-                "tour_price": "Ab $150 USD",
-                "tour_duration": "Dauer: 4-5 Stunden",
-                "tour_button": "Details ansehen & buchen",
-                "testimonials_title": "Was unsere großartigen Kunden sagen",
-                "testimonials_button": "Alle Bewertungen & FAQs lesen",
-                "footer_copyright": "2025 Egypt Photography Tours. Alle Rechte vorbehalten.",
-                "footer_quick_links": "Schnelllinks",
-                "footer_connect": "Kontaktieren Sie uns",
-                "footer_address": "Adresse: Abou Elhool, Nazlet El-Samman, Elsamman, Gizeh, Gouvernement Gizeh 12557"
-            },
-            it: {
-                "nav_home": "Home",
-                "nav_about": "Chi Siamo",
-                "nav_tours": "I Nostri Tour",
-                "nav_gallery": "Galleria",
-                "nav_contact": "Contattaci",
-                "nav_faqs": "FAQ",
-                "nav_cart": "Carrello",
-                "hero_title": "Partecipa a tour fotografici indimenticabili in Egitto.",
-                "hero_subtitle": "Cattura la magia delle Piramidi, dei templi antichi e dei mercati vivaci con guide esperte. Prenota la tua avventura fotografica egiziana dei sogni!",
-                "hero_button1": "Scopri i Nostri Tour Fotografici in Egitto",
-                "hero_button2": "Prenota il Tuo Servizio Fotografico alle Piramidi",
-                "welcome_title": "Benvenuti in Egypt Photography Tours",
-                "welcome_p1": "Entra in un mondo dove la storia antica incontra paesaggi mozzafiato, tutti pronti per essere catturati attraverso il tuo obiettivo. A Egypt Photography Tours, siamo appassionati nel rivelare l'incomparabile bellezza dell'Egitto a fotografi di tutti i livelli. Dalle iconiche Piramidi di Giza al placido scorrere del Nilo e al vivace fascino delle strade storiche del Cairo, progettiamo viaggi immersivi che assicurano non solo di vedere l'Egitto, ma di catturarne veramente l'anima.",
-                "welcome_p2": "I nostri tour in Egitto curati da esperti vanno oltre il semplice turismo convenzionale, offrendo opportunità fotografiche uniche, guida personalizzata da fotografi professionisti e incontri culturali autentici. Sia che tu sia un professionista esperto in cerca di accesso esclusivo o un entusiasta alle prime armi desideroso di padroneggiare il tuo mestiere, intraprendi un'indimenticabile avventura fotografica egiziana con noi. Creiamo insieme il tuo prossimo capolavoro.",
-                "why_title": "Perché scegliere Egypt Photography Tours per il tuo viaggio indimenticabile?",
-                "why1_title": "Guide Fotografiche Esperte, Approfondimenti Locali",
-                "why1_desc": "Le nostre guide fotografiche esperte in Egitto non sono solo fotografi esperti; sono egittologi autorizzati e specialisti culturali locali. Conoscono i migliori angoli, le condizioni di illuminazione perfette e i tesori nascosti per quel servizio fotografico unico alle Piramidi o una scena fotografica avvincente sul Nilo. Beneficia di un coaching personalizzato e di approfondimenti senza pari sulla storia e la cultura egiziana.",
-                "why2_title": "Accesso Esclusivo e Punti di Vista Unici",
-                "why2_desc": "Immagina di fotografare i Templi di Luxor all'alba senza folla, o di trovare il punto perfetto per un paesaggio mozzafiato del tramonto egiziano. Sfruttiamo le nostre profonde connessioni locali per fornire accesso esclusivo in Egitto, offrendo punti di vista fotografici unici spesso non disponibili per i turisti generici. Ottieni quello scatto che hai sempre sognato, dai mercati vivaci del Cairo ai paesaggi sereni del deserto del Sinai.",
-                "why3_title": "Itinerari Su Misura per Ogni Fotografo",
-                "why3_desc": "Sia che tu sia interessato all'architettura antica, alla fotografia di strada, ai ritratti o ai vasti paesaggi desertici dell'Egitto, i nostri itinerari fotografici su misura sono progettati pensando alla tua passione. Pianifichiamo meticolosamente ogni giorno per ottimizzare la luce e le opportunità fotografiche, assicurando che la tua attenzione rimanga sulla creazione di immagini incredibili. Da un tour fotografico focalizzato sulle Piramidi a un'estesa spedizione fotografica nell'antico Egitto, il tuo viaggio è costruito su misura.",
-                "why4_title": "Piccoli Gruppi, Apprendimento Personalizzato",
-                "why4_desc": "Crediamo nella qualità piuttosto che nella quantità. I nostri tour in piccoli gruppi in Egitto garantiscono attenzione personalizzata e ampio tempo individuale con la tua guida fotografica. Questa impostazione intima favorisce un ambiente di supporto dove puoi affinare le tue abilità, condividere esperienze e connetterti veramente con altri fotografi. Sperimenta la magia della fotografia di viaggio in Egitto con una comunità di persone affini.",
-                "why5_title": "Logistica Senza Problemi e Viaggio Sicuro in Egitto",
-                "why5_desc": "La tua tranquillità è la nostra priorità. Gestiamo tutti i dettagli intricati - da alloggi di lusso e trasporti privati con aria condizionata a tutti i permessi e le tasse d'ingresso. Il nostro impegno per tour sicuri in Egitto significa che puoi concentrarti interamente sulla tua fotografia e sull'immersione culturale. Goditi un'avventura fotografica in Egitto senza problemi dall'inizio alla fine.",
-                "why6_title": "Immersione Culturale Autentica",
-                "why6_desc": "Oltre a catturare semplicemente foto mozzafiato, i nostri tour offrono una profonda autentica immersione culturale in Egitto. Interagisci con la gente del posto, esplora mercati tradizionali e assapori una cucina autentica. Questa esperienza olistica assicura che le tue fotografie raccontino una storia più ricca, riflettendo il vero spirito dell'Egitto e della sua gente.",
-                "tours_title": "Le Nostre Tour Fotografiche in Evidenza",
-                "tour_special": "Offerta Speciale!",
-                "tour1_title": "📸 Cattura la Magia: Tour Guidato Privato delle Piramidi + Servizio Fotografico Professionale",
-                "tour1_desc": "Tuffati nella storia antica in questo tour privato di un giorno alle Grandi Piramidi di Giza e alla Sfinge, guidato da un appassionato esperto locale. Cattura momenti indimenticabili con un servizio fotografico professionale e ascolta le storie vere dietro le pietre.",
-                "tour_price": "A partire da $150 USD",
-                "tour_duration": "Durata: 4-5 ore",
-                "tour_button": "Vedi Dettagli e Prenota",
-                "testimonials_title": "Cosa Dicono i Nostri Straordinari Clienti",
-                "testimonials_button": "Leggi Tutte le Recensioni e le FAQ",
-                "footer_copyright": "2025 Egypt Photography Tours. Tutti i diritti riservati.",
-                "footer_quick_links": "Link Rapidi",
-                "footer_connect": "Connettiti con Noi",
-                "footer_address": "Indirizzo: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Governatorato di Giza 12557"
-            }
-        };
-
-        // Set default language to English
-        let currentLang = 'en';
-        
-        // Get language from localStorage if available
-        const savedLang = localStorage.getItem('user-lang');
-        if (savedLang && translations[savedLang]) {
-            currentLang = savedLang;
-        }
-        
-        // Apply translations
-        function applyTranslations(lang) {
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-            
-            // Update language display
-            document.getElementById('current-language').textContent = getLanguageName(lang);
-            
-            // Translate all elements with data-i18n attribute
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
-            });
-        }
-        
-        // Get language name from code
-        function getLanguageName(code) {
-            const languageNames = {
-                en: "English",
-                es: "Español",
-                zh: "中文",
-                ar: "العربية",
-                ko: "한국어",
-                pt: "Português",
-                fr: "Français",
-                de: "Deutsch",
-                it: "Italiano"
-            };
-            return languageNames[code] || "English";
-        }
-        
-        // Toggle language dropdown
-        document.getElementById('language-toggle').addEventListener('click', function(e) {
-            e.stopPropagation();
-            document.getElementById('language-dropdown').classList.toggle('show');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            const dropdown = document.getElementById('language-dropdown');
-            if (dropdown.classList.contains('show') && !e.target.closest('.language-switcher-container')) {
-                dropdown.classList.remove('show');
-            }
-        });
-        
-        // Handle language selection
-        document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', function() {
-                const lang = this.getAttribute('data-lang');
-                currentLang = lang;
-                localStorage.setItem('user-lang', lang);
-                applyTranslations(lang);
-                document.getElementById('language-dropdown').classList.remove('show');
-            });
-        });
-        
-        // Apply translations on page load
-        applyTranslations(currentLang);
-    </script>
 </body>
 </html>
