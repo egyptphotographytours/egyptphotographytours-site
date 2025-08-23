@@ -8,7 +8,10 @@
   <title>Egypt Photography Tours | Pyramids, Cairo & Alexandria</title>
 
   <!-- ✅ SEO Meta Description -->
-  <meta name="description" content="Book private Egypt photography tours with expert guides. Capture the Pyramids, Cairo & Alexandria. Professional photos, daily tours. Book now!">
+  <meta name="description" content="Professional photography tours in Egypt. Capture stunning photos of Pyramids, Nile River, and ancient temples with expert guides. Private tours available from $150 USD.">
+
+  <!-- ✅ Keywords -->
+  <meta name="keywords" content="Egypt photography tours, Pyramids photoshoot, Cairo photography guide, Nile River photos, Luxor temples photography, Alexandria tours">
 
   <!-- ✅ Robots -->
   <meta name="robots" content="index, follow">
@@ -16,15 +19,40 @@
   <!-- ✅ Canonical URL -->
   <link rel="canonical" href="https://www.egyptphotographytours.com/" />
 
+  <!-- ✅ Hreflang Tags for Multilingual -->
+  <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/" />
+  <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/" />
+  <link rel="alternate" hreflang="fr" href="https://www.egyptphotographytours.com/fr/" />
+  <link rel="alternate" hreflang="de" href="https://www.egyptphotographytours.com/de/" />
+  <link rel="alternate" hreflang="es" href="https://www.egyptphotographytours.com/es/" />
+  <link rel="alternate" hreflang="it" href="https://www.egyptphotographytours.com/it/" />
+  <link rel="alternate" hreflang="zh" href="https://www.egyptphotographytours.com/zh/" />
+  <link rel="alternate" hreflang="ko" href="https://www.egyptphotographytours.com/ko/" />
+  <link rel="alternate" hreflang="pt" href="https://www.egyptphotographytours.com/pt/" />
+  <link rel="alternate" hreflang="id" href="https://www.egyptphotographytours.com/id/" />
+  <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/" />
+
   <!-- ✅ Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png">
 
-  <!-- ✅ Social (OG Tags) -->
-  <meta property="og:title" content="Photography Tours in Egypt | Pyramids, Cairo & Alexandria Photo Adventures">
-  <meta property="og:description" content="Explore Egypt through your lens with private guided photography tours at the Pyramids, Cairo, Alexandria, and more.">
-  <meta property="og:image" content="https://www.egyptphotographytours.com/logo.png">
+  <!-- ✅ Enhanced Social Media Tags -->
+  <meta property="og:title" content="Egypt Photography Tours | Professional Pyramid & Temple Photo Adventures">
+  <meta property="og:description" content="Capture the magic of ancient Egypt with expert photography guides. Private tours of Pyramids, temples, and historic Cairo starting from $150 USD.">
+  <meta property="og:image" content="https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg">
   <meta property="og:url" content="https://www.egyptphotographytours.com/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egypt Photography Tours">
+
+  <!-- ✅ Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Egypt Photography Tours | Professional Photo Adventures">
+  <meta name="twitter:description" content="Expert-guided photography tours of Egypt's most iconic sites. Capture stunning photos with professional guides.">
+  <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg">
+
+  <!-- ✅ Local SEO -->
+  <meta name="geo.region" content="EG-C">
+  <meta name="geo.placename" content="Cairo, Egypt">
+  <meta name="geo.position" content="30.0444;31.2357">
 
   <!-- ✅ Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -111,11 +139,13 @@
   }
   </script>
 
+  <!-- ✅ Performance Optimized CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <style>
     body {
         font-family: 'Inter', sans-serif;
@@ -143,6 +173,173 @@
         z-index: 10;
     }
     .h-screen-75 { height: 75vh; }
+
+    /* ✅ PERFORMANCE IMPROVEMENTS */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* ✅ RESPONSIVE GRID */
+    .tour-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .tour-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .tour-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .tour-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    /* ✅ IMPROVED TYPOGRAPHY */
+    h1 { 
+        font-size: 2.5rem; 
+        line-height: 1.2; 
+        margin-bottom: 1rem; 
+    }
+    h2 { 
+        font-size: 2rem; 
+        line-height: 1.3; 
+        margin: 2rem 0 1rem; 
+    }
+    h3 { 
+        font-size: 1.5rem; 
+        line-height: 1.4; 
+        margin: 1.5rem 0 0.5rem; 
+    }
+
+    /* ✅ MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+        h1 { font-size: 2rem; }
+        h2 { font-size: 1.5rem; }
+        .tour-grid { grid-template-columns: 1fr; gap: 1rem; }
+        .language-dropdown { right: 0; left: auto; }
+    }
+
+    /* ✅ LAZY LOADING ANIMATION */
+    .lazy-load {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .lazy-load.loaded {
+        opacity: 1;
+    }
+
+    /* ✅ LANGUAGE SWITCHER STYLES */
+    .language-switcher {
+        position: relative;
+        display: inline-block;
+    }
+
+    .language-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #374151;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        min-width: 200px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .language-switcher:hover .language-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .language-item {
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        border-bottom: 1px solid #4B5563;
+    }
+
+    .language-item:last-child {
+        border-bottom: none;
+    }
+
+    .language-item:hover {
+        background-color: #4B5563;
+    }
+
+    .language-item.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background-color: transparent;
+    }
+
+    .language-item.disabled:hover {
+        background-color: transparent;
+    }
+
+    .flag-icon {
+        font-size: 1.25rem;
+        margin-right: 12px;
+        min-width: 20px;
+    }
+
+    .language-text {
+        flex: 1;
+    }
+
+    .coming-soon {
+        font-size: 0.75rem;
+        color: #9CA3AF;
+        font-style: italic;
+    }
+
+    .current-language {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .current-language:hover {
+        background: rgba(255, 215, 0, 0.2);
+    }
+
+    .current-flag {
+        font-size: 1.1rem;
+        margin-right: 8px;
+    }
+
+    .dropdown-arrow {
+        margin-left: 8px;
+        transition: transform 0.2s ease;
+    }
+
+    .language-switcher:hover .dropdown-arrow {
+        transform: rotate(180deg);
+    }
   </style>
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
@@ -150,7 +347,12 @@
     <header class="bg-primary-dark text-white shadow-lg">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="images/egypt-photography-tours-logo.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full">
+                <img src="images/egypt-photography-tours-logo.jpg" 
+                     alt="Egypt Photography Tours Logo - Professional photography guide services for Pyramids and ancient sites" 
+                     class="h-16 w-auto rounded-full"
+                     loading="eager"
+                     width="64" 
+                     height="64">
                 <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
             </div>
             <p class="text-md md:text-lg mt-2 md:mt-0 italic">Capture the Magic of Egypt.</p>
@@ -168,16 +370,70 @@
                 <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <div class="relative group">
-                    <button class="flex items-center text-white hover:text-accent-light focus:outline-none">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M3 17h12M17 6v12M17 6h2M17 18h2M17 18v-6"></path></svg>
-                        English
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="absolute right-0 mt-2 w-32 bg-gray-700 rounded-md shadow-lg py-1 hidden group-hover:block">
-                        <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">العربية (Coming Soon)</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">Deutsch (Coming Soon)</a>
+                <!-- ✅ MULTILINGUAL LANGUAGE SWITCHER -->
+                <div class="language-switcher">
+                    <div class="current-language">
+                        <span class="current-flag">🇺🇸</span>
+                        <span>English</span>
+                        <svg class="dropdown-arrow w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="language-dropdown">
+                        <a href="index.html" class="language-item">
+                            <span class="flag-icon">🇺🇸</span>
+                            <span class="language-text">English</span>
+                        </a>
+                        <a href="ar/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇪🇬</span>
+                            <span class="language-text">العربية</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="fr/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇫🇷</span>
+                            <span class="language-text">Français</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="de/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇩🇪</span>
+                            <span class="language-text">Deutsch</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="es/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇪🇸</span>
+                            <span class="language-text">Español</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="it/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇮🇹</span>
+                            <span class="language-text">Italiano</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="zh/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇨🇳</span>
+                            <span class="language-text">中文</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="ko/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇰🇷</span>
+                            <span class="language-text">한국어</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="pt/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇵🇹</span>
+                            <span class="language-text">Português</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="id/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇮🇩</span>
+                            <span class="language-text">Bahasa Indonesia</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
+                        <a href="ja/index.html" class="language-item disabled">
+                            <span class="flag-icon">🇯🇵</span>
+                            <span class="language-text">日本語</span>
+                            <span class="coming-soon">Coming Soon</span>
+                        </a>
                     </div>
                 </div>
                 <button class="snipcart-checkout flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
@@ -212,10 +468,10 @@
         <section class="container mx-auto px-6 py-16 text-center">
             <h2 class="text-4xl font-bold text-primary-dark mb-8">Welcome to Egypt Photography Tours</h2>
             <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-6">
-                Step into a world where ancient history meets breathtaking landscapes, all waiting to be captured through your lens. At Egypt Photography Tours, we are passionate about revealing the unparalleled beauty of Egypt to photographers of all levels. From the iconic **Pyramids of Giza** to the serene flow of the **Nile River** and the bustling charm of **Cairo's historic streets**, we design immersive journeys that ensure you not only see Egypt but truly *capture* its soul.
+                Step into a world where ancient history meets breathtaking landscapes, all waiting to be captured through your lens. At Egypt Photography Tours, we are passionate about revealing the unparalleled beauty of Egypt to photographers of all levels. From the iconic <strong>Pyramids of Giza</strong> to the serene flow of the <strong>Nile River</strong> and the bustling charm of <strong>Cairo's historic streets</strong>, we design immersive journeys that ensure you not only see Egypt but truly <em>capture</em> its soul.
             </p>
             <p class="text-lg leading-relaxed max-w-3xl mx-auto">
-                Our expertly curated **Egypt tours** go beyond conventional sightseeing, offering unique photographic opportunities, personalized guidance from professional photographers, and authentic cultural encounters. Whether you're a seasoned pro looking for exclusive access or a budding enthusiast eager to master your craft, embark on an **unforgettable Egyptian photography adventure** with us. Let's make your next masterpiece together.
+                Our expertly curated <strong>Egypt tours</strong> go beyond conventional sightseeing, offering unique photographic opportunities, personalized guidance from professional photographers, and authentic cultural encounters. Whether you're a seasoned pro looking for exclusive access or a budding enthusiast eager to master your craft, embark on an <strong>unforgettable Egyptian photography adventure</strong> with us. Let's make your next masterpiece together.
             </p>
         </section>
 
@@ -226,32 +482,32 @@
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         <h3 class="text-2xl font-semibold text-primary-dark mb-3">Expert Photography Guides, Local Insights</h3>
-                        <p class="text-md leading-relaxed">Our **expert photography guides in Egypt** are not just seasoned photographers; they are licensed Egyptologists and local cultural specialists. They know the best angles, the perfect lighting conditions, and hidden gems for that unique **Pyramids photoshoot** or a captivating **Nile photography** scene. Benefit from personalized coaching and unparalleled insights into Egyptian history and culture.</p>
+                        <p class="text-md leading-relaxed">Our <strong>expert photography guides in Egypt</strong> are not just seasoned photographers; they are licensed Egyptologists and local cultural specialists. They know the best angles, the perfect lighting conditions, and hidden gems for that unique <strong>Pyramids photoshoot</strong> or a captivating <strong>Nile photography</strong> scene. Benefit from personalized coaching and unparalleled insights into Egyptian history and culture.</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                         <h3 class="text-2xl font-semibold text-primary-dark mb-3">Exclusive Access & Unique Vantage Points</h3>
-                        <p class="text-md leading-relaxed">Imagine capturing the **Luxor Temples** at dawn without crowds, or finding the perfect spot for a stunning **Egyptian sunset landscape**. We leverage our deep local connections to provide **exclusive access in Egypt**, offering unique photographic vantage points often unavailable to general tourists. Get that shot you've always dreamed of, from the vibrant markets of **Cairo** to the serene landscapes of the **Sinai desert**.</p>
+                        <p class="text-md leading-relaxed">Imagine capturing the <strong>Luxor Temples</strong> at dawn without crowds, or finding the perfect spot for a stunning <strong>Egyptian sunset landscape</strong>. We leverage our deep local connections to provide <strong>exclusive access in Egypt</strong>, offering unique photographic vantage points often unavailable to general tourists. Get that shot you've always dreamed of, from the vibrant markets of <strong>Cairo</strong> to the serene landscapes of the <strong>Sinai desert</strong>.</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         <h3 class="text-2xl font-semibold text-primary-dark mb-3">Tailored Itineraries for Every Photographer</h3>
-                        <p class="text-md leading-relaxed">Whether you're interested in ancient architecture, street photography, portraiture, or the vast **desert landscapes of Egypt**, our **tailored photography itineraries** are designed with your passion in mind. We meticulously plan each day to optimize lighting and photographic opportunities, ensuring your focus remains on creating incredible images. From a focused **Pyramids photography tour** to an extensive **ancient Egypt photography expedition**, your journey is custom-built.</p>
+                        <p class="text-md leading-relaxed">Whether you're interested in ancient architecture, street photography, portraiture, or the vast <strong>desert landscapes of Egypt</strong>, our <strong>tailored photography itineraries</strong> are designed with your passion in mind. We meticulously plan each day to optimize lighting and photographic opportunities, ensuring your focus remains on creating incredible images. From a focused <strong>Pyramids photography tour</strong> to an extensive <strong>ancient Egypt photography expedition</strong>, your journey is custom-built.</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M7 12h.01M7 16h.01M16 16h.01M12 16h.01M12 12h.01M12 8h.01M7 8h.01M16 8h.01M21 21l-4.5-4.5"></path></svg>
                         <h3 class="text-2xl font-semibold text-primary-dark mb-3">Small Group, Personalized Learning</h3>
-                        <p class="text-md leading-relaxed">We believe in quality over quantity. Our **small group Egypt tours** guarantee personalized attention and ample one-on-one time with your photography guide. This intimate setting fosters a supportive environment where you can refine your skills, share experiences, and truly connect with fellow photographers. Experience the magic of **Egypt travel photography** with a community of like-minded individuals.</p>
+                        <p class="text-md leading-relaxed">We believe in quality over quantity. Our <strong>small group Egypt tours</strong> guarantee personalized attention and ample one-on-one time with your photography guide. This intimate setting fosters a supportive environment where you can refine your skills, share experiences, and truly connect with fellow photographers. Experience the magic of <strong>Egypt travel photography</strong> with a community of like-minded individuals.</p>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c.045 4.095 1.563 7.844 4.368 10.053L12 21.466l4.688-2.413A12.001 12.001 0 0021.056 12c-.045-4.095-1.563-7.844-4.368-10.053z"></path></svg>
                         <h3 class="text-2xl font-semibold text-primary-dark mb-3">Seamless Logistics & Secure Travel in Egypt</h3>
-                        <p class="text-md leading-relaxed">Your peace of mind is our priority. We handle all the intricate details – from luxurious accommodations and private, air-conditioned transport to all permits and entrance fees. Our commitment to **safe Egypt tours** means you can focus entirely on your photography and cultural immersion. Enjoy a **hassle-free Egypt photography adventure** from start to finish.</p>
+                        <p class="text-md leading-relaxed">Your peace of mind is our priority. We handle all the intricate details — from luxurious accommodations and private, air-conditioned transport to all permits and entrance fees. Our commitment to <strong>safe Egypt tours</strong> means you can focus entirely on your photography and cultural immersion. Enjoy a <strong>hassle-free Egypt photography adventure</strong> from start to finish.</p>
                     </div>
                      <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
                         <svg class="w-16 h-16 text-accent-light mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
                         <h3 class="text-2xl font-semibold text-primary-dark mb-3">Authentic Cultural Immersion</h3>
-                        <p class="text-md leading-relaxed">Beyond just capturing stunning photographs, our tours offer deep **authentic cultural immersion in Egypt**. Engage with locals, explore traditional markets, and savor authentic cuisine. This holistic experience ensures your photographs tell a richer story, reflecting the true spirit of Egypt and its people.</p>
+                        <p class="text-md leading-relaxed">Beyond just capturing stunning photographs, our tours offer deep <strong>authentic cultural immersion in Egypt</strong>. Engage with locals, explore traditional markets, and savor authentic cuisine. This holistic experience ensures your photographs tell a richer story, reflecting the true spirit of Egypt and its people.</p>
                     </div>
                 </div>
             </div>
@@ -262,7 +518,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative">
                     <span class="sale-tag">Special Offer!</span>
-                    <img src="images/pyramids-private-tour.jpg" alt="Private Guided Tour of Giza Pyramids and Sphinx with professional photography" class="w-full h-56 object-cover">
+                    <img src="images/pyramids-private-tour.webp" 
+                         alt="Private guided photography tour at Giza Pyramids with professional Egyptian guide and Sphinx view" 
+                         class="w-full h-56 object-cover lazy-load"
+                         loading="lazy"
+                         width="400" 
+                         height="224">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary-dark mb-2">📸 Capture the Magic: Private Pyramids Guided Tour + Professional Photography</h3>
                         <p class="text-gray-700 mb-4 text-left">Step into ancient history on this immersive one-day private tour of the Great Pyramids of Giza and the Sphinx, guided by a passionate local expert. Capture unforgettable moments with a professional photo session and hear the real stories behind the stones.</p>
@@ -276,7 +537,12 @@
 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative">
                     <span class="sale-tag">Limited Slots!</span>
-                    <img src="images/cairo-giza-2day.jpg" alt="Two-day premium private tour itinerary covering Cairo and Giza landmarks" class="w-full h-56 object-cover">
+                    <img src="images/cairo-giza-2day.webp" 
+                         alt="Two-day premium private photography tour covering Cairo landmarks and Giza pyramids with expert guide" 
+                         class="w-full h-56 object-cover lazy-load"
+                         loading="lazy"
+                         width="400" 
+                         height="224">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary-dark mb-2">2-Day Premium Private Tour: Cairo & Giza Photography Expedition</h3>
                         <p class="text-gray-700 mb-4 text-left">Immerse yourself in Egypt's vibrant capital and ancient wonders over two unforgettable days. Explore the majestic Pyramids, bustling Old Cairo, and the impressive National Museum of Egyptian Civilization, all with your private guide and photographer.</p>
@@ -290,7 +556,12 @@
 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative">
                     <span class="sale-tag">Book Now!</span>
-                    <img src="images/alexandria-tour.jpg" alt="Private coastal day tour to Alexandria from Cairo with sea views and local vibes" class="w-full h-56 object-cover">
+                    <img src="images/alexandria-tour.webp" 
+                         alt="Private coastal day photography tour to Alexandria from Cairo with Mediterranean sea views and ancient sites" 
+                         class="w-full h-56 object-cover lazy-load"
+                         loading="lazy"
+                         width="400" 
+                         height="224">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary-dark mb-2">Discover Alexandria: Private Coastal Day Tour from Cairo</h3>
                         <p class="text-gray-700 mb-4 text-left">Trade Cairo's desert dust for the fresh breeze of the Mediterranean on this unforgettable private day tour to Alexandria. Discover a mix of Greek, Roman, Islamic, and modern treasures with a passionate local guide and capture stunning coastal views.</p>
@@ -304,7 +575,12 @@
 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 relative">
                     <span class="sale-tag">New Adventure!</span>
-                    <img src="images/egypt-discovery-7day.jpg" alt="7-Day Egypt Discovery Tour covering Cairo, Giza, Alexandria, and Luxor" class="w-full h-56 object-cover">
+                    <img src="images/egypt-discovery-7day.webp" 
+                         alt="7-Day comprehensive Egypt photography discovery tour covering Cairo, Giza Pyramids, Alexandria, and Luxor temples" 
+                         class="w-full h-56 object-cover lazy-load"
+                         loading="lazy"
+                         width="400" 
+                         height="224">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary-dark mb-2">7-Day Egypt Discovery Tour: Cairo, Giza, Alexandria & Luxor</h3>
                         <p class="text-gray-700 mb-4 text-left">Experience the wonders of ancient and modern Egypt on this immersive 7-day guided journey. From the towering Pyramids to the Mediterranean charm of Alexandria and the majestic temples of Luxor — this trip brings Egypt's soul to life.</p>
@@ -359,12 +635,12 @@
                     </div>
                      <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
                         <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
-                        <p class="italic text-lg mb-4">"If you’re visiting the Pyramids of Giza and want an unforgettable experience, I highly recommend booking a photography tour with Hassam. From start to finish, he was professional, friendly, and incredibly knowledgeable. Not only did he take absolutely stunning photos that captured the magic of the pyramids perfectly, but he also shared a wealth of historical information and interesting stories that made the tour even more special. Hassam truly knows the best spots for unique shots and angles, and he made sure I felt comfortable and enjoyed every moment. The value for the price is outstanding — you get high-quality photography, a personalized tour, and a deep dive into the history of one of the world’s greatest wonders. This was easily one of the highlights of my trip to Egypt!"</p>
+                        <p class="italic text-lg mb-4">"If you're visiting the Pyramids of Giza and want an unforgettable experience, I highly recommend booking a photography tour with Hassam. From start to finish, he was professional, friendly, and incredibly knowledgeable. Not only did he take absolutely stunning photos that captured the magic of the pyramids perfectly, but he also shared a wealth of historical information and interesting stories that made the tour even more special. Hassam truly knows the best spots for unique shots and angles, and he made sure I felt comfortable and enjoyed every moment. The value for the price is outstanding — you get high-quality photography, a personalized tour, and a deep dive into the history of one of the world's greatest wonders. This was easily one of the highlights of my trip to Egypt!"</p>
                         <p class="font-semibold text-primary-dark">- Erik </p>
                     </div>
                      <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
                         <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
-                        <p class="italic text-lg mb-4">"Great experience, very professional, makes you feel comfortable even if you’re not used to being in front of a camera. Attention to detail and had great information about the pyramids and surrounding areas. Was so easy and comfortable to work with I decided to book a day trip tour with Hossam to Alexandria sorting my visit here as well."</p>
+                        <p class="italic text-lg mb-4">"Great experience, very professional, makes you feel comfortable even if you're not used to being in front of a camera. Attention to detail and had great information about the pyramids and surrounding areas. Was so easy and comfortable to work with I decided to book a day trip tour with Hossam to Alexandria sorting my visit here as well."</p>
                         <p class="font-semibold text-primary-dark">- Jamie </p>
                     </div>
                 </div>
@@ -408,5 +684,91 @@
 
     <div hidden id="snipcart" data-api-key="YzhiNTE1NDctZmU3YS00ZTQ4LWFlNmMtNWZhYjViMjNmNTI3NjM4ODk0NzM0NjE2NTQyNTM0"></div>
     <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+
+    <!-- ✅ PERFORMANCE & FUNCTIONALITY JAVASCRIPT -->
+    <script>
+        // ✅ LAZY LOADING IMAGES
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            }
+        });
+
+        // ✅ SMOOTH SCROLLING FOR ANCHOR LINKS
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ✅ LANGUAGE SWITCHER FUNCTIONALITY
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const currentLanguage = document.querySelector('.current-language');
+            const dropdown = document.querySelector('.language-dropdown');
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!languageSwitcher.contains(e.target)) {
+                    dropdown.style.opacity = '0';
+                    dropdown.style.visibility = 'hidden';
+                    dropdown.style.transform = 'translateY(-10px)';
+                }
+            });
+            
+            // Handle language selection
+            document.querySelectorAll('.language-item:not(.disabled)').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Here you would implement the actual language switching logic
+                    console.log('Switching to:', this.querySelector('.language-text').textContent);
+                });
+            });
+        });
+
+        // ✅ PRELOAD CRITICAL IMAGES
+        function preloadImages() {
+            const criticalImages = [
+                'images/hero-image.jpg',
+                'images/pyramids-private-tour.webp'
+            ];
+            
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+        }
+        
+        // Preload critical images
+        preloadImages();
+
+        // ✅ PERFORMANCE MONITORING
+        window.addEventListener('load', function() {
+            // Log page load time for debugging
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            console.log('Page load time:', loadTime + 'ms');
+        });
+    </script>
 </body>
 </html>
