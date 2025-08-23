@@ -31,6 +31,7 @@
   <link rel="alternate" hreflang="pt" href="https://www.egyptphotographytours.com/pt/" />
   <link rel="alternate" hreflang="id" href="https://www.egyptphotographytours.com/id/" />
   <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/" />
+  <link rel="alternate" hreflang="ru" href="https://www.egyptphotographytours.com/ru/" />
 
   <!-- ✅ Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -242,7 +243,7 @@
         opacity: 1;
     }
 
-    /* ✅ LANGUAGE SWITCHER STYLES */
+    /* ✅ COMPACT LANGUAGE SWITCHER STYLES */
     .language-switcher {
         position: relative;
         display: inline-block;
@@ -255,12 +256,15 @@
         background: #374151;
         border-radius: 8px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        min-width: 200px;
+        min-width: 180px;
+        max-width: 220px;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
         transition: all 0.3s ease;
         z-index: 1000;
+        max-height: 300px;
+        overflow-y: auto;
     }
 
     .language-switcher:hover .language-dropdown {
@@ -270,13 +274,15 @@
     }
 
     .language-item {
-        padding: 12px 16px;
+        padding: 8px 12px;
         display: flex;
         align-items: center;
         color: white;
         text-decoration: none;
         transition: background-color 0.2s ease;
         border-bottom: 1px solid #4B5563;
+        font-size: 0.875rem;
+        cursor: pointer;
     }
 
     .language-item:last-child {
@@ -287,58 +293,70 @@
         background-color: #4B5563;
     }
 
-    .language-item.disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        background-color: transparent;
-    }
-
-    .language-item.disabled:hover {
-        background-color: transparent;
+    .language-item.active {
+        background-color: #FFD700;
+        color: #1a202c;
+        font-weight: 600;
     }
 
     .flag-icon {
-        font-size: 1.25rem;
-        margin-right: 12px;
-        min-width: 20px;
+        font-size: 1rem;
+        margin-right: 8px;
+        min-width: 18px;
     }
 
     .language-text {
         flex: 1;
-    }
-
-    .coming-soon {
-        font-size: 0.75rem;
-        color: #9CA3AF;
-        font-style: italic;
+        font-size: 0.875rem;
     }
 
     .current-language {
         display: flex;
         align-items: center;
-        padding: 8px 12px;
+        padding: 6px 10px;
         background: rgba(255, 215, 0, 0.1);
         border-radius: 6px;
         cursor: pointer;
         transition: all 0.2s ease;
+        font-size: 0.875rem;
+        border: 1px solid rgba(255, 215, 0, 0.3);
     }
 
     .current-language:hover {
         background: rgba(255, 215, 0, 0.2);
+        border-color: rgba(255, 215, 0, 0.5);
     }
 
     .current-flag {
-        font-size: 1.1rem;
-        margin-right: 8px;
+        font-size: 1rem;
+        margin-right: 6px;
     }
 
     .dropdown-arrow {
-        margin-left: 8px;
+        margin-left: 6px;
         transition: transform 0.2s ease;
     }
 
     .language-switcher:hover .dropdown-arrow {
         transform: rotate(180deg);
+    }
+
+    /* Scrollbar styling for language dropdown */
+    .language-dropdown::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .language-dropdown::-webkit-scrollbar-track {
+        background: #4B5563;
+    }
+
+    .language-dropdown::-webkit-scrollbar-thumb {
+        background: #6B7280;
+        border-radius: 2px;
+    }
+
+    .language-dropdown::-webkit-scrollbar-thumb:hover {
+        background: #9CA3AF;
     }
   </style>
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
@@ -370,69 +388,63 @@
                 <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <!-- ✅ MULTILINGUAL LANGUAGE SWITCHER -->
+                <!-- ✅ COMPACT MULTILINGUAL LANGUAGE SWITCHER -->
                 <div class="language-switcher">
                     <div class="current-language">
                         <span class="current-flag">🇺🇸</span>
-                        <span>English</span>
-                        <svg class="dropdown-arrow w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span>EN</span>
+                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
                     <div class="language-dropdown">
-                        <a href="index.html" class="language-item">
+                        <a href="index.html" class="language-item active">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="ar/index.html" class="language-item disabled">
+                        <a href="ru/index.html" class="language-item">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский</span>
+                        </a>
+                        <a href="ar/index.html" class="language-item">
                             <span class="flag-icon">🇪🇬</span>
                             <span class="language-text">العربية</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
-                        <a href="fr/index.html" class="language-item disabled">
+                        <a href="fr/index.html" class="language-item">
                             <span class="flag-icon">🇫🇷</span>
                             <span class="language-text">Français</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
-                        <a href="de/index.html" class="language-item disabled">
+                        <a href="de/index.html" class="language-item">
                             <span class="flag-icon">🇩🇪</span>
                             <span class="language-text">Deutsch</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
-                        <a href="es/index.html" class="language-item disabled">
+                        <a href="es/index.html" class="language-item">
                             <span class="flag-icon">🇪🇸</span>
                             <span class="language-text">Español</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
-                        <a href="it/index.html" class="language-item disabled">
+                        <a href="it/index.html" class="language-item">
                             <span class="flag-icon">🇮🇹</span>
                             <span class="language-text">Italiano</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
-                        <a href="zh/index.html" class="language-item disabled">
+                        <a href="zh/index.html" class="language-item">
                             <span class="flag-icon">🇨🇳</span>
                             <span class="language-text">中文</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
-                        <a href="ko/index.html" class="language-item disabled">
+                        <a href="ko/index.html" class="language-item">
                             <span class="flag-icon">🇰🇷</span>
                             <span class="language-text">한국어</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
-                        <a href="pt/index.html" class="language-item disabled">
+                        <a href="pt/index.html" class="language-item">
                             <span class="flag-icon">🇵🇹</span>
                             <span class="language-text">Português</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
-                        <a href="id/index.html" class="language-item disabled">
+                        <a href="id/index.html" class="language-item">
                             <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa Indonesia</span>
-                            <span class="coming-soon">Coming Soon</span>
+                            <span class="language-text">Bahasa</span>
                         </a>
-                        <a href="ja/index.html" class="language-item disabled">
+                        <a href="ja/index.html" class="language-item">
                             <span class="flag-icon">🇯🇵</span>
                             <span class="language-text">日本語</span>
-                            <span class="coming-soon">Coming Soon</span>
                         </a>
                     </div>
                 </div>
@@ -620,7 +632,7 @@
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
                         <div class="text-2xl text-accent-light mb-3">⭐⭐⭐⭐⭐</div>
-                        <p class="italic text-lg mb-4">"프라이빗 투어로 남편과 둘이서 투어 참가했는데, 관광객이 많지 않은 좋은 스팟으로 안내해줘서 멋진 사진 많이 건질 수 있었어요! 사진 촬영뿐 아니라 피라미드나 스핑크스에 대한 간단한 역사 이야기도 해줘서 더 유익했습니다☺️ 카이로 토박이 출신이라 추천할 만한 레스토랑이나 스팟들도 많이 알려줬고, 비싸기만 한 곳은 비추해주기도 해서 이집트에 처음 오는 입장에서 여행에 많은 도움이 된 것 같아요 간단한 스토리텔링 투어+사진 촬영 원하시는 분들께 추천합니다!"</p>
+                        <p class="italic text-lg mb-4">"프라이빗 투어로 남편과 둘이서 투어 참가했는데, 관광객이 많지 않은 좋은 스팟으로 안내해줘서 멋진 사진 많이 건질 수 있었어요! 사진 촬영뿐 아니라 피라미드나 스핑크스에 대한 간단한 역사 이야기도 해줘서 더 유익했습니다☺️ 카이로 토박이 출신이라 추천할 만한 레스토랑이나 스팟들도 많이 알려줬고, 비싸기만 한 곳은 비추해주기도 해서 이집트에 처음 오는 입장에서 여행에 많은 도움이 될 것 같아요 간단한 스토리텔링 투어+사진 촬영 원하시는 분들께 추천합니다!"</p>
                         <p class="font-semibold text-primary-dark">- 소연 이</p>
                     </div>
                      <div class="bg-white p-8 rounded-lg shadow-lg text-primary-dark flex flex-col items-center">
@@ -719,11 +731,13 @@
             });
         });
 
-        // ✅ LANGUAGE SWITCHER FUNCTIONALITY
+        // ✅ ENHANCED LANGUAGE SWITCHER FUNCTIONALITY
         document.addEventListener('DOMContentLoaded', function() {
             const languageSwitcher = document.querySelector('.language-switcher');
             const currentLanguage = document.querySelector('.current-language');
             const dropdown = document.querySelector('.language-dropdown');
+            const currentFlag = document.querySelector('.current-flag');
+            const currentText = currentLanguage.querySelector('span:not(.current-flag):not(.dropdown-arrow)');
             
             // Close dropdown when clicking outside
             document.addEventListener('click', function(e) {
@@ -735,13 +749,57 @@
             });
             
             // Handle language selection
-            document.querySelectorAll('.language-item:not(.disabled)').forEach(item => {
+            document.querySelectorAll('.language-item').forEach(item => {
                 item.addEventListener('click', function(e) {
                     e.preventDefault();
+                    
+                    // Remove active class from all items
+                    document.querySelectorAll('.language-item').forEach(langItem => {
+                        langItem.classList.remove('active');
+                    });
+                    
+                    // Add active class to selected item
+                    this.classList.add('active');
+                    
+                    // Update the current language display
+                    const selectedFlag = this.querySelector('.flag-icon').textContent;
+                    const selectedLang = this.querySelector('.language-text').textContent;
+                    const selectedCode = getLanguageCode(selectedLang);
+                    
+                    currentFlag.textContent = selectedFlag;
+                    currentText.textContent = selectedCode;
+                    
+                    // Close dropdown
+                    dropdown.style.opacity = '0';
+                    dropdown.style.visibility = 'hidden';
+                    dropdown.style.transform = 'translateY(-10px)';
+                    
                     // Here you would implement the actual language switching logic
-                    console.log('Switching to:', this.querySelector('.language-text').textContent);
+                    console.log('Switching to:', selectedLang);
+                    
+                    // Navigate to the language-specific page
+                    window.location.href = this.href;
                 });
             });
+            
+            // Helper function to get language codes
+            function getLanguageCode(languageName) {
+                const codes = {
+                    'English': 'EN',
+                    'Русский': 'RU',
+                    'العربية': 'AR',
+                    'Français': 'FR',
+                    'Deutsch': 'DE',
+                    'Español': 'ES',
+                    'Italiano': 'IT',
+                    '中文': 'ZH',
+                    '한국어': 'KO',
+                    'Português': 'PT',
+                    'Bahasa': 'ID',
+                    '日本語': 'JA'
+                };
+                return codes[languageName] || languageName;
+            }
         });
 
         // ✅ PRELOAD CRITICAL IMAGES
