@@ -180,11 +180,16 @@
     }
     </script>
     
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iL-WaCrha_h3CoP5g.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://flagcdn.com/us.svg" as="image">
+    <link rel="preload" href="images/copilot_image_1752144851499.jpg" as="image">
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -352,19 +357,77 @@
             display: flex;
             justify-content: center;
         }
+        /* Mobile menu specific styles */
+        .mobile-menu-btn {
+            display: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        @media (max-width: 767px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                background-color: #1a202c;
+                padding-top: 1rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links ul {
+                flex-direction: column;
+                space-x-0;
+                space-y-4;
+                text-align: center;
+            }
+            .nav-links li {
+                width: 100%;
+            }
+            .nav-links a {
+                display: block;
+                padding: 0.5rem 0;
+            }
+            .header-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            .language-switcher {
+                align-self: flex-end;
+            }
+            .dropdown-menu {
+                right: auto;
+                left: 0;
+            }
+            .faq-question {
+                font-size: 1.25rem; /* smaller on mobile */
+            }
+        }
         
     </style>
-    <link rel="preload" href="https://flagcdn.com/us.svg" as="image">
 </head>
 <body class="flex flex-col min-h-screen">
     <header class="bg-primary-dark text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
-            <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between flex-wrap">
+            <div class="flex items-center space-x-3">
+                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full" loading="lazy">
                 <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
             </div>
-            <nav class="w-full md:w-auto flex flex-col md:flex-row items-center justify-between">
-                <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
+            
+            <button id="mobile-menu-button" class="mobile-menu-btn md:hidden" aria-controls="main-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="main-nav" class="nav-links hidden md:flex md:flex-row md:items-center md:justify-between w-full md:w-auto">
+                <ul class="flex flex-col md:flex-row flex-wrap justify-center md:justify-start space-y-4 md:space-y-0 space-x-0 md:space-x-8 text-lg font-medium">
                     <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
                     <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1">About Us</a></li>
                     <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Our Tours</a></li>
@@ -372,7 +435,7 @@
                     <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contact Us</a></li>
                     <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1 font-bold">FAQs</a></li>
                 </ul>
-                <div class="mt-4 md:mt-0 flex items-center space-x-4">
+                <div class="mt-4 md:mt-0 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
                     <div class="language-switcher">
                         <button class="dropdown-toggle" aria-expanded="false" aria-controls="language-menu">
                             <img src="https://flagcdn.com/us.svg" alt="English Flag" width="20" height="15" />
@@ -461,8 +524,8 @@
 
     <main class="flex-grow container mx-auto px-6 py-16">
         <div class="max-w-4xl mx-auto text-center mb-16">
-            <h1 class="text-5xl font-extrabold text-primary-dark mb-6">Frequently Asked Questions</h1>
-            <p class="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-primary-dark mb-6">Frequently Asked Questions</h1>
+            <p class="text-base sm:text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
                 Find quick answers to the most common questions about our Egypt photography tours, booking process, what to expect, and more.
             </p>
             
@@ -481,19 +544,19 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-xl p-8 lg:p-12 max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-primary-dark mb-8 pb-3 border-b-2 border-gray-200 flex items-center">
+            <h2 class="text-2xl sm:text-3xl font-bold text-primary-dark mb-8 pb-3 border-b-2 border-gray-200 flex items-center">
                 <i class="fas fa-info-circle mr-3 text-accent-dark"></i>
                 General Tour Information
-                <span class="category-badge ml-3">General Info</span>
+                <span class="category-badge ml-3 hidden sm:inline-block">General Info</span>
             </h2>
 
             <div class="faq-item" data-category="general">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-camera"></i>
                         <span>What makes your tours unique for Travellers?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Our tours are specifically designed for photography and travel enthusiasts. This means we focus on photography key spots, less crowded times, unique vantage points, and often include professional photography guidance from our dedicated tour guides and photographers. You'll not only see Egypt but capture its essence beautifully.</p>
@@ -501,12 +564,12 @@
             </div>
 
             <div class="faq-item" data-category="general">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-users"></i>
                         <span>Are your tours private or group tours?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Currently, all our listed tours are private. This allows for maximum flexibility, personalized attention from your guide and photographer, and the freedom to spend more time at locations that interest you most for photography. We can arrange small group tours upon special request.</p>
@@ -514,12 +577,12 @@
             </div>
 
             <div class="faq-item" data-category="general">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-check-circle"></i>
                         <span>What is included in your tour packages?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Our tours generally include private transportation, licensed Egyptologist guides, professional photography services (including edited photos), all entrance fees to specified sites, and accommodations with breakfast. Some longer tours also include selected lunches and domestic flights. Please check the specific tour's "Inclusions" section for full details.</p>
@@ -527,12 +590,12 @@
             </div>
 
             <div class="faq-item" data-category="general">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-times-circle"></i>
                         <span>What is not included in the tour price?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Typically, international flights, Egyptian visa fees, travel insurance, dinners (unless specified), personal expenses, optional activities (like hot air balloon rides or camel rides), and tips for guides/drivers are not included. This allows you flexibility in budgeting for these items.</p>
@@ -540,31 +603,31 @@
             </div>
 
             <div class="faq-item" data-category="general">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-edit"></i>
                         <span>Can I customize a tour itinerary?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Absolutely! We specialize in creating tailor-made itineraries to suit your interests, schedule, and photography goals. Contact us with your ideas, and we'll work with you to design your perfect Egyptian adventure.</p>
                 </div>
             </div>
 
-            <h2 class="text-3xl font-bold text-primary-dark mt-16 mb-8 pb-3 border-b-2 border-gray-200 flex items-center">
+            <h2 class="text-2xl sm:text-3xl font-bold text-primary-dark mt-16 mb-8 pb-3 border-b-2 border-gray-200 flex items-center">
                 <i class="fas fa-calendar-check mr-3 text-accent-dark"></i>
                 Booking & Payment
-                <span class="category-badge ml-3">Booking</span>
+                <span class="category-badge ml-3 hidden sm:inline-block">Booking</span>
             </h2>
 
             <div class="faq-item" data-category="booking">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-shopping-cart"></i>
                         <span>How do I book a tour?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">You can browse our tours on the "Our Tours" page, select your preferred tour, choose a start date (if applicable), and add it to your cart. You can then proceed to checkout using our secure payment system. For custom tours or further assistance, please fill out our contact form or email us directly.</p>
@@ -572,12 +635,12 @@
             </div>
 
             <div class="faq-item" data-category="booking">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-credit-card"></i>
                         <span>What payment methods do you accept?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">We accept major credit cards (Visa, MasterCard, American Express) through our secure online payment gateway. Bank transfers may also be an option for larger bookings; please inquire.</p>
@@ -585,31 +648,31 @@
             </div>
 
             <div class="faq-item" data-category="booking">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-ban"></i>
                         <span>What is your cancellation policy?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Our cancellation policy varies depending on the tour and booking lead time. Generally, a full refund (minus any non-refundable deposits or flight costs) is available for cancellations made 30 days or more prior to the tour start. Cancellations made closer to the date may incur charges. Full details will be provided at the time of booking confirmation.</p>
                 </div>
             </div>
 
-            <h2 class="text-3xl font-bold text-primary-dark mt-16 mb-8 pb-3 border-b-2 border-gray-200 flex items-center">
+            <h2 class="text-2xl sm:text-3xl font-bold text-primary-dark mt-16 mb-8 pb-3 border-b-2 border-gray-200 flex items-center">
                 <i class="fas fa-camera mr-3 text-accent-dark"></i>
                 Photography & Equipment
-                <span class="category-badge ml-3">Photography</span>
+                <span class="category-badge ml-3 hidden sm:inline-block">Photography</span>
             </h2>
 
             <div class="faq-item" data-category="photography">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-camera-retro"></i>
                         <span>What kind of camera gear should I bring?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">We recommend bringing your preferred DSLR or mirrorless camera with a versatile lens is excellent for architectural details and distant shots. A wide-angle lens (e.g., 16-35mm) is great for expansive landscapes.</p>
@@ -617,12 +680,12 @@
             </div>
 
             <div class="faq-item" data-category="photography">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-user-tie"></i>
                         <span>Will I receive professional photography guidance?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Yes! A key feature of our tours is the presence of a dedicated professional photographer who will provide tips, help you find the best angles, assist with camera settings, and ensure you get stunning shots. They are there to support your photographic journey.</p>
@@ -630,31 +693,31 @@
             </div>
 
             <div class="faq-item" data-category="photography">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-file-alt"></i>
                         <span>Are photography permits required for sites?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Generally, handheld camera photography is allowed at most sites for personal use. Tripods often require a special permit or may be prohibited in certain areas (e.g., inside tombs or museums). Our guide will advise you on specific site regulations and help facilitate any necessary permissions if possible.</p>
                 </div>
             </div>
 
-            <h2 class="text-3xl font-bold text-primary-dark mt-16 mb-8 pb-3 border-b-2 border-gray-200 flex items-center">
+            <h2 class="text-2xl sm:text-3xl font-bold text-primary-dark mt-16 mb-8 pb-3 border-b-2 border-gray-200 flex items-center">
                 <i class="fas fa-suitcase mr-3 text-accent-dark"></i>
                 Travel & Safety
-                <span class="category-badge ml-3">Travel</span>
+                <span class="category-badge ml-3 hidden sm:inline-block">Travel</span>
             </h2>
 
             <div class="faq-item" data-category="travel">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-shield-alt"></i>
                         <span>Is Egypt safe for tourists?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Egypt is generally safe for tourists, and the government has significantly increased security measures around tourist areas. We prioritize your safety and comfort, using trusted drivers and guides, and staying informed on local conditions. Our private tours offer an added layer of security and personalized attention.</p>
@@ -662,12 +725,12 @@
             </div>
 
             <div class="faq-item" data-category="travel">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-sun"></i>
                         <span>What is the best time of year to visit Egypt for photography?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">The cooler months from October to April offer the most comfortable weather for touring and photography, with pleasant temperatures and clear skies. However, these are also peak tourist seasons. May, September, and early October can offer good balance of fewer crowds and still manageable temperatures.</p>
@@ -675,12 +738,12 @@
             </div>
 
             <div class="faq-item" data-category="travel">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-suitcase-rolling"></i>
                         <span>What should I pack for my trip?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Lightweight, breathable clothing (cotton or linen) is ideal. Consider modest attire for visiting religious sites (shoulders and knees covered). Sun protection is essential: hat, sunglasses, high-SPF sunscreen. Comfortable walking shoes are a must. Don't forget any personal medications, a small backpack for daily excursions, and travel adapters.</p>
@@ -688,12 +751,12 @@
             </div>
 
             <div class="faq-item" data-category="travel">
-                <button class="faq-question">
+                <button class="faq-question text-lg sm:text-xl md:text-2xl">
                     <div class="flex items-center">
                         <i class="faq-icon fas fa-passport"></i>
                         <span>Do I need a visa to enter Egypt?</span>
                     </div>
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Most nationalities require a visa for Egypt. Many can obtain a visa on arrival at major airports or apply for an e-Visa online prior to travel. We recommend checking the latest visa requirements for your specific nationality with the Egyptian embassy or consulate in your country well in advance of your trip.</p>
@@ -732,16 +795,16 @@
                 <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
                 <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
                 <div class="flex justify-center md:justify-start space-x-4 mt-5">
-                    <a href="https://www.facebook.com/egyptphotographytours" target="_blank" class="social-icon" aria-label="Facebook">
+                    <a href="https://www.facebook.com/egyptphotographytours" target="_blank" class="social-icon" aria-label="Facebook" rel="noopener noreferrer">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://www.instagram.com/hossam_artistic" target="_blank" class="social-icon" aria-label="Instagram">
+                    <a href="https://www.instagram.com/hossam_artistic" target="_blank" class="social-icon" aria-label="Instagram" rel="noopener noreferrer">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" class="social-icon" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" class="social-icon" aria-label="TikTok" rel="noopener noreferrer">
                         <i class="fab fa-tiktok"></i>
                     </a>
-                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" class="social-icon" aria-label="YouTube">
+                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" class="social-icon" aria-label="YouTube" rel="noopener noreferrer">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -756,6 +819,15 @@
             const faqQuestions = document.querySelectorAll('.faq-question');
             const searchInput = document.getElementById('faq-search');
             const categoryFilters = document.querySelectorAll('.category-filter');
+            const mobileMenuBtn = document.getElementById('mobile-menu-button');
+            const mainNav = document.getElementById('main-nav');
+            
+            // Mobile menu functionality
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                mainNav.classList.toggle('hidden');
+            });
             
             // Language switcher functionality
             dropdownToggle.addEventListener('click', () => {
@@ -769,20 +841,6 @@
                     dropdownToggle.setAttribute('aria-expanded', 'false');
                 }
             });
-            // The following language switching logic is no longer active as the links are now full redirects
-            // dropdownMenu.querySelectorAll('a').forEach(link => {
-            //     link.addEventListener('click', (e) => {
-            //         e.preventDefault();
-            //         const selectedLang = e.target.closest('a').dataset.lang;
-            //         console.log('Language switched to:', selectedLang);
-            //         dropdownMenu.classList.remove('show');
-            //         dropdownToggle.setAttribute('aria-expanded', 'false');
-            //         const selectedFlag = e.target.closest('a').querySelector('img').src;
-            //         const selectedText = e.target.closest('a').dataset.lang.toUpperCase();
-            //         dropdownToggle.querySelector('img').src = selectedFlag;
-            //         dropdownToggle.querySelector('span').textContent = selectedText;
-            //     });
-            // });
 
             // FAQ accordion functionality
             faqQuestions.forEach(question => {
