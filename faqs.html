@@ -72,7 +72,7 @@
                 "name": "How do I book a tour?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can browse our tours on the \"Our Tours\" page, select your preferred tour, choose a start date (if applicable), and add it to your cart. You can then proceed to checkout using our secure Snipcart system. For custom tours or further assistance, please fill out our contact form or email us directly."
+                    "text": "You can browse our tours on the \"Our Tours\" page, select your preferred tour, and send us an inquiry through our contact page. For custom tours or further assistance, please fill out our contact form or email us directly."
                 }
             },
             {
@@ -80,7 +80,7 @@
                 "name": "What payment methods do you accept?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We accept major credit cards (Visa, MasterCard, American Express) through our secure online payment gateway (Snipcart). Bank transfers may also be an option for larger bookings; please inquire."
+                    "text": "We accept various payment methods, which will be discussed and confirmed with you during the booking process to ensure a secure and convenient transaction. Bank transfers are also an option for larger bookings."
                 }
             },
             {
@@ -294,6 +294,7 @@
             display: inline-block;
         }
         .language-dropdown {
+            display: none; /* Start hidden */
             position: absolute;
             top: 100%;
             right: 0;
@@ -302,19 +303,16 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             min-width: 180px;
             max-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
             z-index: 1000;
             max-height: 300px;
             overflow-y: auto;
+            margin-top: 10px; /* Space between button and dropdown */
         }
+
         .language-switcher:hover .language-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+            display: block; /* Show on hover */
         }
+        
         .language-item {
             padding: 8px 12px;
             display: flex;
@@ -680,7 +678,7 @@
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Typically, international flights, Egyptian visa fees, travel insurance, dinners (unless specified), personal expenses, optional activities (like hot air balloon rides or camel rides), and tips for guides/drivers are not included. This allows you flexibility in budgeting for these items.</p>
-                </div>
+                </p>
             </div>
 
             <div class="faq-item" data-category="general">
@@ -972,74 +970,6 @@
                     }
                 });
             });
-        });
-
-        // ✅ ENHANCED LANGUAGE SWITCHER FUNCTIONALITY
-        document.addEventListener('DOMContentLoaded', function() {
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            const dropdown = document.querySelector('.language-dropdown');
-            const currentFlag = document.querySelector('.current-language .flag-icon');
-            const currentText = currentLanguage.querySelector('span:not(.flag-icon):not(.dropdown-arrow)');
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    dropdown.style.opacity = '0';
-                    dropdown.style.visibility = 'hidden';
-                    dropdown.style.transform = 'translateY(-10px)';
-                }
-            });
-            
-            // Handle language selection
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Remove active class from all items
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
-                    });
-                    
-                    // Add active class to selected item
-                    this.classList.add('active');
-                    
-                    // Update the current language display
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    currentFlag.textContent = selectedFlag;
-                    currentText.textContent = selectedCode;
-                    
-                    // Close dropdown
-                    dropdown.style.opacity = '0';
-                    dropdown.style.visibility = 'hidden';
-                    dropdown.style.transform = 'translateY(-10px)';
-                    
-                    // Navigate to the language-specific page
-                    window.location.href = this.href;
-                });
-            });
-            
-            // Helper function to get language codes
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA'
-                };
-                return codes[languageName] || languageName;
-            }
         });
     </script>
 </body>
