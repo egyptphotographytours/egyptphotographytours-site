@@ -98,8 +98,8 @@
       },
       "image": {
         "@type": "ImageObject",
-        "url": "https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        "contentUrl": "https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        "url": "/images/about-us-hero.jpg",
+        "contentUrl": "/images/about-us-hero.jpg",
         "name": "A professional photographer capturing the Pyramids of Giza at sunset."
       }
     }
@@ -166,10 +166,8 @@
         <section class="mb-16" role="article" aria-labelledby="our-passion-heading">
             <div class="flex flex-col md:flex-row items-center gap-10">
                 <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                    srcset="https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80 1200w"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    alt="A professional photographer capturing the Pyramids of Giza at sunset." class="rounded-lg shadow-xl w-full h-auto object-cover" width="800" height="533">
+                    <img src="images/about-us-hero.jpg" 
+                    alt="A professional photographer capturing the Pyramids of Giza at sunset." class="rounded-lg shadow-xl w-full h-auto object-cover" width="800" height="533" loading="lazy">
                 </div>
                 <div class="md:w-1/2 text-lg leading-relaxed text-gray-700">
                     <h2 id="our-passion-heading" class="text-3xl font-bold text-primary-dark mb-4">Our Passion: Unveiling Egypt Through Your Lens</h2>
@@ -305,10 +303,8 @@
                 const currentPage = getCurrentPage();
                 
                 if (lang === 'en') {
-                    // Redirect to root level for default language
                     window.location.href = `/${currentPage}`;
                 } else {
-                    // Redirect to lang/page.html for other languages
                     window.location.href = `/${lang}/${currentPage}`;
                 }
             }
