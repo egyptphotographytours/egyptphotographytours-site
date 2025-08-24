@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Egypt Photography Tours</title>
     <meta name="description" content="Learn about Egypt Photography Tours, our mission to offer unique photographic journeys, and our expert local guides.">
-    
+
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></noscript>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -27,7 +27,7 @@
         .bg-accent-dark { background-color: #E2B700; }
         .text-accent-dark { color: #E2B700; }
         .bg-primary-dark { background-color: #1a202c; }
-        
+
         .language-switcher-container {
             position: relative;
             display: inline-block;
@@ -64,8 +64,11 @@
             height: 15px;
             border-radius: 2px;
         }
+        .rtl {
+            direction: rtl;
+        }
     </style>
-    
+
     </head>
 <body class="flex flex-col min-h-screen">
     <header class="bg-primary-dark text-white shadow-lg" role="banner">
@@ -74,32 +77,32 @@
                 <a href="index.html">
                     <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full" width="64" height="64">
                 </a>
-                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
+                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light" data-i18n="company_name">Egypt Photography Tours</a>
             </div>
-            <p class="text-md md:text-lg mt-2 md:mt-0 italic">Capture the Wonders of Egypt Through Your Lens.</p>
+            <p class="text-md md:text-lg mt-2 md:mt-0 italic" data-i18n="company_slogan">Capture the Wonders of Egypt Through Your Lens.</p>
         </div>
     </header>
 
     <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Main Navigation">
         <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
             <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
-                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
-                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" aria-current="page">About Us</a></li>
-                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Our Tours</a></li>
-                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1">Gallery</a></li>
-                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contact Us</a></li>
-                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
+                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_home">Home</a></li>
+                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" aria-current="page" data-i18n="nav_about">About Us</a></li>
+                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_tours">Our Tours</a></li>
+                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_gallery">Gallery</a></li>
+                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_contact">Contact Us</a></li>
+                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1" data-i18n="nav_faqs">FAQs</a></li>
             </ul>
-            
+
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <a href="contact.html" class="flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
+                <a href="contact.html" class="flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md" data-i18n="book_now">
                     Book Now
                 </a>
-                
+
                 <div class="language-switcher-container" role="region" aria-label="Language Selector">
                     <button class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
                         <img src="flags/en.svg" alt="English Flag" class="flag-icon" width="20" height="15">
-                        <span class="ml-2">English</span>
+                        <span class="ml-2" data-i18n="lang_en">English</span>
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <ul class="language-dropdown" role="menu">
@@ -118,13 +121,13 @@
                         <li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="flags/tl.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
                     </ul>
                 </div>
-                
+
                 </div>
         </div>
     </nav>
 
     <main class="flex-grow container mx-auto px-6 py-16" role="main">
-        <h1 class="text-5xl font-extrabold text-primary-dark text-center mb-12">About Egypt Photography Tours</h1>
+        <h1 class="text-5xl font-extrabold text-primary-dark text-center mb-12" data-i18n="page_title">About Egypt Photography Tours</h1>
 
         <section class="mb-16" role="article" aria-labelledby="our-passion-heading">
             <div class="flex flex-col md:flex-row items-center gap-10">
@@ -132,11 +135,11 @@
                     <img src="images/about-us-hero.jpg" alt="A professional photographer capturing the Pyramids of Giza at sunset." class="rounded-lg shadow-xl w-full h-auto object-cover" width="800" height="533" loading="lazy">
                 </div>
                 <div class="md:w-1/2 text-lg leading-relaxed text-gray-700">
-                    <h2 id="our-passion-heading" class="text-3xl font-bold text-primary-dark mb-4">Our Passion: Unveiling Egypt Through Your Lens</h2>
-                    <p class="mb-4">
+                    <h2 id="our-passion-heading" class="text-3xl font-bold text-primary-dark mb-4" data-i18n="passion_heading">Our Passion: Unveiling Egypt Through Your Lens</h2>
+                    <p class="mb-4" data-i18n="passion_p1">
                         At <strong>Egypt Photography Tours</strong>, our journey began with a profound love for Egypt's timeless beauty and a deep passion for the art of photography. We believe that Egypt is more than just a destination; it's a living canvas of history, culture, and breathtaking landscapes waiting to be immortalized through unique perspectives. Our mission is to provide photographers of all skill levels with unparalleled access and guidance to capture the true essence of this magnificent land.
                     </p>
-                    <p>
+                    <p data-i18n="passion_p2">
                         We are a team of dedicated local experts, including professional photographers and licensed Egyptologists, who are committed to offering authentic, immersive, and unforgettable experiences. We don't just show you the famous sites; we reveal their stories, their hidden angles, and the perfect moments to capture their magic, whether it's the mystical glow of the Pyramids at dawn or the vibrant chaos of a bustling market.
                     </p>
                 </div>
@@ -144,39 +147,39 @@
         </section>
 
         <section class="mb-16" role="article" aria-labelledby="vision-values-heading">
-            <h2 id="vision-values-heading" class="text-4xl font-bold text-primary-dark text-center mb-10">Our Vision & Values</h2>
+            <h2 id="vision-values-heading" class="text-4xl font-bold text-primary-dark text-center mb-10" data-i18n="vision_heading">Our Vision & Values</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Authenticity</h3>
-                    <p class="text-md leading-relaxed text-gray-700">We are committed to providing genuine Egyptian experiences, connecting you with local culture, people, and hidden gems that go beyond typical tourist routes.</p>
+                    <h3 class="text-2xl font-semibold text-accent-dark mb-3" data-i18n="authenticity_title">Authenticity</h3>
+                    <p class="text-md leading-relaxed text-gray-700" data-i18n="authenticity_p">We are committed to providing genuine Egyptian experiences, connecting you with local culture, people, and hidden gems that go beyond typical tourist routes.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Expert Guidance</h3>
-                    <p class="text-md leading-relaxed text-gray-700">Our team consists of highly knowledgeable Egyptologists, expert tour guides and seasoned photographers who offer personalized coaching and insights.</p>
+                    <h3 class="text-2xl font-semibold text-accent-dark mb-3" data-i18n="guidance_title">Expert Guidance</h3>
+                    <p class="text-md leading-relaxed text-gray-700" data-i18n="guidance_p">Our team consists of highly knowledgeable Egyptologists, expert tour guides and seasoned photographers who offer personalized coaching and insights.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Safety & Comfort</h3>
-                    <p class="text-md leading-relaxed text-gray-700">Your well-being is our top priority. We ensure seamless logistics, private transportation, and adhere to the highest safety standards.</p>
+                    <h3 class="text-2xl font-semibold text-accent-dark mb-3" data-i18n="safety_title">Safety & Comfort</h3>
+                    <p class="text-md leading-relaxed text-gray-700" data-i18n="safety_p">Your well-being is our top priority. We ensure seamless logistics, private transportation, and adhere to the highest safety standards.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Exclusivity</h3>
-                    <p class="text-md leading-relaxed text-gray-700">We strive to offer unique access and timings to iconic sites, allowing you to capture photographs free from crowds and distractions.</p>
+                    <h3 class="text-2xl font-semibold text-accent-dark mb-3" data-i18n="exclusivity_title">Exclusivity</h3>
+                    <p class="text-md leading-relaxed text-gray-700" data-i18n="exclusivity_p">We strive to offer unique access and timings to iconic sites, allowing you to capture photographs free from crowds and distractions.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Sustainable Tourism</h3>
-                    <p class="text-md leading-relaxed text-gray-700">We believe in responsible tourism that respects local communities and preserves Egypt's heritage for future generations.</p>
+                    <h3 class="text-2xl font-semibold text-accent-dark mb-3" data-i18n="sustainability_title">Sustainable Tourism</h3>
+                    <p class="text-md leading-relaxed text-gray-700" data-i18n="sustainability_p">We believe in responsible tourism that respects local communities and preserves Egypt's heritage for future generations.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Unforgettable Memories</h3>
-                    <p class="text-md leading-relaxed text-gray-700">Ultimately, our goal is to help you create not just stunning photographs, but cherished memories that will last a lifetime. Our clients are curious travelers, culture lovers, and photography enthusiasts from around the world who come to Egypt seeking more than just sightseeing. They value authentic experiences, personalized attention, and high-quality photography that captures their journey in a timeless way. Whether solo adventurers, couples, or small groups, they appreciate the mix of local insight and professional artistry that transforms their visit into unforgettable visual memories.</p>
+                    <h3 class="text-2xl font-semibold text-accent-dark mb-3" data-i18n="memories_title">Unforgettable Memories</h3>
+                    <p class="text-md leading-relaxed text-gray-700" data-i18n="memories_p">Ultimately, our goal is to help you create not just stunning photographs, but cherished memories that will last a lifetime. Our clients are curious travelers, culture lovers, and photography enthusiasts from around the world who come to Egypt seeking more than just sightseeing. They value authentic experiences, personalized attention, and high-quality photography that captures their journey in a timeless way. Whether solo adventurers, couples, or small groups, they appreciate the mix of local insight and professional artistry that transforms their visit into unforgettable visual memories.</p>
                 </div>
             </div>
         </section>
 
         <section class="text-center py-10 bg-gray-50 rounded-lg shadow-inner" role="complementary">
-            <h3 class="text-3xl font-bold text-primary-dark mb-6">Ready to Capture Egypt's Beauty?</h3>
-            <p class="text-lg text-gray-700 mb-8">Join us for an adventure where every frame tells a story, and every moment is a masterpiece waiting to happen.</p>
-            <a href="tours.html" class="bg-accent-light text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl">
+            <h3 class="text-3xl font-bold text-primary-dark mb-6" data-i18n="cta_heading">Ready to Capture Egypt's Beauty?</h3>
+            <p class="text-lg text-gray-700 mb-8" data-i18n="cta_p">Join us for an adventure where every frame tells a story, and every moment is a masterpiece waiting to happen.</p>
+            <a href="tours.html" class="bg-accent-light text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl" data-i18n="cta_button">
                 View Our Photography Tours
             </a>
         </section>
@@ -185,24 +188,24 @@
     <footer class="bg-primary-dark text-white py-10 mt-auto" role="contentinfo">
         <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
             <div class="mb-6 md:mb-0">
-                <h3 class="text-2xl font-bold text-accent-light mb-2">Egypt Photography Tours</h3>
-                <p class="text-sm">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
+                <h3 class="text-2xl font-bold text-accent-light mb-2" data-i18n="footer_title">Egypt Photography Tours</h3>
+                <p class="text-sm" data-i18n="footer_copyright">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
             </div>
             <div class="mb-6 md:mb-0">
-                <h4 class="font-semibold text-accent-light mb-2">Quick Links</h4>
+                <h4 class="font-semibold text-accent-light mb-2" data-i18n="footer_quick_links_title">Quick Links</h4>
                 <ul class="text-sm">
-                    <li><a href="index.html" class="hover:text-accent-light transition duration-300">Home</a></li>
-                    <li><a href="about.html" class="hover:text-accent-light transition duration-300">About Us</a></li>
-                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300">Our Tours</a></li>
-                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300">Gallery</a></li>
-                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300">Contact Us</a></li>
-                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300">FAQs</a></li>
+                    <li><a href="index.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_home">Home</a></li>
+                    <li><a href="about.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_about">About Us</a></li>
+                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_tours">Our Tours</a></li>
+                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_gallery">Gallery</a></li>
+                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_contact">Contact Us</a></li>
+                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300" data-i18n="nav_faqs">FAQs</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-accent-light mb-2">Connect With Us</h4>
-                <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
-                <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+                <h4 class="font-semibold text-accent-light mb-2" data-i18n="footer_contact_title">Connect With Us</h4>
+                <p class="text-sm" data-i18n="footer_email_text">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300" data-i18n="footer_email_link_text">info@egyptphotographytours.com</a></p>
+                <p class="text-sm" data-i18n="footer_address">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
                 <div class="flex justify-center md:justify-start space-x-4 mt-3">
                     <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl" aria-label="Follow us on Facebook">
                         <i class="fab fa-facebook"></i>
@@ -222,49 +225,150 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const langSwitcher = document.querySelector('.language-switcher-container');
-            const langButton = langSwitcher.querySelector('button');
-            const langDropdown = langSwitcher.querySelector('.language-dropdown');
-            
-            langButton.addEventListener('click', (event) => {
-                const isExpanded = langButton.getAttribute('aria-expanded') === 'true' || false;
-                langButton.setAttribute('aria-expanded', !isExpanded);
-                langDropdown.classList.toggle('show');
-                event.stopPropagation(); // Prevents the document click from immediately closing it
-            });
+        // Data structure for all translations
+        const translations = {
+            "en": {
+                "lang_name": "English",
+                "company_name": "Egypt Photography Tours",
+                "company_slogan": "Capture the Wonders of Egypt Through Your Lens.",
+                "nav_home": "Home",
+                "nav_about": "About Us",
+                "nav_tours": "Our Tours",
+                "nav_gallery": "Gallery",
+                "nav_contact": "Contact Us",
+                "nav_faqs": "FAQs",
+                "book_now": "Book Now",
+                "page_title": "About Egypt Photography Tours",
+                "passion_heading": "Our Passion: Unveiling Egypt Through Your Lens",
+                "passion_p1": "At <strong>Egypt Photography Tours</strong>, our journey began with a profound love for Egypt's timeless beauty and a deep passion for the art of photography. We believe that Egypt is more than just a destination; it's a living canvas of history, culture, and breathtaking landscapes waiting to be immortalized through unique perspectives. Our mission is to provide photographers of all skill levels with unparalleled access and guidance to capture the true essence of this magnificent land.",
+                "passion_p2": "We are a team of dedicated local experts, including professional photographers and licensed Egyptologists, who are committed to offering authentic, immersive, and unforgettable experiences. We don't just show you the famous sites; we reveal their stories, their hidden angles, and the perfect moments to capture their magic, whether it's the mystical glow of the Pyramids at dawn or the vibrant chaos of a bustling market.",
+                "vision_heading": "Our Vision & Values",
+                "authenticity_title": "Authenticity",
+                "authenticity_p": "We are committed to providing genuine Egyptian experiences, connecting you with local culture, people, and hidden gems that go beyond typical tourist routes.",
+                "guidance_title": "Expert Guidance",
+                "guidance_p": "Our team consists of highly knowledgeable Egyptologists, expert tour guides and seasoned photographers who offer personalized coaching and insights.",
+                "safety_title": "Safety & Comfort",
+                "safety_p": "Your well-being is our top priority. We ensure seamless logistics, private transportation, and adhere to the highest safety standards.",
+                "exclusivity_title": "Exclusivity",
+                "exclusivity_p": "We strive to offer unique access and timings to iconic sites, allowing you to capture photographs free from crowds and distractions.",
+                "sustainability_title": "Sustainable Tourism",
+                "sustainability_p": "We believe in responsible tourism that respects local communities and preserves Egypt's heritage for future generations.",
+                "memories_title": "Unforgettable Memories",
+                "memories_p": "Ultimately, our goal is to help you create not just stunning photographs, but cherished memories that will last a lifetime. Our clients are curious travelers, culture lovers, and photography enthusiasts from around the world who come to Egypt seeking more than just sightseeing. They value authentic experiences, personalized attention, and high-quality photography that captures their journey in a timeless way. Whether solo adventurers, couples, or small groups, they appreciate the mix of local insight and professional artistry that transforms their visit into unforgettable visual memories.",
+                "cta_heading": "Ready to Capture Egypt's Beauty?",
+                "cta_p": "Join us for an adventure where every frame tells a story, and every moment is a masterpiece waiting to happen.",
+                "cta_button": "View Our Photography Tours",
+                "footer_title": "Egypt Photography Tours",
+                "footer_copyright": "&copy; 2025 Egypt Photography Tours. All Rights Reserved.",
+                "footer_quick_links_title": "Quick Links",
+                "footer_contact_title": "Connect With Us",
+                "footer_email_text": "Email: ",
+                "footer_email_link_text": "info@egyptphotographytours.com",
+                "footer_address": "Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557",
+            },
+            "ar": {
+                "lang_name": "العربية",
+                "company_name": "رحلات تصوير مصر",
+                "company_slogan": "التقط عجائب مصر بعدسة كاميرتك.",
+                "nav_home": "الرئيسية",
+                "nav_about": "من نحن",
+                "nav_tours": "جولاتنا",
+                "nav_gallery": "المعرض",
+                "nav_contact": "اتصل بنا",
+                "nav_faqs": "الأسئلة الشائعة",
+                "book_now": "احجز الآن",
+                "page_title": "عن رحلات تصوير مصر",
+                "passion_heading": "شغفنا: الكشف عن مصر من خلال عدستك",
+                "passion_p1": "في <strong>رحلات تصوير مصر</strong>، بدأت رحلتنا بحب عميق لجمال مصر الخالد وشغف عميق بفن التصوير الفوتوغرافي. نحن نؤمن بأن مصر ليست مجرد وجهة؛ إنها لوحة حية من التاريخ والثقافة والمناظر الطبيعية الخلابة التي تنتظر أن يتم تخليدها من خلال وجهات نظر فريدة. مهمتنا هي تزويد المصورين من جميع المستويات بإمكانية وصول وتوجيه لا مثيل لهما لالتقاط الجوهر الحقيقي لهذه الأرض الرائعة.",
+                "passion_p2": "نحن فريق من الخبراء المحليين المتفانين، بما في ذلك المصورين المحترفين وعلماء المصريات المرخصين، الملتزمين بتقديم تجارب أصيلة، غامرة، لا تُنسى. نحن لا نريك المواقع الشهيرة فحسب؛ بل نكشف عن قصصها، وزواياها المخفية، واللحظات المثالية لالتقاط سحرها، سواء كان ذلك الوهج الغامض للأهرامات عند الفجر أو الفوضى النابضة بالحياة في سوق صاخب.",
+                "vision_heading": "رؤيتنا وقيمنا",
+                "authenticity_title": "الأصالة",
+                "authenticity_p": "نحن ملتزمون بتقديم تجارب مصرية أصيلة، نربطك بالثقافة المحلية، والأشخاص، والجواهر الخفية التي تتجاوز المسارات السياحية التقليدية.",
+                "guidance_title": "توجيه الخبراء",
+                "guidance_p": "يتكون فريقنا من علماء مصريات ذوي خبرة عالية، ومرشدين سياحيين خبراء، ومصورين متمرسين يقدمون تدريبًا شخصيًا ورؤى.",
+                "safety_title": "السلامة والراحة",
+                "safety_p": "رفاهيتك هي أولويتنا القصوى. نحن نضمن لوجستيات سلسة، ونقل خاص، ونلتزم بأعلى معايير السلامة.",
+                "exclusivity_title": "الخصوصية",
+                "exclusivity_p": "نحن نسعى جاهدين لتقديم وصول وتوقيتات فريدة للمواقع الأيقونية، مما يتيح لك التقاط صور خالية من الحشود والمشتتات.",
+                "sustainability_title": "السياحة المستدامة",
+                "sustainability_p": "نحن نؤمن بالسياحة المسؤولة التي تحترم المجتمعات المحلية وتحافظ على تراث مصر للأجيال القادمة.",
+                "memories_title": "ذكريات لا تنسى",
+                "memories_p": "في النهاية، هدفنا هو مساعدتك على إنشاء ليس فقط صورًا مذهلة، بل ذكريات عزيزة تدوم مدى الحياة. عملاؤنا هم مسافرون فضوليون، وعشاق للثقافة، وهواة التصوير الفوتوغرافي من جميع أنحاء العالم يأتون إلى مصر بحثًا عن أكثر من مجرد مشاهدة المعالم. إنهم يقدرون التجارب الأصيلة، والاهتمام الشخصي، والتصوير الفوتوغرافي عالي الجودة الذي يلتقط رحلتهم بطريقة خالدة. سواء كانوا مغامرين منفردين، أو أزواجًا، أو مجموعات صغيرة، فإنهم يقدرون مزيج البصيرة المحلية والفن الاحترافي الذي يحول زيارتهم إلى ذكريات بصرية لا تُنسى.",
+                "cta_heading": "هل أنت مستعد لالتقاط جمال مصر؟",
+                "cta_p": "انضم إلينا في مغامرة حيث كل إطار يحكي قصة، وكل لحظة هي تحفة فنية في انتظار أن تحدث.",
+                "cta_button": "شاهد جولاتنا للتصوير الفوتوغرافي",
+                "footer_title": "رحلات تصوير مصر",
+                "footer_copyright": "&copy; 2025 رحلات تصوير مصر. جميع الحقوق محفوظة.",
+                "footer_quick_links_title": "روابط سريعة",
+                "footer_contact_title": "تواصل معنا",
+                "footer_email_text": "البريد الإلكتروني: ",
+                "footer_email_link_text": "info@egyptphotographytours.com",
+                "footer_address": "العنوان: أبو الهول، نزلة السمان، السمان، الجيزة، محافظة الجيزة 12557",
+            }
+            // Add translations for other languages here following the same structure
+            // Example: "ru": { "page_title": "О турах по фотографии Египта", ... }
+        };
 
-            // Close the dropdown if a click occurs outside of it
-            document.addEventListener('click', (event) => {
-                if (!langSwitcher.contains(event.target)) {
-                    langButton.setAttribute('aria-expanded', 'false');
-                    langDropdown.classList.remove('show');
+        const elements = document.querySelectorAll('[data-i18n]');
+        const langButton = document.querySelector('.language-switcher-container button');
+        const langDropdown = document.querySelector('.language-dropdown');
+
+        function updateContent(lang) {
+            // Set direction for languages like Arabic
+            document.body.classList.toggle('rtl', lang === 'ar');
+            document.documentElement.lang = lang;
+
+            // Update all elements with the new translation
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (key === 'passion_p1' || key === 'passion_p2' || key === 'memories_p') {
+                        // Use innerHTML for paragraphs with bold tags
+                        el.innerHTML = translations[lang][key];
+                    } else {
+                        el.textContent = translations[lang][key];
+                    }
                 }
             });
 
-            // Add functionality for language links (replace with your actual logic)
-            langDropdown.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault(); // Prevent default link behavior
-                    const selectedLang = link.getAttribute('data-lang');
-                    
-                    // Here you would add your logic to switch content or redirect
-                    console.log(`Language switched to: ${selectedLang}`);
-                    
-                    // Update the displayed language and flag
-                    const currentLangText = langButton.querySelector('span');
-                    const currentLangFlag = langButton.querySelector('img');
-                    
-                    currentLangText.textContent = link.textContent.trim();
-                    currentLangFlag.src = link.querySelector('img').src;
-                    currentLangFlag.alt = link.querySelector('img').alt;
-                    
-                    // Close the dropdown
-                    langButton.setAttribute('aria-expanded', 'false');
-                    langDropdown.classList.remove('show');
-                });
-            });
+            // Update language switcher display
+            const langName = translations[lang] ? translations[lang].lang_name : lang;
+            langButton.querySelector('span').textContent = langName;
+            langButton.querySelector('img').src = `flags/${lang}.svg`;
+        }
+        
+        // Event listener for the language dropdown
+        langButton.addEventListener('click', (event) => {
+            const isExpanded = langButton.getAttribute('aria-expanded') === 'true' || false;
+            langButton.setAttribute('aria-expanded', !isExpanded);
+            langDropdown.classList.toggle('show');
+            event.stopPropagation();
         });
+
+        // Event listener for clicking a language link
+        langDropdown.addEventListener('click', (event) => {
+            const link = event.target.closest('a');
+            if (link) {
+                event.preventDefault();
+                const selectedLang = link.getAttribute('data-lang');
+                updateContent(selectedLang);
+                
+                langButton.setAttribute('aria-expanded', 'false');
+                langDropdown.classList.remove('show');
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
+                langButton.setAttribute('aria-expanded', 'false');
+                langDropdown.classList.remove('show');
+            }
+        });
+
+        // Initial language setting from browser or default to 'en'
+        const userLang = navigator.language.split('-')[0] || 'en';
+        updateContent(userLang in translations ? userLang : 'en');
     </script>
 </body>
 </html>
