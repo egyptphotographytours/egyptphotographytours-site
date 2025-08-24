@@ -3,566 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Egypt Photography Tours | Expert Local Guides & Unique Photo Journeys</title>
-    <meta name="description" content="Discover Egypt Photography Tours: Expert local guides, professional photographers & Egyptologists offering authentic photography experiences. Capture Egypt's timeless beauty with personalized coaching.">
-    <meta name="keywords" content="Egypt photography tours, photography guide Egypt, professional photographer Egypt, Egyptologist guide, authentic Egypt experience, photography coaching">
-    <meta name="author" content="Egypt Photography Tours">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.egyptphotographytours.com/about.html">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="About Us - Egypt Photography Tours">
-    <meta property="og:description" content="Expert local guides and professional photographers offering authentic Egypt photography experiences with personalized coaching.">
-    <meta property="og:image" content="https://www.egyptphotographytours.com/images/about-us-hero.jpg">
-    <meta property="og:url" content="https://www.egyptphotographytours.com/about.html">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Egypt Photography Tours">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Us - Egypt Photography Tours">
-    <meta name="twitter:description" content="Expert local guides and professional photographers offering authentic Egypt photography experiences.">
-    <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/about-us-hero.jpg">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": "Egypt Photography Tours",
-      "description": "Professional photography tours in Egypt with expert local guides and Egyptologists",
-      "url": "https://www.egyptphotographytours.com",
-      "logo": "https://www.egyptphotographytours.com/images/copilot_image_1752144851499.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "email": "info@egyptphotographytours.com",
-      "sameAs": [
-        "https://www.facebook.com/EgyptPhotographyTours",
-        "https://www.instagram.com/hossam_artistic/",
-        "https://www.tiktok.com/@egyptphotographytours",
-        "https://www.youtube.com/@egyptphotographytours"
-      ]
-    }
-    </script>
-    
-    <!-- Preconnect for external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Optimized CSS Loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    
-    <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
-    <!-- Inline Critical CSS -->
+    <title>About Us | Your Company Name</title>
+    <meta name="description" content="Learn more about Your Company Name, our mission, and our commitment to quality.">
+
+    <link rel="preload" href="css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
+
+    <link rel="preload" href="fonts/my-font.woff2" as="font" type="font/woff2" crossorigin>
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-        .text-primary-dark { color: #2C3E50; }
-        .bg-accent-light { background-color: #FFD700; }
-        .text-accent-light { color: #FFD700; }
-        .bg-accent-dark { background-color: #E2B700; }
-        .text-accent-dark { color: #E2B700; }
-        .bg-primary-dark { background-color: #1a202c; }
-        
-        /* Language Switcher Styles */
-        .lang-switcher { position: relative; display: inline-block; }
-        .lang-dropdown {
-            position: absolute;
-            right: 0;
-            top: 100%;
-            min-width: 220px;
-            background: #374151;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-            padding: 0.5rem 0;
-        }
-        .lang-switcher:hover .lang-dropdown { 
-            opacity: 1; 
-            visibility: visible; 
-            transform: translateY(0); 
-        }
-        .lang-option {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem 1rem;
-            color: #fff;
-            text-decoration: none;
-            transition: background-color 0.2s;
-            font-size: 0.875rem;
-            border: none;
-            background: none;
-            width: 100%;
-            text-align: left;
-        }
-        .lang-option:hover { background-color: #4B5563; }
-        .lang-flag {
-            width: 24px;
-            height: 18px;
-            margin-right: 0.75rem;
-            border-radius: 2px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        .current-lang-btn {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            transition: color 0.3s;
-            background: none;
-            border: none;
-            font-size: inherit;
-        }
-        .current-lang-btn:hover { color: #FFD700; }
-        .current-lang-btn:focus { 
-            outline: 2px solid #FFD700; 
-            outline-offset: 2px; 
-        }
-        .dropdown-arrow { 
-            transition: transform 0.3s ease; 
-            margin-left: 0.5rem;
-        }
-        .lang-switcher:hover .dropdown-arrow { transform: rotate(180deg); }
-        
-        /* Screen reader only class */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0,0,0,0);
-            white-space: nowrap;
-            border: 0;
-        }
-        .focus\\:not-sr-only:focus {
-            position: static;
-            width: auto;
-            height: auto;
-            padding: 0;
-            margin: 0;
-            overflow: visible;
-            clip: auto;
-            white-space: normal;
-        }
+        /* Critical CSS goes here to ensure above-the-fold content renders quickly. */
+        body { font-family: sans-serif; }
     </style>
-    
-    <!-- Deferred non-critical CSS -->
-    <link rel="preload" href="data:text/css,/* Non-critical styles will be loaded here */" as="style" onload="this.onload=null;this.rel='stylesheet'">
-</head>
-<body class="flex flex-col min-h-screen">
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-accent-light text-primary-dark px-4 py-2 z-50">Skip to main content</a>
-    
-    <header class="bg-primary-dark text-white shadow-lg" role="banner">
-        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <img src="images/copilot_image_1752144851499.jpg" 
-                     alt="Egypt Photography Tours Logo - Pyramids and camera shutter" 
-                     class="h-16 w-auto rounded-full"
-                     width="64" 
-                     height="64"
-                     loading="eager">
-                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light" aria-label="Egypt Photography Tours - Home">Egypt Photography Tours</a>
+
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.webp" alt="Your Company Logo" width="150" height="50">
+            </a>
+        </div>
+        
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="cta-and-lang-switcher">
+            <a href="contact-us.html" class="button book-now-btn">Book Now</a>
+
+            <div id="language-switcher">
+                <button class="current-lang-button">
+                    <img src="flags/en.svg" alt="English Flag" width="20" height="15"> EN
+                </button>
+                <ul class="language-dropdown">
+                    <li><a href="#" data-lang="en"><img src="flags/en.svg" alt="English Flag" width="20" height="15"> English</a></li>
+                    <li><a href="#" data-lang="ru"><img src="flags/ru.svg" alt="Russian Flag" width="20" height="15"> Русский</a></li>
+                    <li><a href="#" data-lang="it"><img src="flags/it.svg" alt="Italian Flag" width="20" height="15"> Italiano</a></li>
+                    <li><a href="#" data-lang="de"><img src="flags/de.svg" alt="German Flag" width="20" height="15"> Deutsch</a></li>
+                    <li><a href="#" data-lang="fr"><img src="flags/fr.svg" alt="French Flag" width="20" height="15"> Français</a></li>
+                    <li><a href="#" data-lang="ar"><img src="flags/ar.svg" alt="Arabic Flag" width="20" height="15"> العربية</a></li>
+                    <li><a href="#" data-lang="ja"><img src="flags/ja.svg" alt="Japanese Flag" width="20" height="15"> 日本語</a></li>
+                    <li><a href="#" data-lang="ko"><img src="flags/ko.svg" alt="Korean Flag" width="20" height="15"> 한국어</a></li>
+                    <li><a href="#" data-lang="id"><img src="flags/id.svg" alt="Indonesian Flag" width="20" height="15"> Bahasa Indonesia</a></li>
+                    <li><a href="#" data-lang="es"><img src="flags/es.svg" alt="Spanish Flag" width="20" height="15"> Español</a></li>
+                    <li><a href="#" data-lang="pt"><img src="flags/pt.svg" alt="Portuguese Flag" width="20" height="15"> Português</a></li>
+                    <li><a href="#" data-lang="zh"><img src="flags/zh.svg" alt="Chinese Flag" width="20" height="15"> 中文</a></li>
+                    <li><a href="#" data-lang="tl"><img src="flags/tl.svg" alt="Tagalog Flag" width="20" height="15"> Tagalog</a></li>
+                </ul>
             </div>
-            <p class="text-md md:text-lg mt-2 md:mt-0 italic">Capture the Wonders of Egypt Through Your Lens.</p>
         </div>
     </header>
 
-    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Main navigation">
-        <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
-            <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium" role="menubar">
-                <li role="menuitem"><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
-                <li role="menuitem"><a href="about.html" class="hover:text-accent-light transition duration-300 py-1 text-accent-light" aria-current="page">About Us</a></li>
-                <li role="menuitem"><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Our Tours</a></li>
-                <li role="menuitem"><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1">Gallery</a></li>
-                <li role="menuitem"><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contact Us</a></li>
-                <li role="menuitem"><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
-            </ul>
-            
-            <!-- Language Switcher -->
-            <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <div class="lang-switcher" aria-label="Language selector">
-                    <button class="current-lang-btn" aria-haspopup="true" aria-expanded="false" id="language-button">
-                        <img src="https://flagcdn.com/w40/us.png" alt="English" class="lang-flag" id="current-flag">
-                        <span id="current-lang-text">English</span>
-                        <svg class="w-4 h-4 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="lang-dropdown" role="menu" aria-labelledby="language-button">
-                        <button class="lang-option" role="menuitem" data-lang="en" data-flag="https://flagcdn.com/w40/us.png" data-name="English">
-                            <img src="https://flagcdn.com/w40/us.png" alt="" class="lang-flag">English
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="ru" data-flag="https://flagcdn.com/w40/ru.png" data-name="Русский">
-                            <img src="https://flagcdn.com/w40/ru.png" alt="" class="lang-flag">Русский
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="it" data-flag="https://flagcdn.com/w40/it.png" data-name="Italiano">
-                            <img src="https://flagcdn.com/w40/it.png" alt="" class="lang-flag">Italiano
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="de" data-flag="https://flagcdn.com/w40/de.png" data-name="Deutsch">
-                            <img src="https://flagcdn.com/w40/de.png" alt="" class="lang-flag">Deutsch
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="fr" data-flag="https://flagcdn.com/w40/fr.png" data-name="Français">
-                            <img src="https://flagcdn.com/w40/fr.png" alt="" class="lang-flag">Français
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="ar" data-flag="https://flagcdn.com/w40/eg.png" data-name="العربية">
-                            <img src="https://flagcdn.com/w40/eg.png" alt="" class="lang-flag">العربية
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="ja" data-flag="https://flagcdn.com/w40/jp.png" data-name="日本語">
-                            <img src="https://flagcdn.com/w40/jp.png" alt="" class="lang-flag">日本語
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="ko" data-flag="https://flagcdn.com/w40/kr.png" data-name="한국어">
-                            <img src="https://flagcdn.com/w40/kr.png" alt="" class="lang-flag">한국어
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="id" data-flag="https://flagcdn.com/w40/id.png" data-name="Bahasa Indonesia">
-                            <img src="https://flagcdn.com/w40/id.png" alt="" class="lang-flag">Bahasa Indonesia
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="es" data-flag="https://flagcdn.com/w40/es.png" data-name="Español">
-                            <img src="https://flagcdn.com/w40/es.png" alt="" class="lang-flag">Español
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="pt" data-flag="https://flagcdn.com/w40/pt.png" data-name="Português">
-                            <img src="https://flagcdn.com/w40/pt.png" alt="" class="lang-flag">Português
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="zh" data-flag="https://flagcdn.com/w40/cn.png" data-name="中文">
-                            <img src="https://flagcdn.com/w40/cn.png" alt="" class="lang-flag">中文
-                        </button>
-                        <button class="lang-option" role="menuitem" data-lang="tl" data-flag="https://flagcdn.com/w40/ph.png" data-name="Tagalog">
-                            <img src="https://flagcdn.com/w40/ph.png" alt="" class="lang-flag">Tagalog
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <main id="main-content" class="flex-grow container mx-auto px-6 py-16" role="main">
-        <h1 class="text-5xl font-extrabold text-primary-dark text-center mb-12">About Egypt Photography Tours</h1>
-
-        <section class="mb-16" aria-labelledby="passion-heading">
-            <div class="flex flex-col md:flex-row items-center gap-10">
-                <div class="md:w-1/2">
-                    <img src="images/about-us-hero.jpg" 
-                         alt="Professional photographer capturing the Pyramids of Giza at golden sunset with dramatic lighting" 
-                         class="rounded-lg shadow-xl w-full h-auto object-cover"
-                         width="600"
-                         height="400"
-                         loading="lazy">
-                </div>
-                <div class="md:w-1/2 text-lg leading-relaxed text-gray-700">
-                    <h2 id="passion-heading" class="text-3xl font-bold text-primary-dark mb-4">Our Passion: Unveiling Egypt Through Your Lens</h2>
-                    <p class="mb-4">
-                        At <strong>Egypt Photography Tours</strong>, our journey began with a profound love for Egypt's timeless beauty and a deep passion for the art of photography. We believe that Egypt is more than just a destination; it's a living canvas of history, culture, and breathtaking landscapes waiting to be immortalized through unique perspectives. Our mission is to provide photographers of all skill levels with unparalleled access and guidance to capture the true essence of this magnificent land.
-                    </p>
-                    <p>
-                        We are a team of dedicated local experts, including professional photographers and licensed Egyptologists, who are committed to offering authentic, immersive, and unforgettable experiences. We don't just show you the famous sites; we reveal their stories, their hidden angles, and the perfect moments to capture their magic, whether it's the mystical glow of the Pyramids at dawn or the vibrant chaos of a bustling market.
-                    </p>
-                </div>
-            </div>
+    <main>
+        <section class="hero" aria-label="About Us Hero Section">
+            <h1>About Us</h1>
+            <p>Welcome to Your Company Name, your partner in high-quality products and services.</p>
         </section>
 
-        <section class="mb-16" aria-labelledby="values-heading">
-            <h2 id="values-heading" class="text-4xl font-bold text-primary-dark text-center mb-10">Our Vision & Values</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Authenticity</h3>
-                    <p class="text-md leading-relaxed text-gray-700">We are committed to providing genuine Egyptian experiences, connecting you with local culture, people, and hidden gems that go beyond typical tourist routes.</p>
-                </article>
-                <article class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Expert Guidance</h3>
-                    <p class="text-md leading-relaxed text-gray-700">Our team consists of highly knowledgeable Egyptologists, expert tour guides and seasoned photographers who offer personalized coaching and insights.</p>
-                </article>
-                <article class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Safety & Comfort</h3>
-                    <p class="text-md leading-relaxed text-gray-700">Your well-being is our top priority. We ensure seamless logistics, private transportation, and adhere to the highest safety standards.</p>
-                </article>
-                <article class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Exclusivity</h3>
-                    <p class="text-md leading-relaxed text-gray-700">We strive to offer unique access and timings to iconic sites, allowing you to capture photographs free from crowds and distractions.</p>
-                </article>
-                <article class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Sustainable Tourism</h3>
-                    <p class="text-md leading-relaxed text-gray-700">We believe in responsible tourism that respects local communities and preserves Egypt's heritage for future generations.</p>
-                </article>
-                <article class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold text-accent-dark mb-3">Unforgettable Memories</h3>
-                    <p class="text-md leading-relaxed text-gray-700">Our goal is to help you create not just stunning photographs, but cherished memories that will last a lifetime. Our clients are curious travelers, culture lovers, and photography enthusiasts who value authentic experiences and professional artistry.</p>
-                </article>
-            </div>
+        <section class="our-story" aria-labelledby="our-story-heading">
+            <h2 id="our-story-heading">Our Story</h2>
+            <img src="images/our-story.webp" alt="Image of a team collaborating on a project." width="800" height="500" loading="lazy">
+            <p>Founded in 2020, Your Company Name started with a simple mission: to provide the best solutions for our customers. From a small team of three, we have grown into a diverse and talented group of professionals dedicated to excellence.</p>
         </section>
 
-        <section class="text-center py-10 bg-gray-50 rounded-lg shadow-inner" aria-labelledby="cta-heading">
-            <h2 id="cta-heading" class="text-3xl font-bold text-primary-dark mb-6">Ready to Capture Egypt's Beauty?</h2>
-            <p class="text-lg text-gray-700 mb-8">Join us for an adventure where every frame tells a story, and every moment is a masterpiece waiting to happen.</p>
-            <a href="tours.html" 
-               class="bg-accent-light text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl focus:outline-none focus:ring-4 focus:ring-accent-light focus:ring-opacity-50"
-               aria-label="View our photography tour packages">
-                View Our Photography Tours
-            </a>
+        <section class="our-mission" aria-labelledby="our-mission-heading">
+            <h2 id="our-mission-heading">Our Mission</h2>
+            <p>Our mission is to innovate and deliver services that exceed expectations, helping our clients achieve their goals efficiently and effectively. We believe in transparency, integrity, and building lasting relationships.</p>
         </section>
     </main>
 
-    <footer class="bg-primary-dark text-white py-10 mt-auto" role="contentinfo">
-        <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
-            <div class="mb-6 md:mb-0">
-                <h3 class="text-2xl font-bold text-accent-light mb-2">Egypt Photography Tours</h3>
-                <p class="text-sm">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
-            </div>
-            <nav class="mb-6 md:mb-0" aria-label="Footer navigation">
-                <h4 class="font-semibold text-accent-light mb-2">Quick Links</h4>
-                <ul class="text-sm">
-                    <li><a href="index.html" class="hover:text-accent-light transition duration-300">Home</a></li>
-                    <li><a href="about.html" class="hover:text-accent-light transition duration-300">About Us</a></li>
-                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300">Our Tours</a></li>
-                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300">Gallery</a></li>
-                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300">Contact Us</a></li>
-                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300">FAQs</a></li>
-                </ul>
-            </nav>
-            <div>
-                <h4 class="font-semibold text-accent-light mb-2">Connect With Us</h4>
-                <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
-                <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <div class="flex justify-center md:justify-start space-x-4 mt-3" role="navigation" aria-label="Social media links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="text-white hover:text-accent-light transition duration-300 text-2xl"
-                       aria-label="Follow us on Facebook">
-                        <i class="fab fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.instagram.com/hossam_artistic/" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="text-white hover:text-accent-light transition duration-300 text-2xl"
-                       aria-label="Follow us on Instagram">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="text-white hover:text-accent-light transition duration-300 text-2xl"
-                       aria-label="Follow us on TikTok">
-                        <i class="fab fa-tiktok" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@egyptphotographytours" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="text-white hover:text-accent-light transition duration-300 text-2xl"
-                       aria-label="Follow us on YouTube">
-                        <i class="fab fa-youtube" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
     </footer>
 
-    <!-- Language Switcher JavaScript -->
-    <script>
-        // Language switcher functionality with proper flag mapping
-        const languageData = {
-            en: { name: 'English', flag: 'https://flagcdn.com/w40/us.png' },
-            ru: { name: 'Русский', flag: 'https://flagcdn.com/w40/ru.png' },
-            it: { name: 'Italiano', flag: 'https://flagcdn.com/w40/it.png' },
-            de: { name: 'Deutsch', flag: 'https://flagcdn.com/w40/de.png' },
-            fr: { name: 'Français', flag: 'https://flagcdn.com/w40/fr.png' },
-            ar: { name: 'العربية', flag: 'https://flagcdn.com/w40/eg.png' },
-            ja: { name: '日本語', flag: 'https://flagcdn.com/w40/jp.png' },
-            ko: { name: '한국어', flag: 'https://flagcdn.com/w40/kr.png' },
-            id: { name: 'Bahasa Indonesia', flag: 'https://flagcdn.com/w40/id.png' },
-            es: { name: 'Español', flag: 'https://flagcdn.com/w40/es.png' },
-            pt: { name: 'Português', flag: 'https://flagcdn.com/w40/pt.png' },
-            zh: { name: '中文', flag: 'https://flagcdn.com/w40/cn.png' },
-            tl: { name: 'Tagalog', flag: 'https://flagcdn.com/w40/ph.png' }
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const languageOptions = document.querySelectorAll('.lang-option');
-            const currentLangFlag = document.getElementById('current-flag');
-            const currentLangText = document.getElementById('current-lang-text');
-            const languageButton = document.getElementById('language-button');
-
-            // Handle language selection
-            languageOptions.forEach(option => {
-                option.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const selectedLang = this.dataset.lang;
-                    const selectedFlag = this.dataset.flag;
-                    const selectedName = this.dataset.name;
-                    
-                    // Update current language display
-                    currentLangFlag.src = selectedFlag;
-                    currentLangFlag.alt = selectedName;
-                    currentLangText.textContent = selectedName;
-                    
-                    // Update document language attribute
-                    document.documentElement.lang = selectedLang;
-                    
-                    // Store selected language preference (remove localStorage usage as per instructions)
-                    // localStorage.setItem('selectedLanguage', selectedLang);
-                    
-                    // Close dropdown
-                    languageButton.setAttribute('aria-expanded', 'false');
-                    
-                    console.log('Language changed to:', selectedLang);
-                });
-            });
-
-            // Handle keyboard navigation
-            languageButton.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', !isExpanded);
-                }
-            });
-
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.lang-switcher')) {
-                    languageButton.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-
-        // Performance optimization: Lazy load non-critical resources
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        if (img.dataset.src) {
-                            img.src = img.dataset.src;
-                            img.removeAttribute('data-src');
-                        }
-                        img.classList.remove('lazy');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Preload critical pages for better performance
-        const criticalLinks = ['tours.html', 'contact.html', 'index.html'];
-        criticalLinks.forEach(link => {
-            const linkElement = document.createElement('link');
-            linkElement.rel = 'prefetch';
-            linkElement.href = link;
-            document.head.appendChild(linkElement);
-        });
-    </script>svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 9 6\'%3E%3Cpath fill=\'%23fff\' d=\'M0 0h9v2H0z\'/%3E%3Cpath fill=\'%230039a6\' d=\'M0 2h9v2H0z\'/%3E%3Cpath fill=\'%23d52b1e\' d=\'M0 4h9v2H0z\'/%3E%3C/svg%3E' },
-            it: { name: 'Italiano', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Cpath fill=\'%23009246\' d=\'M0 0h1v2H0z\'/%3E%3Cpath fill=\'%23fff\' d=\'M1 0h1v2H1z\'/%3E%3Cpath fill=\'%23ce2b37\' d=\'M2 0h1v2H2z\'/%3E%3C/svg%3E' },
-            de: { name: 'Deutsch', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 5 3\'%3E%3Cpath fill=\'%23000\' d=\'M0 0h5v1H0z\'/%3E%3Cpath fill=\'%23D00\' d=\'M0 1h5v1H0z\'/%3E%3Cpath fill=\'%23FFCE00\' d=\'M0 2h5v1H0z\'/%3E%3C/svg%3E' },
-            fr: { name: 'Français', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Cpath fill=\'%23ED2939\' d=\'M0 0h1v2H0z\'/%3E%3Cpath fill=\'%23fff\' d=\'M1 0h1v2H1z\'/%3E%3Cpath fill=\'%23002395\' d=\'M2 0h1v2H2z\'/%3E%3C/svg%3E' },
-            ar: { name: 'العربية', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Cpath fill=\'%23CE1126\' d=\'M0 0h3v.67H0z\'/%3E%3Cpath fill=\'%23fff\' d=\'M0 .67h3v.66H0z\'/%3E%3Cpath fill=\'%23000\' d=\'M0 1.33h3v.67H0z\'/%3E%3C/svg%3E' },
-            ja: { name: '日本語', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Cpath fill=\'%23fff\' d=\'M0 0h3v2H0z\'/%3E%3Ccircle fill=\'%23bc002d\' cx=\'1.5\' cy=\'1\' r=\'.6\'/%3E%3C/svg%3E' },
-            ko: { name: '한국어', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Cpath fill=\'%23fff\' d=\'M0 0h3v2H0z\'/%3E%3Ccircle fill=\'%23c60c30\' cx=\'1.2\' cy=\'.8\' r=\'.4\'/%3E%3Ccircle fill=\'%23003478\' cx=\'1.8\' cy=\'1.2\' r=\'.4\'/%3E%3C/svg%3E' },
-            id: { name: 'Bahasa Indonesia', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Cpath fill=\'%23fff\' d=\'M0 1h3v1H0z\'/%3E%3Cpath fill=\'%23FF0000\' d=\'M0 0h3v1H0z\'/%3E%3C/svg%3E' },
-            es: { name: 'Español', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Cpath fill=\'%23c60b1e\' d=\'M0 0h3v2H0z\'/%3E%3Cpath fill=\'%23ffc400\' d=\'M0 .5h3v1H0z\'/%3E%3C/svg%3E' },
-            pt: { name: 'Português', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Cpath fill=\'%23046a38\' d=\'M0 0h1.2v2H0z\'/%3E%3Cpath fill=\'%23da020e\' d=\'M1.2 0H3v2H1.2z\'/%3E%3C/svg%3E' },
-            zh: { name: '中文', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 20\'%3E%3Cpath fill=\'%23de2910\' d=\'M0 0h30v20H0z\'/%3E%3Cpath fill=\'%23ffde00\' d=\'m5 3 1 3-2.5-1.5L6 6l-1-3zm4 6-1-3 2.5 1.5L8 6l1 3zm2-4 3-1-1.5-2.5L15 4l-3 1zm0 4 3 1-1.5 2.5L15 10l-3-1z\'/%3E%3C/svg%3E' },
-            tl: { name: 'Tagalog', flag: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 2 1\'%3E%3Cpath fill=\'%230038a8\' d=\'M0 0h2v.5H0z\'/%3E%3Cpath fill=\'%23ce1126\' d=\'M0 .5h2V1H0z\'/%3E%3C/svg%3E' }
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const languageOptions = document.querySelectorAll('.lang-option');
-            const currentLangButton = document.querySelector('.current-lang');
-            const currentLangFlag = currentLangButton.querySelector('.lang-flag');
-            const currentLangText = currentLangButton.querySelector('span');
-
-            languageOptions.forEach(option => {
-                option.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const selectedLang = this.dataset.lang;
-                    const langInfo = languageData[selectedLang];
-                    
-                    if (langInfo) {
-                        currentLangFlag.src = langInfo.flag;
-                        currentLangFlag.alt = langInfo.name;
-                        currentLangText.textContent = langInfo.name;
-                        
-                        // Update document language attribute
-                        document.documentElement.lang = selectedLang;
-                        
-                        // Store selected language preference
-                        localStorage.setItem('selectedLanguage', selectedLang);
-                        
-                        // Here you would typically redirect to the appropriate language version
-                        // or trigger translation functionality
-                        console.log('Language changed to:', selectedLang);
-                    }
-                });
-            });
-
-            // Load saved language preference
-            const savedLang = localStorage.getItem('selectedLanguage');
-            if (savedLang && languageData[savedLang]) {
-                const langInfo = languageData[savedLang];
-                currentLangFlag.src = langInfo.flag;
-                currentLangFlag.alt = langInfo.name;
-                currentLangText.textContent = langInfo.name;
-                document.documentElement.lang = savedLang;
-            }
-        });
-
-        // Performance optimization: Lazy load non-critical resources
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.classList.remove('lazy');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Preload critical pages
-        const criticalLinks = ['tours.html', 'contact.html'];
-        criticalLinks.forEach(link => {
-            const linkElement = document.createElement('link');
-            linkElement.rel = 'prefetch';
-            linkElement.href = link;
-            document.head.appendChild(linkElement);
-        });
-    </script>
-
-    <!-- Load remaining non-critical CSS -->
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
-    
+    <script src="js/main.min.js" defer></script>
+    <script src="js/language-switcher.js" defer></script>
 </body>
 </html>
