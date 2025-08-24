@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Egypt Photography Tours</title>
     <meta name="description" content="Learn about Egypt Photography Tours, our mission to offer unique photographic journeys, and our expert local guides.">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -72,23 +73,44 @@
             border-radius: 2px;
             object-fit: cover;
         }
-        
-        /* Loading state for images */
-        img[data-src] {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        img.loaded {
-            opacity: 1;
-        }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "About Us | Egypt Photography Tours",
+      "description": "Learn about Egypt Photography Tours, our mission to offer unique photographic journeys, and our expert local guides.",
+      "url": "https://www.example.com/about.html",
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.example.com/"
+        }, {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us"
+        }]
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        "contentUrl": "https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        "name": "A professional photographer capturing the Pyramids of Giza at sunset."
+      }
+    }
+    </script>
 </head>
 <body class="flex flex-col min-h-screen">
     <header class="bg-primary-dark text-white shadow-lg" role="banner">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-3">
                 <a href="index.html">
-                    <img src="https://placehold.co/64x64/1a202c/FFD700?text=EPT" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full" width="64" height="64" loading="lazy">
+                    <img src="https://placehold.co/64x64/1a202c/FFD700?text=EPT" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full" width="64" height="64">
                 </a>
                 <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
             </div>
@@ -114,24 +136,24 @@
 
                 <div class="language-switcher-container" role="region" aria-label="Language Selector">
                     <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iIzAyMjY3QSIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGRjkyODAiIGQ9Ik0wIDBoNjB2MjBIMHoiLz48cGF0aCBmaWxsPSIjRkZGMEEwIiBkPSJNMCAtMTBoNjB2NTBIMHoiLz48L3N2Zz4=" alt="English Flag" class="flag-icon" width="20" height="15">
+                        <img src="https://flagcdn.com/us.svg" alt="English Flag" class="flag-icon" width="20" height="15">
                         <span class="ml-2">English</span>
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
-                        <li role="none"><a href="#" data-lang="en" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iIzAyMjY3QSIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGRjkyODAiIGQ9Ik0wIDBoNjB2MjBIMHoiLz48cGF0aCBmaWxsPSIjRkZGMEEwIiBkPSJNMCAtMTBoNjB2NTBIMHoiLz48L3N2Zz4=" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
-                        <li role="none"><a href="#" data-lang="ru" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iI0RCMjMzQyIgZD0iTTAgMGg2MHYxMEgweiIvPjxwYXRoIGZpbGw9IiMwMDc1QzMiIGQ9Ik0wIDEwaDYwdjEwSDB6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTAgMjBoNjB2MTBIMHoiLz48L3N2Zz4=" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
-                        <li role="none"><a href="#" data-lang="it" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iI0NEMkIyNCIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGRUYxRTIiIGQ9Ik0wIDEwaDYwdjEwSDB6Ii8+PHBhdGggZmlsbD0iIzAwOTI0NiIgZD0iTTAgMjBoNjB2MTBIMHoiLz48L3N2Zz4=" alt="Italiano" class="flag-icon" width="20" height="15"> Italiano</a></li>
-                        <li role="none"><a href="#" data-lang="de" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTAgMGg2MHYxMEgweiIvPjxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0wIDEwaDYwdjEwSDB6Ii8+PHBhdGggZmlsbD0iI0ZGRkYwMCIgZD0iTTAgMjBoNjB2MTBIMHoiLz48L3N2Zz4=" alt="Deutsch" class="flag-icon" width="20" height="15"> Deutsch</a></li>
-                        <li role="none"><a href="#" data-lang="fr" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iIzAwNTVCQiIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wIDEwaDYwdjEwSDB6Ii8+PHBhdGggZmlsbD0iI0Y4NDg0OCIgZD0iTTAgMjBoNjB2MTBIMHoiLz48L3N2Zz4=" alt="Français" class="flag-icon" width="20" height="15"> Français</a></li>
-                        <li role="none"><a href="#" data-lang="ar" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iI0NEMjIyNyIgZD0iTTAgMGg2MHYxMEgweiIvPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wIDEwaDYwdjEwSDB6Ii8+PHBhdGggZmlsbD0iIzAwQTUzOSIgZD0iTTAgMjBoNjB2MTBIMHoiLz48L3N2Zz4=" alt="العربية" class="flag-icon" width="20" height="15"> العربية</a></li>
-                        <li role="none"><a href="#" data-lang="ja" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTAgMGg2MHYzMEgweiIvPjxjaXJjbGUgZmlsbD0iI0JGMDAxQyIgY3g9IjMwIiBjeT0iMTUiIHI9IjgiLz48L3N2Zz4=" alt="日本語" class="flag-icon" width="20" height="15"> 日本語</a></li>
-                        <li role="none"><a href="#" data-lang="ko" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Ik0wIDBoNjB2MzBIMHoiLz48cGF0aCBmaWxsPSIjQ0QwMDI2IiBkPSJNMTUgMGgxMHYzMEgxNXoiLz48cGF0aCBmaWxsPSIjQ0QwMDI2IiBkPSJNMzUgMGgxMHYzMEgzNXoiLz48cGF0aCBmaWxsPSIjQ0QwMDI2IiBkPSJNMTUgMTVoMzB2MTVIMTV6Ii8+PC9zdmc+" alt="한국어" class="flag-icon" width="20" height="15"> 한국어</a></li>
-                        <li role="none"><a href="#" data-lang="id" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0wIDE1aDYwdjE1SDB6Ii8+PC9zdmc+" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15"> Bahasa Indonesia</a></li>
-                        <li role="none"><a href="#" data-lang="es" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iI0ZGMDAwMCIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGQ0MwMDAiIGQ9Ik0wIDEwaDYwdjEwSDB6Ii8+PHBhdGggZmlsbD0iI0ZGRkYwMCIgZD0iTTAgMjBoNjB2MTBIMHoiLz48L3N2Zz4=" alt="Español" class="flag-icon" width="20" height="15"> Español</a></li>
-                        <li role="none"><a href="#" data-lang="pt" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iIzAwNkU0NiIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0wIDE1aDYwdjE1SDB6Ii8+PHBhdGggZmlsbD0iI0ZGRkYwMCIgZD0iTTAgMGg2MHYxNUgweiIvPjwvc3ZnPg==" alt="Português" class="flag-icon" width="20" height="15"> Português</a></li>
-                        <li role="none"><a href="#" data-lang="zh" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iI0ZGMDAwMCIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGRkZGMDAiIGQ9Ik0wIDBoNjB2MzBIMHoiLz48cGF0aCBmaWxsPSIjMDAwMDAwIiBkPSJNMCAxMGg2MHYxMEgweiIvPjwvc3ZnPg==" alt="中文" class="flag-icon" width="20" height="15"> 中文</a></li>
-                        <li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PHBhdGggZmlsbD0iIzAwMzRBNCIgZD0iTTAgMGg2MHYzMEgweiIvPjxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0wIDE1aDYwdjE1SDB6Ii8+PHBhdGggZmlsbD0iI0ZGRkYwMCIgZD0iTTAgMGg2MHYxNUgweiIvPjxjaXJjbGUgZmlsbD0iIzhDRTFFOCIgY3g9IjMwIiBjeT0iMTUiIHI9IjYiLz48c3RhciBmaWxsPSIjRkYwMDAwIiBwb2ludHM9IjMwLDEwIDMyLDE1IDM3LDE1IDMzLDE4IDM1LDIzIDMwLDIwIDI1LDIzIDI3LDE4IDIzLDE1IDI4LDE1Ii8+PC9zdmc+" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
+                        <li role="none"><a href="#" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
+                        <li role="none"><a href="#" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
+                        <li role="none"><a href="#" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15"> Italiano</a></li>
+                        <li role="none"><a href="#" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15"> Deutsch</a></li>
+                        <li role="none"><a href="#" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15"> Français</a></li>
+                        <li role="none"><a href="#" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15"> العربية</a></li>
+                        <li role="none"><a href="#" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="日本語" class="flag-icon" width="20" height="15"> 日本語</a></li>
+                        <li role="none"><a href="#" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15"> 한국어</a></li>
+                        <li role="none"><a href="#" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15"> Bahasa Indonesia</a></li>
+                        <li role="none"><a href="#" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15"> Español</a></li>
+                        <li role="none"><a href="#" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15"> Português</a></li>
+                        <li role="none"><a href="#" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15"> 中文</a></li>
+                        <li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
                     </ul>
                 </div>
             </div>
@@ -144,7 +166,10 @@
         <section class="mb-16" role="article" aria-labelledby="our-passion-heading">
             <div class="flex flex-col md:flex-row items-center gap-10">
                 <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="A professional photographer capturing the Pyramids of Giza at sunset." class="rounded-lg shadow-xl w-full h-auto object-cover" width="800" height="533" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                    srcset="https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1539650116579-7d2c5fea50b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80 1200w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    alt="A professional photographer capturing the Pyramids of Giza at sunset." class="rounded-lg shadow-xl w-full h-auto object-cover" width="800" height="533">
                 </div>
                 <div class="md:w-1/2 text-lg leading-relaxed text-gray-700">
                     <h2 id="our-passion-heading" class="text-3xl font-bold text-primary-dark mb-4">Our Passion: Unveiling Egypt Through Your Lens</h2>
@@ -201,7 +226,7 @@
         <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
             <div class="mb-6 md:mb-0">
                 <h3 class="text-2xl font-bold text-accent-light mb-2">Egypt Photography Tours</h3>
-                <p class="text-sm">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
+                <p class="text-sm">&copy; <span id="current-year">2025</span> Egypt Photography Tours. All Rights Reserved.</p>
             </div>
             <div class="mb-6 md:mb-0">
                 <h4 class="font-semibold text-accent-light mb-2">Quick Links</h4>
@@ -237,18 +262,19 @@
     </footer>
 
     <script>
-        // Get current page path
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Language switcher functionality
         function getCurrentPage() {
             const path = window.location.pathname;
             return path.split('/').pop() || 'index.html';
         }
 
-        // Language switcher functionality
         document.addEventListener('DOMContentLoaded', function() {
             const langButton = document.getElementById('language-toggle');
             const langDropdown = document.querySelector('.language-dropdown');
             
-            // Toggle dropdown visibility
             langButton.addEventListener('click', function(event) {
                 const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
                 langButton.setAttribute('aria-expanded', !isExpanded);
@@ -256,7 +282,6 @@
                 event.stopPropagation();
             });
             
-            // Handle language selection
             langDropdown.addEventListener('click', function(event) {
                 const link = event.target.closest('a');
                 if (link) {
@@ -264,13 +289,11 @@
                     const selectedLang = link.getAttribute('data-lang');
                     redirectToLanguage(selectedLang);
                     
-                    // Close dropdown
                     langButton.setAttribute('aria-expanded', 'false');
                     langDropdown.classList.remove('show');
                 }
             });
             
-            // Close dropdown when clicking outside
             document.addEventListener('click', function(event) {
                 if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
                     langButton.setAttribute('aria-expanded', 'false');
@@ -278,16 +301,15 @@
                 }
             });
             
-            // Function to redirect to language-specific page
             function redirectToLanguage(lang) {
                 const currentPage = getCurrentPage();
                 
-                // For default language (English), just go to the page without prefix
                 if (lang === 'en') {
-                    window.location.href = currentPage;
+                    // Redirect to root level for default language
+                    window.location.href = `/${currentPage}`;
                 } else {
-                    // For other languages, redirect to lang/page.html
-                    window.location.href = `${lang}/${currentPage}`;
+                    // Redirect to lang/page.html for other languages
+                    window.location.href = `/${lang}/${currentPage}`;
                 }
             }
         });
