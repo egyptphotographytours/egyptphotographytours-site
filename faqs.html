@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +72,7 @@
                 "name": "How do I book a tour?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can browse our tours on the \"Our Tours\" page, select your preferred tour, and send us an inquiry through our contact page. For custom tours or further assistance, please fill out our contact form or email us directly."
+                    "text": "You can browse our tours on the 'Our Tours' page, select your preferred tour, choose a start date (if applicable), and add it to your cart. You can then proceed to checkout using our secure Snipcart system. For custom tours or further assistance, please fill out our contact form or email us directly."
                 }
             },
             {
@@ -80,7 +80,7 @@
                 "name": "What payment methods do you accept?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We accept various payment methods, which will be discussed and confirmed with you during the booking process to ensure a secure and convenient transaction. Bank transfers are also an option for larger bookings."
+                    "text": "We accept major credit cards (Visa, MasterCard, American Express) through our secure online payment gateway (Snipcart). Bank transfers may also be an option for larger bookings; please inquire."
                 }
             },
             {
@@ -151,239 +151,24 @@
     }
     </script>
     
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-dark: #1a202c;
-            --accent-light: #FFD700;
-            --accent-dark: #E2B700;
-            --text-color: #333;
-        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8;
-            color: var(--text-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            color: #333;
+            background-image: linear-gradient(to bottom, #f8f8f8, #eef2f7);
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .header {
-            background-color: var(--primary-dark);
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            padding: 16px 0;
-        }
-        .header .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
-        @media (min-width: 768px) {
-            .header .content {
-                flex-direction: row;
-            }
-        }
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-img {
-            height: 64px;
-            width: auto;
-            border-radius: 9999px;
-        }
-        .logo-link {
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            color: var(--accent-light);
-        }
-        .header-text {
-            font-size: 18px;
-            font-style: italic;
-            margin-top: 8px;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 20px;
-            }
-        }
-        .navbar {
-            background-color: #374151;
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            padding: 12px 0;
-        }
-        .navbar-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
-        @media (min-width: 768px) {
-            .navbar-content {
-                flex-direction: row;
-            }
-        }
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 24px;
-            font-size: 18px;
-            font-weight: 500;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .nav-link a {
-            color: white;
-            text-decoration: none;
-            padding: 4px 0;
-            transition: color 0.3s ease;
-        }
-        .nav-link a:hover {
-            color: var(--accent-light);
-        }
-        .cta-container {
-            margin-top: 12px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        @media (min-width: 768px) {
-            .cta-container {
-                margin-top: 0;
-            }
-        }
-        .book-now-button {
-            font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 9999px;
-            background-color: #FFD700;
-            color: #1a202c;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 16px;
-            white-space: nowrap;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .book-now-button:hover {
-            background-color: #E2B700;
-            transform: scale(1.05);
-        }
-
-        /* Language Switcher Styles */
-        .language-switcher {
-            position: relative;
-            display: inline-block;
-        }
-        .language-dropdown {
-            display: none; /* Start hidden */
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #374151;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            max-width: 220px;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 10px; /* Space between button and dropdown */
-        }
-
-        .language-switcher:hover .language-dropdown {
-            display: block; /* Show on hover */
-        }
-        
-        .language-item {
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #4B5563;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .language-item:last-child {
-            border-bottom: none;
-        }
-        .language-item:hover {
-            background-color: #4B5563;
-        }
-        .language-item.active {
-            background-color: var(--accent-light);
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        .flag-icon {
-            font-size: 16px;
-            margin-right: 8px;
-            min-width: 18px;
-        }
-        .language-text {
-            flex: 1;
-            font-size: 14px;
-        }
-        .current-language {
-            display: flex;
-            align-items: center;
-            padding: 6px 10px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        .current-language:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        .dropdown-arrow {
-            margin-left: 6px;
-            transition: transform 0.2s ease;
-        }
-        .language-switcher:hover .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-        .language-dropdown::-webkit-scrollbar {
-            width: 4px;
-        }
-        .language-dropdown::-webkit-scrollbar-track {
-            background: #4B5563;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb {
-            background: #6B7280;
-            border-radius: 2px;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #9CA3AF;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+        .text-primary-dark { color: #2C3E50; }
+        .bg-accent-light { background-color: #FFD700; }
+        .text-accent-light { color: #FFD700; }
+        .bg-accent-dark { background-color: #E2B700; }
+        .text-accent-dark { color: #E2B700; }
+        .bg-primary-dark { background-color: #1a202c; }
 
         /* Custom styles for FAQ accordion */
         .faq-item {
@@ -404,7 +189,7 @@
             transition: all 0.3s ease;
         }
         .faq-question:hover {
-            color: var(--accent-dark);
+            color: #E2B700;
         }
         .faq-question svg {
             transition: transform 0.3s ease;
@@ -426,13 +211,13 @@
             padding-bottom: 1.5rem;
         }
         .faq-icon {
-            color: var(--accent-light);
+            color: #FFD700;
             font-size: 1.5rem;
             margin-right: 15px;
             min-width: 30px;
         }
         .category-badge {
-            background: var(--accent-light);
+            background: #FFD700;
             color: #2C3E50;
             padding: 0.3rem 1rem;
             border-radius: 9999px;
@@ -442,7 +227,7 @@
         }
         .faq-search {
             background-color: white;
-            border: 2px solid var(--accent-light);
+            border: 2px solid #FFD700;
             border-radius: 50px;
             padding: 15px 25px;
             font-size: 1.1rem;
@@ -452,7 +237,7 @@
         .faq-search:focus {
             outline: none;
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-            border-color: var(--accent-dark);
+            border-color: #E2B700;
         }
         .social-icon {
             display: inline-flex;
@@ -465,141 +250,185 @@
             transition: all 0.3s ease;
         }
         .social-icon:hover {
-            background: var(--accent-light);
+            background: #FFD700;
             transform: translateY(-5px);
         }
         .social-icon:hover i {
             color: #2C3E50;
         }
-
-        .bg-primary-dark {
-            background-color: var(--primary-dark);
+        /* New Header/Action Styles */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .text-primary-dark {
-            color: var(--primary-dark);
+        .language-switcher {
+            position: relative;
         }
-        .bg-accent-light {
-            background-color: var(--accent-light);
+        .dropdown-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 16px;
+            color: #fff;
         }
-        .text-accent-light {
-            color: var(--accent-light);
+        .dropdown-toggle img {
+            border-radius: 2px;
         }
-        .bg-accent-dark {
-            background-color: var(--accent-dark);
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
         }
-        .text-accent-dark {
-            color: var(--accent-dark);
+        .dropdown-menu.show {
+            display: block;
         }
-        .hover\:text-accent-light:hover {
-            color: var(--accent-light);
+        .dropdown-menu li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #333;
+            white-space: nowrap;
         }
-        .hover\:bg-accent-dark:hover {
-            background-color: var(--accent-dark);
+        .dropdown-menu li a:hover {
+            background-color: #f0f0f0;
         }
-        .hover\:bg-gray-100:hover {
-            background-color: #f7fafc;
+        .book-now-btn {
+            background-color: #FFD700;
+            color: #2C3E50;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
         }
-        .shadow-lg {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        .book-now-btn:hover {
+            background-color: #E2B700;
         }
-        .shadow-xl {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .nav-links {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
         }
-        .rounded-full {
-            border-radius: 9999px;
-        }
+        
     </style>
+    <link rel="preload" href="https://flagcdn.com/us.svg" as="image">
 </head>
 <body class="flex flex-col min-h-screen">
-    <header class="header">
-        <div class="container content">
-            <div class="logo-section">
-                <img src="images/egypt-photography-tours-logo.jpg"
-                     alt="Egypt Photography Tours Logo - Pyramids and camera shutter"
-                     class="logo-img"
-                     loading="eager"
-                     width="64"
-                     height="64">
-                <a href="index.html" class="logo-link">Egypt Photography Tours</a>
+    <header class="bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full">
+                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
             </div>
-            <p class="header-text italic">Capture the Wonders of Egypt Through Your Lens.</p>
+            <nav class="w-full md:w-auto flex flex-col md:flex-row items-center justify-between">
+                <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
+                    <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
+                    <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1">About Us</a></li>
+                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Our Tours</a></li>
+                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1">Gallery</a></li>
+                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contact Us</a></li>
+                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1 font-bold">FAQs</a></li>
+                </ul>
+                <div class="mt-4 md:mt-0 flex items-center space-x-4">
+                    <div class="language-switcher">
+                        <button class="dropdown-toggle" aria-expanded="false" aria-controls="language-menu">
+                            <img src="https://flagcdn.com/us.svg" alt="English Flag" width="20" height="15" />
+                            <span>EN</span>
+                        </button>
+                        <ul id="language-menu" class="dropdown-menu" role="menu" aria-label="Language selection">
+                            <li>
+                                <a href="#" data-lang="en">
+                                    <img src="https://flagcdn.com/us.svg" alt="English Flag" width="20" height="15" />
+                                    English
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="ru">
+                                    <img src="https://flagcdn.com/ru.svg" alt="Russian Flag" width="20" height="15" />
+                                    Русский
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="it">
+                                    <img src="https://flagcdn.com/it.svg" alt="Italian Flag" width="20" height="15" />
+                                    Italiano
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="de">
+                                    <img src="https://flagcdn.com/de.svg" alt="German Flag" width="20" height="15" />
+                                    Deutsch
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="fr">
+                                    <img src="https://flagcdn.com/fr.svg" alt="French Flag" width="20" height="15" />
+                                    Français
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="ar">
+                                    <img src="https://flagcdn.com/sa.svg" alt="Arabic Flag" width="20" height="15" />
+                                    العربية
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="ja">
+                                    <img src="https://flagcdn.com/jp.svg" alt="Japanese Flag" width="20" height="15" />
+                                    日本語
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="ko">
+                                    <img src="https://flagcdn.com/kr.svg" alt="Korean Flag" width="20" height="15" />
+                                    한국어
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="id">
+                                    <img src="https://flagcdn.com/id.svg" alt="Indonesian Flag" width="20" height="15" />
+                                    Bahasa Indonesia
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="es">
+                                    <img src="https://flagcdn.com/es.svg" alt="Spanish Flag" width="20" height="15" />
+                                    Español
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="pt">
+                                    <img src="https://flagcdn.com/pt.svg" alt="Portuguese Flag" width="20" height="15" />
+                                    Português
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-lang="zh">
+                                    <img src="https://flagcdn.com/cn.svg" alt="Chinese Flag" width="20" height="15" />
+                                    中文
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="book-now-btn">Book Now</a>
+                </div>
+            </nav>
         </div>
     </header>
-
-    <nav class="navbar">
-        <div class="container navbar-content">
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html">Home</a></li>
-                <li class="nav-link"><a href="about.html">About Us</a></li>
-                <li class="nav-link"><a href="tours.html">Our Tours</a></li>
-                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
-                <li class="nav-link"><a href="contact.html">Contact Us</a></li>
-                <li class="nav-link"><a href="faqs.html">FAQs</a></li>
-            </ul>
-            <div class="cta-container">
-                <a href="contact.html" class="book-now-button">Book Now</a>
-                <div class="language-switcher">
-                    <div class="current-language">
-                        <span class="flag-icon">🇺🇸</span>
-                        <span>EN</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="language-dropdown">
-                        <a href="index.html" class="language-item active">
-                            <span class="flag-icon">🇺🇸</span>
-                            <span class="language-text">English</span>
-                        </a>
-                        <a href="ru/index.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
-                        </a>
-                        <a href="ar/index.html" class="language-item">
-                            <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
-                        </a>
-                        <a href="fr/index.html" class="language-item">
-                            <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
-                        </a>
-                        <a href="de/index.html" class="language-item">
-                            <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
-                        </a>
-                        <a href="es/index.html" class="language-item">
-                            <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
-                        </a>
-                        <a href="it/index.html" class="language-item">
-                            <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
-                        </a>
-                        <a href="zh/index.html" class="language-item">
-                            <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
-                        </a>
-                        <a href="ko/index.html" class="language-item">
-                            <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
-                        </a>
-                        <a href="pt/index.html" class="language-item">
-                            <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
-                        </a>
-                        <a href="id/index.html" class="language-item">
-                            <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
-                        </a>
-                        <a href="ja/index.html" class="language-item">
-                            <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
 
     <main class="flex-grow container mx-auto px-6 py-16">
         <div class="max-w-4xl mx-auto text-center mb-16">
@@ -678,7 +507,7 @@
                 </button>
                 <div class="faq-answer pl-12">
                     <p class="pb-4">Typically, international flights, Egyptian visa fees, travel insurance, dinners (unless specified), personal expenses, optional activities (like hot air balloon rides or camel rides), and tips for guides/drivers are not included. This allows you flexibility in budgeting for these items.</p>
-                </p>
+                </div>
             </div>
 
             <div class="faq-item" data-category="general">
@@ -709,7 +538,7 @@
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
-                    <p class="pb-4">You can browse our tours on the "Our Tours" page, select your preferred tour, and send us an inquiry through our contact page. For custom tours or further assistance, please fill out our contact form or email us directly.</p>
+                    <p class="pb-4">You can browse our tours on the "Our Tours" page, select your preferred tour, choose a start date (if applicable), and add it to your cart. You can then proceed to checkout using our secure payment system. For custom tours or further assistance, please fill out our contact form or email us directly.</p>
                 </div>
             </div>
 
@@ -722,7 +551,7 @@
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="faq-answer pl-12">
-                    <p class="pb-4">We accept various payment methods, which will be discussed and confirmed with you during the booking process to ensure a secure and convenient transaction. Bank transfers are also an option for larger bookings.</p>
+                    <p class="pb-4">We accept major credit cards (Visa, MasterCard, American Express) through our secure online payment gateway. Bank transfers may also be an option for larger bookings; please inquire.</p>
                 </div>
             </div>
 
@@ -893,17 +722,44 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.getElementById('language-menu');
             const faqQuestions = document.querySelectorAll('.faq-question');
             const searchInput = document.getElementById('faq-search');
             const categoryFilters = document.querySelectorAll('.category-filter');
             
+            // Language switcher functionality
+            dropdownToggle.addEventListener('click', () => {
+                const isExpanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+                dropdownToggle.setAttribute('aria-expanded', !isExpanded);
+                dropdownMenu.classList.toggle('show');
+            });
+            document.addEventListener('click', (event) => {
+                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            dropdownMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const selectedLang = e.target.closest('a').dataset.lang;
+                    console.log('Language switched to:', selectedLang);
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                    const selectedFlag = e.target.closest('a').querySelector('img').src;
+                    const selectedText = e.target.closest('a').dataset.lang.toUpperCase();
+                    dropdownToggle.querySelector('img').src = selectedFlag;
+                    dropdownToggle.querySelector('span').textContent = selectedText;
+                });
+            });
+
             // FAQ accordion functionality
             faqQuestions.forEach(question => {
                 question.addEventListener('click', () => {
                     const answer = question.nextElementSibling;
                     const svgIcon = question.querySelector('svg');
                     
-                    // Close all other open answers
                     faqQuestions.forEach(otherQuestion => {
                         if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
                             otherQuestion.classList.remove('active');
@@ -912,7 +768,6 @@
                         }
                     });
                     
-                    // Toggle the clicked answer
                     question.classList.toggle('active');
                     answer.classList.toggle('open');
                     if (answer.classList.contains('open')) {
@@ -946,7 +801,6 @@
                 filter.addEventListener('click', () => {
                     const category = filter.dataset.category;
                     
-                    // Update active category button
                     categoryFilters.forEach(btn => {
                         btn.classList.remove('bg-accent-light', 'text-primary-dark');
                         btn.classList.add('bg-white', 'text-primary-dark');
@@ -954,7 +808,6 @@
                     filter.classList.remove('bg-white', 'text-primary-dark');
                     filter.classList.add('bg-accent-light', 'text-primary-dark');
                     
-                    // Show/hide questions based on category
                     if (category === 'all') {
                         document.querySelectorAll('.faq-item').forEach(item => {
                             item.style.display = 'block';
