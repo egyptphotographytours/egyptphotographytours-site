@@ -22,8 +22,52 @@
         .bg-accent-dark { background-color: #E2B700; }
         .text-accent-dark { color: #E2B700; }
         .bg-primary-dark { background-color: #1a202c; }
+        .language-switcher-container {
+            position: relative;
+            display: inline-block;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            list-style: none;
+            margin: 5px 0 0 0;
+            padding: 5px 0;
+            min-width: 150px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .language-dropdown.show {
+            display: block;
+        }
+        .language-dropdown li {
+            margin: 0;
+        }
+        .language-dropdown a {
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s;
+        }
+        .language-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
     </style>
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body class="flex flex-col min-h-screen">
     <header class="bg-primary-dark text-white shadow-lg">
@@ -47,22 +91,31 @@
                 <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <div class="relative group">
-                    <button class="flex items-center text-white hover:text-accent-light focus:outline-none">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M3 17h12M17 6v12M17 6h2M17 18h2M17 18v-6"></path></svg>
-                        English
+                <a href="contact.html" class="flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
+                    Book Now
+                </a>
+                <div class="language-switcher-container" role="region" aria-label="Language Selector">
+                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://flagcdn.com/us.svg" alt="English Flag" class="flag-icon" width="20" height="15">
+                        <span class="ml-2">English</span>
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute right-0 mt-2 w-32 bg-gray-700 rounded-md shadow-lg py-1 hidden group-hover:block">
-                        <a href="contact.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">English</a>
-                        <a href="contact-ar.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">العربية</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">Deutsch (Coming Soon)</a>
-                    </div>
+                    <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
+                        <li role="none"><a href="#" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
+                        <li role="none"><a href="#" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
+                        <li role="none"><a href="#" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15"> Italiano</a></li>
+                        <li role="none"><a href="#" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15"> Deutsch</a></li>
+                        <li role="none"><a href="#" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15"> Français</a></li>
+                        <li role="none"><a href="#" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15"> العربية</a></li>
+                        <li role="none"><a href="#" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="日本語" class="flag-icon" width="20" height="15"> 日本語</a></li>
+                        <li role="none"><a href="#" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15"> 한국어</a></li>
+                        <li role="none"><a href="#" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15"> Bahasa Indonesia</a></li>
+                        <li role="none"><a href="#" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15"> Español</a></li>
+                        <li role="none"><a href="#" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15"> Português</a></li>
+                        <li role="none"><a href="#" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15"> 中文</a></li>
+                        <li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
+                    </ul>
                 </div>
-                <button class="snipcart-checkout flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    Cart (<span class="snipcart-total-items"></span>)
-                </button>
             </div>
         </div>
     </nav>
@@ -94,7 +147,7 @@
                         <label for="phone" class="block text-lg font-medium text-gray-700 mb-2">Your Phone Number (Optional)</label>
                         <input type="tel" id="phone" name="phone"
                                class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-lg"
-                               placeholder="e.g., +1 555 123 4567">
+                               placeholder="e.g., +20 123 456 7890">
                     </div>
                     <div>
                         <label for="subject" class="block text-lg font-medium text-gray-700 mb-2">Subject</label>
@@ -116,7 +169,7 @@
                     </div>
                 </form>
                 <p class="text-sm text-gray-600 mt-4 text-center">
-                    This form uses Formspree for easy email delivery. See instructions below.
+                    This form uses Formspree for easy email delivery.
                 </p>
             </div>
 
@@ -187,12 +240,51 @@
             </div>
         </div>
     </footer>
-
-    <div hidden id="snipcart" data-api-key="YWI3Nzc3NTgtYTAzYy00MmY3LThmN2YtNWFjZjExYTgwMDQ1NjM4ODk0NzM0NjE2NTQyNTM0"></div>
-    <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+    <script>
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            return path.split('/').pop() || 'index.html';
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButton = document.getElementById('language-toggle');
+            const langDropdown = document.querySelector('.language-dropdown');
+            
+            langButton.addEventListener('click', function(event) {
+                const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
+                langButton.setAttribute('aria-expanded', !isExpanded);
+                langDropdown.classList.toggle('show');
+                event.stopPropagation();
+            });
+            
+            langDropdown.addEventListener('click', function(event) {
+                const link = event.target.closest('a');
+                if (link) {
+                    event.preventDefault();
+                    const selectedLang = link.getAttribute('data-lang');
+                    redirectToLanguage(selectedLang);
+                    
+                    langButton.setAttribute('aria-expanded', 'false');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
+                    langButton.setAttribute('aria-expanded', 'false');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            function redirectToLanguage(lang) {
+                const currentPage = getCurrentPage();
+                
+                if (lang === 'en') {
+                    window.location.href = `/${currentPage}`;
+                } else {
+                    window.location.href = `/${lang}/${currentPage}`;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
-```
-
-
-
