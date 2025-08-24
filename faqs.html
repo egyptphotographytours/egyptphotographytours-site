@@ -380,73 +380,73 @@
                         </button>
                         <ul id="language-menu" class="dropdown-menu" role="menu" aria-label="Language selection">
                             <li>
-                                <a href="#" data-lang="en">
+                                <a href="faqs.html" data-lang="en">
                                     <img src="https://flagcdn.com/us.svg" alt="English Flag" width="20" height="15" />
                                     English
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="ru">
+                                <a href="ru/faqs.html" data-lang="ru">
                                     <img src="https://flagcdn.com/ru.svg" alt="Russian Flag" width="20" height="15" />
                                     Русский
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="it">
+                                <a href="it/faqs.html" data-lang="it">
                                     <img src="https://flagcdn.com/it.svg" alt="Italian Flag" width="20" height="15" />
                                     Italiano
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="de">
+                                <a href="de/faqs.html" data-lang="de">
                                     <img src="https://flagcdn.com/de.svg" alt="German Flag" width="20" height="15" />
                                     Deutsch
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="fr">
+                                <a href="fr/faqs.html" data-lang="fr">
                                     <img src="https://flagcdn.com/fr.svg" alt="French Flag" width="20" height="15" />
                                     Français
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="ar">
+                                <a href="ar/faqs.html" data-lang="ar">
                                     <img src="https://flagcdn.com/sa.svg" alt="Arabic Flag" width="20" height="15" />
                                     العربية
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="ja">
+                                <a href="ja/faqs.html" data-lang="ja">
                                     <img src="https://flagcdn.com/jp.svg" alt="Japanese Flag" width="20" height="15" />
                                     日本語
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="ko">
+                                <a href="ko/faqs.html" data-lang="ko">
                                     <img src="https://flagcdn.com/kr.svg" alt="Korean Flag" width="20" height="15" />
                                     한국어
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="id">
+                                <a href="id/faqs.html" data-lang="id">
                                     <img src="https://flagcdn.com/id.svg" alt="Indonesian Flag" width="20" height="15" />
                                     Bahasa Indonesia
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="es">
+                                <a href="es/faqs.html" data-lang="es">
                                     <img src="https://flagcdn.com/es.svg" alt="Spanish Flag" width="20" height="15" />
                                     Español
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="pt">
+                                <a href="pt/faqs.html" data-lang="pt">
                                     <img src="https://flagcdn.com/pt.svg" alt="Portuguese Flag" width="20" height="15" />
                                     Português
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-lang="zh">
+                                <a href="zh/faqs.html" data-lang="zh">
                                     <img src="https://flagcdn.com/cn.svg" alt="Chinese Flag" width="20" height="15" />
                                     中文
                                 </a>
@@ -769,19 +769,20 @@
                     dropdownToggle.setAttribute('aria-expanded', 'false');
                 }
             });
-            dropdownMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const selectedLang = e.target.closest('a').dataset.lang;
-                    console.log('Language switched to:', selectedLang);
-                    dropdownMenu.classList.remove('show');
-                    dropdownToggle.setAttribute('aria-expanded', 'false');
-                    const selectedFlag = e.target.closest('a').querySelector('img').src;
-                    const selectedText = e.target.closest('a').dataset.lang.toUpperCase();
-                    dropdownToggle.querySelector('img').src = selectedFlag;
-                    dropdownToggle.querySelector('span').textContent = selectedText;
-                });
-            });
+            // The following language switching logic is no longer active as the links are now full redirects
+            // dropdownMenu.querySelectorAll('a').forEach(link => {
+            //     link.addEventListener('click', (e) => {
+            //         e.preventDefault();
+            //         const selectedLang = e.target.closest('a').dataset.lang;
+            //         console.log('Language switched to:', selectedLang);
+            //         dropdownMenu.classList.remove('show');
+            //         dropdownToggle.setAttribute('aria-expanded', 'false');
+            //         const selectedFlag = e.target.closest('a').querySelector('img').src;
+            //         const selectedText = e.target.closest('a').dataset.lang.toUpperCase();
+            //         dropdownToggle.querySelector('img').src = selectedFlag;
+            //         dropdownToggle.querySelector('span').textContent = selectedText;
+            //     });
+            // });
 
             // FAQ accordion functionality
             faqQuestions.forEach(question => {
