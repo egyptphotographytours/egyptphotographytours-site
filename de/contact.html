@@ -15,6 +15,10 @@
 <meta name="ICBM" content="29.976480, 31.131302">
 <meta name="theme-color" content="#FFD700">
 
+<!-- Privacy and Cookie Control -->
+<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://egyptphotographytours.com/de/contact.html">
@@ -62,13 +66,34 @@
 <!-- Critical Resource Hints for LCP optimization -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-<link rel="dns-prefetch" href="//formspree.io">
-<link rel="dns-prefetch" href="//flagcdn.com">
 
-<!-- Preload critical font for LCP -->
-<link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Self-hosted flag icons to avoid third-party cookies -->
+<style>
+/* Flag icon data URIs to avoid external requests */
+.flag-de { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiMwMDAwMDAiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiNERDAwMDAiLz4KPHJlY3QgeT0iMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI1IiBmaWxsPSIjRkZDRTAwIi8+Cjwvc3ZnPgo='); }
+.flag-us { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjQjIyMjM0Ii8+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'); }
+.flag-es { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjQUEwMDEyIi8+CjxyZWN0IHk9IjMiIHdpZHRoPSIyMCIgaGVpZ2h0PSI5IiBmaWxsPSIjRkZDNDAwIi8+Cjwvc3ZnPgo='); }
+.flag-fr { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDIzOTUiLz4KPHJlY3QgeD0iNyIgd2lkdGg9IjYiIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjEzIiB3aWR0aD0iNyIgaGVpZ2h0PSIxNSIgZmlsbD0iI0VEMjkzOSIvPgo8L3N2Zz4K'); }
+.flag-it { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDk5NDYiLz4KPHJlY3QgeD0iNyIgd2lkdGg9IjYiIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjEzIiB3aWR0aD0iNyIgaGVpZ2h0PSIxNSIgZmlsbD0iI0NFMkIzNyIvPgo8L3N2Zz4K'); }
+.flag-pt { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgiIGhlaWdodD0iMTUiIGZpbGw9IiMwNDZBMzgiLz4KPHJlY3QgeD0iOCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjE1IiBmaWxsPSIjREEwMjBFIi8+Cjwvc3ZnPgo='); }
+.flag-ru { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjUiIHdpZHRoPSIyMCIgaGVpZ2h0PSI1IiBmaWxsPSIjMDA1N0I3Ii8+CjxyZWN0IHk9IjEwIiB3aWR0aD0iMjAiIGhlaWdodD0iNSIgZmlsbD0iI0QzMjUyRiIvPgo8L3N2Zz4K'); }
+.flag-ar { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiNDRTExMjYiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEwIiB3aWR0aD0iMjAiIGhlaWdodD0iNSIgZmlsbD0iIzAwMDAwMCIvPgo8L3N2Zz4K'); }
+.flag-zh { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjREUyOTEwIi8+Cjwvc3ZnPgo='); }
+.flag-ja { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxMCIgY3k9IjcuNSIgcj0iNCIgZmlsbD0iI0JDMDAyRCIvPgo8L3N2Zz4K'); }
+.flag-ko { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxMCIgY3k9IjcuNSIgcj0iMyIgZmlsbD0iIzAwMzQ3OCIvPgo8L3N2Zz4K'); }
+.flag-id { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjcuNSIgZmlsbD0iI0ZGMDAwMCIvPgo8cmVjdCB5PSI3LjUiIHdpZHRoPSIyMCIgaGVpZ2h0PSI3LjUiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo='); }
+.flag-tl { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiMwMDY2Q0MiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEwIiB3aWR0aD0iMjAiIGhlaWdodD0iNSIgZmlsbD0iI0ZGMDAwMCIvPgo8L3N2Zz4K'); }
+
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+</style>
 
 <!-- Critical CSS - Optimized for LCP -->
 <style>
@@ -237,6 +262,7 @@ header .container{flex-direction:row}
 .text-lg{font-size:1.125rem}
 .font-bold{font-weight:700}
 .italic{font-style:italic}
+.hidden{display:none}
 
 /* Language Switcher Critical Styles */
 .language-switcher{position:relative;display:inline-block}
@@ -251,8 +277,12 @@ border-radius:.25rem;
 min-width:150px;
 z-index:1000;
 box-shadow:0 4px 6px rgba(0,0,0,.1);
+list-style:none;
+margin:0;
+padding:5px 0;
 }
 .language-dropdown.show{display:block}
+.language-dropdown li{margin:0}
 .language-dropdown a{
 padding:8px 15px;
 display:flex;
@@ -263,7 +293,6 @@ color:#333;
 transition:background .2s;
 }
 .language-dropdown a:hover{background:#f0f0f0}
-.flag-icon{width:20px;height:15px;border-radius:2px;object-fit:cover}
 
 /* Button Styles */
 .btn-primary{
@@ -309,6 +338,15 @@ a{color:inherit;text-decoration:none}
 
 /* Critical Animation for LCP */
 .fade-in{opacity:1}
+
+/* Error message styles */
+.text-red-500{color:var(--red-500)}
+
+/* Icon styles */
+.w-4{width:1rem}
+.h-4{height:1rem}
+.ml-1{margin-left:.25rem}
+.ml-2{margin-left:.5rem}
 </style>
 
 <!-- Schema.org Structured Data -->
@@ -436,24 +474,24 @@ Jetzt buchen
 </a>
 <div class="language-switcher" role="region" aria-label="Sprachauswahl">
 <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-gray-800" aria-haspopup="true" aria-expanded="false" aria-label="Sprache auswählen">
-<img src="https://flagcdn.com/de.svg" alt="Deutsche Flagge" class="flag-icon" width="20" height="15" loading="lazy">
+<span class="flag-icon flag-de" aria-hidden="true"></span>
 <span class="ml-2">Deutsch</span>
 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
 </button>
 <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
-<li role="none"><a href="#" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15" loading="lazy"> English</a></li>
-<li role="none"><a href="#" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15" loading="lazy"> Español</a></li>
-<li role="none"><a href="#" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15" loading="lazy"> Deutsch</a></li>
-<li role="none"><a href="#" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15" loading="lazy"> Français</a></li>
-<li role="none"><a href="#" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15" loading="lazy"> Italiano</a></li>
-<li role="none"><a href="#" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15" loading="lazy"> Português</a></li>
-<li role="none"><a href="#" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15" loading="lazy"> Русский</a></li>
-<li role="none"><a href="#" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15" loading="lazy"> العربية</a></li>
-<li role="none"><a href="#" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15" loading="lazy"> 中文</a></li>
-<li role="none"><a href="#" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="日本語" class="flag-icon" width="20" height="15" loading="lazy"> 日本語</a></li>
-<li role="none"><a href="#" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15" loading="lazy"> 한국어</a></li>
-<li role="none"><a href="#" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15" loading="lazy"> Bahasa Indonesia</a></li>
-<li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15" loading="lazy"> Tagalog</a></li>
+<li role="none"><a href="#" data-lang="en" role="menuitem"><span class="flag-icon flag-us" aria-hidden="true"></span> English</a></li>
+<li role="none"><a href="#" data-lang="es" role="menuitem"><span class="flag-icon flag-es" aria-hidden="true"></span> Español</a></li>
+<li role="none"><a href="#" data-lang="de" role="menuitem"><span class="flag-icon flag-de" aria-hidden="true"></span> Deutsch</a></li>
+<li role="none"><a href="#" data-lang="fr" role="menuitem"><span class="flag-icon flag-fr" aria-hidden="true"></span> Français</a></li>
+<li role="none"><a href="#" data-lang="it" role="menuitem"><span class="flag-icon flag-it" aria-hidden="true"></span> Italiano</a></li>
+<li role="none"><a href="#" data-lang="pt" role="menuitem"><span class="flag-icon flag-pt" aria-hidden="true"></span> Português</a></li>
+<li role="none"><a href="#" data-lang="ru" role="menuitem"><span class="flag-icon flag-ru" aria-hidden="true"></span> Русский</a></li>
+<li role="none"><a href="#" data-lang="ar" role="menuitem"><span class="flag-icon flag-ar" aria-hidden="true"></span> العربية</a></li>
+<li role="none"><a href="#" data-lang="zh" role="menuitem"><span class="flag-icon flag-zh" aria-hidden="true"></span> 中文</a></li>
+<li role="none"><a href="#" data-lang="ja" role="menuitem"><span class="flag-icon flag-ja" aria-hidden="true"></span> 日本語</a></li>
+<li role="none"><a href="#" data-lang="ko" role="menuitem"><span class="flag-icon flag-ko" aria-hidden="true"></span> 한국어</a></li>
+<li role="none"><a href="#" data-lang="id" role="menuitem"><span class="flag-icon flag-id" aria-hidden="true"></span> Bahasa Indonesia</a></li>
+<li role="none"><a href="#" data-lang="tl" role="menuitem"><span class="flag-icon flag-tl" aria-hidden="true"></span> Tagalog</a></li>
 </ul>
 </div>
 </div>
@@ -595,10 +633,18 @@ Unser Büro befindet sich in der Nähe der Pyramiden von Giza. Besuche nur nach 
 <p class="text-sm">E-Mail: <a href="mailto:info@egyptphotographytours.com" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">info@egyptphotographytours.com</a></p>
 <p class="text-sm">Adresse: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
 <div class="flex justify-center md:justify-start mt-3" style="gap:1rem">
-<a href="https://www.facebook.com/EgyptPhotographyTours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Facebook"><i class="fab fa-facebook-f" style="font-size:1.25rem" aria-hidden="true"></i></a>
-<a href="https://www.instagram.com/hossam_artistic/" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Instagram"><i class="fab fa-instagram" style="font-size:1.25rem" aria-hidden="true"></i></a>
-<a href="https://www.tiktok.com/@egyptphotographytours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf TikTok"><i class="fab fa-tiktok" style="font-size:1.25rem" aria-hidden="true"></i></a>
-<a href="https://www.youtube.com/@Egyptphotographytours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Abonnieren Sie unseren YouTube-Kanal"><i class="fab fa-youtube" style="font-size:1.25rem" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/EgyptPhotographyTours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Facebook">
+<svg style="width:1.25rem;height:1.25rem" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+</a>
+<a href="https://www.instagram.com/hossam_artistic/" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Instagram">
+<svg style="width:1.25rem;height:1.25rem" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323C5.902 8.198 7.053 7.708 8.35 7.708s2.448.49 3.323 1.297c.897.875 1.387 2.026 1.387 3.323s-.49 2.448-1.297 3.323c-.875.897-2.026 1.387-3.323 1.387zm7.718 0c-1.297 0-2.448-.49-3.323-1.297-.897-.875-1.387-2.026-1.387-3.323s.49-2.448 1.297-3.323c.875-.897 2.026-1.387 3.323-1.387s2.448.49 3.323 1.297c.897.875 1.387 2.026 1.387 3.323s-.49 2.448-1.297 3.323c-.875.897-2.026 1.387-3.323 1.387z"/></svg>
+</a>
+<a href="https://www.tiktok.com/@egyptphotographytours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf TikTok">
+<svg style="width:1.25rem;height:1.25rem" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+</a>
+<a href="https://www.youtube.com/@Egyptphotographytours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Abonnieren Sie unseren YouTube-Kanal">
+<svg style="width:1.25rem;height:1.25rem" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+</a>
 </div>
 </div>
 </div>
@@ -607,10 +653,6 @@ Unser Büro befindet sich in der Nähe der Pyramiden von Giza. Besuche nur nach 
 <!-- Load non-critical CSS asynchronously -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
-
-<!-- Load Font Awesome asynchronously -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
 <!-- Optimized JavaScript for LCP -->
 <script>
@@ -734,9 +776,13 @@ submitBtn.disabled = true;
 
 // Initialize everything
 const init = () => {
+try {
 initLanguageSwitcher();
 initForm();
 console.log('Page initialized in', Math.round(performance.now() - perfStart), 'ms');
+} catch (error) {
+console.error('Initialization error:', error);
+}
 };
 
 // Run initialization
