@@ -99,19 +99,20 @@
 html{font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
 body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8f8f8;color:#333;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 
-/* Critical Color Variables */
+/* Critical Color Variables - Updated for better contrast */
 :root{
---primary-dark:#2C3E50;
+--primary-dark:#1a1a1a;
 --accent-light:#FFD700;
 --accent-dark:#E2B700;
---bg-primary-dark:#1a202c;
+--bg-primary-dark:#0f0f0f;
 --gray-800:#1f2937;
 --gray-700:#374151;
 --gray-600:#4b5563;
 --gray-300:#d1d5db;
 --white:#ffffff;
---blue-600:#2563eb;
+--blue-600:#1d4ed8;
 --red-500:#ef4444;
+--text-light:#f9f9f9;
 }
 
 /* Critical Layout Classes */
@@ -122,23 +123,35 @@ body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sa
 .justify-between{justify-content:space-between}
 .justify-center{justify-content:center}
 .text-center{text-align:center}
-.text-white{color:var(--white)}
+.text-white{color:var(--text-light)}
 .bg-primary-dark{background:var(--bg-primary-dark)}
 .text-accent-light{color:var(--accent-light)}
 .bg-accent-light{background:var(--accent-light)}
 .text-primary-dark{color:var(--primary-dark)}
 
 /* Critical Header Styles for LCP */
-header{background:var(--bg-primary-dark);color:var(--white);box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+header{background:var(--bg-primary-dark);color:var(--text-light);box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
 .logo-container{display:flex;align-items:center;gap:.75rem}
 .logo-image{width:64px;height:64px;border-radius:50%;border:2px solid var(--accent-light);object-fit:cover;background:var(--white)}
 .logo-fallback{display:flex;width:64px;height:64px;background:var(--accent-light);color:var(--bg-primary-dark);border-radius:50%;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem}
 
-/* Critical Navigation Styles */
-nav{background:var(--gray-800);color:var(--white);position:sticky;top:0;z-index:50;box-shadow:0 2px 4px -1px rgba(0,0,0,.1)}
-nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;list-style:none;font-size:1.125rem;font-weight:500;padding:.75rem 0}
-nav a{color:var(--white);text-decoration:none;padding:.25rem 0;transition:color .2s ease}
-nav a:hover,nav a:focus{color:var(--accent-light)}
+/* Critical Navigation Styles - Improved touch targets */
+nav{background:var(--gray-800);color:var(--text-light);position:sticky;top:0;z-index:50;box-shadow:0 2px 4px -1px rgba(0,0,0,.1)}
+nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;list-style:none;font-size:1.125rem;font-weight:500;padding:.75rem 0}
+nav a{
+color:var(--text-light);
+text-decoration:none;
+padding:12px 16px;
+transition:color .2s ease;
+border-radius:4px;
+min-height:44px;
+display:flex;
+align-items:center;
+}
+nav a:hover,nav a:focus{
+color:var(--accent-light);
+background:rgba(255,215,0,.1);
+}
 
 /* Critical Main Content Styles for LCP */
 main{flex:1;padding:4rem 0}
@@ -156,11 +169,11 @@ text-rendering:optimizeLegibility;
 font-display:swap;
 }
 
-/* Critical Typography */
+/* Critical Typography - Improved contrast */
 .intro-text{
 font-size:clamp(1.125rem,4vw,1.25rem);
 line-height:1.75;
-color:var(--gray-700);
+color:#2d3748;
 max-width:48rem;
 margin:0 auto;
 }
@@ -189,34 +202,36 @@ margin-bottom:1.5rem;
 display:block;
 font-size:1.125rem;
 font-weight:500;
-color:var(--gray-700);
+color:#2d3748;
 margin-bottom:.5rem;
 }
 .form-input{
 display:block;
 width:100%;
-padding:.75rem 1rem;
-border:1px solid var(--gray-300);
+padding:12px 16px;
+border:2px solid var(--gray-300);
 border-radius:.5rem;
 font-size:1.125rem;
 transition:border-color .15s ease,box-shadow .15s ease;
+min-height:48px;
 }
 .form-input:focus{
 outline:none;
-border-color:var(--accent-light);
-box-shadow:0 0 0 3px rgba(255,215,0,.1);
+border-color:var(--accent-dark);
+box-shadow:0 0 0 3px rgba(226,183,0,.2);
 }
 .form-button{
 width:100%;
 background:var(--accent-light);
-color:var(--bg-primary-dark);
+color:var(--primary-dark);
 font-weight:700;
-padding:.75rem 1.5rem;
+padding:16px 24px;
 border:none;
-border-radius:9999px;
+border-radius:8px;
 font-size:1.25rem;
 cursor:pointer;
 transition:background .2s ease;
+min-height:48px;
 }
 .form-button:hover{background:var(--accent-dark)}
 
@@ -234,7 +249,7 @@ margin-bottom:1.5rem;
 .md\\:justify-start{justify-content:flex-start}
 .md\\:mt-0{margin-top:0}
 .md\\:mb-0{margin-bottom:0}
-nav ul{justify-content:flex-start;gap:2rem}
+nav ul{justify-content:flex-start;gap:1.5rem}
 header .container{flex-direction:row}
 }
 
@@ -254,33 +269,37 @@ header .container{flex-direction:row}
 .mt-3{margin-top:.75rem}
 .ml-3{margin-left:.75rem}
 .mr-4{margin-right:1rem}
-.gap-1{gap:.25rem}
+.gap-1{gap:.5rem}
 .text-sm{font-size:.875rem}
 .text-lg{font-size:1.125rem}
 .font-bold{font-weight:700}
 .italic{font-style:italic}
 .hidden{display:none}
 
-/* Compact Language Switcher */
+/* Improved Language Switcher - Better touch targets and contrast */
 .language-switcher{position:relative;display:inline-block}
 .lang-btn{
 display:flex;
 align-items:center;
-gap:.375rem;
-background:transparent;
-border:1px solid rgba(255,255,255,.2);
-border-radius:.375rem;
-padding:.25rem .5rem;
-color:var(--white);
-font-size:.75rem;
+gap:.5rem;
+background:rgba(255,255,255,.1);
+border:2px solid rgba(255,255,255,.3);
+border-radius:.5rem;
+padding:12px 16px;
+color:var(--text-light);
+font-size:.875rem;
 cursor:pointer;
 transition:all .2s ease;
-min-width:60px;
+min-width:80px;
+min-height:44px;
 justify-content:center;
 }
-.lang-btn:hover{
-background:rgba(255,255,255,.1);
+.lang-btn:hover,
+.lang-btn:focus{
+background:rgba(255,255,255,.2);
 border-color:var(--accent-light);
+outline:none;
+box-shadow:0 0 0 2px rgba(255,215,0,.3);
 }
 .language-dropdown{
 display:none;
@@ -288,53 +307,75 @@ position:absolute;
 top:100%;
 right:0;
 background:var(--white);
-border:1px solid var(--gray-300);
-border-radius:.375rem;
-min-width:160px;
-max-height:240px;
+border:2px solid var(--gray-300);
+border-radius:.5rem;
+min-width:180px;
+max-height:280px;
 overflow-y:auto;
 z-index:1000;
-box-shadow:0 4px 6px rgba(0,0,0,.1);
+box-shadow:0 8px 16px rgba(0,0,0,.15);
 list-style:none;
-margin:2px 0 0 0;
-padding:2px 0;
+margin:4px 0 0 0;
+padding:8px 0;
 }
 .language-dropdown.show{display:block}
 .language-dropdown li{margin:0}
 .language-dropdown a{
-padding:4px 8px;
+padding:12px 16px;
 display:flex;
 align-items:center;
-gap:6px;
+gap:8px;
 text-decoration:none;
-color:#333;
-font-size:.75rem;
+color:#1a1a1a;
+font-size:.875rem;
 transition:background .2s;
+min-height:44px;
 }
-.language-dropdown a:hover{background:#f3f4f6}
+.language-dropdown a:hover,
+.language-dropdown a:focus{
+background:#f3f4f6;
+outline:none;
+}
 
-/* Button Styles */
+/* Improved Button Styles - Better touch targets */
 .btn-primary{
 display:flex;
 align-items:center;
 background:var(--accent-light);
-color:var(--bg-primary-dark);
+color:var(--primary-dark);
 font-weight:600;
-padding:.375rem .75rem;
-border-radius:9999px;
+padding:12px 20px;
+border-radius:8px;
 text-decoration:none;
 transition:background .2s ease;
 box-shadow:0 2px 4px -1px rgba(0,0,0,.1);
 font-size:.875rem;
+min-height:44px;
 }
-.btn-primary:hover{background:var(--accent-dark)}
+.btn-primary:hover,
+.btn-primary:focus{
+background:var(--accent-dark);
+outline:none;
+box-shadow:0 4px 8px -2px rgba(0,0,0,.2);
+}
 
-/* Footer Critical Styles */
+/* Footer Critical Styles - Improved contrast */
 footer{
 background:var(--bg-primary-dark);
-color:var(--white);
+color:var(--text-light);
 padding:2.5rem 0;
 margin-top:auto;
+}
+
+/* Footer links with better contrast */
+footer a{
+color:var(--text-light);
+transition:color 0.2s ease;
+}
+footer a:hover,
+footer a:focus{
+color:var(--accent-light);
+outline:none;
 }
 
 /* Accessibility */
@@ -367,6 +408,22 @@ a{color:inherit;text-decoration:none}
 .h-4{height:1rem}
 .ml-1{margin-left:.25rem}
 .ml-2{margin-left:.5rem}
+
+/* Social media icons - improved touch targets */
+.social-icon{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:44px;
+height:44px;
+border-radius:50%;
+transition:all 0.2s ease;
+}
+.social-icon:hover,
+.social-icon:focus{
+background:rgba(255,215,0,.1);
+outline:none;
+}
 </style>
 
 <!-- Schema.org Structured Data -->
@@ -485,7 +542,7 @@ Zum Hauptinhalt springen
 <a href="contact.html" class="btn-primary" aria-label="Jetzt Fotografie-Tour buchen">
 Jetzt buchen
 </a>
-<!-- Compact Language Switcher with All Requested Languages -->
+<!-- Improved Language Switcher with Better Touch Targets -->
 <div class="language-switcher" role="region" aria-label="Sprachauswahl">
 <button id="language-toggle" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache auswählen">
 <span class="flag-icon flag-de" aria-hidden="true"></span>
@@ -544,7 +601,7 @@ autocomplete="email">
 <div id="email-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
 </div>
 <div class="form-group">
-<label for="phone" class="form-label">Telefonnummer <span style="color:var(--gray-600)">(optional)</span></label>
+<label for="phone" class="form-label">Telefonnummer <span style="color:#6b7280">(optional)</span></label>
 <input type="tel" id="phone" name="phone"
 class="form-input"
 placeholder="z.B.: +49 123 456 789"
@@ -571,7 +628,7 @@ Nachricht senden
 </button>
 </div>
 </form>
-<p id="form-info" class="text-sm mt-4 text-center" style="color:var(--gray-600)">
+<p id="form-info" class="text-sm mt-4 text-center" style="color:#6b7280">
 Dieses Formular verwendet Formspree für sicheren und bequemen E-Mail-Versand.
 </p>
 </section>
@@ -579,7 +636,7 @@ Dieses Formular verwendet Formspree für sicheren und bequemen E-Mail-Versand.
 <section aria-labelledby="contact-info-heading">
 <div class="contact-info">
 <h2 id="contact-info-heading">Unsere Kontaktinformationen</h2>
-<div style="display:flex;flex-direction:column;gap:1.5rem;font-size:1.125rem;color:var(--gray-700)">
+<div style="display:flex;flex-direction:column;gap:1.5rem;font-size:1.125rem;color:#2d3748">
 <div class="flex items-center">
 <svg style="width:1.75rem;height:1.75rem;color:var(--accent-dark);margin-right:1rem;flex-shrink:0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.67 6.12a3 3 0 01-3.66 0L1.5 8.67zm17.91-4.4a2 2 0 00-2.32-.47l-7.74 5.45a3 3 0 01-3.66 0L4.41 4.2a2 2 0 00-2.32.47L12 11.23l8.91-6.96z" clip-rule="evenodd"></path></svg>
 <div>
@@ -616,7 +673,7 @@ width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" re
 title="Karte der Egypt Photography Tours Bürolage nahe den Pyramiden von Giza"
 aria-label="Interaktive Karte mit unserem Bürostandort"></iframe>
 </div>
-<p class="text-sm mt-2 text-center" style="color:var(--gray-600)">
+<p class="text-sm mt-2 text-center" style="color:#6b7280">
 Unser Büro befindet sich in der Nähe der Pyramiden von Giza. Besuche nur nach Terminvereinbarung.
 </p>
 </div>
@@ -634,29 +691,29 @@ Unser Büro befindet sich in der Nähe der Pyramiden von Giza. Besuche nur nach 
 <div class="mb-6 md:mb-0">
 <h4 style="font-weight:600;color:var(--accent-light);margin-bottom:0.5rem">Schnelle Links</h4>
 <ul class="text-sm" style="list-style:none">
-<li><a href="index.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Startseite</a></li>
-<li><a href="about.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Über uns</a></li>
-<li><a href="tours.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Unsere Touren</a></li>
-<li><a href="gallery.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Galerie</a></li>
-<li><a href="contact.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Kontakt</a></li>
-<li><a href="faqs.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">FAQ</a></li>
+<li><a href="index.html">Startseite</a></li>
+<li><a href="about.html">Über uns</a></li>
+<li><a href="tours.html">Unsere Touren</a></li>
+<li><a href="gallery.html">Galerie</a></li>
+<li><a href="contact.html">Kontakt</a></li>
+<li><a href="faqs.html">FAQ</a></li>
 </ul>
 </div>
 <div>
 <h4 style="font-weight:600;color:var(--accent-light);margin-bottom:0.5rem">Verbinden Sie sich mit uns</h4>
-<p class="text-sm">E-Mail: <a href="mailto:info@egyptphotographytours.com" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">info@egyptphotographytours.com</a></p>
+<p class="text-sm">E-Mail: <a href="mailto:info@egyptphotographytours.com">info@egyptphotographytours.com</a></p>
 <p class="text-sm">Adresse: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-<div class="flex justify-center md:justify-start mt-3" style="gap:1rem">
-<a href="https://www.facebook.com/EgyptPhotographyTours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Facebook">
+<div class="flex justify-center md:justify-start mt-3" style="gap:0.5rem">
+<a href="https://www.facebook.com/EgyptPhotographyTours" class="social-icon" aria-label="Folgen Sie uns auf Facebook">
 <svg style="width:1.25rem;height:1.25rem" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
 </a>
-<a href="https://www.instagram.com/hossam_artistic/" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Instagram">
+<a href="https://www.instagram.com/hossam_artistic/" class="social-icon" aria-label="Folgen Sie uns auf Instagram">
 <svg style="width:1.25rem;height:1.25rem" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323C5.902 8.198 7.053 7.708 8.35 7.708s2.448.49 3.323 1.297c.897.875 1.387 2.026 1.387 3.323s-.49 2.448-1.297 3.323c-.875.897-2.026 1.387-3.323 1.387zm7.718 0c-1.297 0-2.448-.49-3.323-1.297-.897-.875-1.387-2.026-1.387-3.323s.49-2.448 1.297-3.323c.875-.897 2.026-1.387 3.323-1.387s2.448.49 3.323 1.297c.897.875 1.387 2.026 1.387 3.323s-.49 2.448-1.297 3.323c-.875.897-2.026 1.387-3.323 1.387z"/></svg>
 </a>
-<a href="https://www.tiktok.com/@egyptphotographytours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf TikTok">
+<a href="https://www.tiktok.com/@egyptphotographytours" class="social-icon" aria-label="Folgen Sie uns auf TikTok">
 <svg style="width:1.25rem;height:1.25rem" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
 </a>
-<a href="https://www.youtube.com/@Egyptphotographytours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Abonnieren Sie unseren YouTube-Kanal">
+<a href="https://www.youtube.com/@Egyptphotographytours" class="social-icon" aria-label="Abonnieren Sie unseren YouTube-Kanal">
 <svg style="width:1.25rem;height:1.25rem" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 </a>
 </div>
