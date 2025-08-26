@@ -59,32 +59,25 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<!-- Critical Resource Hints -->
+<!-- Critical Resource Hints for LCP optimization -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preconnect" href="https://formspree.io" crossorigin>
-
-<!-- DNS Prefetch for external resources -->
-<link rel="dns-prefetch" href="//www.google.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//formspree.io">
 <link rel="dns-prefetch" href="//flagcdn.com">
 
-<!-- Preload critical resources -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+<!-- Preload critical font for LCP -->
+<link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Critical CSS inlined -->
+<!-- Critical CSS - Optimized for LCP -->
 <style>
-/* Critical above-the-fold styles */
-*,*::before,*::after{box-sizing:border-box}
-*{margin:0}
-body{line-height:1.5;-webkit-font-smoothing:antialiased;font-family:'Inter',system-ui,-apple-system,sans-serif;background-color:#f8f8f8;color:#333;min-height:100vh;display:flex;flex-direction:column}
-img,picture,video,canvas,svg{display:block;max-width:100%}
-input,button,textarea,select{font:inherit}
-p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}
+/* CSS Reset and Base Styles */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8f8f8;color:#333;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 
-/* Color variables */
+/* Critical Color Variables */
 :root{
 --primary-dark:#2C3E50;
 --accent-light:#FFD700;
@@ -96,16 +89,10 @@ p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}
 --gray-300:#d1d5db;
 --white:#ffffff;
 --blue-600:#2563eb;
+--red-500:#ef4444;
 }
 
-.text-primary-dark{color:var(--primary-dark)}
-.bg-accent-light{background-color:var(--accent-light)}
-.text-accent-light{color:var(--accent-light)}
-.bg-accent-dark{background-color:var(--accent-dark)}
-.text-accent-dark{color:var(--accent-dark)}
-.bg-primary-dark{background-color:var(--bg-primary-dark)}
-
-/* Layout utilities */
+/* Critical Layout Classes */
 .container{width:100%;max-width:1200px;margin:0 auto;padding:0 1.5rem}
 .flex{display:flex}
 .flex-col{flex-direction:column}
@@ -114,101 +101,214 @@ p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}
 .justify-center{justify-content:center}
 .text-center{text-align:center}
 .text-white{color:var(--white)}
-.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)}
-.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06)}
-.rounded-lg{border-radius:0.5rem}
-.rounded-full{border-radius:9999px}
+.bg-primary-dark{background:var(--bg-primary-dark)}
+.text-accent-light{color:var(--accent-light)}
+.bg-accent-light{background:var(--accent-light)}
+.text-primary-dark{color:var(--primary-dark)}
 
-/* Header styles */
-header{background-color:var(--bg-primary-dark);color:var(--white);box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}
-.logo-container{display:flex;align-items:center;gap:0.75rem}
-.logo-image{height:4rem;width:4rem;border-radius:50%;border:2px solid var(--accent-light);object-fit:cover;background-color:var(--white)}
-.logo-fallback{display:none;width:4rem;height:4rem;background:var(--accent-light);color:var(--bg-primary-dark);border-radius:50%;align-items:center;justify-content:center;font-weight:bold;font-size:1.2rem}
+/* Critical Header Styles for LCP */
+header{background:var(--bg-primary-dark);color:var(--white);box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+.logo-container{display:flex;align-items:center;gap:.75rem}
+.logo-image{width:64px;height:64px;border-radius:50%;border:2px solid var(--accent-light);object-fit:cover;background:var(--white)}
+.logo-fallback{display:none;width:64px;height:64px;background:var(--accent-light);color:var(--bg-primary-dark);border-radius:50%;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem}
 
-/* Navigation */
-nav{background-color:var(--gray-800);color:var(--white);box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);position:sticky;top:0;z-index:50}
-nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;list-style:none;padding:0;margin:0;font-size:1.125rem;font-weight:500}
-nav a{color:var(--white);text-decoration:none;padding:0.25rem 0;transition:color 0.3s ease}
-nav a:hover,nav a:focus{color:var(--accent-light);outline:none}
+/* Critical Navigation Styles */
+nav{background:var(--gray-800);color:var(--white);position:sticky;top:0;z-index:50;box-shadow:0 2px 4px -1px rgba(0,0,0,.1)}
+nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;list-style:none;font-size:1.125rem;font-weight:500;padding:.75rem 0}
+nav a{color:var(--white);text-decoration:none;padding:.25rem 0;transition:color .2s ease}
+nav a:hover,nav a:focus{color:var(--accent-light)}
 
-/* Language switcher */
-.language-switcher-container{position:relative;display:inline-block}
-.language-dropdown{display:none;position:absolute;top:100%;right:0;background:var(--white);border:1px solid var(--gray-300);border-radius:0.25rem;list-style:none;margin:5px 0 0 0;padding:5px 0;min-width:150px;max-height:300px;overflow-y:auto;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.1)}
-.language-dropdown.show{display:block}
-.language-dropdown li{margin:0}
-.language-dropdown a{padding:8px 15px;display:flex;align-items:center;gap:10px;text-decoration:none;color:#333;transition:background-color 0.2s}
-.language-dropdown a:hover{background-color:#f0f0f0}
-.flag-icon{width:20px;height:15px;border-radius:2px;object-fit:cover}
+/* Critical Main Content Styles for LCP */
+main{flex:1;padding:4rem 0}
+.main-header{margin-bottom:3rem}
 
-/* Button styles */
-.btn-primary{display:flex;align-items:center;background-color:var(--accent-light);color:var(--bg-primary-dark);font-weight:600;padding:0.5rem 1rem;border-radius:9999px;text-decoration:none;transition:background-color 0.3s ease;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1)}
-.btn-primary:hover{background-color:var(--accent-dark)}
+/* LCP Element - Main Heading Optimization */
+.lcp-heading{
+font-size:clamp(2.5rem,8vw,4rem);
+font-weight:800;
+color:var(--primary-dark);
+line-height:1.1;
+margin:0 0 1.5rem 0;
+letter-spacing:-.025em;
+text-rendering:optimizeLegibility;
+font-display:swap;
+}
 
-/* Typography */
-h1{font-size:3rem;font-weight:800;color:var(--primary-dark);margin-bottom:3rem}
-h2{font-size:1.875rem;font-weight:700;color:var(--primary-dark);margin-bottom:1.5rem}
-.text-xl{font-size:1.25rem;line-height:1.75rem}
-.text-lg{font-size:1.125rem;line-height:1.75rem}
-.text-sm{font-size:0.875rem;line-height:1.25rem}
+/* Critical Typography */
+.intro-text{
+font-size:clamp(1.125rem,4vw,1.25rem);
+line-height:1.75;
+color:var(--gray-700);
+max-width:48rem;
+margin:0 auto;
+}
 
-/* Form styles */
+/* Critical Grid Layout */
+.content-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:3rem;
+background:var(--white);
+border-radius:.5rem;
+box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+padding:2rem;
+}
+
+/* Critical Form Styles */
+.form-section h2{
+font-size:1.875rem;
+font-weight:700;
+color:var(--primary-dark);
+margin-bottom:1.5rem;
+}
+
 .form-group{margin-bottom:1.5rem}
-.form-label{display:block;font-size:1.125rem;font-weight:500;color:var(--gray-700);margin-bottom:0.5rem}
-.form-input{display:block;width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-300);border-radius:0.5rem;box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);font-size:1.125rem;transition:border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out}
-.form-input:focus{outline:none;border-color:var(--accent-light);box-shadow:0 0 0 3px rgba(255,215,0,0.1)}
-.form-textarea{resize:vertical;min-height:150px}
-.form-button{width:100%;background-color:var(--accent-light);color:var(--bg-primary-dark);font-weight:700;padding:0.75rem 1.5rem;border:none;border-radius:9999px;font-size:1.25rem;cursor:pointer;transition:background-color 0.3s ease;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1)}
-.form-button:hover{background-color:var(--accent-dark)}
+.form-label{
+display:block;
+font-size:1.125rem;
+font-weight:500;
+color:var(--gray-700);
+margin-bottom:.5rem;
+}
+.form-input{
+display:block;
+width:100%;
+padding:.75rem 1rem;
+border:1px solid var(--gray-300);
+border-radius:.5rem;
+font-size:1.125rem;
+transition:border-color .15s ease,box-shadow .15s ease;
+}
+.form-input:focus{
+outline:none;
+border-color:var(--accent-light);
+box-shadow:0 0 0 3px rgba(255,215,0,.1);
+}
+.form-button{
+width:100%;
+background:var(--accent-light);
+color:var(--bg-primary-dark);
+font-weight:700;
+padding:.75rem 1.5rem;
+border:none;
+border-radius:9999px;
+font-size:1.25rem;
+cursor:pointer;
+transition:background .2s ease;
+}
+.form-button:hover{background:var(--accent-dark)}
 
-/* Grid layout */
-.grid{display:grid}
-.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
-.gap-12{gap:3rem}
+/* Critical Contact Info Styles */
+.contact-info h2{
+font-size:1.875rem;
+font-weight:700;
+color:var(--primary-dark);
+margin-bottom:1.5rem;
+}
 
-/* Spacing utilities */
-.py-4{padding-top:1rem;padding-bottom:1rem}
-.py-3{padding-top:0.75rem;padding-bottom:0.75rem}
-.py-16{padding-top:4rem;padding-bottom:4rem}
-.py-10{padding-top:2.5rem;padding-bottom:2.5rem}
-.px-6{padding-left:1.5rem;padding-right:1.5rem}
-.p-8{padding:2rem}
-.mb-12{margin-bottom:3rem}
-.mb-6{margin-bottom:1.5rem}
-.mb-2{margin-bottom:0.5rem}
-.mt-2{margin-top:0.5rem}
-.mt-3{margin-top:0.75rem}
-.mt-8{margin-top:2rem}
-.ml-3{margin-left:0.75rem}
-.mr-4{margin-right:1rem}
-
-/* Responsive design */
+/* Critical Responsive Design */
 @media (min-width:768px){
 .md\\:flex-row{flex-direction:row}
 .md\\:justify-start{justify-content:flex-start}
-.md\\:text-lg{font-size:1.125rem;line-height:1.75rem}
 .md\\:mt-0{margin-top:0}
 .md\\:mb-0{margin-bottom:0}
-.container{padding:0 1.5rem}
 nav ul{justify-content:flex-start;gap:2rem}
+header .container{flex-direction:row}
 }
 
 @media (min-width:1024px){
-.lg\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lg\\:grid-cols-2{grid-template-columns:1fr 1fr}
 .lg\\:p-12{padding:3rem}
-h1{font-size:3.75rem}
+.content-grid{padding:3rem}
 }
 
-/* Performance optimizations */
-.fade-in{animation:fadeIn 0.6s ease-in}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* Critical Utilities */
+.py-4{padding-top:1rem;padding-bottom:1rem}
+.py-3{padding-top:.75rem;padding-bottom:.75rem}
+.px-6{padding-left:1.5rem;padding-right:1.5rem}
+.mb-6{margin-bottom:1.5rem}
+.mb-2{margin-bottom:.5rem}
+.mt-2{margin-top:.5rem}
+.mt-3{margin-top:.75rem}
+.ml-3{margin-left:.75rem}
+.mr-4{margin-right:1rem}
+.gap-1{gap:.25rem}
+.text-sm{font-size:.875rem}
+.text-lg{font-size:1.125rem}
+.font-bold{font-weight:700}
+.italic{font-style:italic}
+
+/* Language Switcher Critical Styles */
+.language-switcher{position:relative;display:inline-block}
+.language-dropdown{
+display:none;
+position:absolute;
+top:100%;
+right:0;
+background:var(--white);
+border:1px solid var(--gray-300);
+border-radius:.25rem;
+min-width:150px;
+z-index:1000;
+box-shadow:0 4px 6px rgba(0,0,0,.1);
+}
+.language-dropdown.show{display:block}
+.language-dropdown a{
+padding:8px 15px;
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:#333;
+transition:background .2s;
+}
+.language-dropdown a:hover{background:#f0f0f0}
+.flag-icon{width:20px;height:15px;border-radius:2px;object-fit:cover}
+
+/* Button Styles */
+.btn-primary{
+display:flex;
+align-items:center;
+background:var(--accent-light);
+color:var(--bg-primary-dark);
+font-weight:600;
+padding:.5rem 1rem;
+border-radius:9999px;
+text-decoration:none;
+transition:background .2s ease;
+box-shadow:0 2px 4px -1px rgba(0,0,0,.1);
+}
+.btn-primary:hover{background:var(--accent-dark)}
+
+/* Footer Critical Styles */
+footer{
+background:var(--bg-primary-dark);
+color:var(--white);
+padding:2.5rem 0;
+margin-top:auto;
+}
 
 /* Accessibility */
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.focus\\:not-sr-only:focus{position:static;width:auto;height:auto;padding:inherit;margin:inherit;overflow:visible;clip:auto;white-space:normal}
+.sr-only{
+position:absolute;
+width:1px;
+height:1px;
+padding:0;
+margin:-1px;
+overflow:hidden;
+clip:rect(0,0,0,0);
+white-space:nowrap;
+border:0;
+}
 
-/* Loading states */
-.loading{opacity:0.7;pointer-events:none}
-.loaded{opacity:1;transition:opacity 0.3s ease}
+/* Performance Optimizations */
+img{max-width:100%;height:auto}
+svg{display:block}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+/* Critical Animation for LCP */
+.fade-in{opacity:1}
 </style>
 
 <!-- Schema.org Structured Data -->
@@ -311,16 +411,17 @@ class="logo-image"
 width="64"
 height="64"
 loading="eager"
+fetchpriority="high"
 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
 <div class="logo-fallback" aria-label="Egypt Photography Tours">EPT</div>
 <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light ml-3" aria-label="Egypt Photography Tours - Startseite">Egypt Photography Tours</a>
 </div>
-<p class="text-md md:text-lg mt-2 md:mt-0 italic">Erfassen Sie die Wunder Ägyptens durch Ihr Objektiv.</p>
+<p class="text-lg mt-2 md:mt-0 italic">Erfassen Sie die Wunder Ägyptens durch Ihr Objektiv.</p>
 </div>
 </header>
 
 <nav role="navigation" aria-label="Hauptnavigation">
-<div class="container py-3 flex flex-col md:flex-row items-center justify-between">
+<div class="container flex flex-col md:flex-row items-center justify-between">
 <ul>
 <li><a href="index.html" aria-label="Zur Startseite">Startseite</a></li>
 <li><a href="about.html" aria-label="Über uns erfahren">Über uns</a></li>
@@ -329,15 +430,15 @@ onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'
 <li><a href="contact.html" aria-current="page" aria-label="Kontaktseite (aktuelle Seite)" class="font-bold">Kontakt</a></li>
 <li><a href="faqs.html" aria-label="Häufig gestellte Fragen">FAQ</a></li>
 </ul>
-<div class="mt-3 md:mt-0 flex items-center" style="gap:1rem">
+<div class="mt-3 md:mt-0 flex items-center gap-1">
 <a href="contact.html" class="btn-primary" aria-label="Jetzt Fotografie-Tour buchen">
 Jetzt buchen
 </a>
-<div class="language-switcher-container" role="region" aria-label="Sprachauswahl">
+<div class="language-switcher" role="region" aria-label="Sprachauswahl">
 <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-gray-800" aria-haspopup="true" aria-expanded="false" aria-label="Sprache auswählen">
 <img src="https://flagcdn.com/de.svg" alt="Deutsche Flagge" class="flag-icon" width="20" height="15" loading="lazy">
-<span style="margin-left:0.5rem">Deutsch</span>
-<svg style="width:1rem;height:1rem;margin-left:0.25rem" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+<span class="ml-2">Deutsch</span>
+<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
 </button>
 <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
 <li role="none"><a href="#" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15" loading="lazy"> English</a></li>
@@ -359,20 +460,21 @@ Jetzt buchen
 </div>
 </nav>
 
-<main id="main-content" class="flex-grow container py-16 fade-in" role="main">
-<header class="text-center mb-12">
-<h1>Kontaktieren Sie uns</h1>
-<p class="text-xl" style="color:var(--gray-700);max-width:48rem;margin:0 auto">
+<main id="main-content" class="container fade-in" role="main">
+<header class="main-header text-center">
+<!-- LCP Element - Optimized Main Heading -->
+<h1 class="lcp-heading">Kontaktieren Sie uns</h1>
+<p class="intro-text">
 Haben Sie Fragen zu unseren Touren? Bereit, Ihr perfektes fotografisches Abenteuer in Ägypten zu planen? Wir sind hier, um zu helfen! Füllen Sie das untenstehende Formular aus oder kontaktieren Sie uns direkt.
 </p>
 </header>
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-lg shadow-xl p-8 lg:p-12">
-<section aria-labelledby="contact-form-heading">
+<div class="content-grid lg:grid-cols-2">
+<section class="form-section" aria-labelledby="contact-form-heading">
 <h2 id="contact-form-heading">Senden Sie uns eine Nachricht</h2>
 <form action="https://formspree.io/f/manbbbga" method="POST" novalidate aria-describedby="form-info">
 <div class="form-group">
-<label for="name" class="form-label">Name <span style="color:#ef4444" aria-label="Pflichtfeld">*</span></label>
+<label for="name" class="form-label">Name <span style="color:var(--red-500)" aria-label="Pflichtfeld">*</span></label>
 <input type="text" id="name" name="name" required
 class="form-input"
 placeholder="Geben Sie Ihren vollständigen Namen ein"
@@ -381,7 +483,7 @@ autocomplete="name">
 <div id="name-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
 </div>
 <div class="form-group">
-<label for="email" class="form-label">E-Mail <span style="color:#ef4444" aria-label="Pflichtfeld">*</span></label>
+<label for="email" class="form-label">E-Mail <span style="color:var(--red-500)" aria-label="Pflichtfeld">*</span></label>
 <input type="email" id="email" name="_replyto" required
 class="form-input"
 placeholder="Geben Sie Ihre E-Mail-Adresse ein"
@@ -403,9 +505,10 @@ class="form-input"
 placeholder="Über Anfragen, Buchungen, etc.">
 </div>
 <div class="form-group">
-<label for="message" class="form-label">Nachricht oder Frage <span style="color:#ef4444" aria-label="Pflichtfeld">*</span></label>
+<label for="message" class="form-label">Nachricht oder Frage <span style="color:var(--red-500)" aria-label="Pflichtfeld">*</span></label>
 <textarea id="message" name="message" rows="6" required
-class="form-input form-textarea"
+class="form-input"
+style="resize:vertical;min-height:150px"
 placeholder="Teilen Sie uns Ihre Fragen oder Bedürfnisse mit..."
 aria-describedby="message-error"></textarea>
 <div id="message-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
@@ -422,6 +525,7 @@ Dieses Formular verwendet Formspree für sicheren und bequemen E-Mail-Versand.
 </section>
 
 <section aria-labelledby="contact-info-heading">
+<div class="contact-info">
 <h2 id="contact-info-heading">Unsere Kontaktinformationen</h2>
 <div style="display:flex;flex-direction:column;gap:1.5rem;font-size:1.125rem;color:var(--gray-700)">
 <div class="flex items-center">
@@ -452,7 +556,7 @@ Freitag - Samstag: 09:00 - 17:00
 </div>
 </div>
 
-<div class="mt-8">
+<div style="margin-top:2rem">
 <h3 style="font-size:1.875rem;font-weight:700;color:var(--primary-dark);margin-bottom:1.5rem">Finden Sie unseren Standort auf der Karte</h3>
 <div style="width:100%;border-radius:0.5rem;overflow:hidden;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1)">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.012426728986!2d31.13130227550826!3d29.976480822012796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845872f2b4db5%3A0xd7a0095a6e6cd68b!2sGreat%20Pyramid%20of%20Giza!5e0!3m2!1sen!2seg!4v1699189112075!5m2!1sen!2seg"
@@ -464,11 +568,12 @@ aria-label="Interaktive Karte mit unserem Bürostandort"></iframe>
 Unser Büro befindet sich in der Nähe der Pyramiden von Giza. Besuche nur nach Terminvereinbarung.
 </p>
 </div>
+</div>
 </section>
 </div>
 </main>
 
-<footer class="bg-primary-dark text-white py-10" role="contentinfo" style="margin-top:auto">
+<footer role="contentinfo">
 <div class="container text-center md:flex md:justify-between md:items-center">
 <div class="mb-6 md:mb-0">
 <h3 style="font-size:1.5rem;font-weight:700;color:var(--accent-light);margin-bottom:0.5rem">Egypt Photography Tours</h3>
@@ -476,83 +581,59 @@ Unser Büro befindet sich in der Nähe der Pyramiden von Giza. Besuche nur nach 
 </div>
 <div class="mb-6 md:mb-0">
 <h4 style="font-weight:600;color:var(--accent-light);margin-bottom:0.5rem">Schnelle Links</h4>
-<ul class="text-sm" style="list-style:none;padding:0;margin:0">
-<li><a href="index.html" style="color:var(--white);text-decoration:none;transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Startseite</a></li>
-<li><a href="about.html" style="color:var(--white);text-decoration:none;transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Über uns</a></li>
-<li><a href="tours.html" style="color:var(--white);text-decoration:none;transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Unsere Touren</a></li>
-<li><a href="gallery.html" style="color:var(--white);text-decoration:none;transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Galerie</a></li>
-<li><a href="contact.html" style="color:var(--white);text-decoration:none;transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Kontakt</a></li>
-<li><a href="faqs.html" style="color:var(--white);text-decoration:none;transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">FAQ</a></li>
+<ul class="text-sm" style="list-style:none">
+<li><a href="index.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Startseite</a></li>
+<li><a href="about.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Über uns</a></li>
+<li><a href="tours.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Unsere Touren</a></li>
+<li><a href="gallery.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Galerie</a></li>
+<li><a href="contact.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">Kontakt</a></li>
+<li><a href="faqs.html" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">FAQ</a></li>
 </ul>
 </div>
 <div>
 <h4 style="font-weight:600;color:var(--accent-light);margin-bottom:0.5rem">Verbinden Sie sich mit uns</h4>
-<p class="text-sm">E-Mail: <a href="mailto:info@egyptphotographytours.com" style="color:var(--white);text-decoration:none;transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">info@egyptphotographytours.com</a></p>
+<p class="text-sm">E-Mail: <a href="mailto:info@egyptphotographytours.com" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'">info@egyptphotographytours.com</a></p>
 <p class="text-sm">Adresse: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
 <div class="flex justify-center md:justify-start mt-3" style="gap:1rem">
-<a href="https://www.facebook.com/EgyptPhotographyTours" style="color:var(--white);transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Facebook"><i class="fab fa-facebook-f" style="font-size:1.25rem" aria-hidden="true"></i></a>
-<a href="https://www.instagram.com/hossam_artistic/" style="color:var(--white);transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Instagram"><i class="fab fa-instagram" style="font-size:1.25rem" aria-hidden="true"></i></a>
-<a href="https://www.tiktok.com/@egyptphotographytours" style="color:var(--white);transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf TikTok"><i class="fab fa-tiktok" style="font-size:1.25rem" aria-hidden="true"></i></a>
-<a href="https://www.youtube.com/@Egyptphotographytours" style="color:var(--white);transition:color 0.3s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Abonnieren Sie unseren YouTube-Kanal"><i class="fab fa-youtube" style="font-size:1.25rem" aria-hidden="true"></i></a>
+<a href="https://www.facebook.com/EgyptPhotographyTours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Facebook"><i class="fab fa-facebook-f" style="font-size:1.25rem" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/hossam_artistic/" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf Instagram"><i class="fab fa-instagram" style="font-size:1.25rem" aria-hidden="true"></i></a>
+<a href="https://www.tiktok.com/@egyptphotographytours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Folgen Sie uns auf TikTok"><i class="fab fa-tiktok" style="font-size:1.25rem" aria-hidden="true"></i></a>
+<a href="https://www.youtube.com/@Egyptphotographytours" style="color:var(--white);transition:color 0.2s ease" onmouseover="this.style.color='var(--accent-light)'" onmouseout="this.style.color='var(--white)'" aria-label="Abonnieren Sie unseren YouTube-Kanal"><i class="fab fa-youtube" style="font-size:1.25rem" aria-hidden="true"></i></a>
 </div>
 </div>
 </div>
 </footer>
 
 <!-- Load non-critical CSS asynchronously -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 
 <!-- Load Font Awesome asynchronously -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-<!-- Optimized JavaScript -->
+<!-- Optimized JavaScript for LCP -->
 <script>
-// Critical JavaScript for immediate functionality
 (function() {
 'use strict';
 
-// Performance monitoring
-const perfData = {
-startTime: performance.now(),
-resources: []
-};
+// Critical performance tracking
+const perfStart = performance.now();
 
-// Intersection Observer for lazy loading
-const observerOptions = {
-root: null,
-rootMargin: '50px',
-threshold: 0.1
-};
-
-const imageObserver = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-const img = entry.target;
-if (img.dataset.src) {
-img.src = img.dataset.src;
-img.removeAttribute('data-src');
-}
-img.classList.add('loaded');
-imageObserver.unobserve(img);
-}
-});
-}, observerOptions);
-
-// Form validation
+// Form validation functions
 const validateField = (field, validationFn, errorMsg) => {
 const errorDiv = document.getElementById(field.id + '-error');
-const isValid = validationFn(field.value);
+if (!errorDiv) return true;
 
+const isValid = validationFn(field.value);
 if (!isValid && field.value.length > 0) {
 errorDiv.textContent = errorMsg;
 errorDiv.classList.remove('hidden');
-field.classList.add('border-red-500');
+field.style.borderColor = 'var(--red-500)';
 field.setAttribute('aria-invalid', 'true');
 } else {
 errorDiv.classList.add('hidden');
-field.classList.remove('border-red-500');
+field.style.borderColor = 'var(--gray-300)';
 field.setAttribute('aria-invalid', 'false');
 }
 return isValid;
@@ -599,28 +680,41 @@ const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 
-// Real-time validation
-nameInput?.addEventListener('blur', () => {
+// Validation event listeners
+if (nameInput) {
+nameInput.addEventListener('blur', () => {
 validateField(nameInput, (value) => value.trim().length >= 2, 'Der Name muss mindestens 2 Zeichen enthalten');
 });
+}
 
-emailInput?.addEventListener('blur', () => {
+if (emailInput) {
+emailInput.addEventListener('blur', () => {
 validateField(emailInput, (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), 'Bitte geben Sie eine gültige E-Mail-Adresse ein');
 });
+}
 
-messageInput?.addEventListener('blur', () => {
+if (messageInput) {
+messageInput.addEventListener('blur', () => {
 validateField(messageInput, (value) => value.trim().length >= 10, 'Die Nachricht muss mindestens 10 Zeichen enthalten');
 });
+}
 
 // Form submission
 form.addEventListener('submit', (e) => {
-const isNameValid = validateField(nameInput, (value) => value.trim().length >= 2, 'Der Name muss mindestens 2 Zeichen enthalten');
-const isEmailValid = validateField(emailInput, (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), 'Bitte geben Sie eine gültige E-Mail-Adresse ein');
-const isMessageValid = validateField(messageInput, (value) => value.trim().length >= 10, 'Die Nachricht muss mindestens 10 Zeichen enthalten');
+let isValid = true;
 
-if (!isNameValid || !isEmailValid || !isMessageValid) {
+if (nameInput) {
+isValid = validateField(nameInput, (value) => value.trim().length >= 2, 'Der Name muss mindestens 2 Zeichen enthalten') && isValid;
+}
+if (emailInput) {
+isValid = validateField(emailInput, (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), 'Bitte geben Sie eine gültige E-Mail-Adresse ein') && isValid;
+}
+if (messageInput) {
+isValid = validateField(messageInput, (value) => value.trim().length >= 10, 'Die Nachricht muss mindestens 10 Zeichen enthalten') && isValid;
+}
+
+if (!isValid) {
 e.preventDefault();
-// Focus on first invalid field
 const firstInvalid = form.querySelector('[aria-invalid="true"]');
 if (firstInvalid) {
 firstInvalid.focus();
@@ -631,33 +725,18 @@ return;
 // Show loading state
 const submitBtn = form.querySelector('button[type="submit"]');
 if (submitBtn) {
-submitBtn.classList.add('loading');
+submitBtn.style.opacity = '0.7';
 submitBtn.textContent = 'Wird gesendet...';
 submitBtn.disabled = true;
 }
 });
 };
 
-// Initialize everything when DOM is ready
+// Initialize everything
 const init = () => {
-// Add fade-in animation to main content
-const main = document.querySelector('main');
-if (main) {
-main.classList.add('fade-in');
-}
-
-// Initialize lazy loading for images
-document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-imageObserver.observe(img);
-});
-
-// Initialize components
 initLanguageSwitcher();
 initForm();
-
-// Performance tracking
-perfData.domReady = performance.now();
-console.log('Page initialized in', Math.round(perfData.domReady - perfData.startTime), 'ms');
+console.log('Page initialized in', Math.round(performance.now() - perfStart), 'ms');
 };
 
 // Run initialization
@@ -667,24 +746,7 @@ document.addEventListener('DOMContentLoaded', init);
 init();
 }
 
-// Track page load performance
-window.addEventListener('load', () => {
-perfData.loadComplete = performance.now();
-console.log('Page fully loaded in', Math.round(perfData.loadComplete - perfData.startTime), 'ms');
-});
-
 })();
-</script>
-
-<!-- Service Worker for caching (optional) -->
-<script>
-if ('serviceWorker' in navigator) {
-window.addEventListener('load', () => {
-navigator.serviceWorker.register('/sw.js')
-.then(registration => console.log('SW registered'))
-.catch(registrationError => console.log('SW registration failed'));
-});
-}
 </script>
 </body>
 </html>
