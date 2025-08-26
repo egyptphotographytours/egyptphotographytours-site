@@ -67,14 +67,45 @@
             border-radius: 2px;
             object-fit: cover;
         }
+        /* Logo troubleshooting styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            space: 0.75rem;
+        }
+        .logo-image {
+            height: 4rem;
+            width: auto;
+            border-radius: 50%;
+            border: 2px solid #FFD700;
+            object-fit: cover;
+            background-color: #fff;
+        }
+        /* Fallback for broken images */
+        .logo-image::before {
+            content: "EPT";
+            display: inline-block;
+            background: #FFD700;
+            color: #1a202c;
+            font-weight: bold;
+            text-align: center;
+            line-height: 4rem;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
     <header class="bg-primary-dark text-white shadow-lg">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours 로고 - 피라미드와 카메라 셔터" class="h-16 w-auto rounded-full">
-                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
+            <div class="logo-container">
+                <img src="./images/copilot_image_1752144851499.jpg" 
+                     alt="Egypt Photography Tours 로고 - 피라미드와 카메라 셔터" 
+                     class="logo-image"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display:none; width:4rem; height:4rem; background:#FFD700; color:#1a202c; border-radius:50%; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem;">EPT</div>
+                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light ml-3">Egypt Photography Tours</a>
             </div>
             <p class="text-md md:text-lg mt-2 md:mt-0 italic">당신의 렌즈를 통해 이집트의 경이로움을 담아보세요.</p>
         </div>
@@ -240,6 +271,18 @@
         </div>
     </footer>
     <script>
+        // Debug function to check if image loads
+        function checkImageLoad() {
+            const logoImg = document.querySelector('.logo-image');
+            console.log('Logo image element:', logoImg);
+            console.log('Logo image src:', logoImg ? logoImg.src : 'Image not found');
+            console.log('Logo image complete:', logoImg ? logoImg.complete : 'Image not found');
+            console.log('Logo image naturalWidth:', logoImg ? logoImg.naturalWidth : 'Image not found');
+        }
+        
+        // Call debug function when page loads
+        window.addEventListener('load', checkImageLoad);
+
         function getCurrentPage() {
             const path = window.location.pathname;
             return path.split('/').pop() || 'index.html';
