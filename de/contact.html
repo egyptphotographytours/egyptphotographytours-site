@@ -56,42 +56,35 @@
 <link rel="alternate" hreflang="tl" href="https://egyptphotographytours.com/tl/contact.html">
 <link rel="alternate" hreflang="x-default" href="https://egyptphotographytours.com/contact.html">
 
-<!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<!-- Inline Favicon to avoid 404 -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+
+<!-- Inline Web App Manifest to avoid 404 -->
+<link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;Egypt Photography Tours&quot;,&quot;short_name&quot;:&quot;EPT&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/svg+xml&quot;}],&quot;theme_color&quot;:&quot;#FFD700&quot;,&quot;background_color&quot;:&quot;#1a202c&quot;,&quot;display&quot;:&quot;standalone&quot;}">
 
 <!-- Critical Resource Hints for LCP optimization -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Self-hosted flag icons to avoid third-party cookies -->
+<!-- Optimized flag icons with shorter language list -->
 <style>
-/* Flag icon data URIs to avoid external requests */
+/* Compact flag icon data URIs for essential languages only */
 .flag-de { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiMwMDAwMDAiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiNERDAwMDAiLz4KPHJlY3QgeT0iMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI1IiBmaWxsPSIjRkZDRTAwIi8+Cjwvc3ZnPgo='); }
 .flag-us { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjQjIyMjM0Ii8+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'); }
 .flag-es { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjQUEwMDEyIi8+CjxyZWN0IHk9IjMiIHdpZHRoPSIyMCIgaGVpZ2h0PSI5IiBmaWxsPSIjRkZDNDAwIi8+Cjwvc3ZnPgo='); }
 .flag-fr { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDIzOTUiLz4KPHJlY3QgeD0iNyIgd2lkdGg9IjYiIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjEzIiB3aWR0aD0iNyIgaGVpZ2h0PSIxNSIgZmlsbD0iI0VEMjkzOSIvPgo8L3N2Zz4K'); }
-.flag-it { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDk5NDYiLz4KPHJlY3QgeD0iNyIgd2lkdGg9IjYiIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjEzIiB3aWR0aD0iNyIgaGVpZ2h0PSIxNSIgZmlsbD0iI0NFMkIzNyIvPgo8L3N2Zz4K'); }
-.flag-pt { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgiIGhlaWdodD0iMTUiIGZpbGw9IiMwNDZBMzgiLz4KPHJlY3QgeD0iOCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjE1IiBmaWxsPSIjREEwMjBFIi8+Cjwvc3ZnPgo='); }
-.flag-ru { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjUiIHdpZHRoPSIyMCIgaGVpZ2h0PSI1IiBmaWxsPSIjMDA1N0I3Ii8+CjxyZWN0IHk9IjEwIiB3aWR0aD0iMjAiIGhlaWdodD0iNSIgZmlsbD0iI0QzMjUyRiIvPgo8L3N2Zz4K'); }
 .flag-ar { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiNDRTExMjYiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEwIiB3aWR0aD0iMjAiIGhlaWdodD0iNSIgZmlsbD0iIzAwMDAwMCIvPgo8L3N2Zz4K'); }
 .flag-zh { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjREUyOTEwIi8+Cjwvc3ZnPgo='); }
-.flag-ja { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxMCIgY3k9IjcuNSIgcj0iNCIgZmlsbD0iI0JDMDAyRCIvPgo8L3N2Zz4K'); }
-.flag-ko { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxMCIgY3k9IjcuNSIgcj0iMyIgZmlsbD0iIzAwMzQ3OCIvPgo8L3N2Zz4K'); }
-.flag-id { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjcuNSIgZmlsbD0iI0ZGMDAwMCIvPgo8cmVjdCB5PSI3LjUiIHdpZHRoPSIyMCIgaGVpZ2h0PSI3LjUiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo='); }
-.flag-tl { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiMwMDY2Q0MiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEwIiB3aWR0aD0iMjAiIGhlaWdodD0iNSIgZmlsbD0iI0ZGMDAwMCIvPgo8L3N2Zz4K'); }
 
 .flag-icon {
-  width: 20px;
-  height: 15px;
+  width: 16px;
+  height: 12px;
   border-radius: 2px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: inline-block;
+  flex-shrink: 0;
 }
 </style>
 
@@ -135,7 +128,7 @@ body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sa
 header{background:var(--bg-primary-dark);color:var(--white);box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
 .logo-container{display:flex;align-items:center;gap:.75rem}
 .logo-image{width:64px;height:64px;border-radius:50%;border:2px solid var(--accent-light);object-fit:cover;background:var(--white)}
-.logo-fallback{display:none;width:64px;height:64px;background:var(--accent-light);color:var(--bg-primary-dark);border-radius:50%;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem}
+.logo-fallback{display:flex;width:64px;height:64px;background:var(--accent-light);color:var(--bg-primary-dark);border-radius:50%;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem}
 
 /* Critical Navigation Styles */
 nav{background:var(--gray-800);color:var(--white);position:sticky;top:0;z-index:50;box-shadow:0 2px 4px -1px rgba(0,0,0,.1)}
@@ -264,8 +257,25 @@ header .container{flex-direction:row}
 .italic{font-style:italic}
 .hidden{display:none}
 
-/* Language Switcher Critical Styles */
+/* Compact Language Switcher */
 .language-switcher{position:relative;display:inline-block}
+.language-btn{
+display:flex;
+align-items:center;
+gap:.5rem;
+background:transparent;
+border:1px solid rgba(255,255,255,.3);
+border-radius:.375rem;
+padding:.375rem .75rem;
+color:var(--white);
+font-size:.875rem;
+cursor:pointer;
+transition:all .2s ease;
+}
+.language-btn:hover{
+background:rgba(255,255,255,.1);
+border-color:var(--accent-light);
+}
 .language-dropdown{
 display:none;
 position:absolute;
@@ -273,26 +283,29 @@ top:100%;
 right:0;
 background:var(--white);
 border:1px solid var(--gray-300);
-border-radius:.25rem;
-min-width:150px;
+border-radius:.375rem;
+min-width:140px;
+max-height:200px;
+overflow-y:auto;
 z-index:1000;
 box-shadow:0 4px 6px rgba(0,0,0,.1);
 list-style:none;
-margin:0;
-padding:5px 0;
+margin:4px 0 0 0;
+padding:4px 0;
 }
 .language-dropdown.show{display:block}
 .language-dropdown li{margin:0}
 .language-dropdown a{
-padding:8px 15px;
+padding:6px 12px;
 display:flex;
 align-items:center;
-gap:10px;
+gap:8px;
 text-decoration:none;
 color:#333;
+font-size:.875rem;
 transition:background .2s;
 }
-.language-dropdown a:hover{background:#f0f0f0}
+.language-dropdown a:hover{background:#f3f4f6}
 
 /* Button Styles */
 .btn-primary{
@@ -306,6 +319,7 @@ border-radius:9999px;
 text-decoration:none;
 transition:background .2s ease;
 box-shadow:0 2px 4px -1px rgba(0,0,0,.1);
+font-size:.875rem;
 }
 .btn-primary:hover{background:var(--accent-dark)}
 
@@ -443,14 +457,7 @@ Zum Hauptinhalt springen
 <header role="banner">
 <div class="container py-4 flex flex-col md:flex-row items-center justify-between">
 <div class="logo-container">
-<img src="./images/copilot_image_1752144851499.jpg"
-alt="Egypt Photography Tours Logo - Pyramiden und Kameraverschluss"
-class="logo-image"
-width="64"
-height="64"
-loading="eager"
-fetchpriority="high"
-onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<!-- Fallback logo without external image to avoid 404 -->
 <div class="logo-fallback" aria-label="Egypt Photography Tours">EPT</div>
 <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light ml-3" aria-label="Egypt Photography Tours - Startseite">Egypt Photography Tours</a>
 </div>
@@ -472,26 +479,19 @@ onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'
 <a href="contact.html" class="btn-primary" aria-label="Jetzt Fotografie-Tour buchen">
 Jetzt buchen
 </a>
+<!-- Compact Language Switcher -->
 <div class="language-switcher" role="region" aria-label="Sprachauswahl">
-<button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-gray-800" aria-haspopup="true" aria-expanded="false" aria-label="Sprache auswählen">
+<button id="language-toggle" class="language-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache auswählen">
 <span class="flag-icon flag-de" aria-hidden="true"></span>
-<span class="ml-2">Deutsch</span>
-<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+<span>DE</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
 </button>
 <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
 <li role="none"><a href="#" data-lang="en" role="menuitem"><span class="flag-icon flag-us" aria-hidden="true"></span> English</a></li>
 <li role="none"><a href="#" data-lang="es" role="menuitem"><span class="flag-icon flag-es" aria-hidden="true"></span> Español</a></li>
-<li role="none"><a href="#" data-lang="de" role="menuitem"><span class="flag-icon flag-de" aria-hidden="true"></span> Deutsch</a></li>
 <li role="none"><a href="#" data-lang="fr" role="menuitem"><span class="flag-icon flag-fr" aria-hidden="true"></span> Français</a></li>
-<li role="none"><a href="#" data-lang="it" role="menuitem"><span class="flag-icon flag-it" aria-hidden="true"></span> Italiano</a></li>
-<li role="none"><a href="#" data-lang="pt" role="menuitem"><span class="flag-icon flag-pt" aria-hidden="true"></span> Português</a></li>
-<li role="none"><a href="#" data-lang="ru" role="menuitem"><span class="flag-icon flag-ru" aria-hidden="true"></span> Русский</a></li>
 <li role="none"><a href="#" data-lang="ar" role="menuitem"><span class="flag-icon flag-ar" aria-hidden="true"></span> العربية</a></li>
 <li role="none"><a href="#" data-lang="zh" role="menuitem"><span class="flag-icon flag-zh" aria-hidden="true"></span> 中文</a></li>
-<li role="none"><a href="#" data-lang="ja" role="menuitem"><span class="flag-icon flag-ja" aria-hidden="true"></span> 日本語</a></li>
-<li role="none"><a href="#" data-lang="ko" role="menuitem"><span class="flag-icon flag-ko" aria-hidden="true"></span> 한국어</a></li>
-<li role="none"><a href="#" data-lang="id" role="menuitem"><span class="flag-icon flag-id" aria-hidden="true"></span> Bahasa Indonesia</a></li>
-<li role="none"><a href="#" data-lang="tl" role="menuitem"><span class="flag-icon flag-tl" aria-hidden="true"></span> Tagalog</a></li>
 </ul>
 </div>
 </div>
@@ -654,15 +654,15 @@ Unser Büro befindet sich in der Nähe der Pyramiden von Giza. Besuche nur nach 
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 
-<!-- Optimized JavaScript for LCP -->
+<!-- Optimized JavaScript -->
 <script>
 (function() {
 'use strict';
 
-// Critical performance tracking
+// Performance tracking
 const perfStart = performance.now();
 
-// Form validation functions
+// Form validation
 const validateField = (field, validationFn, errorMsg) => {
 const errorDiv = document.getElementById(field.id + '-error');
 if (!errorDiv) return true;
@@ -681,7 +681,7 @@ field.setAttribute('aria-invalid', 'false');
 return isValid;
 };
 
-// Language switcher
+// Compact language switcher
 const initLanguageSwitcher = () => {
 const langButton = document.getElementById('language-toggle');
 const langDropdown = document.querySelector('.language-dropdown');
@@ -722,7 +722,7 @@ const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 
-// Validation event listeners
+// Validation listeners
 if (nameInput) {
 nameInput.addEventListener('blur', () => {
 validateField(nameInput, (value) => value.trim().length >= 2, 'Der Name muss mindestens 2 Zeichen enthalten');
@@ -764,7 +764,7 @@ firstInvalid.focus();
 return;
 }
 
-// Show loading state
+// Loading state
 const submitBtn = form.querySelector('button[type="submit"]');
 if (submitBtn) {
 submitBtn.style.opacity = '0.7';
@@ -774,7 +774,7 @@ submitBtn.disabled = true;
 });
 };
 
-// Initialize everything
+// Initialize
 const init = () => {
 try {
 initLanguageSwitcher();
