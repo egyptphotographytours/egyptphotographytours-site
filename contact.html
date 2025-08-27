@@ -17,12 +17,22 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/og-contact-image.jpg">
     
-    <!-- Preload critical resources -->
+    <!-- Optimized resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preconnect" href="https://flagcdn.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    
+    <!-- Optimized font loading -->
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Font Awesome optimized loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -206,26 +216,26 @@
 </head>
 <body class="flex flex-col min-h-screen">
     <!-- Compact Header -->
-    <header class="bg-primary-dark text-white shadow-lg compact-header">
+    <header class="bg-primary-dark text-white shadow-lg compact-header" role="banner">
         <div class="container mx-auto px-4 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo" class="compact-logo rounded-full" width="40" height="40" loading="eager">
-                <a href="index.html" class="text-xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
+                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo" class="compact-logo rounded-full" width="40" height="40" loading="eager" decoding="async" fetchpriority="high">
+                <a href="index.html" class="text-xl font-bold tracking-tight text-accent-light" aria-label="Home">Egypt Photography Tours</a>
             </div>
             <p class="text-sm hidden md:block italic">Capture the Wonders of Egypt</p>
         </div>
     </header>
 
     <!-- Compact Navigation -->
-    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50 compact-nav">
+    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50 compact-nav" role="navigation" aria-label="Main navigation">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-            <ul class="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-6 text-base font-medium">
-                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
-                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1">About</a></li>
-                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Tours</a></li>
-                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1">Gallery</a></li>
-                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1 font-bold">Contact</a></li>
-                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
+            <ul class="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-6 text-base font-medium" role="menubar">
+                <li role="none"><a href="index.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Home</a></li>
+                <li role="none"><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">About</a></li>
+                <li role="none"><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Tours</a></li>
+                <li role="none"><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Gallery</a></li>
+                <li role="none"><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1 font-bold" role="menuitem" aria-current="page">Contact</a></li>
+                <li role="none"><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">FAQs</a></li>
             </ul>
             <div class="mt-2 md:mt-0 flex items-center space-x-3">
                 <a href="contact.html#book-now" class="flex items-center bg-accent-light text-primary-dark font-semibold py-1 px-3 rounded-full hover:bg-accent-dark transition duration-300 shadow-md text-sm">
@@ -239,12 +249,19 @@
                     </button>
                     <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
                         <li role="none"><a href="#" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15" loading="lazy"> English</a></li>
-                        <li role="none"><a href="#" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15" loading="lazy"> Русский</a></li>
-                        <li role="none"><a href="#" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15" loading="lazy"> Italiano</a></li>
-                        <li role="none"><a href="#" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15" loading="lazy"> Deutsch</a></li>
+                        <li role="none"><a href="#" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15" loading="lazy"> Español</a></li>
                         <li role="none"><a href="#" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15" loading="lazy"> Français</a></li>
+                        <li role="none"><a href="#" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15" loading="lazy"> Italiano</a></li>
+                        <li role="none"><a href="#" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15" loading="lazy"> 中文</a></li>
+                        <li role="none"><a href="#" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15" loading="lazy"> 한국어</a></li>
+                        <li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15" loading="lazy"> Tagalog</a></li>
+                        <li role="none"><a href="#" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15" loading="lazy"> Deutsch</a></li>
+                        <li role="none"><a href="#" data-lang="nl" role="menuitem"><img src="https://flagcdn.com/nl.svg" alt="Nederlands" class="flag-icon" width="20" height="15" loading="lazy"> Nederlands</a></li>
+                        <li role="none"><a href="#" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15" loading="lazy"> Русский</a></li>
+                        <li role="none"><a href="#" data-lang="hi" role="menuitem"><img src="https://flagcdn.com/in.svg" alt="हिंदी" class="flag-icon" width="20" height="15" loading="lazy"> हिंदी</a></li>
                         <li role="none"><a href="#" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15" loading="lazy"> العربية</a></li>
-                        <li role="none"><a href="#" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="日本語" class="flag-icon" width="20" height="15" loading="lazy"> 日本語</a></li>
+                        <li role="none"><a href="#" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15" loading="lazy"> Português</a></li>
+                        <li role="none"><a href="#" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15" loading="lazy"> Bahasa Indonesia</a></li>
                     </ul>
                 </div>
             </div>
@@ -261,13 +278,12 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white rounded-lg shadow-xl p-6 lg:p-8">
             <div id="book-now">
                 <h2 class="text-2xl font-bold text-primary-dark mb-6">Send Us a Message</h2>
-                <form action="https://formspree.io/f/manbbbga" method="POST" class="space-y-5">
+                <form action="https://formspree.io/f/manbbbga" method="POST" class="space-y-5" novalidate>
                     <div>
-                        <label for="name" class="block text-base font-medium text-gray-700 mb-2">Your Name *</label>
-                        <input type="text" id="name" name="name" required
+                        <label for="name" class="block text-base font-medium text-gray-700 mb-2">Your Name <span aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true"
                                class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base form-input"
-                               placeholder="Enter your full name">
-                    </div>
+                               placeholder="Enter your full name" autocomplete="name">
                     <div>
                         <label for="email" class="block text-base font-medium text-gray-700 mb-2">Your Email *</label>
                         <input type="email" id="email" name="_replyto" required
@@ -344,16 +360,35 @@
                     <h2 class="text-2xl font-bold text-primary-dark mb-6">Location Map</h2>
                     <div class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-md">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.012426728986!2d31.13130227550826!3d29.976480822012796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845872f2b4db5%3A0xd7a0095a6e6cd68b!2sGreat%20Pyramid%20of%20Giza!5e0!3m2!1sen!2seg!4v1699189112075!5m2!1sen!2seg"
+                            src="about:blank"
+                            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.012426728986!2d31.13130227550826!3d29.976480822012796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845872f2b4db5%3A0xd7a0095a6e6cd68b!2sGreat%20Pyramid%20of%20Giza!5e0!3m2!1sen!2seg!4v1699189112075!5m2!1sen!2seg"
                             width="100%" 
                             height="350" 
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Egypt Photography Tours Location near Giza Pyramids">
+                            title="Egypt Photography Tours Location near Giza Pyramids"
+                            class="lazy-map">
                         </iframe>
                     </div>
+                    <script>
+                        // Lazy load map when it comes into view
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const map = document.querySelector('.lazy-map');
+                            const mapObserver = new IntersectionObserver((entries, observer) => {
+                                entries.forEach(entry => {
+                                    if (entry.isIntersecting) {
+                                        entry.target.src = entry.target.dataset.src;
+                                        observer.unobserve(entry.target);
+                                    }
+                                });
+                            }, {
+                                rootMargin: '50px'
+                            });
+                            mapObserver.observe(map);
+                        });
+                    </script>
                     <p class="text-sm text-gray-600 mt-2 text-center">
                         Our office is located near the Giza Pyramids. Please schedule appointments in advance.
                     </p>
@@ -392,12 +427,13 @@
         </div>
     </footer>
     
-    <script>
+    <script defer>
         function getCurrentPage() {
             const path = window.location.pathname;
             return path.split('/').pop() || 'index.html';
         }
         
+        // Use passive event listeners for better scroll performance
         document.addEventListener('DOMContentLoaded', function() {
             // Language dropdown functionality
             const langButton = document.getElementById('language-toggle');
