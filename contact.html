@@ -64,16 +64,45 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
+            background-color: #ffffff;
+            color: #000000;
             line-height: 1.6;
         }
-        .text-primary-dark { color: #2C3E50; }
+        .text-primary-dark { color: #000000; }
         .bg-accent-light { background-color: #FFD700; }
         .text-accent-light { color: #FFD700; }
         .bg-accent-dark { background-color: #E2B700; }
         .text-accent-dark { color: #E2B700; }
         .bg-primary-dark { background-color: #1a202c; }
+        
+        /* Main content styling */
+        .main-content {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .main-content h1, 
+        .main-content h2, 
+        .main-content h3, 
+        .main-content h4 {
+            color: #000000;
+        }
+        .main-content p, 
+        .main-content li, 
+        .main-content label {
+            color: #333333;
+        }
+        
+        /* Form styling */
+        .form-input {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #cccccc;
+        }
+        .form-input:focus {
+            border-color: #FFD700;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
         
         /* Compact header styles */
         .compact-header {
@@ -151,6 +180,15 @@
             outline: 2px solid #FFD700;
             outline-offset: 2px;
         }
+        
+        /* Contact info boxes */
+        .contact-info-box {
+            background-color: #f8f8f8;
+            border-left: 4px solid #FFD700;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
     </style>
     
     <!-- Inline critical CSS -->
@@ -213,7 +251,7 @@
         </div>
     </nav>
 
-    <main class="flex-grow container mx-auto px-4 py-10">
+    <main class="flex-grow container mx-auto px-4 py-10 main-content">
         <h1 class="text-3xl md:text-4xl font-bold text-primary-dark text-center mb-8">Contact Egypt Photography Tours</h1>
         <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">
             Have questions about our photography tours? Ready to plan your perfect Egypt photography adventure? We're here to help!
@@ -227,31 +265,31 @@
                     <div>
                         <label for="name" class="block text-base font-medium text-gray-700 mb-2">Your Name *</label>
                         <input type="text" id="name" name="name" required
-                               class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base"
+                               class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base form-input"
                                placeholder="Enter your full name">
                     </div>
                     <div>
                         <label for="email" class="block text-base font-medium text-gray-700 mb-2">Your Email *</label>
                         <input type="email" id="email" name="_replyto" required
-                               class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base"
+                               class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base form-input"
                                placeholder="Enter your email address">
                     </div>
                     <div>
                         <label for="phone" class="block text-base font-medium text-gray-700 mb-2">Phone Number</label>
                         <input type="tel" id="phone" name="phone"
-                               class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base"
+                               class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base form-input"
                                placeholder="e.g., +20 123 456 7890">
                     </div>
                     <div>
                         <label for="subject" class="block text-base font-medium text-gray-700 mb-2">Subject</label>
                         <input type="text" id="subject" name="_subject"
-                               class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base"
+                               class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base form-input"
                                placeholder="Tour inquiry, booking, etc.">
                     </div>
                     <div>
                         <label for="message" class="block text-base font-medium text-gray-700 mb-2">Your Message *</label>
                         <textarea id="message" name="message" rows="5" required
-                                  class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base"
+                                  class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent text-base form-input"
                                   placeholder="Tell us about your photography interests and questions..."></textarea>
                     </div>
                     <div>
@@ -268,25 +306,36 @@
 
             <div>
                 <h2 class="text-2xl font-bold text-primary-dark mb-6">Contact Information</h2>
-                <div class="space-y-5 text-base text-gray-700">
-                    <p class="flex items-center">
-                        <svg class="w-6 h-6 text-accent-dark mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.67 6.12a3 3 0 01-3.66 0L1.5 8.67zm17.91-4.4a2 2 0 00-2.32-.47l-7.74 5.45a3 3 0 01-3.66 0L4.41 4.2a2 2 0 00-2.32.47L12 11.23l8.91-6.96z" clip-rule="evenodd"></path></svg>
-                        Email: <a href="mailto:info@egyptphotographytours.com" class="text-blue-600 hover:underline font-medium">info@egyptphotographytours.com</a>
-                    </p>
-                    <p class="flex items-center">
-                        <svg class="w-6 h-6 text-accent-dark mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h15a3 3 0 013 3v15a3 3 0 01-3 3H4.5a3 3 0 01-3-3V4.5zM11.25 10.5V6a.75.75 0 00-1.5 0v4.5H6a.75.75 0 000 1.5h3.75V16.5a.75.75 0 001.5 0V12h4.5a.75.75 0 000-1.5H11.25z" clip-rule="evenodd"></path></svg>
-                        Phone/WhatsApp: <a href="tel:+201550735673" class="text-blue-600 hover:underline font-medium">+20 155 073 5673</a>
-                    </p>
-                    <p class="flex items-start">
-                        <svg class="w-6 h-6 text-accent-dark mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.04c.16-.093.31-.194.456-.3L18.7 15.4c.995-1.037 1.584-2.395 1.584-3.799v-1.124a8.25 8.25 0 00-16.5 0v1.124c0 1.404.589 2.762 1.584 3.798l6.027 6.202a2.273 2.273 0 01.456.3zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" clip-rule="evenodd"></path></svg>
-                        Address: Abou Elhool, Nazlet El-Samman, Giza Governorate 12557, Egypt
-                    </p>
-                    <div class="flex items-start">
-                        <svg class="w-6 h-6 text-accent-dark mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v6h-2zm0 8h2v2h-2z"/></svg>
-                        <div>
-                            <span class="font-semibold">Business Hours:</span><br>
-                            Sunday - Thursday: 9:00 AM - 9:00 PM (EET)<br>
-                            Friday - Saturday: 9:00 AM - 5:00 PM
+                <div class="space-y-5">
+                    <div class="contact-info-box">
+                        <p class="flex items-center">
+                            <svg class="w-6 h-6 text-accent-dark mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.67 6.12a3 3 0 01-3.66 0L1.5 8.67zm17.91-4.4a2 2 0 00-2.32-.47l-7.74 5.45a3 3 0 01-3.66 0L4.41 4.2a2 2 0 00-2.32.47L12 11.23l8.91-6.96z" clip-rule="evenodd"></path></svg>
+                            Email: <a href="mailto:info@egyptphotographytours.com" class="text-blue-600 hover:underline font-medium">info@egyptphotographytours.com</a>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-info-box">
+                        <p class="flex items-center">
+                            <svg class="w-6 h-6 text-accent-dark mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h15a3 3 0 013 3v15a3 3 0 01-3 3H4.5a3 3 0 01-3-3V4.5zM11.25 10.5V6a.75.75 0 00-1.5 0v4.5H6a.75.75 0 000 1.5h3.75V16.5a.75.75 0 001.5 0V12h4.5a.75.75 0 000-1.5H11.25z" clip-rule="evenodd"></path></svg>
+                            Phone/WhatsApp: <a href="tel:+201550735673" class="text-blue-600 hover:underline font-medium">+20 155 073 5673</a>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-info-box">
+                        <p class="flex items-start">
+                            <svg class="w-6 h-6 text-accent-dark mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.04c.16-.093.31-.194.456-.3L18.7 15.4c.995-1.037 1.584-2.395 1.584-3.799v-1.124a8.25 8.25 0 00-16.5 0v1.124c0 1.404.589 2.762 1.584 3.798l6.027 6.202a2.273 2.273 0 01.456.3zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" clip-rule="evenodd"></path></svg>
+                            Address: Abou Elhool, Nazlet El-Samman, Giza Governorate 12557, Egypt
+                        </p>
+                    </div>
+                    
+                    <div class="contact-info-box">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-accent-dark mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v6h-2zm0 8h2v2h-2z"/></svg>
+                            <div>
+                                <span class="font-semibold">Business Hours:</span><br>
+                                Sunday - Thursday: 9:00 AM - 9:00 PM (EET)<br>
+                                Friday - Saturday: 9:00 AM - 5:00 PM
+                            </div>
                         </div>
                     </div>
                 </div>
