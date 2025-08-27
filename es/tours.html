@@ -278,12 +278,12 @@
     <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
             <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
-                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Inicio</a></li>
-                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1">Sobre Nosotros</a></li>
-                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Nuestros Tours</a></li>
-                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1">Galería</a></li>
-                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contáctanos</a></li>
-                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">Preguntas Frecuentes</a></li>
+                <li><a href="index.html" class="hover:text-accept-light transition duration-300 py-1">Inicio</a></li>
+                <li><a href="about.html" class="hover:text-accept-light transition duration-300 py-1">Sobre Nosotros</a></li>
+                <li><a href="tours.html" class="hover:text-accept-light transition duration-300 py-1">Nuestros Tours</a></li>
+                <li><a href="gallery.html" class="hover:text-accept-light transition duration-300 py-1">Galería</a></li>
+                <li><a href="contact.html" class="hover:text-accept-light transition duration-300 py-1">Contáctanos</a></li>
+                <li><a href="faqs.html" class="hover:text-accept-light transition duration-300 py-1">Preguntas Frecuentes</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
                 <a href="contact.html" class="flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
@@ -601,7 +601,7 @@
 
             // Event listeners para botones de tipo
             typeButtons.forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', () {
                     selectedType = button.dataset.type;
                     typeButtons.forEach(btn => btn.classList.remove('selected'));
                     button.classList.add('selected');
