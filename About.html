@@ -40,6 +40,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <link rel="preload" href="images/copilot_image_1752144851499.jpg" as="image">
+    <link rel="preload" href="images/about-us-hero.jpg" as="image">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
 
     <link rel="canonical" href="https://egyptphotographytours.com/about.html">
@@ -127,19 +128,6 @@
         button:focus-visible {
             outline: 2px solid var(--accent-light);
             outline-offset: 2px;
-        }
-        
-        .contact-social-icons a {
-            padding: 12px; /* Increased touch target size */
-            margin: 0 4px;
-        }
-        
-        .social-icon {
-            font-size: 1.5rem; /* Larger icon size for better visibility */
-        }
-        
-        .language-toggle-btn {
-            padding: 12px; /* Increased touch target size */
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -301,7 +289,7 @@
 
                 <div class="language-switcher-container">
                     <button id="language-toggle"
-                    class="language-toggle-btn flex items-center text-white hover:text-accent-light focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-primary-dark rounded-md p-1"
+                    class="flex items-center text-white hover:text-accent-light focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-primary-dark rounded-md p-1"
                     aria-haspopup="listbox"
                     aria-expanded="false"
                     aria-controls="language-list"
@@ -345,6 +333,7 @@
                             class="rounded-lg shadow-xl w-full h-full object-cover"
                             width="800"
                             height="400"
+                            loading="lazy"
                             decoding="async"
                             fetchpriority="high">
                     </div>
@@ -421,25 +410,25 @@
                 <h4 class="font-semibold text-accent-light mb-2">Connect With Us</h4>
                 <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
                 <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <div class="flex justify-center md:justify-start space-x-4 mt-3 contact-social-icons">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" class="text-white hover:text-accent-light transition duration-300" aria-label="Follow us on Facebook">
-                        <span class="fab fa-facebook social-icon" aria-hidden="true"></span>
+                <div class="flex justify-center md:justify-start space-x-4 mt-3">
+                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-lg" aria-label="Follow us on Facebook">
+                        <span class="fab fa-facebook" aria-hidden="true"></span>
                     </a>
-                    <a href="https://www.instagram.com/hossam_artistic/" target="_blank" class="text-white hover:text-accent-light transition duration-300" aria-label="Follow us on Instagram">
-                        <span class="fab fa-instagram social-icon" aria-hidden="true"></span>
+                    <a href="https://www.instagram.com/hossam_artistic/" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-lg" aria-label="Follow us on Instagram">
+                        <span class="fab fa-instagram" aria-hidden="true"></span>
                     </a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300" aria-label="Follow us on TikTok">
-                        <span class="fab fa-tiktok social-icon" aria-hidden="true"></span>
+                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-lg" aria-label="Follow us on TikTok">
+                        <span class="fab fa-tiktok" aria-hidden="true"></span>
                     </a>
-                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300" aria-label="Follow us on YouTube">
-                        <span class="fab fa-youtube social-icon" aria-hidden="true"></span>
+                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-lg" aria-label="Follow us on YouTube">
+                        <span class="fab fa-youtube" aria-hidden="true"></span>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script defer>
+    <script>
         // Set current year in footer
         try {
             const yearElement = document.getElementById('current-year');
