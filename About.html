@@ -275,11 +275,11 @@
     <header class="bg-primary-dark text-white shadow-lg" role="banner">
         <div class="container mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-2">
-                <a href="index.html" aria-label="Home">
+                <a href="index.html" aria-label="Home" class="block w-10 h-10">
                     <img 
                         src="images/copilot_image_1752144851499.jpg" 
                         alt="Egypt Photography Tours Logo" 
-                        class="h-10 w-10 rounded-full" 
+                        class="w-full h-full rounded-full object-cover" 
                         width="40" 
                         height="40"
                         fetchpriority="high">
@@ -308,19 +308,20 @@
                     Book Now
                 </a>
 
-                <div class="language-switcher-container" role="region" aria-label="Language Selector">
+                <div class="language-switcher-container">
                     <button id="language-toggle" 
                     class="flex items-center text-white hover:text-accent-light focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-primary-dark rounded-md p-1" 
-                    aria-haspopup="true" 
+                    aria-haspopup="listbox" 
                     aria-expanded="false"
+                    aria-controls="language-list"
                     aria-label="Select language">
                         <img src="https://flagcdn.com/us.svg" alt="" class="flag-icon" width="20" height="15" aria-hidden="true">
                         <span class="ml-2">English</span>
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
-                        <li role="none"><a href="#" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
-                        <li role="none"><a href="#" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
+                    <ul id="language-list" class="language-dropdown" role="listbox" aria-label="Select a language">
+                        <li><a href="#" data-lang="en" role="option" aria-selected="true"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
+                        <li><a href="#" data-lang="ru" role="option" aria-selected="false"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
                         <li role="none"><a href="#" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15"> Italiano</a></li>
                         <li role="none"><a href="#" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15"> Deutsch</a></li>
                         <li role="none"><a href="#" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15"> Français</a></li>
@@ -340,28 +341,23 @@
         </div>
     </nav>
 
-    <main class="flex-grow container mx-auto px-6 py-16" role="main">
+    <main class="flex-grow container mx-auto px-6 py-16">
         <h1 class="text-5xl font-extrabold text-primary-dark text-center mb-12">About Egypt Photography Tours</h1>
 
-        <section class="mb-16" role="article" aria-labelledby="our-passion-heading">
+        <section class="mb-16" aria-labelledby="our-passion-heading">
             <div class="flex flex-col md:flex-row items-center gap-10">
                 <div class="md:w-1/2">
-                    <picture>
-                        <source
-                            srcset="images/about-us-hero.webp"
-                            type="image/webp">
-                        <source
-                            srcset="images/about-us-hero.jpg"
-                            type="image/jpeg">
+                    <div class="relative" style="aspect-ratio: 2/1;">
                         <img 
-                            src="images/about-us-hero.jpg" 
+                            src="https://placehold.co/800x400/1a202c/FFD700?text=Egypt+Photography+Tours" 
                             alt="A professional photographer capturing the Pyramids of Giza at sunset" 
-                            class="rounded-lg shadow-xl w-full h-[400px] object-cover" 
+                            class="rounded-lg shadow-xl w-full h-full object-cover" 
                             width="800" 
                             height="400" 
                             loading="lazy"
                             decoding="async"
                             fetchpriority="high">
+                    </div>
                 </div>
                 <div class="md:w-1/2 text-lg leading-relaxed text-gray-700">
                     <h2 id="our-passion-heading" class="text-3xl font-bold text-primary-dark mb-4">Our Passion: Unveiling Egypt Through Your Lens</h2>
@@ -375,7 +371,7 @@
             </div>
         </section>
 
-        <section class="mb-16" role="article" aria-labelledby="vision-values-heading">
+        <section class="mb-16" aria-labelledby="vision-values-heading">
             <h2 id="vision-values-heading" class="text-4xl font-bold text-primary-dark text-center mb-10">Our Vision & Values</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
@@ -405,7 +401,7 @@
             </div>
         </section>
 
-        <section class="text-center py-10 bg-gray-50 rounded-lg shadow-inner" role="complementary">
+        <aside class="text-center py-10 bg-gray-50 rounded-lg shadow-inner">
             <h3 class="text-3xl font-bold text-primary-dark mb-6">Ready to Capture Egypt's Beauty?</h3>
             <p class="text-lg text-gray-700 mb-8">Join us for an adventure where every frame tells a story, and every moment is a masterpiece waiting to happen.</p>
             <a href="tours.html" class="bg-accent-light text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-105 shadow-xl">
@@ -455,7 +451,14 @@
 
     <script>
         // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        try {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        } catch (error) {
+            console.warn('Error updating year:', error);
+        }
 
         // Language switcher functionality
         const languageSwitcher = {
@@ -534,12 +537,20 @@
             },
             
             redirectToLanguage(lang) {
-                const path = window.location.pathname;
-                const currentPage = path.split('/').pop() || 'index.html';
-                const newPath = lang === 'en' ? `/${currentPage}` : `/${lang}/${currentPage}`;
-                
-                if (window.location.pathname !== newPath) {
-                    window.location.href = newPath;
+                try {
+                    if (!lang) {
+                        console.warn('No language specified for redirect');
+                        return;
+                    }
+                    const path = window.location.pathname;
+                    const currentPage = path.split('/').pop() || 'index.html';
+                    const newPath = lang === 'en' ? `/${currentPage}` : `/${lang}/${currentPage}`;
+                    
+                    if (window.location.pathname !== newPath) {
+                        window.location.href = newPath;
+                    }
+                } catch (error) {
+                    console.warn('Error during language redirect:', error);
                 }
             }
         };
