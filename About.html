@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <title>About Us | Egypt Photography Tours - Professional Photography Tours in Egypt</title>
     <meta name="description" content="Discover Egypt Photography Tours - Expert-led photography adventures across Egypt's iconic locations. Join our professional photographers and Egyptologists for an unforgettable journey in Egypt.">
     <meta name="keywords" content="Egypt photography tours, photography tours Egypt, Egyptian photography, Cairo photography, pyramids photography, professional photo tours, Egypt photo tours, Giza photography tours, Egypt photo workshop, Egyptian landmarks photography">
@@ -13,12 +16,18 @@
     <meta name="theme-color" content="#1a202c">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self' https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="About Us | Egypt Photography Tours">
     <meta property="og:description" content="Expert-led photography adventures across Egypt's iconic locations. Join our professional photographers and Egyptologists for an unforgettable journey.">
-    <meta property="og:image" content="https://www.egyptphotographytours.com/images/about-us-hero.jpg">
-    <meta property="og:url" content="https://www.egyptphotographytours.com/about.html">
+    <meta property="og:image" content="images/about-us-hero.jpg">
+    <meta property="og:url" content="about.html">
     <meta property="og:site_name" content="Egypt Photography Tours">
     <meta property="business:contact_data:street_address" content="Abou Elhool, Nazlet El-Samman">
     <meta property="business:contact_data:locality" content="Giza">
@@ -27,51 +36,189 @@
     <meta property="business:contact_data:country_name" content="Egypt">
     <meta property="business:contact_data:email" content="info@egyptphotographytours.com">
     
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Us | Egypt Photography Tours">
     <meta name="twitter:description" content="Expert-led photography adventures across Egypt's iconic locations. Join our professional photographers and Egyptologists.">
-    <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/about-us-hero.jpg">
+    <meta name="twitter:image" content="images/about-us-hero.jpg">
     <meta name="twitter:site" content="@EgyptPhotoTours">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://flagcdn.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://flagcdn.com" crossorigin>
+    
+    <!-- Preload critical assets -->
     <link rel="preload" href="images/copilot_image_1752144851499.jpg" as="image">
     <link rel="preload" href="images/about-us-hero.jpg" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    
     <link rel="canonical" href="https://egyptphotographytours.com/about.html">
 
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Critical Stylesheets loaded immediately -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Non-critical stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    
+    <!-- Critical CSS -->
     <style>
         :root {
             --accent-light: #FFD700;
             --accent-dark: #E2B700;
             --primary-dark: #2C3E50;
         }
-
+        
+        /* Critical rendering path optimizations */
         body {
             font-display: swap;
             content-visibility: auto;
             contain-intrinsic-size: 1000px;
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
         }
         
+        img {
+            content-visibility: auto;
+            contain-intrinsic-size: 400px;
+        }
+        
+        .header-critical {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Focus styles for accessibility */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+    
+    <!-- No-JS fallbacks -->
+    <noscript>
+        <style>
+            .language-dropdown { display: block !important; }
+        </style>
+    </noscript>
+
+    <!-- Critical CSS -->
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+            touch-action: manipulation;
+            overflow-x: hidden;
+        }
+
+        /* Improved touch targets for mobile */
+        button, 
+        [role="button"],
+        a {
+            min-height: 44px;
+            min-width: 44px;
+            padding: 0.5rem;
+            touch-action: manipulation;
+        }
+
+        /* Prevent text overflow on mobile */
+        * {
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        /* Critical colors */
         .text-primary-dark { color: #2C3E50; }
         .bg-accent-light { background-color: #FFD700; }
         .text-accent-light { color: #FFD700; }
         .bg-accent-dark { background-color: #E2B700; }
         .text-accent-dark { color: #E2B700; }
         .bg-primary-dark { background-color: #1a202c; }
-        
+
+        /* Critical layout components */
         .language-switcher-container {
             position: relative;
             display: inline-block;
         }
+
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .sr-only.focus-visible {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: auto;
+            padding: 1rem;
+            margin: 0;
+            background: #FFD700;
+            color: #1a202c;
+            font-weight: bold;
+            clip: auto;
+            z-index: 9999;
+        }
+
+        /* Performance optimizations */
+        @media (prefers-reduced-motion: no-preference) {
+            .smooth-scroll {
+                scroll-behavior: smooth;
+            }
+        }
+
+        /* Hide scrollbar but allow scrolling */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari and Opera */
+        }
+
+        /* Active link styles */
+        [aria-current="page"] {
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
         .language-dropdown {
             display: none;
             position: absolute;
@@ -113,41 +260,7 @@
             border-radius: 2px;
             object-fit: cover;
         }
-
-        img {
-            content-visibility: auto;
-            contain-intrinsic-size: 400px;
-        }
-        
-        .header-critical {
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid var(--accent-light);
-            outline-offset: 2px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
     </style>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
 
     <script type="application/ld+json">
     {
@@ -156,8 +269,8 @@
       "name": "Egypt Photography Tours",
       "description": "Expert-led photography tours and workshops across Egypt's most iconic locations. Professional photographers and Egyptologists guide you through unique photographic journeys.",
       "url": "https://www.egyptphotographytours.com",
-      "logo": "https://www.egyptphotographytours.com/images/copilot_image_1752144851499.jpg",
-      "image": "https://www.egyptphotographytours.com/images/about-us-hero.jpg",
+      "logo": "images/copilot_image_1752144851499.jpg",
+      "image": "images/about-us-hero.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Abou Elhool, Nazlet El-Samman",
@@ -233,6 +346,7 @@
     }
     </script>
     
+    <!-- Additional Schema for Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -251,17 +365,23 @@
     </script>
 </head>
 <body class="flex flex-col min-h-screen">
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-accent-light focus:text-primary-dark focus:z-50">
+        Skip to main content
+    </a>
+
     <header class="bg-primary-dark text-white shadow-lg" role="banner">
         <div class="container mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-2">
                 <a href="index.html" aria-label="Home" class="block w-10 h-10">
-                    <img
-                        src="images/copilot_image_1752144851499.jpg"
-                        alt="Egypt Photography Tours Logo"
-                        class="w-full h-full rounded-full object-cover"
-                        width="40"
+                    <img 
+                        src="images/copilot_image_1752144851499.jpg" 
+                        alt="Egypt Photography Tours Logo" 
+                        class="w-full h-full rounded-full object-cover" 
+                        width="40" 
                         height="40"
-                        fetchpriority="high">
+                        fetchpriority="high"
+                        loading="eager">
                 </a>
                 <a href="index.html" class="text-xl font-bold tracking-tight text-accent-light hover:text-accent-dark transition-colors">Egypt Photography Tours</a>
             </div>
@@ -270,70 +390,73 @@
     </header>
 
     <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Main Navigation">
-        <div class="container mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between">
-            <ul class="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-6 text-base font-medium">
-                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
-                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" aria-current="page">About Us</a></li>
-                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Our Tours</a></li>
-                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1">Gallery</a></li>
-                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contact Us</a></li>
-                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
-            </ul>
+        <div class="container mx-auto px-4 py-2">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="w-full">
+                    <div class="flex flex-nowrap items-center justify-between md:justify-center overflow-x-auto py-2 no-scrollbar">
+                        <a href="index.html" class="whitespace-nowrap text-center hover:text-accent-light transition duration-300 px-2 md:px-4 py-1 text-sm md:text-base md:font-medium">Home</a>
+                        <a href="about.html" class="whitespace-nowrap text-center hover:text-accent-light transition duration-300 px-2 md:px-4 py-1 text-sm md:text-base md:font-medium" aria-current="page">About</a>
+                        <a href="tours.html" class="whitespace-nowrap text-center hover:text-accent-light transition duration-300 px-2 md:px-4 py-1 text-sm md:text-base md:font-medium">Tours</a>
+                        <a href="gallery.html" class="whitespace-nowrap text-center hover:text-accent-light transition duration-300 px-2 md:px-4 py-1 text-sm md:text-base md:font-medium">Gallery</a>
+                        <a href="contact.html" class="whitespace-nowrap text-center hover:text-accent-light transition duration-300 px-2 md:px-4 py-1 text-sm md:text-base md:font-medium">Contact</a>
+                        <a href="faqs.html" class="whitespace-nowrap text-center hover:text-accent-light transition duration-300 px-2 md:px-4 py-1 text-sm md:text-base md:font-medium">FAQs</a>
+                    </div>
+                </div>
 
-            <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <a href="contact.html"
-                   class="flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-primary-dark"
-                   aria-label="Book your photography tour now">
-                    Book Now
-                </a>
+                <div class="mt-3 md:mt-0 flex items-center space-x-4">
+                    <a href="contact.html" 
+                       class="flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-primary-dark"
+                       aria-label="Book your photography tour now">
+                        Book Now
+                    </a>
 
-                <div class="language-switcher-container">
-                    <button id="language-toggle"
-                    class="flex items-center text-white hover:text-accent-light focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-primary-dark rounded-md p-1"
-                    aria-haspopup="listbox"
-                    aria-expanded="false"
-                    aria-controls="language-list"
-                    aria-label="Select language">
-                        <img src="https://flagcdn.com/us.svg" alt="" class="flag-icon" width="20" height="15" aria-hidden="true">
-                        <span class="ml-2">English</span>
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
+                    <div class="language-switcher-container">
+                        <button id="language-toggle" 
+                        class="flex items-center text-white hover:text-accent-light focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-primary-dark rounded-md p-1" 
+                        aria-haspopup="listbox" 
+                        aria-expanded="false"
+                        aria-controls="language-list"
+                        aria-label="Select language">
+                            <img src="https://flagcdn.com/us.svg" alt="" class="flag-icon" width="20" height="15" aria-hidden="true">
+                            <span class="ml-2">English</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
                     <ul id="language-list" class="language-dropdown" role="listbox" aria-label="Select a language">
-                        <li role="none"><a href="#" data-lang="en" role="option" aria-selected="true"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
-                        <li role="none"><a href="#" data-lang="ru" role="option" aria-selected="false"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
-                        <li role="none"><a href="#" data-lang="it" role="option"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15"> Italiano</a></li>
-                        <li role="none"><a href="#" data-lang="de" role="option"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15"> Deutsch</a></li>
-                        <li role="none"><a href="#" data-lang="fr" role="option"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15"> Français</a></li>
-                        <li role="none"><a href="#" data-lang="ar" role="option"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15"> العربية</a></li>
-                        <li role="none"><a href="#" data-lang="hi" role="option"><img src="https://flagcdn.com/in.svg" alt="हिंदी" class="flag-icon" width="20" height="15"> हिंदी</a></li>
-                        <li role="none"><a href="#" data-lang="nl" role="option"><img src="https://flagcdn.com/nl.svg" alt="Nederlands" class="flag-icon" width="20" height="15"> Nederlands</a></li>
-                        <li role="none"><a href="#" data-lang="ja" role="option"><img src="https://flagcdn.com/jp.svg" alt="日本語" class="flag-icon" width="20" height="15"> 日本語</a></li>
-                        <li role="none"><a href="#" data-lang="ko" role="option"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15"> 한국어</a></li>
-                        <li role="none"><a href="#" data-lang="id" role="option"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15"> Bahasa Indonesia</a></li>
-                        <li role="none"><a href="#" data-lang="es" role="option"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15"> Español</a></li>
-                        <li role="none"><a href="#" data-lang="pt" role="option"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15"> Português</a></li>
-                        <li role="none"><a href="#" data-lang="zh" role="option"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15"> 中文</a></li>
-                        <li role="none"><a href="#" data-lang="tl" role="option"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
+                        <li><a href="#" data-lang="en" role="option" aria-selected="true"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
+                        <li><a href="#" data-lang="ru" role="option" aria-selected="false"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
+                        <li role="none"><a href="#" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15"> Italiano</a></li>
+                        <li role="none"><a href="#" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15"> Deutsch</a></li>
+                        <li role="none"><a href="#" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15"> Français</a></li>
+                        <li role="none"><a href="#" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15"> العربية</a></li>
+                        <li role="none"><a href="#" data-lang="hi" role="menuitem"><img src="https://flagcdn.com/in.svg" alt="हिंदी" class="flag-icon" width="20" height="15"> हिंदी</a></li>
+                        <li role="none"><a href="#" data-lang="nl" role="menuitem"><img src="https://flagcdn.com/nl.svg" alt="Nederlands" class="flag-icon" width="20" height="15"> Nederlands</a></li>
+                        <li role="none"><a href="#" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="日本語" class="flag-icon" width="20" height="15"> 日本語</a></li>
+                        <li role="none"><a href="#" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15"> 한국어</a></li>
+                        <li role="none"><a href="#" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15"> Bahasa Indonesia</a></li>
+                        <li role="none"><a href="#" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15"> Español</a></li>
+                        <li role="none"><a href="#" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15"> Português</a></li>
+                        <li role="none"><a href="#" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15"> 中文</a></li>
+                        <li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow container mx-auto px-6 py-16">
+    <main id="main-content" class="flex-grow container mx-auto px-6 py-16">
         <h1 class="text-5xl font-extrabold text-primary-dark text-center mb-12">About Egypt Photography Tours</h1>
 
         <section class="mb-16" aria-labelledby="our-passion-heading">
             <div class="flex flex-col md:flex-row items-center gap-10">
                 <div class="md:w-1/2">
-                    <div class="relative" style="aspect-ratio: 2/1;">
-                        <img
-                            src="images/about-us-hero.jpg"
-                            alt="A professional photographer capturing the Pyramids of Giza at sunset"
-                            class="rounded-lg shadow-xl w-full h-full object-cover"
-                            width="800"
-                            height="400"
-                            loading="lazy"
+                    <div class="relative">
+                        <img 
+                            src="images/about-us-hero.jpg" 
+                            alt="A professional photographer capturing the Pyramids of Giza at sunset" 
+                            class="rounded-lg shadow-xl w-full h-full object-cover" 
+                            width="800" 
+                            height="400" 
+                            loading="eager"
                             decoding="async"
                             fetchpriority="high">
                     </div>
@@ -411,24 +534,79 @@
                 <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
                 <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
                 <div class="flex justify-center md:justify-start space-x-4 mt-3">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-lg" aria-label="Follow us on Facebook">
-                        <span class="fab fa-facebook" aria-hidden="true"></span>
+                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" rel="noopener" class="text-white hover:text-accent-light transition duration-300 text-lg w-10 h-10 flex items-center justify-center" aria-label="Follow us on Facebook">
+                        <i class="fab fa-facebook-f fa-fw"></i>
                     </a>
-                    <a href="https://www.instagram.com/hossam_artistic/" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-lg" aria-label="Follow us on Instagram">
-                        <span class="fab fa-instagram" aria-hidden="true"></span>
+                    <a href="https://www.instagram.com/hossam_artistic/" target="_blank" rel="noopener" class="text-white hover:text-accent-light transition duration-300 text-lg w-10 h-10 flex items-center justify-center" aria-label="Follow us on Instagram">
+                        <i class="fab fa-instagram fa-fw"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-lg" aria-label="Follow us on TikTok">
-                        <span class="fab fa-tiktok" aria-hidden="true"></span>
+                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" rel="noopener" class="text-white hover:text-accent-light transition duration-300 text-lg w-10 h-10 flex items-center justify-center" aria-label="Follow us on TikTok">
+                        <i class="fab fa-tiktok fa-fw"></i>
                     </a>
-                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-lg" aria-label="Follow us on YouTube">
-                        <span class="fab fa-youtube" aria-hidden="true"></span>
+                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" rel="noopener" class="text-white hover:text-accent-light transition duration-300 text-lg w-10 h-10 flex items-center justify-center" aria-label="Follow us on YouTube">
+                        <i class="fab fa-youtube fa-fw"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Service Worker Registration -->
     <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .catch(error => {
+                        console.warn('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+
+    <!-- Deferred Scripts -->
+    <script defer>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            const closeIcon = document.querySelector('.close-icon');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    menuIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+
+                // Handle screen resize
+                const mediaQuery = window.matchMedia('(min-width: 768px)');
+                function handleScreenSize(e) {
+                    if (e.matches) {
+                        mobileMenu.classList.remove('hidden');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                }
+                mediaQuery.addListener(handleScreenSize);
+            }
+        });
+
         // Set current year in footer
         try {
             const yearElement = document.getElementById('current-year');
@@ -439,7 +617,18 @@
             console.warn('Error updating year:', error);
         }
 
-        // Language switcher functionality
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = window.performance.timing;
+                    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                    console.info(`Page load time: ${pageLoadTime}ms`);
+                }, 0);
+            });
+        }
+
+        // Language switcher functionality with improved performance
         const languageSwitcher = {
             init() {
                 this.langButton = document.getElementById('language-toggle');
