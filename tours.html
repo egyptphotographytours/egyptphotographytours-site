@@ -7,110 +7,138 @@
     <meta name="description" content="Explore our diverse range of photography tours in Egypt, from private Pyramids photoshoots to multi-day cultural expeditions across Cairo, Giza, Alexandria, and Luxor.">
 
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcC73FwrK03lHhP-BLVE.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        /* Minimal required Tailwind CSS for above-the-fold content */
-        body { font-family: 'Inter', sans-serif; background-color: #f8f8f8; color: #333; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
         .text-primary-dark { color: #2C3E50; }
         .bg-accent-light { background-color: #FFD700; }
         .text-accent-light { color: #FFD700; }
         .bg-accent-dark { background-color: #E2B700; }
         .text-accent-dark { color: #E2B700; }
         .bg-primary-dark { background-color: #1a202c; }
-        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-        .rounded-full { border-radius: 9999px; }
-        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-        .text-md { font-size: 1rem; line-height: 1.5rem; }
-        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-        .font-bold { font-weight: 700; }
-        .tracking-tight { letter-spacing: -0.025em; }
-        .italic { font-style: italic; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
-        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-        .flex { display: flex; }
-        .items-center { align-items: center; }
-        .justify-between { justify-content: space-between; }
-        .space-x-3 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 0; margin-right: calc(0.75rem * var(--tw-space-x-reverse)); margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse))); }
-        .space-x-4 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 0; margin-right: calc(1rem * var(--tw-space-x-reverse)); margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse))); }
-        .space-x-6 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 0; margin-right: calc(1.5rem * var(--tw-space-x-reverse)); margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse))); }
-        .space-x-8 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 0; margin-right: calc(2rem * var(--tw-space-x-reverse)); margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse))); }
-        .flex-col { flex-direction: column; }
-        .min-h-screen { min-height: 100vh; }
-        .flex-grow { flex-grow: 1; }
-        .sticky { position: sticky; }
-        .top-0 { top: 0; }
-        .z-50 { z-index: 50; }
-        .text-white { --tw-text-opacity: 1; color: rgba(255, 255, 255, var(--tw-text-opacity)); }
-        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-        .font-medium { font-weight: 500; }
-        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-        .px-4 { padding-left: 1rem; padding-right: 1rem; }
-        .rounded-full { border-radius: 9999px; }
-        .hover\:text-accent-light:hover { --tw-text-opacity: 1; color: rgba(255, 215, 0, var(--tw-text-opacity)); }
-        .hover\:bg-accent-dark:hover { --tw-bg-opacity: 1; background-color: rgba(226, 183, 0, var(--tw-bg-opacity)); }
-        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-        .grid { display: grid; }
-        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-        .gap-8 { gap: 2rem; }
-        .transform { transform: var(--tw-transform); }
-        .hover\:scale-105:hover { --tw-scale-x: 1.05; --tw-scale-y: 1.05; transform: var(--tw-transform); }
-        .transition { transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-        .duration-300 { transition-duration: 300ms; }
-        .relative { position: relative; }
-        .bg-white { --tw-bg-opacity: 1; background-color: rgba(255, 255, 255, var(--tw-bg-opacity)); }
-        .rounded-lg { border-radius: 0.5rem; }
-        .overflow-hidden { overflow: hidden; }
-        .w-full { width: 100%; }
-        .h-56 { height: 14rem; }
-        .object-cover { object-fit: cover; }
-        .p-6 { padding: 1.5rem; }
-        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-        .text-base { font-size: 1rem; line-height: 1.5rem; }
-        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-        .font-extrabold { font-weight: 800; }
-        .font-semibold { font-weight: 600; }
-        .leading-relaxed { line-height: 1.625; }
-        .max-w-4xl { max-width: 56rem; }
-        .text-center { text-align: center; }
-        .mb-12 { margin-bottom: 3rem; }
-        .mb-2 { margin-bottom: 0.5rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .text-gray-700 { --tw-text-opacity: 1; color: rgba(55, 65, 81, var(--tw-text-opacity)); }
-        .text-left { text-align: left; }
-        .list-disc { list-style-type: disc; }
-        .list-inside { list-style-position: inside; }
-        .justify-center { justify-content: center; }
-        .mt-3 { margin-top: 0.75rem; }
-        .hover\:text-accent-light:hover { --tw-text-opacity: 1; color: rgba(255, 215, 0, var(--tw-text-opacity)); }
-        .mt-auto { margin-top: auto; }
-        .py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .not-italic { font-style: normal; }
-
-        /* Custom Styles from the original file, slightly improved */
-        .sale-tag { background-color: #E74C3C; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; position: absolute; top: 1rem; left: 1rem; z-index: 10; }
-        .selection-group { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
-        .selection-group button { flex: 1; padding: 0.5rem 1rem; border-radius: 0.375rem; border: 1px solid #ccc; background-color: #f0f0f0; cursor: pointer; transition: all 0.2s ease-in-out; font-size: 0.9rem; color: #333; }
-        .selection-group button.selected { background-color: #007bff; color: white; border-color: #007bff; }
-        .selection-group button:not(.selected):hover { background-color: #e0e0e0; }
-        input[type="date"] { width: 100%; padding: 0.5rem 1rem; border: 1px solid #ccc; border-radius: 0.375rem; font-size: 0.9rem; margin-bottom: 1rem; }
-        .paypal-buy-button { display: block; width: 100%; background-color: #28a745; color: white; padding: 0.75rem 1rem; border: none; border-radius: 9999px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease; text-align: center; margin-top: 1rem; }
-        .paypal-buy-button:hover { background-color: #218838; }
-        .paypal-buy-button:disabled { background-color: #cccccc; cursor: not-allowed; }
-        .language-switcher-container { position: relative; display: inline-block; }
-        .language-dropdown { display: none; position: absolute; top: 100%; right: 0; background: #fff; border: 1px solid #ccc; border-radius: 4px; list-style: none; margin: 5px 0 0 0; padding: 5px 0; min-width: 150px; max-height: 300px; overflow-y: auto; z-index: 1000; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-        .language-dropdown.show { display: block; }
-        .language-dropdown li { margin: 0; }
-        .language-dropdown a { padding: 8px 15px; display: flex; align-items: center; gap: 10px; text-decoration: none; color: #333; transition: background-color 0.2s; }
-        .language-dropdown a:hover { background-color: #f0f0f0; }
-        .flag-icon { width: 20px; height: 15px; border-radius: 2px; object-fit: cover; }
-        .fab { font-family: "Font Awesome 6 Brands"; }
+        .sale-tag {
+            background-color: #E74C3C;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+        }
+        .selection-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .selection-group button {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        .selection-group button.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .selection-group button:not(.selected):hover {
+            background-color: #e0e0e0;
+        }
+        input[type="date"] {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.375rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .paypal-buy-button {
+            display: block;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .paypal-buy-button:hover {
+            background-color: #218838;
+        }
+        .paypal-buy-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .language-switcher-container {
+            position: relative;
+            display: inline-block;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            list-style: none;
+            margin: 5px 0 0 0;
+            min-width: 150px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .language-dropdown.show {
+            display: block;
+        }
+        .language-dropdown li {
+            margin: 0;
+        }
+        .language-dropdown a {
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s;
+        }
+        .language-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
     </style>
     
     <script type="application/ld+json">
