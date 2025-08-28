@@ -128,7 +128,7 @@
       }
     ]
     </script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -268,8 +268,8 @@
     <header class="bg-primary-dark text-white shadow-lg">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="images/copilot_image_1752144851499.jpg" alt="Logotipo de Egypt Photography Tours - Pirámides y obturador de cámara" class="h-16 w-auto rounded-full">
-                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
+                <img src="images/copilot_image_1752144851499.jpg" alt="Logotipo EPT - Pirámides y obturador de cámara" class="h-16 w-auto rounded-full">
+                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">EPT</a>
             </div>
             <p class="text-md md:text-lg mt-2 md:mt-0 italic">Captura las Maravillas de Egipto a Través de tu Lente.</p>
         </div>
@@ -308,7 +308,7 @@
                         <li role="none"><a href="#" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15"> Español</a></li>
                         <li role="none"><a href="#" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15"> Português</a></li>
                         <li role="none"><a href="#" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15"> 中文</a></li>
-                        <li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li> 
+                        <li role="none"><a href="#" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
                         <li role="none"><a href="#" data-lang="hi" role="menuitem"><img src="https://flagcdn.com/in.svg" alt="Hindi" class="flag-icon" width="20" height="15"> Hindi</a></li>
                         <li role="none"><a href="#" data-lang="nl" role="menuitem"><img src="https://flagcdn.com/nl.svg" alt="Dutch" class="flag-icon" width="20" height="15"> Dutch</a></li>
                     </ul>
@@ -354,7 +354,7 @@
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-lg font-bold text-accent-dark">Precio: <span class="display-price">$0.00 USD</span></span>
                     </div>
-                    
+
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
                         <input type="hidden" name="cmd" value="_xclick">
                         <input type="hidden" name="business" value="hossam0114@hotmail.com"> <input type="hidden" name="item_name" value="Tour Privado Pirámides">
@@ -633,36 +633,36 @@
         document.addEventListener('DOMContentLoaded', function() {
             const langButton = document.getElementById('language-toggle');
             const langDropdown = document.querySelector('.language-dropdown');
-            
+
             langButton.addEventListener('click', function(event) {
                 const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
                 langButton.setAttribute('aria-expanded', !isExpanded);
                 langDropdown.classList.toggle('show');
                 event.stopPropagation();
             });
-            
+
             langDropdown.addEventListener('click', function(event) {
                 const link = event.target.closest('a');
                 if (link) {
                     event.preventDefault();
                     const selectedLang = link.getAttribute('data-lang');
                     redirectToLanguage(selectedLang);
-                    
+
                     langButton.setAttribute('aria-expanded', 'false');
                     langDropdown.classList.remove('show');
                 }
             });
-            
+
             document.addEventListener('click', function(event) {
                 if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
                     langButton.setAttribute('aria-expanded', 'false');
                     langDropdown.classList.remove('show');
                 }
             });
-            
+
             function redirectToLanguage(lang) {
                 const currentPage = getCurrentPage();
-                
+
                 if (lang === 'en') {
                     window.location.href = `/${currentPage}`;
                 } else {
