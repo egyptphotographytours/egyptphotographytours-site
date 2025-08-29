@@ -83,12 +83,15 @@
     }
     </script>
     
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3I6o4UnS6yP-w.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        /* A minimal set of Tailwind CSS classes and custom styles, inlined for performance */
+        .flex{display:flex}.flex-grow{flex-grow:1}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.space-x-3>*{--tw-space-x-reverse:0;margin-right:calc(.75rem*var(--tw-space-x-reverse));margin-left:calc(.75rem*(1-var(--tw-space-x-reverse)))}.space-x-4>*{--tw-space-x-reverse:0;margin-right:calc(1rem*var(--tw-space-x-reverse));margin-left:calc(1rem*(1-var(--tw-space-x-reverse)))}.space-x-6>*{--tw-space-x-reverse:0;margin-right:calc(1.5rem*var(--tw-space-x-reverse));margin-left:calc(1.5rem*(1-var(--tw-space-x-reverse)))}.space-x-8>*{--tw-space-x-reverse:0;margin-right:calc(2rem*var(--tw-space-x-reverse));margin-left:calc(2rem*(1-var(--tw-space-x-reverse)))}.container{width:100%}.mx-auto{margin-left:auto;margin-right:auto}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.p-8{padding:2rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-auto{margin-top:auto}.mt-6{margin-top:1.5rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.gap-6{gap:1.5rem}.grid{display:grid}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.flex-col{flex-direction:column}.min-h-screen{min-height:100vh}.list-disc{list-style-type:disc}.list-inside{list-style-position:inside}.space-y-2>*{margin-top:.5rem;margin-bottom:.5rem}.space-y-2>*:not(:first-child){margin-top:.5rem}.space-y-2>*:not(:last-child){margin-bottom:.5rem}.w-full{width:100%}.w-auto{width:auto}.h-12{height:3rem}.h-16{height:4rem}.h-96{height:24rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05)}.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)}.overflow-hidden{overflow:hidden}.relative{position:relative}.sticky{position:sticky}.top-0{top:0}.z-50{z-index:50}.text-white{color:#fff}.text-gray-700{color:#4a5568}.text-gray-800{color:#2d3748}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem}.text-3xl{font-size:1.875rem}.text-4xl{font-size:2.25rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.tracking-tight{letter-spacing:-.025em}.italic{font-style:italic}.text-center{text-align:center}.transition{transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform}.duration-300{transition-duration:.3s}.hover\:text-accent-light:hover{color:#FFD700}.hover\:bg-accent-dark:hover{background-color:#E2B700}.focus:outline-none:focus{outline:2px solid transparent;outline-offset:2px}@media (min-width:768px){.md\:flex{display:flex}.md\:flex-row{flex-direction:row}.md\:justify-start{justify-content:flex-start}.md\:items-center{align-items:center}.md\:text-lg{font-size:1.125rem}.md\:space-x-8>*{--tw-space-x-reverse:0;margin-right:calc(2rem*var(--tw-space-x-reverse));margin-left:calc(2rem*(1-var(--tw-space-x-reverse)))}.md\:mt-0{margin-top:0}.md\:mb-0{margin-bottom:0}}
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8;
@@ -101,12 +104,12 @@
         .text-accent-dark { color: #E2B700; }
         .bg-primary-dark { background-color: #1a202c; }
         .sale-tag {
-            background-color: #E74C3C; /* Red for attention */
+            background-color: #E74C3C;
             color: white;
             padding: 0.25rem 0.75rem;
-            border-radius: 9999px; /* Pill shape */
+            border-radius: 9999px;
             font-weight: bold;
-            font-size: 0.75rem; /* text-xs */
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             position: absolute;
@@ -114,7 +117,6 @@
             left: 1rem;
             z-index: 10;
         }
-        /* Custom styles for solo/couple/date input */
         .selection-group {
             display: flex;
             gap: 0.5rem;
@@ -218,17 +220,17 @@
 </head>
 <body class="flex flex-col min-h-screen">
     <header class="bg-primary-dark text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
+        <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="../images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full">
-                <a href="../index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
+                <img src="../images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-12 w-auto rounded-full">
+                <a href="../index.html" class="text-2xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
             </div>
-            <p class="text-md md:text-lg mt-2 md:mt-0 italic">Capture the Wonders of Egypt.</p>
+            <p class="text-sm md:text-md mt-2 md:mt-0 italic">Capture the Wonders of Egypt Through Your Lens.</p>
         </div>
     </header>
 
     <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
+        <div class="container mx-auto px-6 py-2 flex flex-col md:flex-row items-center justify-between">
             <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
                 <li><a href="../index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
                 <li><a href="../about.html" class="hover:text-accent-light transition duration-300 py-1">About Us</a></li>
@@ -272,7 +274,7 @@
     <main class="flex-grow container mx-auto px-6 py-16">
         <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden relative">
             <span class="sale-tag">Limited Slots!</span>
-            <img src="../images/cairo-giza-2day.jpg" alt="Two-day premium private tour itinerary covering Cairo and Giza landmarks" class="w-full h-96 object-cover">
+            <img src="../images/cairo-giza-2day.jpg" alt="Two-day premium private tour itinerary covering Cairo and Giza landmarks" class="w-full h-96 object-cover" width="800" height="600">
             <div class="p-8">
                 <h1 class="text-4xl font-extrabold text-primary-dark mb-4">2-Day Premium Private Tour: Cairo & Giza Photography Expedition</h1>
                 <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -390,16 +392,15 @@
         </div>
     </footer>
 
-    <script>
-        // Define prices for each tour (ADJUST THESE PRICES AS NEEDED)
+    <script defer>
+        const tourId = 'cairo-giza-2day'; // Define the specific tour ID for this page
+
         const tourPrices = {
             'pyramids-private': { solo: 150.00, couple: 250.00 },
             'cairo-giza-2day': { solo: 350.00, couple: 600.00 },
             'alexandria-tour': { solo: 220.00, couple: 380.00 },
             'egypt-discovery-7day': { solo: 1900.00, couple: 3500.00 }
         };
-
-        const tourId = 'cairo-giza-2day'; // Define the specific tour ID for this page
 
         const typeButtons = document.querySelectorAll('.type-btn');
         const dateInput = document.querySelector('.date-input');
