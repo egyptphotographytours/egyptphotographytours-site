@@ -6,6 +6,7 @@
     <title>7-Day Egypt Discovery Tour - Egypt Photography Tours</title>
     <meta name="description" content="Embark on an epic 7-day photography adventure through Egypt, covering Cairo, Luxor, and Aswan.">
     <meta name="keywords" content="Egypt photography tour, Nile cruise photography, Luxor photography, Aswan photography, Egypt travel package">
+    <meta name="author" content="Egypt Photography Tours"> <!-- Added author meta tag for completeness -->
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -102,9 +103,13 @@
     }
     </script>
     
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Preconnect to important origins for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for social icons -->
@@ -266,13 +271,88 @@
             display: inline-block;
             margin-left: 10px;
         }
+
+        /* Custom styles for language switcher dropdown to integrate with existing design */
+        .language-switcher-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .language-switcher-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a202c; /* Matches header background */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 10;
+            border-radius: 0.375rem; /* rounded corners from existing buttons */
+            overflow: hidden;
+            top: 100%; /* Position below the button */
+            right: 0; /* Align to the right of the button */
+            margin-top: 0.5rem; /* Space below the button */
+            text-align: left;
+
+            /* Make dropdown shorter and scrollable */
+            max-height: 250px; /* Adjust as needed */
+            overflow-y: auto;
+        }
+        .language-switcher-dropdown-content a {
+            color: white;
+            padding: 8px 16px; /* Reduced padding */
+            text-decoration: none;
+            display: flex; /* Use flex to align flag and text */
+            align-items: center;
+            transition: background-color 0.2s;
+            font-size: 0.85rem; /* Slightly reduced font size */
+        }
+        .language-switcher-dropdown-content a:hover {
+            background-color: #2C3E50; /* A slightly lighter shade for hover */
+            color: #FFD700; /* Accent color on hover */
+        }
+        .language-switcher-dropdown:hover .language-switcher-dropdown-content {
+            display: block;
+        }
+        .language-switcher-button {
+            display: flex;
+            align-items: center;
+            background-color: transparent; /* No background to blend with nav */
+            color: white;
+            padding: 8px 12px;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .language-switcher-button:hover {
+            color: #FFD700; /* Accent color on hover */
+            background-color: rgba(255, 215, 0, 0.1); /* Subtle hover background */
+        }
+        .book-now-button {
+            background-color: #FFD700; /* Accent light */
+            color: #2C3E50; /* Primary dark */
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 9999px; /* Full rounded */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .book-now-button:hover {
+            background-color: #E2B700; /* Accent dark */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .flag-icon {
+            margin-right: 8px; /* Space between flag and text */
+            font-size: 1.2em; /* Ensure flag is visible */
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
     <header class="bg-primary-dark text-white shadow-lg">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full">
+                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full" loading="lazy" width="64" height="64">
                 <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
             </div>
             <p class="text-md md:text-lg mt-2 md:mt-0 italic">Capture the Wonders of Egypt Through Your Lens.</p>
@@ -290,16 +370,32 @@
                 <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <div class="relative group">
-                    <button class="flex items-center text-white hover:text-accent-light focus:outline-none">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M3 17h12M17 6v12M17 6h2M17 18h2M17 18v-6"></path></svg>
+                <!-- Book Now Button (moved to the left) -->
+                <a href="#booking-section" class="book-now-button">Book Now</a>
+
+                <!-- Language Switcher (moved to the right, added ml-4 for spacing) -->
+                <div class="language-switcher-dropdown ml-4">
+                    <button id="langButton" class="language-switcher-button">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 018.67 15.5c-3.24 0-6.026-2.071-6.97-4.14M20 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         English
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute right-0 mt-2 w-32 bg-gray-700 rounded-md shadow-lg py-1 hidden group-hover:block">
-                        <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">العربية (Coming Soon)</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">Deutsch (Coming Soon)</a>
+                    <div class="language-switcher-dropdown-content">
+                        <a href="/en/tour-egypt-discovery-7day.html" lang="en"><span class="flag-icon">🇬🇧</span>English</a>
+                        <a href="/ar/tour-egypt-discovery-7day.html" lang="ar"><span class="flag-icon">🇪🇬</span>العربية (Arabic)</a>
+                        <a href="/es/tour-egypt-discovery-7day.html" lang="es"><span class="flag-icon">🇪🇸</span>Español (Spanish)</a>
+                        <a href="/tl/tour-egypt-discovery-7day.html" lang="tl"><span class="flag-icon">🇵🇭</span>Tagalog</a>
+                        <a href="/ja/tour-egypt-discovery-7day.html" lang="ja"><span class="flag-icon">🇯🇵</span>日本語 (Japanese)</a>
+                        <a href="/ko/tour-egypt-discovery-7day.html" lang="ko"><span class="flag-icon">🇰🇷</span>한국어 (Korean)</a>
+                        <a href="/zh/tour-egypt-discovery-7day.html" lang="zh"><span class="flag-icon">🇨🇳</span>中文 (Chinese)</a>
+                        <a href="/nl/tour-egypt-discovery-7day.html" lang="nl"><span class="flag-icon">🇳🇱</span>Nederlands (Dutch)</a>
+                        <a href="/hi/tour-egypt-discovery-7day.html" lang="hi"><span class="flag-icon">🇮🇳</span>हिन्दी (Indian)</a>
+                        <a href="/it/tour-egypt-discovery-7day.html" lang="it"><span class="flag-icon">🇮🇹</span>Italiano (Italian)</a>
+                        <a href="/de/tour-egypt-discovery-7day.html" lang="de"><span class="flag-icon">🇩🇪</span>Deutsch (German)</a>
+                        <a href="/fr/tour-egypt-discovery-7day.html" lang="fr"><span class="flag-icon">🇫🇷</span>Français (French)</a>
+                        <a href="/pt/tour-egypt-discovery-7day.html" lang="pt"><span class="flag-icon">🇵🇹</span>Português (Portuguese)</a>
+                        <a href="/id/tour-egypt-discovery-7day.html" lang="id"><span class="flag-icon">🇮🇩</span>Bahasa Indonesia (Indonesian)</a>
+                        <a href="/ru/tour-egypt-discovery-7day.html" lang="ru"><span class="flag-icon">🇷🇺</span>Русский (Russian)</a>
                     </div>
                 </div>
             </div>
@@ -309,11 +405,12 @@
     <main class="flex-grow container mx-auto px-6 py-16">
         <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden relative">
             <span class="sale-tag">Best Seller!</span>
-            <img src="images/egypt-discovery-7day.jpg" alt="7-Day Egypt Discovery Photography Tour covering Cairo, Luxor, and Aswan" class="w-full h-96 object-cover">
+            <!-- Added width and height attributes for image optimization -->
+            <img src="images/egypt-discovery-7day.jpg" alt="7-Day Egypt Discovery Photography Tour covering Cairo, Luxor, and Aswan" class="w-full h-96 object-cover" loading="lazy" width="1200" height="500">
             <div class="p-8">
                 <h1 class="text-4xl font-extrabold text-primary-dark mb-4">Ultimate 7-Day Egypt Discovery Photography Tour</h1>
                 <p class="text-xl text-gray-700 mb-8 leading-relaxed">
-                    Experience the ultimate Egyptian adventure designed for photographers! This comprehensive tour takes you through Cairo, Luxor, and Aswan, including a magical Nile River cruise. Capture stunning images of ancient wonders with expert photography guidance.
+                    Experience the ultimate Egyptian adventure designed for photographers! This comprehensive tour takes you through Cairo, Giza, Alexandria, and Luxor. Capture stunning images of ancient wonders with expert photography guidance.
                 </p>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -321,34 +418,36 @@
                         <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
                             <h2 class="text-2xl font-semibold text-primary-dark mb-4">Tour Highlights</h2>
                             <ul class="text-gray-700 list-disc pl-6 space-y-3">
-                                <li>Private guided tour of the sights with Egyptologist</li>
-                                <li>Exclusive photography sessions at each historical site</li>
-                                <li>Transfers to/from Cairo, Giza, Alexandria, and Luxor</li>
-                                <li>Entrance fees to all mentioned sites in the itinerary</li>
-                                <li>Professional photography guidance throughout the tour</li>
-                                <li>Digital delivery of edited photos after the tour</li>
+                                <li>Professional photography in each location (edited high-resolution photos)</li>
+                                <li>Private, air-conditioned transportation throughout the tour</li>
+                                <li>Transfers between Cairo, Giza, Alexandria & Luxor </li>
+                                <li>Egyptologist guide at historical sites</li>
+                                <li>Entrance tickets to all mentioned attractions</li>
+                                <li>Bottled water during excursions</li>
+                                <li>Assistance with best recommendations during the trip</li>
                             </ul>
                         </div>
                         
-                        <h2 class="text-2xl font-semibold text-primary-dark mb-6 border-b pb-3">Detailed Itinerary</h2>
+                        <h2 class="text-2xl font-semibold text-primary-dark mb-6 border-b pb-3">Detailed Itinerary: 7-Day Egypt Itinerary: Cairo, Giza, Alexandria & Luxor</h2>
                         
                         <div class="space-y-6">
                             <!-- Day 1 -->
                             <div class="itinerary-card">
-                                <div class="day-label">Day 1: Cairo Arrival</div>
+                                <div class="day-label">Day 1: Arrival in Cairo</div>
                                 <div class="p-5">
+                                    <img src="https://placehold.co/800x450/2C3E50/FFD700?text=Cairo+Arrival" alt="Cairo International Airport" class="w-full h-auto object-cover rounded-md mb-4" loading="lazy" width="800" height="450">
                                     <div class="timeline">
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-camera photo-icon"></i>Meet & greet at Cairo International Airport</div>
-                                            <p class="text-gray-600">Morning session at Giza Plateau capturing the pyramids and Sphinx in golden light.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-plane-arrival photo-icon"></i>Welcome to Egypt!</div>
+                                            <p class="text-gray-600">Upon arrival at Cairo International Airport, meet your tour representative for assistance.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-landmark photo-icon"></i>Egyptian Museum/NMEC</div>
-                                            <p class="text-gray-600">Explore ancient artifacts with special access for photography.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-hotel photo-icon"></i>Private transfer to your hotel</div>
+                                            <p class="text-gray-600">Private transfer to your hotel in Cairo for check-in.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-shopping-cart photo-icon"></i>Khan el-Khalili Bazaar</div>
-                                            <p class="text-gray-600">Capture vibrant market scenes and traditional crafts.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-moon photo-icon"></i>Evening at leisure</div>
+                                            <p class="text-gray-600">Evening at leisure to relax after your flight or take a short walking tour of downtown Cairo to experience the city’s vibrant atmosphere. Overnight stay in Cairo.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -356,20 +455,25 @@
                             
                             <!-- Day 2 -->
                             <div class="itinerary-card">
-                                <div class="day-label">Day 2: Cairo to Luxor</div>
+                                <div class="day-label">Day 2: Giza Pyramids, Sphinx & Egyptian Museum</div>
                                 <div class="p-5">
+                                    <img src="https://placehold.co/800x450/FFD700/2C3E50?text=Giza+Pyramids" alt="Giza Pyramids and Sphinx" class="w-full h-auto object-cover rounded-md mb-4" loading="lazy" width="800" height="450">
                                     <div class="timeline">
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-plane photo-icon"></i>Flight to Luxor</div>
-                                            <p class="text-gray-600">Morning transfer to airport for flight to Luxor.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-pyramid photo-icon"></i>Giza Plateau Exploration</div>
+                                            <p class="text-gray-600">After breakfast, begin your day at the Giza Plateau, home to the Great Pyramid of Khufu (Cheops), Pyramid of Khafre, and Pyramid of Menkaure – the last surviving wonder of the Seven Wonders of the Ancient World.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-monument photo-icon"></i>Luxor Temple</div>
-                                            <p class="text-gray-600">Sunset photography session at Luxor Temple.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-mitten photo-icon"></i>Great Sphinx & Valley Temple</div>
+                                            <p class="text-gray-600">Explore the Great Sphinx of Giza and the Valley Temple, where ancient mummification rituals were performed.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-ship photo-icon"></i>Nile Cruise Check-in</div>
-                                            <p class="text-gray-600">Board your luxury Nile cruise ship for 3-night journey.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-camera-retro photo-icon"></i>Optional Photo Opportunity</div>
+                                            <p class="text-gray-600">Optional camel or horseback ride with stunning panoramic views of the pyramids.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-museum photo-icon"></i>Egyptian Museum Visit</div>
+                                            <p class="text-gray-600">Afternoon visit to the Egyptian Museum in Tahrir Square (or the new Grand Egyptian Museum if open), housing the golden treasures of King Tutankhamun and thousands of ancient artifacts. Evening transfer back to hotel in Cairo.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -377,49 +481,109 @@
                             
                             <!-- Day 3 -->
                             <div class="itinerary-card">
-                                <div class="day-label">Day 3: Luxor West Bank</div>
+                                <div class="day-label">Day 3: Islamic & Coptic Cairo Tour</div>
                                 <div class="p-5">
+                                    <img src="https://placehold.co/800x450/2C3E50/FFD700?text=Islamic+Coptic+Cairo" alt="Mosque of Muhammad Ali and Coptic Cairo churches" class="w-full h-auto object-cover rounded-md mb-4" loading="lazy" width="800" height="450">
                                     <div class="timeline">
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-landmark photo-icon"></i>Valley of the Kings</div>
-                                            <p class="text-gray-600">Morning exploration and photography in ancient tombs.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-fort-awesome photo-icon"></i>Citadel of Salah El-Din</div>
+                                            <p class="text-gray-600">Morning visit to the Citadel of Salah El-Din, a medieval Islamic fortress offering breathtaking views over Cairo. Explore the impressive Mosque of Muhammad Ali (Alabaster Mosque).</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-mountain photo-icon"></i>Hatshepsut Temple</div>
-                                            <p class="text-gray-600">Capture this unique mortuary temple against mountain backdrop.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-church photo-icon"></i>Coptic Cairo Exploration</div>
+                                            <p class="text-gray-600">Continue to Coptic Cairo to see the Hanging Church (El Muallaqa), Abu Serga Church (built above a cave believed to have sheltered the Holy Family), and the historic Ben Ezra Synagogue.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-archway photo-icon"></i>Karnak Temple Complex</div>
-                                            <p class="text-gray-600">Sunset photography at Egypt's largest ancient religious site.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-shopping-basket photo-icon"></i>Khan El Khalili Bazaar</div>
+                                            <p class="text-gray-600">Afternoon stroll through Khan El Khalili Bazaar, Cairo’s most famous souq, filled with spices, lamps, souvenirs, and local crafts. Enjoy a traditional Egyptian tea or coffee at the historic El Fishawy Café. Overnight stay in Cairo.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <!-- Day 4-7 -->
+                            <!-- Day 4 -->
                             <div class="itinerary-card">
-                                <div class="day-label">Days 4-7: Nile Cruise & Aswan</div>
+                                <div class="day-label">Day 4: Alexandria Day Trip</div>
                                 <div class="p-5">
+                                    <img src="https://placehold.co/800x450/FFD700/2C3E50?text=Alexandria+City" alt="Alexandria cityscape with Mediterranean Sea" class="w-full h-auto object-cover rounded-md mb-4" loading="lazy" width="800" height="450">
                                     <div class="timeline">
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-water photo-icon"></i>Nile River Photography</div>
-                                            <p class="text-gray-600">Capture daily life along the Nile during cruise sailing.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-car photo-icon"></i>Travel to Alexandria</div>
+                                            <p class="text-gray-600">Early morning transfer by private car to Alexandria, Egypt’s second-largest city and a jewel of the Mediterranean.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-gopuram photo-icon"></i>Edfu & Kom Ombo Temples</div>
-                                            <p class="text-gray-600">Visit and photograph these unique riverside temples.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-tombstone photo-icon"></i>Catacombs of Kom El Shoqafa</div>
+                                            <p class="text-gray-600">Visit the Catacombs of Kom El Shoqafa, one of the Seven Wonders of the Middle Ages, blending Pharaonic, Roman, and Greek styles.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-dam photo-icon"></i>Aswan Highlights</div>
-                                            <p class="text-gray-600">High Dam, Philae Temple, and Unfinished Obelisk photography.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-landmark photo-icon"></i>Qaitbay Citadel & Bibliotheca Alexandrina</div>
+                                            <p class="text-gray-600">Explore the impressive Qaitbay Citadel, built on the site of the legendary Lighthouse of Alexandria (Pharos), and discover the modern Bibliotheca Alexandrina. Stroll along the Corniche and enjoy fresh seafood. Evening return to Cairo for overnight stay.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Day 5 -->
+                            <div class="itinerary-card">
+                                <div class="day-label">Day 5: Luxor West Bank: Valley of the Kings</div>
+                                <div class="p-5">
+                                    <img src="https://placehold.co/800x450/2C3E50/FFD700?text=Valley+of+Kings" alt="Entrance to the Valley of the Kings" class="w-full h-auto object-cover rounded-md mb-4" loading="lazy" width="800" height="450">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-plane-departure photo-icon"></i>Morning Transfer to Luxor</div>
+                                            <p class="text-gray-600">Morning transfer to Luxor, the world’s greatest open-air museum. Cross the Nile to the West Bank of Luxor.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-sailboat photo-icon"></i>Felucca Ride at Sunset</div>
-                                            <p class="text-gray-600">Golden hour photography during traditional boat ride.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-crown photo-icon"></i>Valley of the Kings</div>
+                                            <p class="text-gray-600">Explore the Valley of the Kings, where pharaohs including Tutankhamun, Ramses II, and Seti I were buried in richly decorated tombs.</p>
                                         </div>
                                         <div class="timeline-item">
-                                            <div class="font-medium text-lg mb-1"><i class="fas fa-plane-departure photo-icon"></i>Return to Cairo</div>
-                                            <p class="text-gray-600">Flight back to Cairo for international departure.</p>
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-person-booth photo-icon"></i>Temple of Queen Hatshepsut & Colossi of Memnon</div>
+                                            <p class="text-gray-600">Visit the magnificent Temple of Queen Hatshepsut and stop at the Colossi of Memnon. Evening optional Sound & Light Show at Karnak Temple. Overnight stay in Luxor.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Day 6 -->
+                            <div class="itinerary-card">
+                                <div class="day-label">Day 6: Luxor East Bank: Karnak & Luxor Temples</div>
+                                <div class="p-5">
+                                    <img src="https://placehold.co/800x450/FFD700/2C3E50?text=Karnak+Temple" alt="Karnak Temple Complex at sunset" class="w-full h-auto object-cover rounded-md mb-4" loading="lazy" width="800" height="450">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-gopuram photo-icon"></i>Karnak Temple Complex</div>
+                                            <p class="text-gray-600">Visit the awe-inspiring Karnak Temple Complex, the largest religious structure ever built, dedicated to the god Amun-Ra. Walk along the Great Hypostyle Hall.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-city photo-icon"></i>Luxor Temple</div>
+                                            <p class="text-gray-600">Continue to Luxor Temple, beautifully illuminated if visited around sunset, originally connected to Karnak by the Avenue of Sphinxes.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-water photo-icon"></i>Afternoon leisure</div>
+                                            <p class="text-gray-600">Afternoon at leisure—optional felucca sailboat ride on the Nile River or relaxing by the hotel pool. Overnight stay in Luxor.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Day 7 -->
+                            <div class="itinerary-card">
+                                <div class="day-label">Day 7: Return to Cairo & Departure</div>
+                                <div class="p-5">
+                                    <img src="https://placehold.co/800x450/2C3E50/FFD700?text=Cairo+Departure" alt="Cairo International Airport departure lounge" class="w-full h-auto object-cover rounded-md mb-4" loading="lazy" width="800" height="450">
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-car-alt photo-icon"></i>Morning Transfer to Cairo</div>
+                                            <p class="text-gray-600">Morning transfer back to Cairo.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-shopping-bag photo-icon"></i>Free time & Last-minute activities</div>
+                                            <p class="text-gray-600">Free time for last-minute shopping, a quick visit to the Islamic Cairo mosques, or relaxing before departure.</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="font-medium text-lg mb-1"><i class="fas fa-plane-departure photo-icon"></i>Departure</div>
+                                            <p class="text-gray-600">Transfer to Cairo International Airport for your outbound flight.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -427,7 +591,7 @@
                         </div>
                     </div>
                     
-                    <div>
+                    <div id="booking-section"> <!-- Added ID for Book Now button to link to -->
                         <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 sticky top-6">
                             <h2 class="text-2xl font-semibold text-primary-dark mb-6 text-center">Book Your Adventure</h2>
                             
@@ -456,11 +620,13 @@
                             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                                 <h3 class="font-semibold text-blue-800 mb-2">What's Included:</h3>
                                 <ul class="text-sm text-gray-700 space-y-1">
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>All domestic flights within Egypt</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>3-night 5-star Nile Cruise</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Professional photography service</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>All entrance fees to sites</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private air-conditioned transportation</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Professional photography in each location (edited high-resolution photos)</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Domestic transportation throughout the tour</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Transfers between Cairo, Giza, Alexandria & Luxor </li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private Egyptologist guide at historical sites</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Entrance tickets to all mentioned attractions</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Bottled water during excursions</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Assistance with best recommendations during the trip</li>
                                 </ul>
                             </div>
 
@@ -525,7 +691,8 @@
         </div>
     </footer>
 
-    <script>
+    <script defer>
+        // Existing tour booking script
         const tourId = 'egypt-discovery-7day';
 
         const tourPrices = {
@@ -610,11 +777,68 @@
             updateBuyButtonState();
         });
 
-        // Initial updates
+        // Initial updates for booking section
         updatePriceAndPayPalForm();
         updatePayPalCustomFields();
         updateBuyButtonState();
+
+
+        // New JavaScript for Language Switcher
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPath = window.location.pathname;
+            const pathParts = currentPath.split('/');
+            let initialLang = 'en'; // Default to English
+
+            // Check if the URL already contains a language code (e.g., /en/, /ar/)
+            // We assume the language code is the first segment after the root
+            if (pathParts.length > 1 && pathParts[1].length === 2 && pathParts[1] !== 'tour-egypt-discovery-7day.html') {
+                initialLang = pathParts[1];
+            }
+
+            // Set initial language for the document
+            document.documentElement.lang = initialLang;
+            updateLangButtonText(initialLang);
+
+            // Add event listener to handle clicks on language links
+            const langDropdownContent = document.querySelector('.language-switcher-dropdown-content');
+            if (langDropdownContent) {
+                langDropdownContent.addEventListener('click', (event) => {
+                    const target = event.target;
+                    if (target.tagName === 'A' && target.hasAttribute('lang')) {
+                        const selectedLang = target.getAttribute('lang');
+                        // Update the button text to reflect the chosen language
+                        updateLangButtonText(selectedLang);
+                        // The actual navigation will be handled by the href attribute of the <a> tag
+                    }
+                });
+            }
+        });
+
+        function updateLangButtonText(lang) {
+            const langButton = document.getElementById('langButton');
+            if (langButton) {
+                const languageDetails = {
+                    'en': { name: 'English', flag: '🇬🇧' },
+                    'ar': { name: 'العربية', flag: '🇪🇬' },
+                    'es': { name: 'Español', flag: '🇪🇸' },
+                    'tl': { name: 'Tagalog', flag: '🇵🇭' },
+                    'ja': { name: '日本語', flag: '🇯🇵' },
+                    'ko': { name: '한국어', flag: '🇰🇷' },
+                    'zh': { name: '中文', flag: '🇨🇳' },
+                    'nl': { name: 'Nederlands', flag: '🇳🇱' },
+                    'hi': { name: 'हिन्दी (Indian)', flag: '🇮🇳' },
+                    'it': { name: 'Italiano', flag: '🇮🇹' },
+                    'de': { name: 'Deutsch', flag: '🇩🇪' },
+                    'fr': { name: 'Français', flag: '🇫🇷' },
+                    'pt': { name: 'Português', flag: '🇵🇹' },
+                    'id': { name: 'Bahasa Indonesia', flag: '🇮🇩' },
+                    'ru': { name: 'Русский', flag: '🇷🇺' }
+                };
+                const currentLangDetails = languageDetails[lang] || languageDetails['en']; // Fallback to English
+
+                langButton.innerHTML = `<svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 018.67 15.5c-3.24 0-6.026-2.071-6.97-4.14M20 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> <span class="flag-icon">${currentLangDetails.flag}</span>${currentLangDetails.name} <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>`;
+            }
+        }
     </script>
 </body>
 </html>
-
