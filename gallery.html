@@ -5,12 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery - Stunning Egypt Tour Photography | Egypt Photography Tours</title>
     <meta name="description" content="Explore our exquisite photo gallery showcasing the best of Egypt: Pyramids, temples, landscapes, and vibrant culture captured by our tours.">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="keywords" content="Egypt photography tours, gallery, photo gallery, Egypt photos, pyramid photography, Nile photography, Luxor, Aswan, Cairo, ancient Egypt">
+    <meta name="author" content="Egypt Photography Tours">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.egyptphotographytours.com/gallery.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.egyptphotographytours.com/gallery.html">
+    <meta property="og:title" content="Photo Gallery - Stunning Egypt Tour Photography | Egypt Photography Tours">
+    <meta property="og:description" content="Explore our exquisite photo gallery showcasing the best of Egypt: Pyramids, temples, landscapes, and vibrant culture captured by our tours.">
+    <meta property="og:image" content="https://www.egyptphotographytours.com/images/og-gallery-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.egyptphotographytours.com/gallery.html">
+    <meta property="twitter:title" content="Photo Gallery - Stunning Egypt Tour Photography | Egypt Photography Tours">
+    <meta property="twitter:description" content="Explore our exquisite photo gallery showcasing the best of Egypt: Pyramids, temples, landscapes, and vibrant culture captured by our tours.">
+    <meta property="twitter:image" content="https://www.egyptphotographytours.com/images/og-gallery-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://flagcdn.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Preload critical fonts and images -->
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="images/copilot_image_1752144851499.jpg">
+    <link rel="preload" as="image" href="images/gallery-pyramids-sunset.jpg"> <!-- Preload first gallery image -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Font Awesome CSS (loaded with media="print" onload="this.media='all'" for performance) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -65,14 +95,77 @@
             font-size: 0.875rem; /* text-sm */
             opacity: 0.9;
         }
+
+        /* Language switcher styles (from tour-egypt-discovery-7day.html) */
+        .language-switcher-container {
+            position: relative;
+            display: inline-block;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff; /* White background */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            list-style: none;
+            margin: 5px 0 0 0; /* Ensures gap for stability */
+            padding: 5px 0;
+            min-width: 150px;
+            max-height: 300px; /* Shorter and scrollable */
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .language-dropdown.show {
+            display: block;
+        }
+        .language-dropdown li {
+            margin: 0;
+        }
+        .language-dropdown a {
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333; /* Dark text for contrast on white background */
+            transition: background-color 0.2s;
+        }
+        .language-dropdown a:hover {
+            background-color: #f0f0f0; /* Light hover background */
+            color: #2C3E50; /* Primary dark text on hover */
+        }
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+            flex-shrink: 0; /* Prevent flag from shrinking */
+        }
+
+        .book-now-button { /* Copied from tour-egypt-discovery-7day.html */
+            background-color: #FFD700;
+            color: #2C3E50;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .book-now-button:hover { /* Copied from tour-egypt-discovery-7day.html */
+            background-color: #E2B700;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
     </style>
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body class="flex flex-col min-h-screen">
     <header class="bg-primary-dark text-white shadow-lg">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full">
+                <img src="images/copilot_image_1752144851499.jpg" alt="Egypt Photography Tours Logo - Pyramids and camera shutter" class="h-16 w-auto rounded-full" loading="eager" width="64" height="64">
                 <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
             </div>
             <p class="text-md md:text-lg mt-2 md:mt-0 italic">Capture the Wonders of Egypt Through Your Lens.</p>
@@ -85,27 +178,42 @@
                 <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">Home</a></li>
                 <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1">About Us</a></li>
                 <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">Our Tours</a></li>
-                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1 font-bold">Gallery</a></li>
+                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1 font-bold" aria-current="page">Gallery</a></li>
                 <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">Contact Us</a></li>
                 <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <div class="relative group">
-                    <button class="flex items-center text-white hover:text-accent-light focus:outline-none">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M3 17h12M17 6v12M17 6h2M17 18h2M17 18v-6"></path></svg>
-                        English
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <!-- Book Now Button (from tour-egypt-discovery-7day.html) -->
+                <a href="tours.html" class="book-now-button">
+                    Book Now
+                </a>
+                
+                <!-- Language Switcher (from tour-egypt-discovery-7day.html) -->
+                <div class="language-switcher-container ml-4" role="region" aria-label="Language Selector">
+                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 018.67 15.5c-3.24 0-6.026-2.071-6.97-4.14M20 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <img id="current-flag-icon" src="https://flagcdn.com/us.svg" alt="U.S. Flag" class="flag-icon" width="20" height="15" loading="lazy">
+                        <span id="current-lang-code" class="ml-1 text-sm">EN</span>
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute right-0 mt-2 w-32 bg-gray-700 rounded-md shadow-lg py-1 hidden group-hover:block">
-                        <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">العربية (Coming Soon)</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">Deutsch (Coming Soon)</a>
-                    </div>
+                    <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
+                        <li role="none"><a href="/gallery.html" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English Flag" class="flag-icon" width="20" height="15" loading="lazy"> English</a></li>
+                        <li role="none"><a href="/ar/gallery.html" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="Arabic Flag" class="flag-icon" width="20" height="15" loading="lazy"> العربية (Arabic)</a></li>
+                        <li role="none"><a href="/es/gallery.html" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Spanish Flag" class="flag-icon" width="20" height="15" loading="lazy"> Español (Spanish)</a></li>
+                        <li role="none"><a href="/tl/gallery.html" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog Flag" class="flag-icon" width="20" height="15" loading="lazy"> Tagalog</a></li>
+                        <li role="none"><a href="/ja/gallery.html" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="Japanese Flag" class="flag-icon" width="20" height="15" loading="lazy"> 日本語 (Japanese)</a></li>
+                        <li role="none"><a href="/ko/gallery.html" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="Korean Flag" class="flag-icon" width="20" height="15" loading="lazy"> 한국어 (Korean)</a></li>
+                        <li role="none"><a href="/zh/gallery.html" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="Chinese Flag" class="flag-icon" width="20" height="15" loading="lazy"> 中文 (Chinese)</a></li>
+                        <li role="none"><a href="/nl/gallery.html" data-lang="nl" role="menuitem"><img src="https://flagcdn.com/nl.svg" alt="Dutch Flag" class="flag-icon" width="20" height="15" loading="lazy"> Nederlands (Dutch)</a></li>
+                        <li role="none"><a href="/hi/gallery.html" data-lang="hi" role="menuitem"><img src="https://flagcdn.com/in.svg" alt="Indian Flag" class="flag-icon" width="20" height="15" loading="lazy"> हिन्दी (Indian)</a></li>
+                        <li role="none"><a href="/it/gallery.html" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italian Flag" class="flag-icon" width="20" height="15" loading="lazy"> Italiano (Italian)</a></li>
+                        <li role="none"><a href="/de/gallery.html" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="German Flag" class="flag-icon" width="20" height="15" loading="lazy"> Deutsch (German)</a></li>
+                        <li role="none"><a href="/fr/gallery.html" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="French Flag" class="flag-icon" width="20" height="15" loading="lazy"> Français (French)</a></li>
+                        <li role="none"><a href="/pt/gallery.html" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Portuguese Flag" class="flag-icon" width="20" height="15" loading="lazy"> Português (Portuguese)</a></li>
+                        <li role="none"><a href="/id/gallery.html" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Indonesian Flag" class="flag-icon" width="20" height="15" loading="lazy"> Bahasa Indonesia (Indonesian)</a></li>
+                        <li role="none"><a href="/ru/gallery.html" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Russian Flag" class="flag-icon" width="20" height="15" loading="lazy"> Русский (Russian)</a></li>
+                    </ul>
                 </div>
-                <button class="snipcart-checkout flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    Cart (<span class="snipcart-total-items"></span>)
-                </button>
             </div>
         </div>
     </nav>
@@ -118,7 +226,7 @@
 
         <section class="gallery-grid">
             <div class="gallery-item">
-                <img src="images/gallery-pyramids-sunset.jpg" alt="Sunset over the Giza Pyramids">
+                <img src="images/gallery-pyramids-sunset.jpg" alt="Sunset over the Giza Pyramids" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Giza Pyramids at Sunset</h3>
                     <p>The timeless grandeur under a golden sky.</p>
@@ -126,7 +234,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-sphinx-close.jpg" alt="Close-up of the Great Sphinx">
+                <img src="images/gallery-sphinx-close.jpg" alt="Close-up of the Great Sphinx" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>The Enigmatic Sphinx</h3>
                     <p>Guardian of the Giza Plateau, up close.</p>
@@ -134,7 +242,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-karnak-columns.jpg" alt="Massive columns of Karnak Temple">
+                <img src="images/gallery-karnak-columns.jpg" alt="Massive columns of Karnak Temple" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Karnak Temple's Hypostyle Hall</h3>
                     <p>A forest of ancient columns in Luxor.</p>
@@ -142,7 +250,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-nile-felucca.jpg" alt="Felucca sailing on the Nile River at sunset">
+                <img src="images/gallery-nile-felucca.jpg" alt="Felucca sailing on the Nile River at sunset" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Nile River Serenity</h3>
                     <p>Traditional felucca ride at sunset.</p>
@@ -150,7 +258,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-luxor-temple-night.jpg" alt="Luxor Temple illuminated at night">
+                <img src="images/gallery-luxor-temple-night.jpg" alt="Luxor Temple illuminated at night" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Luxor Temple by Night</h3>
                     <p>Ancient majesty under the stars.</p>
@@ -158,7 +266,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-valley-of-kings.jpg" alt="Entrance to a tomb in the Valley of the Kings">
+                <img src="images/gallery-valley-of-kings.jpg" alt="Entrance to a tomb in the Valley of the Kings" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Valley of the Kings</h3>
                     <p>Secrets of the pharaohs in the West Bank.</p>
@@ -166,7 +274,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-hatshepsut-temple.jpg" alt="Temple of Hatshepsut nestled against the cliffs">
+                <img src="images/gallery-hatshepsut-temple.jpg" alt="Temple of Hatshepsut nestled against the cliffs" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Temple of Hatshepsut</h3>
                     <p>The mortuary temple of a powerful queen.</p>
@@ -174,7 +282,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-alexandria-citadel.jpg" alt="Citadel of Qaitbay overlooking the Mediterranean in Alexandria">
+                <img src="images/gallery-alexandria-citadel.jpg" alt="Citadel of Qaitbay overlooking the Mediterranean in Alexandria" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Citadel of Qaitbay, Alexandria</h3>
                     <p>A coastal fortress with a storied past.</p>
@@ -182,7 +290,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-local-market-cairo.jpg" alt="Bustling local market scene in Cairo">
+                <img src="images/gallery-local-market-cairo.jpg" alt="Bustling local market scene in Cairo" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Cairo's Vibrant Markets</h3>
                     <p>A kaleidoscope of colors and sounds.</p>
@@ -190,7 +298,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-egyptian-museum.jpg" alt="Artifacts inside the National Museum of Egyptian Civilization">
+                <img src="images/gallery-egyptian-museum.jpg" alt="Artifacts inside the National Museum of Egyptian Civilization" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Treasures of NMEC</h3>
                     <p>Artifacts telling tales of ancient Egypt.</p>
@@ -198,7 +306,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-abu-simbel.jpg" alt="Great Temple of Ramses II at Abu Simbel">
+                <img src="images/gallery-abu-simbel.jpg" alt="Great Temple of Ramses II at Abu Simbel" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Abu Simbel's Grandeur</h3>
                     <p>Massive rock-cut temples in southern Egypt.</p>
@@ -206,7 +314,7 @@
             </div>
 
             <div class="gallery-item">
-                <img src="images/gallery-camel-ride.jpg" alt="Tourists on a camel ride with pyramids in the background">
+                <img src="images/gallery-camel-ride.jpg" alt="Tourists on a camel ride with pyramids in the background" loading="lazy" width="800" height="533">
                 <div class="gallery-overlay">
                     <h3>Camel Ride Adventure</h3>
                     <p>An iconic way to experience the desert.</p>
@@ -236,27 +344,140 @@
                 <h4 class="font-semibold text-accent-light mb-2">Connect With Us</h4>
                 <p class="text-sm">Email: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
                 <p class="text-sm">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <!-- UPDATED SOCIAL MEDIA SECTION (ONLY CHANGE) -->
                 <div class="flex justify-center md:justify-start space-x-4 mt-3">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" rel="noopener" aria-label="Facebook" class="text-white hover:text-accent-light transition duration-300 text-2xl">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="https://www.instagram.com/hossam_artistic/" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                    <a href="https://www.instagram.com/hossam_artistic/" target="_blank" rel="noopener" aria-label="Instagram" class="text-white hover:text-accent-light transition duration-300 text-2xl">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" rel="noopener" aria-label="TikTok" class="text-white hover:text-accent-light transition duration-300 text-2xl">
                         <i class="fab fa-tiktok"></i>
                     </a>
-                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" rel="noopener" aria-label="YouTube" class="text-white hover:text-accent-light transition duration-300 text-2xl">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+    
+    <script defer>
+        function getBasePageName() {
+            // Hardcode the base page name for this specific file
+            return "gallery";
+        }
 
-    <div hidden id="snipcart" data-api-key="YWI3Nzc3NTgtYTAzYy00MmY3LThmN2YtNWFjZjExYTgwMDQ1NjM4ODk0NzM0NjE2NTQyNTM0"></div>
-    <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+        const languageDetails = {
+            'en': { name: 'English', code: 'EN', flagUrl: 'https://flagcdn.com/us.svg' },
+            'ar': { name: 'العربية', code: 'AR', flagUrl: 'https://flagcdn.com/eg.svg' },
+            'es': { name: 'Español', code: 'ES', flagUrl: 'https://flagcdn.com/es.svg' },
+            'tl': { name: 'Tagalog', code: 'TL', flagUrl: 'https://flagcdn.com/ph.svg' },
+            'ja': { name: '日本語', code: 'JA', flagUrl: 'https://flagcdn.com/jp.svg' },
+            'ko': { name: '한국어', code: 'KO', flagUrl: 'https://flagcdn.com/kr.svg' },
+            'zh': { name: '中文', code: 'ZH', flagUrl: 'https://flagcdn.com/cn.svg' },
+            'nl': { name: 'Nederlands', code: 'NL', flagUrl: 'https://flagcdn.com/nl.svg' },
+            'hi': { name: 'हिन्दी (Indian)', code: 'HI', flagUrl: 'https://flagcdn.com/in.svg' },
+            'it': { name: 'Italiano', code: 'IT', flagUrl: 'https://flagcdn.com/it.svg' },
+            'de': { name: 'Deutsch', code: 'DE', flagUrl: 'https://flagcdn.com/de.svg' },
+            'fr': { name: 'Français', code: 'FR', flagUrl: 'https://flagcdn.com/fr.svg' },
+            'pt': { name: 'Português', code: 'PT', flagUrl: 'https://flagcdn.com/pt.svg' },
+            'id': { name: 'Bahasa Indonesia', code: 'ID', flagUrl: 'https://flagcdn.com/id.svg' },
+            'ru': { name: 'Русский', code: 'RU', flagUrl: 'https://flagcdn.com/ru.svg' }
+        };
+        
+        function redirectToLanguage(lang) {
+            const basePage = getBasePageName();
+            if (lang === 'en') {
+                window.location.href = `/${basePage}.html`;
+            } else {
+                window.location.href = `/${lang}/${basePage}.html`;
+            }
+        }
+
+        function updateLanguageButtonDisplay(lang) {
+            const currentFlagIcon = document.getElementById('current-flag-icon');
+            const currentLangCodeSpan = document.getElementById('current-lang-code');
+
+            if (currentFlagIcon && currentLangCodeSpan) {
+                const currentLangDetails = languageDetails[lang] || languageDetails['en'];
+                currentFlagIcon.src = currentLangDetails.flagUrl;
+                currentFlagIcon.alt = `${currentLangDetails.name} Flag`;
+                currentLangCodeSpan.textContent = currentLangDetails.code;
+            }
+        }
+
+        function setupLanguageSwitcher() {
+            const langButton = document.getElementById('language-toggle');
+            const langDropdown = document.querySelector('.language-dropdown');
+            
+            // Determine initial language from URL
+            let initialLang = 'en';
+            const path = window.location.pathname;
+            const parts = path.split('/');
+            if (parts.length > 1 && parts[1].length === 2 && languageDetails[parts[1]]) {
+                initialLang = parts[1];
+            }
+            
+            document.documentElement.lang = initialLang;
+            updateLanguageButtonDisplay(initialLang);
+
+            if (langButton && langDropdown) {
+                langButton.addEventListener('click', function(event) {
+                    const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
+                    langButton.setAttribute('aria-expanded', !isExpanded);
+                    langDropdown.classList.toggle('show');
+                    event.stopPropagation(); 
+                });
+                
+                langDropdown.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link) {
+                        event.preventDefault(); 
+                        const selectedLang = link.getAttribute('data-lang');
+                        redirectToLanguage(selectedLang);
+                        
+                        langButton.setAttribute('aria-expanded', 'false');
+                        langDropdown.classList.remove('show');
+                    }
+                    event.stopPropagation();
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
+                        if (langDropdown.classList.contains('show')) {
+                            langButton.setAttribute('aria-expanded', 'false');
+                            langDropdown.classList.remove('show');
+                        }
+                    }
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup language switcher
+            setupLanguageSwitcher();
+
+            // Lazy load all images in the gallery
+            const galleryImages = document.querySelectorAll('.gallery-grid img');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        // No need to change src if loading="lazy" is already handling it, just ensure it's loaded
+                        // For static images, browser's native lazy loading should suffice with loading="lazy" attribute
+                        // If you had data-src for progressive loading, you'd set img.src = img.dataset.src here.
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '100px' // Load images when they are 100px from viewport
+            });
+
+            galleryImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        });
+    </script>
 </body>
 </html>
-
