@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片画廊 - 令人惊叹的埃及摄影之旅 | 埃及摄影之旅</title>
+    <meta name="description" content="探索我们令人惊叹的图片画廊，展示在我们的旅程中拍摄到的最佳埃及风光：金字塔、寺庙、风景和充满活力的文化。">
+    <meta name="keywords" content="埃及摄影之旅, 画廊, 图片画廊, 埃及照片, 金字塔摄影, 尼罗河摄影, 卢克索, 阿斯旺, 开罗, 古代埃及">
+    <meta name="author" content="埃及摄影之旅">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.egyptphotographytours.com/zh/gallery.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.egyptphotographytours.com/zh/gallery.html">
+    <meta property="og:title" content="图片画廊 - 令人惊叹的埃及摄影之旅 | 埃及摄影之旅">
+    <meta property="og:description" content="探索我们令人惊叹的图片画廊，展示在我们的旅程中拍摄到的最佳埃及风光：金字塔、寺庙、风景和充满活力的文化。">
+    <meta property="og:image" content="https://www.egyptphotographytours.com/images/og-gallery-image.jpg">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.egyptphotographytours.com/zh/gallery.html">
+    <meta property="twitter:title" content="图片画廊 - 令人惊叹的埃及摄影之旅 | 埃及摄影之旅">
+    <meta property="twitter:description" content="探索我们令人惊叹的图片画廊，展示在我们的旅程中拍摄到的最佳埃及风光：金字塔、寺庙、风景和充满活力的文化。">
+    <meta property="twitter:image" content="https://www.egyptphotographytours.com/images/og-gallery-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://flagcdn.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="../images/copilot_image_1752144851499.jpg">
+    <link rel="preload" as="image" href="../images/gallery-pyramids-sunset.jpg"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .text-primary-dark { color: #2C3E50; }
+        .bg-accent-light { background-color: #FFD700; }
+        .text-accent-light { color: #FFD700; }
+        .bg-accent-dark { background-color: #E2B700; }
+        .text-accent-dark { color: #E2B700; }
+        .bg-primary-dark { background-color: #1a202c; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px; /* Fixed height for consistent grid */
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        .gallery-overlay h3 {
+            font-weight: 600;
+            font-size: 1.125rem; /* text-lg */
+        }
+        .gallery-overlay p {
+            font-size: 0.875rem; /* text-sm */
+            opacity: 0.9;
+        }
+
+        /* Language switcher styles (from tour-egypt-discovery-7day.html) */
+        .language-switcher-container {
+            position: relative;
+            display: inline-block;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff; /* White background */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            list-style: none;
+            margin: 5px 0 0 0; /* Ensures gap for stability */
+            padding: 5px 0;
+            min-width: 150px;
+            max-height: 300px; /* Shorter and scrollable */
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .language-dropdown.show {
+            display: block;
+        }
+        .language-dropdown li {
+            margin: 0;
+        }
+        .language-dropdown a {
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333; /* Dark text for contrast on white background */
+            transition: background-color 0.2s;
+        }
+        .language-dropdown a:hover {
+            background-color: #f0f0f0; /* Light hover background */
+            color: #2C3E50; /* Primary dark text on hover */
+        }
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+            flex-shrink: 0; /* Prevent flag from shrinking */
+        }
+
+        .book-now-button { /* Copied from tour-egypt-discovery-7day.html */
+            background-color: #FFD700;
+            color: #2C3E50;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .book-now-button:hover { /* Copied from tour-egypt-discovery-7day.html */
+            background-color: #E2B700;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="../images/copilot_image_1752144851499.jpg" alt="埃及摄影之旅标志 - 金字塔和相机快门" class="h-16 w-auto rounded-full" loading="eager" width="64" height="64">
+                <a href="index.html" class="text-3xl font-bold tracking-tight text-accent-light">埃及摄影之旅</a>
+            </div>
+            <p class="text-md md:text-lg mt-2 md:mt-0 italic">用您的镜头捕捉埃及的奇迹。</p>
+        </div>
+    </header>
+
+    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
+            <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
+                <li><a href="index.html" class="hover:text-accent-light transition duration-300 py-1">首页</a></li>
+                <li><a href="about.html" class="hover:text-accent-light transition duration-300 py-1">关于我们</a></li>
+                <li><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1">我们的旅程</a></li>
+                <li><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1 font-bold" aria-current="page">画廊</a></li>
+                <li><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1">联系我们</a></li>
+                <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">常见问题</a></li>
+            </ul>
+            <div class="mt-3 md:mt-0 flex items-center space-x-4">
+                <a href="tours.html" class="book-now-button">
+                    立即预订
+                </a>
+                
+                <div class="language-switcher-container ml-4" role="region" aria-label="语言切换器">
+                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 018.67 15.5c-3.24 0-6.026-2.071-6.97-4.14M20 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <img id="current-flag-icon" src="https://flagcdn.com/cn.svg" alt="中国国旗" class="flag-icon" width="20" height="15" loading="lazy">
+                        <span id="current-lang-code" class="ml-1 text-sm">ZH</span>
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
+                        <li role="none"><a href="../gallery.html" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="美国国旗" class="flag-icon" width="20" height="15" loading="lazy"> English</a></li>
+                        <li role="none"><a href="../ar/gallery.html" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="埃及国旗" class="flag-icon" width="20" height="15" loading="lazy"> العربية (Arabic)</a></li>
+                        <li role="none"><a href="../es/gallery.html" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="西班牙国旗" class="flag-icon" width="20" height="15" loading="lazy"> Español (Spanish)</a></li>
+                        <li role="none"><a href="../tl/gallery.html" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="菲律宾国旗" class="flag-icon" width="20" height="15" loading="lazy"> Tagalog</a></li>
+                        <li role="none"><a href="../ja/gallery.html" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="日本国旗" class="flag-icon" width="20" height="15" loading="lazy"> 日本語 (Japanese)</a></li>
+                        <li role="none"><a href="../ko/gallery.html" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="韩国国旗" class="flag-icon" width="20" height="15" loading="lazy"> 한국어 (Korean)</a></li>
+                        <li role="none"><a href="/zh/gallery.html" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中国国旗" class="flag-icon" width="20" height="15" loading="lazy"> 中文 (Chinese)</a></li>
+                        <li role="none"><a href="../nl/gallery.html" data-lang="nl" role="menuitem"><img src="https://flagcdn.com/nl.svg" alt="荷兰国旗" class="flag-icon" width="20" height="15" loading="lazy"> Nederlands (Dutch)</a></li>
+                        <li role="none"><a href="../hi/gallery.html" data-lang="hi" role="menuitem"><img src="https://flagcdn.com/in.svg" alt="印度国旗" class="flag-icon" width="20" height="15" loading="lazy"> हिन्दी (Indian)</a></li>
+                        <li role="none"><a href="../it/gallery.html" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="意大利国旗" class="flag-icon" width="20" height="15" loading="lazy"> Italiano (Italian)</a></li>
+                        <li role="none"><a href="../de/gallery.html" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="德国国旗" class="flag-icon" width="20" height="15" loading="lazy"> Deutsch (German)</a></li>
+                        <li role="none"><a href="../fr/gallery.html" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="法国国旗" class="flag-icon" width="20" height="15" loading="lazy"> Français (French)</a></li>
+                        <li role="none"><a href="../pt/gallery.html" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="葡萄牙国旗" class="flag-icon" width="20" height="15" loading="lazy"> Português (Portuguese)</a></li>
+                        <li role="none"><a href="../id/gallery.html" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="印度尼西亚国旗" class="flag-icon" width="20" height="15" loading="lazy"> Bahasa Indonesia (Indonesian)</a></li>
+                        <li role="none"><a href="../ru/gallery.html" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="俄罗斯国旗" class="flag-icon" width="20" height="15" loading="lazy"> Русский (Russian)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-6 py-16">
+        <h1 class="text-5xl font-extrabold text-primary-dark text-center mb-12">我们的图片画廊</h1>
+        <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+            通过我们的镜头旅行，见证埃及令人惊叹的美丽和丰富的历史。这些图片是我们旅程中捕捉到的难忘瞬间的见证。
+        </p>
+
+        <section class="gallery-grid">
+            <div class="gallery-item">
+                <img src="../images/gallery-pyramids-sunset.jpg" alt="吉萨金字塔的日落" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>吉萨金字塔的日落</h3>
+                    <p>金色天空下永恒的宏伟。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-sphinx-close.jpg" alt="神秘的狮身人面像" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>神秘的狮身人面像</h3>
+                    <p>吉萨高原的守护者，近距离特写。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-karnak-columns.jpg" alt="卡尔纳克神庙的立柱大厅" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>卡尔纳克神庙的立柱大厅</h3>
+                    <p>卢克索的一片古代石柱森林。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-nile-felucca.jpg" alt="尼罗河上的帆船" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>尼罗河上的宁静</h3>
+                    <p>传统的日落帆船之旅。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-luxor-temple-night.jpg" alt="夜晚的卢克索神庙" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>夜晚的卢克索神庙</h3>
+                    <p>星空下的古代威严。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-valley-of-kings.jpg" alt="帝王谷的墓穴入口" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>帝王谷</h3>
+                    <p>西岸法老的秘密。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-hatshepsut-temple.jpg" alt="哈特谢普苏特神庙" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>哈特谢普苏特神庙</h3>
+                    <p>一位强大女王的陵墓。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-alexandria-citadel.jpg" alt="亚历山大港的盖特贝城堡" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>亚历山大港的盖特贝城堡</h3>
+                    <p>一座拥有丰富历史的沿海堡垒。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-local-market-cairo.jpg" alt="开罗的生动市集" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>开罗的生动市集</h3>
+                    <p>一个色彩和声音的万花筒。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-egyptian-museum.jpg" alt="埃及文明国家博物馆的文物" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>NMEC的珍宝</h3>
+                    <p>讲述古埃及故事的文物。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-abu-simbel.jpg" alt="阿布辛贝勒的宏伟神庙" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>阿布辛贝勒的宏伟</h3>
+                    <p>埃及南部巨大的岩石神庙。</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../images/gallery-camel-ride.jpg" alt="骆驼骑行探险" loading="lazy" width="800" height="533">
+                <div class="gallery-overlay">
+                    <h3>骆驼骑行探险</h3>
+                    <p>体验沙漠的标志性方式。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary-dark text-white py-10 mt-auto">
+        <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-accent-light mb-2">埃及摄影之旅</h3>
+                <p class="text-sm">&copy; 2025 埃及摄影之旅. 保留所有权利。</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="font-semibold text-accent-light mb-2">快速链接</h4>
+                <ul class="text-sm">
+                    <li><a href="index.html" class="hover:text-accent-light transition duration-300">首页</a></li>
+                    <li><a href="about.html" class="hover:text-accent-light transition duration-300">关于我们</a></li>
+                    <li><a href="tours.html" class="hover:text-accent-light transition duration-300">我们的旅程</a></li>
+                    <li><a href="gallery.html" class="hover:text-accent-light transition duration-300">画廊</a></li>
+                    <li><a href="contact.html" class="hover:text-accent-light transition duration-300">联系我们</a></li>
+                    <li><a href="faqs.html" class="hover:text-accent-light transition duration-300">常见问题</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-accent-light mb-2">与我们联系</h4>
+                <p class="text-sm">电子邮件: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
+                <p class="text-sm">地址: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+                <div class="flex justify-center md:justify-start space-x-4 mt-3">
+                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" rel="noopener" aria-label="Facebook" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hossam_artistic/" target="_blank" rel="noopener" aria-label="Instagram" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" rel="noopener" aria-label="TikTok" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@egyptphotographytours" target="_blank" rel="noopener" aria-label="YouTube" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script defer>
+        function getBasePageName() {
+            // Hardcode the base page name for this specific file
+            return "gallery";
+        }
+
+        const languageDetails = {
+            'en': { name: 'English', code: 'EN', flagUrl: 'https://flagcdn.com/us.svg' },
+            'ar': { name: 'العربية', code: 'AR', flagUrl: 'https://flagcdn.com/eg.svg' },
+            'es': { name: 'Español', code: 'ES', flagUrl: 'https://flagcdn.com/es.svg' },
+            'tl': { name: 'Tagalog', code: 'TL', flagUrl: 'https://flagcdn.com/ph.svg' },
+            'ja': { name: '日本語', code: 'JA', flagUrl: 'https://flagcdn.com/jp.svg' },
+            'ko': { name: '한국어', code: 'KO', flagUrl: 'https://flagcdn.com/kr.svg' },
+            'zh': { name: '中文', code: 'ZH', flagUrl: 'https://flagcdn.com/cn.svg' },
+            'nl': { name: 'Nederlands', code: 'NL', flagUrl: 'https://flagcdn.com/nl.svg' },
+            'hi': { name: 'हिन्दी (Indian)', code: 'HI', flagUrl: 'https://flagcdn.com/in.svg' },
+            'it': { name: 'Italiano', code: 'IT', flagUrl: 'https://flagcdn.com/it.svg' },
+            'de': { name: 'Deutsch', code: 'DE', flagUrl: 'https://flagcdn.com/de.svg' },
+            'fr': { name: 'Français', code: 'FR', flagUrl: 'https://flagcdn.com/fr.svg' },
+            'pt': { name: 'Português', code: 'PT', flagUrl: 'https://flagcdn.com/pt.svg' },
+            'id': { name: 'Bahasa Indonesia', code: 'ID', flagUrl: 'https://flagcdn.com/id.svg' },
+            'ru': { name: 'Русский', code: 'RU', flagUrl: 'https://flagcdn.com/ru.svg' }
+        };
+        
+        function redirectToLanguage(lang) {
+            const basePage = getBasePageName();
+            if (lang === 'en') {
+                window.location.href = `/${basePage}.html`;
+            } else {
+                window.location.href = `/${lang}/${basePage}.html`;
+            }
+        }
+
+        function updateLanguageButtonDisplay(lang) {
+            const currentFlagIcon = document.getElementById('current-flag-icon');
+            const currentLangCodeSpan = document.getElementById('current-lang-code');
+
+            if (currentFlagIcon && currentLangCodeSpan) {
+                const currentLangDetails = languageDetails[lang] || languageDetails['en'];
+                currentFlagIcon.src = currentLangDetails.flagUrl;
+                currentFlagIcon.alt = `${currentLangDetails.name} 国旗`;
+                currentLangCodeSpan.textContent = currentLangDetails.code;
+            }
+        }
+
+        function setupLanguageSwitcher() {
+            const langButton = document.getElementById('language-toggle');
+            const langDropdown = document.querySelector('.language-dropdown');
+            
+            // Determine initial language from URL
+            let initialLang = 'zh';
+            const path = window.location.pathname;
+            const parts = path.split('/');
+            if (parts.length > 1 && parts[1].length === 2 && languageDetails[parts[1]]) {
+                initialLang = parts[1];
+            }
+            
+            document.documentElement.lang = initialLang;
+            updateLanguageButtonDisplay(initialLang);
+
+            if (langButton && langDropdown) {
+                langButton.addEventListener('click', function(event) {
+                    const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
+                    langButton.setAttribute('aria-expanded', !isExpanded);
+                    langDropdown.classList.toggle('show');
+                    event.stopPropagation();
+                });
+                
+                langDropdown.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link) {
+                        event.preventDefault();
+                        const selectedLang = link.getAttribute('data-lang');
+                        redirectToLanguage(selectedLang);
+                        
+                        langButton.setAttribute('aria-expanded', 'false');
+                        langDropdown.classList.remove('show');
+                    }
+                    event.stopPropagation();
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
+                        if (langDropdown.classList.contains('show')) {
+                            langButton.setAttribute('aria-expanded', 'false');
+                            langDropdown.classList.remove('show');
+                        }
+                    }
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup language switcher
+            setupLanguageSwitcher();
+
+            // Lazy load all images in the gallery
+            const galleryImages = document.querySelectorAll('.gallery-grid img');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        // No need to change src if loading="lazy" is already handling it, just ensure it's loaded
+                        // For static images, browser's native lazy loading should suffice with loading="lazy" attribute
+                        // If you had data-src for progressive loading, you'd set img.src = img.dataset.src here.
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '100px' // Load images when they are 100px from viewport
+            });
+
+            galleryImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        });
+    </script>
+</body>
+</html>
