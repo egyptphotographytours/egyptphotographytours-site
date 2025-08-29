@@ -7,24 +7,29 @@
     <meta name="description" content="Experience the timeless beauty of Alexandria on a full-day private photography tour from Cairo.">
     <meta name="keywords" content="Alexandria photography tour, Egypt day trips, Cairo to Alexandria tour, Egypt photography tours, Mediterranean coast Egypt">
     
-    <!-- Open Graph / Facebook -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+
+    <link rel="preload" href="images/alexandria-tour.jpg" as="image">
+    <link rel="preload" href="images/copilot_image_1752144851499.jpg" as="image">
+    
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.egyptphotographytours.com/alexandria-tour.html">
     <meta property="og:title" content="Alexandria: Full-Day Private Photography Tour from Cairo">
     <meta property="og:description" content="Capture Alexandria's Mediterranean beauty on a private photography tour with expert guidance.">
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/alexandria-tour.jpg">
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.egyptphotographytours.com/alexandria-tour.html">
     <meta property="twitter:title" content="Alexandria: Full-Day Private Photography Tour from Cairo">
     <meta property="twitter:description" content="Capture Alexandria's Mediterranean beauty on a private photography tour with expert guidance.">
     <meta property="twitter:image" content="https://www.egyptphotographytours.com/images/alexandria-tour.jpg">
     
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.egyptphotographytours.com/alexandria-tour.html">
     
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -102,12 +107,8 @@
     }
     </script>
     
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -123,12 +124,12 @@
         .text-accent-dark { color: #E2B700; }
         .bg-primary-dark { background-color: #1a202c; }
         .sale-tag {
-            background-color: #E74C3C; /* Red for attention */
+            background-color: #E74C3C;
             color: white;
             padding: 0.25rem 0.75rem;
-            border-radius: 9999px; /* Pill shape */
+            border-radius: 9999px;
             font-weight: bold;
-            font-size: 0.75rem; /* text-xs */
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             position: absolute;
@@ -136,7 +137,6 @@
             left: 1rem;
             z-index: 10;
         }
-        /* Custom styles for solo/couple/date input */
         .selection-group {
             display: flex;
             gap: 0.5rem;
@@ -204,6 +204,51 @@
         .social-icons a:hover {
             color: #FFD700;
         }
+        .language-switcher-container {
+            position: relative;
+            display: inline-block;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            list-style: none;
+            margin: 5px 0 0 0;
+            padding: 5px 0;
+            min-width: 150px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .language-dropdown.show {
+            display: block;
+        }
+        .language-dropdown li {
+            margin: 0;
+        }
+        .language-dropdown a {
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s;
+        }
+        .language-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -228,17 +273,32 @@
                 <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <div class="relative group">
-                    <button class="flex items-center text-white hover:text-accent-light focus:outline-none">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 9h12M3 13h12M3 17h12M17 6v12M17 6h2M17 18h2M17 18v-6"></path></svg>
-                        English
+                <a href="contact.html" class="flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
+                    Book Now
+                </a>
+                <div class="language-switcher-container" role="region" aria-label="Language selection">
+                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false" aria-label="Language options">
+                        <img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15">
+                        <span class="ml-2">English</span>
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute right-0 mt-2 w-32 bg-gray-700 rounded-md shadow-lg py-1 hidden group-hover:block">
-                        <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">العربية (Coming Soon)</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 opacity-50 cursor-not-allowed">Deutsch (Coming Soon)</a>
-                    </div>
+                    <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
+                        <li role="none"><a href="alexandria-tour.html" data-lang="en" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
+                        <li role="none"><a href="ar/alexandria-tour.html" data-lang="ar" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15"> العربية</a></li>
+                        <li role="none"><a href="ru/alexandria-tour.html" data-lang="ru" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
+                        <li role="none"><a href="it/alexandria-tour.html" data-lang="it" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15"> Italiano</a></li>
+                        <li role="none"><a href="de/alexandria-tour.html" data-lang="de" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15"> Deutsch</a></li>
+                        <li role="none"><a href="fr/alexandria-tour.html" data-lang="fr" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15"> Français</a></li>
+                        <li role="none"><a href="ja/alexandria-tour.html" data-lang="ja" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/jp.svg" alt="日本語" class="flag-icon" width="20" height="15"> 日本語</a></li>
+                        <li role="none"><a href="ko/alexandria-tour.html" data-lang="ko" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15"> 한국어</a></li>
+                        <li role="none"><a href="id/alexandria-tour.html" data-lang="id" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15"> Bahasa Indonesia</a></li>
+                        <li role="none"><a href="es/alexandria-tour.html" data-lang="es" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15"> Español</a></li>
+                        <li role="none"><a href="pt/alexandria-tour.html" data-lang="pt" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15"> Português</a></li>
+                        <li role="none"><a href="zh/alexandria-tour.html" data-lang="zh" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15"> 中文</a></li>
+                        <li role="none"><a href="tl/alexandria-tour.html" data-lang="tl" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
+                        <li role="none"><a href="hi/alexandria-tour.html" data-lang="hi" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/in.svg" alt="Hindi" class="flag-icon" width="20" height="15"> Hindi</a></li>
+                        <li role="none"><a href="nl/alexandria-tour.html" data-lang="nl" role="menuitem" tabindex="-1"><img src="https://flagcdn.com/nl.svg" alt="Dutch" class="flag-icon" width="20" height="15"> Dutch</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -294,13 +354,13 @@
                     <div class="mb-4" data-tour-id="alexandria-tour">
                         <label class="block text-xl font-semibold text-gray-800 mb-2">Participant Type:</label>
                         <div class="selection-group">
-                            <button class="type-btn" data-type="solo">Solo Traveler</button>
-                            <button class="type-btn" data-type="couple">Couple / Two Persons</button>
+                            <button class="type-btn" data-type="solo" aria-pressed="false">Solo Traveler</button>
+                            <button class="type-btn" data-type="couple" aria-pressed="false">Couple / Two Persons</button>
                         </div>
                     </div>
                     <div class="mb-4">
                         <label class="block text-xl font-semibold text-gray-800 mb-2">Select Your Preferred Date:</label>
-                        <input type="date" class="date-input">
+                        <input type="date" class="date-input" id="start-date" required>
                     </div>
 
                     <div class="flex items-center justify-between mt-6 mb-6">
@@ -309,11 +369,17 @@
 
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
                         <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="hossam0114@hotmail.com"> <input type="hidden" name="item_name" value="Alexandria Day Tour">
-                        <input type="hidden" name="amount" value="0.00"> <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="business" value="hossam0114@hotmail.com">
+                        <input type="hidden" name="item_name" value="Alexandria Day Tour">
+                        <input type="hidden" name="amount" value="0.00">
+                        <input type="hidden" name="currency_code" value="USD">
                         <input type="hidden" name="on0" value="Booking Type">
-                        <input type="hidden" name="os0" value=""> <input type="hidden" name="on1" value="Booking Date">
-                        <input type="hidden" name="os1" value=""> <input type="hidden" name="return" value="https://your-domain.com/payment-success.html"> <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html"> <input type="hidden" name="no_shipping" value="1">
+                        <input type="hidden" name="os0" value="">
+                        <input type="hidden" name="on1" value="Booking Date">
+                        <input type="hidden" name="os1" value="">
+                        <input type="hidden" name="return" value="https://your-domain.com/payment-success.html">
+                        <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html">
+                        <input type="hidden" name="no_shipping" value="1">
                         <button type="submit" class="paypal-buy-button" disabled>Select Options to Book</button>
                     </form>
                 </div>
@@ -325,7 +391,7 @@
         <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
             <div class="mb-6 md:mb-0">
                 <h3 class="text-2xl font-bold text-accent-light mb-2">Egypt Photography Tours</h3>
-                <p class="text-sm">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
+                <p class="text-sm">&copy; <span id="current-year"></span> Egypt Photography Tours. All Rights Reserved.</p>
             </div>
             <div class="mb-6 md:mb-0">
                 <h4 class="font-semibold text-accent-light mb-2">Quick Links</h4>
@@ -361,36 +427,25 @@
     </footer>
 
     <script>
-        const tourId = 'alexandria-tour'; // Define the specific tour ID for this page
-
+        // Define prices for each tour (ADJUST THESE PRICES AS NEEDED)
         const tourPrices = {
             'pyramids-private': { solo: 150.00, couple: 250.00 },
             'cairo-giza-2day': { solo: 350.00, couple: 600.00 },
-            'alexandria-tour': { solo: 220.00, couple: 380.00 }, // Price for this tour
+            'alexandria-tour': { solo: 220.00, couple: 380.00 },
             'egypt-discovery-7day': { solo: 1900.00, couple: 3500.00 }
         };
-
+        const tourId = 'alexandria-tour';
         const typeButtons = document.querySelectorAll('.type-btn');
         const dateInput = document.querySelector('.date-input');
         const displayPriceElement = document.querySelector('.display-price');
         const paypalForm = document.querySelector('.paypal-form');
         const buyButton = paypalForm.querySelector('.paypal-buy-button');
-
         const itemNameInput = paypalForm.querySelector('input[name="item_name"]');
         const amountInput = paypalForm.querySelector('input[name="amount"]');
         const os0Input = paypalForm.querySelector('input[name="os0"]');
         const os1Input = paypalForm.querySelector('input[name="os1"]');
-
         let selectedType = null;
         let selectedDate = null;
-
-        const today = new Date();
-        const yyyy = today.getFullYear();
-        const mm = String(today.getMonth() + 1).padStart(2, '0');
-        const dd = String(today.getDate()).padStart(2, '0');
-        const minDate = `${yyyy}-${mm}-${dd}`;
-        dateInput.min = minDate;
-
         function updateBuyButtonState() {
             if (selectedType && selectedDate) {
                 buyButton.removeAttribute('disabled');
@@ -400,7 +455,6 @@
                 buyButton.textContent = 'Select Options to Book';
             }
         }
-
         function updatePriceAndPayPalForm() {
             let currentPrice = 0;
             if (selectedType && tourPrices[tourId]) {
@@ -409,25 +463,21 @@
             displayPriceElement.textContent = `$${currentPrice.toFixed(2)} USD`;
             amountInput.value = currentPrice.toFixed(2);
         }
-
         function updatePayPalCustomFields() {
-            const baseItemName = "Alexandria Day Tour"; // Fixed base name for this specific tour
-
+            const baseItemName = "Alexandria Day Tour";
             if (selectedType) {
-                os0Input.value = selectedType.charAt(0).toUpperCase() + selectedType.slice(1);
+                os0Input.value = selectedType.charAt(0).toUpperCase() + selectedType.slice(1) + ' Traveler(s)';
                 itemNameInput.value = `${baseItemName} (${os0Input.value})`;
             } else {
                 os0Input.value = '';
                 itemNameInput.value = baseItemName;
             }
-
             if (selectedDate) {
                 os1Input.value = selectedDate;
             } else {
                 os1Input.value = '';
             }
         }
-
         typeButtons.forEach(button => {
             button.addEventListener('click', () => {
                 selectedType = button.dataset.type;
@@ -438,17 +488,64 @@
                 updateBuyButtonState();
             });
         });
-
         dateInput.addEventListener('change', () => {
             selectedDate = dateInput.value;
             updatePayPalCustomFields();
             updateBuyButtonState();
         });
 
-        // Initial updates
-        updatePriceAndPayPalForm();
-        updatePayPalCustomFields();
-        updateBuyButtonState();
+        // Language switcher functionality and dynamic year
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            dateInput.min = `${yyyy}-${mm}-${dd}`;
+            document.getElementById('current-year').textContent = yyyy;
+            
+            const langButton = document.getElementById('language-toggle');
+            const langDropdown = document.querySelector('.language-dropdown');
+            
+            langButton.addEventListener('click', function(event) {
+                const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
+                langButton.setAttribute('aria-expanded', !isExpanded);
+                langDropdown.classList.toggle('show');
+                event.stopPropagation();
+            });
+            
+            langDropdown.addEventListener('click', function(event) {
+                const link = event.target.closest('a');
+                if (link) {
+                    event.preventDefault();
+                    const selectedLang = link.getAttribute('data-lang');
+                    redirectToLanguage(selectedLang);
+                    langButton.setAttribute('aria-expanded', 'false');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
+                    langButton.setAttribute('aria-expanded', 'false');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            function getCurrentPage() {
+                const path = window.location.pathname;
+                const filename = path.split('/').pop();
+                return filename;
+            }
+            
+            function redirectToLanguage(lang) {
+                const currentPage = getCurrentPage();
+                if (lang === 'en') {
+                    window.location.href = `../${currentPage}`;
+                } else {
+                    window.location.href = `../${lang}/${currentPage}`;
+                }
+            }
+        });
     </script>
 </body>
 </html>
