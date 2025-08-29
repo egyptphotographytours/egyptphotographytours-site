@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Частный тур по пирамидам - Egypt Photography Tours</title>
+    <meta name="description" content="Забронируйте частный фототур по Пирамидам Гизы и Сфинксу, включая профессиональную фотосессию.">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Tour",
+        "name": "Поймайте волшебство: частный тур по пирамидам + профессиональная фотосессия",
+        "description": "Окунитесь в древнюю историю в этом захватывающем однодневном частном туре по Великим Пирамидам Гизы и Сфинксу под руководством увлеченного местного эксперта.",
+        "image": [
+            "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "price": "150",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-01-01"
+        },
+        "itinerary": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Великая пирамида Гизы"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Пирамида Хефрена"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Пирамида Микерина"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Сфинкс"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "item": {
+                        "@type": "TouristAttraction",
+                        "name": "Храм Долины"
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "27",
+            "bestRating": "5"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Egypt Photography Tours",
+            "sameAs": "https://www.egyptphotographytours.com"
+        },
+        "duration": "PT5H",
+        "touristType": "Любители фотографии"
+    }
+    </script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .text-primary-dark { color: #2C3E50; }
+        .bg-accent-light { background-color: #FFD700; }
+        .text-accent-light { color: #FFD700; }
+        .bg-accent-dark { background-color: #E2B700; }
+        .text-accent-dark { color: #E2B700; }
+        .bg-primary-dark { background-color: #1a202c; }
+        .sale-tag {
+            background-color: #E74C3C; /* Red for attention */
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px; /* Pill shape */
+            font-weight: bold;
+            font-size: 0.75rem; /* text-xs */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+        }
+        /* Custom styles for solo/couple/date input */
+        .selection-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .selection-group button {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        .selection-group button.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .selection-group button:not(.selected):hover {
+            background-color: #e0e0e0;
+        }
+        input[type="date"] {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.375rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .paypal-buy-button {
+            display: block;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .paypal-buy-button:hover {
+            background-color: #218838;
+        }
+        .paypal-buy-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .language-switcher-container {
+            position: relative;
+            display: inline-block;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            list-style: none;
+            margin: 5px 0 0 0;
+            padding: 5px 0;
+            min-width: 150px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .language-dropdown.show {
+            display: block;
+        }
+        .language-dropdown li {
+            margin: 0;
+        }
+        .language-dropdown a {
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s;
+        }
+        .language-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="../images/copilot_image_1752144851499.jpg" alt="Логотип Egypt Photography Tours - Пирамиды и затвор камеры" class="h-16 w-auto rounded-full">
+                <a href="../index.html" class="text-3xl font-bold tracking-tight text-accent-light">Egypt Photography Tours</a>
+            </div>
+            <p class="text-md md:text-lg mt-2 md:mt-0 italic">Снимайте чудеса Египта через свой объектив.</p>
+        </div>
+    </header>
+
+    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between">
+            <ul class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-8 text-lg font-medium">
+                <li><a href="../index.html" class="hover:text-accent-light transition duration-300 py-1">Главная</a></li>
+                <li><a href="../about.html" class="hover:text-accent-light transition duration-300 py-1">О нас</a></li>
+                <li><a href="../tours.html" class="hover:text-accent-light transition duration-300 py-1">Наши туры</a></li>
+                <li><a href="../gallery.html" class="hover:text-accent-light transition duration-300 py-1">Галерея</a></li>
+                <li><a href="../contact.html" class="hover:text-accent-light transition duration-300 py-1">Контакты</a></li>
+                <li><a href="../faqs.html" class="hover:text-accent-light transition duration-300 py-1">Вопросы и ответы</a></li>
+            </ul>
+            <div class="mt-3 md:mt-0 flex items-center space-x-4">
+                <a href="../contact.html" class="flex items-center bg-accent-light text-primary-dark font-semibold py-2 px-4 rounded-full hover:bg-accent-dark transition duration-300 shadow-md">
+                    Забронировать сейчас
+                </a>
+                <div class="language-switcher-container" role="region" aria-label="Выбор языка">
+                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://flagcdn.com/ru.svg" alt="Русский флаг" class="flag-icon" width="20" height="15">
+                        <span class="ml-2">Русский</span>
+                        <svg class="w-4 h-4 ml-1 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
+                        <li role="none"><a href="../tour-pyramids-private.html" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15"> English</a></li>
+                        <li role="none"><a href="../ar/tour-pyramids-private.html" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15"> العربية</a></li>
+                        <li role="none"><a href="../ru/tour-pyramids-private.html" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15"> Русский</a></li>
+                        <li role="none"><a href="../it/tour-pyramids-private.html" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15"> Italiano</a></li>
+                        <li role="none"><a href="../de/tour-pyramids-private.html" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15"> Deutsch</a></li>
+                        <li role="none"><a href="../fr/tour-pyramids-private.html" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15"> Français</a></li>
+                        <li role="none"><a href="../ja/tour-pyramids-private.html" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="日本語" class="flag-icon" width="20" height="15"> 日本語</a></li>
+                        <li role="none"><a href="../ko/tour-pyramids-private.html" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15"> 한국어</a></li>
+                        <li role="none"><a href="../id/tour-pyramids-private.html" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15"> Bahasa Indonesia</a></li>
+                        <li role="none"><a href="../es/tour-pyramids-private.html" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15"> Español</a></li>
+                        <li role="none"><a href="../pt/tour-pyramids-private.html" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15"> Português</a></li>
+                        <li role="none"><a href="../zh/tour-pyramids-private.html" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15"> 中文</a></li>
+                        <li role="none"><a href="../tl/tour-pyramids-private.html" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15"> Tagalog</a></li>
+                        <li role="none"><a href="../hi/tour-pyramids-private.html" data-lang="hi" role="menuitem"><img src="https://flagcdn.com/in.svg" alt="Hindi" class="flag-icon" width="20" height="15"> Hindi</a></li>
+                        <li role="none"><a href="../nl/tour-pyramids-private.html" data-lang="nl" role="menuitem"><img src="https://flagcdn.com/nl.svg" alt="Dutch" class="flag-icon" width="20" height="15"> Dutch</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-6 py-16">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden relative">
+            <span class="sale-tag">Специальное предложение!</span>
+            <img src="../images/pyramids-private-tour.jpg" alt="Частный тур с гидом по Пирамидам Гизы и Сфинксу с профессиональной фотосессией" class="w-full h-96 object-cover">
+            <div class="p-8">
+                <h1 class="text-4xl font-extrabold text-primary-dark mb-4">📸 Поймайте волшебство: частный тур по пирамидам + профессиональная фотосессия</h1>
+                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                    Окунитесь в древнюю историю в этом захватывающем однодневном частном туре по Великим Пирамидам Гизы и Сфинксу под руководством увлеченного местного эксперта. Запечатлейте незабываемые моменты с помощью профессиональной фотосессии и услышьте настоящие истории, скрывающиеся за камнями. Этот эксклюзивный тур разработан как для фотографов, так и для любителей истории, чтобы вы получили лучшие снимки и глубокое понимание этих знаковых чудес.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-primary-dark mb-3">Основные моменты тура:</h2>
+                        <ul class="text-gray-700 list-disc list-inside space-y-2">
+                            <li>✔️ Исследуйте Великую пирамиду Гизы, Пирамиду Хефрена и Пирамиду Микерина.</li>
+                            <li>✔️ Подойдите вплотную к загадочному Сфинксу и посетите Храм Долины.</li>
+                            <li>✔️ Откройте для себя скрытые места для фотосъемки на смотровой площадке в пустыне для захватывающих снимков.</li>
+                            <li>✔️ Наслаждайтесь специальной профессиональной фотосессией на протяжении всего тура.</li>
+                            <li>✔️ Узнайте увлекательные исторические факты и местные сведения от вашего опытного гида.</li>
+                            <li>✔️ Комфортабельный, частный транспорт с кондиционером от вашего отеля в Каире/Гизе.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold text-primary-dark mb-3">Включено:</h2>
+                        <ul class="text-gray-700 list-disc list-inside space-y-2">
+                            <li>✅ Частный гид-египтолог.</li>
+                            <li>✅ Все входные билеты в комплекс Пирамид и на территорию Сфинкса.</li>
+                            <li>✅ Частный, современный автомобиль с кондиционером и профессиональным водителем.</li>
+                            <li>✅ Услуги профессионального фотографа (цифровые фотографии предоставляются после тура).</li>
+                            <li>✅ Бутилированная вода во время тура.</li>
+                        </ul>
+                        <h2 class="text-2xl font-semibold text-primary-dark mt-6 mb-3">Не включено:</h2>
+                        <ul class="text-gray-700 list-disc list-inside space-y-2">
+                            <li>❌ Чаевые (рекомендуется).</li>
+                            <li>❌ Поездки на верблюде или лошади (по желанию, можно организовать на месте).</li>
+                            <li>❌ Вход внутрь любой из пирамид (по желанию, дополнительный билет на месте).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-6 mt-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-lg text-gray-800 font-semibold">Продолжительность:</span>
+                        <span class="text-xl font-bold text-primary-dark">4-5 часов</span>
+                    </div>
+
+                    <div class="mb-4" data-tour-id="pyramids-private">
+                        <label class="block text-xl font-semibold text-gray-800 mb-2">Тип участника:</label>
+                        <div class="selection-group">
+                            <button class="type-btn" data-type="solo">Один путешественник</button>
+                            <button class="type-btn" data-type="couple">Пара / Два человека</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-xl font-semibold text-gray-800 mb-2">Выберите желаемую дату:</label>
+                        <input type="date" class="date-input">
+                    </div>
+
+                    <div class="flex items-center justify-between mt-6 mb-6">
+                        <span class="text-2xl font-bold text-accent-dark">Общая стоимость: <span class="display-price">$0.00 USD</span></span>
+                    </div>
+
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="hossam0114@hotmail.com"> <input type="hidden" name="item_name" value="Private Pyramids Tour">
+                        <input type="hidden" name="amount" value="0.00"> <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="on0" value="Booking Type">
+                        <input type="hidden" name="os0" value=""> <input type="hidden" name="on1" value="Booking Date">
+                        <input type="hidden" name="os1" value=""> <input type="hidden" name="return" value="https://your-domain.com/payment-success.html"> <input type="hidden" name="cancel_return" value="https://your-domain.com/tours.html"> <input type="hidden" name="no_shipping" value="1">
+                        <button type="submit" class="paypal-buy-button" disabled>Выберите опции, чтобы забронировать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary-dark text-white py-10 mt-auto">
+        <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-accent-light mb-2">Egypt Photography Tours</h3>
+                <p class="text-sm">&copy; 2025 Egypt Photography Tours. Все права защищены.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="font-semibold text-accent-light mb-2">Быстрые ссылки</h4>
+                <ul class="text-sm">
+                    <li><a href="../index.html" class="hover:text-accent-light transition duration-300">Главная</a></li>
+                    <li><a href="../about.html" class="hover:text-accent-light transition duration-300">О нас</a></li>
+                    <li><a href="../tours.html" class="hover:text-accent-light transition duration-300">Наши туры</a></li>
+                    <li><a href="../gallery.html" class="hover:text-accent-light transition duration-300">Галерея</a></li>
+                    <li><a href="../contact.html" class="hover:text-accent-light transition duration-300">Контакты</a></li>
+                    <li><a href="../faqs.html" class="hover:text-accent-light transition duration-300">Вопросы и ответы</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-accent-light mb-2">Свяжитесь с нами</h4>
+                <p class="text-sm">Эл. почта: <a href="mailto:info@egyptphotographytours.com" class="hover:text-accent-light transition duration-300">info@egyptphotographytours.com</a></p>
+                <p class="text-sm">Адрес: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+                <div class="flex justify-center md:justify-start space-x-4 mt-3">
+                    <a href="https://www.facebook.com/EgyptPhotographyTours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hossam_artistic/" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Egyptphotographytours" target="_blank" class="text-white hover:text-accent-light transition duration-300 text-2xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Define prices for each tour (ADJUST THESE PRICES AS NEEDED)
+        const tourPrices = {
+            'pyramids-private': { solo: 150.00, couple: 250.00 },
+            'cairo-giza-2day': { solo: 350.00, couple: 600.00 },
+            'alexandria-tour': { solo: 220.00, couple: 380.00 },
+            'egypt-discovery-7day': { solo: 1900.00, couple: 3500.00 }
+        };
+
+        const tourId = 'pyramids-private'; // Define the specific tour ID for this page
+
+        const typeButtons = document.querySelectorAll('.type-btn');
+        const dateInput = document.querySelector('.date-input');
+        const displayPriceElement = document.querySelector('.display-price');
+        const paypalForm = document.querySelector('.paypal-form');
+        const buyButton = paypalForm.querySelector('.paypal-buy-button');
+
+        const itemNameInput = paypalForm.querySelector('input[name="item_name"]');
+        const amountInput = paypalForm.querySelector('input[name="amount"]');
+        const os0Input = paypalForm.querySelector('input[name="os0"]');
+        const os1Input = paypalForm.querySelector('input[name="os1"]');
+
+        let selectedType = null;
+        let selectedDate = null;
+
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        const minDate = `${yyyy}-${mm}-${dd}`;
+        dateInput.min = minDate;
+
+        function updateBuyButtonState() {
+            if (selectedType && selectedDate) {
+                buyButton.removeAttribute('disabled');
+                buyButton.textContent = 'Забронировать сейчас через PayPal';
+            } else {
+                buyButton.setAttribute('disabled', 'true');
+                buyButton.textContent = 'Выберите опции, чтобы забронировать';
+            }
+        }
+
+        function updatePriceAndPayPalForm() {
+            let currentPrice = 0;
+            if (selectedType && tourPrices[tourId]) {
+                currentPrice = tourPrices[tourId][selectedType];
+            }
+            displayPriceElement.textContent = `$${currentPrice.toFixed(2)} USD`;
+            amountInput.value = currentPrice.toFixed(2);
+        }
+
+        function updatePayPalCustomFields() {
+            const baseItemName = "Private Pyramids Tour"; // Fixed base name for this specific tour
+
+            if (selectedType) {
+                os0Input.value = selectedType.charAt(0).toUpperCase() + selectedType.slice(1);
+                itemNameInput.value = `${baseItemName} (${os0Input.value})`;
+            } else {
+                os0Input.value = '';
+                itemNameInput.value = baseItemName;
+            }
+
+            if (selectedDate) {
+                os1Input.value = selectedDate;
+            } else {
+                os1Input.value = '';
+            }
+        }
+
+        typeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                selectedType = button.dataset.type;
+                typeButtons.forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+                updatePriceAndPayPalForm();
+                updatePayPalCustomFields();
+                updateBuyButtonState();
+            });
+        });
+
+        dateInput.addEventListener('change', () => {
+            selectedDate = dateInput.value;
+            updatePayPalCustomFields();
+            updateBuyButtonState();
+        });
+
+        // Initial updates
+        updatePriceAndPayPalForm();
+        updatePayPalCustomFields();
+        updateBuyButtonState();
+
+        // Language switcher functionality
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            return path.split('/').pop() || 'tour-pyramids-private.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButton = document.getElementById('language-toggle');
+            const langDropdown = document.querySelector('.language-dropdown');
+            
+            langButton.addEventListener('click', function(event) {
+                const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
+                langButton.setAttribute('aria-expanded', !isExpanded);
+                langDropdown.classList.toggle('show');
+                event.stopPropagation();
+            });
+            
+            langDropdown.addEventListener('click', function(event) {
+                const link = event.target.closest('a');
+                if (link) {
+                    event.preventDefault();
+                    const selectedLang = link.getAttribute('data-lang');
+                    redirectToLanguage(selectedLang);
+                    
+                    langButton.setAttribute('aria-expanded', 'false');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
+                    langButton.setAttribute('aria-expanded', 'false');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            function redirectToLanguage(lang) {
+                const currentPage = getCurrentPage();
+                
+                if (lang === 'en') {
+                    window.location.href = `/${currentPage}`;
+                } else {
+                    window.location.href = `/${lang}/${currentPage}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
