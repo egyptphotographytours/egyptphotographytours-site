@@ -108,6 +108,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://flagcdn.com" crossorigin> <!-- Added preconnect for flagcdn.com -->
     
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -272,79 +273,68 @@
             margin-left: 10px;
         }
 
-        /* Custom styles for language switcher dropdown to integrate with existing design */
-        .language-switcher-dropdown {
+        /* Language switcher styles (from contact.html reference) */
+        .language-switcher-container {
             position: relative;
             display: inline-block;
         }
-        .language-switcher-dropdown-content {
+        .language-dropdown {
             display: none;
             position: absolute;
-            background-color: #1a202c; /* Matches header background */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 10;
-            border-radius: 0.375rem; /* rounded corners from existing buttons */
-            overflow: hidden;
-            top: 100%; /* Position below the button */
-            right: 0; /* Align to the right of the button */
-            margin-top: 0.5rem; /* Space below the button */
-            text-align: left;
-
-            /* Make dropdown shorter and scrollable */
-            max-height: 250px; /* Adjust as needed */
+            top: 100%;
+            right: 0;
+            background: #fff; /* White background */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            list-style: none;
+            margin: 5px 0 0 0; /* Ensures gap for stability */
+            padding: 5px 0;
+            min-width: 150px;
+            max-height: 300px; /* Shorter and scrollable */
             overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .language-switcher-dropdown-content a {
-            color: white;
-            padding: 8px 16px; /* Reduced padding */
-            text-decoration: none;
-            display: flex; /* Use flex to align flag and text */
-            align-items: center;
-            transition: background-color 0.2s;
-            font-size: 0.85rem; /* Slightly reduced font size */
-        }
-        .language-switcher-dropdown-content a:hover {
-            background-color: #2C3E50; /* A slightly lighter shade for hover */
-            color: #FFD700; /* Accent color on hover */
-        }
-        .language-switcher-dropdown:hover .language-switcher-dropdown-content {
+        .language-dropdown.show {
             display: block;
         }
-        .language-switcher-button {
+        .language-dropdown li {
+            margin: 0;
+        }
+        .language-dropdown a {
+            padding: 8px 15px;
             display: flex;
             align-items: center;
-            background-color: transparent; /* No background to blend with nav */
-            color: white;
-            padding: 8px 12px;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
+            gap: 10px;
+            text-decoration: none;
+            color: #333; /* Dark text for contrast on white background */
+            transition: background-color 0.2s;
         }
-        .language-switcher-button:hover {
-            color: #FFD700; /* Accent color on hover */
-            background-color: rgba(255, 215, 0, 0.1); /* Subtle hover background */
+        .language-dropdown a:hover {
+            background-color: #f0f0f0; /* Light hover background */
+            color: #2C3E50; /* Primary dark text on hover */
         }
+        .flag-icon {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+            flex-shrink: 0; /* Prevent flag from shrinking */
+        }
+
         .book-now-button {
-            background-color: #FFD700; /* Accent light */
-            color: #2C3E50; /* Primary dark */
+            background-color: #FFD700;
+            color: #2C3E50;
             font-weight: bold;
             padding: 8px 20px;
-            border-radius: 9999px; /* Full rounded */
+            border-radius: 9999px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
         .book-now-button:hover {
-            background-color: #E2B700; /* Accent dark */
+            background-color: #E2B700;
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-        .flag-icon {
-            margin-right: 8px; /* Space between flag and text */
-            font-size: 1.2em; /* Ensure flag is visible */
         }
     </style>
 </head>
@@ -370,33 +360,34 @@
                 <li><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1">FAQs</a></li>
             </ul>
             <div class="mt-3 md:mt-0 flex items-center space-x-4">
-                <!-- Book Now Button (moved to the left) -->
+                <!-- Book Now Button -->
                 <a href="#booking-section" class="book-now-button">Book Now</a>
 
-                <!-- Language Switcher (moved to the right, added ml-4 for spacing) -->
-                <div class="language-switcher-dropdown ml-4">
-                    <button id="langButton" class="language-switcher-button">
+                <!-- Language Switcher (Integrated from reference) -->
+                <div class="language-switcher-container ml-4" role="region" aria-label="Language Selector">
+                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
                         <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 018.67 15.5c-3.24 0-6.026-2.071-6.97-4.14M20 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        English
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <img id="current-flag-icon" src="https://flagcdn.com/us.svg" alt="U.S. Flag" class="flag-icon" width="20" height="15" loading="lazy">
+                        <span id="current-lang-code" class="ml-1 text-sm">EN</span>
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="language-switcher-dropdown-content">
-                        <a href="/en/tour-egypt-discovery-7day.html" lang="en"><span class="flag-icon">🇬🇧</span>English</a>
-                        <a href="/ar/tour-egypt-discovery-7day.html" lang="ar"><span class="flag-icon">🇪🇬</span>العربية (Arabic)</a>
-                        <a href="/es/tour-egypt-discovery-7day.html" lang="es"><span class="flag-icon">🇪🇸</span>Español (Spanish)</a>
-                        <a href="/tl/tour-egypt-discovery-7day.html" lang="tl"><span class="flag-icon">🇵🇭</span>Tagalog</a>
-                        <a href="/ja/tour-egypt-discovery-7day.html" lang="ja"><span class="flag-icon">🇯🇵</span>日本語 (Japanese)</a>
-                        <a href="/ko/tour-egypt-discovery-7day.html" lang="ko"><span class="flag-icon">🇰🇷</span>한국어 (Korean)</a>
-                        <a href="/zh/tour-egypt-discovery-7day.html" lang="zh"><span class="flag-icon">🇨🇳</span>中文 (Chinese)</a>
-                        <a href="/nl/tour-egypt-discovery-7day.html" lang="nl"><span class="flag-icon">🇳🇱</span>Nederlands (Dutch)</a>
-                        <a href="/hi/tour-egypt-discovery-7day.html" lang="hi"><span class="flag-icon">🇮🇳</span>हिन्दी (Indian)</a>
-                        <a href="/it/tour-egypt-discovery-7day.html" lang="it"><span class="flag-icon">🇮🇹</span>Italiano (Italian)</a>
-                        <a href="/de/tour-egypt-discovery-7day.html" lang="de"><span class="flag-icon">🇩🇪</span>Deutsch (German)</a>
-                        <a href="/fr/tour-egypt-discovery-7day.html" lang="fr"><span class="flag-icon">🇫🇷</span>Français (French)</a>
-                        <a href="/pt/tour-egypt-discovery-7day.html" lang="pt"><span class="flag-icon">🇵🇹</span>Português (Portuguese)</a>
-                        <a href="/id/tour-egypt-discovery-7day.html" lang="id"><span class="flag-icon">🇮🇩</span>Bahasa Indonesia (Indonesian)</a>
-                        <a href="/ru/tour-egypt-discovery-7day.html" lang="ru"><span class="flag-icon">🇷🇺</span>Русский (Russian)</a>
-                    </div>
+                    <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
+                        <li role="none"><a href="/tour-egypt-discovery-7day.html" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English Flag" class="flag-icon" width="20" height="15" loading="lazy"> English</a></li>
+                        <li role="none"><a href="/ar/tour-egypt-discovery-7day.html" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="Arabic Flag" class="flag-icon" width="20" height="15" loading="lazy"> العربية (Arabic)</a></li>
+                        <li role="none"><a href="/es/tour-egypt-discovery-7day.html" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Spanish Flag" class="flag-icon" width="20" height="15" loading="lazy"> Español (Spanish)</a></li>
+                        <li role="none"><a href="/tl/tour-egypt-discovery-7day.html" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog Flag" class="flag-icon" width="20" height="15" loading="lazy"> Tagalog</a></li>
+                        <li role="none"><a href="/ja/tour-egypt-discovery-7day.html" data-lang="ja" role="menuitem"><img src="https://flagcdn.com/jp.svg" alt="Japanese Flag" class="flag-icon" width="20" height="15" loading="lazy"> 日本語 (Japanese)</a></li>
+                        <li role="none"><a href="/ko/tour-egypt-discovery-7day.html" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="Korean Flag" class="flag-icon" width="20" height="15" loading="lazy"> 한국어 (Korean)</a></li>
+                        <li role="none"><a href="/zh/tour-egypt-discovery-7day.html" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="Chinese Flag" class="flag-icon" width="20" height="15" loading="lazy"> 中文 (Chinese)</a></li>
+                        <li role="none"><a href="/nl/tour-egypt-discovery-7day.html" data-lang="nl" role="menuitem"><img src="https://flagcdn.com/nl.svg" alt="Dutch Flag" class="flag-icon" width="20" height="15" loading="lazy"> Nederlands (Dutch)</a></li>
+                        <li role="none"><a href="/hi/tour-egypt-discovery-7day.html" data-lang="hi" role="menuitem"><img src="https://flagcdn.com/in.svg" alt="Indian Flag" class="flag-icon" width="20" height="15" loading="lazy"> हिन्दी (Indian)</a></li>
+                        <li role="none"><a href="/it/tour-egypt-discovery-7day.html" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italian Flag" class="flag-icon" width="20" height="15" loading="lazy"> Italiano (Italian)</a></li>
+                        <li role="none"><a href="/de/tour-egypt-discovery-7day.html" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="German Flag" class="flag-icon" width="20" height="15" loading="lazy"> Deutsch (German)</a></li>
+                        <li role="none"><a href="/fr/tour-egypt-discovery-7day.html" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="French Flag" class="flag-icon" width="20" height="15" loading="lazy"> Français (French)</a></li>
+                        <li role="none"><a href="/pt/tour-egypt-discovery-7day.html" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Portuguese Flag" class="flag-icon" width="20" height="15" loading="lazy"> Português (Portuguese)</a></li>
+                        <li role="none"><a href="/id/tour-egypt-discovery-7day.html" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Indonesian Flag" class="flag-icon" width="20" height="15" loading="lazy"> Bahasa Indonesia (Indonesian)</a></li>
+                        <li role="none"><a href="/ru/tour-egypt-discovery-7day.html" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Russian Flag" class="flag-icon" width="20" height="15" loading="lazy"> Русский (Russian)</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -420,11 +411,12 @@
                             <ul class="text-gray-700 list-disc pl-6 space-y-3">
                                 <li>Professional photography in each location (edited high-resolution photos)</li>
                                 <li>Private, air-conditioned transportation throughout the tour</li>
-                                <li>Transfers between Cairo, Giza, Alexandria & Luxor </li>
-                                <li>Egyptologist guide at historical sites</li>
+                                <li>Transfers between Cairo, Giza, Alexandria & Luxor by vehicle/train</li>
+                                <li>English-speaking Egyptologist guide at historical sites</li>
                                 <li>Entrance tickets to all mentioned attractions</li>
+                                <li>Accommodation in 4★ or boutique hotels with daily breakfast</li>
                                 <li>Bottled water during excursions</li>
-                                <li>Assistance with best recommendations during the trip</li>
+                                <li>Assistance throughout the trip</li>
                             </ul>
                         </div>
                         
@@ -621,12 +613,13 @@
                                 <h3 class="font-semibold text-blue-800 mb-2">What's Included:</h3>
                                 <ul class="text-sm text-gray-700 space-y-1">
                                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Professional photography in each location (edited high-resolution photos)</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Domestic transportation throughout the tour</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Transfers between Cairo, Giza, Alexandria & Luxor </li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private Egyptologist guide at historical sites</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Private, air-conditioned transportation throughout the tour</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Transfers between Cairo, Giza, Alexandria & Luxor by vehicle/train</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>English-speaking Egyptologist guide at historical sites</li>
                                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Entrance tickets to all mentioned attractions</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Accommodation in 4★ or boutique hotels with daily breakfast</li>
                                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Bottled water during excursions</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Assistance with best recommendations during the trip</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Assistance throughout the trip</li>
                                 </ul>
                             </div>
 
@@ -783,62 +776,120 @@
         updateBuyButtonState();
 
 
-        // New JavaScript for Language Switcher
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentPath = window.location.pathname;
-            const pathParts = currentPath.split('/');
-            let initialLang = 'en'; // Default to English
+        // Language switcher JavaScript (from contact.html reference)
+        const languageDetails = {
+            'en': { name: 'English', code: 'EN', flagUrl: 'https://flagcdn.com/us.svg' },
+            'ar': { name: 'العربية', code: 'AR', flagUrl: 'https://flagcdn.com/eg.svg' },
+            'es': { name: 'Español', code: 'ES', flagUrl: 'https://flagcdn.com/es.svg' },
+            'tl': { name: 'Tagalog', code: 'TL', flagUrl: 'https://flagcdn.com/ph.svg' },
+            'ja': { name: '日本語', code: 'JA', flagUrl: 'https://flagcdn.com/jp.svg' }, // Corrected Japanese entry
+            'ko': { name: '한국어', code: 'KO', flagUrl: 'https://flagcdn.com/kr.svg' },
+            'zh': { name: '中文', code: 'ZH', flagUrl: 'https://flagcdn.com/cn.svg' },
+            'nl': { name: 'Nederlands', code: 'NL', flagUrl: 'https://flagcdn.com/nl.svg' },
+            'hi': { name: 'हिन्दी (Indian)', code: 'HI', flagUrl: 'https://flagcdn.com/in.svg' }, // Indian (Hindi)
+            'it': { name: 'Italiano', code: 'IT', flagUrl: 'https://flagcdn.com/it.svg' },
+            'de': { name: 'Deutsch', code: 'DE', flagUrl: 'https://flagcdn.com/de.svg' },
+            'fr': { name: 'Français', code: 'FR', flagUrl: 'https://flagcdn.com/fr.svg' },
+            'pt': { name: 'Português', code: 'PT', flagUrl: 'https://flagcdn.com/pt.svg' },
+            'id': { name: 'Bahasa Indonesia', code: 'ID', flagUrl: 'https://flagcdn.com/id.svg' },
+            'ru': { name: 'Русский', code: 'RU', flagUrl: 'https://flagcdn.com/ru.svg' }
+        };
 
-            // Check if the URL already contains a language code (e.g., /en/, /ar/)
-            // We assume the language code is the first segment after the root
-            if (pathParts.length > 1 && pathParts[1].length === 2 && pathParts[1] !== 'tour-egypt-discovery-7day.html') {
-                initialLang = pathParts[1];
-            }
-
-            // Set initial language for the document
-            document.documentElement.lang = initialLang;
-            updateLangButtonText(initialLang);
-
-            // Add event listener to handle clicks on language links
-            const langDropdownContent = document.querySelector('.language-switcher-dropdown-content');
-            if (langDropdownContent) {
-                langDropdownContent.addEventListener('click', (event) => {
-                    const target = event.target;
-                    if (target.tagName === 'A' && target.hasAttribute('lang')) {
-                        const selectedLang = target.getAttribute('lang');
-                        // Update the button text to reflect the chosen language
-                        updateLangButtonText(selectedLang);
-                        // The actual navigation will be handled by the href attribute of the <a> tag
-                    }
-                });
-            }
-        });
-
-        function updateLangButtonText(lang) {
-            const langButton = document.getElementById('langButton');
-            if (langButton) {
-                const languageDetails = {
-                    'en': { name: 'English', flag: '🇬🇧' },
-                    'ar': { name: 'العربية', flag: '🇪🇬' },
-                    'es': { name: 'Español', flag: '🇪🇸' },
-                    'tl': { name: 'Tagalog', flag: '🇵🇭' },
-                    'ja': { name: '日本語', flag: '🇯🇵' },
-                    'ko': { name: '한국어', flag: '🇰🇷' },
-                    'zh': { name: '中文', flag: '🇨🇳' },
-                    'nl': { name: 'Nederlands', flag: '🇳🇱' },
-                    'hi': { name: 'हिन्दी (Indian)', flag: '🇮🇳' },
-                    'it': { name: 'Italiano', flag: '🇮🇹' },
-                    'de': { name: 'Deutsch', flag: '🇩🇪' },
-                    'fr': { name: 'Français', flag: '🇫🇷' },
-                    'pt': { name: 'Português', flag: '🇵🇹' },
-                    'id': { name: 'Bahasa Indonesia', flag: '🇮🇩' },
-                    'ru': { name: 'Русский', flag: '🇷🇺' }
-                };
-                const currentLangDetails = languageDetails[lang] || languageDetails['en']; // Fallback to English
-
-                langButton.innerHTML = `<svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 018.67 15.5c-3.24 0-6.026-2.071-6.97-4.14M20 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> <span class="flag-icon">${currentLangDetails.flag}</span>${currentLangDetails.name} <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>`;
+        function getBasePageName() {
+            // Hardcode the base page name for this specific file
+            return "tour-egypt-discovery-7day";
+        }
+        
+        function redirectToLanguage(lang) {
+            const basePage = getBasePageName();
+            if (lang === 'en') {
+                window.location.href = `/${basePage}.html`;
+            } else {
+                window.location.href = `/${lang}/${basePage}.html`;
             }
         }
+
+        function updateLanguageButtonDisplay(lang) {
+            const currentFlagIcon = document.getElementById('current-flag-icon');
+            const currentLangCodeSpan = document.getElementById('current-lang-code');
+            // The langButton is just for the event listener, not display updates here
+            // const langButton = document.getElementById('language-toggle'); 
+
+            if (currentFlagIcon && currentLangCodeSpan) {
+                const currentLangDetails = languageDetails[lang] || languageDetails['en'];
+                currentFlagIcon.src = currentLangDetails.flagUrl;
+                currentFlagIcon.alt = `${currentLangDetails.name} Flag`;
+                currentLangCodeSpan.textContent = currentLangDetails.code;
+            }
+        }
+
+        function setupLanguageSwitcher() {
+            const langButton = document.getElementById('language-toggle');
+            const langDropdown = document.querySelector('.language-dropdown');
+            
+            // Determine initial language from URL
+            let initialLang = 'en';
+            const path = window.location.pathname;
+            const parts = path.split('/');
+            // Check for a 2-letter language code which is not the start of the page name itself
+            if (parts.length > 1 && parts[1].length === 2 && parts[1] !== getBasePageName().substring(0, 2) && languageDetails[parts[1]]) {
+                initialLang = parts[1];
+            }
+            
+            document.documentElement.lang = initialLang;
+            updateLanguageButtonDisplay(initialLang); // Update the displayed flag and code
+
+            if (langButton && langDropdown) {
+                console.log('Language button and dropdown elements found. Setting up event listeners.');
+
+                langButton.addEventListener('click', function(event) {
+                    console.log('Language toggle button clicked.');
+                    const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
+                    langButton.setAttribute('aria-expanded', !isExpanded);
+                    langDropdown.classList.toggle('show');
+                    console.log('Dropdown "show" class toggled:', langDropdown.classList.contains('show'));
+                    event.stopPropagation(); 
+                });
+                
+                langDropdown.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link) {
+                        event.preventDefault(); 
+                        const selectedLang = link.getAttribute('data-lang');
+                        console.log('Language selected:', selectedLang);
+                        redirectToLanguage(selectedLang);
+                        
+                        langButton.setAttribute('aria-expanded', 'false');
+                        langDropdown.classList.remove('show');
+                        console.log('Dropdown closed after selection.');
+                    }
+                    event.stopPropagation(); // Stop propagation to prevent document click from closing it immediately after selection
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
+                        if (langDropdown.classList.contains('show')) {
+                            console.log('Clicked outside language switcher, closing dropdown.');
+                            langButton.setAttribute('aria-expanded', 'false');
+                            langDropdown.classList.remove('show');
+                        }
+                    }
+                });
+            } else {
+                console.error('Failed to find language switcher elements (button or dropdown). Please check IDs and classes.');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded for tour-egypt-discovery-7day.html. Initializing scripts.');
+            // Initial updates for booking section
+            updatePriceAndPayPalForm();
+            updatePayPalCustomFields();
+            updateBuyButtonState();
+
+            // Setup language switcher
+            setupLanguageSwitcher();
+        });
     </script>
 </body>
 </html>
