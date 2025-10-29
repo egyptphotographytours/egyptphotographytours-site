@@ -332,8 +332,7 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
-            /* Added transform to move entire content block upward */
-            transform: translateY(-20%);
+            /* Removed the background overlay */
         }
         /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
         .hero-title {
@@ -362,14 +361,24 @@
                 font-size: 18px; /* Reduced from 20px */
             }
         }
-        .hero-buttons {
+        
+        /* NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES */
+        .hero-buttons-section {
+            background-color: #f8f8f8;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+        }
+        .hero-buttons-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 16px;
+            max-width: 600px;
+            margin: 0 auto;
         }
         @media (min-width: 640px) {
-            .hero-buttons {
+            .hero-buttons-container {
                 flex-direction: row;
             }
         }
@@ -393,16 +402,17 @@
         .hero-button-secondary {
             background-color: white;
             color: var(--primary-dark);
+            border: 2px solid var(--accent-light);
         }
         .hero-button-secondary:hover {
-            background-color: #e5e7eb;
+            background-color: #f3f4f6;
             transform: scale(1.05);
         }
         
         /* SLIDER NAVIGATION CONTROLS - FIXED POSITION */
         .slider-controls {
             position: absolute;
-            bottom: 40px; /* Increased from 20px to account for moved content */
+            bottom: 20px; /* Moved further down */
             left: 0;
             right: 0;
             display: flex;
@@ -976,19 +986,11 @@
                 <div class="hero-slide active">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Capture Egypt’s Magic-Make Every Moment a Masterpiece.
+                            Capture Egypt's Magic - Make Every Moment a Masterpiece
                         </h1>
                         <p class="hero-subtitle">
                             Professional photography and history tours to Egypt's most iconic landmarks. Expert guides, exclusive access, and unforgettable experiences await.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="tours.html" class="hero-button hero-button-primary">
-                                Explore Our Exclusive Amazing Tours
-                            </a>
-                            <a href="contact.html" class="hero-button hero-button-secondary">
-                                Book Your Luxury Egypt Tour Now!
-                            </a>
-                        </div>
                     </div>
                 </div>
                 <div class="hero-slide">
@@ -997,34 +999,18 @@
                             Exclusive Access to Egypt's Hidden Gems
                         </h1>
                         <p class="hero-subtitle">
-                            Discover secret vantage points and capture breathtaking shots away from the crowds with our expert local tour guides in egypt.
+                            Discover secret vantage points and capture breathtaking shots away from the crowds with our expert local tour guides in Egypt.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="tours.html" class="hero-button hero-button-primary">
-                                Explore Our Exclusive Amazing Tours
-                            </a>
-                            <a href="contact.html" class="hero-button hero-button-secondary">
-                                Book Your Luxury Egypt Tour Now!
-                            </a>
-                        </div>
                     </div>
                 </div>
                 <div class="hero-slide">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Your Gateway to Egypt’s Most Breathtaking Tours
+                            Your Gateway to Egypt's Most Breathtaking Tours
                         </h1>
                         <p class="hero-subtitle">
                             Learn from professional photographers and guides while exploring the pyramids, temples, and landscapes of Egypt.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="tours.html" class="hero-button hero-button-primary">
-                                Explore Our Exclusive Amazing Tours
-                            </a>
-                            <a href="contact.html" class="hero-button hero-button-secondary">
-                                Book Your Luxury Egypt Tour Now!
-                            </a>
-                        </div>
                     </div>
                 </div>
                 <div class="hero-slide">
@@ -1035,14 +1021,6 @@
                         <p class="hero-subtitle">
                             From golden hour at the pyramids to Nile sunsets, capture Egypt's magic with our guided photography and history experiences.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="tours.html" class="hero-button hero-button-primary">
-                                Explore Our Exclusive Amazing Tours
-                            </a>
-                            <a href="contact.html" class="hero-button hero-button-secondary">
-                                Book Your Luxury Egypt Tour Now!
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1062,6 +1040,20 @@
                     <div class="slider-dot" data-slide="1"></div>
                     <div class="slider-dot" data-slide="2"></div>
                     <div class="slider-dot" data-slide="3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES -->
+        <section class="hero-buttons-section">
+            <div class="container">
+                <div class="hero-buttons-container">
+                    <a href="tours.html" class="hero-button hero-button-primary">
+                        Explore Our Exclusive Amazing Tours
+                    </a>
+                    <a href="contact.html" class="hero-button hero-button-secondary">
+                        Book Your Luxury Egypt Tour Now!
+                    </a>
                 </div>
             </div>
         </section>
@@ -1108,7 +1100,7 @@
                         <p class="card-text">Your peace of mind is our priority. We handle all the intricate details — from luxurious accommodations and private, air-conditioned transport to all permits and entrance fees. Our commitment to <strong>safe Egypt tours</strong> means you can focus entirely on your photography and cultural immersion. Enjoy a <strong>hassle-free Egypt photography adventure</strong> from start to finish.</p>
                     </div>
                      <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
+                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253"></path></svg>
                         <h3 class="card-title">Authentic Cultural Immersion</h3>
                         <p class="card-text">Beyond just capturing stunning photographs, our tours offer deep <strong>authentic cultural immersion in Egypt</strong>. Engage with locals, explore traditional markets, and savor authentic cuisine. This holistic experience ensures your photographs tell a richer story, reflecting the true spirit of Egypt and its people.</p>
                     </div>
