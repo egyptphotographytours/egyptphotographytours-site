@@ -277,7 +277,7 @@
             }
         }
         
-        /* LIGHTER HERO SECTION */
+        /* HERO SECTION WITHOUT OVERLAY */
         .hero-section {
             position: relative;
             background-size: cover;
@@ -290,15 +290,10 @@
             padding: 24px;
             background-image: url('images/hero-image.jpg');
         }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(255, 255, 255, 0.7); /* Light overlay instead of dark */
-        }
         .hero-content {
             position: relative;
             z-index: 10;
-            color: #1a202c; /* Dark text for better contrast on light background */
+            color: white; /* Changed to white for better contrast on dark images */
             max-width: 960px;
             margin: 0 auto;
         }
@@ -307,8 +302,8 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 16px;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Light shadow for better contrast */
-            color: #1a202c; /* Dark text for better contrast */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Darker shadow for better text visibility */
+            color: white;
         }
         @media (min-width: 768px) {
             .hero-title {
@@ -318,8 +313,8 @@
         .hero-subtitle {
             font-size: 18px;
             margin-bottom: 32px;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Light shadow for better contrast */
-            color: #2d3748; /* Slightly lighter than title for hierarchy */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Darker shadow for better text visibility */
+            color: white;
         }
         @media (min-width: 768px) {
             .hero-subtitle {
@@ -355,11 +350,11 @@
             transform: scale(1.05);
         }
         .hero-button-secondary {
-            background-color: var(--primary-dark);
-            color: white;
+            background-color: white;
+            color: var(--primary-dark);
         }
         .hero-button-secondary:hover {
-            background-color: #2d3748;
+            background-color: #e5e7eb;
             transform: scale(1.05);
         }
         
@@ -880,7 +875,6 @@
 
     <main class="main">
         <section class="hero-section">
-            <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1 class="hero-title">
                     Capture Egypt's Timeless Beauty Through Your Lens
