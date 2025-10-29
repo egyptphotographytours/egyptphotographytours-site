@@ -332,30 +332,34 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
-            /* Removed the background overlay */
+            /* Added transform to move entire content block upward */
+            transform: translateY(-20%);
         }
+        /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
         .hero-title {
-            font-size: 48px;
-            font-weight: 800;
+            font-size: 32px; /* Reduced from 48px */
+            font-weight: 700; /* Slightly reduced from 800 */
             line-height: 1.2;
-            margin-bottom: 16px;
+            margin-bottom: 12px; /* Reduced from 16px */
             color: white;
             text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
+            margin-top: -40px; /* Added to move title higher */
         }
         @media (min-width: 768px) {
             .hero-title {
-                font-size: 72px;
+                font-size: 48px; /* Reduced from 72px */
+                margin-top: -60px; /* Added for larger screens */
             }
         }
         .hero-subtitle {
-            font-size: 18px;
-            margin-bottom: 32px;
+            font-size: 16px; /* Reduced from 18px */
+            margin-bottom: 24px; /* Reduced from 32px */
             color: white;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
         }
         @media (min-width: 768px) {
             .hero-subtitle {
-                font-size: 20px;
+                font-size: 18px; /* Reduced from 20px */
             }
         }
         .hero-buttons {
@@ -398,7 +402,7 @@
         /* SLIDER NAVIGATION CONTROLS - FIXED POSITION */
         .slider-controls {
             position: absolute;
-            bottom: 20px; /* Moved further down */
+            bottom: 40px; /* Increased from 20px to account for moved content */
             left: 0;
             right: 0;
             display: flex;
