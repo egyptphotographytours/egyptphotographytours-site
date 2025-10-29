@@ -174,6 +174,65 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         flex-direction: column;
         min-height: 100vh;
     }
+    
+    /* Compact header styles from contact page */
+    .compact-header {
+        padding: 0.5rem 0;
+    }
+    .compact-logo {
+        height: 40px;
+        width: auto;
+    }
+    .compact-nav {
+        padding: 0.4rem 0;
+    }
+    
+    .language-switcher-container {
+        position: relative;
+        display: inline-block;
+    }
+    .language-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        list-style: none;
+        margin: 5px 0 0 0;
+        padding: 5px 0;
+        min-width: 150px;
+        max-height: 300px;
+        overflow-y: auto;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .language-dropdown.show {
+        display: block;
+    }
+    .language-dropdown li {
+        margin: 0;
+    }
+    .language-dropdown a {
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.2s;
+    }
+    .language-dropdown a:hover {
+        background-color: #f0f0f0;
+    }
+    .flag-icon {
+        width: 20px;
+        height: 15px;
+        border-radius: 2px;
+        object-fit: cover;
+    }
+
     .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -202,25 +261,25 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         gap: 12px;
     }
     .logo-img {
-      height: 64px;
+      height: 40px; /* Updated to match contact page */
       width: auto;
       border-radius: 9999px;
     }
     .logo-link {
-        font-size: 36px;
+        font-size: 24px; /* Smaller font to match contact page */
         font-weight: 700;
         letter-spacing: -0.025em;
         color: var(--accent-light);
     }
     .header-text {
-        font-size: 18px;
+        font-size: 14px; /* Smaller text */
         font-style: italic;
         margin-top: 8px;
     }
     @media (min-width: 768px) {
         .header-text {
             margin-top: 0;
-            font-size: 20px;
+            font-size: 14px; /* Consistent smaller size */
         }
     }
     .navbar {
@@ -247,8 +306,8 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 24px;
-        font-size: 18px;
+        gap: 16px; /* Reduced gap */
+        font-size: 16px; /* Smaller font */
         font-weight: 500;
         list-style: none;
         padding: 0;
@@ -274,6 +333,8 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
             margin-top: 0;
         }
     }
+
+    /* Updated Hero Section - Lighter overlay and better text colors */
     .hero-section {
         position: relative;
         background-size: cover;
@@ -288,7 +349,7 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
     .hero-overlay {
         position: absolute;
         inset: 0;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay for clearer image */
     }
     .hero-content {
         position: relative;
@@ -302,8 +363,8 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         font-weight: 800;
         line-height: 1.2;
         margin-bottom: 16px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        color: var(--accent-light);
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Stronger shadow for better readability */
+        color: #FFFFFF; /* White color for main title */
     }
     @media (min-width: 768px) {
         .hero-title {
@@ -313,7 +374,8 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
     .hero-subtitle {
         font-size: 18px;
         margin-bottom: 32px;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        color: #F8F8F8; /* Light gray for subtitle */
     }
     @media (min-width: 768px) {
         .hero-subtitle {
@@ -356,6 +418,7 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         background-color: #e5e7eb;
         transform: scale(1.05);
     }
+
     .main-section {
         padding: 64px 0;
         text-align: center;
@@ -643,103 +706,6 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         font-size: 20px;
     }
     
-    /* Language Switcher Styles */
-    .language-switcher {
-        position: relative;
-        display: inline-block;
-    }
-    .language-dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #374151;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        min-width: 180px;
-        max-width: 220px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-        max-height: 300px;
-        overflow-y: auto;
-    }
-    .language-switcher:hover .language-dropdown {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    .language-item {
-        padding: 8px 12px;
-        display: flex;
-        align-items: center;
-        color: white;
-        text-decoration: none;
-        transition: background-color 0.2s ease;
-        border-bottom: 1px solid #4B5563;
-        font-size: 14px;
-        cursor: pointer;
-    }
-    .language-item:last-child {
-        border-bottom: none;
-    }
-    .language-item:hover {
-        background-color: #4B5563;
-    }
-    .language-item.active {
-        background-color: var(--accent-light);
-        color: var(--primary-dark);
-        font-weight: 600;
-    }
-    .flag-icon {
-        font-size: 16px;
-        margin-right: 8px;
-        min-width: 18px;
-    }
-    .language-text {
-        flex: 1;
-        font-size: 14px;
-    }
-    .current-language {
-        display: flex;
-        align-items: center;
-        padding: 6px 10px;
-        background: rgba(255, 215, 0, 0.1);
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-size: 14px;
-        border: 1px solid rgba(255, 215, 0, 0.3);
-    }
-    .current-language:hover {
-        background: rgba(255, 215, 0, 0.2);
-        border-color: rgba(255, 215, 0, 0.5);
-    }
-    .current-flag {
-        font-size: 16px;
-        margin-right: 6px;
-    }
-    .dropdown-arrow {
-        margin-left: 6px;
-        transition: transform 0.2s ease;
-    }
-    .language-switcher:hover .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-    .language-dropdown::-webkit-scrollbar {
-        width: 4px;
-    }
-    .language-dropdown::-webkit-scrollbar-track {
-        background: #4B5563;
-    }
-    .language-dropdown::-webkit-scrollbar-thumb {
-        background: #6B7280;
-        border-radius: 2px;
-    }
-    .language-dropdown::-webkit-scrollbar-thumb:hover {
-        background: #9CA3AF;
-    }
     img {
         max-width: 100%;
         height: auto;
@@ -761,13 +727,13 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
     
     .book-now-button {
         font-weight: 600;
-        padding: 10px 20px;
+        padding: 8px 16px; /* Smaller padding to match contact page */
         border-radius: 9999px;
         background-color: #FFD700;
         color: #1a202c;
         text-decoration: none;
         transition: all 0.3s ease;
-        font-size: 16px;
+        font-size: 14px; /* Smaller font */
         white-space: nowrap;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
@@ -775,102 +741,79 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         background-color: #E2B700;
         transform: scale(1.05);
     }
+
+    /* Focus styles for accessibility */
+    a:focus, button:focus, input:focus, textarea:focus {
+        outline: 2px solid #FFD700;
+        outline-offset: 2px;
+    }
   </style>
 </head>
-<body>
-    <header class="header">
-        <div class="container content">
-            <div class="logo-section">
-                <img src="images/egypt-photography-tours-logo.jpg"
+<body class="flex flex-col min-h-screen">
+    <!-- Updated Header matching contact page -->
+    <header class="bg-primary-dark text-white shadow-lg compact-header" role="banner">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <img src="images/egypt-photography-tours-logo.jpg" 
                      alt="Egypt Photography Tours Logo - Professional photography guide services for Pyramids and ancient sites"
-                     class="logo-img"
-                     loading="eager"
-                     width="64"
-                     height="64">
-                <a href="index.html" class="logo-link">Egypt Photography Tours</a>
+                     class="compact-logo rounded-full" 
+                     width="40" 
+                     height="40" 
+                     loading="eager" 
+                     decoding="async" 
+                     fetchpriority="high">
+                <a href="index.html" class="text-xl font-bold tracking-tight text-accent-light" aria-label="Home">Egypt Photography Tours</a>
             </div>
-            <p class="header-text italic">Capture the Magic of Egypt.</p>
+            <p class="text-sm hidden md:block italic">Capture the Wonders of Egypt</p>
         </div>
     </header>
 
-    <nav class="navbar">
-        <div class="container navbar-content">
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html">Home</a></li>
-                <li class="nav-link"><a href="about.html">About Us</a></li>
-                <li class="nav-link"><a href="tours.html">Our Tours</a></li>
-                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
-                <li class="nav-link"><a href="resources.html">Resources</a></li>
-                <li class="nav-link"><a href="blog.html">Blog</a></li>
-                <li class="nav-link"><a href="contact.html">Contact Us</a></li>
-                <li class="nav-link"><a href="faqs.html">FAQs</a></li>
+    <!-- Updated Navbar matching contact page -->
+    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50 compact-nav" role="navigation" aria-label="Main Navigation">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <ul class="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-6 text-base font-medium" role="menubar">
+                <li role="none"><a href="index.html" class="hover:text-accent-light transition duration-300 py-1 font-bold" role="menuitem" aria-current="page">Home</a></li>
+                <li role="none"><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">About Us</a></li>
+                <li role="none"><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Our Tours</a></li>
+                <li role="none"><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Gallery</a></li>
+                <li role="none"><a href="resources.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Resources</a></li>
+                <li role="none"><a href="blog.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Blog</a></li>
+                <li role="none"><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Contact Us</a></li>
+                <li role="none"><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">FAQs</a></li>
             </ul>
-            <div class="cta-container">
-                <a href="contact.html" class="book-now-button">Book Now</a>
-                <div class="language-switcher">
-                    <div class="current-language">
-                        <span class="current-flag">🇺🇸</span>
-                        <span>EN</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="language-dropdown">
-                        <a href="index.html" class="language-item active">
-                            <span class="flag-icon">🇺🇸</span>
-                            <span class="language-text">English</span>
-                        </a>
-                        <a href="ru/index.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
-                        </a>
-                        <a href="ar/index.html" class="language-item">
-                            <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
-                        </a>
-                        <a href="fr/index.html" class="language-item">
-                            <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
-                        </a>
-                        <a href="de/index.html" class="language-item">
-                            <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
-                        </a>
-                        <a href="es/index.html" class="language-item">
-                            <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
-                        </a>
-                        <a href="it/index.html" class="language-item">
-                            <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
-                        </a>
-                        <a href="zh/index.html" class="language-item">
-                            <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
-                        </a>
-                        <a href="ko/index.html" class="language-item">
-                            <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
-                        </a>
-                        <a href="pt/index.html" class="language-item">
-                            <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
-                        </a>
-                        <a href="id/index.html" class="language-item">
-                            <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
-                        </a>
-                        <a href="ja/index.html" class="language-item">
-                            <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
-                        </a>
-                    </div>
+            <div class="mt-2 md:mt-0 flex items-center space-x-3">
+                <a href="contact.html" class="flex items-center bg-accent-light text-primary-dark font-semibold py-1 px-3 rounded-full hover:bg-accent-dark transition duration-300 shadow-md text-sm">
+                    Book Now
+                </a>
+                <div class="language-switcher-container" role="region" aria-label="Language Selector">
+                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://flagcdn.com/us.svg" alt="U.S. Flag" class="flag-icon" width="20" height="15" loading="lazy">
+                        <span class="ml-1 text-sm">EN</span>
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <ul class="language-dropdown" role="menu" aria-labelledby="language-toggle">
+                        <li role="none"><a href="index.html" data-lang="en" role="menuitem"><img src="https://flagcdn.com/us.svg" alt="English" class="flag-icon" width="20" height="15" loading="lazy"> English</a></li>
+                        <li role="none"><a href="es/index.html" data-lang="es" role="menuitem"><img src="https://flagcdn.com/es.svg" alt="Español" class="flag-icon" width="20" height="15" loading="lazy"> Español</a></li>
+                        <li role="none"><a href="fr/index.html" data-lang="fr" role="menuitem"><img src="https://flagcdn.com/fr.svg" alt="Français" class="flag-icon" width="20" height="15" loading="lazy"> Français</a></li>
+                        <li role="none"><a href="it/index.html" data-lang="it" role="menuitem"><img src="https://flagcdn.com/it.svg" alt="Italiano" class="flag-icon" width="20" height="15" loading="lazy"> Italiano</a></li>
+                        <li role="none"><a href="zh/index.html" data-lang="zh" role="menuitem"><img src="https://flagcdn.com/cn.svg" alt="中文" class="flag-icon" width="20" height="15" loading="lazy"> 中文</a></li>
+                        <li role="none"><a href="ko/index.html" data-lang="ko" role="menuitem"><img src="https://flagcdn.com/kr.svg" alt="한국어" class="flag-icon" width="20" height="15" loading="lazy"> 한국어</a></li>
+                        <li role="none"><a href="tl/index.html" data-lang="tl" role="menuitem"><img src="https://flagcdn.com/ph.svg" alt="Tagalog" class="flag-icon" width="20" height="15" loading="lazy"> Tagalog</a></li>
+                        <li role="none"><a href="de/index.html" data-lang="de" role="menuitem"><img src="https://flagcdn.com/de.svg" alt="Deutsch" class="flag-icon" width="20" height="15" loading="lazy"> Deutsch</a></li>
+                        <li role="none"><a href="nl/index.html" data-lang="nl" role="menuitem"><img src="https://flagcdn.com/nl.svg" alt="Nederlands" class="flag-icon" width="20" height="15" loading="lazy"> Nederlands</a></li>
+                        <li role="none"><a href="ru/index.html" data-lang="ru" role="menuitem"><img src="https://flagcdn.com/ru.svg" alt="Русский" class="flag-icon" width="20" height="15" loading="lazy"> Русский</a></li>
+                        <li role="none"><a href="hi/index.html" data-lang="hi" role="menuitem"><img src="https://flagcdn.com/in.svg" alt="हिंदी" class="flag-icon" width="20" height="15" loading="lazy"> हिंदी</a></li>
+                        <li role="none"><a href="ar/index.html" data-lang="ar" role="menuitem"><img src="https://flagcdn.com/eg.svg" alt="العربية" class="flag-icon" width="20" height="15" loading="lazy"> العربية</a></li>
+                        <li role="none"><a href="pt/index.html" data-lang="pt" role="menuitem"><img src="https://flagcdn.com/pt.svg" alt="Português" class="flag-icon" width="20" height="15" loading="lazy"> Português</a></li>
+                        <li role="none"><a href="id/index.html" data-lang="id" role="menuitem"><img src="https://flagcdn.com/id.svg" alt="Bahasa Indonesia" class="flag-icon" width="20" height="15" loading="lazy"> Bahasa Indonesia</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </nav>
 
     <main class="main">
+        <!-- Updated Hero Section with clearer image and better text colors -->
         <section class="hero-section" style="background-image: url('images/hero-image.jpg');">
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -933,7 +876,7 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
                         <p class="card-text">Your peace of mind is our priority. We handle all the intricate details — from luxurious accommodations and private, air-conditioned transport to all permits and entrance fees. Our commitment to <strong>safe Egypt tours</strong> means you can focus entirely on your photography and cultural immersion. Enjoy a <strong>hassle-free Egypt photography adventure</strong> from start to finish.</p>
                     </div>
                      <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
+                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253"></path></svg>
                         <h3 class="card-title">Authentic Cultural Immersion</h3>
                         <p class="card-text">Beyond just capturing stunning photographs, our tours offer deep <strong>authentic cultural immersion in Egypt</strong>. Engage with locals, explore traditional markets, and savor authentic cuisine. This holistic experience ensures your photographs tell a richer story, reflecting the true spirit of Egypt and its people.</p>
                     </div>
@@ -1120,10 +1063,59 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         </div>
     </footer>
 
-    <script>
-        // ✅ LAZY LOADING IMAGES
+    <!-- Language Switcher JavaScript from contact page -->
+    <script defer>
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            const filename = path.split('/').pop() || 'index.html';
+            return filename.split('.')[0]; // returns 'index' or other page name
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img[loading="lazy"]');
+            // Language dropdown functionality
+            const langButton = document.getElementById('language-toggle');
+            const langDropdown = document.querySelector('.language-dropdown');
+            
+            if (langButton && langDropdown) {
+                langButton.addEventListener('click', function(event) {
+                    const isExpanded = langButton.getAttribute('aria-expanded') === 'true';
+                    langButton.setAttribute('aria-expanded', !isExpanded);
+                    langDropdown.classList.toggle('show');
+                    event.stopPropagation();
+                });
+                
+                langDropdown.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link) {
+                        event.preventDefault();
+                        const selectedLang = link.getAttribute('data-lang');
+                        redirectToLanguage(selectedLang);
+                        
+                        langButton.setAttribute('aria-expanded', 'false');
+                        langDropdown.classList.remove('show');
+                    }
+                });
+                
+                document.addEventListener('click', function(event) {
+                    if (!langButton.contains(event.target) && !langDropdown.contains(event.target)) {
+                        langButton.setAttribute('aria-expanded', 'false');
+                        langDropdown.classList.remove('show');
+                    }
+                });
+            }
+            
+            function redirectToLanguage(lang) {
+                const currentPage = getCurrentPage();
+                
+                if (lang === 'en') {
+                    window.location.href = `/${currentPage}.html`;
+                } else {
+                    window.location.href = `/${lang}/${currentPage}.html`;
+                }
+            }
+            
+            // Lazy load images
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
             
             if ('IntersectionObserver' in window) {
                 const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -1131,12 +1123,19 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
                         if (entry.isIntersecting) {
                             const img = entry.target;
                             img.classList.add('loaded');
-                            observer.unobserve(img);
+                            imageObserver.unobserve(img);
                         }
                     });
                 });
                 
-                images.forEach(img => imageObserver.observe(img));
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                lazyImages.forEach(img => {
+                    img.classList.add('loaded');
+                });
             }
         });
 
@@ -1151,74 +1150,6 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
                     });
                 }
             });
-        });
-
-        // ✅ ENHANCED LANGUAGE SWITCHER FUNCTIONALITY
-        document.addEventListener('DOMContentLoaded', function() {
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            const dropdown = document.querySelector('.language-dropdown');
-            const currentFlag = document.querySelector('.current-flag');
-            const currentText = currentLanguage.querySelector('span:not(.current-flag):not(.dropdown-arrow)');
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    dropdown.style.opacity = '0';
-                    dropdown.style.visibility = 'hidden';
-                    dropdown.style.transform = 'translateY(-10px)';
-                }
-            });
-            
-            // Handle language selection
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Remove active class from all items
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
-                    });
-                    
-                    // Add active class to selected item
-                    this.classList.add('active');
-                    
-                    // Update the current language display
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    currentFlag.textContent = selectedFlag;
-                    currentText.textContent = selectedCode;
-                    
-                    // Close dropdown
-                    dropdown.style.opacity = '0';
-                    dropdown.style.visibility = 'hidden';
-                    dropdown.style.transform = 'translateY(-10px)';
-                    
-                    // Navigate to the language-specific page
-                    window.location.href = this.href;
-                });
-            });
-            
-            // Helper function to get language codes
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA'
-                };
-                return codes[languageName] || languageName;
-            }
         });
 
         // ✅ PRELOAD CRITICAL IMAGES
@@ -1238,13 +1169,6 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         
         // Preload critical images
         preloadImages();
-
-        // ✅ PERFORMANCE MONITORING
-        window.addEventListener('load', function() {
-            // Log page load time for debugging
-            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-            console.log('Page load time:', loadTime + 'ms');
-        });
     </script>
 </body>
 </html>
