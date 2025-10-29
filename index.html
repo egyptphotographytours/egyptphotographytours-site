@@ -178,13 +178,22 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
     /* Compact header styles from contact page */
     .compact-header {
         padding: 0.5rem 0;
+        background-color: var(--primary-dark);
+        color: white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
     .compact-logo {
         height: 40px;
         width: auto;
+        border-radius: 50%;
     }
     .compact-nav {
         padding: 0.4rem 0;
+        background-color: #374151;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
     
     .language-switcher-container {
@@ -238,102 +247,7 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         margin: 0 auto;
         padding: 0 24px;
     }
-    .header {
-        background-color: var(--primary-dark);
-        color: white;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        padding: 16px 0;
-    }
-    .header .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-    @media (min-width: 768px) {
-        .header .content {
-            flex-direction: row;
-        }
-    }
-    .logo-section {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-    .logo-img {
-      height: 40px; /* Updated to match contact page */
-      width: auto;
-      border-radius: 9999px;
-    }
-    .logo-link {
-        font-size: 24px; /* Smaller font to match contact page */
-        font-weight: 700;
-        letter-spacing: -0.025em;
-        color: var(--accent-light);
-    }
-    .header-text {
-        font-size: 14px; /* Smaller text */
-        font-style: italic;
-        margin-top: 8px;
-    }
-    @media (min-width: 768px) {
-        .header-text {
-            margin-top: 0;
-            font-size: 14px; /* Consistent smaller size */
-        }
-    }
-    .navbar {
-        background-color: #374151;
-        color: white;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        padding: 12px 0;
-    }
-    .navbar-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-    @media (min-width: 768px) {
-        .navbar-content {
-            flex-direction: row;
-        }
-    }
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px; /* Reduced gap */
-        font-size: 16px; /* Smaller font */
-        font-weight: 500;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .nav-link a {
-        color: white;
-        text-decoration: none;
-        padding: 4px 0;
-        transition: color 0.3s ease;
-    }
-    .nav-link a:hover {
-        color: var(--accent-light);
-    }
-    .cta-container {
-        margin-top: 12px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-    @media (min-width: 768px) {
-        .cta-container {
-            margin-top: 0;
-        }
-    }
-
+    
     /* Updated Hero Section - Lighter overlay and better text colors */
     .hero-section {
         position: relative;
@@ -724,23 +638,6 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
             gap: 16px;
         }
     }
-    
-    .book-now-button {
-        font-weight: 600;
-        padding: 8px 16px; /* Smaller padding to match contact page */
-        border-radius: 9999px;
-        background-color: #FFD700;
-        color: #1a202c;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        font-size: 14px; /* Smaller font */
-        white-space: nowrap;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-    .book-now-button:hover {
-        background-color: #E2B700;
-        transform: scale(1.05);
-    }
 
     /* Focus styles for accessibility */
     a:focus, button:focus, input:focus, textarea:focus {
@@ -750,43 +647,43 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
   </style>
 </head>
 <body class="flex flex-col min-h-screen">
-    <!-- Updated Header matching contact page -->
-    <header class="bg-primary-dark text-white shadow-lg compact-header" role="banner">
+    <!-- Fixed Header matching contact page -->
+    <header class="compact-header" role="banner">
         <div class="container mx-auto px-4 flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <img src="images/egypt-photography-tours-logo.jpg" 
                      alt="Egypt Photography Tours Logo - Professional photography guide services for Pyramids and ancient sites"
-                     class="compact-logo rounded-full" 
+                     class="compact-logo" 
                      width="40" 
                      height="40" 
                      loading="eager" 
                      decoding="async" 
                      fetchpriority="high">
-                <a href="index.html" class="text-xl font-bold tracking-tight text-accent-light" aria-label="Home">Egypt Photography Tours</a>
+                <a href="index.html" class="text-xl font-bold tracking-tight" style="color: #FFD700;" aria-label="Home">Egypt Photography Tours</a>
             </div>
-            <p class="text-sm hidden md:block italic">Capture the Wonders of Egypt</p>
+            <p class="text-sm hidden md:block italic" style="color: #FFFFFF;">Capture the Wonders of Egypt</p>
         </div>
     </header>
 
-    <!-- Updated Navbar matching contact page -->
-    <nav class="bg-gray-800 text-white shadow-md sticky top-0 z-50 compact-nav" role="navigation" aria-label="Main Navigation">
+    <!-- Fixed Navigation matching contact page -->
+    <nav class="compact-nav" role="navigation" aria-label="Main Navigation">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
             <ul class="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-6 text-base font-medium" role="menubar">
-                <li role="none"><a href="index.html" class="hover:text-accent-light transition duration-300 py-1 font-bold" role="menuitem" aria-current="page">Home</a></li>
-                <li role="none"><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">About Us</a></li>
-                <li role="none"><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Our Tours</a></li>
-                <li role="none"><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Gallery</a></li>
-                <li role="none"><a href="resources.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Resources</a></li>
-                <li role="none"><a href="blog.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Blog</a></li>
-                <li role="none"><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">Contact Us</a></li>
-                <li role="none"><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1" role="menuitem">FAQs</a></li>
+                <li role="none"><a href="index.html" class="hover:text-accent-light transition duration-300 py-1 font-bold" style="color: #FFFFFF;" role="menuitem" aria-current="page">Home</a></li>
+                <li role="none"><a href="about.html" class="hover:text-accent-light transition duration-300 py-1" style="color: #FFFFFF;" role="menuitem">About Us</a></li>
+                <li role="none"><a href="tours.html" class="hover:text-accent-light transition duration-300 py-1" style="color: #FFFFFF;" role="menuitem">Our Tours</a></li>
+                <li role="none"><a href="gallery.html" class="hover:text-accent-light transition duration-300 py-1" style="color: #FFFFFF;" role="menuitem">Gallery</a></li>
+                <li role="none"><a href="resources.html" class="hover:text-accent-light transition duration-300 py-1" style="color: #FFFFFF;" role="menuitem">Resources</a></li>
+                <li role="none"><a href="blog.html" class="hover:text-accent-light transition duration-300 py-1" style="color: #FFFFFF;" role="menuitem">Blog</a></li>
+                <li role="none"><a href="contact.html" class="hover:text-accent-light transition duration-300 py-1" style="color: #FFFFFF;" role="menuitem">Contact Us</a></li>
+                <li role="none"><a href="faqs.html" class="hover:text-accent-light transition duration-300 py-1" style="color: #FFFFFF;" role="menuitem">FAQs</a></li>
             </ul>
             <div class="mt-2 md:mt-0 flex items-center space-x-3">
-                <a href="contact.html" class="flex items-center bg-accent-light text-primary-dark font-semibold py-1 px-3 rounded-full hover:bg-accent-dark transition duration-300 shadow-md text-sm">
+                <a href="contact.html" class="flex items-center font-semibold py-1 px-3 rounded-full transition duration-300 shadow-md text-sm" style="background-color: #FFD700; color: #1a202c;">
                     Book Now
                 </a>
                 <div class="language-switcher-container" role="region" aria-label="Language Selector">
-                    <button id="language-toggle" class="flex items-center text-white hover:text-accent-light focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                    <button id="language-toggle" class="flex items-center focus:outline-none" style="color: #FFFFFF;" aria-haspopup="true" aria-expanded="false">
                         <img src="https://flagcdn.com/us.svg" alt="U.S. Flag" class="flag-icon" width="20" height="15" loading="lazy">
                         <span class="ml-1 text-sm">EN</span>
                         <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -812,7 +709,7 @@ High End Egypt Journeys, Pyramids photoshoot, Cairo photography guide, Nile Rive
         </div>
     </nav>
 
-    <main class="main">
+    <main class="flex-grow">
         <!-- Updated Hero Section with clearer image and better text colors -->
         <section class="hero-section" style="background-image: url('images/hero-image.jpg');">
             <div class="hero-overlay"></div>
