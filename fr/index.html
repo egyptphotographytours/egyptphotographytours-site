@@ -19,13 +19,14 @@
     
     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
     <title>Visites Photographiques d'Égypte | Visites Privées des Pyramides, Gizeh, Le Caire et Alexandrie - Circuits de Luxe en Égypte</title>
 
-    <meta name="description" content="Découvrez les Visites Photographiques d'Égypte — séances photo privées aux pyramides, expériences photographiques au Caire et sur le Nil, et circuits guidés par des experts à travers l'Égypte. Réservez votre voyage inoubliable en Égypte aujourd'hui !">
+    <meta name="description" content="Découvrez les Visites Photographiques d'Égypte — séances photo privées aux pyramides, expériences photographiques au Caire et sur le Nil, et visites guidées par des experts à travers l'Égypte. Réservez votre voyage inoubliable en Égypte dès aujourd'hui !">
 
-    <meta name="keywords" content="visites photographiques Égypte, voyage de luxe Égypte, circuits de luxe Égypte, séjours haut de gamme Égypte, circuits des pyramides, guide touristique Caire, photos du Nil, circuits Égypte, photographie des temples de Louxor, visites Alexandrie">
+    <meta name="keywords" content="visites photographiques Égypte, voyage de luxe Égypte, circuits de luxe Égypte,
+    séjours haut de gamme Égypte, visites des pyramides, guide touristique Le Caire, photos du Nil, circuits Égypte, photographie des temples de Louxor, visites Alexandrie">
 
     <meta name="robots" content="index, follow">
 
@@ -45,31 +46,38 @@
     <link rel="alternate" hreflang="ru" href="https://www.egyptphotographytours.com/ru/" />
 
     <meta property="og:title" content="Visites Photographiques d'Égypte | Aventures Photo Professionnelles des Pyramides et Temples">
-    <meta property="og:description" content="Capturez la magie de l'Égypte ancienne avec des guides photographes experts. Visites privées des pyramides, temples et du Caire historique à partir de 150 USD.">
+    <meta property="og:description" content="Capturez la magie de l'Égypte ancienne avec des guides de visite photographique experts. Visites privées des pyramides, temples et du Caire historique à partir de 150 USD.">
     <meta property="og:url" content="https://www.egyptphotographytours.com/fr/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Visites Photographiques d'Égypte">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Visites Photographiques d'Égypte | Aventures Photo Professionnelles">
-    <meta name="twitter:description" content="Circuits photographiques guidés par des experts des sites les plus emblématiques d'Égypte. Capturez des photos époustouflantes avec des guides professionnels.">
+    <meta name="twitter:description" content="Visites photographiques guidées par des experts des sites les plus emblématiques d'Égypte. Capturez des photos magnifiques avec des guides professionnels.">
     <meta name="google-adsense-account" content="ca-pub-1042032515879132">
     
     <meta name="geo.region" content="EG-C">
     <meta name="geo.placename" content="Le Caire, Égypte">
     <meta name="geo.position" content="30.0444;31.2357">
 
+    <!-- UPDATED SCHEMA MARKUP FOR RICH SNIPPETS WITH 5 STARS AND 26 REVIEWS -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Visites Photographiques d'Égypte",
-      "url": "https://www.egyptphotographytours.com/fr/",
+      "url": "https://www.egyptphotographytours.com/fr",
       "logo": "https://www.egyptphotographytours.com/images/favicon-32x32.png",
       "sameAs": [
         "https://www.instagram.com/hossam_artistic",
         "https://www.trustpilot.com/review/egyptphotographytours.com"
-      ]
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "26",
+        "bestRating": "5"
+      }
     }
     </script>
 
@@ -79,8 +87,8 @@
       "@type": "LocalBusiness",
       "name": "Visites Photographiques d'Égypte",
       "image": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg",
-      "description": "Circuits photographiques guidés privés en Égypte incluant les pyramides, Le Caire, Alexandrie et plus encore. Séances photo professionnelles et guides locaux experts.",
-      "url": "https://www.egyptphotographytours.com/fr/",
+      "description": "Visites photographiques guidées privées en Égypte incluant les pyramides, Le Caire, Alexandrie et plus encore. Séances photo professionnelles et guides locaux experts.",
+      "url": "https://www.egyptphotographytours.com/fr",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Gizeh",
@@ -94,7 +102,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "reviewCount": "27",
+        "reviewCount": "26",
         "bestRating": "5"
       },
       "review": [
@@ -168,6 +176,9 @@
             --accent-dark: #E2B700;
             --text-color: #333;
         }
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8;
@@ -176,29 +187,33 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES */
+        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
         .header {
             background-color: var(--primary-dark);
             color: white;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            padding: 8px 0;
+            padding: 12px 0;
         }
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
+                gap: 0;
             }
         }
         .logo-section {
@@ -212,15 +227,21 @@
             border-radius: 9999px;
         }
         .logo-link {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             letter-spacing: -0.025em;
             color: var(--accent-light);
+            text-decoration: none;
+        }
+        @media (min-width: 768px) {
+            .logo-link {
+                font-size: 24px;
+            }
         }
         .header-text {
             font-size: 14px;
             font-style: italic;
-            margin-top: 4px;
+            text-align: center;
         }
         @media (min-width: 768px) {
             .header-text {
@@ -229,18 +250,16 @@
             }
         }
         
-        /* HEADER CONTACT INFO STYLES */
+        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
-            margin-top: 8px;
+            gap: 6px;
         }
         @media (min-width: 768px) {
             .header-contact {
                 align-items: flex-end;
-                margin-top: 0;
             }
         }
         .contact-info {
@@ -251,6 +270,7 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
+            padding: 4px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
@@ -261,7 +281,7 @@
             text-align: center;
         }
         
-        /* NAVBAR STYLES */
+        /* NAVBAR STYLES - MOBILE OPTIMIZED */
         .navbar {
             background-color: #374151;
             color: white;
@@ -269,56 +289,111 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            padding: 8px 0;
+            padding: 0;
         }
         .navbar-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             justify-content: space-between;
         }
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
+                align-items: center;
             }
         }
         .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            gap: 0;
             font-size: 16px;
             font-weight: 500;
             list-style: none;
             padding: 0;
             margin: 0;
+            background-color: #374151;
+        }
+        .nav-links.active {
+            display: flex;
+        }
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+                width: auto;
+            }
+        }
+        .nav-link {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link:last-child {
+            border-bottom: none;
+        }
+        @media (min-width: 768px) {
+            .nav-link {
+                border-bottom: none;
+            }
         }
         .nav-link a {
             color: white;
             text-decoration: none;
-            padding: 4px 0;
+            padding: 12px 16px;
             transition: color 0.3s ease;
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .nav-link a {
+                padding: 8px 0;
+            }
         }
         .nav-link a:hover {
             color: var(--accent-light);
         }
         .cta-container {
-            margin-top: 8px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: space-between;
+            padding: 12px 0;
         }
         @media (min-width: 768px) {
             .cta-container {
-                margin-top: 0;
+                justify-content: flex-end;
+                gap: 12px;
+                padding: 0;
             }
         }
         
-        /* HERO SLIDER STYLES - FIXED */
+        /* MOBILE MENU TOGGLE */
+        .mobile-menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+        
+        /* HERO SLIDER STYLES - MOBILE OPTIMIZED */
         .hero-slider {
             position: relative;
-            height: 75vh;
+            height: 60vh;
             overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .hero-slider {
+                height: 75vh;
+            }
         }
         .hero-slides {
             position: relative;
@@ -340,7 +415,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 24px;
+            padding: 16px;
         }
         .hero-slide.active {
             opacity: 1;
@@ -363,40 +438,50 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
-            /* Removed the background overlay */
         }
         /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
         .hero-title {
-            font-size: 32px; /* Reduced from 48px */
-            font-weight: 700; /* Slightly reduced from 800 */
+            font-size: 24px;
+            font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 12px; /* Reduced from 16px */
+            margin-bottom: 12px;
             color: white;
             text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
-            margin-top: -40px; /* Added to move title higher */
+            margin-top: 0;
+        }
+        @media (min-width: 480px) {
+            .hero-title {
+                font-size: 28px;
+            }
         }
         @media (min-width: 768px) {
             .hero-title {
-                font-size: 48px; /* Reduced from 72px */
-                margin-top: -60px; /* Added for larger screens */
+                font-size: 48px;
+                margin-top: -60px;
             }
         }
         .hero-subtitle {
-            font-size: 16px; /* Reduced from 18px */
-            margin-bottom: 24px; /* Reduced from 32px */
+            font-size: 14px;
+            margin-bottom: 20px;
             color: white;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
+            line-height: 1.4;
+        }
+        @media (min-width: 480px) {
+            .hero-subtitle {
+                font-size: 16px;
+            }
         }
         @media (min-width: 768px) {
             .hero-subtitle {
-                font-size: 18px; /* Reduced from 20px */
+                font-size: 18px;
             }
         }
         
         /* NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES */
         .hero-buttons-section {
             background-color: #f8f8f8;
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
             border-top: 1px solid #e5e7eb;
         }
@@ -415,12 +500,20 @@
         }
         .hero-button {
             font-weight: 700;
-            padding: 12px 32px;
+            padding: 12px 24px;
             border-radius: 9999px;
-            font-size: 18px;
+            font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            display: block;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .hero-button {
+                padding: 12px 32px;
+                font-size: 18px;
+            }
         }
         .hero-button-primary {
             background-color: var(--accent-light);
@@ -440,10 +533,10 @@
             transform: scale(1.05);
         }
         
-        /* SLIDER NAVIGATION CONTROLS - FIXED POSITION */
+        /* SLIDER NAVIGATION CONTROLS - MOBILE OPTIMIZED */
         .slider-controls {
             position: absolute;
-            bottom: 20px; /* Moved further down */
+            bottom: 20px;
             left: 0;
             right: 0;
             display: flex;
@@ -457,8 +550,8 @@
             gap: 10px;
         }
         .slider-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.5);
             cursor: pointer;
@@ -473,8 +566,8 @@
             transform: translateY(-50%);
             background-color: rgba(255, 255, 255, 0.7);
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -483,40 +576,71 @@
             transition: background-color 0.3s ease;
             z-index: 20;
             color: var(--primary-dark);
-            font-size: 20px;
+            font-size: 16px;
+        }
+        @media (min-width: 768px) {
+            .slider-arrow {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
         }
         .slider-arrow:hover {
             background-color: rgba(255, 255, 255, 0.9);
         }
         .slider-arrow.prev {
-            left: 20px;
+            left: 10px;
         }
         .slider-arrow.next {
-            right: 20px;
+            right: 10px;
         }
         
-        /* MAIN SECTION STYLES */
+        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
         .main-section {
-            padding: 64px 0;
+            padding: 40px 0;
             text-align: center;
         }
+        @media (min-width: 768px) {
+            .main-section {
+                padding: 64px 0;
+            }
+        }
         .main-section h2 {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--primary-dark);
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .main-section h2 {
+                font-size: 36px;
+                margin-bottom: 32px;
+            }
         }
         .main-section h3 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             color: var(--primary-dark);
-            margin: 24px 0 8px;
+            margin: 20px 0 8px;
+        }
+        @media (min-width: 768px) {
+            .main-section h3 {
+                font-size: 24px;
+                margin: 24px 0 8px;
+            }
         }
         .main-section p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             max-width: 896px;
-            margin: 0 auto 24px;
+            margin: 0 auto 20px;
+        }
+        @media (min-width: 768px) {
+            .main-section p {
+                font-size: 18px;
+                margin: 0 auto 24px;
+            }
         }
         .bg-light-gray {
             background-color: #f3f4f6;
@@ -524,11 +648,12 @@
         .grid-section {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 24px;
         }
         @media (min-width: 768px) {
             .grid-section {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
             }
         }
         @media (min-width: 1024px) {
@@ -538,7 +663,7 @@
         }
         .card {
             background-color: white;
-            padding: 32px;
+            padding: 24px;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             display: flex;
@@ -547,33 +672,55 @@
             text-align: center;
             transition: transform 0.3s ease;
         }
+        @media (min-width: 768px) {
+            .card {
+                padding: 32px;
+            }
+        }
         .card:hover {
             transform: scale(1.05);
         }
         .card-icon {
-            width: 64px;
-            height: 64px;
+            width: 50px;
+            height: 50px;
             color: var(--accent-light);
             margin-bottom: 16px;
         }
+        @media (min-width: 768px) {
+            .card-icon {
+                width: 64px;
+                height: 64px;
+            }
+        }
         .card-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--primary-dark);
             margin-bottom: 12px;
         }
+        @media (min-width: 768px) {
+            .card-title {
+                font-size: 24px;
+            }
+        }
         .card-text {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.6;
+        }
+        @media (min-width: 768px) {
+            .card-text {
+                font-size: 16px;
+            }
         }
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 24px;
         }
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
@@ -613,33 +760,64 @@
         }
         .tour-img {
             width: 100%;
-            height: 224px;
+            height: 200px;
             object-fit: cover;
         }
+        @media (min-width: 768px) {
+            .tour-img {
+                height: 224px;
+            }
+        }
         .tour-card-body {
-            padding: 24px;
+            padding: 20px;
+        }
+        @media (min-width: 768px) {
+            .tour-card-body {
+                padding: 24px;
+            }
         }
         .tour-card-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--primary-dark);
             margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        @media (min-width: 768px) {
+            .tour-card-title {
+                font-size: 24px;
+            }
         }
         .tour-card-text {
             color: #4b5563;
             margin-bottom: 16px;
             text-align: left;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        @media (min-width: 768px) {
+            .tour-card-text {
+                font-size: 16px;
+                line-height: 1.6;
+            }
         }
         .tour-card-footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
         .tour-price {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--accent-dark);
+        }
+        @media (min-width: 768px) {
+            .tour-price {
+                font-size: 18px;
+            }
         }
         .tour-duration {
             font-size: 14px;
@@ -651,11 +829,18 @@
             background-color: var(--accent-light);
             color: var(--primary-dark);
             font-weight: 700;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 9999px;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            font-size: 14px;
+        }
+        @media (min-width: 768px) {
+            .tour-cta {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
         }
         .tour-cta:hover {
             background-color: var(--accent-dark);
@@ -666,11 +851,12 @@
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 24px;
         }
         @media (min-width: 768px) {
             .reviews-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
@@ -680,7 +866,7 @@
         }
         .review-card {
             background-color: white;
-            padding: 32px;
+            padding: 24px;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             color: var(--primary-dark);
@@ -689,32 +875,62 @@
             align-items: center;
             text-align: center;
         }
+        @media (min-width: 768px) {
+            .review-card {
+                padding: 32px;
+            }
+        }
         .review-stars {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--accent-light);
             margin-bottom: 12px;
         }
+        @media (min-width: 768px) {
+            .review-stars {
+                font-size: 24px;
+            }
+        }
         .review-text {
             font-style: italic;
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        @media (min-width: 768px) {
+            .review-text {
+                font-size: 18px;
+                line-height: 1.6;
+            }
         }
         .review-author {
             font-weight: 600;
             color: var(--primary-dark);
+            font-size: 14px;
+        }
+        @media (min-width: 768px) {
+            .review-author {
+                font-size: 16px;
+            }
         }
         .review-cta {
-            margin-top: 40px;
+            margin-top: 30px;
             display: inline-block;
             background-color: var(--accent-light);
             color: var(--primary-dark);
             font-weight: 700;
-            padding: 12px 32px;
+            padding: 12px 24px;
             border-radius: 9999px;
-            font-size: 18px;
+            font-size: 16px;
             transition: transform 0.3s ease, background-color 0.3s ease;
             text-decoration: none;
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        @media (min-width: 768px) {
+            .review-cta {
+                margin-top: 40px;
+                padding: 12px 32px;
+                font-size: 18px;
+            }
         }
         .review-cta:hover {
             background-color: var(--accent-dark);
@@ -723,8 +939,13 @@
         .footer {
             background-color: var(--primary-dark);
             color: white;
-            padding: 40px 0;
+            padding: 30px 0;
             margin-top: auto;
+        }
+        @media (min-width: 768px) {
+            .footer {
+                padding: 40px 0;
+            }
         }
         .footer-content {
             text-align: center;
@@ -733,30 +954,55 @@
             .footer-content {
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+                align-items: flex-start;
+                text-align: left;
+                flex-wrap: wrap;
             }
         }
         .footer-section {
             margin-bottom: 24px;
+            flex: 1;
+            min-width: 250px;
         }
         @media (min-width: 768px) {
             .footer-section {
                 margin-bottom: 0;
             }
         }
+        /* UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT */
+        .footer-brand {
+            text-align: left;
+            margin-bottom: 24px;
+            flex: 1;
+            min-width: 250px;
+        }
+        @media (min-width: 768px) {
+            .footer-brand {
+                margin-bottom: 0;
+                text-align: left;
+            }
+        }
         .footer-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--accent-light);
             margin-bottom: 8px;
         }
+        @media (min-width: 768px) {
+            .footer-title {
+                font-size: 24px;
+            }
+        }
         .footer-text {
             font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
         }
         .footer-links {
             list-style: none;
             padding: 0;
             font-size: 14px;
+            line-height: 1.8;
         }
         .footer-links li a {
             color: white;
@@ -772,6 +1018,11 @@
             gap: 16px;
             margin-top: 12px;
         }
+        @media (min-width: 768px) {
+            .social-links {
+                justify-content: flex-start;
+            }
+        }
         .social-links a {
             color: white;
             transition: color 0.3s ease;
@@ -783,12 +1034,13 @@
             font-size: 20px;
         }
         
-        /* FOOTER CONTACT INFO STYLES */
+        /* FOOTER CONTACT INFO STYLES - MOVED TO CONNECT WITH US SECTION */
         .footer-contact {
             display: flex;
             flex-direction: column;
             gap: 8px;
             margin-top: 16px;
+            margin-bottom: 16px;
         }
         .footer-contact-info {
             display: flex;
@@ -809,7 +1061,7 @@
             color: var(--accent-light);
         }
         
-        /* Language Switcher Styles */
+        /* Language Switcher Styles - MOBILE OPTIMIZED */
         .language-switcher {
             position: relative;
             display: inline-block;
@@ -936,10 +1188,39 @@
             font-size: 14px;
             white-space: nowrap;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: inline-block;
         }
         .book-now-button:hover {
             background-color: #E2B700;
             transform: scale(1.05);
+        }
+        
+        /* MAP STYLES - SIGNIFICANTLY LARGER FOR REVIEWS */
+        .footer-map {
+            margin-top: 20px;
+            width: 100%;
+            flex: 2; /* Much larger flex value to take more space */
+        }
+        @media (min-width: 768px) {
+            .footer-map {
+                margin-top: 0;
+            }
+        }
+        .footer-map iframe {
+            width: 100%;
+            height: 350px; /* Significantly increased from 220px for mobile */
+            border: none;
+            border-radius: 8px;
+        }
+        @media (min-width: 768px) {
+            .footer-map iframe {
+                height: 400px; /* Significantly increased from 280px for desktop */
+            }
+        }
+        @media (min-width: 1024px) {
+            .footer-map iframe {
+                height: 450px; /* Even larger for larger screens */
+            }
         }
     </style>
 </head>
@@ -948,7 +1229,7 @@
         <div class="container content">
             <div class="logo-section">
                 <img src="images/egypt-photography-tours-logo.jpg"
-                     alt="Logo des Visites Photographiques d'Égypte - Services de guides photographes professionnels pour les pyramides et sites anciens"
+                     alt="Logo Visites Photographiques d'Égypte - Services de guides photographiques professionnels pour les pyramides et sites antiques"
                      class="logo-img"
                      loading="eager"
                      width="40"
@@ -968,18 +1249,11 @@
 
     <nav class="navbar">
         <div class="container navbar-content">
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html">Accueil</a></li>
-                <li class="nav-link"><a href="about.html">À Propos</a></li>
-                <li class="nav-link"><a href="tours.html">Nos Circuits</a></li>
-                <li class="nav-link"><a href="gallery.html">Galerie</a></li>
-                <li class="nav-link"><a href="resources.html">Ressources</a></li>
-                <li class="nav-link"><a href="blog.html">Blog</a></li>
-                <li class="nav-link"><a href="contact.html">Contact</a></li>
-                <li class="nav-link"><a href="faqs.html">FAQ</a></li>
-            </ul>
             <div class="cta-container">
-                <a href="contact.html" class="book-now-button">Réserver</a>
+                <button class="mobile-menu-toggle" aria-label="Basculer le menu de navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="contact.html" class="book-now-button">Réserver Maintenant</a>
                 <div class="language-switcher">
                     <div class="current-language">
                         <span class="current-flag">🇫🇷</span>
@@ -1040,6 +1314,16 @@
                     </div>
                 </div>
             </div>
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.html">Accueil</a></li>
+                <li class="nav-link"><a href="about.html">À Propos</a></li>
+                <li class="nav-link"><a href="tours.html">Nos Circuits</a></li>
+                <li class="nav-link"><a href="gallery.html">Galerie</a></li>
+                <li class="nav-link"><a href="resources.html">Ressources</a></li>
+                <li class="nav-link"><a href="blog.html">Blog</a></li>
+                <li class="nav-link"><a href="contact.html">Contact</a></li>
+                <li class="nav-link"><a href="faqs.html">FAQ</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -1050,10 +1334,10 @@
                 <div class="hero-slide active">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Capturer la Magie de l'Égypte - Faites de Chaque Instant un Chef-d'Œuvre
+                            Captez la Magie de l'Égypte - Faites de Chaque Instant un Chef-d'Œuvre
                         </h1>
                         <p class="hero-subtitle">
-                            Visites professionnelles de photographie et d'histoire des sites les plus emblématiques d'Égypte. Guides experts, accès exclusif et expériences inoubliables vous attendent.
+                            Visites photographiques et historiques professionnelles des sites les plus emblématiques d'Égypte. Guides experts, accès exclusif et expériences inoubliables vous attendent.
                         </p>
                     </div>
                 </div>
@@ -1063,7 +1347,7 @@
                             Accès Exclusif aux Trésors Cachés de l'Égypte
                         </h1>
                         <p class="hero-subtitle">
-                            Découvrez des points de vue secrets et capturez des clichés à couper le souffle loin de la foule avec nos guides touristiques locaux experts en Égypte.
+                            Découvrez des points de vue secrets et capturez des clichés à couper le souffle loin des foules avec nos guides touristiques locaux experts en Égypte.
                         </p>
                     </div>
                 </div>
@@ -1080,10 +1364,10 @@
                 <div class="hero-slide">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Créez des Souvenirs Qui Durent Toute une Vie
+                            Créez des Souvenirs Qui Dureront Toute une Vie
                         </h1>
                         <p class="hero-subtitle">
-                            De l'heure dorée aux pyramides aux couchers de soleil sur le Nil, capturez la magie de l'Égypte avec nos expériences guidées de photographie et d'histoire.
+                            De l'heure dorée aux pyramides aux couchers de soleil sur le Nil, captez la magie de l'Égypte avec nos expériences photographiques et historiques guidées.
                         </p>
                     </div>
                 </div>
@@ -1126,10 +1410,10 @@
             <div class="container">
                 <h2>Bienvenue aux Visites Photographiques d'Égypte</h2>
                 <p>
-                    Entrez dans un monde où l'histoire ancienne rencontre des paysages à couper le souffle, tous attendant d'être capturés à travers votre objectif. Aux Visites Photographiques d'Égypte, nous sommes passionnés par la révélation de la beauté incomparable de l'Égypte aux photographes de tous niveaux. Des <strong>Pyramides de Gizeh</strong> emblématiques au flux serein du <strong>fleuve Nil</strong> et au charme animé des <strong>rues historiques du Caire</strong>, nous concevons des voyages immersifs qui garantissent que vous ne faites pas que voir l'Égypte, mais que vous en <em>capturez</em> véritablement l'âme.
+                    Entrez dans un monde où l'histoire ancienne rencontre des paysages à couper le souffle, tous attendant d'être capturés à travers votre objectif. Chez Visites Photographiques d'Égypte, nous sommes passionnés par la révélation de la beauté incomparable de l'Égypte aux photographes de tous niveaux. Des <strong>Pyramides de Gizeh</strong> emblématiques au flux serein du <strong>fleuve Nil</strong> et au charme animé des <strong>rues historiques du Caire</strong>, nous concevons des voyages immersifs qui vous assurent non seulement de voir l'Égypte mais d'en <em>capturer</em> véritablement l'âme.
                 </p>
                 <p>
-                    Nos <strong>circuits en Égypte</strong> soigneusement conçus vont au-delà du tourisme conventionnel, offrant des opportunités photographiques uniques, un accompagnement personnalisé de photographes professionnels et des rencontres culturelles authentiques. Que vous soyez un pro chevronné à la recherche d'un accès exclusif ou un passionné débutant désireux de maîtriser votre art, embarquez pour une <strong>inoubliable aventure photographique égyptienne</strong> avec nous. Créons ensemble votre prochain chef-d'œuvre.
+                    Nos <strong>circuits en Égypte</strong> méticuleusement organisés vont au-delà du tourisme conventionnel, offrant des opportunités photographiques uniques, des conseils personnalisés de photographes professionnels et des rencontres culturelles authentiques. Que vous soyez un pro chevronné à la recherche d'un accès exclusif ou un passionné débutant désireux de maîtriser votre art, embarquez pour une <strong>inoubliable aventure photographique égyptienne</strong> avec nous. Créons ensemble votre prochain chef-d'œuvre.
                 </p>
             </div>
         </section>
@@ -1141,32 +1425,32 @@
                     <div class="card">
                         <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         <h3 class="card-title">Guides Photographes Experts, Connaissances Locales</h3>
-                        <p class="card-text">Nos <strong>guides photographes experts en Égypte</strong> ne sont pas seulement des photographes chevronnés ; ce sont des égyptologues agréés et des spécialistes culturels locaux. Ils connaissent les meilleurs angles, les conditions d'éclairage parfaites et les joyaux cachés pour cette <strong>séance photo aux pyramides</strong> unique ou une scène captivante de <strong>photographie du Nil</strong>. Bénéficiez d'un coaching personnalisé et de connaissances inégalées sur l'histoire et la culture égyptiennes.</p>
+                        <p class="card-text">Nos <strong>guides photographiques experts en Égypte</strong> ne sont pas seulement des photographes chevronnés ; ce sont aussi des égyptologues agréés et des spécialistes culturels locaux. Ils connaissent les meilleurs angles, les conditions d'éclairage parfaites et les joyaux cachés pour cette <strong>séance photo aux pyramides</strong> unique ou une scène captivante de <strong>photographie du Nil</strong>. Bénéficiez d'un coaching personnalisé et de connaissances inégalées sur l'histoire et la culture égyptiennes.</p>
                     </div>
                     <div class="card">
                         <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <h3 class="card-title">Accès Exclusif et Points de Vue Uniques</h3>
-                        <p class="card-text">Imaginez capturer les <strong>temples de Louxor</strong> à l'aube sans foule, ou trouver l'endroit parfait pour un magnifique <strong>paysage de coucher de soleil égyptien</strong>. Nous tirons parti de nos profondes connexions locales pour offrir un <strong>accès exclusif en Égypte</strong>, proposant des points de vue photographiques uniques souvent indisponibles pour les touristes ordinaires. Obtenez ce cliché dont vous avez toujours rêvé, des marchés vibrants du <strong>Caire</strong> aux paysages sereins du <strong>désert du Sinaï</strong>.</p>
+                        <h3 class="card-title">Accès Exclusif & Points de Vue Uniques</h3>
+                        <p class="card-text">Imaginez capturer les <strong>temples de Louxor</strong> à l'aube sans foule, ou trouver l'endroit parfait pour un magnifique <strong>paysage de coucher de soleil égyptien</strong>. Nous tirons parti de nos profondes connexions locales pour fournir un <strong>accès exclusif en Égypte</strong>, offrant des points de vue photographiques uniques souvent indisponibles pour les touristes généraux. Obtenez ce cliché dont vous avez toujours rêvé, des marchés animés du <strong>Caire</strong> aux paysages sereins du <strong>désert du Sinaï</strong>.</p>
                     </div>
                     <div class="card">
                         <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         <h3 class="card-title">Itinéraires Sur Mesure pour Chaque Photographe</h3>
-                        <p class="card-text">Que vous soyez intéressé par l'architecture ancienne, la photographie de rue, le portrait ou les vastes <strong>paysages désertiques d'Égypte</strong>, nos <strong>itinéraires photographiques sur mesure</strong> sont conçus avec votre passion à l'esprit. Nous planifions méticuleusement chaque journée pour optimiser l'éclairage et les opportunités photographiques, garantissant que votre concentration reste sur la création d'images incroyables. D'un <strong>circuit photographique des pyramides</strong> ciblé à une <strong>expédition photographique de l'Égypte ancienne</strong> étendue, votre voyage est construit sur mesure.</p>
+                        <p class="card-text">Que vous soyez intéressé par l'architecture ancienne, la photographie de rue, le portrait ou les vastes <strong>paysages désertiques d'Égypte</strong>, nos <strong>itinéraires photographiques sur mesure</strong> sont conçus avec votre passion à l'esprit. Nous planifions méticuleusement chaque jour pour optimiser l'éclairage et les opportunités photographiques, garantissant que votre attention reste concentrée sur la création d'images incroyables. D'une <strong>visite photographique des pyramides</strong> ciblée à une <strong>expédition photographique de l'Égypte ancienne</strong> étendue, votre voyage est construit sur mesure.</p>
                     </div>
                     <div class="card">
                         <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M7 12h.01M7 16h.01M16 16h.01M12 16h.01M12 12h.01M12 8h.01M7 8h.01M16 8h.01M21 21l-4.5-4.5"></path></svg>
                         <h3 class="card-title">Petits Groupes, Apprentissage Personnalisé</h3>
-                        <p class="card-text">Nous croyons en la qualité plutôt qu'en la quantité. Nos <strong>petits circuits en Égypte</strong> garantissent une attention personnalisée et un temps individuel ample avec votre guide photographe. Cet environnement intime favorise une atmosphère de soutien où vous pouvez perfectionner vos compétences, partager des expériences et vraiment vous connecter avec d'autres photographes. Vivez la magie de la <strong>photographie de voyage en Égypte</strong> avec une communauté de personnes partageant les mêmes idées.</p>
+                        <p class="card-text">Nous croyons en la qualité plutôt qu'en la quantité. Nos <strong>petits circuits en Égypte</strong> garantissent une attention personnalisée et un temps individuel ample avec votre guide photographique. Ce cadre intime favorise un environnement favorable où vous pouvez perfectionner vos compétences, partager des expériences et véritablement vous connecter avec d'autres photographes. Vivez la magie de la <strong>photographie de voyage en Égypte</strong> avec une communauté de personnes partageant les mêmes idées.</p>
                     </div>
                     <div class="card">
                         <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c.045 4.095 1.563 7.844 4.368 10.053L12 21.466l4.688-2.413A12.001 12.001 0 0021.056 12c-.045-4.095-1.563-7.844-4.368-10.053z"></path></svg>
-                        <h3 class="card-title">Logistique Transparente et Voyage Sécurisé en Égypte</h3>
-                        <p class="card-text">Votre tranquillité d'esprit est notre priorité. Nous gérons tous les détails complexes — des hébergements luxueux et transports privés climatisés à tous les permis et frais d'entrée. Notre engagement envers des <strong>circuits sûrs en Égypte</strong> signifie que vous pouvez vous concentrer entièrement sur votre photographie et votre immersion culturelle. Profitez d'une <strong>aventure photographique en Égypte sans souci</strong> du début à la fin.</p>
+                        <h3 class="card-title">Logistique Transparente & Voyage Sécurisé en Égypte</h3>
+                        <p class="card-text">Votre tranquillité d'esprit est notre priorité. Nous nous occupons de tous les détails complexes — des hébergements luxueux et des transports privés climatisés à tous les permis et frais d'entrée. Notre engagement envers des <strong>circuits sûrs en Égypte</strong> signifie que vous pouvez vous concentrer entièrement sur votre photographie et votre immersion culturelle. Profitez d'une <strong>aventure photographique en Égypte sans souci</strong> du début à la fin.</p>
                     </div>
                      <div class="card">
                         <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253"></path></svg>
                         <h3 class="card-title">Immersion Culturelle Authentique</h3>
-                        <p class="card-text">Au-delà de la simple capture de photographies époustouflantes, nos circuits offrent une profonde <strong>immersion culturelle authentique en Égypte</strong>. Engagez-vous avec les habitants, explorez les marchés traditionnels et savourez une cuisine authentique. Cette expérience holistique garantit que vos photographies racontent une histoire plus riche, reflétant le véritable esprit de l'Égypte et de son peuple.</p>
+                        <p class="card-text">Au-delà de la simple capture de photographies époustouflantes, nos circuits offrent une profonde <strong>immersion culturelle authentique en Égypte</strong>. Engagez-vous avec les locaux, explorez les marchés traditionnels et savourez une cuisine authentique. Cette expérience holistique garantit que vos photographies racontent une histoire plus riche, reflétant le véritable esprit de l'Égypte et de son peuple.</p>
                     </div>
                 </div>
             </div>
@@ -1179,76 +1463,76 @@
                     <div class="tour-card">
                         <span class="sale-tag">Offre Spéciale !</span>
                         <img src="images/pyramids-private-tour.jpg"
-                             alt="Visite guidée privée de photographie aux pyramides de Gizeh avec guide égyptien professionnel et vue du Sphinx"
+                             alt="Visite guidée privée photographique aux pyramides de Gizeh avec guide égyptien professionnel et vue sur le Sphinx"
                              class="tour-img lazy-load"
                              loading="lazy"
                              width="400"
                              height="224">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">📸 Capturez la Magie : Visite Guidée Privée des Pyramides + Photographie Professionnelle</h3>
-                            <p class="tour-card-text">Plongez dans l'histoire ancienne lors de cette visite privée immersive d'une journée des grandes pyramides de Gizeh et du Sphinx, guidée par un expert local passionné. Capturez des moments inoubliables avec une séance photo professionnelle et écoutez les vraies histoires derrière les pierres.</p>
+                            <h3 class="tour-card-title">📸 Captez la Magie : Visite Guidée Privée des Pyramides + Photographie Professionnelle</h3>
+                            <p class="tour-card-text">Plongez dans l'histoire ancienne lors de cette visite privée immersive d'une journée des Grandes Pyramides de Gizeh et du Sphinx, guidée par un passionné expert local. Capturez des moments inoubliables avec une séance photo professionnelle et écoutez les vraies histoires derrière les pierres.</p>
                             <div class="tour-card-footer">
                                 <span class="tour-price">À partir de 150 USD</span>
                                 <span class="tour-duration">Durée : 4-5 heures</span>
                             </div>
-                            <a href="tour-pyramids-private.html" class="tour-cta">Voir les Détails et Réserver</a>
+                            <a href="tour-pyramids-private.html" class="tour-cta">Voir les Détails & Réserver</a>
                         </div>
                     </div>
 
                     <div class="tour-card">
                         <span class="sale-tag">Places Limitées !</span>
                         <img src="images/cairo-giza-2day.jpg"
-                             alt="Circuit privé de photographie premium de deux jours couvrant les sites du Caire et les pyramides de Gizeh avec guide expert"
+                             alt="Circuit privé photographique premium de deux jours couvrant les sites du Caire et les pyramides de Gizeh avec guide expert"
                              class="tour-img lazy-load"
                              loading="lazy"
                              width="400"
                              height="224">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Circuit Privé Premium de 2 Jours : Expédition Photographique au Caire et Gizeh</h3>
-                            <p class="tour-card-text">Immergez-vous dans la capitale vibrante de l'Égypte et ses merveilles anciennes pendant deux jours inoubliables. Explorez les majestueuses pyramides, le vieux Caire animé et l'impressionnant Musée national de la civilisation égyptienne, le tout avec votre guide et photographe privé.</p>
+                            <h3 class="tour-card-title">Circuit Privé Premium 2 Jours : Expédition Photographique au Caire & Gizeh</h3>
+                            <p class="tour-card-text">Immergez-vous dans la capitale vibrante de l'Égypte et ses merveilles anciennes pendant deux jours inoubliables. Explorez les majestueuses Pyramides, le vieux Caire animé et l'impressionnant Musée National de la Civilisation Égyptienne, le tout avec votre guide et photographe privé.</p>
                              <div class="tour-card-footer">
                                 <span class="tour-price">À partir de 350 USD</span>
                                 <span class="tour-duration">Durée : 2 jours</span>
                             </div>
-                            <a href="tour-cairo-giza-2day.html" class="tour-cta">Voir les Détails et Réserver</a>
+                            <a href="tour-cairo-giza-2day.html" class="tour-cta">Voir les Détails & Réserver</a>
                         </div>
                     </div>
 
                     <div class="tour-card">
                         <span class="sale-tag">Réservez Maintenant !</span>
                         <img src="images/alexandria-tour.jpg"
-                             alt="Circuit de photographie côtier d'une journée privée à Alexandrie depuis Le Caire avec vues sur la mer Méditerranée et sites anciens"
+                             alt="Circuit photographique privé d'une journée côtière à Alexandrie depuis Le Caire avec vues sur la mer Méditerranée et sites antiques"
                              class="tour-img lazy-load"
                              loading="lazy"
                              width="400"
                              height="224">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Découvrez Alexandrie : Visite Côtière Privée d'une Journée depuis Le Caire</h3>
-                            <p class="tour-card-text">Échangez la poussière du désert du Caire contre la brise fraîche de la Méditerranée lors de cette visite privée d'une journée inoubliable à Alexandrie. Découvrez un mélange de trésors grecs, romains, islamiques et modernes avec un guide local passionné et capturez de superbes vues côtières.</p>
+                            <h3 class="tour-card-title">Découvrez Alexandrie : Circuit Privé d'une Journée Côtière depuis Le Caire</h3>
+                            <p class="tour-card-text">Échangez la poussière du désert du Caire contre la brise fraîche de la Méditerranée lors de cette inoubliable excursion privée d'une journée à Alexandrie. Découvrez un mélange de trésors grecs, romains, islamiques et modernes avec un guide local passionné et capturez de superbes vues côtières.</p>
                             <div class="tour-card-footer">
                                 <span class="tour-price">À partir de 220 USD</span>
                                 <span class="tour-duration">Durée : 1 jour</span>
                             </div>
-                            <a href="tour-alexandria.html" class="tour-cta">Voir les Détails et Réserver</a>
+                            <a href="tour-alexandria.html" class="tour-cta">Voir les Détails & Réserver</a>
                         </div>
                     </div>
 
                     <div class="tour-card">
                         <span class="sale-tag">Nouvelle Aventure !</span>
                         <img src="images/egypt-discovery-7day.jpg"
-                             alt="Circuit de découverte photographique complet de 7 jours couvrant Le Caire, les pyramides de Gizeh, Alexandrie et les temples de Louxor"
+                             alt="Circuit photographique de découverte complet de 7 jours en Égypte couvrant Le Caire, les pyramides de Gizeh, Alexandrie et les temples de Louxor"
                              class="tour-img lazy-load"
                              loading="lazy"
                              width="400"
                              height="224">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Circuit Découverte de l'Égypte de 7 Jours : Le Caire, Gizeh, Alexandrie et Louxor</h3>
-                            <p class="tour-card-text">Vivez les merveilles de l'Égypte ancienne et moderne lors de ce voyage guidé immersif de 7 jours. Des pyramides imposantes au charme méditerranéen d'Alexandrie et aux majestueux temples de Louxor — ce voyage donne vie à l'âme de l'Égypte.</p>
+                            <h3 class="tour-card-title">Circuit Découverte de l'Égypte 7 Jours : Le Caire, Gizeh, Alexandrie & Louxor</h3>
+                            <p class="tour-card-text">Vivez les merveilles de l'Égypte ancienne et moderne lors de ce voyage guidé immersif de 7 jours. Des imposantes Pyramides au charme méditerranéen d'Alexandrie et aux majestueux temples de Louxor — ce voyage donne vie à l'âme de l'Égypte.</p>
                             <div class="tour-card-footer">
                                 <span class="tour-price">À partir de 1900 USD</span>
                                 <span class="tour-duration">Durée : 7 jours</span>
                             </div>
-                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">Voir les Détails et Réserver</a>
+                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">Voir les Détails & Réserver</a>
                         </div>
                     </div>
                 </div>
@@ -1266,7 +1550,7 @@
                 <div class="reviews-grid">
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Nous avons passé un excellent moment lors de cette expérience avec Hossam ! Il a été très serviable et patient avec notre groupe ! Toute l'expérience a été un moment amusant pour nous et il nous a mis très à l'aise. Nous avons tout apprécié !"</p>
+                        <p class="review-text">"Nous avons passé un excellent moment lors de cette expérience avec Hossam ! Il a été très serviable et patient avec notre groupe ! Toute l'expérience a été un moment agréable pour nous et il nous a mis très à l'aise. Nous avons tout apprécié !"</p>
                         <p class="review-author">- Daniel</p>
                     </div>
                     <div class="review-card">
@@ -1276,27 +1560,27 @@
                     </div>
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Hossam a fourni une visite magnifique des pyramides de Gizeh. Toujours attentionné, communicatif, compétent et a façonné la visite en fonction de ce que vous vouliez faire. Non seulement il m'a fait visiter les pyramides de Gizeh, mais en plus il a ajusté son emploi du temps pour faire également l'un des musées ! Du début à la fin, Hossam a fait un travail incroyable. Heureux d'avoir réservé cette visite et d'avoir fait un nouvel ami en Hossam !"</p>
+                        <p class="review-text">"Hossam a fourni une visite magnifique des pyramides de Gizeh. Toujours attentionné, communicatif, compétent et a façonné la visite en fonction de ce que vous vouliez faire. Non seulement il m'a fait visiter les pyramides de Gizeh, mais en plus il a ajusté son emploi du temps pour faire aussi l'un des musées ! Du début à la fin, Hossam a fait un travail incroyable. Heureux d'avoir réservé cette visite et d'avoir fait un nouvel ami en Hossam !"</p>
                         <p class="review-author">- Eduardo</p>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Très bien la séance, j'ai beaucoup aimé que les spots soient sans monde. J'ai dû réserver ce circuit car j'en avais fait un auparavant et les photos étaient très mauvaises. Maintenant, considérez seulement qu'il y a un coût supplémentaire pour le chameau et les entrées sur le site (ce qui est spécifié dans l'annonce)"</p>
+                        <p class="review-text">"Très bien la séance, j'ai beaucoup aimé que les spots soient sans monde. J'ai dû réserver ce circuit car j'en avais fait un auparavant et les photos étaient très mauvaises. Maintenant bien, considérez seulement qu'il faut payer un coût supplémentaire pour le chameau et les entrées à l'enceinte (ce qui est spécifié dans le post de l'annonce)"</p>
                         <p class="review-author">- Lucy</p>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Visite privée avec mon mari, nous étions seulement deux participants. On nous a guidés vers de bons endroits avec peu de touristes, donc nous avons pu prendre beaucoup de photos magnifiques ! En plus de la prise de photos, il nous a aussi raconté de courtes histoires sur les pyramides et le Sphinx, ce qui était encore plus instructif ☺️ Comme il est originaire du Caire, il nous a aussi indiqué de nombreux restaurants et endroits recommandables, et a même déconseillé les endroits qui ne sont que chers. En tant que personne visitant l'Égypte pour la première fois, cela m'a beaucoup aidé pour mon voyage ! Je recommande à ceux qui veulent une visite de narration simple + prise de photos !"</p>
+                        <p class="review-text">"프라이빗 투어로 남편과 둘이서 투어 참가했는데, 관광객이 많지 않은 좋은 스팟으로 안내해줘서 멋진 사진 많이 건질 수 있었어요! 사진 촬영뿐 아니라 피라미드나 스핑크스에 대한 간단한 역사 이야기도 해줘서 더 유익했습니다☺️ 카이로 토박이 출신이라 추천할 만한 레스토랑이나 스팟들도 많이 알려줬고, 비싸기만 한 곳은 비추해주기도 해서 이집트에 처음 오는 입장에서 여행에 많은 도움이 될 것 같아요 간단한 스토리텔링 투어+사진 촬영 원하시는 분들께 추천합니다!"</p>
                         <p class="review-author">- 소연 이</p>
                     </div>
                      <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"C'était l'une des meilleures expériences de tous les temps. Hossam est gentil, attentionné et ouvert aux suggestions. Il est aussi compétent et super serviable. Vous ne vivrez que le top avec lui."</p>
+                        <p class="review-text">"C'était l'une des meilleures expériences jamais vécues. Hossam est gentil, attentif et ouvert aux suggestions. Il est aussi compétent et super serviable. Vous ne vivrez que le top avec lui."</p>
                         <p class="review-author">- Meslem</p>
                     </div>
                      <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Hossam est tout simplement le meilleur. Pourquoi ? Parce qu'il est très gentil, très compétent et aime vraiment sa culture et son pays. J'ai eu le privilège de passer une journée et demie avec Hossam lors d'une visite privée. Il a fait plus que nécessaire pour s'assurer que j'étais heureux, en sécurité et à l'aise. Il ne fait aucun doute que Hossam est l'un des meilleurs guides que j'aie jamais eus. Merci de m'avoir montré le meilleur du Caire et d'avoir créé une expérience inoubliable que je chérirai pendant de nombreuses années à venir."</p>
+                        <p class="review-text">"Hossam est tout simplement le meilleur. Pourquoi ? Parce qu'il est très gentil, très compétent et aime véritablement sa culture et son pays. J'ai eu le privilège de passer une journée et demie avec Hossam lors d'une visite privée. Il a fait plus que nécessaire pour s'assurer que j'étais heureux, en sécurité et à l'aise. Il ne fait aucun doute que Hossam est l'un des meilleurs guides que j'aie jamais eus. Merci de m'avoir montré le meilleur du Caire et d'avoir créé une expérience inoubliable que je chérirai pendant de nombreuses années à venir."</p>
                         <p class="review-author">- ARI</p>
                     </div>
                      <div class="review-card">
@@ -1306,12 +1590,12 @@
                     </div>
                      <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Excellente expérience, très professionnel, vous met à l'aise même si vous n'avez pas l'habitude d'être devant un objectif. Attention aux détails et avait de bonnes informations sur les pyramides et les environs. C'était si facile et confortable de travailler avec Hossam que j'ai décidé de réserver une excursion d'une journée avec lui à Alexandrie pour organiser ma visite ici également."</p>
+                        <p class="review-text">"Super expérience, très professionnel, vous met à l'aise même si vous n'avez pas l'habitude d'être devant un appareil photo. Attention aux détails et avait de bonnes informations sur les pyramides et les environs. C'était si facile et confortable de travailler avec Hossam que j'ai décidé de réserver une excursion d'une journée avec lui à Alexandrie pour organiser ma visite ici également."</p>
                         <p class="review-author">- Jamie </p>
                     </div>
                 </div>
                 <a href="faqs.html" class="review-cta">
-                        Lire Tous les Avis et FAQ
+                        Lire Tous les Avis & FAQ 
                 </a>
             </div>
         </section>
@@ -1319,17 +1603,11 @@
 
     <footer class="footer">
         <div class="container footer-content">
-            <div class="footer-section">
+            <!-- UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT -->
+            <div class="footer-brand">
                 <h3 class="footer-title">Visites Photographiques d'Égypte</h3>
-                <p class="footer-text">&copy; 2025 Visites Photographiques d'Égypte. Tous droits réservés.</p>
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
-                </div>
+                <p class="footer-text">&copy; 2025 Visites Photographiques d'Égypte.</p>
+                <p class="footer-text">Tous droits réservés.</p>
             </div>
             <div class="footer-section">
                 <h4 class="footer-title">Liens Rapides</h4>
@@ -1347,6 +1625,15 @@
             <div class="footer-section">
                 <h4 class="footer-title">Connectez-vous avec Nous</h4>
                 <p class="footer-text">Adresse : Abou Elhool, Nazlet El-Samman, Elsamman, Gizeh, Gouvernorat de Gizeh 12557</p>
+                <!-- MOVED PHONE AND EMAIL TO CONNECT WITH US SECTION -->
+                <div class="footer-contact">
+                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
+                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    </a>
+                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
+                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    </a>
+                </div>
                 <div class="social-links">
                     <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
                     <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
@@ -1354,13 +1641,44 @@
                     <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
                 </div>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </footer>
 
     <script>
-        // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
+        // ✅ MOBILE MENU FUNCTIONALITY
         document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                
+                // Change icon based on menu state
+                const icon = this.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Close menu when clicking on a link (for mobile)
+            document.querySelectorAll('.nav-link a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 768) {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                    }
+                });
+            });
+            
+            // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevButton = document.querySelector('.slider-arrow.prev');
@@ -1420,6 +1738,8 @@
             const heroSlider = document.querySelector('.hero-slider');
             heroSlider.addEventListener('mouseenter', stopSlideShow);
             heroSlider.addEventListener('mouseleave', startSlideShow);
+            heroSlider.addEventListener('touchstart', stopSlideShow);
+            heroSlider.addEventListener('touchend', startSlideShow);
             
             // Initialize
             startSlideShow();
