@@ -205,6 +205,21 @@
             margin-bottom: 1rem;
             border-radius: 4px;
         }
+        
+        /* Map container styling */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
     
     <style>
@@ -365,28 +380,16 @@
 
                 <div class="mt-8">
                     <h2 class="text-2xl font-bold text-primary-dark mb-6">Location Map</h2>
-                    <div class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-md">
+                    <div class="map-container">
                         <iframe 
-                            src="about:blank"
-                            data-src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1761734043570!5m2!1sen!2seg" 
+                            class="map-iframe"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Egypt Photography Tours Location">
+                        </iframe>
                     </div>
-                    <script>
-                        // Lazy load map when it comes into view
-                        document.addEventListener('DOMContentLoaded', function() {
-                            const map = document.querySelector('.lazy-map');
-                            const mapObserver = new IntersectionObserver((entries, observer) => {
-                                entries.forEach(entry => {
-                                    if (entry.isIntersecting) {
-                                        entry.target.src = entry.target.dataset.src;
-                                        observer.unobserve(entry.target);
-                                    }
-                                });
-                            }, {
-                                rootMargin: '50px'
-                            });
-                            mapObserver.observe(map);
-                        });
-                    </script>
                     <p class="text-sm text-gray-600 mt-2 text-center">
                         Our office is located near the Giza Pyramids. Please make an appointment before visiting.
                     </p>
@@ -503,7 +506,3 @@
     </script>
 </body>
 </html>
-
-
-
-
