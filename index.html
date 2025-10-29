@@ -230,6 +230,38 @@
             }
         }
         
+        /* HEADER CONTACT INFO STYLES */
+        .header-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            margin-top: 8px;
+        }
+        @media (min-width: 768px) {
+            .header-contact {
+                align-items: flex-end;
+                margin-top: 0;
+            }
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        .contact-info:hover {
+            color: var(--accent-light);
+        }
+        .contact-icon {
+            font-size: 14px;
+            width: 16px;
+            text-align: center;
+        }
+        
         /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
@@ -752,6 +784,32 @@
             font-size: 20px;
         }
         
+        /* FOOTER CONTACT INFO STYLES */
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .footer-contact-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            justify-content: center;
+        }
+        @media (min-width: 768px) {
+            .footer-contact-info {
+                justify-content: flex-start;
+            }
+        }
+        .footer-contact-info:hover {
+            color: var(--accent-light);
+        }
+        
         /* Language Switcher Styles */
         .language-switcher {
             position: relative;
@@ -898,7 +956,14 @@
                      height="40">
                 <a href="index.html" class="logo-link">Egypt Photography Tours</a>
             </div>
-            <p class="header-text italic">Capture the Magic of Egypt.</p>
+            <div class="header-contact">
+                <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
+                    <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                </a>
+                <a href="mailto:info@egyptphotographytours.com" class="contact-info">
+                    <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                </a>
+            </div>
         </div>
     </header>
 
@@ -1258,6 +1323,14 @@
             <div class="footer-section">
                 <h3 class="footer-title">Egypt Photography Tours</h3>
                 <p class="footer-text">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
+                <div class="footer-contact">
+                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
+                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    </a>
+                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
+                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    </a>
+                </div>
             </div>
             <div class="footer-section">
                 <h4 class="footer-title">Quick Links</h4>
@@ -1274,7 +1347,6 @@
             </div>
             <div class="footer-section">
                 <h4 class="footer-title">Connect With Us</h4>
-                <p class="footer-text">Email: <a href="mailto:info@egyptphotographytours.com">info@egyptphotographytours.com</a></p>
                 <p class="footer-text">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
