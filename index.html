@@ -19,7 +19,7 @@
     
     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
     <title>Egypt Photography Tours | Private Pyramids & Giza & Cairo & Alexandria Luxury Egypt Tours</title>
 
@@ -60,6 +60,7 @@
     <meta name="geo.placename" content="Cairo, Egypt">
     <meta name="geo.position" content="30.0444;31.2357">
 
+    <!-- UPDATED SCHEMA MARKUP FOR RICH SNIPPETS WITH 5 STARS AND 26 REVIEWS -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -70,7 +71,13 @@
       "sameAs": [
         "https://www.instagram.com/hossam_artistic",
         "https://www.trustpilot.com/review/egyptphotographytours.com"
-      ]
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "26",
+        "bestRating": "5"
+      }
     }
     </script>
 
@@ -95,7 +102,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "reviewCount": "27",
+        "reviewCount": "26",
         "bestRating": "5"
       },
       "review": [
@@ -169,6 +176,9 @@
             --accent-dark: #E2B700;
             --text-color: #333;
         }
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8;
@@ -177,29 +187,33 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES */
+        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
         .header {
             background-color: var(--primary-dark);
             color: white;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            padding: 8px 0;
+            padding: 12px 0;
         }
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
+                gap: 0;
             }
         }
         .logo-section {
@@ -213,15 +227,21 @@
             border-radius: 9999px;
         }
         .logo-link {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             letter-spacing: -0.025em;
             color: var(--accent-light);
+            text-decoration: none;
+        }
+        @media (min-width: 768px) {
+            .logo-link {
+                font-size: 24px;
+            }
         }
         .header-text {
             font-size: 14px;
             font-style: italic;
-            margin-top: 4px;
+            text-align: center;
         }
         @media (min-width: 768px) {
             .header-text {
@@ -230,18 +250,16 @@
             }
         }
         
-        /* HEADER CONTACT INFO STYLES */
+        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
-            margin-top: 8px;
+            gap: 6px;
         }
         @media (min-width: 768px) {
             .header-contact {
                 align-items: flex-end;
-                margin-top: 0;
             }
         }
         .contact-info {
@@ -252,6 +270,7 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
+            padding: 4px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
@@ -262,7 +281,7 @@
             text-align: center;
         }
         
-        /* NAVBAR STYLES */
+        /* NAVBAR STYLES - MOBILE OPTIMIZED */
         .navbar {
             background-color: #374151;
             color: white;
@@ -270,56 +289,111 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            padding: 8px 0;
+            padding: 0;
         }
         .navbar-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             justify-content: space-between;
         }
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
+                align-items: center;
             }
         }
         .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            gap: 0;
             font-size: 16px;
             font-weight: 500;
             list-style: none;
             padding: 0;
             margin: 0;
+            background-color: #374151;
+        }
+        .nav-links.active {
+            display: flex;
+        }
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+                width: auto;
+            }
+        }
+        .nav-link {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link:last-child {
+            border-bottom: none;
+        }
+        @media (min-width: 768px) {
+            .nav-link {
+                border-bottom: none;
+            }
         }
         .nav-link a {
             color: white;
             text-decoration: none;
-            padding: 4px 0;
+            padding: 12px 16px;
             transition: color 0.3s ease;
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .nav-link a {
+                padding: 8px 0;
+            }
         }
         .nav-link a:hover {
             color: var(--accent-light);
         }
         .cta-container {
-            margin-top: 8px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: space-between;
+            padding: 12px 0;
         }
         @media (min-width: 768px) {
             .cta-container {
-                margin-top: 0;
+                justify-content: flex-end;
+                gap: 12px;
+                padding: 0;
             }
         }
         
-        /* HERO SLIDER STYLES - FIXED */
+        /* MOBILE MENU TOGGLE */
+        .mobile-menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+        
+        /* HERO SLIDER STYLES - MOBILE OPTIMIZED */
         .hero-slider {
             position: relative;
-            height: 75vh;
+            height: 60vh;
             overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .hero-slider {
+                height: 75vh;
+            }
         }
         .hero-slides {
             position: relative;
@@ -341,7 +415,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 24px;
+            padding: 16px;
         }
         .hero-slide.active {
             opacity: 1;
@@ -364,40 +438,50 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
-            /* Removed the background overlay */
         }
         /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
         .hero-title {
-            font-size: 32px; /* Reduced from 48px */
-            font-weight: 700; /* Slightly reduced from 800 */
+            font-size: 24px;
+            font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 12px; /* Reduced from 16px */
+            margin-bottom: 12px;
             color: white;
             text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
-            margin-top: -40px; /* Added to move title higher */
+            margin-top: 0;
+        }
+        @media (min-width: 480px) {
+            .hero-title {
+                font-size: 28px;
+            }
         }
         @media (min-width: 768px) {
             .hero-title {
-                font-size: 48px; /* Reduced from 72px */
-                margin-top: -60px; /* Added for larger screens */
+                font-size: 48px;
+                margin-top: -60px;
             }
         }
         .hero-subtitle {
-            font-size: 16px; /* Reduced from 18px */
-            margin-bottom: 24px; /* Reduced from 32px */
+            font-size: 14px;
+            margin-bottom: 20px;
             color: white;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
+            line-height: 1.4;
+        }
+        @media (min-width: 480px) {
+            .hero-subtitle {
+                font-size: 16px;
+            }
         }
         @media (min-width: 768px) {
             .hero-subtitle {
-                font-size: 18px; /* Reduced from 20px */
+                font-size: 18px;
             }
         }
         
         /* NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES */
         .hero-buttons-section {
             background-color: #f8f8f8;
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
             border-top: 1px solid #e5e7eb;
         }
@@ -416,12 +500,20 @@
         }
         .hero-button {
             font-weight: 700;
-            padding: 12px 32px;
+            padding: 12px 24px;
             border-radius: 9999px;
-            font-size: 18px;
+            font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            display: block;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .hero-button {
+                padding: 12px 32px;
+                font-size: 18px;
+            }
         }
         .hero-button-primary {
             background-color: var(--accent-light);
@@ -441,10 +533,10 @@
             transform: scale(1.05);
         }
         
-        /* SLIDER NAVIGATION CONTROLS - FIXED POSITION */
+        /* SLIDER NAVIGATION CONTROLS - MOBILE OPTIMIZED */
         .slider-controls {
             position: absolute;
-            bottom: 20px; /* Moved further down */
+            bottom: 20px;
             left: 0;
             right: 0;
             display: flex;
@@ -458,8 +550,8 @@
             gap: 10px;
         }
         .slider-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.5);
             cursor: pointer;
@@ -474,8 +566,8 @@
             transform: translateY(-50%);
             background-color: rgba(255, 255, 255, 0.7);
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -484,40 +576,71 @@
             transition: background-color 0.3s ease;
             z-index: 20;
             color: var(--primary-dark);
-            font-size: 20px;
+            font-size: 16px;
+        }
+        @media (min-width: 768px) {
+            .slider-arrow {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
         }
         .slider-arrow:hover {
             background-color: rgba(255, 255, 255, 0.9);
         }
         .slider-arrow.prev {
-            left: 20px;
+            left: 10px;
         }
         .slider-arrow.next {
-            right: 20px;
+            right: 10px;
         }
         
-        /* MAIN SECTION STYLES */
+        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
         .main-section {
-            padding: 64px 0;
+            padding: 40px 0;
             text-align: center;
         }
+        @media (min-width: 768px) {
+            .main-section {
+                padding: 64px 0;
+            }
+        }
         .main-section h2 {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--primary-dark);
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .main-section h2 {
+                font-size: 36px;
+                margin-bottom: 32px;
+            }
         }
         .main-section h3 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             color: var(--primary-dark);
-            margin: 24px 0 8px;
+            margin: 20px 0 8px;
+        }
+        @media (min-width: 768px) {
+            .main-section h3 {
+                font-size: 24px;
+                margin: 24px 0 8px;
+            }
         }
         .main-section p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             max-width: 896px;
-            margin: 0 auto 24px;
+            margin: 0 auto 20px;
+        }
+        @media (min-width: 768px) {
+            .main-section p {
+                font-size: 18px;
+                margin: 0 auto 24px;
+            }
         }
         .bg-light-gray {
             background-color: #f3f4f6;
@@ -525,11 +648,12 @@
         .grid-section {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 24px;
         }
         @media (min-width: 768px) {
             .grid-section {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
             }
         }
         @media (min-width: 1024px) {
@@ -539,7 +663,7 @@
         }
         .card {
             background-color: white;
-            padding: 32px;
+            padding: 24px;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             display: flex;
@@ -548,33 +672,55 @@
             text-align: center;
             transition: transform 0.3s ease;
         }
+        @media (min-width: 768px) {
+            .card {
+                padding: 32px;
+            }
+        }
         .card:hover {
             transform: scale(1.05);
         }
         .card-icon {
-            width: 64px;
-            height: 64px;
+            width: 50px;
+            height: 50px;
             color: var(--accent-light);
             margin-bottom: 16px;
         }
+        @media (min-width: 768px) {
+            .card-icon {
+                width: 64px;
+                height: 64px;
+            }
+        }
         .card-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--primary-dark);
             margin-bottom: 12px;
         }
+        @media (min-width: 768px) {
+            .card-title {
+                font-size: 24px;
+            }
+        }
         .card-text {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.6;
+        }
+        @media (min-width: 768px) {
+            .card-text {
+                font-size: 16px;
+            }
         }
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 24px;
         }
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
@@ -614,33 +760,64 @@
         }
         .tour-img {
             width: 100%;
-            height: 224px;
+            height: 200px;
             object-fit: cover;
         }
+        @media (min-width: 768px) {
+            .tour-img {
+                height: 224px;
+            }
+        }
         .tour-card-body {
-            padding: 24px;
+            padding: 20px;
+        }
+        @media (min-width: 768px) {
+            .tour-card-body {
+                padding: 24px;
+            }
         }
         .tour-card-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--primary-dark);
             margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        @media (min-width: 768px) {
+            .tour-card-title {
+                font-size: 24px;
+            }
         }
         .tour-card-text {
             color: #4b5563;
             margin-bottom: 16px;
             text-align: left;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        @media (min-width: 768px) {
+            .tour-card-text {
+                font-size: 16px;
+                line-height: 1.6;
+            }
         }
         .tour-card-footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
         .tour-price {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--accent-dark);
+        }
+        @media (min-width: 768px) {
+            .tour-price {
+                font-size: 18px;
+            }
         }
         .tour-duration {
             font-size: 14px;
@@ -652,11 +829,18 @@
             background-color: var(--accent-light);
             color: var(--primary-dark);
             font-weight: 700;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 9999px;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            font-size: 14px;
+        }
+        @media (min-width: 768px) {
+            .tour-cta {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
         }
         .tour-cta:hover {
             background-color: var(--accent-dark);
@@ -667,11 +851,12 @@
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 24px;
         }
         @media (min-width: 768px) {
             .reviews-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
@@ -681,7 +866,7 @@
         }
         .review-card {
             background-color: white;
-            padding: 32px;
+            padding: 24px;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             color: var(--primary-dark);
@@ -690,32 +875,62 @@
             align-items: center;
             text-align: center;
         }
+        @media (min-width: 768px) {
+            .review-card {
+                padding: 32px;
+            }
+        }
         .review-stars {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--accent-light);
             margin-bottom: 12px;
         }
+        @media (min-width: 768px) {
+            .review-stars {
+                font-size: 24px;
+            }
+        }
         .review-text {
             font-style: italic;
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        @media (min-width: 768px) {
+            .review-text {
+                font-size: 18px;
+                line-height: 1.6;
+            }
         }
         .review-author {
             font-weight: 600;
             color: var(--primary-dark);
+            font-size: 14px;
+        }
+        @media (min-width: 768px) {
+            .review-author {
+                font-size: 16px;
+            }
         }
         .review-cta {
-            margin-top: 40px;
+            margin-top: 30px;
             display: inline-block;
             background-color: var(--accent-light);
             color: var(--primary-dark);
             font-weight: 700;
-            padding: 12px 32px;
+            padding: 12px 24px;
             border-radius: 9999px;
-            font-size: 18px;
+            font-size: 16px;
             transition: transform 0.3s ease, background-color 0.3s ease;
             text-decoration: none;
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        @media (min-width: 768px) {
+            .review-cta {
+                margin-top: 40px;
+                padding: 12px 32px;
+                font-size: 18px;
+            }
         }
         .review-cta:hover {
             background-color: var(--accent-dark);
@@ -724,8 +939,13 @@
         .footer {
             background-color: var(--primary-dark);
             color: white;
-            padding: 40px 0;
+            padding: 30px 0;
             margin-top: auto;
+        }
+        @media (min-width: 768px) {
+            .footer {
+                padding: 40px 0;
+            }
         }
         .footer-content {
             text-align: center;
@@ -734,30 +954,55 @@
             .footer-content {
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+                align-items: flex-start;
+                text-align: left;
+                flex-wrap: wrap;
             }
         }
         .footer-section {
             margin-bottom: 24px;
+            flex: 1;
+            min-width: 250px;
         }
         @media (min-width: 768px) {
             .footer-section {
                 margin-bottom: 0;
             }
         }
+        /* UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT */
+        .footer-brand {
+            text-align: left;
+            margin-bottom: 24px;
+            flex: 1;
+            min-width: 250px;
+        }
+        @media (min-width: 768px) {
+            .footer-brand {
+                margin-bottom: 0;
+                text-align: left;
+            }
+        }
         .footer-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--accent-light);
             margin-bottom: 8px;
         }
+        @media (min-width: 768px) {
+            .footer-title {
+                font-size: 24px;
+            }
+        }
         .footer-text {
             font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
         }
         .footer-links {
             list-style: none;
             padding: 0;
             font-size: 14px;
+            line-height: 1.8;
         }
         .footer-links li a {
             color: white;
@@ -773,6 +1018,11 @@
             gap: 16px;
             margin-top: 12px;
         }
+        @media (min-width: 768px) {
+            .social-links {
+                justify-content: flex-start;
+            }
+        }
         .social-links a {
             color: white;
             transition: color 0.3s ease;
@@ -784,12 +1034,13 @@
             font-size: 20px;
         }
         
-        /* FOOTER CONTACT INFO STYLES */
+        /* FOOTER CONTACT INFO STYLES - MOVED TO CONNECT WITH US SECTION */
         .footer-contact {
             display: flex;
             flex-direction: column;
             gap: 8px;
             margin-top: 16px;
+            margin-bottom: 16px;
         }
         .footer-contact-info {
             display: flex;
@@ -810,7 +1061,7 @@
             color: var(--accent-light);
         }
         
-        /* Language Switcher Styles */
+        /* Language Switcher Styles - MOBILE OPTIMIZED */
         .language-switcher {
             position: relative;
             display: inline-block;
@@ -937,10 +1188,39 @@
             font-size: 14px;
             white-space: nowrap;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: inline-block;
         }
         .book-now-button:hover {
             background-color: #E2B700;
             transform: scale(1.05);
+        }
+        
+        /* MAP STYLES - SIGNIFICANTLY LARGER FOR REVIEWS */
+        .footer-map {
+            margin-top: 20px;
+            width: 100%;
+            flex: 2; /* Much larger flex value to take more space */
+        }
+        @media (min-width: 768px) {
+            .footer-map {
+                margin-top: 0;
+            }
+        }
+        .footer-map iframe {
+            width: 100%;
+            height: 350px; /* Significantly increased from 220px for mobile */
+            border: none;
+            border-radius: 8px;
+        }
+        @media (min-width: 768px) {
+            .footer-map iframe {
+                height: 400px; /* Significantly increased from 280px for desktop */
+            }
+        }
+        @media (min-width: 1024px) {
+            .footer-map iframe {
+                height: 450px; /* Even larger for larger screens */
+            }
         }
     </style>
 </head>
@@ -969,17 +1249,10 @@
 
     <nav class="navbar">
         <div class="container navbar-content">
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html">Home</a></li>
-                <li class="nav-link"><a href="about.html">About Us</a></li>
-                <li class="nav-link"><a href="tours.html">Our Tours</a></li>
-                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
-                <li class="nav-link"><a href="resources.html">Resources</a></li>
-                <li class="nav-link"><a href="blog.html">Blog</a></li>
-                <li class="nav-link"><a href="contact.html">Contact Us</a></li>
-                <li class="nav-link"><a href="faqs.html">FAQs</a></li>
-            </ul>
             <div class="cta-container">
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <a href="contact.html" class="book-now-button">Book Now</a>
                 <div class="language-switcher">
                     <div class="current-language">
@@ -1041,6 +1314,16 @@
                     </div>
                 </div>
             </div>
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.html">Home</a></li>
+                <li class="nav-link"><a href="about.html">About Us</a></li>
+                <li class="nav-link"><a href="tours.html">Our Tours</a></li>
+                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-link"><a href="resources.html">Resources</a></li>
+                <li class="nav-link"><a href="blog.html">Blog</a></li>
+                <li class="nav-link"><a href="contact.html">Contact Us</a></li>
+                <li class="nav-link"><a href="faqs.html">FAQs</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -1320,17 +1603,11 @@
 
     <footer class="footer">
         <div class="container footer-content">
-            <div class="footer-section">
+            <!-- UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT -->
+            <div class="footer-brand">
                 <h3 class="footer-title">Egypt Photography Tours</h3>
-                <p class="footer-text">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
-                </div>
+                <p class="footer-text">&copy; 2025 Egypt Photography Tours.</p>
+                <p class="footer-text">All Rights Reserved.</p>
             </div>
             <div class="footer-section">
                 <h4 class="footer-title">Quick Links</h4>
@@ -1348,6 +1625,15 @@
             <div class="footer-section">
                 <h4 class="footer-title">Connect With Us</h4>
                 <p class="footer-text">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+                <!-- MOVED PHONE AND EMAIL TO CONNECT WITH US SECTION -->
+                <div class="footer-contact">
+                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
+                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    </a>
+                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
+                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    </a>
+                </div>
                 <div class="social-links">
                     <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
                     <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
@@ -1355,13 +1641,44 @@
                     <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
                 </div>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </footer>
 
     <script>
-        // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
+        // ✅ MOBILE MENU FUNCTIONALITY
         document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                
+                // Change icon based on menu state
+                const icon = this.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Close menu when clicking on a link (for mobile)
+            document.querySelectorAll('.nav-link a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 768) {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                    }
+                });
+            });
+            
+            // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevButton = document.querySelector('.slider-arrow.prev');
@@ -1421,6 +1738,8 @@
             const heroSlider = document.querySelector('.hero-slider');
             heroSlider.addEventListener('mouseenter', stopSlideShow);
             heroSlider.addEventListener('mouseleave', startSlideShow);
+            heroSlider.addEventListener('touchstart', stopSlideShow);
+            heroSlider.addEventListener('touchend', startSlideShow);
             
             // Initialize
             startSlideShow();
