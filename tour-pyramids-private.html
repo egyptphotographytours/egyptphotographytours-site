@@ -586,27 +586,112 @@
             min-height: 100px;
             resize: vertical;
         }
-        .person-selector {
+        
+        /* NEW DROPDOWN PERSON SELECTOR STYLES */
+        .person-selector-container {
             display: flex;
-            gap: 12px;
-            margin-bottom: 16px;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 20px;
         }
-        .person-option {
-            flex: 1;
+
+        .person-selector-label {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .person-selector-dropdown {
+            position: relative;
+            width: 100%;
+        }
+
+        .person-selector-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
             padding: 12px 16px;
             border: 2px solid #e5e7eb;
             border-radius: 6px;
-            text-align: center;
+            background-color: white;
+            font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-align: left;
         }
-        .person-option.selected {
+
+        .person-selector-button:hover {
+            border-color: #9ca3af;
+        }
+
+        .person-selector-button.active {
             border-color: var(--accent-light);
             background-color: rgba(255, 215, 0, 0.1);
         }
-        .person-option:hover:not(.selected) {
-            border-color: #9ca3af;
+
+        .person-selector-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
         }
+
+        .person-selector-options.active {
+            display: block;
+        }
+
+        .person-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid #f3f4f6;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .person-option:last-child {
+            border-bottom: none;
+        }
+
+        .person-option:hover {
+            background-color: #f9fafb;
+        }
+
+        .person-option.selected {
+            background-color: rgba(255, 215, 0, 0.1);
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .person-count {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .person-price {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-dark);
+        }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .person-selector-button.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
         .price-display {
             font-size: 24px;
             font-weight: 700;
@@ -1255,19 +1340,58 @@
                                 <input type="hidden" name="no_shipping" value="1">
                                 
                                 <div class="form-group">
-                                    <label class="form-label">Number of Persons</label>
-                                    <div class="person-selector">
-                                        <div class="person-option selected" data-persons="1" data-price="150">
-                                            1 Person
-                                        </div>
-                                        <div class="person-option" data-persons="2" data-price="250">
-                                            2 Persons
-                                        </div>
-                                        <div class="person-option" data-persons="3" data-price="350">
-                                            3 Persons
-                                        </div>
-                                        <div class="person-option" data-persons="4" data-price="450">
-                                            4 Persons
+                                    <div class="person-selector-container">
+                                        <label class="person-selector-label">Number of Persons</label>
+                                        
+                                        <div class="person-selector-dropdown">
+                                            <button type="button" class="person-selector-button" id="person-selector-button">
+                                                <span class="selected-option">1 Person - $150</span>
+                                                <svg class="dropdown-arrow" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </button>
+                                            <div class="person-selector-options" id="person-selector-options">
+                                                <div class="person-option selected" data-persons="1" data-price="150">
+                                                    <span class="person-count">1 Person</span>
+                                                    <span class="person-price">$150</span>
+                                                </div>
+                                                <div class="person-option" data-persons="2" data-price="250">
+                                                    <span class="person-count">2 Persons</span>
+                                                    <span class="person-price">$250</span>
+                                                </div>
+                                                <div class="person-option" data-persons="3" data-price="350">
+                                                    <span class="person-count">3 Persons</span>
+                                                    <span class="person-price">$350</span>
+                                                </div>
+                                                <div class="person-option" data-persons="4" data-price="450">
+                                                    <span class="person-count">4 Persons</span>
+                                                    <span class="person-price">$450</span>
+                                                </div>
+                                                <div class="person-option" data-persons="5" data-price="550">
+                                                    <span class="person-count">5 Persons</span>
+                                                    <span class="person-price">$550</span>
+                                                </div>
+                                                <div class="person-option" data-persons="6" data-price="650">
+                                                    <span class="person-count">6 Persons</span>
+                                                    <span class="person-price">$650</span>
+                                                </div>
+                                                <div class="person-option" data-persons="7" data-price="750">
+                                                    <span class="person-count">7 Persons</span>
+                                                    <span class="person-price">$750</span>
+                                                </div>
+                                                <div class="person-option" data-persons="8" data-price="850">
+                                                    <span class="person-count">8 Persons</span>
+                                                    <span class="person-price">$850</span>
+                                                </div>
+                                                <div class="person-option" data-persons="9" data-price="950">
+                                                    <span class="person-count">9 Persons</span>
+                                                    <span class="person-price">$950</span>
+                                                </div>
+                                                <div class="person-option" data-persons="10" data-price="1050">
+                                                    <span class="person-count">10 Persons</span>
+                                                    <span class="person-price">$1050</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1477,12 +1601,13 @@
                 });
             });
             
-            // ✅ BOOKING FORM FUNCTIONALITY
+            // ✅ UPDATED DROPDOWN PERSON SELECTOR FUNCTIONALITY
+            const personSelectorButton = document.getElementById('person-selector-button');
+            const personSelectorOptions = document.getElementById('person-selector-options');
             const personOptions = document.querySelectorAll('.person-option');
             const tourDateInput = document.getElementById('tour-date');
             const totalPriceElement = document.getElementById('total-price');
             const paypalButton = document.getElementById('paypal-button');
-            const bookingForm = document.getElementById('booking-form');
             
             // Set minimum date to today
             const today = new Date();
@@ -1495,6 +1620,12 @@
             let selectedPersons = 1;
             let selectedDate = '';
             
+            // Toggle dropdown
+            personSelectorButton.addEventListener('click', function() {
+                personSelectorOptions.classList.toggle('active');
+                personSelectorButton.classList.toggle('active');
+            });
+            
             // Person selection
             personOptions.forEach(option => {
                 option.addEventListener('click', function() {
@@ -1504,15 +1635,27 @@
                     selectedPersons = parseInt(this.getAttribute('data-persons'));
                     const price = parseFloat(this.getAttribute('data-price'));
                     
-                    totalPriceElement.textContent = price.toFixed(2);
+                    // Update button text
+                    const selectedOptionText = `${selectedPersons} Person${selectedPersons > 1 ? 's' : ''} - $${price}`;
+                    document.querySelector('.selected-option').textContent = selectedOptionText;
+                    
+                    updatePrice(price);
                     
                     // Update PayPal form
                     document.querySelector('input[name="amount"]').value = price.toFixed(2);
                     document.querySelector('input[name="os0"]').value = `${selectedPersons} Person${selectedPersons > 1 ? 's' : ''}`;
                     
+                    // Close dropdown
+                    personSelectorOptions.classList.remove('active');
+                    personSelectorButton.classList.remove('active');
+                    
                     updatePayPalButton();
                 });
             });
+            
+            function updatePrice(price) {
+                totalPriceElement.textContent = price.toFixed(2);
+            }
             
             // Date selection
             tourDateInput.addEventListener('change', function() {
@@ -1554,6 +1697,14 @@
                 
                 paypalButton.disabled = !isFormValid;
             }
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!personSelectorButton.contains(e.target) && !personSelectorOptions.contains(e.target)) {
+                    personSelectorOptions.classList.remove('active');
+                    personSelectorButton.classList.remove('active');
+                }
+            });
             
             // ✅ LANGUAGE SWITCHER
             const languageSwitcher = document.querySelector('.language-switcher');
