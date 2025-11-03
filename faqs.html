@@ -889,7 +889,7 @@
             transform: scale(1.05);
         }
         
-        /* MAP STYLES */
+        /* ENHANCED MAP STYLES - LARGER TO SHOW REVIEWS */
         .footer-map {
             margin-top: 20px;
             width: 100%;
@@ -902,13 +902,18 @@
         }
         .footer-map iframe {
             width: 100%;
-            height: 220px;
+            height: 350px; /* Increased from 220px for mobile */
             border: none;
             border-radius: 8px;
         }
         @media (min-width: 768px) {
             .footer-map iframe {
-                height: 280px;
+                height: 400px; /* Increased from 280px for desktop */
+            }
+        }
+        @media (min-width: 1024px) {
+            .footer-map iframe {
+                height: 450px; /* Increased for larger screens */
             }
         }
         
