@@ -540,12 +540,13 @@
         @media (min-width: 768px) {
             .cta-section p {
                 font-size: 18px;
-            margin: 0 auto 32px;
-            line-height: 1.6;
-            max-width: 700px;
-            padding: 0 20px;
-            text-align: center;
-            color: #e5e7eb;
+                margin: 0 auto 32px;
+                line-height: 1.6;
+                max-width: 700px;
+                padding: 0 20px;
+                text-align: center;
+                color: #e5e7eb;
+            }
         }
         .cta-button {
             display: inline-block;
@@ -559,10 +560,18 @@
             transition: all 0.3s ease;
             font-size: 16px;
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            /* FIX: Prevent text from disappearing on click */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-        .cta-button:hover {
+        .cta-button:hover, .cta-button:active, .cta-button:focus {
             background-color: var(--accent-dark);
             transform: scale(1.05);
+            color: var(--primary-dark) !important;
+            text-decoration: none;
         }
         
         /* FOOTER STYLES - MATCHING BLOG DESIGN */
@@ -841,10 +850,18 @@
             white-space: nowrap;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             display: inline-block;
+            /* FIX: Prevent text from disappearing on click */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-        .book-now-button:hover {
+        .book-now-button:hover, .book-now-button:active, .book-now-button:focus {
             background-color: #E2B700;
             transform: scale(1.05);
+            color: #1a202c !important;
+            text-decoration: none;
         }
         
         /* LINK STYLES */
