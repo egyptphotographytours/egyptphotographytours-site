@@ -67,11 +67,11 @@
     <meta name="twitter:title" content="Luxury Giza Pyramids Tour & Professional Photoshoot">
     <meta name="twitter:description" content="Best private pyramids journey with expert photography. Capture stunning Giza pyramids photos with professional guides.">
 
-    <!-- UPDATED SCHEMA MARKUP FOR RICH SNIPPETS WITH ENHANCED KEYWORDS -->
+    <!-- FIXED SCHEMA MARKUP - USING PRODUCT TYPE FOR REVIEWS -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Tour",
+      "@type": "Product",
       "name": "Luxury Giza Pyramids Tour & Professional Photoshoot Experience",
       "description": "Best private pyramids journey with expert Egyptologist guides. Professional photography session at Giza Pyramids. Luxury Egypt travel experience with exclusive access.",
       "image": [
@@ -81,6 +81,10 @@
         "https://www.egyptphotographytours.com/images/hero-image3.jpg",
         "https://www.egyptphotographytours.com/images/hero-image4.jpg"
       ],
+      "brand": {
+        "@type": "Brand",
+        "name": "Egypt Photography Tours"
+      },
       "offers": {
         "@type": "Offer",
         "price": "150",
@@ -88,6 +92,70 @@
         "availability": "https://schema.org/InStock",
         "validFrom": "2025-01-01"
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "35",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Daniel"
+          },
+          "datePublished": "2024-05-15",
+          "reviewBody": "We had a great time on this experience with Hossam! He was very helpful and patient with our group!",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Cristina"
+          },
+          "datePublished": "2024-04-22",
+          "reviewBody": "Hossam is a brilliant photographer with amazing skills. Plenty of fantastic pictures with the astonishing view of the pyramids.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Eduardo"
+          },
+          "datePublished": "2024-03-30",
+          "reviewBody": "Hossam provided a magnificent tour of the Giza Pyramids. Always thoughtful, communicative and knowledgeable.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- TOUR ITINERARY SCHEMA (SEPARATE) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": "Luxury Giza Pyramids Tour Itinerary",
+      "description": "Detailed itinerary for the luxury Giza Pyramids photography tour",
       "itinerary": {
         "@type": "ItemList",
         "itemListElement": [
@@ -137,34 +205,34 @@
             }
           }
         ]
+      }
+    }
+    </script>
+
+    <!-- LOCAL BUSINESS SCHEMA FOR GIZA LOCATION -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "Giza Pyramids Complex",
+      "description": "Ancient Egyptian pyramids including the Great Pyramid of Giza, Pyramid of Khafre, Pyramid of Menkaure and the Great Sphinx",
+      "url": "https://www.egyptphotographytours.com/tour-pyramids-private.html",
+      "image": "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+        "addressLocality": "Giza",
+        "addressRegion": "Giza Governorate",
+        "postalCode": "12557",
+        "addressCountry": "EG"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "35",
-        "bestRating": "5"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "29.9792345",
+        "longitude": "31.1342019"
       },
-      "provider": {
-        "@type": "Organization",
-        "name": "Egypt Photography Tours",
-        "sameAs": "https://www.egyptphotographytours.com"
-      },
-      "duration": "PT5H",
-      "touristType": ["Photography enthusiasts", "History lovers", "Luxury travelers", "Adventure seekers"],
-      "includesAttraction": ["Great Pyramid of Giza", "Sphinx", "Valley Temple"],
-      "location": {
-        "@type": "Place",
-        "name": "Giza Pyramid Complex",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-          "addressLocality": "Giza",
-          "addressRegion": "Giza Governorate",
-          "postalCode": "12557",
-          "addressCountry": "EG"
-        }
-      },
-      "keywords": ["luxury pyramids tour", "giza pyramids photoshoot", "best pyramids tour guide", "pyramids photography tour", "private pyramids journey"]
+      "openingHours": "Mo-Su 08:00-17:00",
+      "publicAccess": true
     }
     </script>
 
@@ -278,7 +346,7 @@
         .navbar {
             background-color: #374151;
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             position: sticky;
             top: 0;
             z-index: 50;
