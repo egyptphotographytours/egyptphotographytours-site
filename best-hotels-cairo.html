@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Comprehensive Favicon Setup -->
+    <!-- Favicon Setup -->
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
@@ -104,7 +104,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- CSS Styles - Same as blog file -->
     <style>
         :root {
             --primary-dark: #1a202c;
@@ -114,6 +113,8 @@
         }
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -125,6 +126,7 @@
             min-height: 100vh;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
+            line-height: 1.6;
         }
         .container {
             max-width: 1200px;
@@ -132,7 +134,7 @@
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* HEADER STYLES */
         .header {
             background-color: var(--primary-dark);
             color: white;
@@ -174,19 +176,6 @@
                 font-size: 24px;
             }
         }
-        .header-text {
-            font-size: 14px;
-            font-style: italic;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 16px;
-            }
-        }
-        
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
@@ -217,7 +206,7 @@
             text-align: center;
         }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
             color: white;
@@ -320,11 +309,10 @@
             }
         }
         
-        /* HERO SECTION STYLES - MATCHING BLOG.HTML */
+        /* HERO SECTION */
         .hero-section {
             position: relative;
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             height: 50vh;
             display: flex;
             align-items: center;
@@ -368,7 +356,7 @@
             }
         }
         
-        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
+        /* MAIN SECTION STYLES */
         .main-section {
             padding: 40px 0;
             text-align: left;
@@ -447,24 +435,6 @@
             gap: 6px;
         }
         
-        /* HOTEL FEATURES STYLES */
-        .hotel-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
-        }
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .feature-icon {
-            color: var(--accent-light);
-            font-size: 18px;
-            width: 24px;
-        }
-        
         /* HOTEL CARD STYLES */
         .hotel-card {
             background-color: white;
@@ -477,6 +447,12 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 16px;
         }
         .hotel-card-body {
             padding: 20px;
@@ -495,7 +471,7 @@
         @media (min-width: 768px) {
             .hotel-name {
                 font-size: 24px;
-            margin-bottom: 16px;
+                margin-bottom: 16px;
             }
         }
         .hotel-location {
@@ -604,7 +580,7 @@
             color: var(--accent-light);
         }
         
-        /* FOOTER STYLES - MATCHING BLOG.HTML -->
+        /* FOOTER STYLES -->
         .footer {
             background-color: var(--primary-dark);
             color: white;
@@ -755,7 +731,7 @@
             }
         }
         
-        /* Language Switcher Styles - MOBILE OPTIMIZED -->
+        /* Language Switcher Styles */
         .language-switcher {
             position: relative;
             display: inline-block;
@@ -857,18 +833,6 @@
             height: auto;
             display: block;
         }
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .lazy-load.loaded {
-            opacity: 1;
-        }
-        @media (max-width: 768px) {
-            .hotel-features {
-                grid-template-columns: 1fr;
-            }
-        }
         
         .book-now-button {
             font-weight: 600;
@@ -935,18 +899,61 @@
             background-color: var(--accent-dark);
             transform: scale(1.05);
         }
+        
+        /* Table of Contents */
+        .toc-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--accent-light);
+            padding: 16px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-icon {
+            color: var(--accent-light);
+        }
+        .toc-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        .toc-list li a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .toc-list li a:hover {
+            color: var(--accent-light);
+        }
+        
+        /* Content Links */
+        .content-link {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .content-link:hover {
+            color: var(--accent-light);
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container content">
             <div class="logo-section">
-                <img src="images/egypt-photography-tours-logo.jpg"
-                     alt="Egypt Photography Tours Logo - Professional photography guide services for Pyramids and ancient sites"
-                     class="logo-img"
-                     loading="eager"
-                     width="40"
-                     height="40">
+                <div class="logo-img">
+                    <i class="fas fa-camera" style="font-size: 24px; color: #FFD700;"></i>
+                </div>
                 <a href="index.html" class="logo-link">Egypt Photography Tours</a>
             </div>
             <div class="header-contact">
@@ -971,9 +978,7 @@
                     <div class="current-language">
                         <span class="current-flag">🇺🇸</span>
                         <span>EN</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <span class="dropdown-arrow">▼</span>
                     </div>
                     <div class="language-dropdown">
                         <a href="best-hotels-cairo.html" class="language-item active">
@@ -987,54 +992,6 @@
                         <a href="ar/best-hotels-cairo.html" class="language-item">
                             <span class="flag-icon">🇪🇬</span>
                             <span class="language-text">العربية</span>
-                        </a>
-                        <a href="fr/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
-                        </a>
-                        <a href="de/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
-                        </a>
-                        <a href="es/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
-                        </a>
-                        <a href="it/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
-                        </a>
-                        <a href="zh/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
-                        </a>
-                        <a href="ko/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
-                        </a>
-                        <a href="pt/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
-                        </a>
-                        <a href="id/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
-                        </a>
-                        <a href="ja/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
-                        </a>
-                        <a href="hi/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇮🇳</span>
-                            <span class="language-text">हिन्दी</span>
-                        </a>
-                        <a href="tl/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇵🇭</span>
-                            <span class="language-text">Tagalog</span>
-                        </a>
-                        <a href="nl/best-hotels-cairo.html" class="language-item">
-                            <span class="flag-icon">🇳🇱</span>
-                            <span class="language-text">Nederlands</span>
                         </a>
                     </div>
                 </div>
@@ -1053,7 +1010,7 @@
     </nav>
 
     <main class="main">
-        <section class="hero-section" style="background-image: url('images/best-hotels-cairo-egypt.jpg');">
+        <section class="hero-section">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -1083,19 +1040,19 @@
                         </div>
                     </div>
                     
-                    <p>The city of Cairo in Egypt boasts a vibrant hotel scene that caters to every type of traveler. Whether you're seeking opulence in the best hotels in Cairo, Egypt, with luxurious 5-star hotels offering stunning views of the pyramids, or a cozy boutique hotel, Cairo that reflects the local charm, you'll always find the perfect stay. For budget-conscious guests and families, numerous budget-friendly and family-friendly options make it easy to experience Cairo's unique blend of ancient history and modern comfort. Discover the ideal accommodation to enhance your amazing journey through this captivating city with <a href="tours.html">Egypt Photography Tours</a>.</p>
+                    <p>The city of Cairo in Egypt boasts a vibrant hotel scene that caters to every type of traveler. Whether you're seeking opulence in the best hotels in Cairo, Egypt, with luxurious 5-star hotels offering stunning views of the pyramids, or a cozy boutique hotel, Cairo that reflects the local charm, you'll always find the perfect stay. For budget-conscious guests and families, numerous budget-friendly and family-friendly options make it easy to experience Cairo's unique blend of ancient history and modern comfort. Discover the ideal accommodation to enhance your amazing journey through this captivating city with <a href="tours.html" class="content-link">Egypt Photography Tours</a>.</p>
                     
                     <!-- Table of Contents -->
-                    <div class="tip-box">
-                        <h3 class="tip-title"><i class="fas fa-list tip-icon"></i> Article Contents</h3>
-                        <ul class="highlight-list">
+                    <div class="toc-box">
+                        <h3 class="toc-title"><i class="fas fa-list toc-icon"></i> Article Contents</h3>
+                        <ul class="toc-list">
                             <li><a href="#luxury-hotels">Best 5-Star Hotels in Cairo for Luxury Seekers</a></li>
                             <li><a href="#boutique-hotels">Best Boutique Hotels in Cairo for Unique Stays</a></li>
                             <li><a href="#pyramids-hotels">Best Hotels in Cairo Near Pyramids of Giza</a></li>
                             <li><a href="#nile-hotels">Best Hotels in Cairo, Egypt Near the Nile</a></li>
                             <li><a href="#budget-hotels">Budget-Friendly Alternatives</a></li>
                             <li><a href="#family-hotels">Family-Friendly Hotels for a Stress-Free Stay</a></li>
-                            <li><a href="#choosing-tips">Tips for Choosing the Best Hotel in Cairo for Your Needs</a></li>
+                            <li><a href="#choosing-tips">Tips for Choosing the Best Hotel in Cairo</a></li>
                         </ul>
                     </div>
                     
@@ -1104,7 +1061,9 @@
                     
                     <!-- Marriott Mena House -->
                     <div class="hotel-card">
-                        <img src="images/marriott-mena-house-cairo.jpg" alt="Marriott Mena House Cairo with pyramid views" class="hotel-img lazy-load" loading="lazy">
+                        <div class="hotel-img">
+                            <span>Marriott Mena House - Image Placeholder</span>
+                        </div>
                         <div class="hotel-card-body">
                             <h3 class="hotel-name">Marriott Mena House – A Historic Gem with Pyramid Views</h3>
                             <div class="hotel-location">
@@ -1133,7 +1092,7 @@
                             
                             <div class="tip-box">
                                 <h3 class="tip-title"><i class="fas fa-lightbulb tip-icon"></i> Photography Tip</h3>
-                                <p>Capture stunning sunrise and sunset shots of the pyramids from the hotel gardens. The golden hour light creates magical photography opportunities that are perfect for our <a href="tours.html">Pyramids Photography Tours</a>.</p>
+                                <p>Capture stunning sunrise and sunset shots of the pyramids from the hotel gardens. The golden hour light creates magical photography opportunities that are perfect for our <a href="tours.html" class="content-link">Pyramids Photography Tours</a>.</p>
                             </div>
                             
                             <a href="contact.html" class="cta-button">Book Your Luxury Egypt Tour</a>
@@ -1142,7 +1101,9 @@
                     
                     <!-- Four Seasons Hotel -->
                     <div class="hotel-card">
-                        <img src="images/four-seasons-cairo.jpg" alt="Four Seasons Hotel Cairo at First Residence" class="hotel-img lazy-load" loading="lazy">
+                        <div class="hotel-img">
+                            <span>Four Seasons Hotel Cairo - Image Placeholder</span>
+                        </div>
                         <div class="hotel-card-body">
                             <h3 class="hotel-name">Four Seasons Hotel Cairo at First Residence – Timeless Sophistication</h3>
                             <div class="hotel-location">
@@ -1173,47 +1134,16 @@
                         </div>
                     </div>
                     
-                    <!-- St. Regis Cairo -->
-                    <div class="hotel-card">
-                        <img src="images/st-regis-cairo.jpg" alt="St. Regis Cairo luxury hotel on the Nile" class="hotel-img lazy-load" loading="lazy">
-                        <div class="hotel-card-body">
-                            <h3 class="hotel-name">The St. Regis Cairo – Luxury on the Nile's Edge</h3>
-                            <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Corniche El Nil, Cairo</span>
-                            </div>
-                            <p class="hotel-description">The St. Regis Cairo epitomizes luxury on the Nile's edge, making it one of the most highly recommended hotels in Cairo for discerning travelers. This modern 5-star hotel boasts exceptional views of the iconic Nile River, creating a stunning backdrop for a memorable stay.</p>
-                            
-                            <div class="hotel-highlights">
-                                <div class="highlight-title">Hotel Highlights:</div>
-                                <ul class="highlight-list">
-                                    <li>Exceptional Nile River views</li>
-                                    <li>Opulent interiors with elegant furnishings</li>
-                                    <li>Luxurious suites with stunning river views</li>
-                                    <li>Exquisite spa with rejuvenating treatments</li>
-                                    <li>Fine dining options with gourmet dishes</li>
-                                    <li>Personalized St. Regis service</li>
-                                </ul>
-                            </div>
-                            
-                            <p>Guests are welcomed into opulent interiors featuring elegant furnishings and sophisticated decor, setting the stage for an upscale experience. The luxurious suites at The St. Regis offer ample space and stunning Nile River views, ensuring comfort and style for every visitor.</p>
-                            
-                            <p>Indulgence continues at the hotel's exquisite spa, where guests can unwind with rejuvenating treatments designed to enhance relaxation and well-being. For culinary enthusiasts, the hotel offers fine dining options that serve a diverse range of gourmet dishes, guaranteeing delightful culinary experiences for every palate.</p>
-                            
-                            <p>As you explore options for where to stay in Cairo, the St. Regis stands out among luxury hotels in Cairo, providing personalized service that caters to your every need. The dedicated staff ensures that every moment of your stay is pampered and refined, reinforcing the commitment to excellence synonymous with the St. Regis brand.</p>
-                            
-                            <p>If you're looking for a romantic getaway or a lavish retreat amid Cairo's vibrant culture, The St. Regis Cairo promises an unforgettable experience steeped in luxury and sophistication.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Additional luxury hotels would follow the same pattern -->
+                    <!-- Additional hotel sections would follow the same pattern -->
                     
                     <h2 id="boutique-hotels">Best Boutique Hotels in Cairo for Unique Stays</h2>
                     <p>Cairo's boutique hotels offer unique stays that blend contemporary design with rich Egyptian heritage. Highlights include personalized service, distinctive decor, and prime locations near historic landmarks, to ensure an unforgettable experience in this vibrant city. Indulge in the local culture while enjoying modern comforts and amenities.</p>
                     
                     <!-- Villa Belle Époque -->
                     <div class="hotel-card">
-                        <img src="images/villa-belle-epoque.jpg" alt="Villa Belle Époque boutique hotel in Maadi" class="hotel-img lazy-load" loading="lazy">
+                        <div class="hotel-img">
+                            <span>Villa Belle Époque - Image Placeholder</span>
+                        </div>
                         <div class="hotel-card-body">
                             <h3 class="hotel-name">Villa Belle Époque</h3>
                             <div class="hotel-location">
@@ -1242,151 +1172,13 @@
                         </div>
                     </div>
                     
-                    <!-- More boutique hotels would follow -->
+                    <!-- Additional sections would continue here -->
                     
-                    <h2 id="pyramids-hotels">Best Hotels in Cairo Near Pyramids of Giza</h2>
-                    <p>Discover the best hotels in Cairo near Pyramids of Giza, offering stunning views, luxurious amenities, and easy access to ancient wonders. Experience exceptional hospitality and immerse yourself in the rich history of Egypt while enjoying modern comforts in these ideal accommodations for travelers seeking proximity to one of the world's most iconic landmarks.</p>
-                    
-                    <!-- Pyramids View Inn -->
-                    <div class="hotel-card">
-                        <img src="images/pyramids-view-inn.jpg" alt="Pyramids View Inn with views of the Great Pyramids" class="hotel-img lazy-load" loading="lazy">
-                        <div class="hotel-card-body">
-                            <h3 class="hotel-name">Pyramids View Inn – Affordable Comfort with Stunning Views</h3>
-                            <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Giza, Cairo</span>
-                            </div>
-                            <p class="hotel-description">Pyramids View Inn is an affordable gem that offers budget-conscious travelers unforgettable experiences with stunning views of the Great Pyramids and the enchanting sound and light show. Guests can enjoy picturesque sunsets from their private balconies while relaxing in elegantly furnished rooms with luxurious wooden ceilings and marble floors.</p>
-                            
-                            <div class="hotel-highlights">
-                                <div class="highlight-title">Hotel Highlights:</div>
-                                <ul class="highlight-list">
-                                    <li>Stunning views of the Great Pyramids</li>
-                                    <li>Affordable luxury with elegant furnishings</li>
-                                    <li>Private balconies for sunset viewing</li>
-                                    <li>Walking distance to Giza Plateau</li>
-                                    <li>Modern amenities including American kitchen</li>
-                                    <li>Warm hospitality and value for money</li>
-                                </ul>
-                            </div>
-                            
-                            <p>Each air-conditioned suite comes equipped with modern amenities, including a living room with an American kitchen, hot and cold water, satellite TV, and high-speed internet access. The thoughtful touches throughout the hotel ensure comfort and convenience, making it an ideal choice for those seeking both quality and value.</p>
-                            
-                            <p>Located within walking distance of Cairo's historical and cultural sites, Pyramids View Inn also offers easy access to horse and camel riding on the Giza Plateau, enabling guests to immerse themselves in the region's rich heritage. The surrounding area includes an array of American eateries and essential services, such as mini markets and fresh bakeries, ensuring that all needs are met during your stay.</p>
-                            
-                            <p>With warm hospitality and a commitment to providing value for money, Pyramids View Inn is the perfect choice for travelers looking to create memorable experiences without breaking the bank. Unwind in comfort and take in unparalleled views of the majestic Pyramids, solidifying your Cairo adventure in a remarkable way.</p>
-                        </div>
+                    <div class="cta-section">
+                        <h2 class="cta-title">Ready to Explore Cairo?</h2>
+                        <p class="cta-text">Book your luxury Egypt tour with Egypt Photography Tours and experience the best accommodations Cairo has to offer. Our expert guides will ensure you capture unforgettable moments at Egypt's most iconic locations.</p>
+                        <a href="contact.html" class="cta-button">Book Your Egypt Tour Now</a>
                     </div>
-                    
-                    <!-- More pyramid hotels would follow -->
-                    
-                    <h2 id="nile-hotels">Best Hotels in Cairo, Egypt Near the Nile</h2>
-                    <p>Explore the best hotels near the Nile, where stunning river views, luxurious accommodations, and exceptional service come together. These prime locations provide a perfect blend of relaxation and adventure, allowing guests to experience the beauty of the Nile while enjoying modern amenities and easy access to Cairo's vibrant attractions.</p>
-                    
-                    <!-- Sofitel Cairo Nile El Gezirah -->
-                    <div class="hotel-card">
-                        <img src="images/sofitel-cairo-nile.jpg" alt="Sofitel Cairo Nile El Gezirah luxury hotel" class="hotel-img lazy-load" loading="lazy">
-                        <div class="hotel-card-body">
-                            <h3 class="hotel-name">Sofitel Cairo Nile El Gezirah</h3>
-                            <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>El Gezirah, Cairo</span>
-                            </div>
-                            <p class="hotel-description">Sofitel Cairo Nile El Gezirah stands out among the best 5 star hotels in Cairo, Egypt, offering a luxurious riverside setting that showcases breathtaking panoramic views of the Nile River. This exquisite 5-star hotel combines elegant French design with traditional Egyptian influences to create a sophisticated ambiance that captivates guests from the moment they arrive.</p>
-                            
-                            <div class="hotel-highlights">
-                                <div class="highlight-title">Hotel Highlights:</div>
-                                <ul class="highlight-list">
-                                    <li>Breathtaking panoramic Nile River views</li>
-                                    <li>Elegant French design with Egyptian influences</li>
-                                    <li>Beautifully appointed rooms with river views</li>
-                                    <li>World-class dining with authentic Egyptian cuisine</li>
-                                    <li>Inviting outdoor pool surrounded by lush gardens</li>
-                                    <li>Luxurious spa with rejuvenating treatments</li>
-                                </ul>
-                            </div>
-                            
-                            <p>The hotel features beautifully appointed rooms and suites, each with stunning Nile River views, spacious layouts, and modern amenities to ensure a comfortable stay. Guests can indulge in a variety of world-class dining options, from authentic Egyptian cuisine to international delicacies, served at multiple on-site restaurants with picturesque views of the iconic river.</p>
-                            
-                            <p>For relaxation and leisure, the Sofitel offers an inviting outdoor pool surrounded by lush gardens, perfect for soaking up the sun while taking in the serene atmosphere. The luxurious spa provides a sanctuary of tranquility, offering a range of rejuvenating treatments and wellness options designed to pamper and revitalize guests.</p>
-                            
-                            <p>Whether you're seeking a romantic getaway or a serene escape, Sofitel Cairo Nile El Gezirah is an ideal choice among 5 star hotels in Cairo, Egypt. With its unparalleled setting, opulent design, and exceptional amenities, this hotel promises an unforgettable experience that beautifully blends relaxation and the vibrant energy of Cairo's rich culture.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- More Nile hotels would follow -->
-                    
-                    <h2 id="budget-hotels">Budget-Friendly Alternatives</h2>
-                    <p>Cairo's budget hotels boast central locations, ensuring easy access to attractions. They offer friendly service and clean, comfortable rooms, making them ideal for travelers seeking a welcoming atmosphere at an affordable price.</p>
-                    
-                    <!-- Steigenberger Hotel El Tahrir -->
-                    <div class="hotel-card">
-                        <img src="images/steigenberger-el-tahrir.jpg" alt="Steigenberger Hotel El Tahrir in central Cairo" class="hotel-img lazy-load" loading="lazy">
-                        <div class="hotel-card-body">
-                            <h3 class="hotel-name">Steigenberger Hotel El Tahrir</h3>
-                            <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Tahrir Square, Cairo</span>
-                            </div>
-                            <p class="hotel-description">The Steigenberger Hotel El Tahrir is a luxurious 4-star hotel situated in the vibrant heart of Cairo, directly overlooking the iconic Tahrir Square and the Egyptian Museum. This prime location allows guests to immerse themselves in Egypt's rich culture while being just minutes from the bustling Khan El Khalili Bazaar.</p>
-                            
-                            <div class="hotel-highlights">
-                                <div class="highlight-title">Hotel Highlights:</div>
-                                <ul class="highlight-list">
-                                    <li>Prime location overlooking Tahrir Square</li>
-                                    <li>295 elegantly decorated guest rooms and suites</li>
-                                    <li>Swimming pool and fitness center</li>
-                                    <li>Diverse culinary options including oriental and international cuisine</li>
-                                    <li>Wellness area for relaxation</li>
-                                    <li>Expansive meeting area for business travelers</li>
-                                </ul>
-                            </div>
-                            
-                            <p>The hotel features 295 elegantly decorated guest rooms and suites, equipped with modern in-room amenities for a comfortable stay. The Steigenberger El Tahrir is ideal for both business and leisure travelers, offering excellent facilities such as a swimming pool, a fitness center, and diverse culinary options. Guests can savor oriental and international delicacies at restaurants like the Downtown Restaurant or unwind with cocktails at the Cairo Lobby Bar.</p>
-                            
-                            <p>For those seeking relaxation, a wellness area is available on the second floor, providing a serene escape in the city. Business travelers will appreciate the expansive meeting area, which spans 1,782 m² and includes a large multi-purpose ballroom accommodating up to 300 guests, along with six well-lit private meeting rooms.</p>
-                            
-                            <p>With its blend of modern amenities, central location, and exceptional services, Steigenberger Hotel El Tahrir stands out as an affordable luxury choice for visitors to Cairo, catering to both business needs and leisurely retreats.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- More budget hotels would follow -->
-                    
-                    <h2 id="family-hotels">Family-Friendly Hotels for a Stress-Free Stay</h2>
-                    <p>Cairo's family-friendly hotels feature spacious rooms, ensuring ample space for everyone. Many offer kid-friendly pools and dining options tailored for comfort and convenience, creating a stress-free environment for families. These accommodations provide a welcoming atmosphere, making family stays enjoyable and hassle-free.</p>
-                    
-                    <!-- Hilton Cairo Heliopolis -->
-                    <div class="hotel-card">
-                        <img src="images/hilton-cairo-heliopolis.jpg" alt="Hilton Cairo Heliopolis family-friendly hotel" class="hotel-img lazy-load" loading="lazy">
-                        <div class="hotel-card-body">
-                            <h3 class="hotel-name">Hilton Cairo Heliopolis</h3>
-                            <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Heliopolis, Cairo</span>
-                            </div>
-                            <p class="hotel-description">The Hilton Cairo Heliopolis, one of the premier 5-star hotels in Cairo, Egypt, offers a family-friendly atmosphere perfect for a stress-free getaway. Located just under five kilometers from Cairo International Airport, this hotel provides easy access to local attractions like City Centre Almaza and Baron Empain Palace, making it an ideal base for families.</p>
-                            
-                            <div class="hotel-highlights">
-                                <div class="highlight-title">Hotel Highlights:</div>
-                                <ul class="highlight-list">
-                                    <li>Family-friendly atmosphere</li>
-                                    <li>Close proximity to Cairo International Airport</li>
-                                    <li>Spacious rooms designed for comfort</li>
-                                    <li>Two outdoor pools including a dedicated kids' pool</li>
-                                    <li>13 diverse restaurants with various cuisines</li>
-                                    <li>Special kids welcome and dedicated kids breakfast experience</li>
-                                </ul>
-                            </div>
-                            
-                            <p>The hotel boasts spacious rooms designed for comfort, ensuring a relaxing stay for both parents and children. Families can enjoy the two outdoor pools, including a dedicated kids' pool, providing a fun environment for children to splash around and play.</p>
-                            
-                            <p>Dining at the Hilton is a delight, with 13 diverse restaurants offering a variety of cuisines, including Lebanese, Egyptian, Thai, Latin, Indian, French, Italian, Chinese, and Japanese. Families with young children benefit from a special kids welcome and a dedicated kids breakfast experience, allowing little ones to choose meals from a special kids menu designed for their tastes.</p>
-                            
-                            <p>For those seeking a cozy option, 24-hour room service makes it easy to enjoy family meals in the comfort of your room. With its spacious accommodations, kid-friendly amenities, and excellent dining options, Hilton Cairo Heliopolis ensures an enjoyable stay for families traveling to Cairo.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- More family hotels would follow -->
                     
                     <h2 id="choosing-tips">Tips for Choosing the Best Hotel in Cairo for Your Needs</h2>
                     <p>To choose the best hotel in Cairo, prioritize location for easy access to attractions, consider your budget and preferred style, read guest reviews for honest insights, book in advance for the best rates, and ensure a comfortable and memorable stay.</p>
@@ -1402,40 +1194,14 @@
                     
                     <p>Consider what type of experience you seek. Do you prefer luxury hotels with top-notch amenities and services, boutique hotels with unique character and charm, or budget-friendly options that prioritize essentials? Each style caters to different preferences, so reflect on what matters most for your comfort and experience.</p>
                     
-                    <h3>Reading Reviews and Booking Like a Pro</h3>
-                    <p>When planning your stay in Cairo, reading guest reviews is essential to making an informed choice. Use trusted platforms like TripAdvisor, Booking.com, or Google Reviews to gauge visitor experiences. Look for consistent ratings to identify quality hotels, and pay attention to recent feedback, particularly concerning service and cleanliness, as these can significantly impact your experience.</p>
-                    
-                    <p>In addition to reviews, booking directly through hotel websites often results in better deals and exclusive perks. Hotels frequently offer special promotions, complimentary breakfast, or room upgrades to guests who book directly, which may not be available through third-party sites.</p>
-                    
-                    <p>To book like a pro, start by identifying your preferred hotels based on reviews and ratings. Once you have a shortlist, visit their official websites to compare offers and explore any available add-ons. Additionally, consider calling the hotel directly, as this personal touch may lead to further discounts or tailored assistance in planning your stay.</p>
-                    
-                    <p>By prioritizing guest reviews and opting for direct bookings, you can enhance your travel experience, secure better rates, and enjoy a more seamless stay in Cairo. Remember, a well-informed choice leads to greater satisfaction and unforgettable memories.</p>
-                    
-                    <h3>Your Safety is a Priority</h3>
-                    <p>When planning your stay in Cairo, it's crucial to research neighborhoods to ensure safety, especially for solo travelers and families. Gaining an understanding of the city's various districts helps you make informed decisions about where to stay.</p>
-                    
-                    <p>Opt for well-known areas such as Giza, Maadi, Heliopolis, Tahrir Square, Zamalek, Downtown, or locations near the Nile River. These districts are not only recognized for their tourist-friendly environments but also offer a sense of security due to their popularity and regular police presence. They provide easy access to major attractions, dining options, and transportation, making your stay more convenient.</p>
-                    
-                    <p>To enhance your safety, utilize local resources, such as travel forums and social media groups, to gather insights from fellow travelers about their personal experiences.</p>
-                    
-                    <p>By taking the time to evaluate neighborhood safety, you can enjoy a more secure and enjoyable stay in Cairo, allowing you to immerse yourself in the city without unnecessary worry. Prioritizing your safety ensures a memorable trip filled with exploration and adventure.</p>
-                    
-                    <p>By thoughtfully evaluating these factors, you can select accommodations that align with your travel preferences, ultimately enhancing your stay in the vibrant and culturally rich city of Cairo.</p>
-                    
-                    <div class="cta-section">
-                        <h2 class="cta-title">Ready to Explore Cairo?</h2>
-                        <p class="cta-text">Book your luxury Egypt tour with Egypt Photography Tours and experience the best accommodations Cairo has to offer. Our expert guides will ensure you capture unforgettable moments at Egypt's most iconic locations.</p>
-                        <a href="contact.html" class="cta-button">Book Your Egypt Tour Now</a>
-                    </div>
-                    
-                    <h2>Finding Your Perfect Stay in Cairo</h2>
+                    <h3>Finding Your Perfect Stay in Cairo</h3>
                     <p>Your perfect stay in Cairo depends on selecting a hotel that aligns with your travel needs, whether you're looking for luxury, boutique charm, or budget-friendly options. The city's rich culture, fascinating history, and warm hospitality make it a top destination for travelers from around the globe.</p>
                     
                     <p>When researching hotels, take the time to evaluate factors such as location, budget, and style to ensure your accommodation enhances your overall experience. With numerous options available, you'll surely find a place that meets your preferences and expectations.</p>
                     
                     <p>Cairo invites you to explore its vibrant atmosphere and captivating landmarks, ensuring every moment is filled with adventure. So, as you prepare for your trip, embrace the excitement and confidence that comes with making informed decisions.</p>
                     
-                    <p>For the best experience in Cairo, explore all available options and choose your accommodations with assurance. Ready to embark on your journey? <a href="contact.html">Book your tour here</a> and get ready for an unforgettable adventure in this incredible country with <a href="index.html">Egypt Photography Tours</a>!</p>
+                    <p>For the best experience in Cairo, explore all available options and choose your accommodations with assurance. Ready to embark on your journey? <a href="contact.html" class="content-link">Book your tour here</a> and get ready for an unforgettable adventure in this incredible country with <a href="index.html" class="content-link">Egypt Photography Tours</a>!</p>
                     
                     <div class="article-navigation">
                         <a href="blog.html" class="nav-link-prev">
@@ -1497,55 +1263,79 @@
     </footer>
 
     <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
+        // Mobile Menu Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                
-                // Change icon based on menu state
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    
+                    // Change icon based on menu state
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
             
             // Close menu when clicking on a link (for mobile)
             document.querySelectorAll('.nav-link a').forEach(link => {
                 link.addEventListener('click', function() {
                     if (window.innerWidth < 768) {
-                        navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                        if (navLinks) navLinks.classList.remove('active');
+                        if (mobileMenuToggle) {
+                            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                        }
                     }
                 });
             });
             
-            // ✅ LAZY LOADING IMAGES
-            const images = document.querySelectorAll('img[loading="lazy"]');
+            // Language Switcher Functionality
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const currentLanguage = document.querySelector('.current-language');
             
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
-                        }
-                    });
+            if (currentLanguage) {
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (languageSwitcher) languageSwitcher.classList.toggle('active');
                 });
-                
-                images.forEach(img => imageObserver.observe(img));
             }
             
-            // Initialize language switcher
-            initLanguageSwitcher();
+            document.addEventListener('click', function(e) {
+                if (languageSwitcher && !languageSwitcher.contains(e.target)) {
+                    languageSwitcher.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.language-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    document.querySelectorAll('.language-item').forEach(langItem => {
+                        langItem.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                    
+                    const selectedFlag = this.querySelector('.flag-icon').textContent;
+                    const selectedLang = this.querySelector('.language-text').textContent;
+                    
+                    if (document.querySelector('.current-flag')) {
+                        document.querySelector('.current-flag').textContent = selectedFlag;
+                    }
+                    
+                    languageSwitcher.classList.remove('active');
+                    
+                    window.location.href = this.href;
+                });
+            });
             
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1565,88 +1355,6 @@
                 });
             });
         });
-
-        // ✅ LANGUAGE SWITCHER FUNCTIONALITY - MATCHING BLOG.HTML
-        function initLanguageSwitcher() {
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            if (currentLanguage) {
-                currentLanguage.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    languageSwitcher.classList.toggle('active');
-                });
-            }
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
-                }
-            });
-            
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
-                });
-            });
-            
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA',
-                    'हिन्दी': 'HI',
-                    'Tagalog': 'TL',
-                    'Nederlands': 'NL'
-                };
-                return codes[languageName] || languageName;
-            }
-        }
-
-        // ✅ PRELOAD CRITICAL IMAGES
-        function preloadImages() {
-            const criticalImages = [
-                'images/best-hotels-cairo-egypt.jpg',
-                'images/egypt-photography-tours-logo.jpg'
-            ];
-            
-            criticalImages.forEach(src => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'image';
-                link.href = src;
-                document.head.appendChild(link);
-            });
-        }
-        
-        // Preload critical images
-        preloadImages();
     </script>
 </body>
 </html>
