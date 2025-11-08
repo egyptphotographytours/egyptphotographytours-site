@@ -19,7 +19,8 @@
     
     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <!-- Enhanced viewport for better mobile experience -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
 
     <title>Contact Egypt Photography Tours | Luxury Egypt Tours & Professional Photography Experiences</title>
 
@@ -128,6 +129,8 @@
             min-height: 100vh;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
+            /* Prevent horizontal scroll on mobile */
+            overflow-x: hidden;
         }
         .container {
             max-width: 1200px;
@@ -209,7 +212,7 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
-            padding: 4px 0;
+            padding: 8px 0; /* Increased padding for better touch target */
         }
         .contact-info:hover {
             color: var(--accent-light);
@@ -281,13 +284,18 @@
         .nav-link a {
             color: white;
             text-decoration: none;
-            padding: 12px 16px;
+            padding: 14px 16px; /* Increased padding for better touch target */
             transition: color 0.3s ease;
             display: block;
+            /* Ensure minimum touch target size */
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
         @media (min-width: 768px) {
             .nav-link a {
                 padding: 8px 0;
+                min-height: auto;
             }
         }
         .nav-link a:hover {
@@ -315,7 +323,13 @@
             color: white;
             font-size: 24px;
             cursor: pointer;
-            padding: 8px;
+            padding: 12px; /* Increased padding for better touch target */
+            /* Ensure minimum touch target size */
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         @media (min-width: 768px) {
             .mobile-menu-toggle {
@@ -325,7 +339,7 @@
         
         /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
         .main-section {
-            padding: 40px 0;
+            padding: 30px 0; /* Reduced padding on mobile */
             text-align: center;
         }
         @media (min-width: 768px) {
@@ -347,7 +361,7 @@
             }
         }
         .main-section h2 {
-            font-size: 24px;
+            font-size: 22px; /* Slightly smaller on mobile */
             font-weight: 700;
             color: var(--primary-dark);
             margin-bottom: 20px;
@@ -379,7 +393,7 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 30px; /* Reduced gap on mobile */
             margin-top: 30px;
         }
         @media (min-width: 1024px) {
@@ -390,7 +404,7 @@
         }
         .contact-form-container, .contact-info-container {
             background-color: white;
-            padding: 30px;
+            padding: 20px; /* Reduced padding on mobile */
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
@@ -408,14 +422,17 @@
             font-weight: 600;
             margin-bottom: 8px;
             color: var(--primary-dark);
+            font-size: 16px; /* Ensure good readability on mobile */
         }
         .form-input, .form-textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 14px 16px; /* Increased padding for better touch targets */
             border: 2px solid #e5e7eb;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 16px; /* Prevents zoom on iOS */
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            /* Ensure minimum touch target size */
+            min-height: 50px;
         }
         .form-input:focus, .form-textarea:focus {
             outline: none;
@@ -424,13 +441,13 @@
         }
         .form-textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px; /* Slightly taller on mobile for easier typing */
         }
         .submit-button {
             background-color: var(--accent-light);
             color: var(--primary-dark);
             font-weight: 700;
-            padding: 14px 32px;
+            padding: 16px 32px; /* Increased padding for better touch target */
             border-radius: 9999px;
             border: none;
             font-size: 18px;
@@ -438,6 +455,8 @@
             transition: all 0.3s ease;
             width: 100%;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            /* Ensure minimum touch target size */
+            min-height: 56px;
         }
         .submit-button:hover {
             background-color: var(--accent-dark);
@@ -448,11 +467,17 @@
         .contact-method {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 24px;
-            padding: 20px;
+            margin-bottom: 20px; /* Slightly reduced on mobile */
+            padding: 16px; /* Reduced padding on mobile */
             background-color: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid var(--accent-light);
+        }
+        @media (min-width: 768px) {
+            .contact-method {
+                margin-bottom: 24px;
+                padding: 20px;
+            }
         }
         .contact-icon-large {
             font-size: 24px;
@@ -478,6 +503,9 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
+            /* Ensure minimum touch target for links */
+            display: inline-block;
+            padding: 4px 0; /* Add some padding for better touch targets */
         }
         .contact-link:hover {
             color: var(--accent-dark);
@@ -493,7 +521,7 @@
         }
         .map-iframe {
             width: 100%;
-            height: 350px;
+            height: 300px; /* Slightly smaller on mobile */
             border: none;
         }
         @media (min-width: 768px) {
@@ -504,7 +532,7 @@
         
         .book-now-button {
             font-weight: 600;
-            padding: 8px 16px;
+            padding: 12px 20px; /* Increased padding for better touch target */
             border-radius: 9999px;
             background-color: #FFD700;
             color: #1a202c;
@@ -514,6 +542,11 @@
             white-space: nowrap;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             display: inline-block;
+            /* Ensure minimum touch target size */
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .book-now-button:hover {
             background-color: #E2B700;
@@ -592,6 +625,8 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
+            padding: 4px 0; /* Add padding for better touch targets */
+            display: inline-block;
         }
         .footer-links li a:hover {
             color: var(--accent-light);
@@ -610,6 +645,12 @@
         .social-links a {
             color: white;
             transition: color 0.3s ease;
+            /* Ensure minimum touch target for social icons */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
         }
         .social-links a:hover {
             color: var(--accent-light);
@@ -620,7 +661,7 @@
         .footer-contact {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 12px; /* Increased gap for better touch separation */
             margin-top: 16px;
             margin-bottom: 16px;
         }
@@ -633,6 +674,7 @@
             font-size: 14px;
             transition: color 0.3s ease;
             justify-content: center;
+            padding: 8px 0; /* Increased padding for better touch target */
         }
         @media (min-width: 768px) {
             .footer-contact-info {
@@ -674,7 +716,7 @@
             transform: rotate(180deg);
         }
         .language-item {
-            padding: 8px 12px;
+            padding: 12px 16px; /* Increased padding for better touch targets */
             display: flex;
             align-items: center;
             color: white;
@@ -683,6 +725,8 @@
             border-bottom: 1px solid #4B5563;
             font-size: 14px;
             cursor: pointer;
+            /* Ensure minimum touch target size */
+            min-height: 44px;
         }
         .language-item:last-child {
             border-bottom: none;
@@ -707,13 +751,15 @@
         .current-language {
             display: flex;
             align-items: center;
-            padding: 6px 10px;
+            padding: 10px 14px; /* Increased padding for better touch target */
             background: rgba(255, 215, 0, 0.1);
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s ease;
             font-size: 14px;
             border: 1px solid rgba(255, 215, 0, 0.3);
+            /* Ensure minimum touch target size */
+            min-height: 44px;
         }
         .current-language:hover {
             background: rgba(255, 215, 0, 0.2);
@@ -752,6 +798,34 @@
         }
         .lazy-load.loaded {
             opacity: 1;
+        }
+        
+        /* Additional mobile optimizations */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px; /* Slightly reduced padding on very small screens */
+            }
+            
+            .contact-form-container, .contact-info-container {
+                padding: 16px; /* Further reduced padding on very small screens */
+            }
+            
+            .main-section h1 {
+                font-size: 24px; /* Smaller heading on very small screens */
+            }
+            
+            .main-section h2 {
+                font-size: 20px; /* Smaller subheading on very small screens */
+            }
+            
+            .contact-grid {
+                gap: 20px; /* Further reduced gap on very small screens */
+            }
+        }
+        
+        /* Prevent text size adjustment on orientation change */
+        html {
+            -webkit-text-size-adjust: 100%;
         }
     </style>
 </head>
@@ -1150,6 +1224,18 @@
                 
                 images.forEach(img => imageObserver.observe(img));
             }
+            
+            // ✅ IMPROVED TOUCH INTERACTIONS
+            // Add touch feedback for buttons
+            document.querySelectorAll('button, a').forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
         });
     </script>
 </body>
