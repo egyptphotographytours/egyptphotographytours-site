@@ -169,6 +169,45 @@
     }
     </script>
 
+    <!-- How-To 구조화 데이터 추가 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "이집트에서 SIM 카드 구매 및 사용 방법",
+      "description": "한국인 관광객을 위한 이집트 SIM 카드 구매 단계별 가이드",
+      "totalTime": "PT30M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "15"
+      },
+      "step": [{
+        "@type": "HowToStep",
+        "name": "필수 서류 준비",
+        "text": "여권과 언락된 스마트폰을 준비합니다.",
+        "image": "https://www.egyptphotographytours.com/images/blog-sim-card-egypt.jpg"
+      }, {
+        "@type": "HowToStep",
+        "name": "통신사 선택",
+        "text": "여행 일정에 맞는 통신사를 선택합니다: Orange Egypt(전국 커버리지), Vodafone Egypt(도시 커버리지), Etisalat Egypt(예산 친화적).",
+        "image": "https://www.egyptphotographytours.com/images/blog-sim-card-egypt.jpg"
+      }, {
+        "@type": "HowToStep",
+        "name": "패키지 선택 및 구매",
+        "text": "관광객 패키지를 선택하고 현지 통화로 결제합니다.",
+        "image": "https://www.egyptphotographytours.com/images/blog-sim-card-egypt.jpg"
+      }, {
+        "@type": "HowToStep",
+        "name": "활성화 및 테스트",
+        "text": "직원의 도움으로 SIM 카드를 활성화하고 인터넷 연결을 테스트합니다.",
+        "image": "https://www.egyptphotographytours.com/images/blog-sim-card-egypt.jpg"
+      }],
+      "tool": ["여권", "언락된 스마트폰", "이집트 파운드 또는 USD"],
+      "countryOfOrigin": "Egypt"
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -185,58 +224,56 @@
         }
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8;
             color: var(--text-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            line-height: 1.6;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
         }
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* 헤더 스타일 - 모바일 최적화 */
         .header {
             background-color: var(--primary-dark);
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            padding: 12px 0;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 12px;
+            gap: 15px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
-                gap: 0;
+                justify-content: space-between;
             }
         }
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         .logo-img {
             height: 40px;
             width: auto;
-            border-radius: 9999px;
+            border-radius: 50%;
         }
         .logo-link {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
+            font-size: 22px;
+            font-weight: bold;
             color: var(--accent-light);
             text-decoration: none;
         }
@@ -245,24 +282,11 @@
                 font-size: 24px;
             }
         }
-        .header-text {
-            font-size: 14px;
-            font-style: italic;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 16px;
-            }
-        }
-        
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
         @media (min-width: 768px) {
             .header-contact {
@@ -270,57 +294,45 @@
             }
         }
         .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 6px;
             color: white;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 14px;
             transition: color 0.3s ease;
-            padding: 4px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
         }
-        .contact-icon {
-            font-size: 14px;
-            width: 16px;
-            text-align: center;
-        }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* 네비게이션 스타일 */
         .navbar {
             background-color: #374151;
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 0;
             position: sticky;
             top: 0;
-            z-index: 50;
-            padding: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .navbar-content {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            justify-content: space-between;
         }
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
+                justify-content: space-between;
                 align-items: center;
             }
         }
         .nav-links {
             display: none;
             flex-direction: column;
-            width: 100%;
-            gap: 0;
-            font-size: 16px;
-            font-weight: 500;
             list-style: none;
+            width: 100%;
             padding: 0;
             margin: 0;
-            background-color: #374151;
         }
         .nav-links.active {
             display: flex;
@@ -329,17 +341,12 @@
             .nav-links {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
+                gap: 20px;
                 width: auto;
             }
         }
         .nav-link {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-link:last-child {
-            border-bottom: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         @media (min-width: 768px) {
             .nav-link {
@@ -349,33 +356,33 @@
         .nav-link a {
             color: white;
             text-decoration: none;
-            padding: 12px 16px;
-            transition: color 0.3s ease;
+            padding: 15px 20px;
             display: block;
+            transition: background-color 0.3s;
         }
         @media (min-width: 768px) {
             .nav-link a {
-                padding: 8px 0;
+                padding: 15px 10px;
             }
         }
         .nav-link a:hover {
-            color: var(--accent-light);
+            background-color: rgba(255,255,255,0.1);
         }
         .cta-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 0;
+            padding: 15px 0;
         }
         @media (min-width: 768px) {
             .cta-container {
                 justify-content: flex-end;
-                gap: 12px;
+                gap: 15px;
                 padding: 0;
             }
         }
         
-        /* MOBILE MENU TOGGLE */
+        /* 모바일 메뉴 토글 */
         .mobile-menu-toggle {
             display: block;
             background: none;
@@ -383,7 +390,7 @@
             color: white;
             font-size: 24px;
             cursor: pointer;
-            padding: 8px;
+            padding: 10px;
         }
         @media (min-width: 768px) {
             .mobile-menu-toggle {
@@ -391,568 +398,365 @@
             }
         }
         
-        /* HERO SECTION STYLES - MATCHING LUXURY ARTICLE DESIGN */
+        /* 히어로 섹션 스타일 */
         .hero-section {
             position: relative;
+            background-image: url('/images/blog-sim-card-egypt.jpg');
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 24px;
+            padding: 20px;
         }
         .hero-overlay {
             position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
         }
         .hero-content {
             position: relative;
-            z-index: 10;
+            z-index: 2;
             color: white;
-            max-width: 960px;
-            margin: 0 auto;
+            max-width: 900px;
+            padding: 0 20px;
         }
         .hero-title {
-            font-size: 32px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2rem;
+            margin-bottom: 20px;
             color: var(--accent-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         @media (min-width: 768px) {
             .hero-title {
-                font-size: 48px;
+                font-size: 3rem;
             }
         }
         .hero-subtitle {
-            font-size: 16px;
-            margin-bottom: 32px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         @media (min-width: 768px) {
             .hero-subtitle {
-                font-size: 20px;
+                font-size: 1.3rem;
             }
         }
         
-        /* ARTICLE CONTENT STYLES - MOBILE OPTIMIZED */
+        /* 본문 콘텐츠 스타일 */
         .article-section {
             padding: 40px 0;
         }
         @media (min-width: 768px) {
             .article-section {
-                padding: 64px 0;
+                padding: 60px 0;
             }
         }
         .article-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 0 20px;
         }
         .article-meta {
             display: flex;
             justify-content: center;
-            gap: 16px;
-            margin-bottom: 32px;
+            gap: 20px;
+            margin-bottom: 30px;
+            color: #666;
             font-size: 14px;
-            color: #6b7280;
-        }
-        @media (min-width: 768px) {
-            .article-meta {
-                font-size: 16px;
-            }
+            flex-wrap: wrap;
         }
         .article-content h2 {
-            font-size: 28px;
-            font-weight: 700;
             color: var(--primary-dark);
             margin: 40px 0 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--connectivity-blue);
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--connectivity-blue);
+            font-size: 1.8rem;
         }
         @media (min-width: 768px) {
             .article-content h2 {
-                font-size: 32px;
-                margin: 48px 0 24px;
+                font-size: 2rem;
             }
         }
         .article-content h3 {
-            font-size: 22px;
-            font-weight: 600;
             color: var(--primary-dark);
-            margin: 32px 0 16px;
+            margin: 30px 0 15px;
+            font-size: 1.4rem;
         }
         @media (min-width: 768px) {
             .article-content h3 {
-                font-size: 24px;
-                margin: 36px 0 16px;
+                font-size: 1.6rem;
             }
         }
         .article-content p {
-            font-size: 16px;
-            line-height: 1.7;
             margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1rem;
         }
         @media (min-width: 768px) {
             .article-content p {
-                font-size: 18px;
-                margin-bottom: 24px;
+                font-size: 1.1rem;
             }
         }
         .article-content ul, .article-content ol {
-            margin-bottom: 24px;
-            padding-left: 24px;
+            margin-left: 20px;
+            margin-bottom: 25px;
         }
         .article-content li {
-            font-size: 16px;
+            margin-bottom: 10px;
             line-height: 1.7;
-            margin-bottom: 12px;
-        }
-        @media (min-width: 768px) {
-            .article-content li {
-                font-size: 18px;
-            }
         }
         .article-content strong {
             color: var(--primary-dark);
             font-weight: 600;
         }
+        
+        /* 하이라이트 박스 */
         .highlight-box {
             background-color: rgba(59, 130, 246, 0.1);
             border-left: 4px solid var(--connectivity-blue);
-            padding: 20px;
-            margin: 32px 0;
-            border-radius: 4px;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
             text-align: center;
         }
-        @media (min-width: 768px) {
-            .highlight-box {
-                padding: 24px;
-            }
-        }
+        
+        /* 표 스타일 */
         .provider-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 32px 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .provider-table {
-                font-size: 16px;
-            }
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-radius: 8px;
         }
         .provider-table th {
             background-color: var(--primary-dark);
             color: white;
-            padding: 12px;
+            padding: 15px;
             text-align: left;
             font-weight: 600;
         }
-        @media (min-width: 768px) {
-            .provider-table th {
-                padding: 16px;
-            }
-        }
         .provider-table td {
-            padding: 12px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        @media (min-width: 768px) {
-            .provider-table td {
-                padding: 16px;
-            }
+            padding: 15px;
+            border-bottom: 1px solid #eee;
         }
         .provider-table tr:nth-child(even) {
-            background-color: #f9fafb;
+            background-color: #f9f9f9;
         }
         .provider-table tr:hover {
-            background-color: #f3f4f6;
-        }
-        .bg-light-gray {
-            background-color: #f3f4f6;
+            background-color: #f0f0f0;
         }
         
-        /* CTA SECTION STYLES */
-        .cta-section {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 40px;
-            border-radius: 8px;
-        }
-        @media (min-width: 768px) {
-            .cta-section {
-                padding: 48px 0;
-                margin-top: 64px;
-            }
-        }
-        .cta-section h2 {
-            color: var(--accent-light);
-            margin-bottom: 16px;
-            font-size: 24px;
-        }
-        @media (min-width: 768px) {
-            .cta-section h2 {
-                font-size: 28px;
-            }
-        }
-        .cta-section p {
-            max-width: 600px;
-            margin: 0 auto 24px;
-            font-size: 16px;
-        }
-        @media (min-width: 768px) {
-            .cta-section p {
-                font-size: 18px;
-                margin: 0 auto 32px;
-                line-height: 1.6;
-                max-width: 700px;
-                padding: 0 20px;
-                text-align: center;
-                color: #e5e7eb;
-            }
-        }
+        /* CTA 버튼 스타일 */
         .cta-button {
             display: inline-block;
             background-color: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 600;
-            padding: 12px 24px;
-            border-radius: 9999px;
-            text-align: center;
+            padding: 12px 30px;
+            border-radius: 30px;
             text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
             transition: all 0.3s ease;
-            font-size: 16px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        .cta-button:hover, .cta-button:active, .cta-button:focus {
+        .cta-button:hover {
             background-color: var(--accent-dark);
-            transform: scale(1.05);
-            color: var(--primary-dark) !important;
-            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
         
-        /* FOOTER STYLES - MATCHING LUXURY ARTICLE DESIGN */
+        /* 푸터 스타일 */
         .footer {
             background-color: var(--primary-dark);
             color: white;
-            padding: 30px 0;
-            margin-top: auto;
-        }
-        @media (min-width: 768px) {
-            .footer {
-                padding: 40px 0;
-            }
+            padding: 40px 0;
+            margin-top: 60px;
         }
         .footer-content {
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
         @media (min-width: 768px) {
             .footer-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                text-align: left;
-                flex-wrap: wrap;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
-        .footer-section {
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-section {
-                margin-bottom: 0;
-            }
-        }
-        .footer-brand {
-            text-align: left;
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-brand {
-                margin-bottom: 0;
-                text-align: left;
-            }
-        }
-        .footer-title {
-            font-size: 20px;
-            font-weight: 700;
+        .footer-section h4 {
             color: var(--accent-light);
-            margin-bottom: 8px;
-        }
-        @media (min-width: 768px) {
-            .footer-title {
-                font-size: 24px;
-            }
-        }
-        .footer-text {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
         }
         .footer-links {
             list-style: none;
             padding: 0;
-            font-size: 14px;
-            line-height: 1.8;
         }
-        .footer-links li a {
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-        .footer-links li a:hover {
+        .footer-links a:hover {
             color: var(--accent-light);
         }
         .social-links {
             display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 12px;
-        }
-        @media (min-width: 768px) {
-            .social-links {
-                justify-content: flex-start;
-            }
+            gap: 15px;
+            margin-top: 15px;
         }
         .social-links a {
             color: white;
-            transition: color 0.3s ease;
+            font-size: 20px;
+            transition: color 0.3s;
         }
         .social-links a:hover {
             color: var(--accent-light);
         }
         
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-        .footer-contact-info {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-            justify-content: center;
-        }
-        @media (min-width: 768px) {
-            .footer-contact-info {
-                justify-content: flex-start;
-            }
-        }
-        .footer-contact-info:hover {
-            color: var(--accent-light);
-        }
-        
-        .footer-map {
-            margin-top: 20px;
-            width: 100%;
-            flex: 2;
-        }
-        @media (min-width: 768px) {
-            .footer-map {
-                margin-top: 0;
-            }
-        }
-        .footer-map iframe {
-            width: 100%;
-            height: 350px;
-            border: none;
-            border-radius: 8px;
-        }
-        @media (min-width: 768px) {
-            .footer-map iframe {
-                height: 400px;
-            }
-        }
-        @media (min-width: 1024px) {
-            .footer-map iframe {
-                height: 450px;
-            }
-        }
-        
-        /* Language Switcher Styles - MOBILE OPTIMIZED */
+        /* 언어 선택기 스타일 */
         .language-switcher {
             position: relative;
-            display: inline-block;
+        }
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 8px 15px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            border: 1px solid rgba(255,215,0,0.3);
+            transition: all 0.3s;
+        }
+        .current-language:hover {
+            background-color: rgba(255,255,255,0.2);
         }
         .language-dropdown {
             position: absolute;
             top: 100%;
             right: 0;
-            background: #374151;
+            background-color: #374151;
             border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             min-width: 180px;
-            max-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
+            display: none;
             z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
+            overflow: hidden;
         }
         .language-switcher.active .language-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .language-switcher.active .dropdown-arrow {
-            transform: rotate(180deg);
+            display: block;
         }
         .language-item {
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
+            display: block;
+            padding: 12px 15px;
             color: white;
             text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #4B5563;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .language-item:last-child {
-            border-bottom: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: background-color 0.3s;
         }
         .language-item:hover {
-            background-color: #4B5563;
+            background-color: rgba(255,255,255,0.1);
         }
         .language-item.active {
             background-color: var(--accent-light);
             color: var(--primary-dark);
             font-weight: 600;
         }
-        .flag-icon {
-            font-size: 16px;
-            margin-right: 8px;
-            min-width: 18px;
-        }
-        .language-text {
-            flex: 1;
-            font-size: 14px;
-        }
-        .current-language {
-            display: flex;
-            align-items: center;
-            padding: 6px 10px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        .current-language:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        .current-flag {
-            font-size: 16px;
-            margin-right: 6px;
-        }
-        .dropdown-arrow {
-            margin-left: 6px;
-            transition: transform 0.2s ease;
-        }
-        .language-dropdown::-webkit-scrollbar {
-            width: 4px;
-        }
-        .language-dropdown::-webkit-scrollbar-track {
-            background: #4B5563;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb {
-            background: #6B7280;
-            border-radius: 2px;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #9CA3AF;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .lazy-load.loaded {
-            opacity: 1;
-        }
         
+        /* 예약 버튼 */
         .book-now-button {
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 9999px;
             background-color: var(--accent-light);
-            color: #1a202c;
+            color: var(--primary-dark);
+            padding: 10px 25px;
+            border-radius: 25px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            white-space: nowrap;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            font-weight: bold;
+            transition: all 0.3s;
             display: inline-block;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            white-space: nowrap;
         }
-        .book-now-button:hover, .book-now-button:active, .book-now-button:focus {
+        .book-now-button:hover {
             background-color: var(--accent-dark);
             transform: scale(1.05);
-            color: #1a202c !important;
-            text-decoration: none;
         }
         
-        .article-content a {
-            color: var(--connectivity-blue);
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
-        .article-content a:hover {
-            color: var(--primary-dark);
-        }
-        
-        /* Connectivity Specific Styles */
-        .connectivity-category {
-            background-color: white;
+        /* 한국어 특화 스타일 */
+        .korean-highlight {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff0b3 100%);
+            border-left: 4px solid #ff9900;
+            padding: 25px;
+            margin: 30px 0;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            padding: 24px;
-            margin: 24px 0;
-            border-left: 4px solid var(--connectivity-blue);
+            box-shadow: 0 4px 12px rgba(255,153,0,0.1);
         }
-        .connectivity-category h3 {
-            margin-top: 0;
-            color: var(--primary-dark);
+        .korean-tip {
+            background-color: #e6f7ff;
+            border: 2px solid #91d5ff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 4px solid #1890ff;
         }
-        .connectivity-category ul {
-            margin-bottom: 16px;
+        .keyword-badge {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 3px;
+            border: 1px solid #ddd;
+            font-weight: 500;
         }
         
-        /* Connectivity Highlights */
+        /* FAQ 스타일 */
+        .faq-item {
+            background-color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--data-green);
+        }
+        .faq-question {
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* 가격 비교 섹션 */
+        .price-comparison {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--data-green);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        /* 네트워크 커버리지 섹션 */
+        .coverage-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        /* 연결성 하이라이트 그리드 */
         .connectivity-highlights {
             display: grid;
             grid-template-columns: 1fr;
@@ -966,11 +770,15 @@
         }
         .connectivity-item {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             text-align: center;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            transition: transform 0.3s;
+        }
+        .connectivity-item:hover {
+            transform: translateY(-5px);
         }
         .connectivity-icon {
             font-size: 40px;
@@ -978,38 +786,7 @@
             margin-bottom: 15px;
         }
         
-        /* Provider Comparison */
-        .provider-badge {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: 8px;
-            vertical-align: middle;
-        }
-        
-        .vodafone-badge {
-            background-color: #E60000;
-            color: white;
-        }
-        
-        .orange-badge {
-            background-color: #FF7900;
-            color: white;
-        }
-        
-        .etisalat-badge {
-            background-color: #00A1E7;
-            color: white;
-        }
-        
-        .we-badge {
-            background-color: #0077C8;
-            color: white;
-        }
-        
-        /* Tips Grid */
+        /* 팁 그리드 */
         .tips-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1023,108 +800,175 @@
         }
         .tip-item {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 2px solid rgba(59, 130, 246, 0.1);
         }
         .tip-number {
             background-color: var(--connectivity-blue);
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             margin-bottom: 15px;
-        }
-        
-        /* FAQ Styles */
-        .faq-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--data-green);
-        }
-        .faq-question {
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 12px;
             font-size: 18px;
         }
         
-        /* Price Comparison */
-        .price-comparison {
-            background-color: rgba(16, 185, 129, 0.1);
-            border-left: 4px solid var(--data-green);
-            padding: 20px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-        .price-comparison h3 {
-            color: var(--data-green);
-            margin-top: 0;
+        /* 연결성 카테고리 */
+        .connectivity-category {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid var(--connectivity-blue);
         }
         
-        /* Network Coverage Section */
-        .coverage-section {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 30px 0;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-        
+        /* 네트워크 기능 */
         .network-feature {
             display: flex;
             align-items: flex-start;
             margin-bottom: 15px;
         }
-        
         .network-feature i {
             color: var(--connectivity-blue);
             margin-right: 10px;
             margin-top: 3px;
             font-size: 18px;
+            min-width: 24px;
         }
         
-        /* Essential Keywords Badge */
-        .keyword-badge {
+        /* 통신사 배지 */
+        .provider-badge {
             display: inline-block;
-            background-color: #f3f4f6;
-            color: var(--primary-dark);
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
-            margin-right: 6px;
-            margin-bottom: 6px;
-            border: 1px solid #e5e7eb;
+            margin-left: 8px;
+            vertical-align: middle;
+            color: white;
         }
-
-        /* Korean-specific customizations */
-        .korean-highlight {
-            background-color: rgba(255, 215, 0, 0.15);
-            border-left: 4px solid #FF7900;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 8px;
+        .vodafone-badge {
+            background-color: #E60000;
+        }
+        .orange-badge {
+            background-color: #FF7900;
+        }
+        .etisalat-badge {
+            background-color: #00A1E7;
+        }
+        .we-badge {
+            background-color: #0077C8;
         }
         
-        .korean-tip {
-            background-color: rgba(59, 130, 246, 0.08);
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            padding: 15px;
+        /* CTA 섹션 */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2d3748 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .cta-section h2 {
+            color: var(--accent-light);
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* 반응형 디자인 추가 */
+        @media (max-width: 767px) {
+            .hero-section {
+                height: 50vh;
+            }
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .article-container {
+                padding: 0 15px;
+            }
+            .provider-table {
+                font-size: 14px;
+            }
+            .provider-table th,
+            .provider-table td {
+                padding: 10px;
+            }
+            .footer-content {
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        /* 애니메이션 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* 링크 스타일 */
+        .article-content a {
+            color: var(--connectivity-blue);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+        .article-content a:hover {
+            border-bottom: 1px solid var(--connectivity-blue);
+        }
+        
+        /* 이미지 스타일 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* 지도 스타일 */
+        .footer-map {
+            margin-top: 20px;
+        }
+        .footer-map iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
             border-radius: 8px;
-            margin: 20px 0;
+        }
+        @media (min-width: 768px) {
+            .footer-map iframe {
+                height: 300px;
+            }
+        }
+        
+        /* 한국 국기 이모지 스타일 */
+        .korean-flag {
+            font-size: 20px;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
+    <!-- 헤더 -->
     <header class="header">
         <div class="container content">
             <div class="logo-section">
@@ -1138,110 +982,57 @@
             </div>
             <div class="header-contact">
                 <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
-                    <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    <i class="fab fa-whatsapp"></i> +20 155 073 5673
                 </a>
                 <a href="mailto:info@egyptphotographytours.com" class="contact-info">
-                    <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    <i class="far fa-envelope"></i> info@egyptphotographytours.com
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- 네비게이션 -->
     <nav class="navbar">
         <div class="container navbar-content">
             <div class="cta-container">
-                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <button class="mobile-menu-toggle" aria-label="네비게이션 메뉴 토글">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="/ko/contact.html" class="book-now-button">지금 예약하기</a>
                 <div class="language-switcher">
                     <div class="current-language">
-                        <span class="current-flag">🇰🇷</span>
-                        <span>KO</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <span class="korean-flag">🇰🇷</span>
+                        <span>한국어</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="language-dropdown">
                         <a href="/staying-connected-egypt-sim-card-options.html" class="language-item">
                             <span class="flag-icon">🇺🇸</span>
-                            <span class="language-text">English</span>
-                        </a>
-                        <a href="/ru/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
-                        </a>
-                        <a href="/ar/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
-                        </a>
-                        <a href="/fr/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
-                        </a>
-                        <a href="/de/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
-                        </a>
-                        <a href="/es/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
-                        </a>
-                        <a href="/it/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
-                        </a>
-                        <a href="/zh/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
+                            English
                         </a>
                         <a href="/ko/staying-connected-egypt-sim-card-options.html" class="language-item active">
                             <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
-                        </a>
-                        <a href="/pt/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
-                        </a>
-                        <a href="/id/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
+                            한국어
                         </a>
                         <a href="/ja/staying-connected-egypt-sim-card-options.html" class="language-item">
                             <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
+                            日本語
                         </a>
-                        <a href="/no/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇳🇴</span>
-                            <span class="language-text">Norsk (Norwegian)</span>
+                        <a href="/zh/staying-connected-egypt-sim-card-options.html" class="language-item">
+                            <span class="flag-icon">🇨🇳</span>
+                            中文
                         </a>
-                        <a href="/da/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇩🇰</span>
-                            <span class="language-text">Dansk (Danish)</span>
+                        <a href="/ru/staying-connected-egypt-sim-card-options.html" class="language-item">
+                            <span class="flag-icon">🇷🇺</span>
+                            Русский
                         </a>
-                        <a href="/hi/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇮🇳</span>
-                            <span class="language-text">हिन्दी (Hindi)</span>
+                        <a href="/fr/staying-connected-egypt-sim-card-options.html" class="language-item">
+                            <span class="flag-icon">🇫🇷</span>
+                            Français
                         </a>
-                        <a href="/nl/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇳🇱</span>
-                            <span class="language-text">Nederlands (Dutch)</span>
-                        </a>
-                        <a href="/th/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇹🇭</span>
-                            <span class="language-text">ไทย (Thai)</span>
-                        </a>
-                        <a href="/tl/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇵🇭</span>
-                            <span class="language-text">Tagalog</span>
-                        </a>
-                        <a href="/ms/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇲🇾</span>
-                            <span class="language-text">Bahasa Melayu (Malaysian)</span>
-                        </a>
-                        <a href="/sv/staying-connected-egypt-sim-card-options.html" class="language-item">
-                            <span class="flag-icon">🇸🇪</span>
-                            <span class="language-text">Svenska (Swedish)</span>
+                        <a href="/es/staying-connected-egypt-sim-card-options.html" class="language-item">
+                            <span class="flag-icon">🇪🇸</span>
+                            Español
                         </a>
                     </div>
                 </div>
@@ -1249,7 +1040,7 @@
             <ul class="nav-links">
                 <li class="nav-link"><a href="/ko/index.html">홈</a></li>
                 <li class="nav-link"><a href="/ko/about.html">회사소개</a></li>
-                <li class="nav-link"><a href="/ko/tours.html">투어 상품</a></li>
+                <li class="nav-link"><a href="/ko/tours.html">투어상품</a></li>
                 <li class="nav-link"><a href="/ko/gallery.html">갤러리</a></li>
                 <li class="nav-link"><a href="/ko/resources.html">자료실</a></li>
                 <li class="nav-link"><a href="/ko/blog.html">블로그</a></li>
@@ -1259,10 +1050,12 @@
         </div>
     </nav>
 
+    <!-- 메인 콘텐츠 -->
     <main class="main">
-        <section class="hero-section" style="background-image: url('/images/blog-sim-card-egypt.jpg');">
+        <!-- 히어로 섹션 -->
+        <section class="hero-section fade-in">
             <div class="hero-overlay"></div>
-            <div class="hero-content">
+            <div class="container hero-content">
                 <h1 class="hero-title">2025년 이집트 여행 최고의 SIM 카드: 피라미드 투어를 위한 관광객 모바일 데이터, 인터넷 & VPN 가이드</h1>
                 <p class="hero-subtitle">
                     한국인 관광객을 위한 완벽한 이집트 SIM 카드 가이드: 최고의 모바일 데이터 요금제, 피라미드 투어를 위한 인터넷 연결, 관광객용 SIM 카드, 이집트 VPN, 이집트 여행 중 연락 유지 방법.
@@ -1270,8 +1063,9 @@
             </div>
         </section>
 
+        <!-- 본문 섹션 -->
         <section class="article-section">
-            <div class="article-container">
+            <div class="container article-container">
                 <div class="article-meta">
                     <span>2025년 3월 15일</span>
                     <span>카이로, 이집트</span>
@@ -1281,19 +1075,20 @@
                 <div class="article-content">
                     
                     <!-- 한국인 관광객을 위한 특별 안내 -->
-                    <div class="korean-highlight">
-                        <h3>🇰🇷 한국인 관광객을 위한 특별 안내</h3>
-                        <p><strong>이집트를 방문하는 한국인 분들을 위해 특별히 준비한 연결성 가이드입니다.</strong> 카이로 공항에서 한국어로 도움을 받을 수 있는 방법부터 한국인에게 가장 적합한 SIM 카드 요금제, 그리고 한국어 앱(카카오톡, 네이버, 카카오맵 등) 사용을 위한 필수 정보를 모두 포함했습니다.</p>
+                    <div class="korean-highlight fade-in">
+                        <h3><span class="korean-flag">🇰🇷</span> 한국인 관광객을 위한 특별 안내</h3>
+                        <p><strong>이 가이드는 이집트를 방문하는 한국인 관광객을 위해 특별히 제작되었습니다.</strong> 카이로 공항에서 한국어로 도움을 받는 방법부터 한국인에게 가장 적합한 SIM 카드 요금제, 그리고 한국어 앱(카카오톡, 네이버, 카카오맵 등) 사용을 위한 모든 정보를 포함했습니다.</p>
                         <p><strong>이집트 포토그래피 투어</strong>는 한국인 관광객의 편의를 최대한 고려하여, 공항 도착 시 SIM 카드 구매 지원부터 투어 중 안정적인 인터넷 연결을 보장해 드립니다. 피라미드, 룩소르, 아부심벨 등에서 한국어 가이드와 함께 편안하게 여행하세요.</p>
+                        <a href="/ko/tours.html" class="cta-button">한국어 가이드와 함께하는 이집트 투어 보기</a>
                     </div>
                     
-                    <h2>이집트에서 연결 상태 유지하기: 관광객을 위한 SIM 카드, 인터넷 & VPN 종합 가이드</h2>
+                    <h2 class="fade-in">이집트에서 연결 상태 유지하기: 관광객을 위한 SIM 카드, 인터넷 & VPN 종합 가이드</h2>
                     
-                    <p><strong>피라미드 투어, 나일강 크루즈, 사막 모험</strong>을 위해 이집트를 여행하시나요? 내비게이션, 멋진 사진 공유, 연락 유지를 위해 연결 상태를 유지하는 것이 필수적입니다. 이 종합 가이드는 <strong>이집트 관광객용 SIM 카드, 모바일 데이터 요금제, 인터넷 연결성, VPN 서비스</strong>에 대해 알아야 할 모든 것을 다룹니다.</p>
+                    <p class="fade-in"><strong>피라미드 투어, 나일강 크루즈, 사막 모험</strong>을 위해 이집트를 여행하시나요? 내비게이션, 멋진 사진 공유, 연락 유지를 위해 연결 상태를 유지하는 것이 필수적입니다. 이 종합 가이드는 <strong>이집트 관광객용 SIM 카드, 모바일 데이터 요금제, 인터넷 연결성, VPN 서비스</strong>에 대해 알아야 할 모든 것을 다룹니다.</p>
                     
-                    <p><strong>기자의 대피라미드 방문, 룩소르 신전 탐험, 홍해 리조트 휴식</strong> 중 어디에 계시든, 안정적인 인터넷 접속은 여행 경험을 향상시킵니다. <strong>카이로 공항의 관광객용 SIM 카드부터 eSIM 옵션과 휴대용 WiFi 장치</strong>까지, 저희가 이집트 여행을 위한 모든 연결성 솔루션을 테스트했습니다.</p>
+                    <p class="fade-in"><strong>기자의 대피라미드 방문, 룩소르 신전 탐험, 홍해 리조트 휴식</strong> 중 어디에 계시든, 안정적인 인터넷 접속은 여행 경험을 향상시킵니다. <strong>카이로 공항의 관광객용 SIM 카드부터 eSIM 옵션과 휴대용 WiFi 장치</strong>까지, 저희가 이집트 여행을 위한 모든 연결성 솔루션을 테스트했습니다.</p>
                     
-                    <div class="connectivity-highlights">
+                    <div class="connectivity-highlights fade-in">
                         <div class="connectivity-item">
                             <div class="connectivity-icon">
                                 <i class="fas fa-sim-card"></i>
@@ -1324,15 +1119,15 @@
                         </div>
                     </div>
                     
-                    <div class="highlight-box">
+                    <div class="highlight-box fade-in">
                         <h3>이집트 투어 중 연결 상태 유지하기</h3>
                         <p>이집트 포토그래피 투어에는 SIM 카드 구매 지원이 포함되어 있어, 착륙하는 순간부터 인터넷을 사용하실 수 있습니다. 저희가 모든 연결성 필요를 처리해 드리므로, 여러분은 놀라운 사진 촬영에만 집중하시면 됩니다.</p>
                         <a href="/ko/tours.html" class="cta-button">연결성 보장 이집트 투어 예약하기</a>
                     </div>
                     
-                    <h2>이집트 SIM 카드 가이드: 관광객이 알아야 할 모든 것</h2>
+                    <h2 class="fade-in">이집트 SIM 카드 가이드: 관광객이 알아야 할 모든 것</h2>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트 연결성을 위한 필수 키워드:</h3>
                         <div>
                             <span class="keyword-badge">이집트 여행 SIM 카드</span>
@@ -1354,12 +1149,12 @@
                         </div>
                     </div>
                     
-                    <div class="korean-tip">
-                        <h4>💡 한국인 관광객을 위한 팁</h4>
+                    <div class="korean-tip fade-in">
+                        <h4><span class="korean-flag">💡</span> 한국인 관광객을 위한 팁</h4>
                         <p>이집트에서 한국어 앱(카카오톡, 네이버, 카카오맵 등)은 VPN 없이도 대부분 정상 작동합니다. 그러나 은행 앱이나 일부 스트리밍 서비스 이용 시 VPN이 필요할 수 있습니다. ExpressVPN이나 NordVPN을 추천합니다.</p>
                     </div>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>관광객이 이집트에서 SIM 카드를 구매할 수 있나요? <span class="provider-badge vodafone-badge">예</span></h3>
                         <p>물론입니다! <strong>이집트에서 관광객용 SIM 카드</strong>를 구매하는 것은 간단하고 매우 권장됩니다. <strong>피라미드 투어, 나일강 크루즈, 사막 사파리</strong>를 위해 방문하시든, 연결 상태 유지는 다음과 같은 이유로 필수적입니다:</p>
                         
@@ -1386,7 +1181,7 @@
                         <p><strong>이집트 관광객용 SIM 카드</strong>는 모든 주요 공항, 공식 매장, 인증 대리점에서 구매하실 수 있습니다. 등록에는 여권만 필요하며 과정은 빠릅니다.</p>
                     </div>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트 여행을 위한 SIM 카드 구매처</h3>
                         <p>이집트를 방문하는 관광객을 위해 가장 편리한 SIM 카드 구매처는 다음과 같습니다:</p>
                         
@@ -1420,9 +1215,9 @@
                         <p>최신 스마트폰에 완벽한 <strong>이집트 eSIM</strong> 옵션은 물리적 SIM 카드 없이 디지털 활성화를 가능하게 합니다.</p>
                     </div>
                     
-                    <h2>관광객을 위한 이집트 최고의 모바일 네트워크</h2>
+                    <h2 class="fade-in">관광객을 위한 이집트 최고의 모바일 네트워크</h2>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>2025년 이집트 모바일 네트워크 비교</h3>
                         <p>4개의 주요 통신사가 이집트 모바일 시장을 지배하고 있으며, 각각 다른 유형의 여행자에게 강점을 가지고 있습니다:</p>
                         
@@ -1464,12 +1259,12 @@
                         </table>
                     </div>
                     
-                    <div class="korean-tip">
-                        <h4>🇰🇷 한국인 관광객을 위한 통신사 선택 가이드</h4>
+                    <div class="korean-tip fade-in">
+                        <h4><span class="korean-flag">🇰🇷</span> 한국인 관광객을 위한 통신사 선택 가이드</h4>
                         <p><strong>Orange Egypt</strong>가 한국인 관광객에게 가장 추천됩니다. 전국적인 커버리지가 뛰어나고, 피라미드부터 룩소르, 아스완까지 주요 관광지에서 안정적인 연결을 제공합니다. 데이터 요금제도 관광객에게 적합하게 구성되어 있습니다.</p>
                     </div>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트 관광 명소별 네트워크 커버리지</h3>
                         <p>관광객이 일반적으로 방문하는 이집트의 다양한 지역에서 다른 네트워크가 우수한 성능을 발휘합니다:</p>
                         
@@ -1486,7 +1281,7 @@
                         <p>모든 주요 네트워크가 우수한 커버리지를 제공하며, <strong>Orange</strong>가 종종 해변과 다이빙 지역에서 최고의 신호를 가집니다.</p>
                     </div>
                     
-                    <div class="price-comparison">
+                    <div class="price-comparison fade-in">
                         <h3>2025년 이집트 SIM 카드 가격 비교</h3>
                         <p>관광객 SIM 패키지는 일반적으로 데이터 필요에 따라 $10-25 사이입니다:</p>
                         <ul>
@@ -1498,9 +1293,9 @@
                         <p><strong>프로 팁:</strong> 공항 키오스크는 시내 매장보다 20-30% 더 비쌉니다. 공항에서 기본 SIM을 구매한 후 시내에서 충전하는 것을 고려해 보세요.</p>
                     </div>
                     
-                    <h2>단계별: 이집트 SIM 카드 구매하기</h2>
+                    <h2 class="fade-in">단계별: 이집트 SIM 카드 구매하기</h2>
                     
-                    <div class="tips-grid">
+                    <div class="tips-grid fade-in">
                         <div class="tip-item">
                             <div class="tip-number">1</div>
                             <h4>서류 준비하기</h4>
@@ -1523,7 +1318,7 @@
                         </div>
                     </div>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트 SIM 카드 필수 요구사항</h3>
                         <ul>
                             <li><strong>유효한 여권:</strong> 모든 관광객 SIM 등록에 원본 필요</li>
@@ -1534,9 +1329,9 @@
                         </ul>
                     </div>
                     
-                    <h2>이집트 여행을 위한 인터넷 & VPN</h2>
+                    <h2 class="fade-in">이집트 여행을 위한 인터넷 & VPN</h2>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트에서 VPN이 필요한 이유</h3>
                         <p>이집트는 우수한 인터넷 인프라를 가지고 있지만, 일부 웹사이트와 서비스는 제한될 수 있습니다. <strong>이집트 여행용 VPN</strong>은 다음을 제공합니다:</p>
                         
@@ -1569,7 +1364,7 @@
                         <p><strong>중요:</strong> 이집트에 도착하기 전에 VPN을 설치하고 테스트하세요. 일부 VPN 웹사이트는 차단될 수 있습니다.</p>
                     </div>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트 모바일 데이터 속도</h3>
                         <p>이집트의 4G/LTE 네트워크는 관광객 필요에 적합한 속도를 제공합니다:</p>
                         <ul>
@@ -1581,9 +1376,9 @@
                         <p>속도는 구글 맵스, SNS, WhatsApp 통화, 중간 정도의 비디오 스트리밍에 충분합니다.</p>
                     </div>
                     
-                    <h2>이집트 여행을 위한 대체 연결성 옵션</h2>
+                    <h2 class="fade-in">이집트 여행을 위한 대체 연결성 옵션</h2>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트 eSIM - 디지털 솔루션</h3>
                         <p><strong>이집트 eSIM</strong> 옵션은 최신 스마트폰(iPhone XS 이상, Pixel 3 이상, Samsung S20 이상)에 완벽합니다.</p>
                         
@@ -1604,7 +1399,7 @@
                         </ul>
                     </div>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트 휴대용 WiFi 장치</h3>
                         <p>함께 여행하는 가족이나 그룹에게 완벽합니다. 여러 휴대폰, 태블릿, 노트북을 연결할 수 있는 휴대용 WiFi 장치를 렌트하세요.</p>
                         
@@ -1617,7 +1412,7 @@
                         </ul>
                     </div>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>국제 로밍 vs 현지 SIM</h3>
                         <p><strong>비용 비교:</strong> 현지 SIM 카드는 국제 로밍보다 70-90% 저렴합니다.</p>
                         
@@ -1659,24 +1454,24 @@
                         </table>
                     </div>
                     
-                    <h2>자주 묻는 질문: 관광객을 위한 이집트 SIM 카드 & 인터넷</h2>
+                    <h2 class="fade-in">자주 묻는 질문: 관광객을 위한 이집트 SIM 카드 & 인터넷</h2>
                     
-                    <div class="faq-item">
+                    <div class="faq-item fade-in">
                         <div class="faq-question">Q1: 2025년 한국인 관광객을 위한 가장 좋은 이집트 SIM 카드는 무엇인가요?</div>
                         <p>현재 <strong>Orange Egypt</strong>가 커버리지, 속도, 관광객 친화적인 패키지의 최적 균형을 제공합니다. 그들의 관광객 SIM 번들에는 넉넉한 데이터 제공량이 포함되어 있으며 피라미드, 룩소르 신전, 홍해 리조트를 포함한 주요 관광지에서 안정적으로 작동합니다. 카이로와 기자에서 대부분의 시간을 보내실 경우 <strong>Vodafone Egypt</strong>가 우수한 도시 커버리지를 제공합니다.</p>
                     </div>
                     
-                    <div class="faq-item">
+                    <div class="faq-item fade-in">
                         <div class="faq-question">Q2: 피라미드 투어를 위해 카이로 공항에서 SIM 카드를 구매할 수 있나요?</div>
                         <p>네, 물론입니다. 카이로 국제공항에는 모든 터미널 도착 홀에 전용 관광객 SIM 카드 키오스크가 있습니다. 착륙 후 15분 이내에 <strong>Vodafone, Orange, Etisalat, WE SIM 카드</strong>를 구매하실 수 있습니다. 이 공항 SIM 카드는 기자 피라미드, 이집트 박물관, 카이로 전역에서 즉시 작동합니다. 시내 매장보다 약간 더 비싸지만, 대부분의 관광객에게는 편의성이 가치가 있습니다.</p>
                     </div>
                     
-                    <div class="faq-item">
+                    <div class="faq-item fade-in">
                         <div class="faq-question">Q3: 이집트 여행 중 인터넷을 위해 VPN이 필요한가요?</div>
                         <p>필수는 아니지만, <strong>이집트 여행 시 VPN을 적극 권장합니다</strong>. 일부 웹사이트와 VoIP 서비스에는 제한이 있을 수 있습니다. VPN은 호텔 WiFi의 안전한 연결, 모든 일반 서비스 접속, 온라인 뱅킹 보호를 보장합니다. 일부 VPN 제공업체 사이트가 현지에서 차단될 수 있으므로 이집트에 도착하기 전에 VPN(ExpressVPN, NordVPN)을 설치하고 테스트하세요.</p>
                     </div>
                     
-                    <div class="faq-item">
+                    <div class="faq-item fade-in">
                         <div class="faq-question">Q4: 10일 이집트 투어에 얼마나 많은 데이터가 필요한가요?</div>
                         <p>피라미드, 신전, 도시를 방문하는 일반적인 10일 이집트 투어의 경우 다음을 추천합니다:</p>
                         <ul>
@@ -1687,14 +1482,14 @@
                         <p>대부분의 관광객 SIM 패키지는 합리적인 가격으로 7-14일 유효 기간 동안 10-30GB를 제공합니다.</p>
                     </div>
                     
-                    <div class="faq-item">
+                    <div class="faq-item fade-in">
                         <div class="faq-question">Q5: 나일강 크루즈와 사막 투어 중 SIM 카드가 작동하나요?</div>
                         <p>대부분의 주요 네트워크는 룩소르와 아스완 사이의 나일강을 따라 커버리지를 제공하지만, 속도는 다를 수 있습니다. 화이트 데저트나 시나이 같은 곳으로의 사막 투어 중에는 커버리지가 불안정할 수 있습니다. 나일강 크루즈의 경우 <strong>Orange와 WE</strong>가 일반적으로 가장 안정적인 강 커버리지를 가지고 있습니다. 사막 탐험 전에는 항상 오프라인 지도를 다운로드하세요.</p>
                     </div>
                     
                     <!-- 한국인 관광객을 위한 추가 FAQ -->
-                    <div class="korean-highlight">
-                        <h3>🇰🇷 한국인 관광객 추가 질문</h3>
+                    <div class="korean-highlight fade-in">
+                        <h3><span class="korean-flag">🇰🇷</span> 한국인 관광객 추가 질문</h3>
                         
                         <div class="faq-item">
                             <div class="faq-question">Q6: 이집트에서 한국어로 도움을 받을 수 있는 통신사가 있나요?</div>
@@ -1712,14 +1507,14 @@
                         </div>
                     </div>
                     
-                    <div class="cta-section">
+                    <div class="cta-section fade-in">
                         <h2>이집트 모험 중 연결 상태 유지하기</h2>
                         <p>이집트 포토그래피 투어와 함께하면 연결성 문제에 대해 걱정할 필요가 없습니다. 저희는 도착 시 SIM 카드 구매 지원, 그룹 투어를 위한 휴대용 WiFi 옵션 제공, 이집트 여행 전체에 걸쳐 안정적인 인터넷 접속을 보장해 드립니다.</p>
                         <p>피라미드, 신전, 고대 유적지의 숨막히는 사진을 찍는 데 집중하세요. 저희가 모든 연결성 필요를 처리해 드립니다. 공항 픽업부터 호텔 WiFi, 투어 중 모바일 데이터까지, 모든 것을 책임지겠습니다.</p>
                         <a href="/ko/contact.html" class="cta-button">연결성 보장 이집트 포토그래피 투어 예약하기</a>
                     </div>
                     
-                    <div class="connectivity-category">
+                    <div class="connectivity-category fade-in">
                         <h3>이집트 여행을 위한 필수 연결성 체크리스트</h3>
                         <ul>
                             <li>✓ 이집트 네트워크와 호환되는 언락된 스마트폰</li>
@@ -1734,8 +1529,8 @@
                     </div>
                     
                     <!-- 한국어 검색 최적화를 위한 추가 콘텐츠 -->
-                    <div class="korean-highlight">
-                        <h3>🔍 한국어로 이집트 SIM 카드 검색 시 참고사항</h3>
+                    <div class="korean-highlight fade-in">
+                        <h3><span class="korean-flag">🔍</span> 한국어로 이집트 SIM 카드 검색 시 참고사항</h3>
                         <p>한국어로 "이집트 유심", "이집트 SIM 카드", "카이로 공항 유심" 등을 검색하실 때 다음 정보를 참고하세요:</p>
                         
                         <div class="tips-grid">
@@ -1758,88 +1553,135 @@
                         </div>
                         
                         <p><strong>이집트 포토그래피 투어</strong>를 통해 예약하시면 이러한 모든 고민을 해결해 드립니다. 전문 한국어 가이드가 공항에서부터 여행 종료까지 모든 연결성 문제를 지원해 드립니다.</p>
+                        <a href="/ko/contact.html" class="cta-button">한국어 지원 이집트 투어 상담받기</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- 푸터 -->
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3 class="footer-title">이집트 포토그래피 투어</h3>
-                <p class="footer-text">&copy; 2025 이집트 포토그래피 투어.</p>
-                <p class="footer-text">모든 권리 보유.</p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">빠른 링크</h4>
-                <ul class="footer-links">
-                    <li><a href="/ko/index.html">홈</a></li>
-                    <li><a href="/ko/about.html">회사소개</a></li>
-                    <li><a href="/ko/tours.html">투어 상품</a></li>
-                    <li><a href="/ko/gallery.html">갤러리</a></li>
-                    <li><a href="/ko/resources.html">자료실</a></li>
-                    <li><a href="/ko/blog.html">블로그</a></li>
-                    <li><a href="/ko/contact.html">문의하기</a></li>
-                    <li><a href="/ko/faqs.html">자주 묻는 질문</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">연락처</h4>
-                <p class="footer-text">주소: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>이집트 포토그래피 투어</h4>
+                    <p>&copy; 2025 이집트 포토그래피 투어.</p>
+                    <p>모든 권리 보유.</p>
+                    <p>전문 이집트 포토그래피 투어 회사로, 한국인 관광객을 위한 맞춤형 서비스를 제공합니다.</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                
+                <div class="footer-section">
+                    <h4>빠른 링크</h4>
+                    <ul class="footer-links">
+                        <li><a href="/ko/index.html">홈</a></li>
+                        <li><a href="/ko/about.html">회사소개</a></li>
+                        <li><a href="/ko/tours.html">투어상품</a></li>
+                        <li><a href="/ko/gallery.html">갤러리</a></li>
+                        <li><a href="/ko/resources.html">자료실</a></li>
+                        <li><a href="/ko/blog.html">블로그</a></li>
+                        <li><a href="/ko/contact.html">문의하기</a></li>
+                        <li><a href="/ko/faqs.html">자주 묻는 질문</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <p>Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+                    <div class="footer-contact" style="margin-top: 15px;">
+                        <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info" style="justify-content: flex-start; color: white;">
+                            <i class="fab fa-whatsapp"></i> +20 155 073 5673
+                        </a>
+                        <a href="mailto:info@egyptphotographytours.com" class="contact-info" style="justify-content: flex-start; color: white;">
+                            <i class="far fa-envelope"></i> info@egyptphotographytours.com
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-map">
+            <div class="footer-map" style="margin-top: 30px;">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </footer>
 
     <script>
-        // ✅ 모바일 메뉴 기능
+        // 모바일 메뉴 기능
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                
-                // 메뉴 상태에 따라 아이콘 변경
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    
+                    // 아이콘 변경
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
             
             // 모바일에서 링크 클릭 시 메뉴 닫기
             document.querySelectorAll('.nav-link a').forEach(link => {
                 link.addEventListener('click', function() {
                     if (window.innerWidth < 768) {
                         navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                        if (mobileMenuToggle) {
+                            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                        }
                     }
                 });
             });
             
-            // ✅ 지연 로딩 이미지
+            // 언어 선택기 기능
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const currentLanguage = document.querySelector('.current-language');
+            
+            if (currentLanguage) {
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
+                });
+            }
+            
+            // 문서 클릭 시 언어 선택기 닫기
+            document.addEventListener('click', function(e) {
+                if (languageSwitcher && !languageSwitcher.contains(e.target)) {
+                    languageSwitcher.classList.remove('active');
+                }
+            });
+            
+            // 언어 선택 시
+            document.querySelectorAll('.language-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    if (this.classList.contains('active')) {
+                        e.preventDefault();
+                    } else {
+                        // 활성 상태 변경
+                        document.querySelectorAll('.language-item').forEach(lang => {
+                            lang.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // 언어 선택기 닫기
+                        languageSwitcher.classList.remove('active');
+                    }
+                });
+            });
+            
+            // 이미지 지연 로딩
             const images = document.querySelectorAll('img[loading="lazy"]');
             
             if ('IntersectionObserver' in window) {
@@ -1856,248 +1698,92 @@
                 images.forEach(img => imageObserver.observe(img));
             }
             
-            // 언어 전환기 초기화
-            initLanguageSwitcher();
-            
-            // 한국어 사용자 맞춤 이벤트 트래킹
-            trackKoreanUserEngagement();
-        });
-
-        // ✅ 모든 추가 언어가 포함된 언어 전환기 기능
-        function initLanguageSwitcher() {
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            currentLanguage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                languageSwitcher.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
-                }
-            });
-            
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
-                });
-            });
-            
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA',
-                    'Norsk (Norwegian)': 'NO',
-                    'Dansk (Danish)': 'DA',
-                    'हिन्दी (Hindi)': 'HI',
-                    'Nederlands (Dutch)': 'NL',
-                    'ไทย (Thai)': 'TH',
-                    'Tagalog': 'TL',
-                    'Bahasa Melayu (Malaysian)': 'MS',
-                    'Svenska (Swedish)': 'SV'
-                };
-                return codes[languageName] || languageName;
-            }
-        }
-
-        // ✅ 중요한 이미지 프리로드
-        function preloadImages() {
-            const criticalImages = [
-                '/images/blog-sim-card-egypt.jpg',
-                '/images/egypt-photography-tours-logo.jpg'
-            ];
-            
-            criticalImages.forEach(src => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'image';
-                link.href = src;
-                document.head.appendChild(link);
-            });
-        }
-        
-        // 중요한 이미지 프리로드
-        preloadImages();
-        
-        // ✅ 한국어 사용자 참여도 트래킹
-        function trackKoreanUserEngagement() {
-            // 한국어 페이지 접속 통계
-            if (window.location.pathname.includes('/ko/')) {
-                console.log('Korean user accessed SIM card guide');
-                
-                // 한국어 관련 요소 클릭 트래킹
-                document.querySelectorAll('.korean-highlight, .korean-tip, .cta-button').forEach(element => {
-                    element.addEventListener('click', function() {
-                        console.log('Korean user interacted with: ', this.textContent.substring(0, 50));
-                    });
-                });
-                
-                // 한국어 FAQ 확장 추적
-                document.querySelectorAll('.faq-question').forEach(question => {
-                    question.addEventListener('click', function() {
-                        if (this.textContent.includes('한국') || this.textContent.includes('한국인')) {
-                            console.log('Korean user expanded Korean-specific FAQ');
-                        }
-                    });
-                });
-            }
-        }
-
-        // ✅ 검색 최적화를 위한 키워드 강화 스크립트
-        document.addEventListener('DOMContentLoaded', function() {
-            // 한국어 키워드 SEO 트래킹
-            const koreanKeywords = [
-                '이집트 SIM 카드', '이집트 유심', '한국인 이집트 유심',
-                '카이로 공항 SIM', '이집트 여행 인터넷', '이집트 VPN',
-                '오렌지 이집트', '보다폰 이집트', '이집트 데이터 요금제'
-            ];
-            
-            // 연결성 서비스를 위한 구조화된 데이터
-            const koreanConnectivitySchema = {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "serviceType": "여행 연결성 솔루션",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "이집트 포토그래피 투어",
-                    "url": "https://www.egyptphotographytours.com/ko",
-                    "description": "한국인 관광객을 위한 전문 이집트 포토그래피 투어 및 연결성 서비스"
-                },
-                "areaServed": {
-                    "@type": "Country",
-                    "name": "이집트"
-                },
-                "availableLanguage": "Korean",
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "이집트 연결성 서비스",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "이집트 SIM 카드 구매 지원",
-                                "description": "한국어 지원이 포함된 공항 도착 시 SIM 카드 구매 지원"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "관광객을 위한 모바일 데이터 솔루션",
-                                "description": "한국인 관광객에게 최적화된 데이터 요금제 추천 및 설정"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "이집트 여행 VPN 설정",
-                                "description": "한국어 앱 및 서비스 접속을 위한 VPN 설정 지원"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "한국어 통신 지원",
-                                "description": "이집트 전역에서 한국어로 통신 문제 지원"
-                            }
-                        }
-                    ]
-                }
-            };
-            
-            // 페이지에 스키마 추가
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.text = JSON.stringify(koreanConnectivitySchema);
-            document.head.appendChild(script);
-            
-            // 한국어 사용자 경험 향상을 위한 동적 콘텐츠
+            // 한국어 사용자 경험 향상
             enhanceKoreanUserExperience();
+            
+            // 외부 링크 새 탭에서 열기
+            document.querySelectorAll('a[href^="http"]').forEach(link => {
+                if (!link.href.includes(window.location.hostname)) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+            });
         });
 
-        // ✅ 한국어 사용자 경험 향상
+        // 한국어 사용자 경험 향상
         function enhanceKoreanUserExperience() {
             // 한국어 페이지에서만 실행
             if (!window.location.pathname.includes('/ko/')) return;
             
-            // 한국어 관련 검색어 강조
-            const koreanSearchTerms = [
-                '이집트 유심 카드 구매',
-                '카이로 공항에서 SIM 카드 사기',
-                '한국인 이집트 여행 인터넷',
-                '이집트에서 카카오톡 사용하기',
-                '이집트 VPN 설정 방법'
+            console.log('한국어 SIM 카드 가이드 페이지 로드됨');
+            
+            // 한국어 관련 검색어 트래킹
+            const koreanKeywords = [
+                '이집트 유심',
+                '카이로 공항 SIM 카드', 
+                '한국인 이집트 인터넷',
+                '이집트 VPN',
+                '오렌지 이집트 요금제'
             ];
             
-            // 한국어 사용자를 위한 추가 정보 표시
-            const koreanInfoSection = document.createElement('div');
-            koreanInfoSection.className = 'korean-tip';
-            koreanInfoSection.innerHTML = `
-                <h4>🇰🇷 한국인 관광객 실시간 정보</h4>
-                <p><strong>최신 업데이트:</strong> 2025년 3월 기준, Orange Egypt가 한국인 관광객에게 가장 추천되는 통신사입니다. 카이로 공항 도착 홀에서 영어로 도움을 받으실 수 있으며, 10-15GB 데이터 패키지는 약 $15-20 정도입니다.</p>
-                <p><strong>한국어 앱 작동:</strong> 카카오톡, 네이버, 카카오맵 등 대부분의 한국어 앱은 VPN 없이도 정상 작동합니다.</p>
-            `;
-            
-            // 내용의 적절한 위치에 추가
-            const firstHighlightBox = document.querySelector('.highlight-box');
-            if (firstHighlightBox) {
-                firstHighlightBox.parentNode.insertBefore(koreanInfoSection, firstHighlightBox.nextSibling);
-            }
-            
-            // 한국어 관련 링크에 추적 추가
-            document.querySelectorAll('a[href*="ko/"]').forEach(link => {
-                link.addEventListener('click', function() {
+            // 한국어 사용자 행동 분석
+            document.querySelectorAll('.korean-highlight, .korean-tip, .cta-button').forEach(element => {
+                element.addEventListener('click', function() {
                     if (typeof gtag !== 'undefined') {
-                        gtag('event', 'korean_navigation', {
+                        gtag('event', 'korean_user_interaction', {
                             'event_category': 'Korean User',
-                            'event_label': this.href
+                            'event_label': this.textContent.substring(0, 50)
                         });
+                    }
+                });
+            });
+            
+            // 한국어 FAQ 확장 추적
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    if (this.textContent.includes('한국') || this.textContent.includes('한국인')) {
+                        console.log('한국어 사용자가 한국어 FAQ 확장');
                     }
                 });
             });
         }
 
-        // ✅ 한국어 검색 최적화를 위한 추가 메타 태그
-        const koreanMetaTags = `
+        // 애니메이션 효과
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // 페이지 로드 시 애니메이션 초기화
+        window.addEventListener('load', function() {
+            animateOnScroll();
+        });
+
+        // 네이버 검색 최적화 메타 태그 추가
+        const naverMetaTags = `
             <meta name="naver-site-verification" content="">
             <meta property="naver:title" content="2025년 이집트 여행 최고의 SIM 카드 가이드">
             <meta property="naver:description" content="한국인 관광객을 위한 완벽한 이집트 SIM 카드, 인터넷, VPN 가이드">
         `;
         
-        // 메타 태그 추가
-        document.head.insertAdjacentHTML('beforeend', koreanMetaTags);
+        document.head.insertAdjacentHTML('beforeend', naverMetaTags);
     </script>
 </body>
 </html>
