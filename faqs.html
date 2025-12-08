@@ -402,35 +402,247 @@
             }
         }
         
-        /* FAQ HERO SECTION */
-        .faq-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/faq-hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0;
+        /* ENHANCED HERO SLIDER SECTION - 4 IMAGES WITH CLEAR BACKGROUND */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        
+        .slides-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* REMOVED THE DARK OVERLAY - Images are now clear */
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
+            color: white;
+            z-index: 2;
+            width: 90%;
+            max-width: 900px;
+            padding: 40px;
+            background: rgba(26, 32, 44, 0.85); /* Semi-transparent dark blue background */
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--accent-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
-        .faq-hero h1 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
+        
+        .hero-content h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 25px;
             color: var(--accent-light);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
         }
-        @media (min-width: 768px) {
-            .faq-hero h1 {
-                font-size: 48px;
+        
+        .hero-content p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 500;
+        }
+        
+        /* Slider controls */
+        .slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 3;
+        }
+        
+        .slider-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .slider-dot.active {
+            background-color: var(--accent-light);
+            transform: scale(1.3);
+            border-color: white;
+        }
+        
+        .slider-dot:hover {
+            background-color: var(--accent-light);
+            transform: scale(1.2);
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 215, 0, 0.8);
+            color: var(--primary-dark);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slider-nav:hover {
+            background-color: #FFD700;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .prev-slide {
+            left: 30px;
+        }
+        
+        .next-slide {
+            right: 30px;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-slider {
+                height: 600px;
+            }
+            
+            .hero-content {
+                padding: 30px;
+                max-width: 85%;
+            }
+            
+            .hero-content h1 {
+                font-size: 44px;
+            }
+            
+            .hero-content p {
+                font-size: 20px;
+            }
+            
+            .slider-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
-        .faq-hero p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
+        
+        @media (max-width: 768px) {
+            .hero-slider {
+                height: 500px;
+            }
+            
+            .hero-content {
+                padding: 25px;
+                max-width: 90%;
+                backdrop-filter: blur(5px);
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+            
+            .slider-nav {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            .prev-slide {
+                left: 15px;
+            }
+            
+            .next-slide {
+                right: 15px;
+            }
+            
+            .slider-dot {
+                width: 12px;
+                height: 12px;
+            }
         }
-        @media (min-width: 768px) {
-            .faq-hero p {
-                font-size: 20px;
+        
+        @media (max-width: 480px) {
+            .hero-slider {
+                height: 450px;
+            }
+            
+            .hero-content {
+                padding: 20px;
+                max-width: 95%;
+            }
+            
+            .hero-content h1 {
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+            
+            .hero-content p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            
+            .slider-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .prev-slide {
+                left: 10px;
+            }
+            
+            .next-slide {
+                right: 10px;
             }
         }
         
@@ -1249,11 +1461,55 @@
     </div>
 
     <main class="main">
-        <!-- ENHANCED FAQ HERO SECTION WITH SEO KEYWORDS -->
-        <section class="faq-hero">
-            <div class="container">
+        <!-- ENHANCED HERO SLIDER WITH 4 CLEAR IMAGES -->
+        <section class="hero-slider">
+            <div class="slides-container">
+                <!-- Slide 1 - Pyramids -->
+                <div class="slide active">
+                    <img src="images/egypt-pyramids-hero.jpg" 
+                         alt="Pyramids of Giza at sunset - Egypt photography tour" 
+                         loading="eager">
+                </div>
+                <!-- Slide 2 - Luxor Temple -->
+                <div class="slide">
+                    <img src="images/luxor-temple-hero.jpg" 
+                         alt="Luxor Temple at golden hour - Egypt historical tour" 
+                         loading="lazy">
+                </div>
+                <!-- Slide 3 - Nile Cruise -->
+                <div class="slide">
+                    <img src="images/nile-cruise-hero.jpg" 
+                         alt="Nile cruise boat sailing at sunset - Luxury Egypt tour" 
+                         loading="lazy">
+                </div>
+                <!-- Slide 4 - Egyptian Desert -->
+                <div class="slide">
+                    <img src="images/egypt-desert-hero.jpg" 
+                         alt="White Desert landscape - Egypt desert photography tour" 
+                         loading="lazy">
+                </div>
+            </div>
+            
+            <!-- Hero Content with Clear Background -->
+            <div class="hero-content">
                 <h1>Egypt Tours FAQs: Complete Guide for 2025 Travelers</h1>
                 <p>Get expert answers to all your questions about luxury Egypt tours, pyramids photoshoot experiences, Nile cruise packages, Cairo travel safety, Egyptian visa requirements, photography tours at Giza, booking process, and everything you need for your perfect Egyptian adventure.</p>
+            </div>
+            
+            <!-- Slider Navigation -->
+            <button class="slider-nav prev-slide" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav next-slide" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Slider Dots -->
+            <div class="slider-controls">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+                <div class="slider-dot" data-slide="3"></div>
             </div>
         </section>
 
@@ -1628,300 +1884,438 @@
                         </button>
                         <div class="faq-answer">
                             <p>Yes, there are some photography restrictions at Egyptian historical sites:</p>
-                            <ul>
-                                <li><strong>No Flash:</strong> Prohibited inside tombs and museums to preserve artifacts</li>
-                                <li><strong>Tripod Restrictions:</strong> Often requires special permit or prohibited in certain areas</li>
-                                <li><strong>Commercial Photography:</strong> Requires advance permits and additional fees</li>
-                                <li><strong>Specific Prohibitions:</strong> No photography in some tombs in Valley of the Kings</li>
-                                <li><strong>Mobile Phones:</strong> Usually allowed without additional fees</li>
-                            </ul>
-                            <p>Our guides are knowledgeable about current restrictions and will advise you at each site. We can help arrange special photography permits for professional shoots when needed.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-category="photography">
-                        <button class="faq-question">
-                            <div class="faq-question-content">
-                                <i class="faq-icon fas fa-bolt"></i>
-                                <span>What power adapters do I need for Egypt?</span>
+                                <ul>
+                                    <li><strong>No Flash:</strong> Prohibited inside tombs and museums to preserve artifacts</li>
+                                    <li><strong>Tripod Restrictions:</strong> Often requires special permit or prohibited in certain areas</li>
+                                    <li><strong>Commercial Photography:</strong> Requires advance permits and additional fees</li>
+                                    <li><strong>Specific Prohibitions:</strong> No photography in some tombs in Valley of the Kings</li>
+                                    <li><strong>Mobile Phones:</strong> Usually allowed without additional fees</li>
+                                </ul>
+                                <p>Our guides are knowledgeable about current restrictions and will advise you at each site. We can help arrange special photography permits for professional shoots when needed.</p>
                             </div>
-                            <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Egypt uses 220V/50Hz electricity with two types of power outlets:</p>
-                            <ul>
-                                <li><strong>Type C (European):</strong> Two round pins</li>
-                                <li><strong>Type F (Schuko):</strong> Two round pins with grounding clips</li>
-                            </ul>
-                            <p>For photography equipment charging:</p>
-                            <ul>
-                                <li>Bring universal travel adapters that work with Type C/F</li>
-                                <li>Most hotels have multiple outlet types</li>
-                                <li>Consider bringing a multi-port USB charger for multiple devices</li>
-                                <li>Power banks are essential for day trips to archaeological sites</li>
-                            </ul>
-                            <p>We recommend testing all charging equipment before your Egypt tour departure.</p>
                         </div>
-                    </div>
 
-                    <!-- CONTINUE WITH REST OF EXISTING FAQ ITEMS... -->
-
-                    <!-- ADDITIONAL SEO-OPTIMIZED SECTIONS -->
-                    <h2 class="section-title">
-                        <i class="section-icon fas fa-shield-alt"></i>
-                        Egypt Travel Safety & Health
-                        <span class="category-badge">Travel</span>
-                    </h2>
-
-                    <div class="faq-item" data-category="travel">
-                        <button class="faq-question">
-                            <div class="faq-question-content">
-                                <i class="faq-icon fas fa-syringe"></i>
-                                <span>What vaccinations do I need for Egypt travel?</span>
+                        <div class="faq-item" data-category="photography">
+                            <button class="faq-question">
+                                <div class="faq-question-content">
+                                    <i class="faq-icon fas fa-bolt"></i>
+                                    <span>What power adapters do I need for Egypt?</span>
+                                </div>
+                                <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Egypt uses 220V/50Hz electricity with two types of power outlets:</p>
+                                <ul>
+                                    <li><strong>Type C (European):</strong> Two round pins</li>
+                                    <li><strong>Type F (Schuko):</strong> Two round pins with grounding clips</li>
+                                </ul>
+                                <p>For photography equipment charging:</p>
+                                <ul>
+                                    <li>Bring universal travel adapters that work with Type C/F</li>
+                                    <li>Most hotels have multiple outlet types</li>
+                                    <li>Consider bringing a multi-port USB charger for multiple devices</li>
+                                    <li>Power banks are essential for day trips to archaeological sites</li>
+                                </ul>
+                                <p>We recommend testing all charging equipment before your Egypt tour departure.</p>
                             </div>
-                            <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Recommended vaccinations for Egypt travel include:</p>
-                            <ul>
-                                <li><strong>Routine Vaccinations:</strong> MMR, diphtheria-tetanus-pertussis, varicella, polio</li>
-                                <li><strong>Hepatitis A:</strong> Recommended for all travelers</li>
-                                <li><strong>Hepatitis B:</strong> Recommended for longer stays</li>
-                                <li><strong>Typhoid:</strong> Recommended for most travelers</li>
-                                <li><strong>Rabies:</strong> For adventure travelers or animal handlers</li>
-                                <li><strong>COVID-19:</strong> Follow current Egyptian entry requirements</li>
-                            </ul>
-                            <p>Consult with a travel medicine specialist 4-6 weeks before your Egypt tour. No yellow fever vaccination is required unless arriving from a yellow fever endemic country.</p>
                         </div>
-                    </div>
 
-                    <div class="faq-item" data-category="travel">
-                        <button class="faq-question">
-                            <div class="faq-question-content">
-                                <i class="faq-icon fas fa-tint"></i>
-                                <span>Is tap water safe to drink in Egypt?</span>
+                        <!-- CONTINUE WITH REST OF EXISTING FAQ ITEMS... -->
+
+                        <!-- ADDITIONAL SEO-OPTIMIZED SECTIONS -->
+                        <h2 class="section-title">
+                            <i class="section-icon fas fa-shield-alt"></i>
+                            Egypt Travel Safety & Health
+                            <span class="category-badge">Travel</span>
+                        </h2>
+
+                        <div class="faq-item" data-category="travel">
+                            <button class="faq-question">
+                                <div class="faq-question-content">
+                                    <i class="faq-icon fas fa-syringe"></i>
+                                    <span>What vaccinations do I need for Egypt travel?</span>
+                                </div>
+                                <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Recommended vaccinations for Egypt travel include:</p>
+                                <ul>
+                                    <li><strong>Routine Vaccinations:</strong> MMR, diphtheria-tetanus-pertussis, varicella, polio</li>
+                                    <li><strong>Hepatitis A:</strong> Recommended for all travelers</li>
+                                    <li><strong>Hepatitis B:</strong> Recommended for longer stays</li>
+                                    <li><strong>Typhoid:</strong> Recommended for most travelers</li>
+                                    <li><strong>Rabies:</strong> For adventure travelers or animal handlers</li>
+                                    <li><strong>COVID-19:</strong> Follow current Egyptian entry requirements</li>
+                                </ul>
+                                <p>Consult with a travel medicine specialist 4-6 weeks before your Egypt tour. No yellow fever vaccination is required unless arriving from a yellow fever endemic country.</p>
                             </div>
-                            <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="faq-answer">
-                            <p><strong>No, tap water is not safe to drink in Egypt.</strong> Follow these water safety guidelines:</p>
-                            <ul>
-                                <li><strong>Bottled Water:</strong> Drink only sealed bottled water</li>
-                                <li><strong>Brushing Teeth:</strong> Use bottled water</li>
-                                <li><strong>Ice Cubes:</strong> Avoid unless from filtered/bottled water source</li>
-                                <li><strong>Raw Vegetables/Fruits:</strong> Eat only peeled or thoroughly washed items</li>
-                                <li><strong>Hot Beverages:</strong> Tea and coffee are generally safe as water is boiled</li>
-                            </ul>
-                            <p>We provide bottled water during all our Egypt tours. Most hotels have water purification systems, but bottled water is still recommended for drinking.</p>
                         </div>
-                    </div>
 
-                    <!-- FINAL CONTACT SECTION -->
-                    <div class="contact-section">
-                        <h3 class="contact-title">Ready to Book Your Egypt Photography Adventure?</h3>
-                        <p class="contact-description">Contact our Egypt travel experts today to plan your perfect pyramids photoshoot, Nile cruise, or custom Egypt tour package. We're here to answer all your questions and create your dream Egyptian experience.</p>
-                        <a href="contact.html" class="contact-btn">Contact Our Egypt Tour Specialists</a>
+                        <div class="faq-item" data-category="travel">
+                            <button class="faq-question">
+                                <div class="faq-question-content">
+                                    <i class="faq-icon fas fa-tint"></i>
+                                    <span>Is tap water safe to drink in Egypt?</span>
+                                </div>
+                                <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p><strong>No, tap water is not safe to drink in Egypt.</strong> Follow these water safety guidelines:</p>
+                                <ul>
+                                    <li><strong>Bottled Water:</strong> Drink only sealed bottled water</li>
+                                    <li><strong>Brushing Teeth:</strong> Use bottled water</li>
+                                    <li><strong>Ice Cubes:</strong> Avoid unless from filtered/bottled water source</li>
+                                    <li><strong>Raw Vegetables/Fruits:</strong> Eat only peeled or thoroughly washed items</li>
+                                    <li><strong>Hot Beverages:</strong> Tea and coffee are generally safe as water is boiled</li>
+                                </ul>
+                                <p>We provide bottled water during all our Egypt tours. Most hotels have water purification systems, but bottled water is still recommended for drinking.</p>
+                            </div>
+                        </div>
+
+                        <!-- FINAL CONTACT SECTION -->
+                        <div class="contact-section">
+                            <h3 class="contact-title">Ready to Book Your Egypt Photography Adventure?</h3>
+                            <p class="contact-description">Contact our Egypt travel experts today to plan your perfect pyramids photoshoot, Nile cruise, or custom Egypt tour package. We're here to answer all your questions and create your dream Egyptian experience.</p>
+                            <a href="contact.html" class="contact-btn">Contact Our Egypt Tour Specialists</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3 class="footer-title">Egypt Photography Tours</h3>
-                <p class="footer-text">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
-                <p class="footer-text">Professional Egypt tour operators specializing in photography experiences.</p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Egypt Tour Categories</h4>
-                <ul class="footer-links">
-                    <li><a href="tours.html#pyramids">Pyramids Photoshoot Tours</a></li>
-                    <li><a href="tours.html#nile">Nile Cruise Packages</a></li>
-                    <li><a href="tours.html#luxury">Luxury Egypt Tours</a></li>
-                    <li><a href="tours.html#photography">Photography Workshops</a></li>
-                    <li><a href="tours.html#desert">Egypt Desert Expeditions</a></li>
-                    <li><a href="tours.html#custom">Custom Egypt Itineraries</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Connect With Us</h4>
-                <p class="footer-text">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
+        <footer class="footer">
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-title">Egypt Photography Tours</h3>
+                    <p class="footer-text">&copy; 2025 Egypt Photography Tours. All Rights Reserved.</p>
+                    <p class="footer-text">Professional Egypt tour operators specializing in photography experiences.</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                <div class="footer-section">
+                    <h4 class="footer-title">Egypt Tour Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="tours.html#pyramids">Pyramids Photoshoot Tours</a></li>
+                        <li><a href="tours.html#nile">Nile Cruise Packages</a></li>
+                        <li><a href="tours.html#luxury">Luxury Egypt Tours</a></li>
+                        <li><a href="tours.html#photography">Photography Workshops</a></li>
+                        <li><a href="tours.html#desert">Egypt Desert Expeditions</a></li>
+                        <li><a href="tours.html#custom">Custom Egypt Itineraries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Connect With Us</h4>
+                    <p class="footer-text">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
+                            <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                        </a>
+                        <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
+                            <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
+                        <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                    </div>
+                </div>
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Egypt Photography Tours Location Map"></iframe>
                 </div>
             </div>
-            <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Egypt Photography Tours Location Map"></iframe>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (mobileMenuToggle && navLinks) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
+        <script>
+            // ✅ HERO SLIDER FUNCTIONALITY
+            document.addEventListener('DOMContentLoaded', function() {
+                // Hero Slider Variables
+                const slides = document.querySelectorAll('.slide');
+                const dots = document.querySelectorAll('.slider-dot');
+                const prevBtn = document.querySelector('.prev-slide');
+                const nextBtn = document.querySelector('.next-slide');
+                let currentSlide = 0;
+                let slideInterval;
+                const SLIDE_DURATION = 7000; // 7 seconds
+
+                // Initialize Slider
+                function initSlider() {
+                    updateSlider();
+                    startAutoSlide();
                     
-                    // Change icon based on menu state
-                    const icon = this.querySelector('i');
-                    if (navLinks.classList.contains('active')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
+                    // Add event listeners for navigation
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            changeSlide(-1);
+                            resetAutoSlide();
+                        });
                     }
-                });
+                    
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            changeSlide(1);
+                            resetAutoSlide();
+                        });
+                    }
+                    
+                    // Add event listeners for dots
+                    dots.forEach(dot => {
+                        dot.addEventListener('click', function() {
+                            const slideIndex = parseInt(this.getAttribute('data-slide'));
+                            goToSlide(slideIndex);
+                            resetAutoSlide();
+                        });
+                    });
+                    
+                    // Pause auto-slide on hover
+                    const slider = document.querySelector('.hero-slider');
+                    if (slider) {
+                        slider.addEventListener('mouseenter', pauseAutoSlide);
+                        slider.addEventListener('mouseleave', startAutoSlide);
+                    }
+                }
                 
-                // Close menu when clicking on a link (for mobile)
-                document.querySelectorAll('.nav-link a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth < 768) {
-                            navLinks.classList.remove('active');
-                            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                // Change slide by direction
+                function changeSlide(direction) {
+                    currentSlide += direction;
+                    if (currentSlide < 0) currentSlide = slides.length - 1;
+                    if (currentSlide >= slides.length) currentSlide = 0;
+                    updateSlider();
+                }
+                
+                // Go to specific slide
+                function goToSlide(index) {
+                    currentSlide = index;
+                    updateSlider();
+                }
+                
+                // Update slider display
+                function updateSlider() {
+                    // Remove active class from all slides and dots
+                    slides.forEach(slide => slide.classList.remove('active'));
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    
+                    // Add active class to current slide and dot
+                    slides[currentSlide].classList.add('active');
+                    dots[currentSlide].classList.add('active');
+                }
+                
+                // Start auto slide
+                function startAutoSlide() {
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(() => {
+                        changeSlide(1);
+                    }, SLIDE_DURATION);
+                }
+                
+                // Pause auto slide
+                function pauseAutoSlide() {
+                    clearInterval(slideInterval);
+                }
+                
+                // Reset auto slide timer
+                function resetAutoSlide() {
+                    pauseAutoSlide();
+                    startAutoSlide();
+                }
+                
+                // Initialize slider
+                if (slides.length > 0) {
+                    initSlider();
+                }
+                
+                // ✅ MOBILE MENU FUNCTIONALITY
+                const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+                const navLinks = document.querySelector('.nav-links');
+                
+                if (mobileMenuToggle && navLinks) {
+                    mobileMenuToggle.addEventListener('click', function() {
+                        navLinks.classList.toggle('active');
+                        
+                        // Change icon based on menu state
+                        const icon = this.querySelector('i');
+                        if (navLinks.classList.contains('active')) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times');
+                        } else {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
                         }
                     });
-                });
-            }
-            
-            // ✅ LANGUAGE SWITCHER WITH THAI AND MALAYSIAN SUPPORT
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            if (languageSwitcher && currentLanguage) {
-                currentLanguage.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    languageSwitcher.classList.toggle('active');
-                });
+                    
+                    // Close menu when clicking on a link (for mobile)
+                    document.querySelectorAll('.nav-link a').forEach(link => {
+                        link.addEventListener('click', function() {
+                            if (window.innerWidth < 768) {
+                                navLinks.classList.remove('active');
+                                mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                                mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                            }
+                        });
+                    });
+                }
                 
-                document.addEventListener('click', function(e) {
-                    if (!languageSwitcher.contains(e.target)) {
-                        languageSwitcher.classList.remove('active');
+                // ✅ LANGUAGE SWITCHER WITH THAI AND MALAYSIAN SUPPORT
+                const languageSwitcher = document.querySelector('.language-switcher');
+                const currentLanguage = document.querySelector('.current-language');
+                
+                if (languageSwitcher && currentLanguage) {
+                    currentLanguage.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        languageSwitcher.classList.toggle('active');
+                    });
+                    
+                    document.addEventListener('click', function(e) {
+                        if (!languageSwitcher.contains(e.target)) {
+                            languageSwitcher.classList.remove('active');
+                        }
+                    });
+                    
+                    document.querySelectorAll('.language-item').forEach(item => {
+                        item.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            
+                            document.querySelectorAll('.language-item').forEach(langItem => {
+                                langItem.classList.remove('active');
+                            });
+                            
+                            this.classList.add('active');
+                            
+                            const selectedFlag = this.querySelector('.flag-icon').textContent;
+                            const selectedLang = this.querySelector('.language-text').textContent;
+                            const selectedCode = getLanguageCode(selectedLang);
+                            
+                            document.querySelector('.current-flag').textContent = selectedFlag;
+                            document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
+                            
+                            languageSwitcher.classList.remove('active');
+                            
+                            window.location.href = this.href;
+                        });
+                    });
+                    
+                    function getLanguageCode(languageName) {
+                        const codes = {
+                            'English': 'EN',
+                            'Русский': 'RU',
+                            'العربية': 'AR',
+                            'Français': 'FR',
+                            'Deutsch': 'DE',
+                            'Español': 'ES',
+                            'Italiano': 'IT',
+                            '中文': 'ZH',
+                            '한국어': 'KO',
+                            'Português': 'PT',
+                            'Bahasa Indonesia': 'ID',
+                            '日本語': 'JA',
+                            'ไทย (Thai)': 'TH',
+                            'Bahasa Malaysia': 'MS',
+                            'Nederlands': 'NL',
+                            'Dansk': 'DA',
+                            'Norsk': 'NO',
+                            'Svenska': 'SV',
+                            'Tagalog': 'TL',
+                            'हिन्दी': 'HI'
+                        };
+                        return codes[languageName] || languageName;
                     }
-                });
+                }
                 
-                document.querySelectorAll('.language-item').forEach(item => {
-                    item.addEventListener('click', function(e) {
-                        e.preventDefault();
+                // ✅ FAQ FUNCTIONALITY WITH REFUND POLICY SUPPORT
+                const faqQuestions = document.querySelectorAll('.faq-question');
+                const searchInput = document.getElementById('faq-search');
+                const categoryFilters = document.querySelectorAll('.category-filter');
+                const faqItems = document.querySelectorAll('.faq-item');
+                
+                // FAQ accordion functionality
+                faqQuestions.forEach(function(question) {
+                    question.addEventListener('click', function() {
+                        const isExpanded = this.classList.contains('active');
                         
-                        document.querySelectorAll('.language-item').forEach(langItem => {
-                            langItem.classList.remove('active');
+                        // Close all other FAQ items
+                        faqQuestions.forEach(function(otherQuestion) {
+                            if (otherQuestion !== question) {
+                                otherQuestion.classList.remove('active');
+                                otherQuestion.nextElementSibling.classList.remove('open');
+                            }
                         });
                         
-                        this.classList.add('active');
+                        // Toggle current FAQ item
+                        this.classList.toggle('active');
+                        this.nextElementSibling.classList.toggle('open');
                         
-                        const selectedFlag = this.querySelector('.flag-icon').textContent;
-                        const selectedLang = this.querySelector('.language-text').textContent;
-                        const selectedCode = getLanguageCode(selectedLang);
-                        
-                        document.querySelector('.current-flag').textContent = selectedFlag;
-                        document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                        
-                        languageSwitcher.classList.remove('active');
-                        
-                        window.location.href = this.href;
+                        // Scroll into view for mobile
+                        if (window.innerWidth < 768 && !isExpanded) {
+                            setTimeout(() => {
+                                this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }, 300);
+                        }
                     });
                 });
                 
-                function getLanguageCode(languageName) {
-                    const codes = {
-                        'English': 'EN',
-                        'Русский': 'RU',
-                        'العربية': 'AR',
-                        'Français': 'FR',
-                        'Deutsch': 'DE',
-                        'Español': 'ES',
-                        'Italiano': 'IT',
-                        '中文': 'ZH',
-                        '한국어': 'KO',
-                        'Português': 'PT',
-                        'Bahasa Indonesia': 'ID',
-                        '日本語': 'JA',
-                        'ไทย (Thai)': 'TH',
-                        'Bahasa Malaysia': 'MS',
-                        'Nederlands': 'NL',
-                        'Dansk': 'DA',
-                        'Norsk': 'NO',
-                        'Svenska': 'SV',
-                        'Tagalog': 'TL',
-                        'हिन्दी': 'HI'
-                    };
-                    return codes[languageName] || languageName;
-                }
-            }
-            
-            // ✅ FAQ FUNCTIONALITY WITH REFUND POLICY SUPPORT
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            const searchInput = document.getElementById('faq-search');
-            const categoryFilters = document.querySelectorAll('.category-filter');
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            // FAQ accordion functionality
-            faqQuestions.forEach(function(question) {
-                question.addEventListener('click', function() {
-                    const isExpanded = this.classList.contains('active');
-                    
-                    // Close all other FAQ items
-                    faqQuestions.forEach(function(otherQuestion) {
-                        if (otherQuestion !== question) {
-                            otherQuestion.classList.remove('active');
-                            otherQuestion.nextElementSibling.classList.remove('open');
-                        }
-                    });
-                    
-                    // Toggle current FAQ item
-                    this.classList.toggle('active');
-                    this.nextElementSibling.classList.toggle('open');
-                    
-                    // Scroll into view for mobile
-                    if (window.innerWidth < 768 && !isExpanded) {
-                        setTimeout(() => {
-                            this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                        }, 300);
-                    }
-                });
-            });
-            
-            // Search functionality with debouncing
-            let searchTimeout;
-            if (searchInput) {
-                searchInput.addEventListener('input', function() {
-                    clearTimeout(searchTimeout);
-                    searchTimeout = setTimeout(function() {
-                        const searchTerm = searchInput.value.toLowerCase().trim();
-                        let visibleCount = 0;
-                        
-                        faqItems.forEach(function(item) {
-                            const question = item.querySelector('.faq-question');
-                            const answer = item.querySelector('.faq-answer');
-                            const questionText = question.textContent.toLowerCase();
-                            const answerText = answer.textContent.toLowerCase();
+                // Search functionality with debouncing
+                let searchTimeout;
+                if (searchInput) {
+                    searchInput.addEventListener('input', function() {
+                        clearTimeout(searchTimeout);
+                        searchTimeout = setTimeout(function() {
+                            const searchTerm = searchInput.value.toLowerCase().trim();
+                            let visibleCount = 0;
                             
-                            if (!searchTerm || questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                            faqItems.forEach(function(item) {
+                                const question = item.querySelector('.faq-question');
+                                const answer = item.querySelector('.faq-answer');
+                                const questionText = question.textContent.toLowerCase();
+                                const answerText = answer.textContent.toLowerCase();
+                                
+                                if (!searchTerm || questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                                    item.style.display = 'block';
+                                    visibleCount++;
+                                } else {
+                                    item.style.display = 'none';
+                                }
+                            });
+                            
+                            // Show message if no results
+                            const noResultsMsg = document.getElementById('no-results');
+                            if (!noResultsMsg && visibleCount === 0 && searchTerm) {
+                                const msg = document.createElement('div');
+                                msg.id = 'no-results';
+                                msg.style.padding = '20px';
+                                msg.style.textAlign = 'center';
+                                msg.style.color = '#666';
+                                msg.innerHTML = `<p>No results found for "${searchTerm}". Try different keywords or <a href="contact.html">contact us</a> directly.</p>`;
+                                document.querySelector('.faq-content').appendChild(msg);
+                            } else if (noResultsMsg && visibleCount > 0) {
+                                noResultsMsg.remove();
+                            }
+                        }, 300);
+                    });
+                }
+                
+                // Category filter functionality
+                categoryFilters.forEach(function(filter) {
+                    filter.addEventListener('click', function() {
+                        const category = filter.dataset.category;
+                        
+                        // Update active state
+                        categoryFilters.forEach(function(btn) {
+                            btn.classList.remove('active');
+                        });
+                        filter.classList.add('active');
+                        
+                        // Clear search when filtering
+                        if (searchInput) searchInput.value = '';
+                        
+                        // Filter FAQ items
+                        let visibleCount = 0;
+                        faqItems.forEach(function(item) {
+                            if (category === 'all' || item.dataset.category === category) {
                                 item.style.display = 'block';
                                 visibleCount++;
                             } else {
@@ -1929,84 +2323,42 @@
                             }
                         });
                         
-                        // Show message if no results
+                        // Remove any existing no results message
                         const noResultsMsg = document.getElementById('no-results');
-                        if (!noResultsMsg && visibleCount === 0 && searchTerm) {
-                            const msg = document.createElement('div');
-                            msg.id = 'no-results';
-                            msg.style.padding = '20px';
-                            msg.style.textAlign = 'center';
-                            msg.style.color = '#666';
-                            msg.innerHTML = `<p>No results found for "${searchTerm}". Try different keywords or <a href="contact.html">contact us</a> directly.</p>`;
-                            document.querySelector('.faq-content').appendChild(msg);
-                        } else if (noResultsMsg && visibleCount > 0) {
-                            noResultsMsg.remove();
-                        }
-                    }, 300);
-                });
-            }
-            
-            // Category filter functionality
-            categoryFilters.forEach(function(filter) {
-                filter.addEventListener('click', function() {
-                    const category = filter.dataset.category;
-                    
-                    // Update active state
-                    categoryFilters.forEach(function(btn) {
-                        btn.classList.remove('active');
-                    });
-                    filter.classList.add('active');
-                    
-                    // Clear search when filtering
-                    if (searchInput) searchInput.value = '';
-                    
-                    // Filter FAQ items
-                    let visibleCount = 0;
-                    faqItems.forEach(function(item) {
-                        if (category === 'all' || item.dataset.category === category) {
-                            item.style.display = 'block';
-                            visibleCount++;
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                    
-                    // Remove any existing no results message
-                    const noResultsMsg = document.getElementById('no-results');
-                    if (noResultsMsg) noResultsMsg.remove();
-                });
-            });
-            
-            // Auto-expand FAQ if URL has hash
-            if (window.location.hash) {
-                const targetId = window.location.hash.substring(1);
-                const targetQuestion = document.querySelector(`[data-category="${targetId}"]`);
-                if (targetQuestion) {
-                    const questionBtn = targetQuestion.querySelector('.faq-question');
-                    setTimeout(() => {
-                        questionBtn.click();
-                        questionBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 500);
-                }
-            }
-            
-            // ✅ LAZY LOADING IMAGES
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
-                        }
+                        if (noResultsMsg) noResultsMsg.remove();
                     });
                 });
                 
-                images.forEach(img => imageObserver.observe(img));
-            }
-        });
-    </script>
-</body>
+                // Auto-expand FAQ if URL has hash
+                if (window.location.hash) {
+                    const targetId = window.location.hash.substring(1);
+                    const targetQuestion = document.querySelector(`[data-category="${targetId}"]`);
+                    if (targetQuestion) {
+                        const questionBtn = targetQuestion.querySelector('.faq-question');
+                        setTimeout(() => {
+                            questionBtn.click();
+                            questionBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 500);
+                    }
+                }
+                
+                // ✅ LAZY LOADING IMAGES
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.classList.add('loaded');
+                                observer.unobserve(img);
+                            }
+                        });
+                    });
+                    
+                    images.forEach(img => imageObserver.observe(img));
+                }
+            });
+        </script>
+    </body>
 </html>
