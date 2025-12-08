@@ -402,7 +402,7 @@
             }
         }
         
-        /* ENHANCED HERO SLIDER SECTION - TEXT DIRECTLY OVER IMAGES */
+        /* CLEAN HERO SLIDER - NO BLUR, NO OVERLAY */
         .hero-slider {
             position: relative;
             width: 100%;
@@ -440,7 +440,7 @@
             object-position: center;
         }
         
-        /* Hero text directly on images - no background box */
+        /* Hero text directly on images - CLEAN, NO BACKGROUND, NO BLUR */
         .hero-content {
             position: absolute;
             top: 50%;
@@ -452,7 +452,6 @@
             width: 90%;
             max-width: 900px;
             padding: 0;
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
         }
         
         .hero-content h1 {
@@ -475,20 +474,6 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-        }
-        
-        /* Add a subtle dark overlay behind text for better readability on light images */
-        .hero-content::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: -1;
-            border-radius: 10px;
-            backdrop-filter: blur(2px);
         }
         
         /* Slider controls */
@@ -600,13 +585,6 @@
                 font-size: 18px;
             }
             
-            .hero-content::before {
-                top: -15px;
-                left: -15px;
-                right: -15px;
-                bottom: -15px;
-            }
-            
             .slider-nav {
                 width: 40px;
                 height: 40px;
@@ -645,13 +623,6 @@
             .hero-content p {
                 font-size: 16px;
                 text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-            }
-            
-            .hero-content::before {
-                top: -10px;
-                left: -10px;
-                right: -10px;
-                bottom: -10px;
             }
             
             .slider-nav {
@@ -1484,7 +1455,7 @@
     </div>
 
     <main class="main">
-        <!-- ENHANCED HERO SLIDER WITH TEXT DIRECTLY ON IMAGES -->
+        <!-- CLEAN HERO SLIDER - NO BLUR, NO OVERLAY -->
         <section class="hero-slider">
             <div class="slides-container">
                 <!-- Slide 1 - Pyramids -->
@@ -1513,7 +1484,7 @@
                 </div>
             </div>
             
-            <!-- Hero Text Directly on Images -->
+            <!-- Hero Text Directly on Images - Clean, No Background -->
             <div class="hero-content">
                 <h1>Egypt Tours FAQs: Complete Guide for 2025 Travelers</h1>
                 <p>Get expert answers to all your questions about luxury Egypt tours, pyramids photoshoot experiences, Nile cruise packages, Cairo travel safety, Egyptian visa requirements, photography tours at Giza, booking process, and everything you need for your perfect Egyptian adventure.</p>
