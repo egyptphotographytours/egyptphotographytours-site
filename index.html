@@ -481,7 +481,7 @@
             background: rgba(255, 215, 0, 0.5);
         }
         
-        /* HERO SLIDER */
+        /* HERO SLIDER - TEXT COLOR FIXED TO WHITE WITH BETTER CONTRAST */
         .hero-slider {
             position: relative;
             height: 60vh;
@@ -530,29 +530,43 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            padding: 20px;
+            padding: 30px;
             width: 90%;
             max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay for better text readability */
+            border-radius: 10px;
+            backdrop-filter: blur(3px);
         }
+        
+        /* HERO TITLE - WHITE WITH STRONG SHADOW */
         .hero-title {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 16px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            color: #ffffff !important; /* Forced white */
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
         }
         @media (min-width: 768px) {
             .hero-title {
                 font-size: 48px;
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.9);
             }
         }
+        
+        /* HERO SUBTITLE - WHITE WITH STRONG SHADOW */
         .hero-subtitle {
             font-size: 16px;
             margin-bottom: 24px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            color: #ffffff !important; /* Forced white */
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.8);
+            line-height: 1.4;
+            font-weight: 500;
         }
         @media (min-width: 768px) {
             .hero-subtitle {
                 font-size: 20px;
+                text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.9);
             }
         }
         
@@ -1147,7 +1161,7 @@
         </div>
     </nav>
 
-    <!-- HERO SLIDER -->
+    <!-- HERO SLIDER - TEXT NOW ALL WHITE WITH BETTER VISIBILITY -->
     <section class="hero-slider">
         <div class="hero-slides">
             <div class="hero-slide active">
