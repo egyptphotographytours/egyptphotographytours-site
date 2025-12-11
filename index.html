@@ -833,7 +833,7 @@
             right: 10px;
         }
         
-        /* PWA INSTALL BUTTON */
+        /* PWA INSTALL BUTTON - UPDATED TO SHOW ONLY ONCE */
         .pwa-install-container {
             position: fixed;
             bottom: 20px;
@@ -1342,7 +1342,7 @@
     </style>
 </head>
 <body>
-    <!-- PWA Install Button -->
+    <!-- PWA Install Button - SHOWS ONLY ONCE -->
     <div class="pwa-install-container" id="pwaInstallContainer">
         <button class="pwa-install-btn" id="pwaInstallBtn">
             <i class="fas fa-download"></i>
@@ -2137,7 +2137,7 @@
                 lazyImages.forEach(img => imageObserver.observe(img));
             }
             
-            // PWA FUNCTIONALITY
+            // PWA FUNCTIONALITY - UPDATED TO SHOW ONLY ONCE
             // Service Worker Registration
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
@@ -2151,7 +2151,7 @@
                 });
             }
             
-            // PWA Install Prompt
+            // PWA Install Prompt - SHOWS ONLY ONCE PER USER
             let deferredPrompt;
             const pwaInstallContainer = document.getElementById('pwaInstallContainer');
             const pwaInstallBtn = document.getElementById('pwaInstallBtn');
@@ -2164,24 +2164,48 @@
                 return /iphone|ipad|ipod/.test(userAgent);
             };
             
-            // Detect if app is already installed
+            // Check if app is already installed
             const isAppInstalled = () => {
                 return (window.matchMedia('(display-mode: standalone)').matches) ||
                        (window.navigator.standalone) ||
-                       (document.referrer.includes('android-app://')) ||
-                       localStorage.getItem('appInstalled') === 'true';
+                       (document.referrer.includes('android-app://'));
             };
             
-            // Show install button for Android/Windows
+            // Check if user has already seen the install prompt
+            const hasSeenInstallPrompt = () => {
+                return localStorage.getItem('pwaInstallPromptSeen') === 'true';
+            };
+            
+            // Check if user has dismissed the iOS guide
+            const hasDismissedIosGuide = () => {
+                return localStorage.getItem('iosInstallGuideDismissed') === 'true';
+            };
+            
+            // Mark install prompt as seen
+            const markInstallPromptAsSeen = () => {
+                localStorage.setItem('pwaInstallPromptSeen', 'true');
+            };
+            
+            // Mark iOS guide as dismissed
+            const markIosGuideAsDismissed = () => {
+                localStorage.setItem('iosInstallGuideDismissed', 'true');
+            };
+            
+            // Show install button logic - ONLY ON FIRST VISIT
             window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
                 deferredPrompt = e;
                 
-                // Show install button after 3 seconds (not on iOS)
-                if (!isIos() && !isAppInstalled()) {
+                // Only show for Android/Windows and only if:
+                // 1. Not already installed
+                // 2. User hasn't seen the prompt before
+                // 3. Not on iOS
+                if (!isIos() && !isAppInstalled() && !hasSeenInstallPrompt()) {
+                    // Show install button after 5 seconds (only on first visit)
                     setTimeout(() => {
                         pwaInstallContainer.style.display = 'block';
-                    }, 3000);
+                        markInstallPromptAsSeen(); // Mark as seen immediately when shown
+                    }, 5000);
                 }
             });
             
@@ -2194,8 +2218,11 @@
                         const { outcome } = await deferredPrompt.userChoice;
                         
                         if (outcome === 'accepted') {
-                            console.log('User accepted the install prompt');
-                            localStorage.setItem('appInstalled', 'true');
+                            console.log('User installed the app');
+                            pwaInstallContainer.style.display = 'none';
+                        } else {
+                            console.log('User dismissed the install prompt');
+                            // Hide button if user dismisses
                             pwaInstallContainer.style.display = 'none';
                         }
                         deferredPrompt = null;
@@ -2210,6 +2237,7 @@
             if (closeIosGuide) {
                 closeIosGuide.addEventListener('click', () => {
                     iosInstallGuide.style.display = 'none';
+                    markIosGuideAsDismissed();
                 });
             }
             
@@ -2218,18 +2246,49 @@
                 pwaInstallContainer.style.display = 'none';
             }
             
-            // Show iOS install instructions on first visit
-            if (isIos() && !isAppInstalled() && !localStorage.getItem('iosInstallShown')) {
+            // Show iOS install instructions only on first visit and if not dismissed
+            if (isIos() && !isAppInstalled() && !hasDismissedIosGuide() && !hasSeenInstallPrompt()) {
+                // Only show on first visit after 8 seconds
                 setTimeout(() => {
                     pwaInstallContainer.style.display = 'block';
-                    localStorage.setItem('iosInstallShown', 'true');
-                }, 5000);
+                    markInstallPromptAsSeen();
+                }, 8000);
+            }
+            
+            // Auto-hide iOS guide after 10 seconds
+            if (iosInstallGuide && iosInstallGuide.style.display === 'block') {
+                setTimeout(() => {
+                    iosInstallGuide.style.display = 'none';
+                    markIosGuideAsDismissed();
+                }, 10000);
             }
             
             // Check if app is launched from home screen
             if (window.matchMedia('(display-mode: standalone)').matches) {
                 console.log('App launched from home screen');
                 document.body.classList.add('standalone-mode');
+            }
+            
+            // Add a manual install option in footer for returning users
+            // This allows users to install later if they missed the first prompt
+            const installFooterLink = document.createElement('div');
+            installFooterLink.innerHTML = '<a href="javascript:void(0)" id="manualInstallLink" style="color: var(--accent-light); font-size: 14px; margin-top: 10px; display: inline-block;">Install Mobile App</a>';
+            
+            // Find footer contact section and add the link
+            const footerContact = document.querySelector('.footer-content > div:nth-child(3)');
+            if (footerContact && !isAppInstalled()) {
+                footerContact.appendChild(installFooterLink);
+                
+                document.getElementById('manualInstallLink').addEventListener('click', function() {
+                    if (deferredPrompt) {
+                        deferredPrompt.prompt();
+                    } else if (isIos()) {
+                        pwaInstallContainer.style.display = 'block';
+                        iosInstallGuide.style.display = 'block';
+                    } else {
+                        alert('Your browser doesn\'t support app installation or you\'ve already installed the app.');
+                    }
+                });
             }
         });
     </script>
