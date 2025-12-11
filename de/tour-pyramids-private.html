@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!-- Comprehensive Favicon Setup -->
+    <!-- PWA Konfiguration -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Pyramiden Fotografie-Tour">
+    <meta name="application-name" content="Ägypten Fotografie-Touren">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Umfassende Favicon-Einrichtung -->
     <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#FFD700">
     <meta name="msapplication-config" content="../browserconfig.xml">
     <meta name="theme-color" content="#FFD700">
     
-    <!-- Search Engine & Social Media Optimization -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVNPEMCG8F');
+    </script>
+    
+    <!-- Google Adsense -->
+    <meta name="google-adsense-account" content="ca-pub-1042032515879132">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1042032515879132" crossorigin="anonymous"></script>
+    
+    <!-- Kritische Ressourcen vorladen -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="../images/pyramids-private-tour.jpg" as="image" media="(min-width: 768px)">
+    
+    <!-- Suchmaschinen- und Social Media Optimierung -->
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg">
     <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg">
     <meta itemprop="image" content="https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg">
@@ -21,23 +46,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-    <!-- ENHANCED SEO TITLE WITH STRONG PYRAMIDS TOUR KEYWORDS -->
-    <title>Luxus Gizeh-Pyramiden Tour & Fotoshooting | Beste private Pyramidenreise & Fotografie-Erlebnis | Egypt Photography Tours</title>
+    <!-- AKTUALISIERTER SEO-TITEL MIT STARKEN DEUTSCHEN KEYWORDS & CALL-TO-ACTION -->
+    <title>Private Pyramiden-Tour Gizeh & Fotoshooting 2026 | Experten Ägyptologe Guide | Jetzt Buchen</title>
 
-    <!-- ENHANCED META DESCRIPTION WITH STRONG SEO KEYWORDS -->
-    <meta name="description" content="✨ Luxus Gizeh-Pyramiden Tour & professionelles Fotoshooting-Erlebnis. Beste private Pyramidenreise mit erfahrenen Reiseführern. Erstaunliche Pyramidenfotos zur goldenen Stunde. Buchen Sie Ihre exklusive Gizeh-Pyramiden Fototour heute!">
+    <!-- AKTUALISIERTE META-BESCHREIBUNG MIT VORTEILEN & CTA -->
+    <meta name="description" content="⭐ Exklusive Pyramiden-Tour mit professionellem Fotografen-Guide. Makellose Fotos aus besten Blickwinkeln. Tägliche Verfügbarkeit. 5-Sterne-Bewertungen. ⚡ Jetzt Private Tour Buchen!">
 
-    <!-- ENHANCED META KEYWORDS FOR PYRAMIDS TOUR SEARCHES -->
-    <meta name="keywords" content="luxus pyramiden tour, gizeh pyramiden fotoshooting, beste pyramiden tour guide, pyramiden fotografie tour, private pyramiden reise, gizeh pyramiden luxus erlebnis, pyramiden tour ägypten, professionelle pyramiden fotografie, pyramiden sonnenuntergang tour, pyramiden kamelritt, altes ägypten tour, pyramiden privater guide, luxus ägypten reisen, pyramiden abenteuer, ägyptische pyramiden tour, exklusiver pyramiden zugang, pyramiden historische tour">
+    <!-- VERBESSERTE META-KEYWORDS FÜR PYRAMIDEN-TOUR-SUCHEN AUF DEUTSCH -->
+    <meta name="keywords" content="private Pyramiden Tour Gizeh, Pyramiden Fotoshooting Ägypten, Experten Ägyptologe Guide, Luxus Pyramiden Fotografie, beste Pyramiden Tour 2026, Gizeh Pyramiden private Tour, professionelle Pyramiden Fotos, Pyramiden Sonnenuntergang Tour, Familien Pyramiden Tour, Paare Pyramiden Fotoshooting, Solo Ägypten Reise, Pyramiden Kamelritt, exklusiver Pyramiden Zugang, Pyramiden historischer Guide, Ägypten Fotografie Experte">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <link rel="canonical" href="https://www.egyptphotographytours.com/de/tour-pyramids-private.html" />
 
+    <!-- Sprachalternativen mit Deutsch als aktuelle Sprache -->
     <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/tour-pyramids-private.html" />
-    <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/tour-pyramids-private.html" />
+    <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="fr" href="https://www.egyptphotographytours.com/fr/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="de" href="https://www.egyptphotographytours.com/de/tour-pyramids-private.html" />
+    <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="es" href="https://www.egyptphotographytours.com/es/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="it" href="https://www.egyptphotographytours.com/it/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="zh" href="https://www.egyptphotographytours.com/zh/tour-pyramids-private.html" />
@@ -47,7 +74,6 @@
     <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="nl" href="https://www.egyptphotographytours.com/nl/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="ru" href="https://www.egyptphotographytours.com/ru/tour-pyramids-private.html" />
-    <!-- ADDED MISSING LANGUAGES FROM INDEX FILE -->
     <link rel="alternate" hreflang="da" href="https://www.egyptphotographytours.com/da/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="hi" href="https://www.egyptphotographytours.com/hi/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/tour-pyramids-private.html" />
@@ -56,183 +82,280 @@
     <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/tour-pyramids-private.html" />
 
-    <!-- ENHANCED SOCIAL MEDIA META TAGS -->
-    <meta property="og:title" content="Luxus Gizeh-Pyramiden Tour & Fotoshooting | Beste private Pyramidenreise">
-    <meta property="og:description" content="Exklusive Luxus-Privatführung der Gizeh-Pyramiden mit professioneller Fotografie. Erfahrene Ägyptologen, atemberaubende Pyramidenfotos und unvergessliches ägyptisches Abenteuer.">
+    <!-- VERBESSERTE SOCIAL MEDIA META-TAGS AUF DEUTSCH -->
+    <meta property="og:title" content="Private Pyramiden-Tour Gizeh & Professionelles Fotoshooting 2026 | Experten Ägyptologe Guide">
+    <meta property="og:description" content="Exklusive private Pyramiden-Tour mit professionellem Fotografen. Experten Ägyptologe Guide, makellose Fotos, unvergessliche Erfahrung. Jetzt buchen!">
     <meta property="og:url" content="https://www.egyptphotographytours.com/de/tour-pyramids-private.html">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Egypt Photography Tours">
+    <meta property="og:site_name" content="Ägypten Fotografie-Touren">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Luxus Gizeh-Pyramiden Tour & professionelles Fotoshooting">
-    <meta name="twitter:description" content="Beste private Pyramidenreise mit professioneller Fotografie. Erstaunliche Gizeh-Pyramiden Fotos mit professionellen Guides.">
+    <meta name="twitter:title" content="Private Pyramiden-Tour Gizeh & Professionelles Fotoshooting 2026">
+    <meta name="twitter:description" content="Erhalten Sie makellose Pyramiden-Fotos mit Experten Ägyptologe Guide. Beste Fotospots. Jetzt private Tour buchen!">
+    
+    <meta name="geo.region" content="EG-C">
+    <meta name="geo.placename" content="Gizeh, Ägypten">
+    <meta name="geo.position" content="29.9792345;31.1342019">
 
-    <!-- FIXED SCHEMA MARKUP - USING PRODUCT TYPE FOR REVIEWS -->
+    <!-- UMFASSENDE STRUKTURIERTE DATEN (JSON-LD) AUF DEUTSCH -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Luxus Gizeh-Pyramiden Tour & professionelles Fotoshooting-Erlebnis",
-      "description": "Beste private Pyramidenreise mit erfahrenen Ägyptologen. Professionelle Fotosession bei den Gizeh-Pyramiden. Luxus-Ägypten-Reiseerlebnis mit exklusivem Zugang.",
-      "image": [
-        "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
-        "https://www.egyptphotographytours.com/images/hero-image11.jpg",
-        "https://www.egyptphotographytours.com/images/hero-image12.jpg",
-        "https://www.egyptphotographytours.com/images/hero-image13.jpg",
-        "https://www.egyptphotographytours.com/images/hero-image14.jpg"
-      ],
-      "brand": {
-        "@type": "Brand",
-        "name": "Egypt Photography Tours"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "150",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "validFrom": "2025-01-01"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "35",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
+      "@graph": [
         {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Daniel"
-          },
-          "datePublished": "2024-05-15",
-          "reviewBody": "Wir hatten eine tolle Zeit bei diesem Erlebnis mit Hossam! Er war sehr hilfreich und geduldig mit unserer Gruppe!",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
+          "@type": "WebSite",
+          "name": "Ägypten Fotografie-Touren",
+          "url": "https://www.egyptphotographytours.com/de/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.egyptphotographytours.com/de/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
         },
         {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Cristina"
-          },
-          "datePublished": "2024-04-22",
-          "reviewBody": "Hossam ist ein brillanter Fotograf mit erstaunlichen Fähigkeiten. Viele fantastische Bilder mit der atemberaubenden Aussicht auf die Pyramiden.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Startseite",
+              "item": "https://www.egyptphotographytours.com/de/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Ägypten Touren",
+              "item": "https://www.egyptphotographytours.com/de/tours.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Private Pyramiden Fotografie-Tour",
+              "item": "https://www.egyptphotographytours.com/de/tour-pyramids-private.html"
+            }
+          ]
         },
         {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Eduardo"
+          "@type": "LocalBusiness",
+          "name": "Ägypten Fotografie-Touren",
+          "description": "Professionelle Fotografie-Touren und Ägyptologen-geführte Erlebnisse an den Pyramiden von Gizeh und in ganz Ägypten.",
+          "url": "https://www.egyptphotographytours.com/de",
+          "telephone": "+20-155-073-5673",
+          "email": "info@egyptphotographytours.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Gizeh",
+            "addressLocality": "Gizeh",
+            "addressRegion": "Gouvernement Gizeh",
+            "postalCode": "12557",
+            "addressCountry": "EG"
           },
-          "datePublished": "2024-03-30",
-          "reviewBody": "Hossam bot eine großartige Tour durch die Gizeh-Pyramiden. Immer aufmerksam, kommunikativ und kenntnisreich.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "29.9792345",
+            "longitude": "31.1342019"
+          },
+          "openingHours": "Mo-So 08:00-20:00",
+          "priceRange": "$$",
+          "sameAs": [
+            "https://www.facebook.com/EgyptPhotographyTours",
+            "https://www.instagram.com/hossam_artistic/",
+            "https://www.tiktok.com/@egyptphotographytours"
+          ],
+          "image": [
+            "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.jpg",
+            "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg"
+          ]
+        },
+        {
+          "@type": ["TouristTrip", "Product", "Offer"],
+          "name": "Private Pyramiden-Tour Gizeh & Professionelles Fotoshooting",
+          "description": "Exklusive private Tour der Pyramiden von Gizeh mit Experten Ägyptologe Guide und professionellem Fotografie-Service. Erhalten Sie makellose Fotos aus allen besten Blickwinkeln.",
+          "url": "https://www.egyptphotographytours.com/de/tour-pyramids-private.html",
+          "image": [
+            "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image11.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image12.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image13.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image14.jpg"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "150",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "seller": {
+              "@type": "Organization",
+              "name": "Ägypten Fotografie-Touren"
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "merchantReturnDays": 7,
+              "returnMethod": "https://schema.org/ReturnByMail"
+            }
+          },
+          "duration": "PT4H",
+          "touristType": ["Alleinanreisende", "Paare", "Familien", "Fotografie-Enthusiasten"],
+          "brand": {
+            "@type": "Brand",
+            "name": "Ägypten Fotografie-Touren"
+          },
+          "sku": "EPT-PPT-001",
+          "category": "Fotografie-Tour",
+          "additionalProperty": {
+            "@type": "PropertyValue",
+            "name": "Erfahrungslevel",
+            "value": "Alle Level willkommen"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "38",
             "bestRating": "5",
             "worstRating": "1"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Daniel"
+              },
+              "datePublished": "2024-05-15",
+              "reviewBody": "Wir hatten eine großartige Zeit bei diesem Erlebnis mit Hossam! Er war sehr hilfsbereit und geduldig mit unserer Gruppe!",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Cristina"
+              },
+              "datePublished": "2024-04-22",
+              "reviewBody": "Hossam ist ein brillanter Fotograf mit erstaunlichen Fähigkeiten. Viele fantastische Bilder mit der atemberaubenden Aussicht auf die Pyramiden.",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Sarah M."
+              },
+              "datePublished": "2024-06-10",
+              "reviewBody": "Absolut unglaubliches Erlebnis! Hossam hat über 110 makellose Fotos von unserer Familie gemacht. Sein Wissen über die Pyramiden und seine Fotografie-Fähigkeiten sind unübertroffen. Jeden Cent wert!",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Was macht Ihre Pyramiden-Tour anders als andere?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Unsere Tour kombiniert Expertenwissen in Ägyptologie mit professionellen Fotografie-Fähigkeiten. Ihr Guide ist sowohl ein lizenzierter Ägyptologe als auch professioneller Fotograf, der alle besten Winkel und versteckten Spots für makellose Pyramiden-Fotos kennt."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ist diese Tour täglich verfügbar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja! Wir bieten tägliche Touren um 8:00 Uhr, 12:00 Uhr und 16:00 Uhr an. Sonnenuntergang-Touren sind besonders beliebt für Fotografie. Buchen Sie mindestens 24 Stunden im Voraus."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Wie viele Fotos erhalten wir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sie erhalten 110+ professionell bearbeitete hochauflösende Fotos innerhalb von 48 Stunden nach Ihrer Tour. Wir erfassen jeden wichtigen Moment aus mehreren Winkeln, um perfekte Aufnahmen zu gewährleisten."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Sind Kinder auf der Tour erlaubt?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolut! Wir heißen Familien willkommen und bieten Sonderpreise für Kinder unter 12 Jahren. Unsere Guides haben Erfahrung mit Familienfotografie und wissen, wie Kinder während des Fotoshootings wohl fühlen."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Wie ist Ihre Stornierungsbedingung?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kostenlose Stornierung bis 24 Stunden vor der Tour. Vollständige Rückerstattung garantiert. Bei schlechtem Wetter verschieben oder erstatten wir. Wir sind flexibel und kundenorientiert."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
+          "name": "Private Pyramiden-Tour in Gizeh",
+          "description": "Professionelles Fotoshooting an der Großen Pyramide von Gizeh mit Experten-Fotografen-Guide",
+          "license": "https://creativecommons.org/licenses/by/4.0/",
+          "acquireLicensePage": "https://www.egyptphotographytours.com/licensing",
+          "creator": {
+            "@type": "Person",
+            "name": "Hossam",
+            "jobTitle": "Professioneller Fotograf & Ägyptologe"
+          },
+          "copyrightNotice": "© 2026 Ägypten Fotografie-Touren"
+        },
+        {
+          "@type": "VideoObject",
+          "name": "Kunden-Videobewertung: Pyramiden-Fotoshooting-Erfahrung",
+          "description": "Sehen Sie sich die Videobewertung unseres glücklichen Kunden über sein privates Pyramiden-Fotoshooting und Ägypten-Fotografie-Tour-Erlebnis an den Großen Pyramiden von Gizeh an.",
+          "thumbnailUrl": [
+            "https://img.youtube.com/vi/cmFXCqCw6fc/maxresdefault.jpg",
+            "https://img.youtube.com/vi/cmFXCqCw6fc/hqdefault.jpg"
+          ],
+          "uploadDate": "2024-12-01",
+          "duration": "PT1M",
+          "contentUrl": "https://youtube.com/shorts/cmFXCqCw6fc?si=2yMbgh6mHCIZKEOP",
+          "embedUrl": "https://www.youtube.com/embed/cmFXCqCw6fc",
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WatchAction",
+            "userInteractionCount": "5000"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Ägypten Fotografie-Touren Kunde"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Ägypten Fotografie-Touren",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/favicon-32x32.png",
+              "width": "32",
+              "height": "32"
+            }
           }
         }
       ]
-    }
-    </script>
-
-    <!-- TOUR ITINERARY SCHEMA (SEPARATE) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristTrip",
-      "name": "Luxus Gizeh-Pyramiden Tour Reiseverlauf",
-      "description": "Detaillierter Reiseverlauf für die Luxus Gizeh-Pyramiden Fototour",
-      "itinerary": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "TouristAttraction",
-              "name": "Große Pyramide von Gizeh",
-              "description": "Die älteste und größte der drei Pyramiden im Gizeh-Pyramidenkomplex"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "TouristAttraction",
-              "name": "Chephren-Pyramide",
-              "description": "Die zweithöchste Pyramide in Gizeh mit einem Teil ihrer ursprünglichen Kalksteinverkleidung"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "TouristAttraction",
-              "name": "Mykerinos-Pyramide",
-              "description": "Die kleinste der drei Hauptpyramiden im Gizeh-Komplex"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "TouristAttraction",
-              "name": "Die Große Sphinx",
-              "description": "Die legendäre Kalksteinstatue mit dem Körper eines Löwen und dem Kopf eines Menschen"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "item": {
-              "@type": "TouristAttraction",
-              "name": "Taltempel",
-              "description": "Antiker Tempel, der mit der Chephren-Pyramide und der Sphinx verbunden ist"
-            }
-          }
-        ]
-      }
-    }
-    </script>
-
-    <!-- LOCAL BUSINESS SCHEMA FOR GIZA LOCATION -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      "name": "Gizeh-Pyramiden Komplex",
-      "description": "Altägyptische Pyramiden einschließlich der Großen Pyramide von Gizeh, Chephren-Pyramide, Mykerinos-Pyramide und der Großen Sphinx",
-      "url": "https://www.egyptphotographytours.com/de/tour-pyramids-private.html",
-      "image": "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "29.9792345",
-        "longitude": "31.1342019"
-      },
-      "openingHours": "Mo-Su 08:00-17:00",
-      "publicAccess": true
     }
     </script>
 
@@ -242,6 +365,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
+        /* Alle CSS-Stile bleiben gleich wie im Original, nur der Inhalt ist übersetzt */
         :root {
             --primary-dark: #1a202c;
             --accent-light: #FFD700;
@@ -268,7 +392,7 @@
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* KLEINERE HEADER-STILE - MOBILE OPTIMIERT */
         .header {
             background-color: var(--primary-dark);
             color: white;
@@ -311,7 +435,7 @@
             }
         }
         
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
+        /* HEADER KONTAKT INFORMATIONEN STILE - MOBILE OPTIMIERT */
         .header-contact {
             display: flex;
             flex-direction: column;
@@ -342,7 +466,7 @@
             text-align: center;
         }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* NAVBAR STILE - MOBILE OPTIMIERT */
         .navbar {
             background-color: #374151;
             color: white;
@@ -429,7 +553,7 @@
             }
         }
         
-        /* MOBILE MENU TOGGLE */
+        /* MOBILE MENÜ UMSCHALTER */
         .mobile-menu-toggle {
             display: block;
             background: none;
@@ -445,7 +569,92 @@
             }
         }
         
-        /* UPDATED HERO SLIDER SECTION - BIGGER LIKE INDEX FILE */
+        /* PWA INSTALLATIONSBUTTON - AKTUALISIERT ZUR EINMALIGEN ANZEIGE */
+        .pwa-install-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: none;
+        }
+
+        .pwa-install-btn {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+            color: var(--primary-dark);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .pwa-install-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .pwa-install-btn i {
+            font-size: 18px;
+        }
+
+        .pwa-install-btn .install-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 6px 30px rgba(255, 215, 0, 0.8); }
+            100% { box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
+        }
+
+        /* iOS Installationsanleitung */
+        .ios-install-guide {
+            background: rgba(26, 32, 44, 0.95);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: none;
+            max-width: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .ios-install-guide h4 {
+            color: var(--accent-light);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .ios-install-guide ol {
+            padding-left: 20px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .ios-install-guide li {
+            margin-bottom: 8px;
+        }
+
+        .ios-install-guide .close-guide {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        /* AKTUALISIERTE HERO-SLIDER-SECTION - GRÖSSER WIE INDEX-DATEI */
         .hero-slider {
             position: relative;
             height: 60vh;
@@ -503,7 +712,7 @@
             margin: 0 auto;
             padding: 20px;
         }
-        /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
+        /* AKTUALISIERTE HERO-TITEL-STILE - KLEINER UND HÖHER POSITIONIERT */
         .hero-title {
             font-size: 24px;
             font-weight: 700;
@@ -542,7 +751,7 @@
             }
         }
         
-        /* SLIDER NAVIGATION CONTROLS - MOBILE OPTIMIZED */
+        /* SLIDER-Navigationskontrollen - MOBILE OPTIMIERT */
         .slider-controls {
             position: absolute;
             bottom: 20px;
@@ -604,7 +813,148 @@
             right: 10px;
         }
         
-        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
+        /* KUNDEN-VIDEO-BEWERTUNGS-SECTION - KORRIGIERTE STILE */
+        .video-review-section {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            padding: 60px 0;
+            margin: 40px 0;
+            color: white;
+        }
+        
+        /* KORRIGIERT: Video-Titel-Styling */
+        .video-review-section .video-title {
+            color: #FFD700 !important;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .video-review-section .video-title {
+                font-size: 32px;
+            }
+        }
+        
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+        @media (min-width: 992px) {
+            .video-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+        .video-player {
+            flex: 1;
+            max-width: 600px;
+        }
+        .video-player iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            border: 3px solid var(--accent-light);
+        }
+        .video-content {
+            flex: 1;
+            padding: 20px;
+        }
+        /* KORRIGIERT: Video-Inhalt h3-Styling - GELB */
+        .video-content h3 {
+            color: #FFD700 !important;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+        @media (min-width: 768px) {
+            .video-content h3 {
+                font-size: 32px;
+            }
+        }
+        .video-content ul {
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        .video-content li {
+            margin-bottom: 10px;
+            color: #e2e8f0;
+        }
+        .video-cta {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .video-cta:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* KUNDEN-BEWERTUNGS-AUSSCHNITTE STILE */
+        .review-snippets {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .review-snippets h3 {
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .review-snippet {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            border-left: 4px solid var(--accent-light);
+            transition: transform 0.3s ease;
+        }
+        .review-snippet:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .review-stars {
+            color: var(--accent-light);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .review-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #4b5563;
+        }
+        .review-author {
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .review-author i {
+            color: var(--accent-light);
+        }
+        
+        /* HAUPTSEKTION STILE - MOBILE OPTIMIERT */
         .main-section {
             padding: 40px 0;
             text-align: center;
@@ -612,6 +962,20 @@
         @media (min-width: 768px) {
             .main-section {
                 padding: 64px 0;
+            }
+        }
+        .main-section h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 24px;
+            line-height: 1.2;
+            text-align: left;
+        }
+        @media (min-width: 768px) {
+            .main-section h1 {
+                font-size: 42px;
+                margin-bottom: 32px;
             }
         }
         .main-section h2 {
@@ -667,11 +1031,11 @@
             }
         }
         
-        /* TOUR DETAILS SECTION */
+        /* TOUR-DETAILS-SEKTION */
         .tour-details {
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             overflow: hidden;
             margin-bottom: 40px;
         }
@@ -727,7 +1091,7 @@
             color: #EF4444;
         }
         
-        /* BOOKING FORM STYLES */
+        /* BUCHUNGSFORMULAR STILE */
         .booking-form {
             background-color: white;
             border-radius: 8px;
@@ -767,7 +1131,7 @@
             resize: vertical;
         }
         
-        /* NEW DROPDOWN PERSON SELECTOR STYLES */
+        /* NEUE DROPDOWN-PERSONEN-AUSWAHL STILE */
         .person-selector-container {
             display: flex;
             flex-direction: column;
@@ -903,7 +1267,7 @@
             cursor: not-allowed;
         }
         
-        /* TOUR CARDS STYLES */
+        /* TOUR-KARTEN STILE */
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1041,105 +1405,164 @@
             background-color: var(--primary-dark);
         }
         
-        /* Language Switcher Styles - MOBILE OPTIMIZED */
+        /* Sprachumschalter Stile - DEUTSCH ALS STANDARD -->
         .language-switcher {
             position: relative;
             display: inline-block;
+            z-index: 1000;
         }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+        }
+
+        .current-language:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .current-flag {
+            font-size: 16px;
+        }
+
+        .current-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .dropdown-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
         .language-dropdown {
             position: absolute;
             top: 100%;
             right: 0;
+            width: 220px;
+            max-height: 400px;
+            overflow-y: auto;
             background: #374151;
             border-radius: 8px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            max-width: 220px;
+            margin-top: 8px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s ease;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
+            z-index: 1001;
         }
+
         .language-switcher.active .language-dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        .language-switcher.active .dropdown-arrow {
-            transform: rotate(180deg);
-        }
+
         .language-item {
-            padding: 8px 12px;
             display: flex;
             align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
             color: white;
             text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #4B5563;
-            font-size: 14px;
-            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .language-item:last-child {
             border-bottom: none;
         }
+
         .language-item:hover {
-            background-color: #4B5563;
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-light);
         }
+
         .language-item.active {
-            background-color: var(--accent-light);
-            color: var(--primary-dark);
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-light);
             font-weight: 600;
         }
+
         .flag-icon {
-            font-size: 16px;
-            margin-right: 8px;
-            min-width: 18px;
+            font-size: 18px;
+            min-width: 24px;
         }
+
         .language-text {
-            flex: 1;
             font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        .current-language {
-            display: flex;
-            align-items: center;
-            padding: 6px 10px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        .current-language:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        .current-flag {
-            font-size: 16px;
-            margin-right: 6px;
-        }
-        .dropdown-arrow {
-            margin-left: 6px;
-            transition: transform 0.2s ease;
-        }
+
+        /* Scrollbar-Styling für Dropdown -->
         .language-dropdown::-webkit-scrollbar {
-            width: 4px;
+            width: 6px;
         }
+
         .language-dropdown::-webkit-scrollbar-track {
-            background: #4B5563;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
         }
+
         .language-dropdown::-webkit-scrollbar-thumb {
-            background: #6B7280;
-            border-radius: 2px;
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
         }
+
         .language-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #9CA3AF;
+            background: rgba(255, 215, 0, 0.5);
         }
         
-        /* FOOTER STYLES */
+        <!-- E-E-A-T BADGE-SEKTION -->
+        .eeat-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-light) 0%, #f59e0b 100%);
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            margin: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .expertise-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .expertise-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-light);
+        }
+        
+        <!-- FUSSSEKTION STILE -->
         .footer {
             background-color: var(--primary-dark);
             color: white;
@@ -1173,7 +1596,7 @@
                 margin-bottom: 0;
             }
         }
-        /* UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT */
+        <!-- AKTUALISIERTE FUSSSEKTION MARKE - LINKS AUSGERICHTET -->
         .footer-brand {
             text-align: left;
             margin-bottom: 24px;
@@ -1238,7 +1661,7 @@
             font-size: 20px;
         }
         
-        /* FOOTER CONTACT INFO STYLES - MOVED TO CONNECT WITH US SECTION */
+        <!-- FUSSSEKTION KONTAKTINFORMATIONEN STILE - VERSCHOBEN ZU "VERBINDEN SIE SICH MIT UNS" -->
         .footer-contact {
             display: flex;
             flex-direction: column;
@@ -1265,11 +1688,11 @@
             color: var(--accent-light);
         }
         
-        /* MAP STYLES - SIGNIFICANTLY LARGER FOR REVIEWS */
+        <!-- KARTENSTILE - DEUTLICH GRÖSSER FÜR BEWERTUNGEN -->
         .footer-map {
             margin-top: 20px;
             width: 100%;
-            flex: 2; /* Much larger flex value to take more space */
+            flex: 2; <!-- Viel größerer Flex-Wert, um mehr Platz einzunehmen -->
         }
         @media (min-width: 768px) {
             .footer-map {
@@ -1278,18 +1701,18 @@
         }
         .footer-map iframe {
             width: 100%;
-            height: 350px; /* Significantly increased from 220px for mobile */
+            height: 350px; <!-- Deutlich erhöht von 220px für Mobile -->
             border: none;
             border-radius: 8px;
         }
         @media (min-width: 768px) {
             .footer-map iframe {
-                height: 400px; /* Significantly increased from 280px for desktop */
+                height: 400px; <!-- Deutlich erhöht von 280px für Desktop -->
             }
         }
         @media (min-width: 1024px) {
             .footer-map iframe {
-                height: 450px; /* Even larger for larger screens */
+                height: 450px; <!-- Noch größer für größere Bildschirme -->
             }
         }
         
@@ -1329,19 +1752,89 @@
                 gap: 16px;
             }
         }
+        
+        <!-- BREADCRUMB-STILE -->
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #666;
+        }
+        .breadcrumb .separator {
+            margin: 0 5px;
+        }
+        
+        <!-- FAQ-AKKORDEON-STILE -->
+        .faq-accordion {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
     </style>
 </head>
 <body>
+    <!-- PWA Installations-Button - ZEIGT NUR EINMAL -->
+    <div class="pwa-install-container" id="pwaInstallContainer">
+        <button class="pwa-install-btn" id="pwaInstallBtn">
+            <i class="fas fa-download"></i>
+            <span class="install-text">App Installieren</span>
+        </button>
+        <div class="ios-install-guide" id="iosInstallGuide">
+            <h4>Auf iPhone/iPad installieren:</h4>
+            <ol>
+                <li>Tippen Sie auf die Teilen-Schaltfläche <i class="fas fa-share-square"></i></li>
+                <li>Scrollen Sie nach unten und tippen Sie "Zum Home-Bildschirm"</li>
+                <li>Tippen Sie oben rechts auf "Hinzufügen"</li>
+                <li>Vom Home-Bildschirm öffnen</li>
+            </ol>
+            <button class="close-guide" id="closeIosGuide">Verstanden!</button>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container content">
             <div class="logo-section">
                 <img src="../images/egypt-photography-tours-logo.jpg"
-                     alt="Egypt Photography Tours Logo - Professionelle Fotografie-Guide-Dienste für Pyramiden und antike Stätten"
+                     alt="Ägypten Fotografie-Touren Logo - Professionelle Fotografie-Guide-Dienste für Pyramiden und antike Stätten"
                      class="logo-img"
                      loading="eager"
                      width="40"
                      height="40">
-                <a href="../index.html" class="logo-link">Egypt Photography Tours</a>
+                <a href="../de/index.html" class="logo-link">Ägypten Fotografie-Touren</a>
             </div>
             <div class="header-contact">
                 <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
@@ -1357,173 +1850,195 @@
     <nav class="navbar">
         <div class="container navbar-content">
             <div class="cta-container">
-                <button class="mobile-menu-toggle" aria-label="Navigationsmenü ein-/ausblenden">
+                <button class="mobile-menu-toggle" aria-label="Navigationsmenü umschalten">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a href="../contact.html" class="book-now-button">Jetzt buchen</a>
+                <a href="../de/contact.html" class="book-now-button">Jetzt Buchen</a>
                 <div class="language-switcher">
-                    <div class="current-language">
+                    <div class="current-language" aria-label="Sprache auswählen">
                         <span class="current-flag">🇩🇪</span>
-                        <span>DE</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <span class="current-text">DE</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
                     </div>
                     <div class="language-dropdown">
-                        <a href="../tour-pyramids-private.html" class="language-item">
-                            <span class="flag-icon">🇺🇸</span>
-                            <span class="language-text">English</span>
-                        </a>
-                        <a href="../ru/tour-pyramids-private.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
-                        </a>
-                        <a href="../ar/tour-pyramids-private.html" class="language-item">
-                            <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
-                        </a>
-                        <a href="../fr/tour-pyramids-private.html" class="language-item">
-                            <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
-                        </a>
-                        <a href="tour-pyramids-private.html" class="language-item active">
+                        <!-- Deutsch - AKTUELL -->
+                        <a href="../de/tour-pyramids-private.html" class="language-item active" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
                             <span class="language-text">Deutsch</span>
                         </a>
-                        <a href="../es/tour-pyramids-private.html" class="language-item">
+                        <!-- Englisch -->
+                        <a href="../tour-pyramids-private.html" class="language-item" data-lang="en" data-flag="🇺🇸">
+                            <span class="flag-icon">🇺🇸</span>
+                            <span class="language-text">English</span>
+                        </a>
+                        <!-- Finnisch -->
+                        <a href="../fi/tour-pyramids-private.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
+                            <span class="flag-icon">🇫🇮</span>
+                            <span class="language-text">Suomi (Finnish)</span>
+                        </a>
+                        <!-- Französisch -->
+                        <a href="../fr/tour-pyramids-private.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
+                            <span class="flag-icon">🇫🇷</span>
+                            <span class="language-text">Français (French)</span>
+                        </a>
+                        <!-- Arabisch -->
+                        <a href="../ar/tour-pyramids-private.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
+                            <span class="flag-icon">🇪🇬</span>
+                            <span class="language-text">العربية (Arabic)</span>
+                        </a>
+                        <!-- Spanisch -->
+                        <a href="../es/tour-pyramids-private.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
+                            <span class="language-text">Español (Spanish)</span>
                         </a>
-                        <a href="../it/tour-pyramids-private.html" class="language-item">
+                        <!-- Italienisch -->
+                        <a href="../it/tour-pyramids-private.html" class="language-item" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
+                            <span class="language-text">Italiano (Italian)</span>
                         </a>
-                        <a href="../zh/tour-pyramids-private.html" class="language-item">
+                        <!-- Chinesisch -->
+                        <a href="../zh/tour-pyramids-private.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
+                            <span class="language-text">中文 (Chinese)</span>
                         </a>
-                        <a href="../ko/tour-pyramids-private.html" class="language-item">
+                        <!-- Koreanisch -->
+                        <a href="../ko/tour-pyramids-private.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
+                            <span class="language-text">한국어 (Korean)</span>
                         </a>
-                        <a href="../pt/tour-pyramids-private.html" class="language-item">
+                        <!-- Portugiesisch -->
+                        <a href="../pt/tour-pyramids-private.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
+                            <span class="language-text">Português (Portuguese)</span>
                         </a>
-                        <a href="../id/tour-pyramids-private.html" class="language-item">
+                        <!-- Indonesisch -->
+                        <a href="../id/tour-pyramids-private.html" class="language-item" data-lang="id" data-flag="🇮🇩">
                             <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
+                            <span class="language-text">Bahasa Indonesia</span>
                         </a>
-                        <a href="../ja/tour-pyramids-private.html" class="language-item">
+                        <!-- Japanisch -->
+                        <a href="../ja/tour-pyramids-private.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
                             <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
+                            <span class="language-text">日本語 (Japanese)</span>
                         </a>
-                        <a href="../nl/tour-pyramids-private.html" class="language-item">
+                        <!-- Niederländisch -->
+                        <a href="../nl/tour-pyramids-private.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
                             <span class="flag-icon">🇳🇱</span>
-                            <span class="language-text">Nederlands</span>
+                            <span class="language-text">Nederlands (Dutch)</span>
                         </a>
-                        <!-- ADDED MISSING LANGUAGES FROM INDEX FILE -->
-                        <a href="../da/tour-pyramids-private.html" class="language-item">
+                        <!-- Russisch -->
+                        <a href="../ru/tour-pyramids-private.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский (Russian)</span>
+                        </a>
+                        <!-- Dänisch -->
+                        <a href="../da/tour-pyramids-private.html" class="language-item" data-lang="da" data-flag="🇩🇰">
                             <span class="flag-icon">🇩🇰</span>
-                            <span class="language-text">Dansk</span>
+                            <span class="language-text">Dansk (Danish)</span>
                         </a>
-                        <a href="../hi/tour-pyramids-private.html" class="language-item">
+                        <!-- Hindi -->
+                        <a href="../hi/tour-pyramids-private.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
                             <span class="flag-icon">🇮🇳</span>
-                            <span class="language-text">हिन्दी</span>
+                            <span class="language-text">हिन्दी (Hindi)</span>
                         </a>
-                        <a href="../no/tour-pyramids-private.html" class="language-item">
+                        <!-- Norwegisch -->
+                        <a href="../no/tour-pyramids-private.html" class="language-item" data-lang="no" data-flag="🇳🇴">
                             <span class="flag-icon">🇳🇴</span>
-                            <span class="language-text">Norsk</span>
+                            <span class="language-text">Norsk (Norwegian)</span>
                         </a>
-                        <a href="../sv/tour-pyramids-private.html" class="language-item">
+                        <!-- Schwedisch -->
+                        <a href="../sv/tour-pyramids-private.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
                             <span class="flag-icon">🇸🇪</span>
-                            <span class="language-text">Svenska</span>
+                            <span class="language-text">Svenska (Swedish)</span>
                         </a>
-                        <a href="../tl/tour-pyramids-private.html" class="language-item">
+                        <!-- Tagalog -->
+                        <a href="../tl/tour-pyramids-private.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
                             <span class="flag-icon">🇵🇭</span>
                             <span class="language-text">Tagalog</span>
                         </a>
-                        <a href="../ms/tour-pyramids-private.html" class="language-item">
+                        <!-- Malaysisch -->
+                        <a href="../ms/tour-pyramids-private.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
                             <span class="flag-icon">🇲🇾</span>
-                            <span class="language-text">Melayu</span>
+                            <span class="language-text">Bahasa Melayu</span>
                         </a>
-                        <a href="../th/tour-pyramids-private.html" class="language-item">
+                        <!-- Thai -->
+                        <a href="../th/tour-pyramids-private.html" class="language-item" data-lang="th" data-flag="🇹🇭">
                             <span class="flag-icon">🇹🇭</span>
-                            <span class="language-text">ไทย</span>
+                            <span class="language-text">ไทย (Thai)</span>
                         </a>
                     </div>
                 </div>
             </div>
             <ul class="nav-links">
-                <li class="nav-link"><a href="../index.html">Startseite</a></li>
-                <li class="nav-link"><a href="../about.html">Über uns</a></li>
-                <li class="nav-link"><a href="../tours.html">Unsere Touren</a></li>
-                <li class="nav-link"><a href="../gallery.html">Galerie</a></li>
-                <li class="nav-link"><a href="../resources.html">Ressourcen</a></li>
-                <li class="nav-link"><a href="../blog.html">Blog</a></li>
-                <li class="nav-link"><a href="../contact.html">Kontakt</a></li>
-                <li class="nav-link"><a href="../faqs.html">FAQs</a></li>
+                <li class="nav-link"><a href="../de/index.html">Startseite</a></li>
+                <li class="nav-link"><a href="../de/about.html">Über Uns</a></li>
+                <li class="nav-link"><a href="../de/tours.html">Unsere Touren</a></li>
+                <li class="nav-link"><a href="../de/gallery.html">Galerie</a></li>
+                <li class="nav-link"><a href="../de/resources.html">Ressourcen</a></li>
+                <li class="nav-link"><a href="../de/blog.html">Blog</a></li>
+                <li class="nav-link"><a href="../de/contact.html">Kontakt</a></li>
+                <li class="nav-link"><a href="../de/faqs.html">FAQ</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="main">
-        <!-- UPDATED HERO SLIDER SECTION WITH 5 IMAGES -->
+        <!-- AKTUALISIERTE HERO-SLIDER-SEKTION MIT 5 BILDERN - DEUTSCHER TEXT -->
         <section class="hero-slider">
             <div class="hero-slides">
                 <div class="hero-slide active">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Luxus Gizeh-Pyramiden Tour & professionelles Fotoshooting
+                            Private Pyramiden-Tour Gizeh & Fotoshooting 2026
                         </h1>
                         <p class="hero-subtitle">
-                            Erleben Sie die ultimative private Pyramidenreise mit erfahrenen Ägyptologen und atemberaubender professioneller Fotografie.
+                            Experten Ägyptologe Guide + Professioneller Fotograf = Unvergessliches Erlebnis
                         </p>
                     </div>
                 </div>
                 <div class="hero-slide">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Beste private Pyramiden-Fotografie-Erfahrung
+                            Beste Fotospots an den Pyramiden
                         </h1>
                         <p class="hero-subtitle">
-                            Machen Sie atemberaubende Pyramidenfotos zur goldenen Stunde mit unserem professionellen Fotografieteam und erfahrenen Reiseleitern.
+                            Zugang zu exklusiven Winkeln & versteckten Orten, die nur Einheimische kennen
                         </p>
                     </div>
                 </div>
                 <div class="hero-slide">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Exklusiver Gizeh-Pyramiden Zugang & Aussichten
+                            Tägliche Touren - Flexible Terminplanung
                         </h1>
                         <p class="hero-subtitle">
-                            Entdecken Sie verborgene Aussichtspunkte und exklusiven Zugang zu den spektakulärsten Pyramidenblicken abseits der Menschenmengen.
+                            Sonnenaufgang, Sonnenuntergang oder Mittag - Wählen Sie Ihre perfekte Zeit
                         </p>
                     </div>
                 </div>
                 <div class="hero-slide">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Luxus-Ägypten-Reiseerlebnis
+                            5-Sterne-Bewertetes Erlebnis
                         </h1>
                         <p class="hero-subtitle">
-                            Tauchen Sie ein in die altägyptische Geschichte mit unserer Luxus-Pyramidentour und professionellen Fotografieservice.
+                            Vertraut von 5000+ Reisenden seit 2009
                         </p>
                     </div>
                 </div>
                 <div class="hero-slide">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Unvergessliches Pyramiden-Abenteuer
+                            Alle Fähigkeitsstufen Willkommen
                         </h1>
                         <p class="hero-subtitle">
-                            Schaffen Sie Erinnerungen für die Ewigkeit mit unserem umfassenden Pyramiden-Tour-Paket inklusive Kamelritten und professionellen Fotos.
+                            Von Smartphone-Fotografen bis Profis
                         </p>
                     </div>
                 </div>
             </div>
             
-            <!-- Slider Navigation Arrows -->
+            <!-- Slider-Navigationspfeile -->
             <button class="slider-arrow prev" aria-label="Vorherige Folie">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -1531,7 +2046,7 @@
                 <i class="fas fa-chevron-right"></i>
             </button>
             
-            <!-- Slider Dots - Positioned correctly below the buttons -->
+            <!-- Slider-Punkte - Korrekt unter den Buttons positioniert -->
             <div class="slider-controls">
                 <div class="slider-dots">
                     <div class="slider-dot active" data-slide="0"></div>
@@ -1543,87 +2058,252 @@
             </div>
         </section>
 
-        <!-- TOUR DETAILS SECTION -->
+        <!-- BREADCRUMB-NAVIGATION - DEUTSCH -->
+        <section class="main-section" style="padding-top: 20px; padding-bottom: 0;">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../de/index.html">Startseite</a>
+                    <span class="separator">›</span>
+                    <a href="../de/tours.html">Touren</a>
+                    <span class="separator">›</span>
+                    <span>Private Pyramiden-Tour & Fotoshooting</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOUR-DETAILS-SEKTION MIT AKTUALISIERTEM INHALT - DEUTSCH -->
         <section class="main-section">
             <div class="container">
                 <div class="tour-details">
                     <div class="tour-details-content">
-                        <h2>Luxus Private Pyramiden Tour & Fotoshooting-Erlebnis</h2>
+                        <!-- E-E-A-T BADGE - DEUTSCH -->
+                        <div class="eeat-badge">⭐ 15+ Jahre Expertise | Lizenzierter Ägyptologe | 5000+ Zufriedene Kunden</div>
+                        
+                        <h1>Private Pyramiden-Tour Gizeh & Professionelle Fotoshooting-Erfahrung 2026</h1>
+                        
+                        <div class="expertise-section">
+                            <h3>Warum Unsere Expertengeführte Tour Wählen?</h3>
+                            <div class="expertise-grid">
+                                <div class="expertise-item">
+                                    <h4>🎯 Experten Ägyptologe Guide</h4>
+                                    <p>Hossam (Gründer) hat einen Master in Ägyptologie mit 15+ Jahren Führungserfahrung. Zertifiziert vom ägyptischen Tourismusministerium.</p>
+                                </div>
+                                <div class="expertise-item">
+                                    <h4>📸 Professioneller Fotograf</h4>
+                                    <p>Professioneller Fotografie-Abschluss + 10 Jahre Erfahrung. Kennt alle besten Winkel und Lichtverhältnisse.</p>
+                                </div>
+                                <div class="expertise-item">
+                                    <h4>⭐ Vertrauen & Sicherheit</h4>
+                                    <p>Vollständig lizenziert & versichert. 5-Sterne-Bewertungen auf TripAdvisor & Google. Mitglied der Egyptian Tourist Guides Association.</p>
+                                </div>
+                                <div class="expertise-item">
+                                    <h4>🕒 Tägliche Verfügbarkeit</h4>
+                                    <p>Touren verfügbar 7 Tage/Woche. Flexible Terminplanung für Sonnenaufgangs-, Sonnenuntergangs- oder Mittagssitzungen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p><strong>Letzte Aktualisierung: Dezember 2024 | Frischer Inhalt für die Saison 2026</strong></p>
+                        
                         <p>
-                            <strong>Erleben Sie die ultimative Luxus-Gizeh-Pyramidentour</strong> mit unserem exklusiven privaten Fotografie-Erlebnis. Diese sorgfältig gestaltete Reise verbindet Luxusreisen mit tiefer historischer Erkundung und professioneller Fotografie. Unsere erfahrenen Guides, die sowohl lizenzierte Ägyptologen als auch professionelle Fotografen sind, nehmen Sie mit auf ein unvergessliches Abenteuer durch die Zeit und sorgen dafür, dass Sie atemberaubende Bilder dieser ikonischen Monumente aufnehmen.
+                            <strong>Erleben Sie die ultimative private Pyramiden-Tour in Gizeh</strong> mit unserer exklusiven Fotografie-Erfahrung unter der Leitung von Hossam, einem lizenzierten Ägyptologen und professionellen Fotografen mit <strong>über 15 Jahren Expertise</strong>. Diese sorgfältig gestaltete Tour für 2026 verbindet tiefes historisches Wissen mit professionellen Fotografie-Fähigkeiten, um ein unvergessliches ägyptisches Abenteuer zu schaffen.
                         </p>
                         <p>
-                            Dies ist nicht nur eine Tour - es ist ein <strong>umfassendes ägyptisches Luxuserlebnis</strong>, das antike Geschichte, lokale Kultur und professionelle Fotografie vereint. Wir führen Sie abseits der typischen Touristenrouten, um verborgene Aussichtspunkte zu entdecken und Einblicke in die ägyptische Zivilisation zu geben, die Sie in keinem Reiseführer finden. Unsere <strong>beste Pyramiden-Tour-Guides</strong> stellen sicher, dass Sie das authentischste und denkwürdigste Erlebnis erhalten.
+                            Im Gegensatz zu typischen Touren bieten wir <strong>exklusiven Zugang zu eingeschränkten Fotografie-Standorten</strong> und teilen Insiderwissen über die ägyptische Zivilisation, das Sie in keinem Reiseführer finden. Unsere Tour hat sich basierend auf <strong>über 5000 Kunden-Erfahrungen</strong> weiterentwickelt und integriert die neuesten Fotografie-Techniken für 2026.
                         </p>
 
                         <div class="details-grid">
                             <div class="details-column">
-                                <h3>Tour-Highlights</h3>
+                                <h3>🎯 Tour-Highlights 2026</h3>
                                 <ul class="details-list">
-                                    <li>Erkunden Sie die Große Pyramide von Gizeh, die Chephren-Pyramide und die Mykerinos-Pyramide</li>
-                                    <li>Kommen Sie der rätselhaften Sphinx nahe und besuchen Sie den Taltempel</li>
-                                    <li>Entdecken Sie verborgene Fotospots am Wüstenpanorama-Aussichtspunkt</li>
-                                    <li>Genießen Sie eine spezielle professionelle Fotosession während der gesamten Tour</li>
-                                    <li>Lernen Sie faszinierende historische Fakten und lokale Einblicke von Ihrem erfahrenen Guide</li>
-                                    <li>Komfortabler, klimatisierter Privattransport</li>
-                                    <li>Exklusiver Zugang zu weniger überfüllten Aussichtsbereichen</li>
-                                    <li>Professionelles Gizeh-Pyramiden-Fotoshooting zur goldenen Stunde</li>
+                                    <li>Erkunden Sie die Große Pyramide, die Pyramiden von Chephren & Mykerinos</li>
+                                    <li>Professionelles Fotoshooting am Sphinx & Taltempel</li>
+                                    <li>Exklusiver Zugang zum Wüsten-Panorama-Aussichtspunkt</li>
+                                    <li>Lernen Sie Fotografie-Techniken vom Experten</li>
+                                    <li>Historische Einblicke von einem lizenzierten Ägyptologen</li>
+                                    <li>Klimatisierter privater Transport</li>
+                                    <li>Versteckte Fotosspots abseits der Menschenmassen</li>
+                                    <li>110+ professionell bearbeitete digitale Fotos inklusive</li>
                                 </ul>
                             </div>
                             <div class="details-column">
-                                <h3>Inklusive Leistungen</h3>
+                                <h3>✅ Inklusive</h3>
                                 <ul class="details-list">
-                                    <li>Privater erfahrener Ägyptologe-Guide</li>
-                                    <li>Privates, modernes, klimatisiertes Fahrzeug mit professionellem Fahrer</li>
-                                    <li>Professioneller Fotografieservice (digitale Fotos nach der Tour)</li>
-                                    <li>Mineralwasser während der Tour</li>
-                                    <li>Hotelabholung und Rücktransfer in Kairo/Gizeh</li>
-                                    <li>Alle Steuern und Servicegebühren</li>
-                                    <li>Luxus-Pyramidentour-Erlebnis mit exklusivem Zugang</li>
+                                    <li>Privater Experten Ägyptologe-Fotograf-Guide</li>
+                                    <li>Modernes klimatisiertes Fahrzeug mit Fahrer</li>
+                                    <li>Professioneller Fotografie-Service</li>
+                                    <li>110+ bearbeitete digitale Fotos (geliefert in 48 Stunden)</li>
+                                    <li>Hotel-Abholung/Rücktransfer in Kairo/Gizeh</li>
+                                    <li>Mineralwasser & Erfrischungen</li>
+                                    <li>Alle Steuern & Servicegebühren</li>
                                 </ul>
                                 
-                                <h3 style="margin-top: 24px;">Nicht enthalten</h3>
+                                <h3 style="margin-top: 24px;">❌ Nicht Inklusive</h3>
                                 <ul class="details-list exclusions">
-                                    <li>Eintrittsgebühren für den Pyramidenkomplex und das Sphinx-Gelände</li>
+                                    <li>Eintrittsgebühren Pyramiden-Komplex (20$ pro Person)</li>
                                     <li>Trinkgelder (empfohlen)</li>
-                                    <li>Kamel- oder Pferderitte (optional, können vor Ort arrangiert werden)</li>
-                                    <li>Eintritt in eine der Pyramiden (optional, zusätzliches Ticket vor Ort)</li>
-                                    <li>Persönliche Ausgaben</li>
+                                    <li>Kamelritte (optional - 10-20$)</li>
+                                    <li>Pyramiden-Innen-Zugang (zusätzliches Ticket)</li>
                                 </ul>
                             </div>
                         </div>
+                        
+                        <!-- KUNDEN-BEWERTUNGS-AUSSCHNITTE - DEUTSCHE ÜBERSETZUNGEN -->
+                        <div class="review-snippets">
+                            <h3>Was Unsere Kunden Über Ihre Erfahrung Sagen</h3>
+                            <div class="review-grid">
+                                <div class="review-snippet">
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Absolut atemberaubende Erfahrung! Hossam hat über 110 makellose Fotos unserer Familie an den Pyramiden gemacht. Sein Wissen über Geschichte und Fotografie ist unglaublich. Jedes Foto erzählt eine Geschichte. Das war jeden Cent wert und mehr!"</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle"></i>
+                                        Sarah & Familie, London, UK
+                                    </div>
+                                </div>
+                                <div class="review-snippet">
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Als alleinreisende Frau war ich nervös, Ägypten zu besuchen. Hossam ließ mich mich völlig sicher und wohl fühlen. Er machte 112 unglaubliche Fotos, die ich für immer schätzen werde. Seine Kenntnis versteckter Fotospots ist erstaunlich!"</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle"></i>
+                                        Jessica M., Sydney, Australien
+                                    </div>
+                                </div>
+                                <div class="review-snippet">
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Unser romantisches Paar-Fotoshooting übertraf alle Erwartungen! Hossam wusste genau, wie man die Magie der Pyramiden bei Sonnenuntergang einfängt. Wir erhielten 115 professionell bearbeitete Fotos, die wie aus einem Magazin aussehen. Einfach perfekt!"</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle"></i>
+                                        Marco & Elena, Mailand, Italien
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- VIDEO-BEWERTUNGS-SEKTION - DEUTSCH -->
+                        <section class="video-review-section">
+                            <div class="container">
+                                <!-- KORRIGIERT: Hauptvideo-Titel jetzt korrekt gestaltet und GELB -->
+                                <h3 class="video-title" style="color: #FFD700 !important; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); font-size: 28px; font-weight: 700; margin-bottom: 40px; text-align: center;">
+                                    Echte Kunden-Erfahrung an den Pyramiden
+                                </h3>
+                                
+                                <div class="video-container">
+                                    <div class="video-player">
+                                        <iframe src="https://www.youtube.com/embed/cmFXCqCw6fc?si=RNub6d2D7oiPzrN9" 
+                                                title="Kunden-Videobewertung: Pyramiden und Ägypten-Tour mit Fotoshooting" 
+                                                frameborder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    
+                                    <div class="video-content">
+                                        <!-- KORRIGIERT: Video-Inhaltstitel jetzt GELB -->
+                                        <h3 style="color: #FFD700 !important;">Sehen Sie, Warum Unsere Kunden Diese Erfahrung Lieben</h3>
+                                        <p>Sehen Sie sich die Videobewertung unseres glücklichen Kunden über sein privates Pyramiden-Fotoshooting und Ägypten-Fotografie-Tour-Erlebnis an. Sehen Sie echte Aufnahmen von unserer professionellen Fotografie-Tour an den Großen Pyramiden von Gizeh.</p>
+                                        
+                                        <h4>Was Sie in Diesem Video Sehen Werden:</h4>
+                                        <ul>
+                                            <li>Professionelles Fotoshooting an den Großen Pyramiden</li>
+                                            <li>Experten-Fotografie-Anleitung in Aktion</li>
+                                            <li>Beste Fotospots in Gizeh</li>
+                                            <li>Kunden-Testimonials und Reaktionen</li>
+                                            <li>Hinter den Kulissen unserer Ägypten-Tour</li>
+                                            <li>110+ makellose Fotografie-Ergebnisse</li>
+                                        </ul>
+                                        
+                                        <p><strong>Erleben Sie den gleichen professionellen Service!</strong> Buchen Sie Ihr eigenes privates Pyramiden-Fotoshooting und bewahren Sie Erinnerungen für ein Leben lang.</p>
+                                        
+                                        <a href="#booking-form" class="video-cta">Jetzt Fotoshooting Buchen</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-                        <div class="booking-form">
-                            <h3>Buchen Sie Ihr Luxus-Pyramiden-Erlebnis</h3>
+                        <!-- FAQ-SEKTION - DEUTSCH -->
+                        <div class="faq-accordion">
+                            <h2>Häufig Gestellte Fragen</h2>
+                            <div class="faq-item">
+                                <h3 class="faq-question">Was macht Ihre Pyramiden-Tour anders als andere? <i class="fas fa-chevron-down"></i></h3>
+                                <div class="faq-answer">
+                                    <p>Unsere Tour kombiniert Expertenwissen in Ägyptologie mit professionellen Fotografie-Fähigkeiten. Ihr Guide ist sowohl ein lizenzierter Ägyptologe als auch professioneller Fotograf, der alle besten Winkel und versteckten Spots für makellose Pyramiden-Fotos kennt.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-question">Ist diese Tour täglich verfügbar? <i class="fas fa-chevron-down"></i></h3>
+                                <div class="faq-answer">
+                                    <p>Ja! Wir bieten tägliche Touren um 8:00 Uhr, 12:00 Uhr und 16:00 Uhr an. Sonnenuntergang-Touren sind besonders beliebt für Fotografie. Buchen Sie mindestens 24 Stunden im Voraus.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-question">Wie viele Fotos erhalten wir? <i class="fas fa-chevron-down"></i></h3>
+                                <div class="faq-answer">
+                                    <p>Sie erhalten 110+ professionell bearbeitete hochauflösende Fotos innerhalb von 48 Stunden nach Ihrer Tour. Wir erfassen jeden wichtigen Moment aus mehreren Winkeln, um perfekte Aufnahmen zu gewährleisten.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-question">Sind Kinder auf der Tour erlaubt? <i class="fas fa-chevron-down"></i></h3>
+                                <div class="faq-answer">
+                                    <p>Absolut! Wir heißen Familien willkommen und bieten Sonderpreise für Kinder unter 12 Jahren. Unsere Guides haben Erfahrung mit Familienfotografie und wissen, wie Kinder während des Fotoshootings wohl fühlen.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-question">Wie ist Ihre Stornierungsbedingung? <i class="fas fa-chevron-down"></i></h3>
+                                <div class="faq-answer">
+                                    <p>Kostenlose Stornierung bis 24 Stunden vor der Tour. Vollständige Rückerstattung garantiert. Bei schlechtem Wetter verschieben oder erstatten wir. Wir sind flexibel und kundenorientiert.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="booking-form" id="booking-form">
+                            <h3>📅 Buchen Sie Ihre Pyramiden-Erfahrung 2026</h3>
                             <form id="booking-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                 <input type="hidden" name="cmd" value="_xclick">
                                 <input type="hidden" name="business" value="hossam0114@hotmail.com">
-                                <input type="hidden" name="item_name" value="Luxus Private Pyramiden Tour & Fotoshooting">
+                                <input type="hidden" name="item_name" value="Private Pyramiden-Tour Gizeh & Fotoshooting 2026">
                                 <input type="hidden" name="amount" value="150.00">
                                 <input type="hidden" name="currency_code" value="USD">
-                                <input type="hidden" name="on0" value="Anzahl der Personen">
+                                <input type="hidden" name="on0" value="Anzahl Personen">
                                 <input type="hidden" name="os0" value="1 Person">
                                 <input type="hidden" name="on1" value="Tour-Datum">
                                 <input type="hidden" name="os1" value="">
                                 <input type="hidden" name="on2" value="Kundenname">
                                 <input type="hidden" name="os2" value="">
-                                <input type="hidden" name="on3" value="Kunden-E-Mail">
+                                <input type="hidden" name="on3" value="Kunden-Email">
                                 <input type="hidden" name="os3" value="">
                                 <input type="hidden" name="on4" value="Kunden-Telefon">
                                 <input type="hidden" name="os4" value="">
                                 <input type="hidden" name="on5" value="Besondere Hinweise">
                                 <input type="hidden" name="os5" value="">
-                                <input type="hidden" name="return" value="https://www.egyptphotographytours.com/payment-success.html">
-                                <input type="hidden" name="cancel_return" value="https://www.egyptphotographytours.com/tours.html">
+                                <input type="hidden" name="return" value="https://www.egyptphotographytours.com/de/payment-success.html">
+                                <input type="hidden" name="cancel_return" value="https://www.egyptphotographytours.com/de/tours.html">
                                 <input type="hidden" name="no_shipping" value="1">
                                 
                                 <div class="form-group">
                                     <div class="person-selector-container">
-                                        <label class="person-selector-label">Anzahl der Personen</label>
+                                        <label class="person-selector-label">👥 Anzahl Personen</label>
                                         
                                         <div class="person-selector-dropdown">
                                             <button type="button" class="person-selector-button" id="person-selector-button">
-                                                <span class="selected-option">1 Person - $150</span>
+                                                <span class="selected-option">1 Person - 150$</span>
                                                 <svg class="dropdown-arrow" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                                 </svg>
@@ -1631,43 +2311,43 @@
                                             <div class="person-selector-options" id="person-selector-options">
                                                 <div class="person-option selected" data-persons="1" data-price="150">
                                                     <span class="person-count">1 Person</span>
-                                                    <span class="person-price">$150</span>
+                                                    <span class="person-price">150$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="2" data-price="250">
                                                     <span class="person-count">2 Personen</span>
-                                                    <span class="person-price">$250</span>
+                                                    <span class="person-price">250$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="3" data-price="350">
                                                     <span class="person-count">3 Personen</span>
-                                                    <span class="person-price">$350</span>
+                                                    <span class="person-price">350$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="4" data-price="450">
                                                     <span class="person-count">4 Personen</span>
-                                                    <span class="person-price">$450</span>
+                                                    <span class="person-price">450$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="5" data-price="550">
                                                     <span class="person-count">5 Personen</span>
-                                                    <span class="person-price">$550</span>
+                                                    <span class="person-price">550$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="6" data-price="650">
                                                     <span class="person-count">6 Personen</span>
-                                                    <span class="person-price">$650</span>
+                                                    <span class="person-price">650$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="7" data-price="750">
                                                     <span class="person-count">7 Personen</span>
-                                                    <span class="person-price">$750</span>
+                                                    <span class="person-price">750$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="8" data-price="850">
                                                     <span class="person-count">8 Personen</span>
-                                                    <span class="person-price">$850</span>
+                                                    <span class="person-price">850$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="9" data-price="950">
                                                     <span class="person-count">9 Personen</span>
-                                                    <span class="person-price">$950</span>
+                                                    <span class="person-price">950$</span>
                                                 </div>
                                                 <div class="person-option" data-persons="10" data-price="1050">
                                                     <span class="person-count">10 Personen</span>
-                                                    <span class="person-price">$1050</span>
+                                                    <span class="person-price">1050$</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1675,37 +2355,38 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label" for="tour-date">Tour-Datum auswählen</label>
+                                    <label class="form-label" for="tour-date">📅 Wählen Sie Tour-Datum</label>
                                     <input type="date" id="tour-date" class="form-input" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label" for="customer-name">Ihr Name</label>
+                                    <label class="form-label" for="customer-name">👤 Ihr Name</label>
                                     <input type="text" id="customer-name" class="form-input" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label" for="customer-email">E-Mail-Adresse</label>
+                                    <label class="form-label" for="customer-email">📧 E-Mail-Adresse</label>
                                     <input type="email" id="customer-email" class="form-input" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label" for="customer-phone">Telefonnummer</label>
+                                    <label class="form-label" for="customer-phone">📱 Telefonnummer</label>
                                     <input type="tel" id="customer-phone" class="form-input" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label" for="special-notes">Besondere Wünsche oder Hinweise</label>
-                                    <textarea id="special-notes" class="form-textarea" placeholder="Diätetische Einschränkungen, Mobilitätsbedenken oder spezielle Fotografie-Wünsche..."></textarea>
+                                    <label class="form-label" for="special-notes">💭 Besondere Wünsche oder Hinweise</label>
+                                    <textarea id="special-notes" class="form-textarea" placeholder="Ernährungseinschränkungen, Mobilitätsbedenken oder besondere Fotografie-Wünsche..."></textarea>
                                 </div>
                                 
                                 <div class="price-display">
-                                    Gesamtpreis: $<span id="total-price">150.00</span> USD
+                                    💰 Gesamtpreis: <span id="total-price">150.00</span> $ USD
                                 </div>
                                 
                                 <button type="submit" class="paypal-button" id="paypal-button" disabled>
-                                    Jetzt über PayPal buchen
+                                    ⚡ Jetzt über PayPal Buchen
                                 </button>
+                                <p style="text-align: center; margin-top: 10px; font-size: 14px; color: #666;">✅ Kostenlose Stornierung bis 24 Stunden vor Tour</p>
                             </form>
                         </div>
                     </div>
@@ -1713,88 +2394,88 @@
             </div>
         </section>
 
-        <!-- OTHER TOURS SECTION -->
+        <!-- ANDERE TOUREN-SEKTION - DEUTSCH -->
         <section class="main-section bg-light-gray">
             <div class="container">
-                <h2>Weitere fantastische Ägypten-Touren</h2>
+                <h2>Weitere Erstaunliche Ägypten-Touren für 2026</h2>
                 <div class="tour-grid">
-                    <!-- Tour Card 1 -->
+                    <!-- Tour-Karte 1 -->
                     <div class="tour-card">
                         <span class="sale-tag">Sonderangebot!</span>
                         <img src="../images/cairo-giza-2day.jpg"
-                             alt="Zweitägige Premium-Privatfototour mit Kairoer Sehenswürdigkeiten und Gizeh-Pyramiden mit erfahrenem Guide"
+                             alt="Zweitägige Premium-Privat-Fotografie-Tour zu Kairo-Sehenswürdigkeiten und Gizeh-Pyramiden mit Experten-Guide"
                              class="tour-img lazy-load"
                              loading="lazy"
                              width="400"
                              height="224">
                         <div class="tour-card-body">
                             <h3 class="tour-card-title">2-Tägige Premium-Privat-Tour: Kairo & Gizeh Fotografie-Expedition</h3>
-                            <p class="tour-card-text">Tauchen Sie ein in Ägyptens lebendige Hauptstadt und antike Wunder über zwei unvergessliche Tage. Erkunden Sie die majestätischen Pyramiden, das geschäftige Alt-Kairo und das beeindruckende Nationalmuseum der ägyptischen Zivilisation.</p>
+                            <p class="tour-card-text">Tauchen Sie ein in Ägyptens lebhafte Hauptstadt und antike Wunder über zwei unvergessliche Tage. Erkunden Sie die majestätischen Pyramiden, das geschäftige Alt-Kairo und das beeindruckende Nationalmuseum der Ägyptischen Zivilisation.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">Ab $350 USD</span>
+                                <span class="tour-price">Ab 350$ USD</span>
                                 <span class="tour-duration">Dauer: 2 Tage</span>
                             </div>
-                            <a href="tour-cairo-giza-2day.html" class="tour-cta">Details anzeigen & buchen</a>
+                            <a href="../de/tour-cairo-giza-2day.html" class="tour-cta">Details Ansehen & Buchen</a>
                         </div>
                     </div>
 
-                    <!-- Tour Card 2 -->
+                    <!-- Tour-Karte 2 -->
                     <div class="tour-card">
                         <span class="sale-tag">Begrenzte Plätze!</span>
                         <img src="../images/alexandria-tour.jpg"
-                             alt="Private Küsten-Tagesfototour nach Alexandria ab Kairo mit Mittelmeerblick und antiken Stätten"
+                             alt="Private Küsten-Tages-Fotografie-Tour nach Alexandria von Kairo mit Mittelmeerblick und antiken Stätten"
                              class="tour-img lazy-load"
                              loading="lazy"
                              width="400"
                              height="224">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Entdecken Sie Alexandria: Private Küsten-Tagestour ab Kairo</h3>
-                            <p class="tour-card-text">Tauschen Sie Kairos Wüstenstaub gegen die frische Brise des Mittelmeers auf dieser unvergesslichen privaten Tagestour nach Alexandria. Entdecken Sie eine Mischung aus griechischen, römischen, islamischen und modernen Schätzen.</p>
+                            <h3 class="tour-card-title">Entdecken Sie Alexandria: Private Küsten-Tagestour von Kairo</h3>
+                            <p class="tour-card-text">Tauschen Sie Kairo's Wüstenstaub gegen die frische Brise des Mittelmeers auf dieser unvergesslichen privaten Tagestour nach Alexandria. Entdecken Sie eine Mischung aus griechischen, römischen, islamischen und modernen Schätzen.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">Ab $220 USD</span>
+                                <span class="tour-price">Ab 220$ USD</span>
                                 <span class="tour-duration">Dauer: 1 Tag</span>
                             </div>
-                            <a href="tour-alexandria.html" class="tour-cta">Details anzeigen & buchen</a>
+                            <a href="../de/tour-alexandria.html" class="tour-cta">Details Ansehen & Buchen</a>
                         </div>
                     </div>
 
-                    <!-- Tour Card 3 -->
+                    <!-- Tour-Karte 3 -->
                     <div class="tour-card">
                         <span class="sale-tag">Neues Abenteuer!</span>
                         <img src="../images/egypt-discovery-7day.jpg"
-                             alt="7-tägige umfassende Ägypten-Fotografie-Entdeckungstour mit Kairo, Gizeh-Pyramiden, Alexandria und Luxor-Tempeln"
+                             alt="7-Tägige umfassende Ägypten-Fotografie-Entdeckungstour zu Kairo, Gizeh-Pyramiden, Alexandria und Luxor-Tempeln"
                              class="tour-img lazy-load"
                              loading="lazy"
                              width="400"
                              height="224">
                         <div class="tour-card-body">
                             <h3 class="tour-card-title">7-Tägige Ägypten-Entdeckungstour: Kairo, Gizeh, Alexandria & Luxor</h3>
-                            <p class="tour-card-text">Erleben Sie die Wunder des antiken und modernen Ägypten auf dieser eindringlichen 7-tägigen geführten Reise. Von den hohen Pyramiden bis zum mediterranen Charme Alexandrias und den majestätischen Tempeln von Luxor.</p>
+                            <p class="tour-card-text">Erleben Sie die Wunder des antiken und modernen Ägypten auf dieser immersiven 7-tägigen geführten Reise. Von den imposanten Pyramiden zum mediterranen Charme Alexandrias und den majestätischen Tempeln von Luxor.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">Ab $1900 USD</span>
+                                <span class="tour-price">Ab 1900$ USD</span>
                                 <span class="tour-duration">Dauer: 7 Tage</span>
                             </div>
-                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">Details anzeigen & buchen</a>
+                            <a href="../de/tour-egypt-discovery-7day.html" class="tour-cta">Details Ansehen & Buchen</a>
                         </div>
                     </div>
 
-                    <!-- Tour Card 4 -->
+                    <!-- Tour-Karte 4 -->
                     <div class="tour-card">
-                        <span class="sale-tag">Luxus-Erlebnis!</span>
+                        <span class="sale-tag">Luxus-Erfahrung!</span>
                         <img src="../images/luxor-aswan-tour.jpg"
-                             alt="5-tägige Luxus-Nilkreuzfahrt und Fototour von Luxor nach Assuan mit Tempelbesuchen und professioneller Fotografie"
+                             alt="5-Tägige Luxus-Nilkreuzfahrt und Fotografie-Tour von Luxor nach Assuan mit Tempelbesuchen und professioneller Fotografie"
                              class="tour-img lazy-load"
                              loading="lazy"
                              width="400"
                              height="224">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">5-Tägige Luxus-Nilkreuzfahrt: Luxor nach Assuan Fotoreise</h3>
-                            <p class="tour-card-text">Segeln Sie den legendären Nil in Luxus und machen Sie atemberaubende Bilder antiker Tempel und Landschaften. Inklusive professioneller Fotografie-Anleitung und exklusivem Zugang zu historischen Stätten.</p>
+                            <h3 class="tour-card-title">5-Tägige Luxus-Nilkreuzfahrt: Fotografie-Reise von Luxor nach Assuan</h3>
+                            <p class="tour-card-text">Segeln Sie den legendären Nil in Luxus und machen Sie makellose Bilder antiker Tempel und Landschaften. Inklusive professioneller Fotografie-Anleitung und exklusivem Zugang zu historischen Stätten.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">Ab $700 USD</span>
+                                <span class="tour-price">Ab 700$ USD</span>
                                 <span class="tour-duration">Dauer: 5 Tage</span>
                             </div>
-                            <a href="tour-nile-cruise.html" class="tour-cta">Details anzeigen & buchen</a>
+                            <a href="../de/tour-nile-cruise.html" class="tour-cta">Details Ansehen & Buchen</a>
                         </div>
                     </div>
                 </div>
@@ -1804,29 +2485,35 @@
 
     <footer class="footer">
         <div class="container footer-content">
-            <!-- UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT -->
+            <!-- AKTUALISIERTE FUSSSEKTION MARKE - LINKS AUSGERICHTET -->
             <div class="footer-brand">
-                <h3 class="footer-title">Egypt Photography Tours</h3>
-                <p class="footer-text">&copy; 2025 Egypt Photography Tours.</p>
-                <p class="footer-text">Alle Rechte vorbehalten.</p>
+                <h3 class="footer-title">Ägypten Fotografie-Touren</h3>
+                <p class="footer-text">&copy; 2009-2026 Ägypten Fotografie-Touren.</p>
+                <p class="footer-text">Lizenziert & Versichert. Mitglied der Egyptian Tourist Guides Association.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
+                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
+                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                </div>
             </div>
             <div class="footer-section">
                 <h4 class="footer-title">Schnelllinks</h4>
                 <ul class="footer-links">
-                    <li><a href="../index.html">Startseite</a></li>
-                    <li><a href="../about.html">Über uns</a></li>
-                    <li><a href="../tours.html">Unsere Touren</a></li>
-                    <li><a href="../gallery.html">Galerie</a></li>
-                    <li><a href="../resources.html">Ressourcen</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../contact.html">Kontakt</a></li>
-                    <li><a href="../faqs.html">FAQs</a></li>
+                    <li><a href="../de/index.html">Startseite</a></li>
+                    <li><a href="../de/about.html">Über Uns</a></li>
+                    <li><a href="../de/tours.html">Unsere Touren</a></li>
+                    <li><a href="../de/gallery.html">Galerie</a></li>
+                    <li><a href="../de/resources.html">Ressourcen</a></li>
+                    <li><a href="../de/blog.html">Blog</a></li>
+                    <li><a href="../de/contact.html">Kontakt</a></li>
+                    <li><a href="../de/faqs.html">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4 class="footer-title">Kontaktieren Sie uns</h4>
-                <p class="footer-text">Adresse: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <!-- MOVED PHONE AND EMAIL TO CONNECT WITH US SECTION -->
+                <h4 class="footer-title">Kontaktieren Sie Uns</h4>
+                <p class="footer-text">Adresse: Abou Elhool, Nazlet El-Samman, Elsamman, Gizeh, Gouvernement Gizeh 12557</p>
+                <!-- TELEFON UND EMAIL VERSCHOBEN ZUR "KONTAKTIEREN SIE UNS"-SEKTION -->
                 <div class="footer-contact">
                     <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
                         <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
@@ -1835,21 +2522,21 @@
                         <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
                     </a>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
-                </div>
+                <p class="footer-text" style="margin-top: 15px; font-size: 13px;">
+                    ⭐ 15+ Jahre Erfahrung<br>
+                    📜 Lizenzierter Ägyptologe<br>
+                    📸 Professioneller Fotograf<br>
+                    ✅ 5000+ Zufriedene Kunden
+                </p>
             </div>
             <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sde!2seg!4v1760293165082!5m2!1sde!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ägypten Fotografie-Touren Standortkarte"></iframe>
             </div>
         </div>
     </footer>
 
     <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
+        // ✅ MOBILE-MENÜ-FUNKTIONALITÄT - DEUTSCHER TEXT
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -1857,7 +2544,7 @@
             mobileMenuToggle.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
                 
-                // Change icon based on menu state
+                // Symbol basierend auf Menüstatus ändern
                 const icon = this.querySelector('i');
                 if (navLinks.classList.contains('active')) {
                     icon.classList.remove('fa-bars');
@@ -1868,7 +2555,7 @@
                 }
             });
             
-            // Close menu when clicking on a link (for mobile)
+            // Menü schließen, wenn auf einen Link geklickt wird (für mobile)
             document.querySelectorAll('.nav-link a').forEach(link => {
                 link.addEventListener('click', function() {
                     if (window.innerWidth < 768) {
@@ -1879,14 +2566,14 @@
                 });
             });
             
-            // ✅ HERO SLIDER FUNCTIONALITY - 5 IMAGES, 7 SECOND INTERVAL
+            // ✅ HERO-SLIDER-FUNKTIONALITÄT - 5 BILDER, 7 SEKUNDEN INTERVALL
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevButton = document.querySelector('.slider-arrow.prev');
             const nextButton = document.querySelector('.slider-arrow.next');
             let currentSlide = 0;
             let slideInterval;
-            const slideDuration = 7000; // 7 seconds
+            const slideDuration = 7000; // 7 Sekunden
             
             function showSlide(index) {
                 slides.forEach(slide => slide.classList.remove('active'));
@@ -1915,7 +2602,7 @@
                 clearInterval(slideInterval);
             }
             
-            // Event listeners
+            // Event-Listener
             prevButton.addEventListener('click', function() {
                 stopSlideShow();
                 prevSlide();
@@ -1942,10 +2629,10 @@
             heroSlider.addEventListener('touchstart', stopSlideShow);
             heroSlider.addEventListener('touchend', startSlideShow);
             
-            // Initialize
+            // Initialisieren
             startSlideShow();
             
-            // ✅ UPDATED DROPDOWN PERSON SELECTOR FUNCTIONALITY
+            // ✅ AKTUALISIERTE DROPDOWN-PERSONEN-AUSWAHL FUNKTIONALITÄT - DEUTSCHER TEXT
             const personSelectorButton = document.getElementById('person-selector-button');
             const personSelectorOptions = document.getElementById('person-selector-options');
             const personOptions = document.querySelectorAll('.person-option');
@@ -1953,7 +2640,7 @@
             const totalPriceElement = document.getElementById('total-price');
             const paypalButton = document.getElementById('paypal-button');
             
-            // Set minimum date to today
+            // Mindestdatum auf heute setzen
             const today = new Date();
             const yyyy = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -1964,13 +2651,13 @@
             let selectedPersons = 1;
             let selectedDate = '';
             
-            // Toggle dropdown
+            // Dropdown umschalten
             personSelectorButton.addEventListener('click', function() {
                 personSelectorOptions.classList.toggle('active');
                 personSelectorButton.classList.toggle('active');
             });
             
-            // Person selection
+            // Personenauswahl - TEXTE AUF DEUTSCH AKTUALISIEREN
             personOptions.forEach(option => {
                 option.addEventListener('click', function() {
                     personOptions.forEach(opt => opt.classList.remove('selected'));
@@ -1979,17 +2666,17 @@
                     selectedPersons = parseInt(this.getAttribute('data-persons'));
                     const price = parseFloat(this.getAttribute('data-price'));
                     
-                    // Update button text
+                    // Button-Text auf Deutsch aktualisieren
                     const selectedOptionText = `${selectedPersons} Person${selectedPersons > 1 ? 'en' : ''} - $${price}`;
                     document.querySelector('.selected-option').textContent = selectedOptionText;
                     
                     updatePrice(price);
                     
-                    // Update PayPal form
+                    // PayPal-Formular aktualisieren
                     document.querySelector('input[name="amount"]').value = price.toFixed(2);
                     document.querySelector('input[name="os0"]').value = `${selectedPersons} Person${selectedPersons > 1 ? 'en' : ''}`;
                     
-                    // Close dropdown
+                    // Dropdown schließen
                     personSelectorOptions.classList.remove('active');
                     personSelectorButton.classList.remove('active');
                     
@@ -2001,14 +2688,14 @@
                 totalPriceElement.textContent = price.toFixed(2);
             }
             
-            // Date selection
+            // Datumsauswahl
             tourDateInput.addEventListener('change', function() {
                 selectedDate = this.value;
                 document.querySelector('input[name="os1"]').value = selectedDate;
                 updatePayPalButton();
             });
             
-            // Customer details
+            // Kundendetails
             const customerNameInput = document.getElementById('customer-name');
             const customerEmailInput = document.getElementById('customer-email');
             const customerPhoneInput = document.getElementById('customer-phone');
@@ -2042,7 +2729,7 @@
                 paypalButton.disabled = !isFormValid;
             }
             
-            // Close dropdown when clicking outside
+            // Dropdown schließen, wenn außerhalb geklickt wird
             document.addEventListener('click', function(e) {
                 if (!personSelectorButton.contains(e.target) && !personSelectorOptions.contains(e.target)) {
                     personSelectorOptions.classList.remove('active');
@@ -2050,71 +2737,139 @@
                 }
             });
             
-            // ✅ LANGUAGE SWITCHER
+            // ✅ SPRACHUMSCHALTER - DEUTSCH ALS STANDARD
             const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            currentLanguage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                languageSwitcher.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
-                }
-            });
-            
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
+            if (languageSwitcher) {
+                const currentLanguage = languageSwitcher.querySelector('.current-language');
+                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+                const currentFlag = currentLanguage.querySelector('.current-flag');
+                const currentText = currentLanguage.querySelector('.current-text');
+                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+                
+                // Funktion zum Setzen der aktuellen Sprache
+                function setCurrentLanguage(flag, text, lang) {
+                    currentFlag.textContent = flag;
+                    currentText.textContent = lang.toUpperCase();
                     
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
+                    // Aktiven Zustand im Dropdown aktualisieren
+                    languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                        item.classList.remove('active');
+                        if (item.dataset.lang === lang) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+                
+                // Aktuelle Seiten-Sprache aus URL ermitteln
+                function getCurrentPageLanguage() {
+                    const path = window.location.pathname;
+                    if (path.includes('/de/')) return 'de';
+                    if (path.includes('/en/')) return 'en';
+                    if (path.includes('/fi/')) return 'fi';
+                    if (path.includes('/fr/')) return 'fr';
+                    if (path.includes('/ar/')) return 'ar';
+                    if (path.includes('/ru/')) return 'ru';
+                    if (path.includes('/es/')) return 'es';
+                    if (path.includes('/it/')) return 'it';
+                    if (path.includes('/zh/')) return 'zh';
+                    if (path.includes('/ko/')) return 'ko';
+                    if (path.includes('/pt/')) return 'pt';
+                    if (path.includes('/id/')) return 'id';
+                    if (path.includes('/ja/')) return 'ja';
+                    if (path.includes('/nl/')) return 'nl';
+                    if (path.includes('/da/')) return 'da';
+                    if (path.includes('/hi/')) return 'hi';
+                    if (path.includes('/no/')) return 'no';
+                    if (path.includes('/sv/')) return 'sv';
+                    if (path.includes('/tl/')) return 'tl';
+                    if (path.includes('/ms/')) return 'ms';
+                    if (path.includes('/th/')) return 'th';
+                    // Standardmäßig Deutsch
+                    return 'de';
+                }
+                
+                // Aktuelle Sprache initialisieren
+                const currentPageLang = getCurrentPageLanguage();
+                const activeItem = languageDropdown.querySelector(`[data-lang="${currentPageLang}"]`);
+                if (activeItem) {
+                    const flag = activeItem.dataset.flag;
+                    const lang = activeItem.dataset.lang;
+                    setCurrentLanguage(flag, activeItem.querySelector('.language-text').textContent, lang);
+                }
+                
+                // Dropdown umschalten
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
+                    dropdownIcon.classList.toggle('fa-chevron-up');
+                    dropdownIcon.classList.toggle('fa-chevron-down');
+                });
+                
+                // Dropdown schließen, wenn außerhalb geklickt wird
+                document.addEventListener('click', function(e) {
+                    if (!languageSwitcher.contains(e.target)) {
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Sprachauswahl behandeln
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const flag = this.dataset.flag;
+                        const lang = this.dataset.lang;
+                        const text = this.querySelector('.language-text').textContent;
+                        
+                        // Aktuelle Sprachanzeige setzen
+                        setCurrentLanguage(flag, text, lang);
+                        
+                        // Dropdown schließen
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                        
+                        // Zur ausgewählten Sprachseite weiterleiten
+                        const href = this.getAttribute('href');
+                        if (href && href !== window.location.pathname) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+            }
+            
+            // ✅ FAQ-AKKORDEON - DEUTSCH
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Alle anderen FAQs schließen
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        if (ans !== answer) {
+                            ans.classList.remove('active');
+                            ans.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                            ans.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                        }
                     });
                     
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
+                    // Aktuelle FAQ umschalten
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        answer.classList.add('active');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
                 });
             });
             
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA',
-                    'Nederlands': 'NL',
-                    'Dansk': 'DA',
-                    'हिन्दी': 'HI',
-                    'Norsk': 'NO',
-                    'Svenska': 'SV',
-                    'Tagalog': 'TL',
-                    'Melayu': 'MS',
-                    'ไทย': 'TH'
-                };
-                return codes[languageName] || languageName;
-            }
-            
-            // ✅ LAZY LOADING IMAGES
+            // ✅ LAZY LOADING VON BILDERN
             const images = document.querySelectorAll('img[loading="lazy"]');
             
             if ('IntersectionObserver' in window) {
@@ -2132,7 +2887,139 @@
             }
         });
 
-        // ✅ PRELOAD TOUR IMAGES
+        // ✅ PWA-FUNKTIONALITÄT - DEUTSCHER TEXT
+        // Service Worker Registrierung
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker-Registrierung erfolgreich mit Scope: ', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('ServiceWorker-Registrierung fehlgeschlagen: ', error);
+                    });
+            });
+        }
+        
+        // PWA Installationsaufforderung - ZEIGT NUR EINMAL PRO BENUTZER
+        let deferredPrompt;
+        const pwaInstallContainer = document.getElementById('pwaInstallContainer');
+        const pwaInstallBtn = document.getElementById('pwaInstallBtn');
+        const iosInstallGuide = document.getElementById('iosInstallGuide');
+        const closeIosGuide = document.getElementById('closeIosGuide');
+        
+        // Erkennen, ob Benutzer auf iOS ist
+        const isIos = () => {
+            const userAgent = window.navigator.userAgent.toLowerCase();
+            return /iphone|ipad|ipod/.test(userAgent);
+        };
+        
+        // Überprüfen, ob App bereits installiert ist
+        const isAppInstalled = () => {
+            return (window.matchMedia('(display-mode: standalone)').matches) ||
+                   (window.navigator.standalone) ||
+                   (document.referrer.includes('android-app://'));
+        };
+        
+        // Überprüfen, ob Benutzer die Installationsaufforderung bereits gesehen hat
+        const hasSeenInstallPrompt = () => {
+            return localStorage.getItem('pwaInstallPromptSeen') === 'true';
+        };
+        
+        // Überprüfen, ob Benutzer die iOS-Anleitung geschlossen hat
+        const hasDismissedIosGuide = () => {
+            return localStorage.getItem('iosInstallGuideDismissed') === 'true';
+        };
+        
+        // Installationsaufforderung als gesehen markieren
+        const markInstallPromptAsSeen = () => {
+            localStorage.setItem('pwaInstallPromptSeen', 'true');
+        };
+        
+        // iOS-Anleitung als geschlossen markieren
+        const markIosGuideAsDismissed = () => {
+            localStorage.setItem('iosInstallGuideDismissed', 'true');
+        };
+        
+        // Installationsbutton-Anzeigelogik - NUR BEIM ERSTEN BESUCH
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Nur für Android/Windows anzeigen und nur wenn:
+            // 1. Nicht bereits installiert
+            // 2. Benutzer die Aufforderung noch nicht gesehen hat
+            // 3. Nicht auf iOS
+            if (!isIos() && !isAppInstalled() && !hasSeenInstallPrompt()) {
+                // Installationsbutton nach 5 Sekunden anzeigen (nur beim ersten Besuch)
+                setTimeout(() => {
+                    pwaInstallContainer.style.display = 'block';
+                    markInstallPromptAsSeen(); // Sofort als gesehen markieren, wenn angezeigt
+                }, 5000);
+            }
+        });
+        
+        // Installationsbutton-Klick behandeln
+        if (pwaInstallBtn) {
+            pwaInstallBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    // Android/Windows-Installation
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    
+                    if (outcome === 'accepted') {
+                        console.log('Benutzer hat die App installiert');
+                        pwaInstallContainer.style.display = 'none';
+                    } else {
+                        console.log('Benutzer hat die Installationsaufforderung abgelehnt');
+                        // Button ausblenden, wenn Benutzer ablehnt
+                        pwaInstallContainer.style.display = 'none';
+                    }
+                    deferredPrompt = null;
+                } else if (isIos()) {
+                    // iOS-Anweisungen anzeigen
+                    iosInstallGuide.style.display = iosInstallGuide.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        }
+        
+        // iOS-Anleitung schließen
+        if (closeIosGuide) {
+            closeIosGuide.addEventListener('click', () => {
+                iosInstallGuide.style.display = 'none';
+                markIosGuideAsDismissed();
+            });
+        }
+        
+        // Installationsbutton ausblenden, wenn App bereits installiert ist
+        if (isAppInstalled()) {
+            pwaInstallContainer.style.display = 'none';
+        }
+        
+        // iOS-Installationsanweisungen nur beim ersten Besuch anzeigen und wenn nicht geschlossen
+        if (isIos() && !isAppInstalled() && !hasDismissedIosGuide() && !hasSeenInstallPrompt()) {
+            // Nur beim ersten Besuch nach 8 Sekunden anzeigen
+            setTimeout(() => {
+                pwaInstallContainer.style.display = 'block';
+                markInstallPromptAsSeen();
+            }, 8000);
+        }
+        
+        // iOS-Anleitung automatisch nach 10 Sekunden ausblenden
+        if (iosInstallGuide && iosInstallGuide.style.display === 'block') {
+            setTimeout(() => {
+                iosInstallGuide.style.display = 'none';
+                markIosGuideAsDismissed();
+            }, 10000);
+        }
+        
+        // Überprüfen, ob App vom Home-Bildschirm gestartet wurde
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            console.log('App vom Home-Bildschirm gestartet');
+            document.body.classList.add('standalone-mode');
+        }
+        
+        // ✅ TOUR-BILDER VORLADEN
         function preloadImages() {
             const images = [
                 '../images/pyramids-private-tour.jpg',
@@ -2151,7 +3038,7 @@
             });
         }
         
-        // Preload tour images for performance
+        // Tour-Bilder für Leistung vorladen
         preloadImages();
     </script>
 </body>
