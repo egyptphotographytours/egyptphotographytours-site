@@ -12,6 +12,16 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#FFD700">
     
+    <!-- Google Analytics Tracking -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVNPEMCG8F');
+    </script>
+    
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
     <link rel="preload" href="images/hero-image1.webp" as="image" media="(min-width: 768px)">
@@ -75,7 +85,7 @@
     <meta name="geo.placename" content="Cairo, Egypt">
     <meta name="geo.position" content="30.0444;31.2357">
 
-    <!-- COMPREHENSIVE STRUCTURED DATA SCHEMA - UPDATED -->
+    <!-- COMPREHENSIVE STRUCTURED DATA SCHEMA - UPDATED WITH VIDEO OBJECT -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -279,6 +289,61 @@
           },
           "sku": "EPT-LUX-001",
           "category": "Luxury Photography Tour"
+        },
+        {
+          "@type": "VideoObject",
+          "name": "Customer Video Review: Pyramids and Egypt Tour with Photoshoot",
+          "description": "Watch our happy customer's video review of their private pyramids photoshoot and Egypt photography tour experience. See actual footage from our professional photography tour at the Great Pyramids of Giza.",
+          "thumbnailUrl": [
+            "https://img.youtube.com/vi/cmFXCqC6fc/maxresdefault.jpg",
+            "https://img.youtube.com/vi/cmFXCqC6fc/hqdefault.jpg"
+          ],
+          "uploadDate": "2024-12-01",
+          "duration": "PT1M",
+          "contentUrl": "https://youtube.com/shorts/cmFXCqC6fc?si=2yMbgh6mHCIZKEOP",
+          "embedUrl": "https://www.youtube.com/embed/cmFXCqC6fc",
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WatchAction",
+            "userInteractionCount": "5000"
+          },
+          "regionsAllowed": "EG,US,CA,GB,AU,DE,FR,IT,ES",
+          "author": {
+            "@type": "Person",
+            "name": "Egypt Photography Tours Customer",
+            "url": "https://www.egyptphotographytours.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Egypt Photography Tours",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/favicon-32x32.png",
+              "width": "32",
+              "height": "32"
+            }
+          },
+          "hasPart": {
+            "@type": "Clip",
+            "name": "Pyramids Photoshoot Highlights",
+            "startOffset": 0,
+            "endOffset": 60,
+            "url": "https://youtube.com/shorts/cmFXCqC6fc?si=2yMbgh6mHCIZKEOP&t=0"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Satisfied Customer"
+            },
+            "reviewBody": "Amazing pyramids photoshoot experience! The professional photographer knew all the best angles and made us feel comfortable throughout the tour. Highly recommended Egypt photography tour!"
+          },
+          "transcript": "Customer review of Egypt Photography Tours showing professional photoshoot at the Great Pyramids of Giza with expert photographer guidance and stunning photography results."
         }
       ]
     }
@@ -1119,6 +1184,68 @@
             margin-bottom: 10px;
             line-height: 1.6;
         }
+
+        /* CUSTOMER VIDEO REVIEW SECTION */
+        .video-review-section {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            padding: 60px 0;
+            margin: 40px 0;
+            color: white;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+        @media (min-width: 992px) {
+            .video-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+        .video-player {
+            flex: 1;
+            max-width: 600px;
+        }
+        .video-player iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            border: 3px solid var(--accent-light);
+        }
+        .video-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .video-content h3 {
+            color: var(--accent-light);
+            margin-bottom: 20px;
+        }
+        .video-content ul {
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        .video-content li {
+            margin-bottom: 10px;
+            color: #e2e8f0;
+        }
+        .video-cta {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .video-cta:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
@@ -1279,6 +1406,7 @@
                 <li class="nav-link"><a href="about.html">About</a></li>
                 <li class="nav-link"><a href="tours.html">Tours</a></li>
                 <li class="nav-link"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-link"><a href="resources.html">Resources</a></li>
                 <li class="nav-link"><a href="blog.html">Blog</a></li>
                 <li class="nav-link"><a href="contact.html">Contact</a></li>
                 <li class="nav-link"><a href="faqs.html">FAQs</a></li>
@@ -1370,6 +1498,43 @@
                         <div class="card-icon">⭐</div>
                         <h3>Trusted & Verified Service</h3>
                         <p>Rated 5/5 stars on Trustpilot with 26+ verified reviews. Licensed and insured for your safety. Best-rated Egypt photography tours 2026.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOMER VIDEO REVIEW SECTION -->
+        <section class="video-review-section">
+            <div class="container">
+                <h2 class="text-center" style="color: var(--accent-light); margin-bottom: 40px;">Watch Our Customer Video Review</h2>
+                
+                <div class="video-container">
+                    <div class="video-player">
+                        <iframe src="https://www.youtube.com/embed/cmFXCqC6fc?si=2yMbgh6mHCIZKEOP" 
+                                title="Customer Video Review: Pyramids and Egypt Tour with Photoshoot" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    
+                    <div class="video-content">
+                        <h3>Real Customer Experience at the Pyramids</h3>
+                        <p>Watch our happy customer's video review of their private pyramids photoshoot and Egypt photography tour experience. See actual footage from our professional photography tour at the Great Pyramids of Giza.</p>
+                        
+                        <h4>What You'll See in This Video:</h4>
+                        <ul>
+                            <li>Professional photoshoot at the Great Pyramids</li>
+                            <li>Expert photography guidance in action</li>
+                            <li>Best photography spots at Giza</li>
+                            <li>Customer testimonials and reactions</li>
+                            <li>Behind-the-scenes of our Egypt tour</li>
+                            <li>Stunning photography results</li>
+                        </ul>
+                        
+                        <p><strong>Experience the same professional service!</strong> Book your own private pyramids photoshoot and capture memories that last a lifetime.</p>
+                        
+                        <a href="contact.html" class="video-cta">Book Your Photoshoot Now</a>
                     </div>
                 </div>
             </div>
@@ -1611,6 +1776,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="tours.html">2026 Tours</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="resources.html">Resources</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="faqs.html">FAQs</a></li>
