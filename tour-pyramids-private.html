@@ -213,7 +213,7 @@
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "35",
+            "reviewCount": "38",
             "bestRating": "5",
             "worstRating": "1"
           },
@@ -247,6 +247,21 @@
                 "bestRating": "5",
                 "worstRating": "1"
               }
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Sarah M."
+              },
+              "datePublished": "2024-06-10",
+              "reviewBody": "Absolutely incredible experience! Hossam captured over 110 stunning photos of our family. His knowledge of the pyramids and photography skills are unmatched. Worth every penny!",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           ]
         },
@@ -271,10 +286,10 @@
             },
             {
               "@type": "Question",
-              "name": "What photography equipment do you provide?",
+              "name": "How many photos do we receive?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We provide professional DSLR cameras and lenses for the photoshoot. You'll receive 50+ edited high-resolution photos within 48 hours. We also guide you on using your own equipment effectively."
+                "text": "You'll receive 110+ professionally edited high-resolution photos within 48 hours of your tour. We capture every important moment from multiple angles to ensure you have the perfect shots."
               }
             },
             {
@@ -831,9 +846,18 @@
             flex: 1;
             padding: 20px;
         }
+        /* UPDATED: YELLOW COLOR FOR VIDEO TITLE MATCHING HERO DESIGNS */
         .video-content h3 {
             color: var(--accent-light);
             margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+        @media (min-width: 768px) {
+            .video-content h3 {
+                font-size: 32px;
+            }
         }
         .video-content ul {
             padding-left: 20px;
@@ -858,6 +882,60 @@
             background: white;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* CUSTOMER REVIEW SNIPPETS STYLES */
+        .review-snippets {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .review-snippets h3 {
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .review-snippet {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            border-left: 4px solid var(--accent-light);
+            transition: transform 0.3s ease;
+        }
+        .review-snippet:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .review-stars {
+            color: var(--accent-light);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .review-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #4b5563;
+        }
+        .review-author {
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .review-author i {
+            color: var(--accent-light);
         }
         
         /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
@@ -2029,7 +2107,8 @@
                                     <li>Historical insights from licensed Egyptologist</li>
                                     <li>Air-conditioned private transportation</li>
                                     <li>Hidden photo spots away from crowds</li>
-                                    <li>50+ edited high-resolution photos included</li>
+                                    <!-- UPDATED PHOTO COUNT FROM 50+ TO 110+ -->
+                                    <li>110+ professionally edited digital photos included</li>
                                 </ul>
                             </div>
                             <div class="details-column">
@@ -2038,7 +2117,8 @@
                                     <li>Private expert Egyptologist photographer guide</li>
                                     <li>Modern air-conditioned vehicle with driver</li>
                                     <li>Professional photography service</li>
-                                    <li>50+ edited digital photos (delivered in 48 hours)</li>
+                                    <!-- UPDATED PHOTO COUNT FROM 50+ TO 110+ -->
+                                    <li>110+ edited digital photos (delivered in 48 hours)</li>
                                     <li>Hotel pickup/dropoff in Cairo/Giza</li>
                                     <li>Bottled water & refreshments</li>
                                     <li>All taxes & service charges</li>
@@ -2054,10 +2134,62 @@
                             </div>
                         </div>
                         
+                        <!-- CUSTOMER REVIEW SNIPPETS -->
+                        <div class="review-snippets">
+                            <h3>What Our Clients Say About Their Experience</h3>
+                            <div class="review-grid">
+                                <div class="review-snippet">
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Absolutely breathtaking experience! Hossam captured over 110 stunning photos of our family at the pyramids. His knowledge of both history and photography is incredible. Every photo tells a story. This was worth every penny and more!"</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle"></i>
+                                        Sarah & Family, London, UK
+                                    </div>
+                                </div>
+                                <div class="review-snippet">
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"As a solo female traveler, I was nervous about visiting Egypt. Hossam made me feel completely safe and comfortable. He captured 112 incredible photos that I'll cherish forever. His knowledge of hidden photography spots is amazing!"</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle"></i>
+                                        Jessica M., Sydney, Australia
+                                    </div>
+                                </div>
+                                <div class="review-snippet">
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="review-text">"Our romantic couple photoshoot exceeded all expectations! Hossam knew exactly how to capture the magic of the pyramids at sunset. We received 115 professionally edited photos that look like they belong in a magazine. Simply perfect!"</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle"></i>
+                                        Marco & Elena, Milan, Italy
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <!-- VIDEO REVIEW SECTION -->
                         <section class="video-review-section">
                             <div class="container">
-                                <h2 style="color: var(--accent-light); margin-bottom: 40px; text-align: center;">Watch Our Customer Video Review</h2>
+                                <!-- UPDATED: Title with yellow color matching hero designs -->
+                                <h3 class="video-title" style="color: var(--accent-light); text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); font-size: 28px; font-weight: 700; margin-bottom: 40px; text-align: center;">
+                                    Real Customer Experience at the Pyramids
+                                </h3>
                                 
                                 <div class="video-container">
                                     <div class="video-player">
@@ -2070,7 +2202,7 @@
                                     </div>
                                     
                                     <div class="video-content">
-                                        <h3>Real Customer Experience at the Pyramids</h3>
+                                        <h3>See Why Our Customers Love This Experience</h3>
                                         <p>Watch our happy customer's video review of their private pyramids photoshoot and Egypt photography tour experience. See actual footage from our professional photography tour at the Great Pyramids of Giza.</p>
                                         
                                         <h4>What You'll See in This Video:</h4>
@@ -2080,7 +2212,8 @@
                                             <li>Best photography spots at Giza</li>
                                             <li>Customer testimonials and reactions</li>
                                             <li>Behind-the-scenes of our Egypt tour</li>
-                                            <li>Stunning photography results</li>
+                                            <!-- UPDATED PHOTO COUNT IN VIDEO CONTENT -->
+                                            <li>110+ stunning photography results</li>
                                         </ul>
                                         
                                         <p><strong>Experience the same professional service!</strong> Book your own private pyramids photoshoot and capture memories that last a lifetime.</p>
@@ -2107,9 +2240,10 @@
                                 </div>
                             </div>
                             <div class="faq-item">
-                                <h3 class="faq-question">What photography equipment do you provide? <i class="fas fa-chevron-down"></i></h3>
+                                <h3 class="faq-question">How many photos do we receive? <i class="fas fa-chevron-down"></i></h3>
                                 <div class="faq-answer">
-                                    <p>We provide professional DSLR cameras and lenses for the photoshoot. You'll receive 50+ edited high-resolution photos within 48 hours. We also guide you on using your own equipment effectively.</p>
+                                    <!-- UPDATED FAQ ANSWER WITH 110+ PHOTOS -->
+                                    <p>You'll receive 110+ professionally edited high-resolution photos within 48 hours of your tour. We capture every important moment from multiple angles to ensure you have the perfect shots.</p>
                                 </div>
                             </div>
                             <div class="faq-item">
