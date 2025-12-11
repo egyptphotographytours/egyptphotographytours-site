@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- PWA Configuration -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Egypt Photography Tours">
+    <meta name="application-name" content="Egypt Photography Tours">
+    <meta name="format-detection" content="telephone=no">
+    
     <!-- Comprehensive Favicon Setup -->
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#FFD700">
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#FFD700">
@@ -825,6 +833,91 @@
             right: 10px;
         }
         
+        /* PWA INSTALL BUTTON */
+        .pwa-install-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: none;
+        }
+
+        .pwa-install-btn {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+            color: var(--primary-dark);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .pwa-install-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .pwa-install-btn i {
+            font-size: 18px;
+        }
+
+        .pwa-install-btn .install-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 6px 30px rgba(255, 215, 0, 0.8); }
+            100% { box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
+        }
+
+        /* iOS Install Instructions */
+        .ios-install-guide {
+            background: rgba(26, 32, 44, 0.95);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: none;
+            max-width: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .ios-install-guide h4 {
+            color: var(--accent-light);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .ios-install-guide ol {
+            padding-left: 20px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .ios-install-guide li {
+            margin-bottom: 8px;
+        }
+
+        .ios-install-guide .close-guide {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
         /* MAIN CONTENT SECTIONS */
         .main-section {
             padding: 40px 0;
@@ -1249,6 +1342,24 @@
     </style>
 </head>
 <body>
+    <!-- PWA Install Button -->
+    <div class="pwa-install-container" id="pwaInstallContainer">
+        <button class="pwa-install-btn" id="pwaInstallBtn">
+            <i class="fas fa-download"></i>
+            <span class="install-text">Install App</span>
+        </button>
+        <div class="ios-install-guide" id="iosInstallGuide">
+            <h4>Install on iPhone/iPad:</h4>
+            <ol>
+                <li>Tap the Share button <i class="fas fa-share-square"></i></li>
+                <li>Scroll down and tap "Add to Home Screen"</li>
+                <li>Tap "Add" in the top right</li>
+                <li>Open from your Home Screen</li>
+            </ol>
+            <button class="close-guide" id="closeIosGuide">Got it!</button>
+        </div>
+    </div>
+
     <!-- HEADER -->
     <header class="header">
         <div class="container content">
@@ -1923,13 +2034,48 @@
                     localStorage.setItem('preferredLanguage', lang);
                 }
                 
-                // Initialize current language from localStorage or default
-                const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-                const activeItem = languageDropdown.querySelector(`[data-lang="${savedLang}"]`);
+                // Get current page language from URL or default to 'en'
+                function getCurrentPageLanguage() {
+                    const path = window.location.pathname;
+                    if (path.includes('/ar/')) return 'ar';
+                    if (path.includes('/fi/')) return 'fi';
+                    if (path.includes('/fr/')) return 'fr';
+                    if (path.includes('/de/')) return 'de';
+                    if (path.includes('/es/')) return 'es';
+                    if (path.includes('/it/')) return 'it';
+                    if (path.includes('/zh/')) return 'zh';
+                    if (path.includes('/ko/')) return 'ko';
+                    if (path.includes('/pt/')) return 'pt';
+                    if (path.includes('/id/')) return 'id';
+                    if (path.includes('/ja/')) return 'ja';
+                    if (path.includes('/ru/')) return 'ru';
+                    if (path.includes('/da/')) return 'da';
+                    if (path.includes('/nl/')) return 'nl';
+                    if (path.includes('/hi/')) return 'hi';
+                    if (path.includes('/no/')) return 'no';
+                    if (path.includes('/sv/')) return 'sv';
+                    if (path.includes('/tl/')) return 'tl';
+                    if (path.includes('/ms/')) return 'ms';
+                    if (path.includes('/th/')) return 'th';
+                    // Default to English for root pages
+                    return 'en';
+                }
+                
+                // Initialize current language from current page, not localStorage
+                const currentPageLang = getCurrentPageLanguage();
+                const activeItem = languageDropdown.querySelector(`[data-lang="${currentPageLang}"]`);
                 if (activeItem) {
                     const flag = activeItem.dataset.flag;
                     const lang = activeItem.dataset.lang;
                     setCurrentLanguage(flag, activeItem.querySelector('.language-text').textContent, lang);
+                } else {
+                    // Fallback to English if current page language not found
+                    const englishItem = languageDropdown.querySelector('[data-lang="en"]');
+                    if (englishItem) {
+                        const flag = englishItem.dataset.flag;
+                        const lang = englishItem.dataset.lang;
+                        setCurrentLanguage(flag, englishItem.querySelector('.language-text').textContent, lang);
+                    }
                 }
                 
                 // Toggle dropdown
@@ -1989,6 +2135,101 @@
                 });
                 
                 lazyImages.forEach(img => imageObserver.observe(img));
+            }
+            
+            // PWA FUNCTIONALITY
+            // Service Worker Registration
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/service-worker.js')
+                        .then(function(registration) {
+                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        })
+                        .catch(function(error) {
+                            console.log('ServiceWorker registration failed: ', error);
+                        });
+                });
+            }
+            
+            // PWA Install Prompt
+            let deferredPrompt;
+            const pwaInstallContainer = document.getElementById('pwaInstallContainer');
+            const pwaInstallBtn = document.getElementById('pwaInstallBtn');
+            const iosInstallGuide = document.getElementById('iosInstallGuide');
+            const closeIosGuide = document.getElementById('closeIosGuide');
+            
+            // Detect if user is on iOS
+            const isIos = () => {
+                const userAgent = window.navigator.userAgent.toLowerCase();
+                return /iphone|ipad|ipod/.test(userAgent);
+            };
+            
+            // Detect if app is already installed
+            const isAppInstalled = () => {
+                return (window.matchMedia('(display-mode: standalone)').matches) ||
+                       (window.navigator.standalone) ||
+                       (document.referrer.includes('android-app://')) ||
+                       localStorage.getItem('appInstalled') === 'true';
+            };
+            
+            // Show install button for Android/Windows
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                
+                // Show install button after 3 seconds (not on iOS)
+                if (!isIos() && !isAppInstalled()) {
+                    setTimeout(() => {
+                        pwaInstallContainer.style.display = 'block';
+                    }, 3000);
+                }
+            });
+            
+            // Handle install button click
+            if (pwaInstallBtn) {
+                pwaInstallBtn.addEventListener('click', async () => {
+                    if (deferredPrompt) {
+                        // Android/Windows install
+                        deferredPrompt.prompt();
+                        const { outcome } = await deferredPrompt.userChoice;
+                        
+                        if (outcome === 'accepted') {
+                            console.log('User accepted the install prompt');
+                            localStorage.setItem('appInstalled', 'true');
+                            pwaInstallContainer.style.display = 'none';
+                        }
+                        deferredPrompt = null;
+                    } else if (isIos()) {
+                        // Show iOS instructions
+                        iosInstallGuide.style.display = iosInstallGuide.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            }
+            
+            // Close iOS guide
+            if (closeIosGuide) {
+                closeIosGuide.addEventListener('click', () => {
+                    iosInstallGuide.style.display = 'none';
+                });
+            }
+            
+            // Hide install button if app is already installed
+            if (isAppInstalled()) {
+                pwaInstallContainer.style.display = 'none';
+            }
+            
+            // Show iOS install instructions on first visit
+            if (isIos() && !isAppInstalled() && !localStorage.getItem('iosInstallShown')) {
+                setTimeout(() => {
+                    pwaInstallContainer.style.display = 'block';
+                    localStorage.setItem('iosInstallShown', 'true');
+                }, 5000);
+            }
+            
+            // Check if app is launched from home screen
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                console.log('App launched from home screen');
+                document.body.classList.add('standalone-mode');
             }
         });
     </script>
