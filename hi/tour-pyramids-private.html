@@ -78,7 +78,6 @@
     <link rel="alternate" hreflang="nl" href="https://www.egyptphotographytours.com/nl/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="da" href="https://www.egyptphotographytours.com/da/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/tour-pyramids-private.html" />
-    <link rel="alternate" hreflang="sv" href="https://www.egyptphotographytours.com/sv/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="tl" href="https://www.egyptphotographytours.com/tl/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/tour-pyramids-private.html" />
     <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/tour-pyramids-private.html" />
@@ -2228,7 +2227,7 @@
 
                         <div class="booking-form" id="booking-form">
                             <h3>📅 अपना 2026 पिरामिड अनुभव बुक करें</h3>
-                            <form id="booking-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <form id="bookingForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                 <input type="hidden" name="cmd" value="_xclick">
                                 <input type="hidden" name="business" value="hossam0114@hotmail.com">
                                 <input type="hidden" name="item_name" value="गीज़ा पिरामिड प्राइवेट टूर और फोटोग्राफी 2026">
@@ -2255,13 +2254,13 @@
                                         <label class="person-selector-label">👥 व्यक्तियों की संख्या</label>
                                         
                                         <div class="person-selector-dropdown">
-                                            <button type="button" class="person-selector-button" id="person-selector-button">
+                                            <button type="button" class="person-selector-button" id="personSelectorButton">
                                                 <span class="selected-option">1 व्यक्ति - $150</span>
                                                 <svg class="dropdown-arrow" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                                 </svg>
                                             </button>
-                                            <div class="person-selector-options" id="person-selector-options">
+                                            <div class="person-selector-options" id="personSelectorOptions">
                                                 <div class="person-option selected" data-persons="1" data-price="150">
                                                     <span class="person-count">1 व्यक्ति</span>
                                                     <span class="person-price">$150</span>
@@ -2368,7 +2367,7 @@
                                 <span class="tour-price">$350 USD से शुरू</span>
                                 <span class="tour-duration">अवधि: 2 दिन</span>
                             </div>
-                            <a href="tour-cairo-giza-2day.html" class="tour-cta">विवरण देखें और बुक करें</a>
+                            <a href="../en/tour-cairo-giza-2day.html" class="tour-cta">विवरण देखें और बुक करें</a>
                         </div>
                     </div>
 
@@ -2388,7 +2387,7 @@
                                 <span class="tour-price">$220 USD से शुरू</span>
                                 <span class="tour-duration">अवधि: 1 दिन</span>
                             </div>
-                            <a href="tour-alexandria.html" class="tour-cta">विवरण देखें और बुक करें</a>
+                            <a href="../en/tour-alexandria.html" class="tour-cta">विवरण देखें और बुक करें</a>
                         </div>
                     </div>
 
@@ -2408,7 +2407,7 @@
                                 <span class="tour-price">$1900 USD से शुरू</span>
                                 <span class="tour-duration">अवधि: 7 दिन</span>
                             </div>
-                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">विवरण देखें और बुक करें</a>
+                            <a href="../en/tour-egypt-discovery-7day.html" class="tour-cta">विवरण देखें और बुक करें</a>
                         </div>
                     </div>
 
@@ -2428,7 +2427,7 @@
                                 <span class="tour-price">$700 USD से शुरू</span>
                                 <span class="tour-duration">अवधि: 5 दिन</span>
                             </div>
-                            <a href="tour-nile-cruise.html" class="tour-cta">विवरण देखें और बुक करें</a>
+                            <a href="../en/tour-nile-cruise.html" class="tour-cta">विवरण देखें और बुक करें</a>
                         </div>
                     </div>
                 </div>
@@ -2585,8 +2584,8 @@
             startSlideShow();
             
             // ✅ UPDATED DROPDOWN PERSON SELECTOR FUNCTIONALITY
-            const personSelectorButton = document.getElementById('person-selector-button');
-            const personSelectorOptions = document.getElementById('person-selector-options');
+            const personSelectorButton = document.getElementById('personSelectorButton');
+            const personSelectorOptions = document.getElementById('personSelectorOptions');
             const personOptions = document.querySelectorAll('.person-option');
             const tourDateInput = document.getElementById('tour-date');
             const totalPriceElement = document.getElementById('total-price');
@@ -2619,14 +2618,14 @@
                     const price = parseFloat(this.getAttribute('data-price'));
                     
                     // Update button text
-                    const selectedOptionText = `${selectedPersons} व्यक्ति${selectedPersons > 1 ? '' : ''} - $${price}`;
+                    const selectedOptionText = `${selectedPersons} व्यक्ति - $${price}`;
                     document.querySelector('.selected-option').textContent = selectedOptionText;
                     
                     updatePrice(price);
                     
                     // Update PayPal form
                     document.querySelector('input[name="amount"]').value = price.toFixed(2);
-                    document.querySelector('input[name="os0"]').value = `${selectedPersons} व्यक्ति${selectedPersons > 1 ? '' : ''}`;
+                    document.querySelector('input[name="os0"]').value = `${selectedPersons} व्यक्ति`;
                     
                     // Close dropdown
                     personSelectorOptions.classList.remove('active');
