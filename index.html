@@ -16,23 +16,31 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg">
     <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
-    <meta name="msapplication-TileColor" content="#FFD700">
+    <meta name="msapplication-TileColor" content="#1a202c">
     <meta name="msapplication-config" content="/browserconfig.xml">
-    <meta name="theme-color" content="#FFD700">
+    <meta name="theme-color" content="#1a202c">
     
-    <!-- Google Analytics Tracking -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F"></script>
+    <!-- Google Analytics - Load after page load -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-FVNPEMCG8F');
+      
+      // Load GA after page is fully loaded
+      window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F';
+        document.head.appendChild(script);
+      });
     </script>
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
-    <link rel="preload" href="images/hero-image1.jpg" as="image" media="(min-width: 768px)">
+    <link rel="preload" href="images/hero-image1.jpg" as="image" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" href="images/hero-image2.jpg" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Search Engine & Social Media Optimization -->
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
@@ -155,127 +163,36 @@
               "item": "https://www.egyptphotographytours.com/tour-pyramids-private.html"
             }
           ]
-        },
-        {
-          "@type": ["TouristTrip", "Product"],
-          "name": "Complete Egypt Experience Tour with Professional Photography",
-          "description": "Luxury Egypt tours with professional photography, local experiences, and authentic cultural immersion. Includes pyramids photoshoots, Nile cruises, and community engagement.",
-          "url": "https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html",
-          "image": [
-            "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
-            "https://www.egyptphotographytours.com/images/hero-image1.jpg",
-            "https://www.egyptphotographytours.com/images/hero-image2.jpg"
-          ],
-          "offers": {
-            "@type": "Offer",
-            "price": "1900",
-            "priceCurrency": "USD",
-            "priceValidUntil": "2025-12-31",
-            "availability": "https://schema.org/InStock",
-            "validFrom": "2024-01-01",
-            "seller": {
-              "@type": "Organization",
-              "name": "Egypt Photography Tours"
-            }
-          },
-          "duration": "P7D",
-          "touristType": ["Solo travelers", "Couples", "Families", "Photography enthusiasts", "Luxury travelers"],
-          "brand": {
-            "@type": "Brand",
-            "name": "Egypt Photography Tours"
-          },
-          "sku": "EPT-CEE-001",
-          "category": "Luxury Tour Package"
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What types of Egypt tours do you offer?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We offer comprehensive Egypt tours including pyramids photography tours, Nile cruises, local cultural experiences, desert safaris, luxury travel packages, family tours, and sustainable eco-tourism experiences."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you provide local and authentic Egyptian experiences?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! We specialize in authentic local experiences including village visits, home-cooked meals with Egyptian families, artisan workshops, market tours, and cultural exchanges that support local communities."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is included in your luxury Egypt tour packages?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our luxury packages include 5-star accommodations, private transportation, expert Egyptologist guides, professional photography services, all entrance fees, some meals, and exclusive experiences not available to regular tourists."
-              }
-            }
-          ]
-        },
-        {
-          "@type": "Article",
-          "headline": "Complete Guide to Egypt Tours: From Pyramids to Local Experiences",
-          "description": "Comprehensive guide to Egypt travel including pyramids photography, Nile cruises, local culture, sustainable tourism, and luxury experiences.",
-          "author": {
-            "@type": "Person",
-            "name": "Hossam",
-            "jobTitle": "Professional Photographer & Egyptologist"
-          },
-          "datePublished": "2024-01-15",
-          "dateModified": "2024-12-15",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Egypt Photography Tours",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://www.egyptphotographytours.com/images/logo.jpg"
-            }
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.egyptphotographytours.com/blog/complete-egypt-tours-guide.html"
-          },
-          "image": [
-            {
-              "@type": "ImageObject",
-              "url": "https://www.egyptphotographytours.com/images/egypt-tours-guide-1.jpg",
-              "width": "1200",
-              "height": "800",
-              "caption": "Complete Egypt tours guide covering pyramids, Nile, and local experiences"
-            }
-          ],
-          "keywords": "Egypt tours guide, Egypt travel tips, pyramids photography, Nile cruise, local Egypt experiences, sustainable tourism Egypt"
         }
       ]
     }
     </script>
 
-    <!-- Performance Optimized CSS Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- FIXED: Non-render blocking CSS with font-display: swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" crossorigin>
     
+    <!-- Inline Critical CSS with fixed contrast ratios -->
     <style>
         /* CRITICAL CSS - Inlined for performance */
         :root {
-            --primary-dark: #1a202c;
+            --primary-dark: #0a0e14; /* Darkened for better contrast */
             --accent-light: #FFD700;
             --accent-dark: #E2B700;
-            --text-color: #333;
+            --text-color: #1a1a1a; /* Darkened for better contrast */
+            --text-light: #666666; /* Added for light text */
+            --white: #ffffff;
+            --off-white: #f8f8f8;
         }
+        
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--off-white);
             color: var(--text-color);
             margin: 0;
             display: flex;
@@ -283,85 +200,105 @@
             min-height: 100vh;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
+            line-height: 1.6;
         }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 16px;
         }
         
-        /* HEADER STYLES */
+        /* FIXED: Better contrast ratios for accessibility */
+        /* Header */
         .header {
             background-color: var(--primary-dark);
-            color: white;
+            color: var(--white);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             padding: 12px 0;
         }
+        
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 12px;
         }
+        
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
                 justify-content: space-between;
             }
         }
+        
         .logo-section {
             display: flex;
             align-items: center;
             gap: 8px;
         }
+        
         .logo-img {
             height: 40px;
-            width: auto;
-            border-radius: 9999px;
+            width: 40px;
+            border-radius: 50%;
+            display: block;
         }
+        
         .logo-link {
             font-size: 20px;
             font-weight: 700;
             color: var(--accent-light);
             text-decoration: none;
         }
+        
         .header-contact {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
+        
         @media (min-width: 768px) {
             .header-contact {
                 align-items: flex-end;
             }
         }
+        
         .contact-info {
             display: flex;
             align-items: center;
-            gap: 6px;
-            color: white;
+            gap: 8px;
+            color: var(--white);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
-        }
-        .contact-info:hover {
-            color: var(--accent-light);
+            padding: 4px 8px;
+            border-radius: 4px;
         }
         
-        /* NAVBAR STYLES */
+        .contact-info:hover,
+        .contact-info:focus {
+            color: var(--accent-light);
+            background-color: rgba(255, 255, 255, 0.1);
+            outline: 2px solid var(--accent-light);
+        }
+        
+        /* FIXED: Navigation with better contrast and touch targets */
         .navbar {
-            background-color: #374151;
-            color: white;
+            background-color: #2d3748;
+            color: var(--white);
             position: sticky;
             top: 0;
             z-index: 50;
             padding: 0;
         }
+        
         .navbar-content {
             display: flex;
             flex-direction: column;
         }
+        
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
@@ -369,6 +306,7 @@
                 justify-content: space-between;
             }
         }
+        
         .nav-links {
             display: none;
             flex-direction: column;
@@ -376,98 +314,122 @@
             padding: 0;
             margin: 0;
         }
+        
         .nav-links.active {
             display: flex;
         }
+        
         @media (min-width: 768px) {
             .nav-links {
                 display: flex;
                 flex-direction: row;
-                gap: 16px;
+                gap: 4px;
             }
         }
+        
         .nav-link a {
-            color: white;
+            color: var(--white);
             text-decoration: none;
-            padding: 12px 16px;
+            padding: 16px 12px;
             display: block;
             transition: color 0.3s ease;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        @media (min-width: 768px) {
-            .nav-link a {
-                padding: 16px 8px;
-            }
-        }
-        .nav-link a:hover {
+        
+        .nav-link a:hover,
+        .nav-link a:focus {
             color: var(--accent-light);
+            background-color: rgba(255, 255, 255, 0.1);
+            outline: 2px solid var(--accent-light);
         }
+        
         .cta-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 12px 0;
+            gap: 12px;
         }
+        
         @media (min-width: 768px) {
             .cta-container {
                 padding: 0;
-                gap: 12px;
             }
         }
+        
+        /* FIXED: Mobile menu button with proper touch target */
         .mobile-menu-toggle {
             display: block;
             background: none;
             border: none;
-            color: white;
+            color: var(--white);
             font-size: 24px;
             cursor: pointer;
-            padding: 8px;
+            padding: 12px;
+            min-width: 48px;
+            min-height: 48px;
+            border-radius: 4px;
         }
+        
+        .mobile-menu-toggle:hover,
+        .mobile-menu-toggle:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            outline: 2px solid var(--accent-light);
+        }
+        
         @media (min-width: 768px) {
             .mobile-menu-toggle {
                 display: none;
             }
         }
         
-        /* Language Switcher */
+        /* FIXED: Language switcher with better touch targets */
         .language-switcher {
             position: relative;
             display: inline-block;
             z-index: 1000;
         }
-
+        
         .current-language {
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 12px;
+            padding: 12px;
             background: rgba(255, 215, 0, 0.1);
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
-            color: white;
+            color: var(--white);
             font-weight: 500;
+            min-height: 48px;
+            min-width: 64px;
         }
-
-        .current-language:hover {
+        
+        .current-language:hover,
+        .current-language:focus {
             background: rgba(255, 215, 0, 0.2);
             border-color: rgba(255, 215, 0, 0.5);
+            outline: 2px solid var(--accent-light);
         }
-
+        
         .current-flag {
             font-size: 16px;
         }
-
+        
         .current-text {
             font-size: 14px;
             font-weight: 600;
         }
-
+        
         .dropdown-icon {
             font-size: 12px;
             transition: transform 0.3s ease;
         }
-
+        
         .language-dropdown {
             position: absolute;
             top: 100%;
@@ -475,7 +437,7 @@
             width: 220px;
             max-height: 400px;
             overflow-y: auto;
-            background: #374151;
+            background: #2d3748;
             border-radius: 8px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             margin-top: 8px;
@@ -485,86 +447,87 @@
             transition: all 0.3s ease;
             z-index: 1001;
         }
-
+        
         .language-switcher.active .language-dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-
+        
         .language-item {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 16px;
-            color: white;
+            padding: 16px;
+            color: var(--white);
             text-decoration: none;
             transition: all 0.2s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 48px;
         }
-
+        
         .language-item:last-child {
             border-bottom: none;
         }
-
-        .language-item:hover {
+        
+        .language-item:hover,
+        .language-item:focus {
             background: rgba(255, 215, 0, 0.1);
             color: var(--accent-light);
+            outline: none;
         }
-
-        .language-item.active {
-            background: rgba(255, 215, 0, 0.2);
-            color: var(--accent-light);
-            font-weight: 600;
-        }
-
+        
         .flag-icon {
             font-size: 18px;
             min-width: 24px;
         }
-
+        
         .language-text {
             font-size: 14px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-
+        
         /* Scrollbar styling for dropdown */
         .language-dropdown::-webkit-scrollbar {
             width: 6px;
         }
-
+        
         .language-dropdown::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 3px;
         }
-
+        
         .language-dropdown::-webkit-scrollbar-thumb {
             background: rgba(255, 215, 0, 0.3);
             border-radius: 3px;
         }
-
+        
         .language-dropdown::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 215, 0, 0.5);
         }
         
-        /* HERO SLIDER - UPDATED TO 5 IMAGES */
+        /* FIXED: Hero slider with optimized images */
         .hero-slider {
             position: relative;
             height: 60vh;
+            min-height: 400px;
             overflow: hidden;
         }
+        
         @media (min-width: 768px) {
             .hero-slider {
                 height: 75vh;
             }
         }
+        
         .hero-slides {
             position: relative;
             width: 100%;
             height: 100%;
         }
+        
         .hero-slide {
             position: absolute;
             top: 0;
@@ -573,79 +536,93 @@
             height: 100%;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
+        
         .hero-slide.active {
             opacity: 1;
         }
+        
+        /* Optimized hero images with inline base64 placeholder */
         .hero-slide:nth-child(1) {
-            background-image: url('images/hero-image1.jpg');
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHNP//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Bf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEABj8Cf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAT8hf//aAAwDAQACAAMAAAAQDD//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAEDAQE/EB//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAECAQE/EB//xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAE/EB//2Q=='), 
+                            url('images/hero-image1.jpg');
         }
+        
         .hero-slide:nth-child(2) {
-            background-image: url('images/hero-image2.jpg');
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHNP//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Bf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEABj8Cf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAT8hf//aAAwDAQACAAMAAAAQDD//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAEDAQE/EB//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAECAQE/EB//xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAE/EB//2Q=='),
+                            url('images/hero-image2.jpg');
         }
+        
         .hero-slide:nth-child(3) {
-            background-image: url('images/hero-image3.jpg');
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHNP//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Bf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEABj8Cf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAT8hf//aAAwDAQACAAMAAAAQDD//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAEDAQE/EB//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAECAQE/EB//xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAE/EB//2Q=='),
+                            url('images/hero-image3.jpg');
         }
+        
         .hero-slide:nth-child(4) {
-            background-image: url('images/hero-image4.jpg');
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHNP//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Bf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEABj8Cf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAT8hf//aAAwDAQACAAMAAAAQDD//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAEDAQE/EB//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAECAQE/EB//xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAE/EB//2Q=='),
+                            url('images/hero-image4.jpg');
         }
+        
         .hero-slide:nth-child(5) {
-            background-image: url('images/hero-image5.jpg');
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAAGAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHNP//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Bf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEABj8Cf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAT8hf//aAAwDAQACAAMAAAAQDD//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAEDAQE/EB//xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oACAECAQE/EB//xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAE/EB//2Q=='),
+                            url('images/hero-image5.jpg');
         }
+        
         .hero-content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: white;
-            padding: 30px;
+            color: var(--white);
+            padding: 20px;
             width: 90%;
             max-width: 800px;
-            background-color: transparent;
+            background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
         }
         
-        /* HERO TITLE */
+        /* FIXED: Better contrast for hero text */
         .hero-title {
             font-size: 28px;
             font-weight: 800;
             margin-bottom: 16px;
-            color: #ffffff !important;
-            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
-            line-height: 1.2;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            line-height: 1.3;
         }
+        
         @media (min-width: 768px) {
             .hero-title {
-                font-size: 48px;
-                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 0, 0, 0.9);
+                font-size: 42px;
             }
         }
         
-        /* HERO SUBTITLE */
         .hero-subtitle {
             font-size: 16px;
             margin-bottom: 24px;
-            color: #ffffff !important;
-            text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8);
-            line-height: 1.4;
-            font-weight: 600;
+            color: var(--white);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            line-height: 1.5;
+            font-weight: 500;
         }
+        
         @media (min-width: 768px) {
             .hero-subtitle {
-                font-size: 22px;
-                text-shadow: 1px 1px 18px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
+                font-size: 20px;
             }
         }
         
-        /* HERO BUTTONS */
+        /* FIXED: Hero buttons with proper touch targets */
         .hero-buttons-section {
-            background-color: #f8f8f8;
+            background-color: var(--off-white);
             padding: 30px 0;
             text-align: center;
         }
+        
         .hero-buttons-container {
             display: flex;
             flex-direction: column;
@@ -653,40 +630,59 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        
         @media (min-width: 640px) {
             .hero-buttons-container {
                 flex-direction: row;
+                justify-content: center;
             }
         }
+        
         .hero-button {
             font-weight: 700;
-            padding: 12px 24px;
-            border-radius: 9999px;
+            padding: 16px 32px;
+            border-radius: 8px;
             font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
             display: block;
             text-align: center;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
         }
+        
+        .hero-button:hover,
+        .hero-button:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+        
         .hero-button-primary {
             background-color: var(--accent-light);
             color: var(--primary-dark);
         }
-        .hero-button-primary:hover {
+        
+        .hero-button-primary:hover,
+        .hero-button-primary:focus {
             background-color: var(--accent-dark);
-            transform: scale(1.05);
         }
+        
         .hero-button-secondary {
-            background-color: white;
+            background-color: var(--white);
             color: var(--primary-dark);
             border: 2px solid var(--accent-light);
         }
-        .hero-button-secondary:hover {
+        
+        .hero-button-secondary:hover,
+        .hero-button-secondary:focus {
             background-color: #f3f4f6;
-            transform: scale(1.05);
         }
         
-        /* SLIDER CONTROLS */
+        /* FIXED: Slider controls with better touch targets */
         .slider-controls {
             position: absolute;
             bottom: 20px;
@@ -694,210 +690,277 @@
             right: 0;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             z-index: 20;
         }
+        
         .slider-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.5);
             cursor: pointer;
             transition: background-color 0.3s ease;
+            padding: 0;
+            border: none;
+            min-width: 12px;
+            min-height: 12px;
         }
+        
+        .slider-dot:hover,
+        .slider-dot:focus {
+            background-color: rgba(255, 255, 255, 0.8);
+            outline: 2px solid var(--accent-light);
+        }
+        
         .slider-dot.active {
             background-color: var(--accent-light);
         }
+        
         .slider-arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(0, 0, 0, 0.6);
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 20;
-            color: var(--primary-dark);
-        }
-        .slider-arrow.prev {
-            left: 10px;
-        }
-        .slider-arrow.next {
-            right: 10px;
+            color: var(--white);
+            font-size: 20px;
+            transition: all 0.3s ease;
         }
         
-        /* MAIN CONTENT SECTIONS */
+        .slider-arrow:hover,
+        .slider-arrow:focus {
+            background-color: rgba(0, 0, 0, 0.8);
+            outline: 2px solid var(--accent-light);
+        }
+        
+        .slider-arrow.prev {
+            left: 16px;
+        }
+        
+        .slider-arrow.next {
+            right: 16px;
+        }
+        
+        /* Main content sections */
         .main-section {
             padding: 40px 0;
         }
+        
         @media (min-width: 768px) {
             .main-section {
                 padding: 60px 0;
             }
         }
+        
         .bg-light-gray {
             background-color: #f3f4f6;
         }
+        
         .bg-primary-dark {
             background-color: var(--primary-dark);
+            color: var(--white);
         }
         
-        /* HEADINGS */
+        /* FIXED: Headings with better contrast */
         h1 {
             font-size: 32px;
             color: var(--primary-dark);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             line-height: 1.2;
         }
+        
         @media (min-width: 768px) {
             h1 {
                 font-size: 42px;
             }
         }
+        
         h2 {
             font-size: 28px;
             color: var(--primary-dark);
             margin-bottom: 20px;
             line-height: 1.3;
         }
+        
         @media (min-width: 768px) {
             h2 {
                 font-size: 36px;
             }
         }
+        
         h3 {
             font-size: 22px;
             color: var(--primary-dark);
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             line-height: 1.4;
         }
+        
         @media (min-width: 768px) {
             h3 {
                 font-size: 28px;
             }
         }
+        
         p {
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 20px;
+            color: var(--text-color);
         }
+        
         @media (min-width: 768px) {
             p {
                 font-size: 18px;
             }
         }
         
-        /* CARDS & GRIDS */
+        /* Cards & Grids */
         .grid-section {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
             margin-top: 30px;
         }
+        
         @media (min-width: 768px) {
             .grid-section {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+        
         .card {
-            background: white;
+            background: var(--white);
             padding: 24px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
         }
+        
         .card-icon {
             font-size: 40px;
             color: var(--accent-light);
             margin-bottom: 16px;
         }
+        
         .card-title {
             font-size: 20px;
             margin-bottom: 12px;
             color: var(--primary-dark);
         }
         
-        /* TOUR GRID */
+        /* FIXED: Tour grid with better touch targets */
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
             margin-top: 30px;
         }
+        
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+        
         @media (min-width: 1024px) {
             .tour-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
+        
         .tour-card {
-            background: white;
+            background: var(--white);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
-        .tour-card:hover {
+        
+        .tour-card:hover,
+        .tour-card:focus-within {
             transform: translateY(-5px);
         }
+        
+        /* FIXED: Optimized image loading */
         .tour-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            background-color: #f0f0f0;
         }
+        
         .tour-card-body {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
+        
         .tour-card-title {
             font-size: 20px;
             margin-bottom: 12px;
             color: var(--primary-dark);
         }
+        
         .tour-card-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
+            margin-top: auto;
+            padding-top: 20px;
         }
+        
         .tour-price {
             font-size: 20px;
             font-weight: bold;
             color: var(--accent-dark);
         }
+        
         .tour-cta {
             display: inline-block;
             background: var(--accent-light);
             color: var(--primary-dark);
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             transition: background 0.3s ease;
-        }
-        .tour-cta:hover {
-            background: var(--accent-dark);
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        /* FAQ SECTION */
+        .tour-cta:hover,
+        .tour-cta:focus {
+            background: var(--accent-dark);
+            outline: 2px solid var(--primary-dark);
+        }
+        
+        /* FAQ Section */
         .faq-container {
             margin-top: 30px;
         }
+        
         .faq-item {
-            background: white;
+            background: var(--white);
             border-radius: 8px;
             margin-bottom: 16px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        
         .faq-question {
             padding: 20px;
             background: #f8f9fa;
@@ -906,183 +969,257 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 18px;
+            color: var(--primary-dark);
+            min-height: 60px;
         }
+        
+        .faq-question:hover,
+        .faq-question:focus {
+            background: #e9ecef;
+            outline: 2px solid var(--accent-light);
+        }
+        
         .faq-answer {
             padding: 20px;
             display: none;
         }
+        
         .faq-answer.active {
             display: block;
         }
         
-        /* REVIEWS */
+        /* Reviews */
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
             margin-top: 30px;
         }
+        
         @media (min-width: 768px) {
             .reviews-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+        
         .review-card {
-            background: white;
+            background: var(--white);
             padding: 24px;
             border-radius: 8px;
             text-align: center;
         }
+        
         .review-stars {
             color: var(--accent-light);
             font-size: 20px;
             margin-bottom: 16px;
         }
+        
         .review-text {
             font-style: italic;
             margin-bottom: 16px;
+            color: var(--text-color);
         }
+        
         .review-cta {
             display: inline-block;
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 16px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background 0.3s ease;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .review-cta:hover,
+        .review-cta:focus {
+            background: var(--accent-dark);
+            outline: 2px solid var(--white);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .footer-title {
+            color: var(--accent-light);
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 4px 0;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: var(--accent-light);
+            outline: 2px solid var(--accent-light);
+            outline-offset: 4px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 20px;
+            transition: color 0.3s ease;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .social-links a:hover,
+        .social-links a:focus {
+            color: var(--accent-light);
+            background-color: rgba(255, 255, 255, 0.1);
+            outline: 2px solid var(--accent-light);
+        }
+        
+        .footer-map {
+            grid-column: 1 / -1;
+        }
+        
+        .footer-map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+            display: block;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover,
+        .breadcrumb a:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-light);
+        }
+        
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+        
+        /* FIXED: Book now button with proper touch target */
+        .book-now-button {
             background: var(--accent-light);
             color: var(--primary-dark);
             padding: 12px 24px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 30px;
             transition: background 0.3s ease;
-        }
-        .review-cta:hover {
-            background: var(--accent-dark);
-        }
-        
-        /* FOOTER */
-        .footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .footer-title {
-            color: var(--accent-light);
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-        .footer-links {
-            list-style: none;
-        }
-        .footer-links li {
-            margin-bottom: 8px;
-        }
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-links a:hover {
-            color: var(--accent-light);
-        }
-        .social-links {
+            min-height: 44px;
             display: flex;
-            gap: 16px;
-            margin-top: 16px;
-        }
-        .social-links a {
-            color: white;
-            font-size: 20px;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
-            color: var(--accent-light);
-        }
-        .footer-map {
-            grid-column: 1 / -1;
-        }
-        .footer-map iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 8px;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
         }
         
-        /* BREADCRUMB */
-        .breadcrumb {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-        .breadcrumb a {
-            color: var(--primary-dark);
-            text-decoration: none;
-        }
-        .breadcrumb span {
-            color: #666;
-        }
-        
-        /* BOOK NOW BUTTON */
-        .book-now-button {
-            background: var(--accent-light);
-            color: var(--primary-dark);
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-        .book-now-button:hover {
+        .book-now-button:hover,
+        .book-now-button:focus {
             background: var(--accent-dark);
+            outline: 2px solid var(--white);
         }
         
-        /* UTILITY CLASSES */
+        /* Utility classes */
         .text-center {
             text-align: center;
         }
+        
         .mb-20 {
             margin-bottom: 20px;
         }
+        
         .mt-30 {
             margin-top: 30px;
         }
         
-        /* NEW: SEO ARTICLE SECTION */
+        /* SEO Article Section */
         .seo-article {
-            background: white;
+            background: var(--white);
             border-radius: 12px;
             padding: 40px;
             margin: 40px 0;
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
         }
+        
         .seo-article h2 {
             color: var(--primary-dark);
             border-bottom: 3px solid var(--accent-light);
             padding-bottom: 15px;
         }
+        
         .seo-article h3 {
             color: #2d3748;
             margin-top: 30px;
         }
+        
         .seo-article ul {
             padding-left: 20px;
             margin-bottom: 20px;
         }
+        
         .seo-article li {
             margin-bottom: 10px;
             line-height: 1.6;
+            color: var(--text-color);
         }
-
-        /* Print Styles for PageSpeed */
+        
+        /* Print styles for better PageSpeed */
         @media print {
             .hero-slider,
             .slider-controls,
@@ -1090,22 +1227,49 @@
             .nav-links,
             .language-switcher,
             .social-links,
-            .footer-map {
+            .footer-map,
+            .book-now-button,
+            .tour-cta,
+            .hero-buttons-section {
                 display: none !important;
             }
+            
             .header,
             .footer {
                 position: static !important;
+                background: white !important;
+                color: black !important;
+            }
+            
+            a {
+                color: black !important;
+                text-decoration: underline !important;
             }
         }
-
-        /* Accessibility Focus Styles */
+        
+        /* Accessibility focus styles */
         :focus-visible {
             outline: 3px solid var(--accent-light);
             outline-offset: 2px;
         }
-
-        /* Reduced Motion */
+        
+        /* Skip to main content link */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 8px;
+            z-index: 1001;
+            text-decoration: none;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+        }
+        
+        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -1115,177 +1279,234 @@
                 transition-duration: 0.01ms !important;
                 scroll-behavior: auto !important;
             }
+            
+            .hero-slide {
+                transition: none !important;
+            }
+            
+            .tour-card:hover {
+                transform: none !important;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-dark: #0a0e14;
+                --text-color: #e2e8f0;
+                --off-white: #1a202c;
+                --white: #2d3748;
+            }
+            
+            .card,
+            .tour-card,
+            .review-card,
+            .faq-item,
+            .seo-article {
+                background: #2d3748;
+                color: #e2e8f0;
+            }
+            
+            .tour-card-title,
+            .card-title,
+            .seo-article h2,
+            .seo-article h3 {
+                color: #e2e8f0;
+            }
+            
+            p,
+            .review-text,
+            .seo-article li {
+                color: #cbd5e0;
+            }
+            
+            .bg-light-gray {
+                background-color: #2d3748;
+            }
         }
     </style>
+    
+    <!-- Non-critical CSS (Font Awesome) loaded after page load -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <!-- HEADER -->
     <header class="header">
         <div class="container content">
             <div class="logo-section">
                 <img src="images/egypt-photography-tours-logo.jpg"
-                     alt="Egypt Photography Tours Logo"
+                     alt="Egypt Photography Tours Logo - Luxury Egypt tours and photography services"
                      class="logo-img"
-                     loading="eager"
                      width="40"
-                     height="40">
-                <a href="index.html" class="logo-link">Egypt Photography Tours</a>
+                     height="40"
+                     loading="eager"
+                     decoding="async">
+                <a href="index.html" class="logo-link" aria-label="Egypt Photography Tours Home">
+                    Egypt Photography Tours
+                </a>
             </div>
             <div class="header-contact">
-                <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
-                    <i class="fab fa-whatsapp"></i> +20 155 073 5673
+                <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info" aria-label="Contact us on WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> +20 155 073 5673
                 </a>
-                <a href="mailto:info@egyptphotographytours.com" class="contact-info">
-                    <i class="far fa-envelope"></i> info@egyptphotographytours.com
+                <a href="mailto:info@egyptphotographytours.com" class="contact-info" aria-label="Send us an email">
+                    <i class="far fa-envelope" aria-hidden="true"></i> info@egyptphotographytours.com
                 </a>
             </div>
         </div>
     </header>
 
     <!-- NAVIGATION -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="container navbar-content">
             <div class="cta-container">
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
-                <a href="contact.html" class="book-now-button">Book Now</a>
+                <a href="contact.html" class="book-now-button" aria-label="Book your Egypt tour now">
+                    Book Now
+                </a>
                 
                 <!-- Language Switcher -->
                 <div class="language-switcher">
-                    <div class="current-language" aria-label="Select language">
-                        <span class="current-flag">🇺🇸</span>
+                    <button class="current-language" aria-label="Select language" aria-expanded="false">
+                        <span class="current-flag" aria-hidden="true">🇺🇸</span>
                         <span class="current-text">EN</span>
-                        <i class="fas fa-chevron-down dropdown-icon"></i>
-                    </div>
-                    <div class="language-dropdown">
+                        <i class="fas fa-chevron-down dropdown-icon" aria-hidden="true"></i>
+                    </button>
+                    <div class="language-dropdown" role="menu">
                         <!-- English -->
-                        <a href="index.html" class="language-item" data-lang="en" data-flag="🇺🇸">
-                            <span class="flag-icon">🇺🇸</span>
+                        <a href="index.html" class="language-item" data-lang="en" data-flag="🇺🇸" role="menuitem" aria-label="English language">
+                            <span class="flag-icon" aria-hidden="true">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
                         <!-- Finnish -->
-                        <a href="fi/index.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
-                            <span class="flag-icon">🇫🇮</span>
+                        <a href="fi/index.html" class="language-item" data-lang="fi" data-flag="🇫🇮" role="menuitem" aria-label="Finnish language">
+                            <span class="flag-icon" aria-hidden="true">🇫🇮</span>
                             <span class="language-text">Suomi (Finnish)</span>
                         </a>
                         <!-- Arabic -->
-                        <a href="ar/index.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
-                            <span class="flag-icon">🇪🇬</span>
+                        <a href="ar/index.html" class="language-item" data-lang="ar" data-flag="🇪🇬" role="menuitem" aria-label="Arabic language">
+                            <span class="flag-icon" aria-hidden="true">🇪🇬</span>
                             <span class="language-text">العربية (Arabic)</span>
                         </a>
                         <!-- Russian -->
-                        <a href="ru/index.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
-                            <span class="flag-icon">🇷🇺</span>
+                        <a href="ru/index.html" class="language-item" data-lang="ru" data-flag="🇷🇺" role="menuitem" aria-label="Russian language">
+                            <span class="flag-icon" aria-hidden="true">🇷🇺</span>
                             <span class="language-text">Русский (Russian)</span>
                         </a>
                         <!-- French -->
-                        <a href="fr/index.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
-                            <span class="flag-icon">🇫🇷</span>
+                        <a href="fr/index.html" class="language-item" data-lang="fr" data-flag="🇫🇷" role="menuitem" aria-label="French language">
+                            <span class="flag-icon" aria-hidden="true">🇫🇷</span>
                             <span class="language-text">Français (French)</span>
                         </a>
                         <!-- German -->
-                        <a href="de/index.html" class="language-item" data-lang="de" data-flag="🇩🇪">
-                            <span class="flag-icon">🇩🇪</span>
+                        <a href="de/index.html" class="language-item" data-lang="de" data-flag="🇩🇪" role="menuitem" aria-label="German language">
+                            <span class="flag-icon" aria-hidden="true">🇩🇪</span>
                             <span class="language-text">Deutsch (German)</span>
                         </a>
                         <!-- Spanish -->
-                        <a href="es/index.html" class="language-item" data-lang="es" data-flag="🇪🇸">
-                            <span class="flag-icon">🇪🇸</span>
+                        <a href="es/index.html" class="language-item" data-lang="es" data-flag="🇪🇸" role="menuitem" aria-label="Spanish language">
+                            <span class="flag-icon" aria-hidden="true">🇪🇸</span>
                             <span class="language-text">Español (Spanish)</span>
                         </a>
                         <!-- Italian -->
-                        <a href="it/index.html" class="language-item" data-lang="it" data-flag="🇮🇹">
-                            <span class="flag-icon">🇮🇹</span>
+                        <a href="it/index.html" class="language-item" data-lang="it" data-flag="🇮🇹" role="menuitem" aria-label="Italian language">
+                            <span class="flag-icon" aria-hidden="true">🇮🇹</span>
                             <span class="language-text">Italiano (Italian)</span>
                         </a>
                         <!-- Chinese -->
-                        <a href="zh/index.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
-                            <span class="flag-icon">🇨🇳</span>
+                        <a href="zh/index.html" class="language-item" data-lang="zh" data-flag="🇨🇳" role="menuitem" aria-label="Chinese language">
+                            <span class="flag-icon" aria-hidden="true">🇨🇳</span>
                             <span class="language-text">中文 (Chinese)</span>
                         </a>
                         <!-- Korean -->
-                        <a href="ko/index.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
-                            <span class="flag-icon">🇰🇷</span>
+                        <a href="ko/index.html" class="language-item" data-lang="ko" data-flag="🇰🇷" role="menuitem" aria-label="Korean language">
+                            <span class="flag-icon" aria-hidden="true">🇰🇷</span>
                             <span class="language-text">한국어 (Korean)</span>
                         </a>
                         <!-- Portuguese -->
-                        <a href="pt/index.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
-                            <span class="flag-icon">🇵🇹</span>
+                        <a href="pt/index.html" class="language-item" data-lang="pt" data-flag="🇵🇹" role="menuitem" aria-label="Portuguese language">
+                            <span class="flag-icon" aria-hidden="true">🇵🇹</span>
                             <span class="language-text">Português (Portuguese)</span>
                         </a>
                         <!-- Indonesian -->
-                        <a href="id/index.html" class="language-item" data-lang="id" data-flag="🇮🇩">
-                            <span class="flag-icon">🇮🇩</span>
+                        <a href="id/index.html" class="language-item" data-lang="id" data-flag="🇮🇩" role="menuitem" aria-label="Indonesian language">
+                            <span class="flag-icon" aria-hidden="true">🇮🇩</span>
                             <span class="language-text">Bahasa Indonesia</span>
                         </a>
                         <!-- Japanese -->
-                        <a href="ja/index.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
-                            <span class="flag-icon">🇯🇵</span>
+                        <a href="ja/index.html" class="language-item" data-lang="ja" data-flag="🇯🇵" role="menuitem" aria-label="Japanese language">
+                            <span class="flag-icon" aria-hidden="true">🇯🇵</span>
                             <span class="language-text">日本語 (Japanese)</span>
                         </a>
                         <!-- Danish -->
-                        <a href="da/index.html" class="language-item" data-lang="da" data-flag="🇩🇰">
-                            <span class="flag-icon">🇩🇰</span>
+                        <a href="da/index.html" class="language-item" data-lang="da" data-flag="🇩🇰" role="menuitem" aria-label="Danish language">
+                            <span class="flag-icon" aria-hidden="true">🇩🇰</span>
                             <span class="language-text">Dansk (Danish)</span>
                         </a>
                         <!-- Dutch -->
-                        <a href="nl/index.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
-                            <span class="flag-icon">🇳🇱</span>
+                        <a href="nl/index.html" class="language-item" data-lang="nl" data-flag="🇳🇱" role="menuitem" aria-label="Dutch language">
+                            <span class="flag-icon" aria-hidden="true">🇳🇱</span>
                             <span class="language-text">Nederlands (Dutch)</span>
                         </a>
                         <!-- Hindi -->
-                        <a href="hi/index.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
-                            <span class="flag-icon">🇮🇳</span>
+                        <a href="hi/index.html" class="language-item" data-lang="hi" data-flag="🇮🇳" role="menuitem" aria-label="Hindi language">
+                            <span class="flag-icon" aria-hidden="true">🇮🇳</span>
                             <span class="language-text">हिन्दी (Hindi)</span>
                         </a>
                         <!-- Norwegian -->
-                        <a href="no/index.html" class="language-item" data-lang="no" data-flag="🇳🇴">
-                            <span class="flag-icon">🇳🇴</span>
+                        <a href="no/index.html" class="language-item" data-lang="no" data-flag="🇳🇴" role="menuitem" aria-label="Norwegian language">
+                            <span class="flag-icon" aria-hidden="true">🇳🇴</span>
                             <span class="language-text">Norsk (Norwegian)</span>
                         </a>
                         <!-- Swedish -->
-                        <a href="sv/index.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
-                            <span class="flag-icon">🇸🇪</span>
+                        <a href="sv/index.html" class="language-item" data-lang="sv" data-flag="🇸🇪" role="menuitem" aria-label="Swedish language">
+                            <span class="flag-icon" aria-hidden="true">🇸🇪</span>
                             <span class="language-text">Svenska (Swedish)</span>
                         </a>
                         <!-- Tagalog -->
-                        <a href="tl/index.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
-                            <span class="flag-icon">🇵🇭</span>
+                        <a href="tl/index.html" class="language-item" data-lang="tl" data-flag="🇵🇭" role="menuitem" aria-label="Tagalog language">
+                            <span class="flag-icon" aria-hidden="true">🇵🇭</span>
                             <span class="language-text">Tagalog</span>
                         </a>
                         <!-- Malay -->
-                        <a href="ms/index.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
-                            <span class="flag-icon">🇲🇾</span>
+                        <a href="ms/index.html" class="language-item" data-lang="ms" data-flag="🇲🇾" role="menuitem" aria-label="Malay language">
+                            <span class="flag-icon" aria-hidden="true">🇲🇾</span>
                             <span class="language-text">Bahasa Melayu</span>
                         </a>
                         <!-- Thai -->
-                        <a href="th/index.html" class="language-item" data-lang="th" data-flag="🇹🇭">
-                            <span class="flag-icon">🇹🇭</span>
+                        <a href="th/index.html" class="language-item" data-lang="th" data-flag="🇹🇭" role="menuitem" aria-label="Thai language">
+                            <span class="flag-icon" aria-hidden="true">🇹🇭</span>
                             <span class="language-text">ไทย (Thai)</span>
                         </a>
                     </div>
                 </div>
             </div>
             
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html">Home</a></li>
-                <li class="nav-link"><a href="about.html">About</a></li>
-                <li class="nav-link"><a href="tours.html">Tours</a></li>
-                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
-                <li class="nav-link"><a href="resources.html">Resources</a></li>
-                <li class="nav-link"><a href="blog.html">Blog</a></li>
-                <li class="nav-link"><a href="contact.html">Contact</a></li>
-                <li class="nav-link"><a href="faqs.html">FAQs</a></li>
+            <ul class="nav-links" role="menubar">
+                <li class="nav-link" role="none"><a href="index.html" role="menuitem" aria-label="Home page">Home</a></li>
+                <li class="nav-link" role="none"><a href="about.html" role="menuitem" aria-label="About us">About</a></li>
+                <li class="nav-link" role="none"><a href="tours.html" role="menuitem" aria-label="Egypt tours">Tours</a></li>
+                <li class="nav-link" role="none"><a href="gallery.html" role="menuitem" aria-label="Photo gallery">Gallery</a></li>
+                <li class="nav-link" role="none"><a href="resources.html" role="menuitem" aria-label="Travel resources">Resources</a></li>
+                <li class="nav-link" role="none"><a href="blog.html" role="menuitem" aria-label="Travel blog">Blog</a></li>
+                <li class="nav-link" role="none"><a href="contact.html" role="menuitem" aria-label="Contact us">Contact</a></li>
+                <li class="nav-link" role="none"><a href="faqs.html" role="menuitem" aria-label="Frequently asked questions">FAQs</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- HERO SLIDER - UPDATED TO 5 IMAGES -->
-    <section class="hero-slider">
+    <section class="hero-slider" aria-label="Egypt tours hero slider">
         <div class="hero-slides">
             <!-- Slide 1 -->
-            <div class="hero-slide active">
+            <div class="hero-slide active" role="group" aria-label="Slide 1 of 5">
                 <div class="hero-content">
                     <h2 class="hero-title">Egypt Tours: Luxury Travel & Authentic Experiences</h2>
                     <p class="hero-subtitle">Professional photography tours, Nile cruises, pyramids photoshoots & local cultural immersion</p>
@@ -1293,7 +1514,7 @@
             </div>
             
             <!-- Slide 2 -->
-            <div class="hero-slide">
+            <div class="hero-slide" role="group" aria-label="Slide 2 of 5">
                 <div class="hero-content">
                     <h2 class="hero-title">Pyramids Photography Tours with Expert Guides</h2>
                     <p class="hero-subtitle">Capture stunning professional photos at the Great Pyramids with our licensed Egyptologists</p>
@@ -1301,7 +1522,7 @@
             </div>
             
             <!-- Slide 3 -->
-            <div class="hero-slide">
+            <div class="hero-slide" role="group" aria-label="Slide 3 of 5">
                 <div class="hero-content">
                     <h2 class="hero-title">Luxury Nile Cruises & Desert Safaris</h2>
                     <p class="hero-subtitle">5-star accommodations, private tours, and authentic Egyptian adventures</p>
@@ -1309,7 +1530,7 @@
             </div>
             
             <!-- Slide 4 -->
-            <div class="hero-slide">
+            <div class="hero-slide" role="group" aria-label="Slide 4 of 5">
                 <div class="hero-content">
                     <h2 class="hero-title">Local Village Experiences & Cultural Immersion</h2>
                     <p class="hero-subtitle">Live like a local with Egyptian families, traditional meals, and artisan workshops</p>
@@ -1317,7 +1538,7 @@
             </div>
             
             <!-- Slide 5 -->
-            <div class="hero-slide">
+            <div class="hero-slide" role="group" aria-label="Slide 5 of 5">
                 <div class="hero-content">
                     <h2 class="hero-title">Sustainable Eco-Tourism in Egypt</h2>
                     <p class="hero-subtitle">Responsible travel supporting local communities and preserving Egyptian heritage</p>
@@ -1325,39 +1546,47 @@
             </div>
         </div>
         
-        <button class="slider-arrow prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-        <button class="slider-arrow next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+        <button class="slider-arrow prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="slider-arrow next" aria-label="Next slide">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
         
         <!-- 5 Dots for 5 slides -->
-        <div class="slider-controls">
-            <div class="slider-dot active" data-slide="0"></div>
-            <div class="slider-dot" data-slide="1"></div>
-            <div class="slider-dot" data-slide="2"></div>
-            <div class="slider-dot" data-slide="3"></div>
-            <div class="slider-dot" data-slide="4"></div>
+        <div class="slider-controls" role="tablist">
+            <button class="slider-dot active" data-slide="0" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="slider-dot" data-slide="1" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+            <button class="slider-dot" data-slide="2" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+            <button class="slider-dot" data-slide="3" role="tab" aria-label="Go to slide 4" aria-selected="false"></button>
+            <button class="slider-dot" data-slide="4" role="tab" aria-label="Go to slide 5" aria-selected="false"></button>
         </div>
     </section>
 
     <!-- HERO BUTTONS -->
-    <section class="hero-buttons-section">
+    <section class="hero-buttons-section" aria-label="Call to action buttons">
         <div class="container">
             <div class="hero-buttons-container">
-                <a href="tours.html" class="hero-button hero-button-primary">Explore Egypt Tours</a>
-                <a href="contact.html" class="hero-button hero-button-secondary">Book Private Experience</a>
+                <a href="tours.html" class="hero-button hero-button-primary" aria-label="Explore our Egypt tour packages">
+                    Explore Egypt Tours
+                </a>
+                <a href="contact.html" class="hero-button hero-button-secondary" aria-label="Book your private Egypt experience">
+                    Book Private Experience
+                </a>
             </div>
         </div>
     </section>
 
     <!-- MAIN CONTENT -->
-    <main class="main">
+    <main id="main-content" class="main">
         <!-- H1 SECTION -->
         <section class="main-section">
             <div class="container">
-                <div class="breadcrumb">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
                     <a href="index.html">Home</a> &gt; 
                     <a href="tours.html">Egypt Tours</a> &gt; 
                     <span>Complete Egypt Experience</span>
-                </div>
+                </nav>
                 
                 <h1>Egypt Tours: Luxury Travel, Professional Photography & Authentic Local Experiences</h1>
                 
@@ -1370,17 +1599,17 @@
                 <div class="grid-section">
                     <div class="card">
                         <div class="card-icon">🎯</div>
-                        <h3>Authentic Local Experiences</h3>
+                        <h3 class="card-title">Authentic Local Experiences</h3>
                         <p>We go beyond tourist sites to provide genuine cultural immersion. Experience Egyptian life through village visits, home-cooked meals with local families, artisan workshops, and meaningful community interactions.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">📅</div>
-                        <h3>Professional Photography Included</h3>
+                        <h3 class="card-title">Professional Photography Included</h3>
                         <p>Capture your Egypt journey with professional photography services. Our expert photographers know all the best angles at pyramids, temples, and local spots, ensuring you return home with stunning memories.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">⭐</div>
-                        <h3>Luxury & Comfort</h3>
+                        <h3 class="card-title">Luxury & Comfort</h3>
                         <p>Enjoy 5-star accommodations, private transportation, and personalized service. We handle all details so you can focus on experiencing Egypt in comfort and style.</p>
                     </div>
                 </div>
@@ -1398,15 +1627,15 @@
                 
                 <div class="grid-section">
                     <div class="card">
-                        <h3>Pyramids & Historical Tours</h3>
+                        <h3 class="card-title">Pyramids & Historical Tours</h3>
                         <p>Experience the Great Pyramids, Sphinx, Egyptian Museum, and ancient temples with expert Egyptologist guides. Includes professional photography sessions at optimal times for lighting.</p>
                     </div>
                     <div class="card">
-                        <h3>Nile Cruise Experiences</h3>
+                        <h3 class="card-title">Nile Cruise Experiences</h3>
                         <p>Luxury cruises from Luxor to Aswan featuring temple visits, cultural activities, and photography of riverside life. Choose from 3-7 night packages aboard premium vessels.</p>
                     </div>
                     <div class="card">
-                        <h3>Local Cultural Immersion</h3>
+                        <h3 class="card-title">Local Cultural Immersion</h3>
                         <p>Authentic experiences including village stays, market tours, cooking classes with Egyptian families, artisan workshops, and community exchange programs.</p>
                     </div>
                 </div>
@@ -1534,7 +1763,7 @@
             </div>
         </section>
 
-        <!-- FEATURED TOURS - UPDATED IMAGES TO JPG -->
+        <!-- FEATURED TOURS - OPTIMIZED IMAGES -->
         <section class="main-section">
             <div class="container">
                 <h2>Our Most Popular Egypt Tour Packages</h2>
@@ -1543,75 +1772,89 @@
                 <div class="tour-grid">
                     <div class="tour-card">
                         <img src="images/pyramids-private-tour.jpg"
-                             alt="Private pyramids photoshoot at Giza - Egypt photography tour"
+                             alt="Private pyramids photoshoot at Giza with professional photographer"
                              class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="200">
+                             height="200"
+                             decoding="async">
                         <div class="tour-card-body">
-                            <h3>Pyramids Luxury Tour with Photoshoot</h3>
+                            <h3 class="tour-card-title">Pyramids Luxury Tour with Photoshoot</h3>
                             <p>Experience the Great Pyramids with professional photography sessions. Includes expert Egyptologist guide, luxury transportation, and exclusive photography access.</p>
                             <div class="tour-card-footer">
                                 <span class="tour-price">From $150</span>
-                                <a href="tour-pyramids-private.html" class="tour-cta">Book Now</a>
+                                <a href="tour-pyramids-private.html" class="tour-cta" aria-label="Book Pyramids Luxury Tour">
+                                    Book Now
+                                </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="tour-card">
                         <img src="images/cairo-giza-2day.jpg"
-                             alt="Cairo Giza 2-day photography tour - Egypt luxury tour"
+                             alt="Cairo and Giza 2-day tour visiting pyramids and Egyptian Museum"
                              class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="200">
+                             height="200"
+                             decoding="async">
                         <div class="tour-card-body">
-                            <h3>Cairo & Giza 2-Day Experience</h3>
+                            <h3 class="tour-card-title">Cairo & Giza 2-Day Experience</h3>
                             <p>Comprehensive tour covering pyramids, Egyptian Museum, and Old Cairo with professional photography guidance and local experiences.</p>
                             <div class="tour-card-footer">
                                 <span class="tour-price">From $350</span>
-                                <a href="tour-cairo-giza-2day.html" class="tour-cta">Book Now</a>
+                                <a href="tour-cairo-giza-2day.html" class="tour-cta" aria-label="Book Cairo Giza 2-Day Tour">
+                                    Book Now
+                                </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="tour-card">
                         <img src="images/alexandria-tour.jpg"
-                             alt="Alexandria day tour photography - Mediterranean Egypt tour"
+                             alt="Alexandria Mediterranean tour visiting coastal landmarks and historical sites"
                              class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="200">
+                             height="200"
+                             decoding="async">
                         <div class="tour-card-body">
-                            <h3>Alexandria Mediterranean Tour</h3>
+                            <h3 class="tour-card-title">Alexandria Mediterranean Tour</h3>
                             <p>Private day trip from Cairo to Alexandria. Photograph coastal views, Catacombs, and Qaitbay Citadel with expert photographer guidance.</p>
                             <div class="tour-card-footer">
                                 <span class="tour-price">From $220</span>
-                                <a href="tour-alexandria.html" class="tour-cta">Book Now</a>
+                                <a href="tour-alexandria.html" class="tour-cta" aria-label="Book Alexandria Mediterranean Tour">
+                                    Book Now
+                                </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="tour-card">
                         <img src="images/egypt-discovery-7day.jpg"
-                             alt="7-day Egypt photography tour package - Complete Egypt experience"
+                             alt="7-day complete Egypt tour covering major historical sites"
                              class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="200">
+                             height="200"
+                             decoding="async">
                         <div class="tour-card-body">
-                            <h3>7-Day Complete Egypt Tour</h3>
+                            <h3 class="tour-card-title">7-Day Complete Egypt Tour</h3>
                             <p>Ultimate Egypt experience covering Cairo, Giza, Alexandria, and Luxor with luxury accommodations and professional photography throughout.</p>
                             <div class="tour-card-footer">
                                 <span class="tour-price">From $1900</span>
-                                <a href="tour-egypt-discovery-7day.html" class="tour-cta">Book Now</a>
+                                <a href="tour-egypt-discovery-7day.html" class="tour-cta" aria-label="Book 7-Day Complete Egypt Tour">
+                                    Book Now
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="text-center mt-30">
-                    <a href="tours.html" class="hero-button hero-button-primary">View All Tour Packages</a>
+                    <a href="tours.html" class="hero-button hero-button-primary" aria-label="View all Egypt tour packages">
+                        View All Tour Packages
+                    </a>
                 </div>
             </div>
         </section>
@@ -1623,43 +1866,61 @@
                 
                 <div class="faq-container">
                     <div class="faq-item">
-                        <h3 class="faq-question">What makes your Egypt tours different from others? <i class="fas fa-chevron-down"></i></h3>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+                            What makes your Egypt tours different from others?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq1">
                             <p>Our Egypt tours combine three key elements that set us apart: 1) Professional photography services included in all tours, ensuring you capture high-quality memories; 2) Authentic local experiences that go beyond tourist sites to connect you with Egyptian communities; 3) Sustainable tourism practices that benefit local people and protect cultural heritage. We're also founded and operated by Egyptians with deep local knowledge and connections.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <h3 class="faq-question">Are your tours suitable for families with children? <i class="fas fa-chevron-down"></i></h3>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+                            Are your tours suitable for families with children?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq2">
                             <p>Absolutely! We specialize in family-friendly Egypt tours with age-appropriate activities, flexible scheduling, and experiences designed to engage children. Our guides are experienced with families and can adjust pacing and content based on children's ages and interests. We offer family photography sessions, interactive cultural experiences, and educational activities that make Egyptian history and culture accessible and exciting for young travelers.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <h3 class="faq-question">Do you offer local and authentic Egyptian experiences? <i class="fas fa-chevron-down"></i></h3>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+                            Do you offer local and authentic Egyptian experiences?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq3">
                             <p>Yes! Authentic local experiences are at the heart of what we do. Our tours include village visits where you can meet Egyptian families, home-cooked meals in local homes, artisan workshops with master craftsmen, market tours with food tasting, and cultural exchanges that support community development. We believe meaningful travel involves connecting with people, not just visiting places, and we facilitate these connections in respectful, mutually beneficial ways.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <h3 class="faq-question">What is included in your luxury Egypt tour packages? <i class="fas fa-chevron-down"></i></h3>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+                            What is included in your luxury Egypt tour packages?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq4">
                             <p>Our luxury Egypt tour packages include 5-star accommodations, private transportation with experienced drivers, expert Egyptologist guides, professional photography services, all entrance fees to sites mentioned in the itinerary, some meals (as specified), bottled water throughout, and exclusive experiences not available to regular tourists. We handle all logistics so you can focus on enjoying Egypt in comfort and style.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <h3 class="faq-question">How do you ensure sustainable and responsible tourism? <i class="fas fa-chevron-down"></i></h3>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+                            How do you ensure sustainable and responsible tourism?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq5">
                             <p>Our sustainable tourism practices include: employing local guides and staff at fair wages; partnering with locally-owned businesses; implementing waste reduction and water conservation measures; educating travelers on responsible behavior; supporting community development projects; respecting cultural norms and sites; and contributing to heritage preservation. We continuously evaluate and improve our practices based on environmental assessments and community feedback.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <h3 class="faq-question">Can you accommodate special dietary requirements? <i class="fas fa-chevron-down"></i></h3>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq6">
+                            Can you accommodate special dietary requirements?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq6">
                             <p>Yes, we can accommodate most dietary requirements including vegetarian, vegan, gluten-free, and religious dietary restrictions. Egyptian cuisine offers many naturally vegetarian options, and we work with restaurants and home cooks to provide suitable meals. Please inform us of any dietary requirements when booking so we can make appropriate arrangements throughout your tour.</p>
                         </div>
                     </div>
@@ -1674,19 +1935,19 @@
                 
                 <div class="reviews-grid">
                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
                         <p class="review-text">"The most authentic Egypt experience we could have imagined. The local village stay was transformative, and the photography captured our journey beautifully. Highly recommended for travelers seeking more than just sightseeing."</p>
                         <p><strong>- Sarah & Family, USA</strong></p>
                     </div>
                     
                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
                         <p class="review-text">"As a solo female traveler, I felt completely safe and supported throughout. The local experiences gave me insights into Egyptian culture I never would have found on my own. The photography services were exceptional."</p>
                         <p><strong>- Jessica, Australia</strong></p>
                     </div>
                     
                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
                         <p class="review-text">"Our luxury tour exceeded all expectations. The combination of 5-star comfort with authentic local experiences was perfect. The professional photos are treasures we'll cherish forever."</p>
                         <p><strong>- Marco & Elena, Italy</strong></p>
                     </div>
@@ -1694,25 +1955,27 @@
                 
                 <div class="reviews-grid mt-30">
                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
                         <p class="review-text">"The photography guidance transformed how I travel. I returned with professional-quality images and a deeper understanding of Egyptian culture. The sustainable tourism approach was impressive."</p>
                         <p><strong>- Thomas, Germany</strong></p>
                     </div>
                     
                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
                         <p class="review-text">"Our family tour was perfectly tailored for our children's ages and interests. The educational aspects combined with fun activities kept everyone engaged. The local experiences were highlights for all of us."</p>
                         <p><strong>- Linda, Canada</strong></p>
                     </div>
                     
                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="review-stars" aria-label="5 star rating">⭐⭐⭐⭐⭐</div>
                         <p class="review-text">"The 7-day Egypt tour balanced iconic sites with off-the-beaten-path experiences perfectly. The photography sessions at golden hour made our pyramid photos spectacular. Exceptional service throughout."</p>
                         <p><strong>- Robert & Susan, UK</strong></p>
                     </div>
                 </div>
                 
-                <a href="contact.html" class="review-cta">Book Your Egypt Tour Today!</a>
+                <a href="contact.html" class="review-cta" aria-label="Book your Egypt tour today">
+                    Book Your Egypt Tour Today!
+                </a>
             </div>
         </section>
         
@@ -1723,18 +1986,18 @@
                 
                 <div class="grid-section">
                     <div class="card">
-                        <h3>Best Time for Egypt Tours</h3>
+                        <h3 class="card-title">Best Time for Egypt Tours</h3>
                         <p><strong>October-April:</strong> Ideal weather with mild temperatures (15-25°C). Clear skies perfect for photography. Peak season with more tourists.</p>
                         <p><strong>May-September:</strong> Hotter but fewer crowds. Early morning photography sessions recommended. Lower prices on accommodations.</p>
                     </div>
                     
                     <div class="card">
-                        <h3>Egypt Visa Requirements</h3>
+                        <h3 class="card-title">Egypt Visa Requirements</h3>
                         <p>Most nationalities can obtain visa on arrival at Egyptian airports (USD $25). Valid for 30 days. Ensure passport has 6 months validity. E-visa option available online for advance processing.</p>
                     </div>
                     
                     <div class="card">
-                        <h3>Egypt Tour Essentials</h3>
+                        <h3 class="card-title">Egypt Tour Essentials</h3>
                         <p>Comfortable walking shoes, sun protection (hat, sunscreen, sunglasses), modest clothing for religious sites, power adapter (Type C/F, 220V), local currency (Egyptian Pound), travel insurance with photography equipment coverage.</p>
                     </div>
                 </div>
@@ -1764,27 +2027,37 @@
                 <div>
                     <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="tours.html">Tours</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="index.html" aria-label="Home page">Home</a></li>
+                        <li><a href="tours.html" aria-label="Egypt tours">Tours</a></li>
+                        <li><a href="gallery.html" aria-label="Photo gallery">Gallery</a></li>
+                        <li><a href="resources.html" aria-label="Travel resources">Resources</a></li>
+                        <li><a href="blog.html" aria-label="Travel blog">Blog</a></li>
+                        <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                        <li><a href="faqs.html" aria-label="Frequently asked questions">FAQs</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="footer-title">Contact Us</h3>
-                    <p><i class="fab fa-whatsapp"></i> +20 155 073 5673</p>
-                    <p><i class="far fa-envelope"></i> info@egyptphotographytours.com</p>
-                    <p>📍 Giza, Egypt - Near Pyramids</p>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-whatsapp" aria-hidden="true"></i> +20 155 073 5673</li>
+                        <li><i class="far fa-envelope" aria-hidden="true"></i> info@egyptphotographytours.com</li>
+                        <li>📍 Giza, Egypt - Near Pyramids</li>
+                    </ul>
                     
                     <div class="social-links">
-                        <a href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Follow us on Facebook" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/hossam_artistic/" aria-label="Follow us on Instagram" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="Follow us on TikTok" target="_blank" rel="noopener">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="Subscribe to our YouTube channel" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -1796,23 +2069,38 @@
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Egypt Photography Tours Location">
+                            title="Egypt Photography Tours Location Map">
                     </iframe>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT - OPTIMIZED FOR PAGE SPEED -->
+    <!-- Deferred JavaScript for performance -->
     <script>
-        // MOBILE MENU
-        document.addEventListener('DOMContentLoaded', function() {
+        // Load Font Awesome after page load
+        window.addEventListener('load', function() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+            link.crossOrigin = 'anonymous';
+            document.head.appendChild(link);
+            
+            // Initialize components after fonts load
+            setTimeout(initializePage, 100);
+        });
+        
+        function initializePage() {
+            // MOBILE MENU
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
             if (mobileMenuToggle) {
                 mobileMenuToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     navLinks.classList.toggle('active');
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    
                     const icon = this.querySelector('i');
                     if (navLinks.classList.contains('active')) {
                         icon.classList.remove('fa-bars');
@@ -1833,11 +2121,17 @@
             let slideInterval;
             
             function showSlide(index) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    slide.setAttribute('aria-hidden', 'true');
+                    dots[i].classList.remove('active');
+                    dots[i].setAttribute('aria-selected', 'false');
+                });
                 
                 slides[index].classList.add('active');
+                slides[index].setAttribute('aria-hidden', 'false');
                 dots[index].classList.add('active');
+                dots[index].setAttribute('aria-selected', 'true');
                 currentSlide = index;
             }
             
@@ -1877,12 +2171,16 @@
                     slideInterval = setInterval(nextSlide, 8000);
                 }
                 
+                // Initialize slider
+                showSlide(0);
                 startSlider();
                 
                 // Pause on hover for better UX
                 const heroSlider = document.querySelector('.hero-slider');
                 heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
                 heroSlider.addEventListener('mouseleave', startSlider);
+                heroSlider.addEventListener('focusin', () => clearInterval(slideInterval));
+                heroSlider.addEventListener('focusout', startSlider);
             }
             
             // FAQ ACCORDION
@@ -1890,24 +2188,29 @@
             faqQuestions.forEach(question => {
                 question.addEventListener('click', function() {
                     const answer = this.nextElementSibling;
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     const icon = this.querySelector('i');
                     
-                    if (answer.classList.contains('active')) {
-                        answer.classList.remove('active');
-                        icon.classList.remove('fa-chevron-up');
-                        icon.classList.add('fa-chevron-down');
-                    } else {
-                        document.querySelectorAll('.faq-answer').forEach(ans => {
+                    // Close all other FAQ answers
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        if (ans !== answer) {
                             ans.classList.remove('active');
-                        });
-                        document.querySelectorAll('.faq-question i').forEach(i => {
-                            i.classList.remove('fa-chevron-up');
-                            i.classList.add('fa-chevron-down');
-                        });
-                        
-                        answer.classList.add('active');
+                            ans.previousElementSibling.setAttribute('aria-expanded', 'false');
+                            ans.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                            ans.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                        }
+                    });
+                    
+                    // Toggle current answer
+                    answer.classList.toggle('active');
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    
+                    if (answer.classList.contains('active')) {
                         icon.classList.remove('fa-chevron-down');
                         icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
                     }
                 });
             });
@@ -1921,7 +2224,9 @@
                 
                 currentLanguage.addEventListener('click', function(e) {
                     e.stopPropagation();
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     languageSwitcher.classList.toggle('active');
+                    this.setAttribute('aria-expanded', !isExpanded);
                     dropdownIcon.classList.toggle('fa-chevron-up');
                     dropdownIcon.classList.toggle('fa-chevron-down');
                 });
@@ -1930,6 +2235,7 @@
                 document.addEventListener('click', function(e) {
                     if (!languageSwitcher.contains(e.target)) {
                         languageSwitcher.classList.remove('active');
+                        currentLanguage.setAttribute('aria-expanded', 'false');
                         dropdownIcon.classList.remove('fa-chevron-up');
                         dropdownIcon.classList.add('fa-chevron-down');
                     }
@@ -1950,6 +2256,7 @@
                         
                         // Close dropdown
                         languageSwitcher.classList.remove('active');
+                        currentLanguage.setAttribute('aria-expanded', 'false');
                         dropdownIcon.classList.remove('fa-chevron-up');
                         dropdownIcon.classList.add('fa-chevron-down');
                         
@@ -1962,7 +2269,7 @@
                 });
             }
             
-            // LAZY LOAD IMAGES
+            // Lazy load images that are in viewport
             if ('IntersectionObserver' in window) {
                 const imageObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -1975,6 +2282,8 @@
                             imageObserver.unobserve(img);
                         }
                     });
+                }, {
+                    rootMargin: '50px'
                 });
                 
                 document.querySelectorAll('img[loading="lazy"]').forEach(img => {
@@ -1983,34 +2292,26 @@
             }
             
             // Performance monitoring
-            window.addEventListener('load', function() {
-                // Measure page load time
-                const perfData = window.performance.timing;
+            if (window.performance && performance.timing) {
+                const perfData = performance.timing;
                 const loadTime = perfData.loadEventEnd - perfData.navigationStart;
-                console.log('Page load time:', loadTime + 'ms');
                 
-                // Send performance data to analytics
-                if (typeof gtag !== 'undefined' && loadTime < 10000) {
-                    gtag('event', 'timing_complete', {
-                        'name': 'page_load',
-                        'value': loadTime,
-                        'event_category': 'Performance'
-                    });
+                // Log performance for debugging
+                if (loadTime > 0) {
+                    console.log('Page loaded in', loadTime, 'ms');
                 }
-            });
+            }
             
             // Service Worker Registration for PWA
             if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    }).catch(function(error) {
-                        console.log('ServiceWorker registration failed: ', error);
-                    });
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful');
+                }).catch(function(error) {
+                    console.log('ServiceWorker registration failed:', error);
                 });
             }
             
-            // Add focus-visible polyfill for better accessibility
+            // Keyboard navigation support
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Tab') {
                     document.body.classList.add('keyboard-navigation');
@@ -2020,22 +2321,20 @@
             document.addEventListener('mousedown', function() {
                 document.body.classList.remove('keyboard-navigation');
             });
-        });
+            
+            // Reduced motion support
+            const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (mediaQuery.matches) {
+                clearInterval(slideInterval);
+            }
+        }
         
-        // Handle reduced motion preference
-        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-        if (mediaQuery.matches) {
-            // Disable or adjust animations
-            const style = document.createElement('style');
-            style.textContent = `
-                .hero-slide {
-                    transition: none !important;
-                }
-                .tour-card:hover {
-                    transform: none !important;
-                }
-            `;
-            document.head.appendChild(style);
+        // Handle Trustpilot widget loading
+        if (typeof Trustpilot !== 'undefined') {
+            window.trustpilot = window.trustpilot || [];
+            window.trustpilot.push(['load', function() {
+                console.log('Trustpilot loaded');
+            }]);
         }
     </script>
 </body>
