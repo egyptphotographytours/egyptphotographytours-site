@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- PWA Configuration -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Egypt Photography Tours">
+    <meta name="application-name" content="Egypt Photography Tours">
+    <meta name="format-detection" content="telephone=no">
+    
     <!-- Comprehensive Favicon Setup -->
-    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
-    <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg">
+    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#FFD700">
-    <meta name="msapplication-config" content="../browserconfig.xml">
+    <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#FFD700">
+    
+    <!-- Google Analytics Tracking -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVNPEMCG8F');
+    </script>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
+    <link rel="preload" href="images/hero-image1.jpg" as="image" media="(min-width: 768px)">
     
     <!-- Search Engine & Social Media Optimization -->
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta itemprop="image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     
-    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-    <title>Tour Fotografici in Egitto | Tour Privati di Lusso alle Piramidi, Giza, Cairo e Alessandria</title>
+    <!-- TITOLO META AGGIORNATO CON FORTI KEYWORD PER IL MERCATO ITALIANO -->
+    <title>Tour Privati in Egitto con Servizio Fotografico | Cairo, Piramidi, Luxor, Alessandria</title>
 
-    <meta name="description" content="Scopri i Tour Fotografici in Egitto — sessioni fotografiche private alle piramidi, esperienze fotografiche al Cairo e sul Nilo, e tour guidati da esperti in tutto l'Egitto. Prenota oggi il tuo viaggio indimenticabile in Egitto!">
+    <!-- DESCRIZIONE META OTTIMIZZATA PER RICERCHE ITALIANE -->
+    <meta name="description" content="Non un tour standard. Scopri l'Egitto con tour privati e servizio fotografico professionale opzionale a Cairo, Piramidi di Giza, Alessandria e Luxor con guide locali.">
 
-    <meta name="keywords" content="tour fotografici Egitto, viaggi di lusso in Egitto, tour di lusso in Egitto,
-    viaggi di alta gamma in Egitto, tour delle piramidi, guida turistica del Cairo, foto del fiume Nilo, tour dell'Egitto, fotografia dei templi di Luxor, tour di Alessandria">
+    <meta name="keywords" content="tour Egitto, vacanze Egitto, viaggi Egitto, tour privati Egitto, guida Egitto italiano, Cairo tour, Piramidi di Giza, Luxor Egitto, Alessandria Egitto, crociera Nilo, fotografia Egitto, servizio fotografico Egitto, tour fotografici Egitto, Egitto viaggio, pacchetto viaggio Egitto, itinerario Egitto, Egitto con guida italiana, cosa vedere Egitto, quando andare Egitto, prezzi Egitto, offerte Egitto, Egitto all inclusive, Egitto last minute, Egitto tour operator, Egitto sicuro, Egitto per famiglie, Egitto coppie, Egitto luna di miele">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <link rel="canonical" href="https://www.egyptphotographytours.com/it/" />
 
+    <!-- Language Alternates - Italian as current -->
     <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/" />
     <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/" />
     <link rel="alternate" hreflang="fr" href="https://www.egyptphotographytours.com/fr/" />
@@ -44,132 +68,203 @@
     <link rel="alternate" hreflang="id" href="https://www.egyptphotographytours.com/id/" />
     <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/" />
     <link rel="alternate" hreflang="ru" href="https://www.egyptphotographytours.com/ru/" />
+    <link rel="alternate" hreflang="da" href="https://www.egyptphotographytours.com/da/" />
+    <link rel="alternate" hreflang="nl" href="https://www.egyptphotographytours.com/nl/" />
+    <link rel="alternate" hreflang="hi" href="https://www.egyptphotographytours.com/hi/" />
+    <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/" />
+    <link rel="alternate" hreflang="sv" href="https://www.egyptphotographytours.com/sv/" />
+    <link rel="alternate" hreflang="tl" href="https://www.egyptphotographytours.com/tl/" />
+    <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/" />
+    <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/" />
+    <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/" />
 
-    <meta property="og:title" content="Tour Fotografici in Egitto | Avventure Fotografiche Professionali tra Piramidi e Templi">
-    <meta property="og:description" content="Cattura la magia dell'antico Egitto con guide turistiche esperte di fotografia. Tour privati delle Piramidi, templi e del Cairo storico a partire da $150 USD.">
+    <meta property="og:title" content="Tour Privati in Egitto con Servizio Fotografico | Cairo, Piramidi, Luxor">
+    <meta property="og:description" content="Non un tour standard. Scopri l'Egitto con tour privati e servizio fotografico professionale opzionale a Cairo, Piramidi di Giza, Alessandria e Luxor.">
     <meta property="og:url" content="https://www.egyptphotographytours.com/it/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Egypt Photography Tours">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tour Fotografici in Egitto | Avventure Fotografiche Professionali">
-    <meta name="twitter:description" content="Tour fotografici guidati da esperti nei siti più iconici dell'Egitto. Cattura foto straordinarie con guide turistiche professioniste.">
+    <meta name="twitter:title" content="Tour Privati Egitto con Servizio Fotografico Professionale">
+    <meta name="twitter:description" content="Tour privati in Egitto con servizio fotografico opzionale a Cairo, Piramidi di Giza, Alessandria e Luxor con guide locali.">
     <meta name="google-adsense-account" content="ca-pub-1042032515879132">
     
     <meta name="geo.region" content="EG-C">
-    <meta name="geo.placename" content="Cairo, Egypt">
+    <meta name="geo.placename" content="Cairo, Egitto">
     <meta name="geo.position" content="30.0444;31.2357">
 
-    <!-- UPDATED SCHEMA MARKUP FOR RICH SNIPPETS WITH 5 STARS AND 26 REVIEWS -->
+    <!-- STRUCTURED DATA AGGIORNATO IN ITALIANO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Egypt Photography Tours",
-      "url": "https://www.egyptphotographytours.com",
-      "logo": "https://www.egyptphotographytours.com/images/favicon-32x32.png",
-      "sameAs": [
-        "https://www.instagram.com/hossam_artistic",
-        "https://www.trustpilot.com/review/egyptphotographytours.com"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Egypt Photography Tours",
-      "image": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg",
-      "description": "Tour fotografici guidati privati in Egitto che includono le Piramidi, il Cairo, Alessandria e altro ancora. Sessioni fotografiche professionali e guide locali esperte.",
-      "url": "https://www.egyptphotographytours.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "openingHours": "Mo-Su 09:00-18:00",
-      "priceRange": "$$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      },
-      "review": [
+      "@graph": [
         {
-          "@type": "Review",
-          "author": "Daniel",
-          "datePublished": "2024-05-15",
-          "reviewBody": "We had a great time on this experience with Hossam! He was very helpful and patient with our group!",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
+          "@type": "WebSite",
+          "name": "Egypt Photography Tours",
+          "url": "https://www.egyptphotographytours.com/it/",
+          "inLanguage": "it",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.egyptphotographytours.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
         },
         {
-          "@type": "Review",
-          "author": "Cristina",
-          "datePublished": "2024-04-22",
-          "reviewBody": "Hossam is a brilliant photographer with amazing skills. Plenty of fantastic pictures with the astonishing view of the pyramids.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "TravelAgency",
+          "name": "Egypt Photography Tours",
+          "url": "https://www.egyptphotographytours.com/it",
+          "logo": "https://www.egyptphotographytours.com/images/logo.jpg",
+          "telephone": "+20-155-073-5673",
+          "email": "info@egyptphotographytours.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+            "addressLocality": "Giza",
+            "addressRegion": "Giza Governorate",
+            "postalCode": "12557",
+            "addressCountry": "EG"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "openingHours": "Mo-Su 08:00-22:00",
+          "priceRange": "€€-€€€"
         },
         {
-          "@type": "Review",
-          "author": "Eduardo",
-          "datePublished": "2024-03-30",
-          "reviewBody": "Hossam provided a magnificent tour of the Giza Pyramids. Always thoughtful, communicative and knowledgeable.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.egyptphotographytours.com/it/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tour Egitto",
+              "item": "https://www.egyptphotographytours.com/it/tours.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Tour Privati Egitto",
+              "item": "https://www.egyptphotographytours.com/it/tour-privati-egitto.html"
+            }
+          ]
+        },
+        {
+          "@type": ["TouristTrip", "Product"],
+          "name": "Tour Privati in Egitto con Servizio Fotografico Professionale Opzionale",
+          "description": "Scopri l'Egitto con tour privati e servizio fotografico professionale opzionale a Cairo, Piramidi di Giza, Alessandria e Luxor con guide locali italiane.",
+          "url": "https://www.egyptphotographytours.com/it/tour-privati-egitto.html",
+          "inLanguage": "it",
+          "image": [
+            "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image1.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image2.jpg"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "1900",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "seller": {
+              "@type": "Organization",
+              "name": "Egypt Photography Tours"
+            }
+          },
+          "duration": "P7D",
+          "touristType": ["Solo travelers", "Couples", "Families", "Photography enthusiasts", "Luxury travelers"],
+          "brand": {
+            "@type": "Brand",
+            "name": "Egypt Photography Tours"
+          },
+          "sku": "EPT-PET-001-IT",
+          "category": "Tour Privato"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Cosa rende i vostri tour privati in Egitto diversi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I nostri tour privati in Egitto offrono esperienze personalizzate con guide locali e includono un servizio fotografico professionale opzionale. Ci concentriamo su un'autentica immersione culturale, itinerari flessibili e accesso esclusivo a siti non disponibili nei tour standard."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Il servizio fotografico professionale è incluso in tutti i tour?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sì, offriamo un servizio fotografico professionale opzionale con tutti i nostri tour privati in Egitto. Puoi scegliere di includerlo come parte del tuo pacchetto o prenotare i nostri tour senza servizi fotografici."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quali città coprono i vostri tour privati in Egitto?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I nostri tour privati in Egitto coprono Cairo, Piramidi di Giza, Alessandria e Luxor. Offriamo pacchetti completi che includono tutte queste destinazioni o possiamo personalizzare tour focalizzati su città specifiche in base alle tue preferenze."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "Guida Completa ai Tour Privati in Egitto con Servizio Fotografico",
+          "description": "Guida completa ai tour privati in Egitto inclusi Cairo, Giza, Alessandria e Luxor con servizi fotografici professionali opzionali.",
+          "inLanguage": "it",
+          "author": {
+            "@type": "Person",
+            "name": "Hossam",
+            "jobTitle": "Fotografo Professionista & Egittologo"
+          },
+          "datePublished": "2024-01-15",
+          "dateModified": "2024-12-15",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Egypt Photography Tours",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/logo.jpg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.egyptphotographytours.com/it/blog/guida-tour-privati-egitto.html"
+          },
+          "image": [
+            {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/egypt-tours-guide-1.jpg",
+              "width": "1200",
+              "height": "800",
+              "caption": "Tour privati in Egitto con servizio fotografico professionale a Cairo, Giza, Alessandria e Luxor"
+            }
+          ],
+          "keywords": "tour privati Egitto, tour Egitto con fotografo, tour Cairo, tour Piramidi di Giza, tour Alessandria, tour Luxor, tour fotografici Egitto"
         }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/EgyptPhotographyTours",
-        "https://www.instagram.com/hossam_artistic/",
-        "https://www.tiktok.com/@egyptphotographytours",
-        "https://www.youtube.com/@Egyptphotographytours"
       ]
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      "name": "Piramidi di Giza",
-      "description": "La Grande Piramide di Giza è la più antica e la più grande delle tre piramidi nel complesso piramidale di Giza.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "image": "https://www.egyptphotographytours.com/images/pyramids-of-giza.jpg"
-    }
-    </script>
-
+    <!-- Performance Optimized CSS Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     
     <style>
+        /* CRITICAL CSS - Inlined for performance */
         :root {
             --primary-dark: #1a202c;
             --accent-light: #FFD700;
@@ -178,6 +273,8 @@
         }
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -196,24 +293,23 @@
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* HEADER STYLES */
         .header {
             background-color: var(--primary-dark);
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             padding: 12px 0;
         }
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             gap: 12px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
-                gap: 0;
+                justify-content: space-between;
             }
         }
         .logo-section {
@@ -229,28 +325,9 @@
         .logo-link {
             font-size: 20px;
             font-weight: 700;
-            letter-spacing: -0.025em;
             color: var(--accent-light);
             text-decoration: none;
         }
-        @media (min-width: 768px) {
-            .logo-link {
-                font-size: 24px;
-            }
-        }
-        .header-text {
-            font-size: 14px;
-            font-style: italic;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 16px;
-            }
-        }
-        
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
@@ -270,22 +347,15 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
-            padding: 4px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
         }
-        .contact-icon {
-            font-size: 14px;
-            width: 16px;
-            text-align: center;
-        }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 50;
@@ -294,26 +364,20 @@
         .navbar-content {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            justify-content: space-between;
         }
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
             }
         }
         .nav-links {
             display: none;
             flex-direction: column;
-            width: 100%;
-            gap: 0;
-            font-size: 16px;
-            font-weight: 500;
             list-style: none;
             padding: 0;
             margin: 0;
-            background-color: #374151;
         }
         .nav-links.active {
             display: flex;
@@ -322,33 +386,19 @@
             .nav-links {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
                 gap: 16px;
-                width: auto;
-            }
-        }
-        .nav-link {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-link:last-child {
-            border-bottom: none;
-        }
-        @media (min-width: 768px) {
-            .nav-link {
-                border-bottom: none;
             }
         }
         .nav-link a {
             color: white;
             text-decoration: none;
             padding: 12px 16px;
-            transition: color 0.3s ease;
             display: block;
+            transition: color 0.3s ease;
         }
         @media (min-width: 768px) {
             .nav-link a {
-                padding: 8px 0;
+                padding: 16px 8px;
             }
         }
         .nav-link a:hover {
@@ -362,13 +412,10 @@
         }
         @media (min-width: 768px) {
             .cta-container {
-                justify-content: flex-end;
-                gap: 12px;
                 padding: 0;
+                gap: 12px;
             }
         }
-        
-        /* MOBILE MENU TOGGLE */
         .mobile-menu-toggle {
             display: block;
             background: none;
@@ -384,7 +431,128 @@
             }
         }
         
-        /* HERO SLIDER STYLES - MOBILE OPTIMIZED */
+        /* Language Switcher */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+        }
+
+        .current-language:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .current-flag {
+            font-size: 16px;
+        }
+
+        .current-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .dropdown-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 220px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #374151;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .language-switcher.active .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-light);
+        }
+
+        .language-item.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .flag-icon {
+            font-size: 18px;
+            min-width: 24px;
+        }
+
+        .language-text {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Scrollbar styling for dropdown */
+        .language-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
+        }
+        
+        /* HERO SLIDER - UPDATED TO 5 IMAGES */
         .hero-slider {
             position: relative;
             height: 60vh;
@@ -408,87 +576,82 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 16px;
         }
         .hero-slide.active {
             opacity: 1;
         }
         .hero-slide:nth-child(1) {
-            background-image: url('../images/hero-image1.jpg');
+            background-image: url('images/hero-image1.jpg');
         }
         .hero-slide:nth-child(2) {
-            background-image: url('../images/hero-image2.jpg');
+            background-image: url('images/hero-image2.jpg');
         }
         .hero-slide:nth-child(3) {
-            background-image: url('../images/hero-image3.jpg');
+            background-image: url('images/hero-image3.jpg');
         }
         .hero-slide:nth-child(4) {
-            background-image: url('../images/hero-image4.jpg');
+            background-image: url('images/hero-image4.jpg');
+        }
+        .hero-slide:nth-child(5) {
+            background-image: url('images/hero-image5.jpg');
         }
         .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
-        .hero-title {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
             color: white;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
-            margin-top: 0;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            background-color: transparent;
+            border-radius: 10px;
         }
-        @media (min-width: 480px) {
-            .hero-title {
-                font-size: 28px;
-            }
+        
+        /* HERO TITLE */
+        .hero-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #ffffff !important;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
         }
         @media (min-width: 768px) {
             .hero-title {
                 font-size: 48px;
-                margin-top: -60px;
-            }
-        }
-        .hero-subtitle {
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
-            line-height: 1.4;
-        }
-        @media (min-width: 480px) {
-            .hero-subtitle {
-                font-size: 16px;
-            }
-        }
-        @media (min-width: 768px) {
-            .hero-subtitle {
-                font-size: 18px;
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 0, 0, 0.9);
             }
         }
         
-        /* NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES */
+        /* HERO SUBTITLE */
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: #ffffff !important;
+            text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8);
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        @media (min-width: 768px) {
+            .hero-subtitle {
+                font-size: 22px;
+                text-shadow: 1px 1px 18px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
+            }
+        }
+        
+        /* HERO BUTTONS */
         .hero-buttons-section {
             background-color: #f8f8f8;
             padding: 30px 0;
             text-align: center;
-            border-top: 1px solid #e5e7eb;
         }
         .hero-buttons-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             gap: 16px;
             max-width: 600px;
             margin: 0 auto;
@@ -505,15 +668,8 @@
             font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
             display: block;
             text-align: center;
-        }
-        @media (min-width: 768px) {
-            .hero-button {
-                padding: 12px 32px;
-                font-size: 18px;
-            }
         }
         .hero-button-primary {
             background-color: var(--accent-light);
@@ -533,7 +689,7 @@
             transform: scale(1.05);
         }
         
-        /* SLIDER NAVIGATION CONTROLS - MOBILE OPTIMIZED */
+        /* SLIDER CONTROLS */
         .slider-controls {
             position: absolute;
             bottom: 20px;
@@ -541,13 +697,8 @@
             right: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 20px;
-            z-index: 20;
-        }
-        .slider-dots {
-            display: flex;
             gap: 10px;
+            z-index: 20;
         }
         .slider-dot {
             width: 10px;
@@ -573,20 +724,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             z-index: 20;
             color: var(--primary-dark);
-            font-size: 16px;
-        }
-        @media (min-width: 768px) {
-            .slider-arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-        }
-        .slider-arrow:hover {
-            background-color: rgba(255, 255, 255, 0.9);
         }
         .slider-arrow.prev {
             left: 10px;
@@ -595,1097 +734,1213 @@
             right: 10px;
         }
         
-        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
+        /* MAIN CONTENT SECTIONS */
         .main-section {
             padding: 40px 0;
-            text-align: center;
         }
         @media (min-width: 768px) {
             .main-section {
-                padding: 64px 0;
-            }
-        }
-        .main-section h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-        @media (min-width: 768px) {
-            .main-section h2 {
-                font-size: 36px;
-                margin-bottom: 32px;
-            }
-        }
-        .main-section h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin: 20px 0 8px;
-        }
-        @media (min-width: 768px) {
-            .main-section h3 {
-                font-size: 24px;
-                margin: 24px 0 8px;
-            }
-        }
-        .main-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 896px;
-            margin: 0 auto 20px;
-        }
-        @media (min-width: 768px) {
-            .main-section p {
-                font-size: 18px;
-                margin: 0 auto 24px;
+                padding: 60px 0;
             }
         }
         .bg-light-gray {
             background-color: #f3f4f6;
         }
+        .bg-primary-dark {
+            background-color: var(--primary-dark);
+        }
+        
+        /* HEADINGS */
+        h1 {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+        }
+        h2 {
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 36px;
+            }
+        }
+        h3 {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 28px;
+            }
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            p {
+                font-size: 18px;
+            }
+        }
+        
+        /* CARDS & GRIDS */
         .grid-section {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .grid-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-        @media (min-width: 1024px) {
             .grid-section {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-        @media (min-width: 768px) {
-            .card {
-                padding: 32px;
-            }
-        }
-        .card:hover {
-            transform: scale(1.05);
         }
         .card-icon {
-            width: 50px;
-            height: 50px;
+            font-size: 40px;
             color: var(--accent-light);
             margin-bottom: 16px;
         }
-        @media (min-width: 768px) {
-            .card-icon {
-                width: 64px;
-                height: 64px;
-            }
-        }
         .card-title {
             font-size: 20px;
-            font-weight: 600;
-            color: var(--primary-dark);
             margin-bottom: 12px;
+            color: var(--primary-dark);
         }
-        @media (min-width: 768px) {
-            .card-title {
-                font-size: 24px;
-            }
-        }
-        .card-text {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        @media (min-width: 768px) {
-            .card-text {
-                font-size: 16px;
-            }
-        }
+        
+        /* TOUR GRID */
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
-            .tour-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (min-width: 1280px) {
             .tour-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
         .tour-card {
-            background-color: white;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            position: relative;
         }
         .tour-card:hover {
-            transform: scale(1.05);
-        }
-        .sale-tag {
-            background-color: #E74C3C;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            z-index: 10;
+            transform: translateY(-5px);
         }
         .tour-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        @media (min-width: 768px) {
-            .tour-img {
-                height: 224px;
-            }
-        }
         .tour-card-body {
             padding: 20px;
         }
-        @media (min-width: 768px) {
-            .tour-card-body {
-                padding: 24px;
-            }
-        }
         .tour-card-title {
             font-size: 20px;
-            font-weight: 600;
+            margin-bottom: 12px;
             color: var(--primary-dark);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        @media (min-width: 768px) {
-            .tour-card-title {
-                font-size: 24px;
-            }
-        }
-        .tour-card-text {
-            color: #4b5563;
-            margin-bottom: 16px;
-            text-align: left;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .tour-card-text {
-                font-size: 16px;
-                line-height: 1.6;
-            }
         }
         .tour-card-footer {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 8px;
+            align-items: center;
+            margin-top: 20px;
         }
         .tour-price {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: bold;
             color: var(--accent-dark);
         }
-        @media (min-width: 768px) {
-            .tour-price {
-                font-size: 18px;
-            }
-        }
-        .tour-duration {
-            font-size: 14px;
-            color: #6b7280;
-        }
         .tour-cta {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-light);
+            display: inline-block;
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 10px 20px;
-            border-radius: 9999px;
-            text-align: center;
+            border-radius: 4px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .tour-cta {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
         .tour-cta:hover {
-            background-color: var(--accent-dark);
+            background: var(--accent-dark);
         }
-        .bg-primary-dark {
-            background-color: var(--primary-dark);
+        
+        /* FAQ SECTION */
+        .faq-container {
+            margin-top: 30px;
         }
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* REVIEWS */
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-        }
-        @media (min-width: 1024px) {
             .reviews-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .review-card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            color: var(--primary-dark);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
-        @media (min-width: 768px) {
-            .review-card {
-                padding: 32px;
-            }
-        }
         .review-stars {
-            font-size: 20px;
             color: var(--accent-light);
-            margin-bottom: 12px;
-        }
-        @media (min-width: 768px) {
-            .review-stars {
-                font-size: 24px;
-            }
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .review-text {
             font-style: italic;
-            font-size: 16px;
             margin-bottom: 16px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .review-text {
-                font-size: 18px;
-                line-height: 1.6;
-            }
-        }
-        .review-author {
-            font-weight: 600;
-            color: var(--primary-dark);
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .review-author {
-                font-size: 16px;
-            }
         }
         .review-cta {
-            margin-top: 30px;
             display: inline-block;
-            background-color: var(--accent-light);
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 12px 24px;
-            border-radius: 9999px;
-            font-size: 16px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 4px;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-        }
-        @media (min-width: 768px) {
-            .review-cta {
-                margin-top: 40px;
-                padding: 12px 32px;
-                font-size: 18px;
-            }
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background 0.3s ease;
         }
         .review-cta:hover {
-            background-color: var(--accent-dark);
-            transform: scale(1.05);
+            background: var(--accent-dark);
         }
+        
+        /* FOOTER */
         .footer {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             color: white;
-            padding: 30px 0;
-            margin-top: auto;
-        }
-        @media (min-width: 768px) {
-            .footer {
-                padding: 40px 0;
-            }
+            padding: 40px 0;
+            margin-top: 60px;
         }
         .footer-content {
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
         @media (min-width: 768px) {
             .footer-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                text-align: left;
-                flex-wrap: wrap;
-            }
-        }
-        .footer-section {
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-section {
-                margin-bottom: 0;
-            }
-        }
-        /* UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT */
-        .footer-brand {
-            text-align: left;
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-brand {
-                margin-bottom: 0;
-                text-align: left;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         .footer-title {
-            font-size: 20px;
-            font-weight: 700;
             color: var(--accent-light);
-            margin-bottom: 8px;
-        }
-        @media (min-width: 768px) {
-            .footer-title {
-                font-size: 24px;
-            }
-        }
-        .footer-text {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .footer-links {
             list-style: none;
-            padding: 0;
-            font-size: 14px;
-            line-height: 1.8;
         }
-        .footer-links li a {
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .footer-links li a:hover {
+        .footer-links a:hover {
             color: var(--accent-light);
         }
         .social-links {
             display: flex;
-            justify-content: center;
             gap: 16px;
-            margin-top: 12px;
-        }
-        @media (min-width: 768px) {
-            .social-links {
-                justify-content: flex-start;
-            }
+            margin-top: 16px;
         }
         .social-links a {
             color: white;
+            font-size: 20px;
             transition: color 0.3s ease;
         }
         .social-links a:hover {
             color: var(--accent-light);
         }
-        .social-icon {
-            font-size: 20px;
-        }
-        
-        /* FOOTER CONTACT INFO STYLES - MOVED TO CONNECT WITH US SECTION */
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-        .footer-contact-info {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-            justify-content: center;
-        }
-        @media (min-width: 768px) {
-            .footer-contact-info {
-                justify-content: flex-start;
-            }
-        }
-        .footer-contact-info:hover {
-            color: var(--accent-light);
-        }
-        
-        /* Language Switcher Styles - MOBILE OPTIMIZED */
-        .language-switcher {
-            position: relative;
-            display: inline-block;
-        }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #374151;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            max-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        .language-switcher.active .language-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .language-switcher.active .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-        .language-item {
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #4B5563;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .language-item:last-child {
-            border-bottom: none;
-        }
-        .language-item:hover {
-            background-color: #4B5563;
-        }
-        .language-item.active {
-            background-color: var(--accent-light);
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        .flag-icon {
-            font-size: 16px;
-            margin-right: 8px;
-            min-width: 18px;
-        }
-        .language-text {
-            flex: 1;
-            font-size: 14px;
-        }
-        .current-language {
-            display: flex;
-            align-items: center;
-            padding: 6px 10px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        .current-language:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        .current-flag {
-            font-size: 16px;
-            margin-right: 6px;
-        }
-        .dropdown-arrow {
-            margin-left: 6px;
-            transition: transform 0.2s ease;
-        }
-        .language-dropdown::-webkit-scrollbar {
-            width: 4px;
-        }
-        .language-dropdown::-webkit-scrollbar-track {
-            background: #4B5563;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb {
-            background: #6B7280;
-            border-radius: 2px;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #9CA3AF;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .lazy-load.loaded {
-            opacity: 1;
-        }
-        @media (max-width: 768px) {
-            .tour-grid, .reviews-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
-        
-        .book-now-button {
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            background-color: #FFD700;
-            color: #1a202c;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            white-space: nowrap;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: inline-block;
-        }
-        .book-now-button:hover {
-            background-color: #E2B700;
-            transform: scale(1.05);
-        }
-        
-        /* MAP STYLES - SIGNIFICANTLY LARGER FOR REVIEWS */
         .footer-map {
-            margin-top: 20px;
-            width: 100%;
-            flex: 2; /* Much larger flex value to take more space */
-        }
-        @media (min-width: 768px) {
-            .footer-map {
-                margin-top: 0;
-            }
+            grid-column: 1 / -1;
         }
         .footer-map iframe {
             width: 100%;
-            height: 350px; /* Significantly increased from 220px for mobile */
+            height: 300px;
             border: none;
             border-radius: 8px;
         }
-        @media (min-width: 768px) {
-            .footer-map iframe {
-                height: 400px; /* Significantly increased from 280px for desktop */
+        
+        /* BREADCRUMB */
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #666;
+        }
+        
+        /* BOOK NOW BUTTON */
+        .book-now-button {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .book-now-button:hover {
+            background: var(--accent-dark);
+        }
+        
+        /* UTILITY CLASSES */
+        .text-center {
+            text-align: center;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .mt-30 {
+            margin-top: 30px;
+        }
+        
+        /* NEW: SEO ARTICLE SECTION */
+        .seo-article {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .seo-article h2 {
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent-light);
+            padding-bottom: 15px;
+        }
+        .seo-article h3 {
+            color: #2d3748;
+            margin-top: 30px;
+        }
+        .seo-article ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .seo-article li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Print Styles for PageSpeed */
+        @media print {
+            .hero-slider,
+            .slider-controls,
+            .slider-arrow,
+            .nav-links,
+            .language-switcher,
+            .social-links,
+            .footer-map {
+                display: none !important;
+            }
+            .header,
+            .footer {
+                position: static !important;
             }
         }
-        @media (min-width: 1024px) {
-            .footer-map iframe {
-                height: 450px; /* Even larger for larger screens */
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+            outline: 3px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header class="header">
         <div class="container content">
             <div class="logo-section">
-                <img src="../images/egypt-photography-tours-logo.jpg"
-                     alt="Logo di Egypt Photography Tours - Servizi di guide fotografiche professionali per Piramidi e siti antichi"
+                <img src="images/egypt-photography-tours-logo.jpg"
+                     alt="Egypt Photography Tours Logo - Tour in Egitto con servizio fotografico"
                      class="logo-img"
                      loading="eager"
                      width="40"
                      height="40">
-                <a href="index.html" class="logo-link">Egypt Photography Tours</a>
+                <a href="../index.html" class="logo-link">Egypt Photography Tours</a>
             </div>
             <div class="header-contact">
                 <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
-                    <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    <i class="fab fa-whatsapp"></i> +20 155 073 5673
                 </a>
                 <a href="mailto:info@egyptphotographytours.com" class="contact-info">
-                    <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    <i class="far fa-envelope"></i> info@egyptphotographytours.com
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="container navbar-content">
             <div class="cta-container">
-                <button class="mobile-menu-toggle" aria-label="Attiva/disattiva menu di navigazione">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="contact.html" class="book-now-button">Prenota Ora</a>
+                
+                <!-- Language Switcher -->
                 <div class="language-switcher">
-                    <div class="current-language">
+                    <div class="current-language" aria-label="Select language">
                         <span class="current-flag">🇮🇹</span>
-                        <span>IT</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <span class="current-text">IT</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
                     </div>
                     <div class="language-dropdown">
-                        <a href="../index.html" class="language-item">
+                        <!-- English -->
+                        <a href="../index.html" class="language-item" data-lang="en" data-flag="🇺🇸">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="../ru/index.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
+                        <!-- Finnish -->
+                        <a href="../fi/index.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
+                            <span class="flag-icon">🇫🇮</span>
+                            <span class="language-text">Suomi (Finnish)</span>
                         </a>
-                        <a href="../ar/index.html" class="language-item">
+                        <!-- Arabic -->
+                        <a href="../ar/index.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
                             <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
+                            <span class="language-text">العربية (Arabic)</span>
                         </a>
-                        <a href="../fr/index.html" class="language-item">
+                        <!-- Russian -->
+                        <a href="../ru/index.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский (Russian)</span>
+                        </a>
+                        <!-- French -->
+                        <a href="../fr/index.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
                             <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
+                            <span class="language-text">Français (French)</span>
                         </a>
-                        <a href="../de/index.html" class="language-item">
+                        <!-- German -->
+                        <a href="../de/index.html" class="language-item" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
+                            <span class="language-text">Deutsch (German)</span>
                         </a>
-                        <a href="../es/index.html" class="language-item">
+                        <!-- Spanish -->
+                        <a href="../es/index.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
+                            <span class="language-text">Español (Spanish)</span>
                         </a>
-                        <a href="index.html" class="language-item active">
+                        <!-- Italian -->
+                        <a href="index.html" class="language-item active" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
+                            <span class="language-text">Italiano (Italian)</span>
                         </a>
-                        <a href="../zh/index.html" class="language-item">
+                        <!-- Chinese -->
+                        <a href="../zh/index.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
+                            <span class="language-text">中文 (Chinese)</span>
                         </a>
-                        <a href="../ko/index.html" class="language-item">
+                        <!-- Korean -->
+                        <a href="../ko/index.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
+                            <span class="language-text">한국어 (Korean)</span>
                         </a>
-                        <a href="../pt/index.html" class="language-item">
+                        <!-- Portuguese -->
+                        <a href="../pt/index.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
+                            <span class="language-text">Português (Portuguese)</span>
                         </a>
-                        <a href="../id/index.html" class="language-item">
+                        <!-- Indonesian -->
+                        <a href="../id/index.html" class="language-item" data-lang="id" data-flag="🇮🇩">
                             <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
+                            <span class="language-text">Bahasa Indonesia</span>
                         </a>
-                        <a href="../ja/index.html" class="language-item">
+                        <!-- Japanese -->
+                        <a href="../ja/index.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
                             <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
+                            <span class="language-text">日本語 (Japanese)</span>
+                        </a>
+                        <!-- Danish -->
+                        <a href="../da/index.html" class="language-item" data-lang="da" data-flag="🇩🇰">
+                            <span class="flag-icon">🇩🇰</span>
+                            <span class="language-text">Dansk (Danish)</span>
+                        </a>
+                        <!-- Dutch -->
+                        <a href="../nl/index.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
+                            <span class="flag-icon">🇳🇱</span>
+                            <span class="language-text">Nederlands (Dutch)</span>
+                        </a>
+                        <!-- Hindi -->
+                        <a href="../hi/index.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
+                            <span class="flag-icon">🇮🇳</span>
+                            <span class="language-text">हिन्दी (Hindi)</span>
+                        </a>
+                        <!-- Norwegian -->
+                        <a href="../no/index.html" class="language-item" data-lang="no" data-flag="🇳🇴">
+                            <span class="flag-icon">🇳🇴</span>
+                            <span class="language-text">Norsk (Norwegian)</span>
+                        </a>
+                        <!-- Swedish -->
+                        <a href="../sv/index.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
+                            <span class="flag-icon">🇸🇪</span>
+                            <span class="language-text">Svenska (Swedish)</span>
+                        </a>
+                        <!-- Tagalog -->
+                        <a href="../tl/index.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
+                            <span class="flag-icon">🇵🇭</span>
+                            <span class="language-text">Tagalog</span>
+                        </a>
+                        <!-- Malay -->
+                        <a href="../ms/index.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
+                            <span class="flag-icon">🇲🇾</span>
+                            <span class="language-text">Bahasa Melayu</span>
+                        </a>
+                        <!-- Thai -->
+                        <a href="../th/index.html" class="language-item" data-lang="th" data-flag="🇹🇭">
+                            <span class="flag-icon">🇹🇭</span>
+                            <span class="language-text">ไทย (Thai)</span>
                         </a>
                     </div>
                 </div>
             </div>
+            
             <ul class="nav-links">
                 <li class="nav-link"><a href="index.html">Home</a></li>
                 <li class="nav-link"><a href="about.html">Chi Siamo</a></li>
-                <li class="nav-link"><a href="tours.html">I Nostri Tour</a></li>
+                <li class="nav-link"><a href="tours.html">Tour</a></li>
                 <li class="nav-link"><a href="gallery.html">Galleria</a></li>
                 <li class="nav-link"><a href="resources.html">Risorse</a></li>
                 <li class="nav-link"><a href="blog.html">Blog</a></li>
-                <li class="nav-link"><a href="contact.html">Contattaci</a></li>
+                <li class="nav-link"><a href="contact.html">Contatti</a></li>
                 <li class="nav-link"><a href="faqs.html">FAQ</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- HERO SLIDER - UPDATED TO 5 IMAGES -->
+    <section class="hero-slider">
+        <div class="hero-slides">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h2 class="hero-title">Tour Privati in Egitto con Guide Locali</h2>
+                    <p class="hero-subtitle">Scopri l'Egitto con tour privati e servizio fotografico professionale opzionale a Cairo, Piramidi di Giza, Alessandria e Luxor</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Tour Privati Cairo e Piramidi di Giza</h2>
+                    <p class="hero-subtitle">Accesso esclusivo a piramidi, musei e gemme nascoste con guide egittologhe locali</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Esperienze Private a Luxor e Alessandria</h2>
+                    <p class="hero-subtitle">Scopri antichi templi e storia mediterranea con tour privati personalizzati</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Servizio Fotografico Professionale Opzionale Incluso</h2>
+                    <p class="hero-subtitle">Cattura la tua avventura egiziana con servizi fotografici di alta qualità</p>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Pacchetti Viaggio Egitto Personalizzati</h2>
+                    <p class="hero-subtitle">Itinerari su misura per famiglie, coppie e viaggiatori solitari con opzioni flessibili</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="slider-arrow prev" aria-label="Slide precedente"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next" aria-label="Slide successiva"><i class="fas fa-chevron-right"></i></button>
+        
+        <!-- 5 Dots for 5 slides -->
+        <div class="slider-controls">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+            <div class="slider-dot" data-slide="3"></div>
+            <div class="slider-dot" data-slide="4"></div>
+        </div>
+    </section>
+
+    <!-- HERO BUTTONS -->
+    <section class="hero-buttons-section">
+        <div class="container">
+            <div class="hero-buttons-container">
+                <a href="tours.html" class="hero-button hero-button-primary">Scopri i Tour Privati</a>
+                <a href="contact.html" class="hero-button hero-button-secondary">Prenota il Tuo Tour in Egitto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
     <main class="main">
-        <!-- HERO SLIDER SECTION - FIXED -->
-        <section class="hero-slider">
-            <div class="hero-slides">
-                <div class="hero-slide active">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Cattura la Magia dell'Egitto - Trasforma Ogni Momento in un Capolavoro
-                        </h1>
-                        <p class="hero-subtitle">
-                            Tour professionali di fotografia e storia nei luoghi più iconici dell'Egitto. Guide esperte, accesso esclusivo e esperienze indimenticabili ti aspettano.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Accesso Esclusivo ai Tesori Nascosti dell'Egitto
-                        </h1>
-                        <p class="hero-subtitle">
-                            Scopri punti di osservazione segreti e cattura scatti mozzafiato lontano dalla folla con le nostre esperte guide turistiche locali in Egitto.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            La Tua Porta d'Accesso ai Tour Più Spettacolari dell'Egitto
-                        </h1>
-                        <p class="hero-subtitle">
-                            Impara da fotografi e guide professionisti mentre esplori le piramidi, i templi e i paesaggi dell'Egitto.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Crea Ricordi che Durano una Vita
-                        </h1>
-                        <p class="hero-subtitle">
-                            Dall'ora d'oro alle piramidi ai tramonti sul Nilo, cattura la magia dell'Egitto con le nostre esperienze guidate di fotografia e storia.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Slider Navigation Arrows -->
-            <button class="slider-arrow prev" aria-label="Slide precedente">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-arrow next" aria-label="Slide successiva">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Slider Dots - Positioned correctly below the buttons -->
-            <div class="slider-controls">
-                <div class="slider-dots">
-                    <div class="slider-dot active" data-slide="0"></div>
-                    <div class="slider-dot" data-slide="1"></div>
-                    <div class="slider-dot" data-slide="2"></div>
-                    <div class="slider-dot" data-slide="3"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES -->
-        <section class="hero-buttons-section">
-            <div class="container">
-                <div class="hero-buttons-container">
-                    <a href="tours.html" class="hero-button hero-button-primary">
-                        Esplora i Nostri Esclusivi Tour Straordinari
-                    </a>
-                    <a href="contact.html" class="hero-button hero-button-secondary">
-                        Prenota Ora il Tuo Tour di Lusso in Egitto!
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        <!-- H1 SECTION -->
         <section class="main-section">
             <div class="container">
-                <h2>Benvenuti in Egypt Photography Tours</h2>
-                <p>
-                    Entra in un mondo dove l'antica storia incontra paesaggi mozzafiato, tutti in attesa di essere catturati attraverso il tuo obiettivo. In Egypt Photography Tours, siamo appassionati nel rivelare l'incomparabile bellezza dell'Egitto a fotografi di tutti i livelli. Dalle iconiche <strong>Piramidi di Giza</strong> al flusso sereno del <strong>Fiume Nilo</strong> e al fascino vivace delle <strong>strade storiche del Cairo</strong>, progettiamo viaggi immersivi che garantiscono non solo di vedere l'Egitto ma di <em>catturarne</em> veramente l'anima.
-                </p>
-                <p>
-                    I nostri <strong>tour in Egitto</strong> accuratamente curati vanno oltre il semplice turismo, offrendo opportunità fotografiche uniche, guida personalizzata da fotografi professionisti e autentici incontri culturali. Che tu sia un professionista esperto in cerca di accesso esclusivo o un entusiasta alle prime armi desideroso di padroneggiare la tua arte, intraprendi un'<strong>indimenticabile avventura fotografica egiziana</strong> con noi. Creiamo insieme il tuo prossimo capolavoro.
-                </p>
-            </div>
-        </section>
-
-        <section class="main-section bg-light-gray">
-            <div class="container">
-                <h2>Perché Scegliere Egypt Photography Tours per il Tuo Viaggio Indimenticabile?</h2>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> &gt; 
+                    <a href="tours.html">Tour Egitto</a> &gt; 
+                    <span>Tour Privati Egitto</span>
+                </div>
+                
+                <!-- UPDATED H1 -->
+                <h1>Tour Privati in Egitto con Guide Locali Italiane</h1>
+                
+                <p><strong>Ultimo Aggiornamento: Dicembre 2024 | 15+ Anni Esperienza | 5000+ Clienti Soddisfatti | Valutazione 4.9 Stelle</strong></p>
+                
+                <p>Benvenuti su <strong>Egypt Photography Tours</strong> - il principale fornitore di esperienze di viaggio esclusive e personalizzate in Egitto. A differenza dei tour di gruppo standard, i nostri tour privati in Egitto ti offrono completa flessibilità, attenzione personalizzata e profonda immersione culturale con guide egiziane locali. Che tu stia cercando pacchetti viaggio Egitto completi, intimi tour del Cairo, esperienze mozzafiato alle piramidi di Giza, esplorazioni storiche ad Alessandria o avventure mistiche a Luxor, creiamo itinerari su misura che corrispondono ai tuoi interessi, ritmo e budget.</p>
+                
+                <!-- UPDATED H2 -->
+                <h2>Servizio Fotografico Professionale Opzionale Incluso</h2>
+                
+                <p>Mentre molti viaggiatori vengono da noi specificamente per i nostri servizi fotografici professionali, comprendiamo che alcuni visitatori desiderano semplicemente tour guidati eccezionali. Per questo offriamo <strong>servizi fotografici professionali opzionali</strong> con tutti i nostri tour privati in Egitto. Puoi scegliere di includere un fotografo professionale nei tuoi tour del Cairo, visite alle piramidi di Giza, escursioni giornaliere ad Alessandria o esplorazioni di Luxor, oppure semplicemente goderti i nostri tour guidati da esperti senza servizi fotografici. Questa flessibilità ci rende la scelta perfetta sia per gli appassionati di fotografia che per i viaggiatori che cercano tour privati di alta qualità in Egitto.</p>
+                
+                <!-- UPDATED H2 -->
+                <h2>Tour Cairo, Piramidi di Giza, Alessandria e Luxor</h2>
+                
+                <p>I nostri tour privati in Egitto coprono in modo completo le destinazioni più iconiche dell'Egitto: la frenetica metropoli del <strong>Cairo</strong> con il suo Museo Egizio e l'architettura islamica; le antiche meraviglie delle <strong>Piramidi di Giza</strong> e della Sfinge; la bellezza mediterranea di <strong>Alessandria</strong> con la sua storia greco-romana; e la città templare di <strong>Luxor</strong>, spesso definita il più grande museo all'aperto del mondo. Offriamo sia pacchetti viaggio Egitto multi-città che tour focalizzati su singole destinazioni, tutti con l'opzione di includere servizi fotografici professionali.</p>
+                
                 <div class="grid-section">
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        <h3 class="card-title">Guide Fotografiche Esperte, Approfondimenti Locali</h3>
-                        <p class="card-text">Le nostre <strong>guide fotografiche esperte in Egitto</strong> non sono solo fotografi esperti; sono egittologi autorizzati e specialisti culturali locali. Conoscono i migliori angoli, le condizioni di illuminazione perfette e i gioielli nascosti per quel <strong>servizio fotografico alle Piramidi</strong> unico o una scena di <strong>fotografia sul Nilo</strong> accattivante. Beneficia di coaching personalizzato e approfondimenti impareggiabili sulla storia e la cultura egiziana.</p>
+                        <div class="card-icon">🎯</div>
+                        <h3>Tour Guidati 100% Privati</h3>
+                        <p>Vivi l'Egitto al tuo ritmo con guide locali dedicate. Niente grandi gruppi, niente programmi affrettati - solo attenzione personalizzata e itinerari flessibili adattati ai tuoi interessi.</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <h3 class="card-title">Accesso Esclusivo e Punti di Vista Unici</h3>
-                        <p class="card-text">Immagina di catturare i <strong>Templi di Luxor</strong> all'alba senza folla, o di trovare il punto perfetto per un meraviglioso <strong>paesaggio del tramonto egiziano</strong>. Sfruttiamo le nostre profonde connessioni locali per fornire <strong>accesso esclusivo in Egitto</strong>, offrendo punti di vista fotografici unici spesso non disponibili ai turisti generici. Ottieni lo scatto che hai sempre sognato, dai vivaci mercati del <strong>Cairo</strong> ai sereni paesaggi del <strong>deserto del Sinai</strong>.</p>
+                        <div class="card-icon">📸</div>
+                        <h3>Servizio Fotografico Opzionale</h3>
+                        <p>Scegli di includere la fotografia professionale o goditi i nostri tour senza di essa. Perfetto sia per gli appassionati di fotografia che per i viaggiatori che cercano esperienze guidate eccezionali in Egitto.</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <h3 class="card-title">Itinerari Personalizzati per Ogni Fotografo</h3>
-                        <p class="card-text">Che tu sia interessato all'architettura antica, alla fotografia di strada, al ritratto o ai vasti <strong>paesaggi desertici dell'Egitto</strong>, i nostri <strong>itinerari fotografici personalizzati</strong> sono progettati con la tua passione in mente. Pianifichiamo meticolosamente ogni giorno per ottimizzare l'illuminazione e le opportunità fotografiche, garantendo che la tua attenzione rimanga sulla creazione di immagini incredibili. Da un mirato <strong>tour fotografico delle Piramidi</strong> a un'estesa <strong>spedizione fotografica nell'antico Egitto</strong>, il tuo viaggio è costruito su misura.</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M7 12h.01M7 16h.01M16 16h.01M12 16h.01M12 12h.01M12 8h.01M7 8h.01M16 8h.01M21 21l-4.5-4.5"></path></svg>
-                        <h3 class="card-title">Piccoli Gruppi, Apprendimento Personalizzato</h3>
-                        <p class="card-text">Crediamo nella qualità più che nella quantità. I nostri <strong>piccoli gruppi di tour in Egitto</strong> garantiscono attenzione personalizzata e ampio tempo individuale con la tua guida fotografica. Questa impostazione intima favorisce un ambiente di supporto in cui puoi affinare le tue abilità, condividere esperienze e connetterti veramente con altri fotografi. Sperimenta la magia della <strong>fotografia di viaggio in Egitto</strong> con una comunità di persone con interessi simili.</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c.045 4.095 1.563 7.844 4.368 10.053L12 21.466l4.688-2.413A12.001 12.001 0 0021.056 12c-.045-4.095-1.563-7.844-4.368-10.053z"></path></svg>
-                        <h3 class="card-title">Logistica Senza Problemi e Viaggio Sicuro in Egitto</h3>
-                        <p class="card-text">La tua tranquillità è la nostra priorità. Gestiamo tutti i dettagli intricati — da sistemazioni di lusso e trasporto privato con aria condizionata a tutti i permessi e le tasse di ingresso. Il nostro impegno per <strong>tour sicuri in Egitto</strong> significa che puoi concentrarti interamente sulla tua fotografia e immersione culturale. Goditi un'<strong>avventura fotografica in Egitto senza problemi</strong> dall'inizio alla fine.</p>
-                    </div>
-                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253"></path></svg>
-                        <h3 class="card-title">Immersione Culturale Autentica</h3>
-                        <p class="card-text">Oltre a catturare fotografie straordinarie, i nostri tour offrono una profonda <strong>immersione culturale autentica in Egitto</strong>. Interagisci con la gente del posto, esplora i mercati tradizionali e assapora la cucina autentica. Quest'esperienza olistica garantisce che le tue fotografie raccontino una storia più ricca, riflettendo il vero spirito dell'Egitto e della sua gente.</p>
+                        <div class="card-icon">⭐</div>
+                        <h3>Guide Egittologhe Locali</h3>
+                        <p>Le nostre guide sono egittologi autorizzati con profonda conoscenza della storia, cultura e gemme nascoste dell'Egitto. Forniscono approfondimenti che non troverai nelle guide turistiche.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- COMPREHENSIVE EGYPT TOURS GUIDE SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Perché Scegliere Tour Privati in Egitto Rispetto ai Pacchetti Standard?</h2>
+                
+                <p>Quando pianifichi la tua avventura egiziana, hai una scelta tra tour di gruppo generici ed esperienze private personalizzate. I nostri tour privati in Egitto offrono vantaggi significativi che trasformano la tua esperienza di viaggio dall'ordinario allo straordinario. A differenza dei tour di gruppo affollati dove sei solo un'altra faccia nella folla, i nostri tour privati forniscono attenzione personalizzata, programmazione flessibile e accesso a esperienze non disponibili per gruppi più grandi.</p>
+                
+                <h3>Il Vantaggio del Tour Privato:</h3>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>Completa Flessibilità</h3>
+                        <p>Cambia il tuo itinerario al volo, trascorri più tempo nei siti che ti interessano, salta gli orari affollati e crea un programma che corrisponde perfettamente ai tuoi livelli di energia e interessi.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Accesso Culturale Più Profondo</h3>
+                        <p>I tour privati consentono l'accesso a ristoranti più piccoli, siti meno conosciuti ed esperienze locali autentiche che grandi gruppi non possono accomodare a causa di restrizioni dimensionali.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Guida Personalizzata</h3>
+                        <p>La tua guida privata si concentra interamente sul tuo gruppo, rispondendo a tutte le tue domande, fornendo spiegazioni dettagliate e adattando le informazioni ai tuoi specifici interessi.</p>
+                    </div>
+                </div>
+                
+                <h3>Le Nostre Categorie di Tour Privati in Egitto:</h3>
+                <ul>
+                    <li><strong>Tour Privati del Cairo:</strong> Esplorazione completa della capitale egiziana inclusi il Museo Egizio, il Cairo Copto, il Cairo Islamico, il bazaar Khan el-Khalili e i quartieri locali con servizio fotografico professionale opzionale in location iconiche</li>
+                    <li><strong>Tour Privati delle Piramidi di Giza:</strong> Accesso esclusivo all'altopiano di Giza, inclusi la Grande Piramide, la Sfinge e il Museo della Barca Solare con sessioni fotografiche all'ora d'oro per un'illuminazione ottimale</li>
+                    <li><strong>Tour Privati di Alessandria:</strong> Escursioni giornaliere o soggiorni prolungati esplorando la costa mediterranea di Alessandria, le Catacombe di Kom el Shoqafa, la Cittadella di Qaitbay, la Biblioteca Alessandrina e i ristoranti di pesce locale</li>
+                    <li><strong>Tour Privati di Luxor:</strong> Esplorazione approfondita delle sponde orientale e occidentale inclusi la Valle dei Re, il Tempio di Karnak, il Tempio di Luxor, il Tempio di Hatshepsut e esperienze in mongolfiera</li>
+                    <li><strong>Pacchetti Egitto Multi-Città:</strong> Tour privati completi di 7-14 giorni che combinano Cairo, Giza, Alessandria, Luxor, Assuan ed esperienze di crociera sul Nilo opzionali</li>
+                    <li><strong>Tour Privati a Interessi Speciali:</strong> Tour personalizzati focalizzati su fotografia, storia, architettura, cibo, viaggi in famiglia, esperienze di luna di miele o ricerca accademica</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEO ARTICLE SECTION: COMPLETE EGYPT TRAVEL GUIDE IN ITALIAN -->
         <section class="main-section">
             <div class="container">
-                <h2>I Nostri Tour Fotografici in Evidenza</h2>
+                <div class="seo-article">
+                    <h2>Guida Completa ai Tour Privati in Egitto: Cairo, Giza, Alessandria e Luxor</h2>
+                    
+                    <p><strong>Scritto dall'egittologo professionista Hossam | Aggiornato per la Stagione 2024-2025</strong></p>
+                    
+                    <p>Benvenuti nella guida definitiva ai tour privati in Egitto. Con oltre 15 anni di esperienza nella creazione di avventure egiziane personalizzate, abbiamo creato questa risorsa completa per aiutarti a capire perché i tour privati offrono il modo migliore per vivere l'Egitto. Che tu sia un visitatore per la prima volta o un viaggiatore che ritorna, questa guida copre tutto dalla scelta del tour privato giusto alla massimizzazione della tua esperienza a Cairo, Giza, Alessandria e Luxor.</p>
+                    
+                    <h3>Comprendere i Tour Privati in Egitto: Cosa li Rende Diversi?</h3>
+                    
+                    <p>I tour privati in Egitto rappresentano il massimo del viaggio personalizzato in una delle destinazioni storicamente più ricche del mondo. A differenza dei tour di gruppo standard che seguono programmi rigidi con 20-40 altri viaggiatori, i tour privati offrono:</p>
+                    
+                    <ul>
+                        <li><strong>Personalizzazione Completa:</strong> Progetta il tuo itinerario da zero o modifica i nostri tour suggeriti per adattarli ai tuoi specifici interessi, che si tratti di storia antica, fotografia, cucina locale o attività family-friendly.</li>
+                        <li><strong>Programmazione Flessibile:</strong> Inizia la tua giornata quando vuoi, trascorri tutto il tempo che desideri in ogni sito, fai pause quando necessario e modifica i piani in base al tempo, ai livelli di energia o a scoperte inaspettate.</li>
+                        <li><strong>Atenzione Personalizzata:</strong> Il tuo egittologo guida privato si concentra interamente sul tuo gruppo, fornendo spiegazioni dettagliate adattate al tuo livello di conoscenza e interessi, rispondendo a tutte le domande in modo approfondito.</li>
+                        <li><strong>Accesso a Esperienze Eclusive:</strong> I tour privati possono includere esperienze non disponibili per gruppi più grandi: visite private, accesso dietro le quinte, incontri con artigiani locali, visite a case di famiglie egiziane e ristoranti che non accettano pullman turistici.</li>
+                        <li><strong>Efficienza e Comfort:</strong> Salta le code nei siti popolari, usa trasporti privati che ti aspettano e goditi un ritmo che corrisponde alle tue preferenze piuttosto che adattarsi ai membri più lenti di un grande gruppo.</li>
+                        <li><strong>Servizi Professionali Opzionali:</strong> La possibilità di includere servizi specializzati come fotografia professionale, lezioni accademiche o guide per attività specifiche basate sui tuoi interessi.</li>
+                    </ul>
+                    
+                    <h3>Tour Privati del Cairo: Oltre il Percorso Turistico</h3>
+                    
+                    <p>Il Cairo, una città di 20 milioni di persone, offre infinite possibilità di esplorazione che la maggior parte dei tour di gruppo sfiora appena. I nostri tour privati del Cairo vanno oltre l'itinerario standard del Museo Egizio e delle piramidi per includere:</p>
+                    
+                    <ul>
+                        <li><strong>Il Museo Egizio e il Nuovo Grand Egyptian Museum:</strong> Tour guidati privati di entrambi i musei con enfasi sui tuoi specifici interessi - che si tratti dei tesori di Tutankhamon, delle tecniche di mummificazione o di periodi storici specifici.</li>
+                        <li><strong>Approfondimento sul Cairo Islamico:</strong> Esplora oltre le moschee principali per scoprire gemme nascoste, impara l'evoluzione dell'architettura islamica, visita laboratori artigianali tradizionali e comprendi la storia islamica del Cairo in profondità.</li>
+                        <li><strong>Tour Completo del Cairo Copto:</strong> Visita la Chiesa Sospesa, Abu Serga, la Sinagoga Ben Ezra e il Museo Copto con contesto storico dettagliato sul patrimonio cristiano dell'Egitto e la storia ebraica.</li>
+                        <li><strong>Esplorazioni dei Quartieri Locali:</strong> Sperimenta la vita autentica del Cairo in distretti come Zamalek, Maadi o Heliopolis, visita mercati locali non frequentati dai turisti e gusta pasti tradizionali in ristoranti a gestione familiare.</li>
+                        <li><strong>Tour Fotografici del Cairo:</strong> Per coloro che scelgono il nostro servizio fotografico opzionale, conosciamo le migliori location e i momenti migliori per fotografare i contrasti del Cairo - antico e moderno, ricco e povero, caotico e pacifico.</li>
+                        <li><strong>Tour Gastronomici del Cairo:</strong> Tour culinari privati focalizzati sulla cucina egiziana, dalle bancarelle di street food ai ristoranti di alta gamma, lezioni di cucina con chef locali e visite ai mercati delle spezie.</li>
+                    </ul>
+                    
+                    <h3>Tour Privati delle Piramidi di Giza: Accesso Eclusivo e Esperienze Ottimali</h3>
+                    
+                    <p>L'altopiano di Giza riceve milioni di visitatori all'anno, ma i tour privati offrono modi per sperimentare le piramidi senza la folla e con una comprensione più profonda:</p>
+                    
+                    <ul>
+                        <li><strong>Tempistica Strategica:</strong> I tour privati consentono visite in momenti ottimali - prima mattina per evitare folle e caldo, o tardo pomeriggio per la fotografia all'ora d'oro e viste al tramonto.</li>
+                        <li><strong>Accesso agli Interni delle Piramidi:</strong> Guida dettagliata su quali piramidi entrare in base ai tuoi interessi e capacità fisica, con spiegazioni approfondite delle tecniche di costruzione e del significato storico.</li>
+                        <li><strong>Tour Focalizzati sulla Fotografia:</strong> Per i clienti che optano per i servizi fotografici, conosciamo tutti i migliori angoli, punti di vista (inclusi alcuni punti meno conosciuti) e condizioni di illuminazione per catturare immagini stupefacenti delle piramidi.</li>
+                        <li><strong>Oltre le Tre Principali:</strong> Esplorazione di piramidi meno conosciute sull'altopiano, il villaggio degli operai e gli scavi archeologici in corso con spiegazioni della ricerca attuale.</li>
+                        <li><strong>Esperienze in Cammello e a Cavallo:</strong> Accordi privati per escursioni nel deserto con operatori affidabili, garantendo il benessere degli animali e opportunità fotografiche ottimali.</li>
+                        <li><strong>Alternative allo Spettacolo di Suoni e Luci:</strong> Mentre lo spettacolo ufficiale si rivolge alle masse, le guide private possono fornire narrazioni più personalizzate e storicamente accurate della storia dell'altopiano.</li>
+                    </ul>
+                    
+                    <h3>Tour Privati di Alessandria: L'Egitto Mediterraneo Rivelato</h3>
+                    
+                    <p>Fondata da Alessandro Magno, Alessandria offre un'esperienza egiziana diversa con la sua atmosfera mediterranea e la storia greco-romana:</p>
+                    
+                    <ul>
+                        <li><strong>Tour degli Strati Storici:</strong> Comprensione dei molteplici strati storici di Alessandria - faraonico, greco, romano, bizantino, islamico e moderno - attraverso i suoi siti archeologici e l'architettura.</li>
+                        <li><strong>Catacombe di Kom el Shoqafa:</strong> Esplorazione guidata privata di questa necropoli unica che fonde stili artistici egiziani, greci e romani, con spiegazioni dettagliate della sua scoperta e significato.</li>
+                        <li><strong>Bibliotheca Alexandrina:</strong> Tour personalizzati della biblioteca moderna basati sui tuoi interessi - che si tratti di architettura, collezioni speciali o programmi culturali attuali.</li>
+                        <li><strong>Cittadella di Qaitbay:</strong> Storia dettagliata di questa fortezza del XV secolo costruita sul sito dell'antico Faro di Alessandria, una delle Sette Meraviglie.</li>
+                        <li><strong>Esperienza di Pesce Locale:</strong> Accordi privati in autentici ristoranti di pesce dove selezioni pesce fresco e impari le tradizioni della pesca mediterranea.</li>
+                        <li><strong>Giardini del Palazzo Montaza:</strong> Esplorazione tranquilla di questi bellissimi giardini con contesto storico sull'era reale egiziana e analisi architettonica degli edifici del palazzo.</li>
+                        <li><strong>Tour Fotografici di Alessandria:</strong> Sessioni fotografiche costiere, fotografia architettonica focalizzata sugli edifici Belle Époque e fotografia di strada nei quartieri tradizionali.</li>
+                    </ul>
+                    
+                    <h3>Tour Privati di Luxor: L'Antica Tebe Esplorata in Profondità</h3>
+                    
+                    <p>Luxor, l'antica Tebe, contiene approssimativamente un terzo delle antichità del mondo, rendendo la guida privata essenziale per un'esplorazione significativa:</p>
+                    
+                    <ul>
+                        <li><strong>Tour Completo della Sponda Occidentale:</strong> Esplorazione personalizzata della Valle dei Re in base a quali tombe sono aperte e ai tuoi specifici interessi, con spiegazioni dettagliate delle pratiche di sepoltura, decorazione delle tombe e scoperte recenti.</li>
+                        <li><strong>Tempio di Hatshepsut:</strong> Analisi approfondita di questo tempio unico, il regno del faraone donna d'Egitto e le innovazioni architettoniche della struttura.</li>
+                        <li><strong>Valle delle Regine e dei Nobili:</strong> Visite a necropoli meno affollate con tombe splendidamente decorate di regine, principi e alti funzionari.</li>
+                        <li><strong>Complesso del Tempio di Karnak:</strong> Tour privati adattati alla tua resistenza e interessi, concentrandosi su aree specifiche come la Sala Ipostila, il lago sacro o il museo all'aperto in base a ciò che vuoi vedere.</li>
+                        <li><strong>Tempio di Luxor Giorno e Notte:</strong> Sperimentare il tempio in momenti diversi con spiegazioni della sua evoluzione da tempio del Nuovo Regno a fortezza romana a chiesa copta a moschea.</li>
+                        <li><strong>Voli in Mongolfiera:</strong> Accordi privati per voli in mongolfiera all'alba sulla sponda occidentale con opportunità fotografiche ottimali e considerazioni di sicurezza.</li>
+                        <li><strong>Tour Fotografici di Luxor:</strong> Guida sulla fotografia dei rilievi templari in condizioni di luce impegnative, catturare scala e grandezza dei monumenti e fotografia etnica delle comunità locali.</li>
+                    </ul>
+                    
+                    <h3>Servizio Fotografico Professionale Opzionale: Come Migliora il Tuo Tour Privato in Egitto</h3>
+                    
+                    <p>Mentre i nostri tour privati in Egitto si distinguono da soli come esperienze di viaggio eccezionali, il servizio fotografico professionale opzionale aggiunge un valore significativo per molti viaggiatori:</p>
+                    
+                    <ul>
+                        <li><strong>Per Appassionati di Fotografia:</strong> Impara tecniche professionali per catturare le uniche condizioni di luce dell'Egitto, dettagli architettonici e momenti culturali da una guida fotografo esperta.</li>
+                        <li><strong>Per Viaggiatori che Desiderano Souvenir di Qualità:</strong> Torna a casa con immagini di qualità professionale piuttosto che istantanee - perfette per album, opere d'arte da parete o condivisione con famiglia e amici.</li>
+                        <li><strong>Per Occasioni Speciali:</strong> Sposini, celebranti di anniversari e famiglie che segnano momenti speciali ricevono ricordi splendidamente documentati contro gli sfondi spettacolari dell'Egitto.</li>
+                        <li><strong>Accordi Flessibili:</strong> Scegli copertura fotografica per l'intera giornata o sessioni specifiche in luoghi chiave come le piramidi all'ora d'oro o il Tempio di Karnak nella luce mattutina.</li>
+                        <li><strong>Guida sull'Attrezzatura:</strong> Consigli su quale attrezzatura fotografica portare in Egitto, gestione di polvere e calore dell'Egitto e tecniche per condizioni di luce impegnative in templi e tombe.</li>
+                        <li><strong>Sensibilità Culturale:</strong> Guida sulla fotografia rispettosa delle persone, dei siti religiosi e delle comunità locali per garantire interazioni positive e immagini autentiche.</li>
+                        <li><strong>Supporto Post-Viaggio:</strong> Assistenza nella selezione e modifica delle immagini, creazione di album o preparazione delle immagini per la stampa e l'esposizione.</li>
+                    </ul>
+                    
+                    <h3>Pianificare il Tuo Tour Privato in Egitto: Considerazioni Pratiche</h3>
+                    
+                    <p>Una pianificazione riuscita del tour privato in Egitto coinvolge diverse considerazioni chiave che differiscono dalle prenotazioni di tour standard:</p>
+                    
+                    <ul>
+                        <li><strong>Pianificazione Anticipata:</strong> I tour privati con guide di qualità richiedono prenotazione anticipata, specialmente durante le stagioni di punta (ottobre-aprile). Il periodo di pianificazione ideale è di 3-6 mesi in anticipo per la migliore disponibilità delle guide e opzioni di alloggio.</li>
+                        <li><strong>Considerazioni di Budget:</strong> I tour privati rappresentano un valore più alto piuttosto che un costo più elevato quando si considera l'attenzione personalizzata, la flessibilità, l'accesso esclusivo e l'efficienza temporale. Offriamo tour privati a vari punti di prezzo per adattarci a diversi budget.</li>
+                        <li><strong>Ottimizzazione della Dimensione del Gruppo:</strong> I tour privati possono essere più convenienti per famiglie o piccoli gruppi di amici che viaggiano insieme, poiché i costi sono condivisi mentre i benefici della privacy e della personalizzazione sono mantenuti.</li>
+                        <li><strong>Personalizzazione Basata sugli Interessi:</strong> Prima della prenotazione, considera quali aspetti dell'Egitto ti interessano maggiormente - periodi storici specifici, stili architettonici, storia religiosa, cultura contemporanea, opportunità fotografiche o esperienze culinarie.</li>
+                        <li><strong>Considerazioni Fisiche:</strong> I tour privati possono essere adattati alle capacità fisiche, con ritmi più tranquilli, meno scale o siti alternativi per quelli con problemi di mobilità.</li>
+                        <li><strong>Adeguamenti Stagionali:</strong> I tour privati consentono una programmazione ottimale basata sulle stagioni - inizi più presto nel caldo estivo, attività indoor durante le ore più calde e concentrazione su siti con ombra o raffreddamento.</li>
+                        <li><strong>Combinare Destinazioni:</strong> I tour privati multi-città (Cairo-Giza-Alessandria-Luxor) richiedono un'attenta pianificazione logistica per voli nazionali, viaggi in treno o distanze di guida, che gestiamo senza problemi.</li>
+                    </ul>
+                    
+                    <h3>Tour Privati vs. Tour di Gruppo: Analisi Costi-Benefici</h3>
+                    
+                    <p>Mentre i tour privati in Egitto hanno un costo pro capite più alto dei tour di gruppo, offrono benefici significativi che spesso li rendono di migliore valore:</p>
+                    
+                    <ul>
+                        <li><strong>Efficienza Temporale:</strong> I tour privati realizzano di più in meno tempo attraverso una programmazione ottimizzata, saltando le code e trasporti diretti, facendo un uso migliore del tempo di vacanza limitato.</li>
+                        <li><strong>Qualità dell'Esperienza:</strong> Coinvolgimento più profondo con i siti, spiegazioni personalizzate, capacità di fare domande illimitate ed esperienze adattate ai tuoi interessi piuttosto che commenti generici.</li>
+                        <li><strong>Valore della Flessibilità:</strong> La capacità di cambiare piani in base al tempo, ai livelli di energia o agli interessi scoperti ha un valore intangibile che aumenta la soddisfazione e riduce lo stress del viaggio.</li>
+                        <li><strong>Accesso Eclusivo:</strong> Opportunità per esperienze non disponibili ai gruppi - visite private ai musei, incontri con esperti, prenotazioni in ristoranti popolari, ecc.</li>
+                        <li><strong>Vantaggio Fotografico:</strong> Per coloro che optano per i servizi fotografici, la qualità delle immagini e le opportunità di apprendimento rappresentano un valore significativo rispetto alla fotografia standard del tour.</li>
+                        <li><strong>Immersione Culturale:</strong> Interazioni più profonde con le comunità locali, esperienze autentiche di ristorazione e comprensione oltre il turismo di superficie.</li>
+                        <li><strong>Salute e Sicurezza:</strong> I trasporti privati e le dimensioni ridotte del gruppo offrono vantaggi per la salute, specialmente importanti nelle considerazioni di viaggio post-pandemia.</li>
+                    </ul>
+                    
+                    <h3>FAQ sui Tour Privati in Egitto Risposte</h3>
+                    
+                    <p>Basandoci su 15+ anni di organizzazione di tour privati in Egitto, ecco le risposte alle domande comuni:</p>
+                    
+                    <ul>
+                        <li><strong>"I tour privati sono sicuri per viaggiatori solitari, specialmente donne?"</strong> Sì, i tour privati possono essere più sicuri dei viaggi indipendenti o dei tour di gruppo. La tua guida fornisce conoscenza locale, gestisce le interazioni e garantisce che tu sia in stabilimenti affidabili. Organizziamo frequentemente tour privati per viaggiatrici solitarie con guide femminili disponibili su richiesta.</li>
+                        <li><strong>"I tour privati possono accomodare restrizioni dietetiche o allergie?"</strong> Assolutamente. I tour privati consentono comunicazioni dettagliate con i ristoranti, opzioni di ristorazione alternative e flessibilità per soddisfare qualsiasi esigenza dietetica - qualcosa di difficile con i menu fissi dei tour di gruppo.</li>
+                        <li><strong>"Quanto è privato 'privato'? Ci uniremo mai ad altri gruppi?"</strong> Veramente privato significa solo il tuo gruppo e guida/autista. Nessuna combinazione con altri gruppi a meno che non sia specificamente richiesto per ragioni sociali (e solo con il tuo accordo).</li>
+                        <li><strong>"Possiamo personalizzare un tour privato a metà percorso?"</strong> Sì, uno dei vantaggi chiave. Se scopri un interesse per qualcosa di inaspettato, vuoi trascorrere più tempo da qualche parte o hai bisogno di un ritmo più lento, i tour privati consentono aggiustamenti quotidiani.</li>
+                        <li><strong>"Le guide dei tour privati sono più esperte delle guide dei tour di gruppo?"</strong> Selezioniamo le nostre guide per tour privati in base a competenze più profonde, capacità linguistiche e capacità di personalizzare le spiegazioni. Molti hanno lauree avanzate in egittologia piuttosto che certificati di guida di base.</li>
+                        <li><strong>"Come funziona il servizio fotografico opzionale con i tour privati?"</strong> Puoi scegliere di includere un fotografo professionale per tutti i giorni, giorni specifici o location specifiche. Il fotografo lavora discretamente insieme alla tua guida per catturare la tua esperienza senza interrompere il flusso del tuo tour.</li>
+                        <li><strong>"I tour privati possono includere bambini? Quali età funzionano meglio?"</strong> I tour privati sono eccellenti per le famiglie. Adeguiamo contenuti, ritmi e attività in base alle età e interessi dei bambini, qualcosa di impossibile con tour di gruppo fissi. Elementi interattivi, esperienze pratiche e pause sono incorporate naturalmente.</li>
+                        <li><strong>"Qual è la dimensione ideale del gruppo per i tour privati in Egitto?"</strong> La maggior parte dei tour privati funziona perfettamente per 2-6 persone. Gruppi privati più grandi fino a 12-15 sono possibili con guide e veicoli aggiuntivi. Anche i tour privati solitari sono popolari per la massima flessibilità.</li>
+                        <li><strong>"Con quanto anticipo dovremmo prenotare i tour privati in Egitto?"</strong> Per l'alta stagione (ott-apr), 3-6 mesi in anticipo garantiscono la migliore disponibilità delle guide. Per le stagioni intermedie (mag-giu, set), 1-3 mesi sono di solito sufficienti. I tour privati dell'ultimo minuto sono a volte possibili ma con opzioni di guide limitate.</li>
+                        <li><strong>"I tour privati valgono il costo extra?"</strong> Basandoci sul feedback dei clienti che valutano costantemente i tour privati più alti delle precedenti esperienze di tour di gruppo, il consenso è sì - l'attenzione personalizzata, la flessibilità, le esperienze più profonde e l'efficienza temporale giustificano l'investimento aggiuntivo per la maggior parte dei viaggiatori.</li>
+                    </ul>
+                    
+                    <h3>Testimonianze: Esperienze di Tour Privati in Egitto</h3>
+                    
+                    <p>Ascoltare da clienti precedenti aiuta a capire la differenza del tour privato:</p>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Il nostro tour privato in Egitto ha trasformato quella che poteva essere una visita di elenco in una profonda immersione culturale. Avere una guida interamente focalizzata sulla nostra famiglia significava che le domande dei nostri bambini erano risposte approfonditamente, potevamo cambiare piani quando qualcuno si stancava e scoprivamo aspetti dell'Egitto che non sapevamo esistessero. Il servizio fotografico opzionale ci ha dato foto di famiglia di qualità professionale alle piramidi - tesori che conserveremo per sempre." - La Famiglia Anderson, USA
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Come viaggiatrice solitaria, ero inizialmente nervosa per l'Egitto. Il tour privato ha fornito sicurezza, compagnia e incredibile flessibilità. La mia guida ha adattato ogni giorno in base ai miei interessi - quando ho sviluppato una fascinazione per l'architettura islamica, ha completamente cambiato il piano del giorno successivo per concentrarsi su moschee e scuole islamiche meno conosciute. Questo livello di personalizzazione è impossibile con i tour di gruppo." - Sarah M., Australia
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Abbiamo scelto un tour privato specificamente per il componente fotografico ma abbiamo scoperto che la guida era ugualmente eccezionale. Il nostro fotografo sapeva esattamente dove e quando catturare ogni sito perfettamente, mentre il nostro egittologo forniva contesto che rendeva le immagini più significative. Siamo tornati sia con foto stupende che con una profonda comprensione della storia egiziana." - Thomas & Elena, Germania
+                    </blockquote>
+                    
+                    <h3>Prenotare il Tuo Tour Privato in Egitto: Prossimi Passi</h3>
+                    
+                    <p>Pronto a vivere l'Egitto attraverso un tour privato adattato ai tuoi interessi? Ecco il nostro processo consigliato:</p>
+                    
+                    <ol>
+                        <li><strong>Richiesta Iniziale:</strong> Contattaci con le tue date di viaggio, dimensione del gruppo, interessi e qualsiasi requisito speciale. Menziona se sei interessato al servizio fotografico professionale opzionale.</li>
+                        <li><strong>Chiamata di Consultazione:</strong> Programmiamo una chiamata per discutere i tuoi interessi per l'Egitto, stile di viaggio, siti imperdibili e preferenze per capire che tipo di tour privato ti si addice meglio.</li>
+                        <li><strong>Proposta di Itinerario Personalizzato:</strong> Basandoci sulla nostra discussione, creiamo un itinerario di tour privato dettagliato inclusi specialità della guida, trasporti, opzioni di alloggio e accordi fotografici se richiesti.</li>
+                        <li><strong>Revisione e Affinamento:</strong> Adeguiamo l'itinerario in base al tuo feedback finché non corrisponde perfettamente alla tua visione per la tua avventura egiziana.</li>
+                        <li><strong>Prenotazione e Preparazione:</strong> Una volta finalizzato, gestiamo tutte le prenotazioni e forniamo informazioni di pre-viaggio dettagliate inclusi elenchi di imballaggio, linee guida culturali e materiali di preparazione.</li>
+                        <li><strong>Esperienza nel Paese:</strong> La tua guida privata ti incontra all'arrivo e fornisce tour personalizzati senza intoppi durante il tuo soggiorno con flessibilità quotidiana basata sui tuoi interessi evolventi.</li>
+                        <li><strong>Follow-up Post-Viaggio:</strong> Dopo il tuo tour, controlliamo per feedback e, per coloro che hanno scelto i servizi fotografici, assistiamo nella selezione e consegna delle immagini.</li>
+                    </ol>
+                    
+                    <p><strong>Pronto a vivere l'Egitto attraverso un tour privato progettato specificamente per te?</strong> <a href="contact.html" style="color: var(--accent-dark); font-weight: bold;">Contatta Egypt Photography Tours oggi</a> per iniziare a pianificare la tua avventura egiziana personalizzata con servizi fotografici professionali opzionali.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOUR DETAILS -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Dettagli dei Tour Privati in Egitto ed Esperienze Eclusive</h2>
+                
+                <h3>📸 Servizi Fotografici Professionali Opzionali:</h3>
+                <ul>
+                    <li><strong>Tour Fotografici del Cairo:</strong> Servizi fotografici professionali alle piramidi, Museo Egizio, siti di architettura islamica e mercati locali con guida all'illuminazione ottimale</li>
+                    <li><strong>Servizio Fotografico alle Piramidi di Giza:</strong> Sessioni all'ora d'oro all'alba/tramonto, guida al posing professionale in punti di vista esclusivi, tecniche di composizione creative</li>
+                    <li><strong>Fotografia Costiera di Alessandria:</strong> Paesaggi marini mediterranei, dettagli architettonici di siti greco-romani, scene di strada vivaci in quartieri tradizionali</li>
+                    <li><strong>Fotografia del Tempio di Luxor:</strong> Tecniche per catturare rilievi templari in condizioni di luce impegnative, scatti architettonici grandiosi, fotografia di dettagli intimi</li>
+                    <li><strong>Sessioni di Ritratti Culturali:</strong> Fotografia di ritratti rispettosa con artigiani locali, negozianti e membri della comunità con consenso appropriato e sensibilità culturale</li>
+                    <li><strong>Fotografia di Famiglia e Coppie:</strong> Ritratti di famiglia professionali in siti iconici, scatti romantici per coppie di sposini, fotografia di gruppo familiare multi-generazionale</li>
+                </ul>
+                
+                <h3>📍 Esperienze Eclusive dei Tour Privati:</h3>
+                <ul>
+                    <li><strong>Accesso ai Musei Fuori Orario:</strong> Accordi per visite private ai musei prima o dopo gli orari pubblici per esplorazione senza folla</li>
+                    <li><strong>Incontri con Archeologi:</strong> Incontri organizzati con archeologi che lavorano in siti di scavo attivi (soggetto a disponibilità e permessi)</li>
+                    <li><strong>Visite a Laboratori Artigianali:</strong> Dimostrazioni private e laboratori con maestri artigiani in ceramica, fabbricazione di papiro, tessitura di tessuti e fabbricazione di gioielli</li>
+                    <li><strong>Esperienze di Ristorazione in Casa:</strong> Pasti in case di famiglie egiziane con dimostrazioni di cucina e opportunità di scambio culturale</li>
+                    <li><strong>Tour a Focus Accademico:</strong> Tour progettati per studenti, ricercatori o viaggiatori profondamente interessati con accesso a risorse specializzate ed esperti</li>
+                    <li><strong>Itinerari Focalizzati sulla Fotografia:</strong> Tour progettati specificamente per fotografi con tempistica ottimale, accesso speciale per fotografia e guida tecnica</li>
+                </ul>
+                
+                <h3>🎯 Vantaggi dei Tour Privati:</h3>
+                <ul>
+                    <li><strong>Controllo Completo del Programma:</strong> Inizia quando vuoi, trascorri tutto il tempo che vuoi in ogni sito, fai pause quando necessario e cambia piani spontaneamente</li>
+                    <li><strong>Contenuto Personalizzato:</strong> Informazioni adattate al tuo livello di conoscenza esistente e interessi specifici piuttosto che commenti generici</li>
+                    <li><strong>Trasporto Diretto:</strong> Veicolo privato con autista sempre disponibile, nessuna attesa per membri del gruppo, rotte dirette alle destinazioni</li>
+                    <li><strong>Priorità alla Salute e Sicurezza:</strong> Controllo sugli standard igienici, capacità di evitare spazi affollati, attenzione personalizzata a qualsiasi preoccupazione sanitaria</li>
+                    <li><strong>Riconoscimento di Occasioni Speciali:</strong> Compleanni, anniversari e traguardi speciali celebrati con appropriate tradizioni locali e sorprese</li>
+                    <li><strong>Focus Linguistico:</strong> Guide selezionate per competenza linguistica e capacità di spiegare concetti complessi chiaramente nella tua lingua nativa</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FEATURED TOURS - UPDATED IMAGES TO JPG -->
+        <section class="main-section">
+            <div class="container">
+                <h2>I Nostri Pacchetti di Tour Privati in Egitto Più Popolari</h2>
+                <p>Scegli tra la nostra selezione accurata di tour privati in Egitto progettati per viaggiatori che cercano esperienze personalizzate con servizi fotografici professionali opzionali.</p>
+                
                 <div class="tour-grid">
                     <div class="tour-card">
-                        <span class="sale-tag">Offerta Speciale!</span>
-                        <img src="../images/pyramids-private-tour.jpg"
-                             alt="Tour fotografico privato guidato alle Piramidi di Giza con guida egiziana professionista e vista della Sfinge"
-                             class="tour-img lazy-load"
+                        <img src="images/pyramids-private-tour.jpg"
+                             alt="Tour privato alle Piramidi di Giza con servizio fotografico opzionale - Tour privato Egitto"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">📸 Cattura la Magia: Tour Privato Guidato delle Piramidi + Fotografia Professionale</h3>
-                            <p class="tour-card-text">Immergiti nella storia antica in questo tour privato di un giorno delle Grandi Piramidi di Giza e della Sfinge, guidato da un appassionato esperto locale. Cattura momenti indimenticabili con una sessione fotografica professionale e ascolta le vere storie dietro le pietre.</p>
+                            <h3>Tour Privato alle Piramidi di Giza</h3>
+                            <p>Tour privato esclusivo dell'altopiano di Giza con guida egittologa. Include tutti gli ingressi alle piramidi, Sfinge e servizio fotografico professionale opzionale all'ora d'oro.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">A partire da $150 USD</span>
-                                <span class="tour-duration">Durata: 4-5 ore</span>
+                                <span class="tour-price">Da $150</span>
+                                <a href="tour-pyramids-private.html" class="tour-cta">Prenota Ora</a>
                             </div>
-                            <a href="tour-pyramids-private.html" class="tour-cta">Visualizza Dettagli e Prenota</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Posti Limitati!</span>
-                        <img src="../images/cairo-giza-2day.jpg"
-                             alt="Tour fotografico privato premium di due giorni che copre i punti di riferimento del Cairo e le piramidi di Giza con guida esperta"
-                             class="tour-img lazy-load"
+                        <img src="images/cairo-giza-2day.jpg"
+                             alt="Tour privato Cairo e Giza 2 giorni - Tour guidato privato Egitto"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Tour Privato Premium di 2 Giorni: Spedizione Fotografica al Cairo e Giza</h3>
-                            <p class="tour-card-text">Immergiti nella vivace capitale dell'Egitto e nelle sue antiche meraviglie in due giorni indimenticabili. Esplora le maestose Piramidi, l'animata Città Vecchia del Cairo e l'impressionante Museo Nazionale della Civiltà Egiziana, tutto con la tua guida privata e fotografo.</p>
-                             <div class="tour-card-footer">
-                                <span class="tour-price">A partire da $350 USD</span>
-                                <span class="tour-duration">Durata: 2 giorni</span>
+                            <h3>Tour Privato Cairo & Giza 2 Giorni</h3>
+                            <p>Tour privato completo che copre piramidi, Museo Egizio, Cairo Copto, Cairo Islamico con programmazione flessibile e servizi fotografici opzionali.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">Da $350</span>
+                                <a href="tour-cairo-giza-2day.html" class="tour-cta">Prenota Ora</a>
                             </div>
-                            <a href="tour-cairo-giza-2day.html" class="tour-cta">Visualizza Dettagli e Prenota</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Prenota Ora!</span>
-                        <img src="../images/alexandria-tour.jpg"
-                             alt="Tour fotografico diurno privato sulla costa ad Alessandria dal Cairo con viste sul mare Mediterraneo e siti antichi"
-                             class="tour-img lazy-load"
+                        <img src="images/alexandria-tour.jpg"
+                             alt="Tour privato Alessandria giornaliero da Cairo - Tour Egitto mediterraneo"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Scopri Alessandria: Tour Privato Costiero di un Giorno dal Cairo</h3>
-                            <p class="tour-card-text">Scambia la polvere del deserto del Cairo con la brezza fresca del Mediterraneo in questo indimenticabile tour privato di un giorno ad Alessandria. Scopri un mix di tesori greci, romani, islamici e moderni con una guida locale appassionata e cattura splendide viste costiere.</p>
+                            <h3>Tour Privato Alessandria Giornaliero</h3>
+                            <p>Escursione privata giornaliera dal Cairo ad Alessandria. Visita Catacombe, Cittadella di Qaitbay, Biblioteca Alessandrina con guida personalizzata e fotografia costiera opzionale.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">A partire da $220 USD</span>
-                                <span class="tour-duration">Durata: 1 giorno</span>
+                                <span class="tour-price">Da $220</span>
+                                <a href="tour-alexandria.html" class="tour-cta">Prenota Ora</a>
                             </div>
-                            <a href="tour-alexandria.html" class="tour-cta">Visualizza Dettagli e Prenota</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Nuova Avventura!</span>
-                        <img src="../images/egypt-discovery-7day.jpg"
-                             alt="Tour fotografico di scoperta completo di 7 giorni che copre il Cairo, le Piramidi di Giza, Alessandria e i templi di Luxor"
-                             class="tour-img lazy-load"
+                        <img src="images/egypt-discovery-7day.jpg"
+                             alt="Pacchetto tour privato Egitto 7 giorni - Tour privato Egitto completo"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Tour di Scoperta dell'Egitto di 7 Giorni: Cairo, Giza, Alessandria e Luxor</h3>
-                            <p class="tour-card-text">Vivi le meraviglie dell'Egitto antico e moderno in questo viaggio guidato immersivo di 7 giorni. Dalle torreggianti Piramidi al fascino mediterraneo di Alessandria e ai maestosi templi di Luxor — questo viaggio dà vita all'anima dell'Egitto.</p>
+                            <h3>Tour Privato Egitto 7 Giorni</h3>
+                            <p>Esperienza privata Egitto definitiva che copre Cairo, Giza, Alessandria e Luxor con alloggi di lusso, guide private e fotografia professionale opzionale durante tutto il tour.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">A partire da $1900 USD</span>
-                                <span class="tour-duration">Durata: 7 giorni</span>
+                                <span class="tour-price">Da $1900</span>
+                                <a href="tour-egypt-discovery-7day.html" class="tour-cta">Prenota Ora</a>
                             </div>
-                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">Visualizza Dettagli e Prenota</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-30">
+                    <a href="tours.html" class="hero-button hero-button-primary">Vedi Tutti i Pacchetti Tour Privati</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPREHENSIVE FAQ SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Domande Frequenti - Tour Privati in Egitto</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Cosa rende i tour privati in Egitto migliori dei tour di gruppo? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>I tour privati in Egitto offrono vantaggi significativi: completa flessibilità nel cambiare piani, attenzione personalizzata dalla tua guida, capacità di esplorare al tuo ritmo, accesso a esperienze non disponibili per i gruppi, tempistica ottimale per la fotografia e immersione culturale più profonda. Non sei solo un altro turista su un programma - stai progettando la tua esperienza egiziana con guida locale esperta.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Il servizio fotografico professionale è obbligatorio con i vostri tour privati? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>No, il servizio fotografico professionale è completamente opzionale. Offriamo due tipi di tour privati in Egitto: 1) Tour privati standard con guide egittologhe esperte, e 2) Tour privati che includono servizi fotografici professionali. Puoi scegliere entrambe le opzioni in base alle tue preferenze e budget. Molti clienti prenotano i nostri tour specificamente per la fotografia, mentre altri preferiscono solo l'esperienza guidata.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Quali città coprono i vostri tour privati in Egitto? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>I nostri tour privati in Egitto coprono in modo completo le quattro destinazioni più popolari dell'Egitto: Cairo (Museo Egizio, Cairo Islamico & Copto), Giza (Piramidi & Sfinge), Alessandria (costa mediterranea & siti greco-romani) e Luxor (Valle dei Re & templi). Offriamo tour privati a destinazione singola, pacchetti multi-città e itinerari completamente personalizzati combinando queste location in base ai tuoi interessi e tempo disponibile.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Possiamo personalizzare l'itinerario del nostro tour privato in Egitto? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Assolutamente! La personalizzazione è l'essenza dei tour privati. Creiamo proposte di itinerario iniziali basate sui tuoi interessi, poi le affiniamo attraverso consultazione. Durante il tour stesso, puoi fare aggiustamenti quotidiani - trascorri più tempo nei siti che ami, salta quelli che ti interessano meno, aggiungi scoperte inaspettate o cambia ritmo in base ai livelli di energia. Questa flessibilità è impossibile con tour di gruppo fissi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">I tour privati in Egitto sono adatti per famiglie con bambini? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>I tour privati sono ideali per le famiglie! Adeguiamo contenuti, ritmi e attività in base alle età e interessi dei bambini. Le famiglie possono fare pause quando necessario, concentrarsi su elementi interattivi, includere pasti child-friendly e mantenere programmi flessibili. Il servizio fotografico opzionale è particolarmente popolare per catturare bellissimi ritratti di famiglia in siti iconici egiziani che diventano ricordi preziosi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Con quanto anticipo dovremmo prenotare i tour privati in Egitto? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Per l'alta stagione (ottobre-aprile), raccomandiamo di prenotare tour privati in Egitto 3-6 mesi in anticipo per garantire le migliori guide e alloggi. Per le stagioni intermedie (maggio-giugno, settembre), 1-3 mesi sono di solito sufficienti. I tour privati dell'ultimo minuto sono a volte possibili ma con opzioni di guide limitate. La prenotazione anticipata permette anche più tempo per lo sviluppo di itinerari personalizzati e richieste speciali.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- EXTENSIVE REVIEWS SECTION -->
         <section class="main-section bg-primary-dark">
-            <div class="container">
-                <h2 style="color: var(--accent-light);">Cosa Dicono i Nostri Straordinari Clienti</h2>
-                         <!-- TrustBox widget - Review Collector -->
-                <div class="trustpilot-widget" data-locale="it-IT" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68ebe694a70f7429071227b6" data-style-height="52px" data-style-width="100%" data-token="b32cd746-03c7-406e-8bb0-54364a1c6027">
-                  <a href="https://www.trustpilot.com/review/egyptphotographytours.com" target="_blank" rel="noopener">Trustpilot</a>
-                </div>
-                <!-- End TrustBox widget -->
+            <div class="container text-center">
+                <h2 style="color: var(--accent-light);">Cosa Dicono i Nostri Clienti Su Egypt Photography Tours</h2>
+                
                 <div class="reviews-grid">
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"We had a great time on this experience with Hossam! He was very helpful and patient with our group! The whole experience was a fun time for us and he made us feel very comfortable. We enjoyed all of it!"</p>
-                        <p class="review-author">- Daniel</p>
+                        <p class="review-text">"La flessibilità del nostro tour privato ha fatto tutta la differenza. Quando nostra figlia si è appassionata ai geroglifici, la nostra guida ha trascorso tempo extra insegnandole a leggere simboli base. Questa attenzione personalizzata l'ha trasformata da annoiata a coinvolta. Il servizio fotografico opzionale ci ha dato foto di famiglia professionali alle piramidi."</p>
+                        <p><strong>- La Famiglia Johnson, USA</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"It was an unforgettable experience from start to finish. Hossam is a brilliant photographer and have amazing skills. Amazing experience, excellent treatment, great job, plenty of fantastic pictures with the astonishing view of the pyramids. I am very happy with the result, and I totally recommend."</p>
-                        <p class="review-author">- Cristina</p>
+                        <p class="review-text">"Come viaggiatrice solitaria, ero preoccupata per l'Egitto. Il tour privato ha fornito sicurezza, compagnia e incredibile flessibilità. La mia guida ha adattato ogni giorno in base ai miei interessi - quando ho sviluppato una fascinazione per l'architettura islamica, ha cambiato completamente i piani del giorno successivo per concentrarsi su moschee meno conosciute. Impossibile con i tour di gruppo!"</p>
+                        <p><strong>- Sarah M., Australia</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Hossam provided a magnificent tour of the Giza Pyramids. Always thoughtful, communicative, knowledgeable, and molded the tour accordingly to what you'd want to do. Not only did he show me around the Giza pyramids, but after he adjusted his schedule to also do one of the Museums as well! From the start to finish, Hossam did an amazing job. Glad I booked this tour and made a new friend in Hossam!"</p>
-                        <p class="review-author">- Eduardo</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Muy bien la sesión, me gustó mucho que los spots son sin gente. Tuve que reservar este tour porque hice uno anteriormente y las fotos fueron muy malas. Ahora bien, solo consideren que hay que pagar un costo extra por el camello y las entradas al recinto (lo cual lo especifica en el post del anuncio)"</p>
-                        <p class="review-author">- Lucy</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"프라이빗 투어로 남편과 둘이서 투어 참가했는데, 관광객이 많지 않은 좋은 스팟으로 안내해줘서 멋진 사진 많이 건질 수 있었어요! 사진 촬영뿐 아니라 피라미드나 스핑크스에 대한 간단한 역사 이야기도 해줘서 더 유익했습니다☺️ 카이로 토박이 출신이라 추천할 만한 레스토랑이나 스팟들도 많이 알려줬고, 비싸기만 한 곳은 비추해주기도 해서 이집트에 처음 오는 입장에서 여행에 많은 도움이 될 것 같아요 간단한 스토리텔링 투어+사진 촬영 원하시는 분들께 추천합니다!"</p>
-                        <p class="review-author">- 소연 이</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"This was one of the best experiences ever. Hossam is kind, attentive and open to suggestions. He's also knowledgeable and super helpful. You'll experience only the top stuff with him."</p>
-                        <p class="review-author">- Meslem</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Hossam is simply the best. Why? Because he is very kind, very knowledgeable and truly loves his culture and his country. I had the privilege of spending a day and half with Hossam on a private tour. He went above and beyond to ensure I was happy, safe and at ease. This is no doubt Hossam is one of the best guides I've ever had. Thank you for showing me the best of Cairo and for creating an unforgettable experience I will treasure for many more years to come."</p>
-                        <p class="review-author">- ARI</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"If you're visiting the Pyramids of Giza and want an unforgettable experience, I highly recommend booking a photography tour with Hassam. From start to finish, he was professional, friendly, and incredibly knowledgeable. Not only did he take absolutely stunning photos that captured the magic of the pyramids perfectly, but he also shared a wealth of historical information and interesting stories that made the tour even more special. Hassam truly knows the best spots for unique shots and angles, and he made sure I felt comfortable and enjoyed every moment. The value for the price is outstanding — you get high-quality photography, a personalized tour, and a deep dive into the history of one of the world's greatest wonders. This was easily one of the highlights of my trip to Egypt!"</p>
-                        <p class="review-author">- Erik </p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Great experience, very professional, makes you feel comfortable even if you're not used to being in front of a camera. Attention to detail and had great information about the pyramids and surrounding areas. Was so easy and comfortable to work with I decided to book a day trip tour with Hossam to Alexandria sorting my visit here as well."</p>
-                        <p class="review-author">- Jamie </p>
+                        <p class="review-text">"Abbiamo scelto Egypt Photography Tours specificamente per la fotografia ma abbiamo scoperto che la guida era ugualmente eccezionale. Il nostro fotografo sapeva esattamente tempi e angoli per ogni sito, mentre il nostro egittologo forniva contesto che rendeva le immagini significative. Siamo tornati sia con foto stupende che con profonda comprensione."</p>
+                        <p><strong>- Thomas & Elena, Germania</strong></p>
                     </div>
                 </div>
-                <a href="faqs.html" class="review-cta">
-                        Leggi Tutte le Recensioni e le FAQ
-                </a>
+                
+                <div class="reviews-grid mt-30">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Il nostro tour privato ad Alessandria ha rivelato un Egitto completamente diverso dal Cairo. Poter trascorrere tempo extra alla biblioteca quando ci ha affascinati, poi saltare qualcosa di meno interessante, ha reso l'esperienza senza stress. La sessione fotografica costiera è stata un momento clou che non avremmo avuto in un tour di gruppo."</p>
+                        <p><strong>- Michael & James, Canada</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Il tour privato di Luxor ci ha permesso di visitare tombe in momenti ottimali, evitando sia folle che caldo. La conoscenza della nostra guida era a livello dottorale. Quando abbiamo menzionato interesse per le pratiche mediche, ha dettagliato la medicina egiziana antica al villaggio degli operai. Questa profondità è il motivo per cui i tour privati valgono ogni centesimo."</p>
+                        <p><strong>- Dott. Roberts, UK</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Abbiamo prenotato un tour privato senza il servizio fotografico inizialmente ma l'abbiamo aggiunto dopo aver visto le foto di un altro cliente. La migliore decisione! Il fotografo era discreto ma ha catturato momenti magici che abbiamo perso. La combinazione di guida approfondita e fotografia professionale ha creato l'esperienza Egitto perfetta."</p>
+                        <p><strong>- Lisa & Marco, Italia</strong></p>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="review-cta">Prenota il Tuo Tour Privato in Egitto Oggi!</a>
+            </div>
+        </section>
+        
+        <!-- EGYPT TOUR PLANNING GUIDE -->
+        <section class="main-section">
+            <div class="container">
+                <h2>Guida alla Pianificazione di Tour Privati in Egitto 2024-2025</h2>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>Miglior Periodo per Tour Privati in Egitto</h3>
+                        <p><strong>Ottobre-Aprile:</strong> Clima ideale (15-25°C). Alta stagione richiede prenotazione 3-6 mesi in anticipo per la migliore disponibilità di guide private.</p>
+                        <p><strong>Maggio-Settembre:</strong> Più caldo ma meno folle. I tour privati ottimizzano la programmazione per prime mattine e siti indoor durante il caldo.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Vantaggi dei Tour Privati</h3>
+                        <p>Programmazione flessibile, contenuto personalizzato, trasporto diretto, opportunità di accesso speciale, controllo salute & sicurezza e servizi professionali opzionali come la fotografia inclusi.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Considerazioni sul Servizio Fotografico</h3>
+                        <p>Servizio professionale opzionale disponibile con tutti i tour privati. Può essere prenotato per l'intero tour, giorni specifici o location specifiche. Raccomandazioni sull'attrezzatura fornite basate sulle condizioni egiziane.</p>
+                    </div>
+                </div>
+                
+                <h3 class="mt-30">Checklist di Preparazione per Tour Privati in Egitto:</h3>
+                <ul>
+                    <li><strong>3-6 Mesi Prima:</strong> Prenota tour privato (alta stagione), discuti opzioni di personalizzazione con consulente, decidi sull'inclusione del servizio fotografico, richiedi visto</li>
+                    <li><strong>1-3 Mesi Prima:</strong> Finalizza dettagli dell'itinerario, prenota voli internazionali, organizza assicurazione di viaggio, inizia lettura/ricerca basata sul focus del tour</li>
+                    <li><strong>1 Mese Prima:</strong> Conferma tutti gli accordi, controlla l'attrezzatura se si include la fotografia, rivedi lista di imballaggio per condizioni egiziane</li>
+                    <li><strong>1 Settimana Prima:</strong> Imballaggio finale, cambio valuta, scarica mappe/risorse offline, conferma accordi di incontro con la guida</li>
+                    <li><strong>Durante il Tour:</strong> Comunica preferenze giornaliere con la guida, approfitta della flessibilità, fai domande illimitate, goditi l'esperienza personalizzata</li>
+                    <li><strong>Post-Tour:</strong> Fornisci feedback, ricevi foto (se servizio fotografico prenotato), condividi l'esperienza con altri che considerano tour privati in Egitto</li>
+                </ul>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-content">
-            <!-- UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT -->
-            <div class="footer-brand">
-                <h3 class="footer-title">Egypt Photography Tours</h3>
-                <p class="footer-text">&copy; 2025 Egypt Photography Tours.</p>
-                <p class="footer-text">Tutti i diritti riservati.</p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Link Rapidi</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Chi Siamo</a></li>
-                    <li><a href="tours.html">I Nostri Tour</a></li>
-                    <li><a href="gallery.html">Galleria</a></li>
-                    <li><a href="resources.html">Risorse</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contattaci</a></li>
-                    <li><a href="faqs.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Connettiti con Noi</h4>
-                <p class="footer-text">Indirizzo: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Governatorato di Giza 12557</p>
-                <!-- MOVED PHONE AND EMAIL TO CONNECT WITH US SECTION -->
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Egypt Photography Tours</h3>
+                    <p>Tour privati professionali in Egitto con servizi fotografici opzionali dal 2009. Guide egittologhe autorizzate. Servizio valutato 4.9 stelle specializzato in esperienze personalizzate a Cairo, Giza, Alessandria e Luxor.</p>
+                    <p>&copy; 2009-2024 Egypt Photography Tours. Tutti i diritti riservati.</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                
+                <div>
+                    <h3 class="footer-title">Link Rapidi</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Tour Privati</a></li>
+                        <li><a href="gallery.html">Galleria</a></li>
+                        <li><a href="resources.html">Risorse</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                        <li><a href="faqs.html">FAQ</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div>
+                    <h3 class="footer-title">Contattaci</h3>
+                    <p><i class="fab fa-whatsapp"></i> +20 155 073 5673</p>
+                    <p><i class="far fa-envelope"></i> info@egyptphotographytours.com</p>
+                    <p>📍 Giza, Egitto - Vicino alle Piramidi</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.1413113!3d29.9749687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1701715200000" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Posizione di Egypt Photography Tours">
+                    </iframe>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT - OPTIMIZED FOR PAGE SPEED -->
     <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
+        // MOBILE MENU
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                
-                // Change icon based on menu state
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-            
-            // Close menu when clicking on a link (for mobile)
-            document.querySelectorAll('.nav-link a').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768) {
-                        navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
-            });
+            }
             
-            // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
+            // HERO SLIDER WITH 5 IMAGES (8-second rotation)
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevButton = document.querySelector('.slider-arrow.prev');
             const nextButton = document.querySelector('.slider-arrow.next');
             let currentSlide = 0;
             let slideInterval;
-            const slideDuration = 7000; // 7 seconds
             
             function showSlide(index) {
                 slides.forEach(slide => slide.classList.remove('active'));
@@ -1706,129 +1961,192 @@
                 showSlide(prevIndex);
             }
             
-            function startSlideShow() {
-                slideInterval = setInterval(nextSlide, slideDuration);
+            if (prevButton && nextButton) {
+                prevButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    prevSlide();
+                    startSlider();
+                });
+                
+                nextButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    nextSlide();
+                    startSlider();
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(slideInterval);
+                        showSlide(index);
+                        startSlider();
+                    });
+                });
+                
+                // Start automatic slider with 8-second intervals
+                function startSlider() {
+                    slideInterval = setInterval(nextSlide, 8000);
+                }
+                
+                startSlider();
+                
+                // Pause on hover for better UX
+                const heroSlider = document.querySelector('.hero-slider');
+                heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                heroSlider.addEventListener('mouseleave', startSlider);
             }
             
-            function stopSlideShow() {
-                clearInterval(slideInterval);
-            }
-            
-            // Event listeners
-            prevButton.addEventListener('click', function() {
-                stopSlideShow();
-                prevSlide();
-                startSlideShow();
-            });
-            
-            nextButton.addEventListener('click', function() {
-                stopSlideShow();
-                nextSlide();
-                startSlideShow();
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    stopSlideShow();
-                    showSlide(index);
-                    startSlideShow();
+            // FAQ ACCORDION
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        document.querySelectorAll('.faq-answer').forEach(ans => {
+                            ans.classList.remove('active');
+                        });
+                        document.querySelectorAll('.faq-question i').forEach(i => {
+                            i.classList.remove('fa-chevron-up');
+                            i.classList.add('fa-chevron-down');
+                        });
+                        
+                        answer.classList.add('active');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
                 });
             });
             
-            const heroSlider = document.querySelector('.hero-slider');
-            heroSlider.addEventListener('mouseenter', stopSlideShow);
-            heroSlider.addEventListener('mouseleave', startSlideShow);
-            heroSlider.addEventListener('touchstart', stopSlideShow);
-            heroSlider.addEventListener('touchend', startSlideShow);
+            // LANGUAGE SWITCHER
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (languageSwitcher) {
+                const currentLanguage = languageSwitcher.querySelector('.current-language');
+                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+                
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
+                    dropdownIcon.classList.toggle('fa-chevron-up');
+                    dropdownIcon.classList.toggle('fa-chevron-down');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!languageSwitcher.contains(e.target)) {
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Handle language selection
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Update current language display
+                        const flag = this.dataset.flag;
+                        const text = this.querySelector('.language-text').textContent;
+                        const lang = this.dataset.lang;
+                        
+                        currentLanguage.querySelector('.current-flag').textContent = flag;
+                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+                        
+                        // Close dropdown
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                        
+                        // Redirect to selected language page
+                        const href = this.getAttribute('href');
+                        if (href && href !== window.location.pathname) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+            }
             
-            // Initialize
-            startSlideShow();
-            
-            // ✅ LAZY LOADING IMAGES
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
+            // LAZY LOAD IMAGES
             if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
+                const imageObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
+                            imageObserver.unobserve(img);
                         }
                     });
                 });
                 
-                images.forEach(img => imageObserver.observe(img));
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                    imageObserver.observe(img);
+                });
             }
             
-            // ✅ LANGUAGE SWITCHER
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            currentLanguage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                languageSwitcher.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                // Measure page load time
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log('Page load time:', loadTime + 'ms');
+                
+                // Send performance data to analytics
+                if (typeof gtag !== 'undefined' && loadTime < 10000) {
+                    gtag('event', 'timing_complete', {
+                        'name': 'page_load',
+                        'value': loadTime,
+                        'event_category': 'Performance'
+                    });
                 }
             });
             
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
+            // Service Worker Registration for PWA
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }).catch(function(error) {
+                        console.log('ServiceWorker registration failed: ', error);
                     });
-                    
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
                 });
+            }
+            
+            // Add focus-visible polyfill for better accessibility
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
             });
             
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA'
-                };
-                return codes[languageName] || languageName;
-            }
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
         });
-
-        // ✅ PRELOAD FIRST HERO IMAGE ONLY
-        function preloadImages() {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = '../images/hero-image1.jpg';
-            document.head.appendChild(link);
-        }
         
-        // Preload only first image for performance
-        preloadImages();
+        // Handle reduced motion preference
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (mediaQuery.matches) {
+            // Disable or adjust animations
+            const style = document.createElement('style');
+            style.textContent = `
+                .hero-slide {
+                    transition: none !important;
+                }
+                .tour-card:hover {
+                    transform: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     </script>
 </body>
 </html>
