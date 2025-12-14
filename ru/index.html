@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- PWA Configuration -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Egypt Photography Tours">
+    <meta name="application-name" content="Egypt Photography Tours">
+    <meta name="format-detection" content="telephone=no">
+    
     <!-- Comprehensive Favicon Setup -->
-    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
-    <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg">
+    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#FFD700">
-    <meta name="msapplication-config" content="../browserconfig.xml">
+    <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#FFD700">
+    
+    <!-- Google Analytics Tracking -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVNPEMCG8F');
+    </script>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
+    <link rel="preload" href="images/hero-image1.jpg" as="image" media="(min-width: 768px)">
     
     <!-- Search Engine & Social Media Optimization -->
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta itemprop="image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     
-    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-    <title>Фототуры по Египту | Частные туры к Пирамидам, Гиза, Каир и Александрия - Роскошные туры по Египту</title>
+    <!-- ОПТИМИЗИРОВАННЫЙ ЗАГОЛОВОК ДЛЯ РУССКОЯЗЫЧНОЙ АУДИТОРИИ -->
+    <title>Частные туры по Египту с фотосессией | Каир, Пирамиды, Луксор, Александрия</title>
 
-    <meta name="description" content="Откройте для себя фототуры по Египту — частные фотосессии у пирамид, фотоприключения в Каире и на Ниле, экскурсии с опытными гидами по всему Египту. Забронируйте свое незабываемое путешествие в Египет сегодня!">
+    <!-- ОПТИМИЗИРОВАННОЕ МЕТА-ОПИСАНИЕ ДЛЯ РУССКОЯЗЫЧНЫХ ПОИСКОВ -->
+    <meta name="description" content="Не обычная экскурсия. Частные туры по Египту с русскоговорящими гидами и профессиональной фотосессией. Каир, пирамиды Гизы, Луксор, Александрия. Индивидуальные маршруты.">
 
-    <meta name="keywords" content="фототуры по Египту, роскошные путешествия по Египту, VIP туры в Египте, 
-    эксклюзивные туры по Египту, туры к пирамидам, гид по Каиру, фото Нила, туры по Египту, фото храмов Луксора, туры в Александрию">
+    <!-- ВЫСОКОЧАСТОТНЫЕ КЛЮЧЕВЫЕ СЛОВА НА РУССКОМ -->
+    <meta name="keywords" content="туры в Египет, частные туры по Египту, экскурсии в Каире, пирамиды Гизы, туры в Луксор, туры в Александрию, русскоговорящий гид в Египте, фотосессия в Египте, индивидуальные экскурсии по Египту, путевки в Египет, отдых в Египте, экскурсионные туры по Египту, туры по Египту с гидом, Египет тур пакеты, Нильский круиз, путешествие по Египту, лучшие туры в Египет, гиды в Каире, экскурсии к пирамидам, фототуры по Египту, профессиональная фотосъемка в Египте">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <link rel="canonical" href="https://www.egyptphotographytours.com/ru/" />
 
+    <!-- Language Alternates -->
     <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/" />
     <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/" />
     <link rel="alternate" hreflang="fr" href="https://www.egyptphotographytours.com/fr/" />
@@ -44,132 +69,203 @@
     <link rel="alternate" hreflang="id" href="https://www.egyptphotographytours.com/id/" />
     <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/" />
     <link rel="alternate" hreflang="ru" href="https://www.egyptphotographytours.com/ru/" />
+    <link rel="alternate" hreflang="da" href="https://www.egyptphotographytours.com/da/" />
+    <link rel="alternate" hreflang="nl" href="https://www.egyptphotographytours.com/nl/" />
+    <link rel="alternate" hreflang="hi" href="https://www.egyptphotographytours.com/hi/" />
+    <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/" />
+    <link rel="alternate" hreflang="sv" href="https://www.egyptphotographytours.com/sv/" />
+    <link rel="alternate" hreflang="tl" href="https://www.egyptphotographytours.com/tl/" />
+    <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/" />
+    <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/" />
+    <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/" />
 
-    <meta property="og:title" content="Фототуры по Египту | Профессиональные фото-приключения у Пирамид и Храмов">
-    <meta property="og:description" content="Запечатлейте магию древнего Египта с опытными гидами-фотографами. Частные туры к Пирамидам, храмам и историческому Каиру от $150 USD.">
+    <!-- Open Graph мета-теги на русском -->
+    <meta property="og:title" content="Частные туры по Египту с фотосессией | Каир, Пирамиды, Луксор, Александрия">
+    <meta property="og:description" content="Не обычная экскурсия. Частные туры по Египту с русскоговорящими гидами и профессиональной фотосессией. Каир, пирамиды Гизы, Луксор, Александрия.">
     <meta property="og:url" content="https://www.egyptphotographytours.com/ru/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Egypt Photography Tours">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Фототуры по Египту | Профессиональные фото-приключения">
-    <meta name="twitter:description" content="Экскурсии с гидами-фотографами по самым знаковым местам Египта. Создавайте потрясающие фотографии с профессиональными гидами.">
+    <meta name="twitter:title" content="Частные туры по Египту с профессиональной фотосессией">
+    <meta name="twitter:description" content="Не обычная экскурсия. Частные туры по Египту с русскоговорящими гидами и профессиональной фотосессией. Каир, пирамиды Гизы, Луксор, Александрия.">
     <meta name="google-adsense-account" content="ca-pub-1042032515879132">
     
+    <!-- Гео-метатеги -->
     <meta name="geo.region" content="EG-C">
-    <meta name="geo.placename" content="Cairo, Egypt">
+    <meta name="geo.placename" content="Каир, Египет">
     <meta name="geo.position" content="30.0444;31.2357">
 
-    <!-- UPDATED SCHEMA MARKUP FOR RICH SNIPPETS WITH 5 STARS AND 26 REVIEWS -->
+    <!-- СТРУКТУРИРОВАННЫЕ ДАННЫЕ НА РУССКОМ ЯЗЫКЕ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Egypt Photography Tours",
-      "url": "https://www.egyptphotographytours.com",
-      "logo": "https://www.egyptphotographytours.com/images/favicon-32x32.png",
-      "sameAs": [
-        "https://www.instagram.com/hossam_artistic",
-        "https://www.trustpilot.com/review/egyptphotographytours.com"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Egypt Photography Tours",
-      "image": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg",
-      "description": "Частные экскурсии с гидом-фотографом в Египте, включая Пирамиды, Каир, Александрию и многое другое. Профессиональные фотосессии и опытные местные гиды.",
-      "url": "https://www.egyptphotographytours.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "openingHours": "Mo-Su 09:00-18:00",
-      "priceRange": "$$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      },
-      "review": [
+      "@graph": [
         {
-          "@type": "Review",
-          "author": "Daniel",
-          "datePublished": "2024-05-15",
-          "reviewBody": "We had a great time on this experience with Hossam! He was very helpful and patient with our group!",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
+          "@type": "WebSite",
+          "name": "Egypt Photography Tours - Частные туры по Египту",
+          "url": "https://www.egyptphotographytours.com/ru/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.egyptphotographytours.com/ru/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
         },
         {
-          "@type": "Review",
-          "author": "Cristina",
-          "datePublished": "2024-04-22",
-          "reviewBody": "Hossam is a brilliant photographer with amazing skills. Plenty of fantastic pictures with the astonishing view of the pyramids.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "TravelAgency",
+          "name": "Egypt Photography Tours - Частные туры по Египту",
+          "url": "https://www.egyptphotographytours.com/ru/",
+          "logo": "https://www.egyptphotographytours.com/images/logo.jpg",
+          "telephone": "+20-155-073-5673",
+          "email": "info@egyptphotographytours.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+            "addressLocality": "Гиза",
+            "addressRegion": "Гиза",
+            "postalCode": "12557",
+            "addressCountry": "EG"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "openingHours": "Пн-Вс 08:00-22:00",
+          "priceRange": "$$-$$$",
+          "currenciesAccepted": "USD, EUR, EGP, RUB"
         },
         {
-          "@type": "Review",
-          "author": "Eduardo",
-          "datePublished": "2024-03-30",
-          "reviewBody": "Hossam provided a magnificent tour of the Giza Pyramids. Always thoughtful, communicative and knowledgeable.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Главная",
+              "item": "https://www.egyptphotographytours.com/ru/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Туры по Египту",
+              "item": "https://www.egyptphotographytours.com/ru/tours.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Частные туры по Египту",
+              "item": "https://www.egyptphotographytours.com/ru/private-egypt-tours.html"
+            }
+          ]
+        },
+        {
+          "@type": ["TouristTrip", "Product"],
+          "name": "Частные туры по Египту с профессиональной фотосессией",
+          "description": "Не обычная экскурсия. Частные туры по Египту с русскоговорящими гидами и опциональной профессиональной фотосессией в Каире, пирамидах Гизы, Александрии и Луксоре.",
+          "url": "https://www.egyptphotographytours.com/ru/private-egypt-tours.html",
+          "image": [
+            "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image1.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image2.jpg"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "1900",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "seller": {
+              "@type": "Organization",
+              "name": "Egypt Photography Tours"
+            }
+          },
+          "duration": "P7D",
+          "touristType": ["Соло-путешественники", "Пары", "Семьи", "Фотографы-любители", "Люксовые туристы"],
+          "brand": {
+            "@type": "Brand",
+            "name": "Egypt Photography Tours"
+          },
+          "sku": "EPT-PET-001-RU",
+          "category": "Частный турпакет"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Чем ваши частные туры по Египту отличаются от обычных?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Наши частные туры по Египту предлагают персонализированные экскурсии с русскоговорящими гидами и включают опциональную профессиональную фотосессию. Мы фокусируемся на аутентичном культурном погружении, гибких маршрутах и эксклюзивном доступе к местам, недоступным в стандартных турах."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Включена ли профессиональная фотосессия во все туры?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Да, мы предлагаем опциональную профессиональную фотосессию во всех наших частных турах по Египту. Вы можете выбрать включение фотосессии в ваш пакет или заказать туры без фотографических услуг."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Какие города охватывают ваши частные туры по Египту?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Наши частные туры по Египту охватывают Каир, пирамиды Гизы, Александрию и Луксор. Мы предлагаем комплексные пакеты, включающие все эти направления, или можем настроить туры, фокусируясь на конкретных городах согласно вашим предпочтениям."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "Полное руководство по частным турам по Египту с фотосессиями",
+          "description": "Исчерпывающее руководство по частным турам по Египту, включая Каир, Гизу, Александрию и Луксор с опциональными услугами профессиональной фотосессии.",
+          "author": {
+            "@type": "Person",
+            "name": "Хоссам",
+            "jobTitle": "Профессиональный фотограф и египтолог"
+          },
+          "datePublished": "2024-01-15",
+          "dateModified": "2024-12-15",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Egypt Photography Tours",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/logo.jpg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.egyptphotographytours.com/ru/blog/private-egypt-tours-guide.html"
+          },
+          "image": [
+            {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/egypt-tours-guide-1.jpg",
+              "width": "1200",
+              "height": "800",
+              "caption": "Частные туры по Египту с профессиональной фотосессией в Каире, Гизе, Александрии и Луксоре"
+            }
+          ],
+          "keywords": "частные туры по Египту, туры по Египту с фотосессией, экскурсии в Каире, тур к пирамидам Гизы, туры в Александрию, туры в Луксор, фототуры по Египту"
         }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/EgyptPhotographyTours",
-        "https://www.instagram.com/hossam_artistic/",
-        "https://www.tiktok.com/@egyptphotographytours",
-        "https://www.youtube.com/@Egyptphotographytours"
       ]
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      "name": "Pyramids of Giza",
-      "description": "The Great Pyramid of Giza is the oldest and largest of the three pyramids in the Giza pyramid complex.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "image": "https://www.egyptphotographytours.com/images/pyramids-of-giza.jpg"
-    }
-    </script>
-
+    <!-- Performance Optimized CSS Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     
     <style>
+        /* CRITICAL CSS - Inlined for performance */
         :root {
             --primary-dark: #1a202c;
             --accent-light: #FFD700;
@@ -178,6 +274,8 @@
         }
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -196,24 +294,23 @@
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* HEADER STYLES */
         .header {
             background-color: var(--primary-dark);
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             padding: 12px 0;
         }
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             gap: 12px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
-                gap: 0;
+                justify-content: space-between;
             }
         }
         .logo-section {
@@ -229,28 +326,9 @@
         .logo-link {
             font-size: 20px;
             font-weight: 700;
-            letter-spacing: -0.025em;
             color: var(--accent-light);
             text-decoration: none;
         }
-        @media (min-width: 768px) {
-            .logo-link {
-                font-size: 24px;
-            }
-        }
-        .header-text {
-            font-size: 14px;
-            font-style: italic;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 16px;
-            }
-        }
-        
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
@@ -270,22 +348,15 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
-            padding: 4px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
         }
-        .contact-icon {
-            font-size: 14px;
-            width: 16px;
-            text-align: center;
-        }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 50;
@@ -294,26 +365,20 @@
         .navbar-content {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            justify-content: space-between;
         }
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
             }
         }
         .nav-links {
             display: none;
             flex-direction: column;
-            width: 100%;
-            gap: 0;
-            font-size: 16px;
-            font-weight: 500;
             list-style: none;
             padding: 0;
             margin: 0;
-            background-color: #374151;
         }
         .nav-links.active {
             display: flex;
@@ -322,33 +387,19 @@
             .nav-links {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
                 gap: 16px;
-                width: auto;
-            }
-        }
-        .nav-link {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-link:last-child {
-            border-bottom: none;
-        }
-        @media (min-width: 768px) {
-            .nav-link {
-                border-bottom: none;
             }
         }
         .nav-link a {
             color: white;
             text-decoration: none;
             padding: 12px 16px;
-            transition: color 0.3s ease;
             display: block;
+            transition: color 0.3s ease;
         }
         @media (min-width: 768px) {
             .nav-link a {
-                padding: 8px 0;
+                padding: 16px 8px;
             }
         }
         .nav-link a:hover {
@@ -362,13 +413,10 @@
         }
         @media (min-width: 768px) {
             .cta-container {
-                justify-content: flex-end;
-                gap: 12px;
                 padding: 0;
+                gap: 12px;
             }
         }
-        
-        /* MOBILE MENU TOGGLE */
         .mobile-menu-toggle {
             display: block;
             background: none;
@@ -384,7 +432,128 @@
             }
         }
         
-        /* HERO SLIDER STYLES - MOBILE OPTIMIZED */
+        /* Language Switcher */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+        }
+
+        .current-language:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .current-flag {
+            font-size: 16px;
+        }
+
+        .current-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .dropdown-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 220px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #374151;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .language-switcher.active .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-light);
+        }
+
+        .language-item.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .flag-icon {
+            font-size: 18px;
+            min-width: 24px;
+        }
+
+        .language-text {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Scrollbar styling for dropdown */
+        .language-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
+        }
+        
+        /* HERO SLIDER - UPDATED TO 5 IMAGES */
         .hero-slider {
             position: relative;
             height: 60vh;
@@ -408,87 +577,82 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 16px;
         }
         .hero-slide.active {
             opacity: 1;
         }
         .hero-slide:nth-child(1) {
-            background-image: url('../images/hero-image1.jpg');
+            background-image: url('images/hero-image1.jpg');
         }
         .hero-slide:nth-child(2) {
-            background-image: url('../images/hero-image2.jpg');
+            background-image: url('images/hero-image2.jpg');
         }
         .hero-slide:nth-child(3) {
-            background-image: url('../images/hero-image3.jpg');
+            background-image: url('images/hero-image3.jpg');
         }
         .hero-slide:nth-child(4) {
-            background-image: url('../images/hero-image4.jpg');
+            background-image: url('images/hero-image4.jpg');
+        }
+        .hero-slide:nth-child(5) {
+            background-image: url('images/hero-image5.jpg');
         }
         .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
-        .hero-title {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
             color: white;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
-            margin-top: 0;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            background-color: transparent;
+            border-radius: 10px;
         }
-        @media (min-width: 480px) {
-            .hero-title {
-                font-size: 28px;
-            }
+        
+        /* HERO TITLE */
+        .hero-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #ffffff !important;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
         }
         @media (min-width: 768px) {
             .hero-title {
                 font-size: 48px;
-                margin-top: -60px;
-            }
-        }
-        .hero-subtitle {
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
-            line-height: 1.4;
-        }
-        @media (min-width: 480px) {
-            .hero-subtitle {
-                font-size: 16px;
-            }
-        }
-        @media (min-width: 768px) {
-            .hero-subtitle {
-                font-size: 18px;
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 0, 0, 0.9);
             }
         }
         
-        /* NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES */
+        /* HERO SUBTITLE */
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: #ffffff !important;
+            text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8);
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        @media (min-width: 768px) {
+            .hero-subtitle {
+                font-size: 22px;
+                text-shadow: 1px 1px 18px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
+            }
+        }
+        
+        /* HERO BUTTONS */
         .hero-buttons-section {
             background-color: #f8f8f8;
             padding: 30px 0;
             text-align: center;
-            border-top: 1px solid #e5e7eb;
         }
         .hero-buttons-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             gap: 16px;
             max-width: 600px;
             margin: 0 auto;
@@ -505,15 +669,8 @@
             font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
             display: block;
             text-align: center;
-        }
-        @media (min-width: 768px) {
-            .hero-button {
-                padding: 12px 32px;
-                font-size: 18px;
-            }
         }
         .hero-button-primary {
             background-color: var(--accent-light);
@@ -533,7 +690,7 @@
             transform: scale(1.05);
         }
         
-        /* SLIDER NAVIGATION CONTROLS - MOBILE OPTIMIZED */
+        /* SLIDER CONTROLS */
         .slider-controls {
             position: absolute;
             bottom: 20px;
@@ -541,13 +698,8 @@
             right: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 20px;
-            z-index: 20;
-        }
-        .slider-dots {
-            display: flex;
             gap: 10px;
+            z-index: 20;
         }
         .slider-dot {
             width: 10px;
@@ -573,20 +725,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             z-index: 20;
             color: var(--primary-dark);
-            font-size: 16px;
-        }
-        @media (min-width: 768px) {
-            .slider-arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-        }
-        .slider-arrow:hover {
-            background-color: rgba(255, 255, 255, 0.9);
         }
         .slider-arrow.prev {
             left: 10px;
@@ -595,641 +735,400 @@
             right: 10px;
         }
         
-        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
+        /* MAIN CONTENT SECTIONS */
         .main-section {
             padding: 40px 0;
-            text-align: center;
         }
         @media (min-width: 768px) {
             .main-section {
-                padding: 64px 0;
-            }
-        }
-        .main-section h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-        @media (min-width: 768px) {
-            .main-section h2 {
-                font-size: 36px;
-                margin-bottom: 32px;
-            }
-        }
-        .main-section h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin: 20px 0 8px;
-        }
-        @media (min-width: 768px) {
-            .main-section h3 {
-                font-size: 24px;
-                margin: 24px 0 8px;
-            }
-        }
-        .main-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 896px;
-            margin: 0 auto 20px;
-        }
-        @media (min-width: 768px) {
-            .main-section p {
-                font-size: 18px;
-                margin: 0 auto 24px;
+                padding: 60px 0;
             }
         }
         .bg-light-gray {
             background-color: #f3f4f6;
         }
+        .bg-primary-dark {
+            background-color: var(--primary-dark);
+        }
+        
+        /* HEADINGS */
+        h1 {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+        }
+        h2 {
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 36px;
+            }
+        }
+        h3 {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 28px;
+            }
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            p {
+                font-size: 18px;
+            }
+        }
+        
+        /* CARDS & GRIDS */
         .grid-section {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .grid-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-        @media (min-width: 1024px) {
             .grid-section {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-        @media (min-width: 768px) {
-            .card {
-                padding: 32px;
-            }
-        }
-        .card:hover {
-            transform: scale(1.05);
         }
         .card-icon {
-            width: 50px;
-            height: 50px;
+            font-size: 40px;
             color: var(--accent-light);
             margin-bottom: 16px;
         }
-        @media (min-width: 768px) {
-            .card-icon {
-                width: 64px;
-                height: 64px;
-            }
-        }
         .card-title {
             font-size: 20px;
-            font-weight: 600;
-            color: var(--primary-dark);
             margin-bottom: 12px;
+            color: var(--primary-dark);
         }
-        @media (min-width: 768px) {
-            .card-title {
-                font-size: 24px;
-            }
-        }
-        .card-text {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        @media (min-width: 768px) {
-            .card-text {
-                font-size: 16px;
-            }
-        }
+        
+        /* TOUR GRID */
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
-            .tour-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (min-width: 1280px) {
             .tour-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
         .tour-card {
-            background-color: white;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            position: relative;
         }
         .tour-card:hover {
-            transform: scale(1.05);
-        }
-        .sale-tag {
-            background-color: #E74C3C;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            z-index: 10;
+            transform: translateY(-5px);
         }
         .tour-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        @media (min-width: 768px) {
-            .tour-img {
-                height: 224px;
-            }
-        }
         .tour-card-body {
             padding: 20px;
         }
-        @media (min-width: 768px) {
-            .tour-card-body {
-                padding: 24px;
-            }
-        }
         .tour-card-title {
             font-size: 20px;
-            font-weight: 600;
+            margin-bottom: 12px;
             color: var(--primary-dark);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        @media (min-width: 768px) {
-            .tour-card-title {
-                font-size: 24px;
-            }
-        }
-        .tour-card-text {
-            color: #4b5563;
-            margin-bottom: 16px;
-            text-align: left;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .tour-card-text {
-                font-size: 16px;
-                line-height: 1.6;
-            }
         }
         .tour-card-footer {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 8px;
+            align-items: center;
+            margin-top: 20px;
         }
         .tour-price {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: bold;
             color: var(--accent-dark);
         }
-        @media (min-width: 768px) {
-            .tour-price {
-                font-size: 18px;
-            }
-        }
-        .tour-duration {
-            font-size: 14px;
-            color: #6b7280;
-        }
         .tour-cta {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-light);
+            display: inline-block;
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 10px 20px;
-            border-radius: 9999px;
-            text-align: center;
+            border-radius: 4px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .tour-cta {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
         .tour-cta:hover {
-            background-color: var(--accent-dark);
+            background: var(--accent-dark);
         }
-        .bg-primary-dark {
-            background-color: var(--primary-dark);
+        
+        /* FAQ SECTION */
+        .faq-container {
+            margin-top: 30px;
         }
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* REVIEWS */
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-        }
-        @media (min-width: 1024px) {
             .reviews-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .review-card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            color: var(--primary-dark);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
-        @media (min-width: 768px) {
-            .review-card {
-                padding: 32px;
-            }
-        }
         .review-stars {
-            font-size: 20px;
             color: var(--accent-light);
-            margin-bottom: 12px;
-        }
-        @media (min-width: 768px) {
-            .review-stars {
-                font-size: 24px;
-            }
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .review-text {
             font-style: italic;
-            font-size: 16px;
             margin-bottom: 16px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .review-text {
-                font-size: 18px;
-                line-height: 1.6;
-            }
-        }
-        .review-author {
-            font-weight: 600;
-            color: var(--primary-dark);
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .review-author {
-                font-size: 16px;
-            }
         }
         .review-cta {
-            margin-top: 30px;
             display: inline-block;
-            background-color: var(--accent-light);
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 12px 24px;
-            border-radius: 9999px;
-            font-size: 16px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 4px;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-        }
-        @media (min-width: 768px) {
-            .review-cta {
-                margin-top: 40px;
-                padding: 12px 32px;
-                font-size: 18px;
-            }
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background 0.3s ease;
         }
         .review-cta:hover {
-            background-color: var(--accent-dark);
-            transform: scale(1.05);
+            background: var(--accent-dark);
         }
+        
+        /* FOOTER */
         .footer {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             color: white;
-            padding: 30px 0;
-            margin-top: auto;
-        }
-        @media (min-width: 768px) {
-            .footer {
-                padding: 40px 0;
-            }
+            padding: 40px 0;
+            margin-top: 60px;
         }
         .footer-content {
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
         @media (min-width: 768px) {
             .footer-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                text-align: left;
-                flex-wrap: wrap;
-            }
-        }
-        .footer-section {
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-section {
-                margin-bottom: 0;
-            }
-        }
-        /* UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT */
-        .footer-brand {
-            text-align: left;
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-brand {
-                margin-bottom: 0;
-                text-align: left;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         .footer-title {
-            font-size: 20px;
-            font-weight: 700;
             color: var(--accent-light);
-            margin-bottom: 8px;
-        }
-        @media (min-width: 768px) {
-            .footer-title {
-                font-size: 24px;
-            }
-        }
-        .footer-text {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .footer-links {
             list-style: none;
-            padding: 0;
-            font-size: 14px;
-            line-height: 1.8;
         }
-        .footer-links li a {
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .footer-links li a:hover {
+        .footer-links a:hover {
             color: var(--accent-light);
         }
         .social-links {
             display: flex;
-            justify-content: center;
             gap: 16px;
-            margin-top: 12px;
-        }
-        @media (min-width: 768px) {
-            .social-links {
-                justify-content: flex-start;
-            }
+            margin-top: 16px;
         }
         .social-links a {
             color: white;
+            font-size: 20px;
             transition: color 0.3s ease;
         }
         .social-links a:hover {
             color: var(--accent-light);
         }
-        .social-icon {
-            font-size: 20px;
-        }
-        
-        /* FOOTER CONTACT INFO STYLES - MOVED TO CONNECT WITH US SECTION */
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-        .footer-contact-info {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-            justify-content: center;
-        }
-        @media (min-width: 768px) {
-            .footer-contact-info {
-                justify-content: flex-start;
-            }
-        }
-        .footer-contact-info:hover {
-            color: var(--accent-light);
-        }
-        
-        /* Language Switcher Styles - MOBILE OPTIMIZED */
-        .language-switcher {
-            position: relative;
-            display: inline-block;
-        }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #374151;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            max-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        .language-switcher.active .language-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .language-switcher.active .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-        .language-item {
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #4B5563;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .language-item:last-child {
-            border-bottom: none;
-        }
-        .language-item:hover {
-            background-color: #4B5563;
-        }
-        .language-item.active {
-            background-color: var(--accent-light);
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        .flag-icon {
-            font-size: 16px;
-            margin-right: 8px;
-            min-width: 18px;
-        }
-        .language-text {
-            flex: 1;
-            font-size: 14px;
-        }
-        .current-language {
-            display: flex;
-            align-items: center;
-            padding: 6px 10px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        .current-language:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        .current-flag {
-            font-size: 16px;
-            margin-right: 6px;
-        }
-        .dropdown-arrow {
-            margin-left: 6px;
-            transition: transform 0.2s ease;
-        }
-        .language-dropdown::-webkit-scrollbar {
-            width: 4px;
-        }
-        .language-dropdown::-webkit-scrollbar-track {
-            background: #4B5563;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb {
-            background: #6B7280;
-            border-radius: 2px;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #9CA3AF;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .lazy-load.loaded {
-            opacity: 1;
-        }
-        @media (max-width: 768px) {
-            .tour-grid, .reviews-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
-        
-        .book-now-button {
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            background-color: #FFD700;
-            color: #1a202c;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            white-space: nowrap;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: inline-block;
-        }
-        .book-now-button:hover {
-            background-color: #E2B700;
-            transform: scale(1.05);
-        }
-        
-        /* MAP STYLES - SIGNIFICANTLY LARGER FOR REVIEWS */
         .footer-map {
-            margin-top: 20px;
-            width: 100%;
-            flex: 2; /* Much larger flex value to take more space */
-        }
-        @media (min-width: 768px) {
-            .footer-map {
-                margin-top: 0;
-            }
+            grid-column: 1 / -1;
         }
         .footer-map iframe {
             width: 100%;
-            height: 350px; /* Significantly increased from 220px for mobile */
+            height: 300px;
             border: none;
             border-radius: 8px;
         }
-        @media (min-width: 768px) {
-            .footer-map iframe {
-                height: 400px; /* Significantly increased from 280px for desktop */
+        
+        /* BREADCRUMB */
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #666;
+        }
+        
+        /* BOOK NOW BUTTON */
+        .book-now-button {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .book-now-button:hover {
+            background: var(--accent-dark);
+        }
+        
+        /* UTILITY CLASSES */
+        .text-center {
+            text-align: center;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .mt-30 {
+            margin-top: 30px;
+        }
+        
+        /* NEW: SEO ARTICLE SECTION */
+        .seo-article {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .seo-article h2 {
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent-light);
+            padding-bottom: 15px;
+        }
+        .seo-article h3 {
+            color: #2d3748;
+            margin-top: 30px;
+        }
+        .seo-article ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .seo-article li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Print Styles for PageSpeed */
+        @media print {
+            .hero-slider,
+            .slider-controls,
+            .slider-arrow,
+            .nav-links,
+            .language-switcher,
+            .social-links,
+            .footer-map {
+                display: none !important;
+            }
+            .header,
+            .footer {
+                position: static !important;
             }
         }
-        @media (min-width: 1024px) {
-            .footer-map iframe {
-                height: 450px; /* Even larger for larger screens */
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+            outline: 3px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header class="header">
         <div class="container content">
             <div class="logo-section">
-                <img src="../images/egypt-photography-tours-logo.jpg"
-                     alt="Логотип Egypt Photography Tours - Профессиональные услуги гида-фотографа для Пирамид и древних мест"
+                <img src="images/egypt-photography-tours-logo.jpg"
+                     alt="Логотип Egypt Photography Tours - Частные туры по Египту"
                      class="logo-img"
                      loading="eager"
                      width="40"
@@ -1238,454 +1137,811 @@
             </div>
             <div class="header-contact">
                 <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
-                    <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    <i class="fab fa-whatsapp"></i> +20 155 073 5673
                 </a>
                 <a href="mailto:info@egyptphotographytours.com" class="contact-info">
-                    <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    <i class="far fa-envelope"></i> info@egyptphotographytours.com
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="container navbar-content">
             <div class="cta-container">
-                <button class="mobile-menu-toggle" aria-label="Переключить меню навигации">
+                <button class="mobile-menu-toggle" aria-label="Открыть меню">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="contact.html" class="book-now-button">Забронировать</a>
+                
+                <!-- Language Switcher -->
                 <div class="language-switcher">
-                    <div class="current-language">
+                    <div class="current-language" aria-label="Выбрать язык">
                         <span class="current-flag">🇷🇺</span>
-                        <span>RU</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <span class="current-text">RU</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
                     </div>
                     <div class="language-dropdown">
-                        <a href="../index.html" class="language-item">
+                        <!-- English -->
+                        <a href="../index.html" class="language-item" data-lang="en" data-flag="🇺🇸">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="index.html" class="language-item active">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
+                        <!-- Finnish -->
+                        <a href="../fi/index.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
+                            <span class="flag-icon">🇫🇮</span>
+                            <span class="language-text">Suomi (Finnish)</span>
                         </a>
-                        <a href="../ar/index.html" class="language-item">
+                        <!-- Arabic -->
+                        <a href="../ar/index.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
                             <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
+                            <span class="language-text">العربية (Arabic)</span>
                         </a>
-                        <a href="../fr/index.html" class="language-item">
+                        <!-- Russian -->
+                        <a href="index.html" class="language-item active" data-lang="ru" data-flag="🇷🇺">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский (Russian)</span>
+                        </a>
+                        <!-- French -->
+                        <a href="../fr/index.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
                             <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
+                            <span class="language-text">Français (French)</span>
                         </a>
-                        <a href="../de/index.html" class="language-item">
+                        <!-- German -->
+                        <a href="../de/index.html" class="language-item" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
+                            <span class="language-text">Deutsch (German)</span>
                         </a>
-                        <a href="../es/index.html" class="language-item">
+                        <!-- Spanish -->
+                        <a href="../es/index.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
+                            <span class="language-text">Español (Spanish)</span>
                         </a>
-                        <a href="../it/index.html" class="language-item">
+                        <!-- Italian -->
+                        <a href="../it/index.html" class="language-item" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
+                            <span class="language-text">Italiano (Italian)</span>
                         </a>
-                        <a href="../zh/index.html" class="language-item">
+                        <!-- Chinese -->
+                        <a href="../zh/index.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
+                            <span class="language-text">中文 (Chinese)</span>
                         </a>
-                        <a href="../ko/index.html" class="language-item">
+                        <!-- Korean -->
+                        <a href="../ko/index.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
+                            <span class="language-text">한국어 (Korean)</span>
                         </a>
-                        <a href="../pt/index.html" class="language-item">
+                        <!-- Portuguese -->
+                        <a href="../pt/index.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
+                            <span class="language-text">Português (Portuguese)</span>
                         </a>
-                        <a href="../id/index.html" class="language-item">
+                        <!-- Indonesian -->
+                        <a href="../id/index.html" class="language-item" data-lang="id" data-flag="🇮🇩">
                             <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
+                            <span class="language-text">Bahasa Indonesia</span>
                         </a>
-                        <a href="../ja/index.html" class="language-item">
+                        <!-- Japanese -->
+                        <a href="../ja/index.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
                             <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
+                            <span class="language-text">日本語 (Japanese)</span>
+                        </a>
+                        <!-- Danish -->
+                        <a href="../da/index.html" class="language-item" data-lang="da" data-flag="🇩🇰">
+                            <span class="flag-icon">🇩🇰</span>
+                            <span class="language-text">Dansk (Danish)</span>
+                        </a>
+                        <!-- Dutch -->
+                        <a href="../nl/index.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
+                            <span class="flag-icon">🇳🇱</span>
+                            <span class="language-text">Nederlands (Dutch)</span>
+                        </a>
+                        <!-- Hindi -->
+                        <a href="../hi/index.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
+                            <span class="flag-icon">🇮🇳</span>
+                            <span class="language-text">हिन्दी (Hindi)</span>
+                        </a>
+                        <!-- Norwegian -->
+                        <a href="../no/index.html" class="language-item" data-lang="no" data-flag="🇳🇴">
+                            <span class="flag-icon">🇳🇴</span>
+                            <span class="language-text">Norsk (Norwegian)</span>
+                        </a>
+                        <!-- Swedish -->
+                        <a href="../sv/index.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
+                            <span class="flag-icon">🇸🇪</span>
+                            <span class="language-text">Svenska (Swedish)</span>
+                        </a>
+                        <!-- Tagalog -->
+                        <a href="../tl/index.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
+                            <span class="flag-icon">🇵🇭</span>
+                            <span class="language-text">Tagalog</span>
+                        </a>
+                        <!-- Malay -->
+                        <a href="../ms/index.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
+                            <span class="flag-icon">🇲🇾</span>
+                            <span class="language-text">Bahasa Melayu</span>
+                        </a>
+                        <!-- Thai -->
+                        <a href="../th/index.html" class="language-item" data-lang="th" data-flag="🇹🇭">
+                            <span class="flag-icon">🇹🇭</span>
+                            <span class="language-text">ไทย (Thai)</span>
                         </a>
                     </div>
                 </div>
             </div>
+            
             <ul class="nav-links">
                 <li class="nav-link"><a href="index.html">Главная</a></li>
                 <li class="nav-link"><a href="about.html">О нас</a></li>
-                <li class="nav-link"><a href="tours.html">Наши туры</a></li>
+                <li class="nav-link"><a href="tours.html">Туры</a></li>
                 <li class="nav-link"><a href="gallery.html">Галерея</a></li>
                 <li class="nav-link"><a href="resources.html">Ресурсы</a></li>
                 <li class="nav-link"><a href="blog.html">Блог</a></li>
                 <li class="nav-link"><a href="contact.html">Контакты</a></li>
-                <li class="nav-link"><a href="faqs.html">Частые вопросы</a></li>
+                <li class="nav-link"><a href="faqs.html">Вопросы</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- HERO SLIDER - UPDATED TO 5 IMAGES -->
+    <section class="hero-slider">
+        <div class="hero-slides">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h2 class="hero-title">Частные туры по Египту с русскоговорящими гидами</h2>
+                    <p class="hero-subtitle">Уникальные частные экскурсии по Египту с опциональной профессиональной фотосессией в Каире, у пирамид Гизы, в Александрии и Луксоре</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Частные туры по Каиру и пирамидам Гизы</h2>
+                    <p class="hero-subtitle">Эксклюзивный доступ к пирамидам, музеям и скрытым жемчужинам с местными гидами-египтологами</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Частные туры в Луксор и Александрию</h2>
+                    <p class="hero-subtitle">Откройте древние храмы и средиземноморскую историю с индивидуальными частными экскурсиями</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Опциональная профессиональная фотосессия включена</h2>
+                    <p class="hero-subtitle">Запечатлейте ваше египетское приключение с профессиональными фотоуслугами высокого качества</p>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Индивидуальные туристические пакеты по Египту</h2>
+                    <p class="hero-subtitle">Персонализированные маршруты для семей, пар и индивидуальных путешественников с гибкими опциями</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="slider-arrow prev" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+        
+        <!-- 5 Dots for 5 slides -->
+        <div class="slider-controls">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+            <div class="slider-dot" data-slide="3"></div>
+            <div class="slider-dot" data-slide="4"></div>
+        </div>
+    </section>
+
+    <!-- HERO BUTTONS -->
+    <section class="hero-buttons-section">
+        <div class="container">
+            <div class="hero-buttons-container">
+                <a href="tours.html" class="hero-button hero-button-primary">Смотреть частные туры</a>
+                <a href="contact.html" class="hero-button hero-button-secondary">Забронировать тур по Египту</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
     <main class="main">
-        <!-- HERO SLIDER SECTION - FIXED -->
-        <section class="hero-slider">
-            <div class="hero-slides">
-                <div class="hero-slide active">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Запечатлейте магию Египта - Превратите каждый момент в шедевр
-                        </h1>
-                        <p class="hero-subtitle">
-                            Профессиональные фототуры и исторические экскурсии к самым знаковым достопримечательностям Египта. Опытные гиды, эксклюзивный доступ и незабываемые впечатления ждут вас.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Эксклюзивный доступ к скрытым жемчужинам Египта
-                        </h1>
-                        <p class="hero-subtitle">
-                            Откройте секретные точки обзора и сделайте захватывающие снимки вдали от толпы с нашими опытными местными гидами в Египте.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Ваш путь к самым захватывающим турам по Египту
-                        </h1>
-                        <p class="hero-subtitle">
-                            Учитесь у профессиональных фотографов и гидов, исследуя пирамиды, храмы и ландшафты Египта.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Создайте воспоминания на всю жизнь
-                        </h1>
-                        <p class="hero-subtitle">
-                            От золотого часа у пирамид до закатов на Ниле - запечатлейте магию Египта с нашими экскурсиями с гидом по фотографии и истории.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Slider Navigation Arrows -->
-            <button class="slider-arrow prev" aria-label="Предыдущий слайд">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-arrow next" aria-label="Следующий слайд">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Slider Dots - Positioned correctly below the buttons -->
-            <div class="slider-controls">
-                <div class="slider-dots">
-                    <div class="slider-dot active" data-slide="0"></div>
-                    <div class="slider-dot" data-slide="1"></div>
-                    <div class="slider-dot" data-slide="2"></div>
-                    <div class="slider-dot" data-slide="3"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES -->
-        <section class="hero-buttons-section">
-            <div class="container">
-                <div class="hero-buttons-container">
-                    <a href="tours.html" class="hero-button hero-button-primary">
-                        Исследуйте наши эксклюзивные удивительные туры
-                    </a>
-                    <a href="contact.html" class="hero-button hero-button-secondary">
-                        Забронируйте свой роскошный тур по Египту сейчас!
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        <!-- H1 SECTION -->
         <section class="main-section">
             <div class="container">
-                <h2>Добро пожаловать в Egypt Photography Tours</h2>
-                <p>
-                    Войдите в мир, где древняя история встречается с захватывающими дух пейзажами, готовыми быть запечатленными через ваш объектив. В Egypt Photography Tours мы страстно увлечены раскрытием непревзойденной красоты Египта фотографам всех уровней. От знаменитых <strong>Пирамид Гизы</strong> до спокойного течения <strong>реки Нил</strong> и оживленного очарования <strong>исторических улиц Каира</strong> мы создаем immersive путешествия, которые гарантируют, что вы не просто увидите Египет, но и по-настоящему <em>запечатлеете</em> его душу.
-                </p>
-                <p>
-                    Наши тщательно подобранные <strong>туры по Египту</strong> выходят за рамки обычного осмотра достопримечательностей, предлагая уникальные возможности для фотографии, персонализированное руководство от профессиональных фотографов и аутентичные культурные встречи. Независимо от того, являетесь ли вы опытным профессионалом, ищущим эксклюзивный доступ, или начинающим энтузиастом, стремящимся освоить свое мастерство, отправляйтесь в <strong>незабываемое египетское фото-приключение</strong> с нами. Давайте создадим ваш следующий шедевр вместе.
-                </p>
-            </div>
-        </section>
-
-        <section class="main-section bg-light-gray">
-            <div class="container">
-                <h2>Почему выбирают Egypt Photography Tours для вашего незабываемого путешествия?</h2>
+                <div class="breadcrumb">
+                    <a href="index.html">Главная</a> &gt; 
+                    <a href="tours.html">Туры по Египту</a> &gt; 
+                    <span>Частные туры по Египту</span>
+                </div>
+                
+                <!-- ОПТИМИЗИРОВАННЫЙ H1 ДЛЯ РУССКОЯЗЫЧНОЙ АУДИТОРИИ -->
+                <h1>Частные туры по Египту с русскоговорящими гидами</h1>
+                
+                <p><strong>Последнее обновление: Декабрь 2024 | 15+ лет опыта | 5000+ довольных клиентов | Рейтинг 4.9 звезд</strong></p>
+                
+                <p>Добро пожаловать в <strong>Egypt Photography Tours</strong> - ведущего поставщика эксклюзивных, персонализированных путешествий по Египту. В отличие от стандартных групповых туров, наши частные туры по Египту предлагают вам полную гибкость, индивидуальное внимание и глубокое культурное погружение с местными русскоговорящими гидами. Ищете ли вы комплексные туристические пакеты по Египту, интимные экскурсии по Каиру, впечатляющие туры к пирамидам Гизы, исторические исследования Александрии или мистические приключения в Луксоре - мы создаем индивидуальные маршруты, соответствующие вашим интересам, темпу и бюджету.</p>
+                
+                <!-- ОПТИМИЗИРОВАННЫЙ H2 -->
+                <h2>Опциональная профессиональная фотосессия включена</h2>
+                
+                <p>Хотя многие путешественники приходят к нам специально для профессиональных фотоуслуг, мы понимаем, что некоторые посетители просто хотят исключительных экскурсий с гидом. Поэтому мы предлагаем <strong>опциональные профессиональные фотосессии</strong> во всех наших частных турах по Египту. Вы можете выбрать включение профессионального фотографа в ваши туры по Каиру, посещения пирамид Гизы, однодневные поездки в Александрию или исследования Луксора, или просто наслаждаться нашими экскурсиями с экспертами-гидами без фотоуслуг. Эта гибкость делает нас идеальным выбором как для энтузиастов фотографии, так и для путешественников, ищущих высококачественные частные туры по Египту.</p>
+                
+                <!-- ОПТИМИЗИРОВАННЫЙ H2 -->
+                <h2>Туры в Каир, к пирамидам Гизы, в Александрию и Луксор</h2>
+                
+                <p>Наши частные туры по Египту комплексно охватывают самые знаковые направления страны: шумный мегаполис <strong>Каир</strong> с его Египетским музеем и исламской архитектурой; древние чудеса <strong>пирамид Гизы</strong> и Сфинкса; средиземноморскую красоту <strong>Александрии</strong> с ее греко-римской историей; и храмовый город <strong>Луксор</strong>, часто называемый величайшим музеем под открытым небом в мире. Мы предлагаем как многогородские туристические пакеты по Египту, так и сфокусированные туры по одному направлению, все с возможностью включения профессиональных фотоуслуг.</p>
+                
                 <div class="grid-section">
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        <h3 class="card-title">Опытные гиды-фотографы, местные знания</h3>
-                        <p class="card-text">Наши <strong>опытные гиды-фотографы в Египте</strong> - это не только опытные фотографы; они лицензированные египтологи и местные культурные специалисты. Они знают лучшие ракурсы, идеальные условия освещения и скрытые жемчужины для уникальной <strong>фотосессии у Пирамид</strong> или захватывающей сцены <strong>фотосъемки на Ниле</strong>. Воспользуйтесь преимуществами персонализированного коучинга и непревзойденными знаниями о истории и культуре Египта.</p>
+                        <div class="card-icon">🎯</div>
+                        <h3>100% частные туры с гидом</h3>
+                        <p>Исследуйте Египет в своем темпе с персональными русскоговорящими гидами. Никаких больших групп, никаких спешных графиков - только индивидуальное внимание и гибкие маршруты, адаптированные под ваши интересы.</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <h3 class="card-title">Эксклюзивный доступ и уникальные точки обзора</h3>
-                        <p class="card-text">Представьте, что вы снимаете <strong>храмы Луксора</strong> на рассвете без толп или находите идеальное место для потрясающего <strong>египетского пейзажа на закате</strong>. Мы используем наши глубокие местные связи, чтобы обеспечить <strong>эксклюзивный доступ в Египте</strong>, предлагая уникальные точки для фотографирования, часто недоступные обычным туристам. Получите тот снимок, о котором всегда мечтали, от оживленных рынков <strong>Каира</strong> до безмятежных ландшафтов <strong>Синая</strong>.</p>
+                        <div class="card-icon">📸</div>
+                        <h3>Опциональные фотоуслуги</h3>
+                        <p>Выберите включение профессиональной фотосессии или наслаждайтесь нашими турами без нее. Идеально как для энтузиастов фотографии, так и для путешественников, ищущих исключительные экскурсии по Египту.</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <h3 class="card-title">Индивидуальные маршруты для каждого фотографа</h3>
-                        <p class="card-text">Независимо от того, интересуетесь ли вы древней архитектурой, уличной фотографией, портретной съемкой или обширными <strong>пустынными ландшафтами Египта</strong>, наши <strong>индивидуальные фото-маршруты</strong> разработаны с учетом вашей страсти. Мы тщательно планируем каждый день, чтобы оптимизировать освещение и возможности для фотографии, гарантируя, что ваше внимание остается сосредоточенным на создании невероятных изображений. От целенаправленного <strong>фототура к Пирамидам</strong> до обширной <strong>фото-экспедиции по древнему Египту</strong> - ваше путешествие строится на заказ.</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M7 12h.01M7 16h.01M16 16h.01M12 16h.01M12 12h.01M12 8h.01M7 8h.01M16 8h.01M21 21l-4.5-4.5"></path></svg>
-                        <h3 class="card-title">Небольшие группы, персонализированное обучение</h3>
-                        <p class="card-text">Мы верим в качество, а не в количество. Наши <strong>туры по Египту в небольших группах</strong> гарантируют персонализированное внимание и достаточное время один на один с вашим гидом-фотографом. Эта интимная обстановка способствует созданию поддерживающей среды, где вы можете оттачивать свои навыки, делиться опытом и по-настоящему общаться с другими фотографами. Испытайте магию <strong>travel-фотографии в Египте</strong> с сообществом единомышленников.</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c.045 4.095 1.563 7.844 4.368 10.053L12 21.466l4.688-2.413A12.001 12.001 0 0021.056 12c-.045-4.095-1.563-7.844-4.368-10.053z"></path></svg>
-                        <h3 class="card-title">Бесперебойная логистика и безопасные путешествия по Египту</h3>
-                        <p class="card-text">Ваше спокойствие - наш приоритет. Мы берем на себя все сложные детали - от роскошного размещения и частного транспорта с кондиционером до всех разрешений и входных билетов. Наша приверженность <strong>безопасным турам по Египту</strong> означает, что вы можете полностью сосредоточиться на своей фотографии и культурном погружении. Наслаждайтесь <strong>беспроблемным фото-приключением в Египте</strong> от начала до конца.</p>
-                    </div>
-                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253"></path></svg>
-                        <h3 class="card-title">Аутентичное культурное погружение</h3>
-                        <p class="card-text">Помимо создания потрясающих фотографий, наши туры предлагают глубокое <strong>аутентичное культурное погружение в Египте</strong>. Общайтесь с местными жителями, исследуйте традиционные рынки и наслаждайтесь аутентичной кухней. Этот целостный опыт гарантирует, что ваши фотографии расскажут более богатую историю, отражающую истинный дух Египта и его народа.</p>
+                        <div class="card-icon">⭐</div>
+                        <h3>Местные гиды-египтологи</h3>
+                        <p>Наши гиды - лицензированные египтологи с глубокими знаниями истории, культуры Египта и скрытых жемчужин. Они предоставляют информацию, которую вы не найдете в путеводителях.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- COMPREHENSIVE EGYPT TOURS GUIDE SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Почему частные туры по Египту лучше стандартных пакетов?</h2>
+                
+                <p>При планировании вашего египетского приключения вы сталкиваетесь с выбором между стандартными групповыми турами и персонализированными частными экскурсиями. Наши частные туры по Египту предлагают значительные преимущества, которые превращают ваше путешествие из обычного в исключительное. В отличие от переполненных групповых туров, где вы просто еще одно лицо в толпе, наши частные туры обеспечивают индивидуальное внимание, гибкое планирование и доступ к впечатлениям, недоступным для больших групп.</p>
+                
+                <h3>Преимущества частных туров:</h3>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>Полная гибкость</h3>
+                        <p>Меняйте маршрут на ходу, проводите больше времени на интересующих вас объектах, избегайте часов пик и создавайте график, идеально соответствующий вашим энергетическим уровням и интересам.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Глубокий культурный доступ</h3>
+                        <p>Частные туры позволяют получить доступ к небольшим ресторанам, менее известным местам и аутентичным местным впечатлениям, которые большие группы не могут охватить из-за ограничений по размеру.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Персонализированное руководство</h3>
+                        <p>Ваш частный гид сосредоточен исключительно на вашей группе, отвечает на все ваши вопросы, предоставляет подробные объяснения и адаптирует информацию под ваши конкретные интересы.</p>
+                    </div>
+                </div>
+                
+                <h3>Наши категории частных туров по Египту:</h3>
+                <ul>
+                    <li><strong>Частные туры по Каиру:</strong> Комплексное исследование столицы Египта, включая Египетский музей, Коптский Каир, Исламский Каир, базар Хан-эль-Халили и местные районы с опциональной профессиональной фотосессией на знаковых локациях</li>
+                    <li><strong>Частные туры к пирамидам Гизы:</strong> Эксклюзивный доступ к плато Гиза, включая Великую пирамиду, Сфинкса и Музей Солнечной ладьи с фотосессиями в золотой час для оптимального освещения</li>
+                    <li><strong>Частные туры в Александрию:</strong> Однодневные поездки или расширенные пребывания с исследованием средиземноморского побережья Александрии, катакомб Ком эль-Шокафа, крепости Кайтбей, Библиотеки Александрины и местных рыбных ресторанов</li>
+                    <li><strong>Частные туры в Луксор:</strong> Глубокое исследование Восточного и Западного берегов, включая Долину Царей, Карнакский храм, Луксорский храм, храм Хатшепсут и полеты на воздушном шаре</li>
+                    <li><strong>Многогородские пакеты по Египту:</strong> Комплексные 7-14-дневные частные туры, сочетающие Каир, Гизу, Александрию, Луксор, Асуан и опциональные круизы по Нилу</li>
+                    <li><strong>Частные туры по специальным интересам:</strong> Индивидуализированные туры, фокусирующиеся на фотографии, истории, архитектуре, еде, семейных путешествиях, медовых месяцах или академических исследованиях</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEO ARTICLE SECTION: COMPLETE EGYPT TRAVEL GUIDE -->
         <section class="main-section">
             <div class="container">
-                <h2>Наши рекомендуемые фототуры</h2>
+                <div class="seo-article">
+                    <h2>Полное руководство по частным турам по Египту: Каир, Гиза, Александрия и Луксор</h2>
+                    
+                    <p><strong>Написано профессиональным египтологом Хоссам | Обновлено для сезона 2024-2025</strong></p>
+                    
+                    <p>Добро пожаловать в исчерпывающее руководство по частным турам по Египту. Имея более 15 лет опыта создания персонализированных египетских приключений, мы создали этот всеобъемлющий ресурс, чтобы помочь вам понять, почему частные туры предлагают лучший способ познакомиться с Египтом. Независимо от того, впервые ли вы посещаете страну или возвращаетесь, это руководство охватывает все - от выбора правильного частного тура до максимизации вашего опыта в Каире, Гизе, Александрии и Луксоре.</p>
+                    
+                    <h3>Понимание частных туров по Египту: что делает их особенными?</h3>
+                    
+                    <p>Частные туры по Египту представляют собой вершину персонализированных путешествий в одной из самых исторически богатых стран мира. В отличие от стандартных групповых туров, которые следуют жестким графикам с 20-40 другими путешественниками, частные туры предлагают:</p>
+                    
+                    <ul>
+                        <li><strong>Полную кастомизацию:</strong> Создавайте свой маршрут с нуля или изменяйте наши предложенные туры в соответствии с вашими конкретными интересами - будь то древняя история, фотография, местная кухня или семейные мероприятия.</li>
+                        <li><strong>Гибкое планирование:</strong> Начинайте день, когда хотите, проводите столько времени, сколько желаете, на каждом объекте, делайте перерывы, когда нужно, и корректируйте планы на основе погоды, уровня энергии или неожиданных открытий.</li>
+                        <li><strong>Персонализированное внимание:</strong> Ваш частный гид-египтолог сосредоточен исключительно на вашей группе, предоставляя подробные объяснения, адаптированные к вашему уровню знаний и интересам, полностью отвечая на все вопросы.</li>
+                        <li><strong>Доступ к эксклюзивным впечатлениям:</strong> Частные туры могут включать впечатления, недоступные для больших групп: частные просмотры, доступ за кулисы, встречи с местными ремесленниками, визиты в дома египетских семей и рестораны, которые не принимают туристические автобусы.</li>
+                        <li><strong>Эффективность и комфорт:</strong> Пропускайте очереди на популярных объектах, используйте частный транспорт, который ждет вас, и наслаждайтесь темпом, соответствующим вашим предпочтениям, а не самым медленным членам большой группы.</li>
+                        <li><strong>Опциональные профессиональные услуги:</strong> Возможность включения специализированных услуг, таких как профессиональная фотография, академические лекции или гиды по конкретным видам деятельности на основе ваших интересов.</li>
+                    </ul>
+                    
+                    <h3>Частные туры по Каиру: за пределами туристических троп</h3>
+                    
+                    <p>Каир, город с населением 20 миллионов человек, предлагает бесконечные возможности для исследования, которые большинство групповых туров лишь поверхностно затрагивают. Наши частные туры по Каиру выходят за пределы стандартного маршрута Египетского музея и пирамид, включая:</p>
+                    
+                    <ul>
+                        <li><strong>Египетский музей и Новый Большой Египетский музей:</strong> Частные экскурсии с гидом по обоим музеям с акцентом на ваши конкретные интересы - будь то сокровища Тутанхамона, техники мумификации или конкретные исторические периоды.</li>
+                        <li><strong>Глубокое погружение в Исламский Каир:</strong> Исследуйте за пределами главных мечетей, чтобы открыть скрытые жемчужины, узнайте об эволюции исламской архитектуры, посетите традиционные ремесленные мастерские и поймите исламскую историю Каира в глубину.</li>
+                        <li><strong>Комплексный тур по Коптскому Каиру:</strong> Посетите Висячую церковь, Абу Серга, синагогу Бен Эзра и Коптский музей с подробным историческим контекстом о христианском наследии Египта и еврейской истории.</li>
+                        <li><strong>Исследование местных районов:</strong> Испытайте аутентичную каирскую жизнь в районах, таких как Замалек, Маади или Гелиополис, посетите местные рынки, не посещаемые туристами, и насладитесь традиционными блюдами в семейных ресторанах.</li>
+                        <li><strong>Фототуры по Каиру:</strong> Для тех, кто выбирает наши опциональные фотоуслуги, мы знаем лучшие места и время для фотографирования контрастов Каира - древнего и современного, богатого и бедного, хаотичного и мирного.</li>
+                        <li><strong>Гастрономические туры по Каиру:</strong> Частные кулинарные туры, фокусирующиеся на египетской кухне - от уличных ларьков до ресторанов высокого класса, кулинарные классы с местными шеф-поварами и посещения специйных рынков.</li>
+                    </ul>
+                    
+                    <h3>Частные туры к пирамидам Гизы: эксклюзивный доступ и оптимальные впечатления</h3>
+                    
+                    <p>Плато Гиза принимает миллионы посетителей ежегодно, но частные туры предлагают способы познакомиться с пирамидами без толп и с более глубоким пониманием:</p>
+                    
+                    <ul>
+                        <li><strong>Стратегическое время посещения:</strong> Частные туры позволяют посещать в оптимальное время - рано утром, чтобы избежать толп и жары, или ближе к вечеру для фотосессий в золотой час и закатных видов.</li>
+                        <li><strong>Доступ к интерьерам пирамид:</strong> Подробные рекомендации о том, в какие пирамиды стоит заходить на основе ваших интересов и физических возможностей, с полными объяснениями строительных техник и исторической значимости.</li>
+                        <li><strong>Фото-ориентированные туры:</strong> Для клиентов, выбирающих фотосессии, мы знаем все лучшие ракурсы, точки обзора (включая некоторые менее известные места) и условия освещения для захвата потрясающих изображений пирамид.</li>
+                        <li><strong>За пределами трех главных:</strong> Исследование менее известных пирамид на плато, деревни рабочих и текущих археологических раскопок с объяснениями текущих исследований.</li>
+                        <li><strong>Впечатления с верблюдами и лошадьми:</strong> Частные договоренности для поездок по пустыне с респектабельными операторами, обеспечивающими благополучие животных и оптимальные возможности для фотографии.</li>
+                        <li><strong>Альтернативы шоу "Звук и свет":</strong> В то время как официальное шоу рассчитано на массы, частные гиды могут предоставить более персонализированные и исторически точные повествования об истории плато.</li>
+                    </ul>
+                    
+                    <h3>Частные туры в Александрию: средиземноморский Египет раскрыт</h3>
+                    
+                    <p>Основанная Александром Македонским, Александрия предлагает другой египетский опыт со своей средиземноморской атмосферой и греко-римской историей:</p>
+                    
+                    <ul>
+                        <li><strong>Тур по историческим слоям:</strong> Понимание множественных исторических слоев Александрии - фараонского, греческого, римского, византийского, исламского и современного - через ее археологические объекты и архитектуру.</li>
+                        <li><strong>Катакомбы Ком эль-Шокафа:</strong> Частное экскурсионное исследование этого уникального некрополя, сочетающего египетский, греческий и римский художественные стили, с подробными объяснениями его открытия и значимости.</li>
+                        <li><strong>Библиотека Александрина:</strong> Индивидуализированные туры по современной библиотеке на основе ваших интересов - будь то архитектура, специальные коллекции или текущие культурные программы.</li>
+                        <li><strong>Крепость Кайтбей:</strong> Подробная история этой крепости 15-го века, построенной на месте древнего Александрийского маяка, одного из Семи чудес света.</li>
+                        <li><strong>Местный опыт морепродуктов:</strong> Частные договоренности в аутентичных рыбных ресторанах, где вы выбираете свежую рыбу и узнаете о средиземноморских рыболовных традициях.</li>
+                        <li><strong>Сады дворца Монтаза:</strong> Неторопливое исследование этих прекрасных садов с историческим контекстом о королевской эре Египта и архитектурным анализом дворцовых зданий.</li>
+                        <li><strong>Фототуры по Александрии:</strong> Прибрежные фотосессии, архитектурная фотография с акцентом на здания в стиле Belle Époque и уличная фотография в традиционных районах.</li>
+                    </ul>
+                    
+                    <h3>Частные туры в Луксор: древние Фивы изучены в глубину</h3>
+                    
+                    <p>Луксор, древние Фивы, содержит примерно треть мировых древностей, что делает частное гидирование необходимым для содержательного исследования:</p>
+                    
+                    <ul>
+                        <li><strong>Комплексный тур по Западному берегу:</strong> Индивидуализированное исследование Долины Царей на основе того, какие гробницы открыты, и ваших конкретных интересов, с подробными объяснениями погребальных практик, украшения гробниц и недавних открытий.</li>
+                        <li><strong>Храм Хатшепсут:</strong> Глубокий анализ этого уникального храма, правления женщины-фараона Египта и архитектурных инноваций структуры.</li>
+                        <li><strong>Долина Цариц и Знати:</strong> Посещения менее переполненных некрополей с красиво украшенными гробницами цариц, принцев и высокопоставленных чиновников.</li>
+                        <li><strong>Комплекс храма Карнак:</strong> Частные туры, адаптированные к вашей выносливости и интересам, фокусирующиеся на конкретных областях, таких как Гипостильный зал, священное озеро или музей под открытым небом, на основе того, что вы хотите увидеть.</li>
+                        <li><strong>Луксорский храм днем и ночью:</strong> Опыт посещения храма в разное время с объяснениями его эволюции от храма Нового царства до римской крепости, коптской церкви и мечети.</li>
+                        <li><strong>Полет на воздушном шаре:</strong> Частные договоренности для рассветных полетов на воздушном шаре над Западным берегом с оптимальными возможностями для фотографии и соображениями безопасности.</li>
+                        <li><strong>Фототуры по Луксору:</strong> Рекомендации по фотографированию храмовых рельефов в сложных условиях освещения, захвату масштаба и величия памятников и этичной фотографии местных сообществ.</li>
+                    </ul>
+                    
+                    <h3>Опциональная профессиональная фотосессия: как она улучшает ваш частный тур по Египту</h3>
+                    
+                    <p>Хотя наши частные туры по Египту сами по себе являются исключительными туристическими впечатлениями, опциональная услуга профессиональной фотосессии добавляет значительную ценность для многих путешественников:</p>
+                    
+                    <ul>
+                        <li><strong>Для энтузиастов фотографии:</strong> Изучите профессиональные техники для захвата уникальных условий освещения Египта, архитектурных деталей и культурных моментов у опытного гида-фотографа.</li>
+                        <li><strong>Для путешественников, желающих качественных сувениров:</strong> Вернитесь домой с изображениями профессионального качества, а не снимками - идеально для альбомов, настенного искусства или обмена с семьей и друзьями.</li>
+                        <li><strong>Для особых случаев:</strong> Пары в медовый месяц, отмечающие годовщины и семьи, отмечающие особые моменты, получают красиво задокументированные воспоминания на фоне впечатляющих декораций Египта.</li>
+                        <li><strong>Гибкие договоренности:</strong> Выберите полное фотографическое покрытие дня или конкретные сессии в ключевых локациях, таких как пирамиды в золотой час или Карнакский храм в утреннем свете.</li>
+                        <li><strong>Рекомендации по оборудованию:</strong> Советы о том, какое фотооборудование брать в Египет, обращении с пылью и жарой Египта и техниках для сложных условий освещения в храмах и гробницах.</li>
+                        <li><strong>Культурная чувствительность:</strong> Руководство по уважительной фотографии людей, религиозных мест и местных сообществ для обеспечения позитивных взаимодействий и аутентичных изображений.</li>
+                        <li><strong>Поддержка после поездки:</strong> Помощь в выборе и редактировании изображений, создании альбомов или подготовке изображений для печати и демонстрации.</li>
+                    </ul>
+                    
+                    <h3>Планирование вашего частного тура по Египту: практические соображения</h3>
+                    
+                    <p>Успешное планирование частного тура по Египту включает несколько ключевых соображений, которые отличаются от стандартных бронирований туров:</p>
+                    
+                    <ul>
+                        <li><strong>Предварительное планирование:</strong> Частные туры с качественными гидами требуют предварительного бронирования, особенно в пиковые сезоны (октябрь-апрель). Идеальный срок планирования - 3-6 месяцев заранее для лучшей доступности гидов и вариантов размещения.</li>
+                        <li><strong>Бюджетные соображения:</strong> Частные туры представляют более высокую ценность, а не более высокую стоимость, если учитывать персонализированное внимание, гибкость, эксклюзивный доступ и эффективность времени. Мы предлагаем частные туры на различных ценовых уровнях, чтобы соответствовать разным бюджетам.</li>
+                        <li><strong>Оптимизация размера группы:</strong> Частные туры могут быть более рентабельными для семей или небольших групп друзей, путешествующих вместе, поскольку затраты распределяются, в то время как преимущества конфиденциальности и персонализации сохраняются.</li>
+                        <li><strong>Кастомизация на основе интересов:</strong> Перед бронированием рассмотрите, какие аспекты Египта интересуют вас больше всего - конкретные исторические периоды, архитектурные стили, религиозная история, современная культура, возможности для фотографии или кулинарные впечатления.</li>
+                        <li><strong>Физические соображения:</strong> Частные туры могут быть адаптированы к физическим способностям, с более неторопливым темпом, меньшим количеством ступеней или альтернативными объектами для тех, у кого есть проблемы с мобильностью.</li>
+                        <li><strong>Сезонные корректировки:</strong> Частные туры позволяют оптимальное планирование на основе сезонов - более ранние старты в летнюю жару, занятия в помещении в самые жаркие часы и фокус на объектах с тенью или охлаждением.</li>
+                        <li><strong>Комбинирование направлений:</strong> Многогородские частные туры (Каир-Гиза-Александрия-Луксор) требуют тщательного логистического планирования для внутренних рейсов, поездов или расстояний вождения, что мы обрабатываем беспрепятственно.</li>
+                    </ul>
+                    
+                    <h3>Частные vs. Групповые туры: анализ затрат и выгод</h3>
+                    
+                    <p>Хотя частные туры по Египту имеют более высокую стоимость на человека, чем групповые туры, они предлагают значительные преимущества, которые часто делают их более выгодными:</p>
+                    
+                    <ul>
+                        <li><strong>Эффективность времени:</strong> Частные туры достигают большего за меньшее время через оптимизированное планирование, пропуск очередей и прямой транспорт, лучше используя ограниченное время отпуска.</li>
+                        <li><strong>Качество впечатлений:</strong> Более глубокое взаимодействие с объектами, персонализированные объяснения, возможность задавать неограниченное количество вопросов и впечатления, адаптированные к вашим интересам, а не общие комментарии.</li>
+                        <li><strong>Ценность гибкости:</strong> Возможность менять планы на основе погоды, уровней энергии или обнаруженных интересов имеет нематериальную ценность, которая повышает удовлетворенность и снижает стресс от путешествия.</li>
+                        <li><strong>Эксклюзивный доступ:</strong> Возможности для впечатлений, недоступных группам - частные просмотры музеев, встречи с экспертами, бронирования в популярных местах и т.д.</li>
+                        <li><strong>Фотографическое преимущество:</strong> Для тех, кто выбирает фотосессии, качество изображений и возможности обучения представляют значительную ценность по сравнению со стандартной туристической фотографией.</li>
+                        <li><strong>Культурное погружение:</strong> Более глубокие взаимодействия с местными сообществами, аутентичные кулинарные впечатления и понимание за пределами поверхностного туризма.</li>
+                        <li><strong>Здоровье и безопасность:</strong> Частный транспорт и меньший размер группы предлагают преимущества для здоровья, особенно важные в соображениях постпандемических путешествий.</li>
+                    </ul>
+                    
+                    <h3>Ответы на часто задаваемые вопросы о частных турах по Египту</h3>
+                    
+                    <p>Основываясь на 15+ лет организации частных туров по Египту, вот ответы на общие вопросы:</p>
+                    
+                    <ul>
+                        <li><strong>"Безопасны ли частные туры для самостоятельных путешественников, особенно женщин?"</strong> Да, частные туры могут быть безопаснее, чем независимые путешествия или большие групповые туры. Ваш гид предоставляет местные знания, управляет взаимодействиями и обеспечивает нахождение в респектабельных заведениях. Мы часто организуем частные туры для самостоятельных путешественниц-женщин с доступностью гидов-женщин по запросу.</li>
+                        <li><strong>"Могут ли частные туры учитывать диетические ограничения или аллергии?"</strong> Абсолютно. Частные туры позволяют подробное общение с ресторанами, альтернативные варианты питания и гибкость для удовлетворения любых диетических потребностей - что-то сложное с фиксированными меню групповых туров.</li>
+                        <li><strong>"Насколько частный 'частный'? Будем ли мы когда-либо присоединяться к другим группам?"</strong> По-настоящему частный означает только вашу группу и гида/водителя. Никакого объединения с другими группами, если специально не запрошено по социальным причинам (и тогда только с вашего согласия).</li>
+                        <li><strong>"Можем ли мы настроить частный тур в середине пути?"</strong> Да, одно из ключевых преимуществ. Если вы обнаружите интерес к чему-то неожиданному, хотите провести больше времени где-то или нуждаетесь в более медленном темпе, частные туры позволяют ежедневные корректировки.</li>
+                        <li><strong>"Более ли знающи гиды частных туров, чем гиды групповых туров?"</strong> Мы выбираем наших гидов частных туров на основе более глубоких знаний, языковых навыков и способности персонализировать объяснения. Многие имеют ученые степени в египтологии, а не базовые сертификаты гидов.</li>
+                        <li><strong>"Как работает опциональная фотосессия с частными турами?"</strong> Вы можете выбрать включение профессионального фотографа на все дни, конкретные дни или конкретные локации. Фотограф работает незаметно вместе с вашим гидом, чтобы запечатлеть ваш опыт, не прерывая поток вашего тура.</li>
+                        <li><strong>"Могут ли частные туры включать детей? Какие возрасты лучше всего работают?"</strong> Частные туры отлично подходят для семей. Мы корректируем содержание, темп и мероприятия на основе возрастов и интересов детей, что невозможно с фиксированными групповыми турами. Интерактивные элементы, практический опыт и перерывы включаются естественно.</li>
+                        <li><strong>"Какой идеальный размер группы для частных туров по Египту?"</strong> Большинство частных туров прекрасно работают для 2-6 человек. Более крупные частные группы до 12-15 человек возможны с дополнительными гидами и транспортными средствами. Соло частные туры также популярны для максимальной гибкости.</li>
+                        <li><strong>"Как далеко заранее следует бронировать частные туры по Египту?"</strong> Для пикового сезона (октябрь-апрель) 3-6 месяцев заранее обеспечивает лучшую доступность гидов. Для межсезонья 1-3 месяца обычно достаточно. Частные туры в последнюю минуту иногда возможны, но с ограниченными вариантами гидов.</li>
+                        <li><strong>"Стоят ли частные туры дополнительных затрат?"</strong> Основываясь на отзывах клиентов, постоянно оценивающих частные туры выше, чем предыдущие групповые туры, консенсус - да - персонализированное внимание, гибкость, более глубокие впечатления и эффективность времени оправдывают дополнительные инвестиции для большинства путешественников.</li>
+                    </ul>
+                    
+                    <h3>Отзывы: впечатления от частных туров по Египту</h3>
+                    
+                    <p>Отзывы предыдущих клиентов помогают понять разницу частных туров:</p>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Наш частный тур по Египту превратил то, что могло быть посещением по списку, в глубокое культурное погружение. Наличие гида, полностью сосредоточенного на нашей семье, означало, что вопросы наших детей получали полные ответы, мы могли менять планы, когда кто-то уставал, и мы открывали аспекты Египта, о существовании которых никогда не знали. Опциональная фотосессия дала нам профессиональные семейные фотографии у пирамид - сокровища, которые мы будем хранить вечно." - Семья Андерсон, США
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Как самостоятельная путешественница, я изначально нервничала по поводу Египта. Частный тур обеспечил безопасность, компанию и невероятную гибкость. Мой гид корректировал каждый день на основе моих интересов - когда у меня развилась страсть к исламской архитектуре, она полностью изменила план следующего дня, чтобы сфокусироваться на менее известных мечетях и исламских школах. Этот уровень персонализации невозможен с групповыми турами." - Сара М., Австралия
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Мы выбрали частный тур специально для фотографического компонента, но обнаружили, что гидирование было одинаково исключительным. Наш фотограф знал точно, где и когда запечатлеть каждый объект идеально, в то время как наш египтолог предоставлял контекст, который делал изображения более значимыми. Мы вернулись как с потрясающими фотографиями, так и с глубоким пониманием египетской истории." - Томас и Елена, Германия
+                    </blockquote>
+                    
+                    <h3>Бронирование вашего частного тура по Египту: следующие шаги</h3>
+                    
+                    <p>Готовы познакомиться с Египтом через частный тур, адаптированный к вашим интересам? Вот наш рекомендуемый процесс:</p>
+                    
+                    <ol>
+                        <li><strong>Начальный запрос:</strong> Свяжитесь с нами с вашими датами поездки, размером группы, интересами и любыми специальными требованиями. Упомяните, если вы заинтересованы в опциональной профессиональной фотосессии.</li>
+                        <li><strong>Консультационный звонок:</strong> Мы планируем звонок, чтобы обсудить ваши интересы в Египте, стиль путешествия, обязательные для посещения объекты и предпочтения, чтобы понять, какой частный тур подойдет вам лучше всего.</li>
+                        <li><strong>Предложение индивидуального маршрута:</strong> На основе нашего обсуждения мы создаем подробный маршрут частного тура, включая специальности гидов, транспорт, варианты размещения и договоренности по фотосессии, если запрошено.</li>
+                        <li><strong>Ревизия и уточнение:</strong> Мы корректируем маршрут на основе ваших отзывов, пока он идеально не совпадет с вашим видением египетского приключения.</li>
+                        <li><strong>Бронирование и подготовка:</strong> После финализации мы обрабатываем все бронирования и предоставляем подробную предпутевую информацию, включая списки упаковки, культурные рекомендации и подготовительные материалы.</li>
+                        <li><strong>Опыт в стране:</strong> Ваш частный гид встречает вас по прибытии и предоставляет беспрепятственное, персонализированное турирование на протяжении всего пребывания с ежедневной гибкостью на основе ваших развивающихся интересов.</li>
+                        <li><strong>Последующее сопровождение после поездки:</strong> После вашего тура мы проверяем обратную связь и, для тех, кто выбрал фотосессии, помогаем с выбором и доставкой изображений.</li>
+                    </ol>
+                    
+                    <p><strong>Готовы познакомиться с Египтом через частный тур, созданный специально для вас?</strong> <a href="contact.html" style="color: var(--accent-dark); font-weight: bold;">Свяжитесь с Egypt Photography Tours сегодня</a>, чтобы начать планировать ваше индивидуальное египетское приключение с опциональными профессиональными фотоуслугами.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOUR DETAILS -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Детали частных туров по Египту и эксклюзивные впечатления</h2>
+                
+                <h3>📸 Опциональные профессиональные фотоуслуги:</h3>
+                <ul>
+                    <li><strong>Фототуры по Каиру:</strong> Профессиональные фотосессии у пирамид, в Египетском музее, на объектах исламской архитектуры и на местных рынках с рекомендациями по оптимальному освещению</li>
+                    <li><strong>Фотосессия у пирамид Гизы:</strong> Сессии в золотой час на рассвете/закате, профессиональные рекомендации по позированию на эксклюзивных точках обзора, техники творческой композиции</li>
+                    <li><strong>Прибрежная фотография Александрии:</strong> Средиземноморские морские пейзажи, архитектурные детали греко-римских объектов, яркие уличные сцены в традиционных районах</li>
+                    <li><strong>Фотография храмов Луксора:</strong> Техники для захвата храмовых рельефов в сложном свете, величественные архитектурные снимки, интимная детальная фотография</li>
+                    <li><strong>Культурные портретные сессии:</strong> Уважительная портретная фотография с местными ремесленниками, владельцами магазинов и членами сообщества с соответствующим согласием и культурной чувствительностью</li>
+                    <li><strong>Семейная и парная фотография:</strong> Профессиональные семейные портреты на знаковых объектах, романтические снимки пар для пар в медовый месяц, фотография много поколенных семейных групп</li>
+                </ul>
+                
+                <h3>📍 Эксклюзивные впечатления частных туров:</h3>
+                <ul>
+                    <li><strong>Доступ к музеям в нерабочие часы:</strong> Частные просмотры в музеях до или после публичных часов для исследования без толп</li>
+                    <li><strong>Встречи с археологами:</strong> Организованные встречи с работающими археологами на активных раскопках (в зависимости от доступности и разрешений)</li>
+                    <li><strong>Посещения мастерских ремесленников:</strong> Частные демонстрации и мастер-классы с мастерами-ремесленниками в гончарном деле, изготовлении папируса, ткачестве текстиля и изготовлении ювелирных изделий</li>
+                    <li><strong>Домашние кулинарные впечатления:</strong> Блюда в домах египетских семей с кулинарными демонстрациями и возможностями культурного обмена</li>
+                    <li><strong>Академически-ориентированные туры:</strong> Туры, разработанные для студентов, исследователей или глубоко заинтересованных путешественников с доступом к специализированным ресурсам и экспертам</li>
+                    <li><strong>Маршруты, ориентированные на фотографию:</strong> Туры, разработанные специально для фотографов с оптимальным временем, специальным доступом для фотографии и техническим руководством</li>
+                </ul>
+                
+                <h3>🎯 Преимущества частных туров:</h3>
+                <ul>
+                    <li><strong>Полный контроль над расписанием:</strong> Начинайте, когда хотите, проводите столько, сколько нравится, на каждом объекте, делайте перерывы, когда нужно, и меняйте планы спонтанно</li>
+                    <li><strong>Персонализированное содержание:</strong> Информация, адаптированная к вашему существующему уровню знаний и конкретным интересам, а не общие комментарии</li>
+                    <li><strong>Прямой транспорт:</strong> Частное транспортное средство с водителем всегда доступно, никакого ожидания членов группы, прямые маршруты к местам назначения</li>
+                    <li><strong>Приоритет здоровья и безопасности:</strong> Контроль над стандартами гигиены, возможность избегать переполненных пространств, индивидуальное внимание к любым проблемам со здоровьем</li>
+                    <li><strong>Признание особых случаев:</strong> Дни рождения, годовщины и особые вехи, отмечаемые соответствующими местными традициями и сюрпризами</li>
+                    <li><strong>Языковой фокус:</strong> Гиды, выбранные за языковые навыки и способность четко объяснять сложные концепции на вашем родном языке</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FEATURED TOURS - UPDATED IMAGES TO JPG -->
+        <section class="main-section">
+            <div class="container">
+                <h2>Наши самые популярные пакеты частных туров по Египту</h2>
+                <p>Выберите из нашей тщательно подобранной подборки частных туров по Египту, разработанных для путешественников, ищущих персонализированные впечатления с опциональными профессиональными фотоуслугами.</p>
+                
                 <div class="tour-grid">
                     <div class="tour-card">
-                        <span class="sale-tag">Специальное предложение!</span>
-                        <img src="../images/pyramids-private-tour.jpg"
-                             alt="Частная экскурсия с гидом-фотографом у Пирамид Гизы с профессиональным египетским гидом и видом на Сфинкса"
-                             class="tour-img lazy-load"
+                        <img src="images/pyramids-private-tour.jpg"
+                             alt="Частный тур к пирамидам Гизы с опциональной фотосессией - частный тур по Египту"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">📸 Запечатлейте магию: Частный тур к Пирамидам с гидом + Профессиональная фотография</h3>
-                            <p class="tour-card-text">Погрузитесь в древнюю историю в этом immersive однодневном частном туре по Великим Пирамидам Гизы и Сфинксу с гидом от страстного местного эксперта. Запечатлейте незабываемые моменты с профессиональной фотосессией и услышите реальные истории за камнями.</p>
+                            <h3>Частный тур к пирамидам Гизы</h3>
+                            <p>Эксклюзивный частный тур по плато Гиза с гидом-египтологом. Включает все входы в пирамиды, Сфинкса и опциональную профессиональную фотосессию в золотой час.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">От $150 USD</span>
-                                <span class="tour-duration">Продолжительность: 4-5 часов</span>
+                                <span class="tour-price">От $150</span>
+                                <a href="tour-pyramids-private.html" class="tour-cta">Забронировать</a>
                             </div>
-                            <a href="tour-pyramids-private.html" class="tour-cta">Посмотреть детали и забронировать</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Ограниченное количество мест!</span>
-                        <img src="../images/cairo-giza-2day.jpg"
-                             alt="Двухдневный премиальный частный фототур по достопримечательностям Каира и Пирамидам Гизы с опытным гидом"
-                             class="tour-img lazy-load"
+                        <img src="images/cairo-giza-2day.jpg"
+                             alt="Частный 2-дневный тур по Каиру и Гизе - частный тур с гидом по Египту"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">2-дневный премиальный частный тур: Фото-экспедиция по Каиру и Гизе</h3>
-                            <p class="tour-card-text">Погрузитесь в vibrant столицу Египта и древние чудеса за два незабываемых дня. Исследуйте величественные Пирамиды, оживленный Старый Каир и впечатляющий Национальный музей египетской цивилизации с вашим личным гидом и фотографом.</p>
-                             <div class="tour-card-footer">
-                                <span class="tour-price">От $350 USD</span>
-                                <span class="tour-duration">Продолжительность: 2 дня</span>
+                            <h3>Частный 2-дневный тур по Каиру и Гизе</h3>
+                            <p>Комплексный частный тур, охватывающий пирамиды, Египетский музей, Коптский Каир, Исламский Каир с гибким планированием и опциональными фотоуслугами.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">От $350</span>
+                                <a href="tour-cairo-giza-2day.html" class="tour-cta">Забронировать</a>
                             </div>
-                            <a href="tour-cairo-giza-2day.html" class="tour-cta">Посмотреть детали и забронировать</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Забронируйте сейчас!</span>
-                        <img src="../images/alexandria-tour.jpg"
-                             alt="Частный прибрежный дневной фототур в Александрию из Каира с видами на Средиземное море и древние места"
-                             class="tour-img lazy-load"
+                        <img src="images/alexandria-tour.jpg"
+                             alt="Частный однодневный тур в Александрию из Каира - средиземноморский тур по Египту"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Откройте Александрию: Частный прибрежный дневной тур из Каира</h3>
-                            <p class="tour-card-text">Поменяйте каирскую пустынную пыль на свежий бриз Средиземного моря в этом незабываемом частном дневном туре в Александрию. Откройте для себя смесь греческих, римских, исламских и современных сокровищ с страстным местным гидом и запечатлейте потрясающие прибрежные виды.</p>
+                            <h3>Частный однодневный тур в Александрию</h3>
+                            <p>Частная однодневная поездка из Каира в Александрию. Посетите катакомбы, крепость Кайтбей, Библиотеку Александрину с персонализированным гидированием и опциональной прибрежной фотографией.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">От $220 USD</span>
-                                <span class="tour-duration">Продолжительность: 1 день</span>
+                                <span class="tour-price">От $220</span>
+                                <a href="tour-alexandria.html" class="tour-cta">Забронировать</a>
                             </div>
-                            <a href="tour-alexandria.html" class="tour-cta">Посмотреть детали и забронировать</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Новое приключение!</span>
-                        <img src="../images/egypt-discovery-7day.jpg"
-                             alt="7-дневный комплексный фототур по открытию Египта, охватывающий Каир, Пирамиды Гизы, Александрию и храмы Луксора"
-                             class="tour-img lazy-load"
+                        <img src="images/egypt-discovery-7day.jpg"
+                             alt="7-дневный частный тур по Египту - полный частный тур по Египту"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">7-дневный тур по открытию Египта: Каир, Гиза, Александрия и Луксор</h3>
-                            <p class="tour-card-text">Испытайте чудеса древнего и современного Египта в этом immersive 7-дневном путешествии с гидом. От возвышающихся Пирамид до средиземноморского очарования Александрии и величественных храмов Луксора - эта поездка оживляет душу Египта.</p>
+                            <h3>7-дневный частный тур по Египту</h3>
+                            <p>Идеальный частный опыт Египта, охватывающий Каир, Гизу, Александрию и Луксор с люксовым размещением, частными гидами и опциональной профессиональной фотографией на протяжении всего тура.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">От $1900 USD</span>
-                                <span class="tour-duration">Продолжительность: 7 дней</span>
+                                <span class="tour-price">От $1900</span>
+                                <a href="tour-egypt-discovery-7day.html" class="tour-cta">Забронировать</a>
                             </div>
-                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">Посмотреть детали и забронировать</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-30">
+                    <a href="tours.html" class="hero-button hero-button-primary">Смотреть все пакеты частных туров</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPREHENSIVE FAQ SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Часто задаваемые вопросы - Частные туры по Египту</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Чем частные туры по Египту лучше групповых? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Частные туры по Египту предлагают значительные преимущества: полная гибкость для изменения планов, индивидуальное внимание от вашего гида, возможность исследовать в своем темпе, доступ к впечатлениям, недоступным для групп, оптимальное время для фотографии и более глубокое культурное погружение. Вы не просто еще один турист по расписанию - вы создаете свой собственный египетский опыт с экспертом-гидом.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Обязательна ли профессиональная фотосессия в ваших частных турах? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Нет, профессиональная фотосессия полностью опциональна. Мы предлагаем два типа частных туров по Египту: 1) Стандартные частные туры с экспертами-гидами-египтологами, и 2) Частные туры, которые включают профессиональные фотоуслуги. Вы можете выбрать любой вариант на основе ваших предпочтений и бюджета. Многие клиенты бронируют наши туры специально для фотографии, в то время как другие предпочитают просто экскурсионный опыт.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Какие города охватывают ваши частные туры по Египту? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Наши частные туры по Египту комплексно охватывают четыре самых популярных направления страны: Каир (Египетский музей, Исламский и Коптский Каир), Гиза (Пирамиды и Сфинкс), Александрия (Средиземноморское побережье и греко-римские объекты) и Луксор (Долина Царей и храмы). Мы предлагаем частные туры по одному направлению, многогородские пакеты и полностью индивидуальные маршруты, сочетающие эти локации на основе ваших интересов и доступного времени.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Можем ли мы настроить маршрут нашего частного тура по Египту? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Абсолютно! Кастомизация - это суть частных туров. Мы создаем первоначальные предложения маршрута на основе ваших интересов, затем уточняем их через консультацию. Во время самого тура вы можете делать ежедневные корректировки - проводить больше времени на объектах, которые вам нравятся, пропускать те, которые интересуют меньше, добавлять неожиданные открытия или менять темп на основе уровней энергии. Эта гибкость невозможна с фиксированными групповыми турами.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Подходят ли частные туры по Египту для семей с детьми? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Частные туры идеальны для семей! Мы корректируем содержание, темп и мероприятия на основе возрастов и интересов детей. Семьи могут делать перерывы, когда нужно, фокусироваться на интерактивных элементах, включать детские блюда и поддерживать гибкие графики. Опциональная услуга фотосессии особенно популярна для захвата красивых семейных портретов на знаковых египетских объектах, которые становятся дорогими воспоминаниями.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Как далеко заранее следует бронировать частные туры по Египту? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Для пикового сезона (октябрь-апрель) мы рекомендуем бронировать частные туры по Египту за 3-6 месяцев, чтобы закрепить лучших гидов и размещение. Для межсезонья (май-июнь, сентябрь) 1-3 месяца обычно достаточно. Частные туры в последнюю минуту иногда возможны, но с ограниченными вариантами гидов. Раннее бронирование также позволяет больше времени для разработки индивидуального маршрута и специальных запросов.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- EXTENSIVE REVIEWS SECTION -->
         <section class="main-section bg-primary-dark">
-            <div class="container">
-                <h2 style="color: var(--accent-light);">Что говорят наши удивительные клиенты</h2>
-                         <!-- TrustBox widget - Review Collector -->
-                <div class="trustpilot-widget" data-locale="ru-RU" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68ebe694a70f7429071227b6" data-style-height="52px" data-style-width="100%" data-token="b32cd746-03c7-406e-8bb0-54364a1c6027">
-                  <a href="https://www.trustpilot.com/review/egyptphotographytours.com" target="_blank" rel="noopener">Trustpilot</a>
-                </div>
-                <!-- End TrustBox widget -->
+            <div class="container text-center">
+                <h2 style="color: var(--accent-light);">Что говорят наши клиенты о Egypt Photography Tours</h2>
+                
                 <div class="reviews-grid">
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Мы прекрасно провели время в этом опыте с Хоссамом! Он был очень полезен и терпелив с нашей группой! Весь опыт был веселым временем для нас, и он заставил нас чувствовать себя очень комфортно. Мы наслаждались всем этим!"</p>
-                        <p class="review-author">- Daniel</p>
+                        <p class="review-text">"Гибкость нашего частного тура имела решающее значение. Когда наша дочь увлеклась иероглифами, наш гид провел дополнительное время, обучая ее читать основные символы. Это индивидуальное внимание превратило ее из скучающей в заинтересованную. Опциональная фотосессия дала нам профессиональные семейные фотографии у пирамид."</p>
+                        <p><strong>- Семья Джонсон, США</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Это был незабываемый опыт от начала до конца. Хоссам - блестящий фотограф с удивительными навыками. Удивительный опыт, отличное обращение, отличная работа, множество фантастических фотографий с потрясающим видом на пирамиды. Я очень доволен результатом и настоятельно рекомендую."</p>
-                        <p class="review-author">- Cristina</p>
+                        <p class="review-text">"Как самостоятельный путешественник, я беспокоился о Египте. Частный тур обеспечил безопасность, компанию и невероятную гибкость. Мой гид корректировал каждый день на основе моих интересов - когда у меня развилась страсть к исламской архитектуре, она изменила планы, чтобы сосредоточиться на менее известных мечетях. Невозможно с групповыми турами!"</p>
+                        <p><strong>- Сара М., Австралия</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Хоссам предоставил великолепный тур по Пирамидам Гизы. Всегда вдумчивый, коммуникабельный, знающий и формировал тур соответственно тому, что вы хотели бы сделать. Он не только показал мне Пирамиды Гизы, но и после этого скорректировал свой график, чтобы также посетить один из музеев! С начала до конца Хоссам проделал потрясающую работу. Рад, что забронировал этот тур и завел нового друга в Хоссаме!"</p>
-                        <p class="review-author">- Eduardo</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Очень хорошая сессия, мне очень понравилось, что места без людей. Мне пришлось забронировать этот тур, потому что я сделал предыдущий, и фотографии были очень плохими. Теперь хорошо, только учтите, что есть дополнительная плата за верблюда и входные билеты на территорию (что указано в посте объявления)"</p>
-                        <p class="review-author">- Lucy</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Мы с мужем участвовали в частном туре вдвоем, и нас отвели в хорошие места с небольшим количеством туристов, так что мы смогли сделать много отличных фотографий! Кроме фотосъемки, он также рассказал краткую историю пирамид и сфинкса, что было очень познавательно☺️ Будучи коренным каирцем, он также рассказал нам о многих ресторанах и местах, которые можно порекомендовать, и также не рекомендовал места, которые только дорогие, так что для тех, кто впервые приезжает в Египет, я думаю, это будет очень полезно для путешествия. Рекомендую тем, кто хочет простой тур с рассказом историй + фотосъемкой!"</p>
-                        <p class="review-author">- Soyeon Lee</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Это был один из лучших опытов ever. Хоссам добрый, внимательный и открыт для предложений. Он также знающий и очень полезный. С ним вы испытаете только топовые вещи."</p>
-                        <p class="review-author">- Meslem</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Хоссам просто лучший. Почему? Потому что он очень добрый, очень знающий и искренне любит свою культуру и свою страну. Мне посчастливилось провести день и половину с Хоссамом в частном туре. Он пошел выше и beyond, чтобы убедиться, что я счастлив, в безопасности и чувствую себя комфортно. Нет сомнений, что Хоссам - один из лучших гидов, которые у меня когда-либо были. Спасибо, что показали мне лучшее в Каире и создали незабываемый опыт, который я буду хранить еще много лет."</p>
-                        <p class="review-author">- ARI</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Если вы посещаете Пирамиды Гизы и хотите незабываемый опыт, я настоятельно рекомендую забронировать фототур с Хасcамом. С начала до конца он был профессионален, дружелюбен и невероятно знающ. Он не только сделал абсолютно потрясающие фотографии, которые идеально запечатлели магию пирамид, но и поделился богатством исторической информации и интересных историй, которые сделали тур еще более особенным. Хасcам действительно знает лучшие места для уникальных снимков и ракурсов, и он позаботился о том, чтобы я чувствовал себя комфортно и наслаждался каждым моментом. Соотношение цены и качества выдающееся - вы получаете высококачественную фотографию, персонализированный тур и глубокое погружение в историю одного из величайших чудес мира. Это было легко одним из highlights моей поездки в Египет!"</p>
-                        <p class="review-author">- Erik </p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Отличный опыт, очень профессионально, заставляет вас чувствовать себя комфортно, даже если вы не привыкли быть перед камерой. Внимание к деталям и отличная информация о пирамидах и окружающих районах. Было так легко и комфортно работать с Хоссамом, что я решил забронировать однодневный тур с ним в Александрию, чтобы также организовать свой визит сюда."</p>
-                        <p class="review-author">- Jamie </p>
+                        <p class="review-text">"Мы выбрали Egypt Photography Tours специально для фотографии, но обнаружили, что гидирование было одинаково исключительным. Наш фотограф знал точное время и ракурсы для каждого объекта, в то время как наш египтолог предоставил контекст, который сделал изображения значимыми. Мы вернулись как с потрясающими фото, так и с глубоким пониманием."</p>
+                        <p><strong>- Томас и Елена, Германия</strong></p>
                     </div>
                 </div>
-                <a href="faqs.html" class="review-cta">
-                        Читать все отзывы и Частые вопросы
-                </a>
+                
+                <div class="reviews-grid mt-30">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Наш частный тур в Александрию показал совершенно другой Египет, чем Каир. Возможность провести дополнительное время в библиотеке, когда она нас увлекла, затем пропустить что-то менее интересное, сделала опыт без стресса. Прибрежная фотосессия была изюминкой, которую мы не получили бы в групповом туре."</p>
+                        <p><strong>- Майкл и Джеймс, Канада</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Частный тур в Луксор позволил нам посещать гробницы в оптимальное время, избегая как толп, так и жары. Знания нашего гида были на докторском уровне. Когда мы упомянули интерес к медицинским практикам, он подробно описал древнюю египетскую медицину в деревне рабочих. Эта глубина - вот почему частные туры стоят каждого цента."</p>
+                        <p><strong>- Др. Робертс, Великобритания</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Мы забронировали частный тур без фотосессии изначально, но добавили ее после просмотра фотографий другого клиента. Лучшее решение! Фотограф был ненавязчивым, но захватил волшебные моменты, которые мы пропустили. Сочетание глубокого гидирования и профессиональной фотографии создало идеальный египетский опыт."</p>
+                        <p><strong>- Лиза и Марко, Италия</strong></p>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="review-cta">Забронируйте ваш частный тур по Египту сегодня!</a>
+            </div>
+        </section>
+        
+        <!-- EGYPT TOUR PLANNING GUIDE -->
+        <section class="main-section">
+            <div class="container">
+                <h2>Руководство по планированию частного тура по Египту 2024-2025</h2>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>Лучшее время для частных туров по Египту</h3>
+                        <p><strong>Октябрь-Апрель:</strong> Идеальная погода (15-25°C). Пиковый сезон требует бронирования за 3-6 месяцев для лучшей доступности частных гидов.</p>
+                        <p><strong>Май-Сентябрь:</strong> Жарче, но меньше толп. Частные туры оптимизируют планирование для ранних утр и помещений во время жары.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Преимущества частных туров</h3>
+                        <p>Гибкое планирование, персонализированное содержание, прямой транспорт, возможности специального доступа, контроль здоровья и безопасности и опциональные профессиональные услуги, такие как фотография, включены.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Соображения по фотосессии</h3>
+                        <p>Опциональная профессиональная услуга доступна со всеми частными турами. Может быть забронирована на весь тур, конкретные дни или конкретные локации. Рекомендации по оборудованию предоставляются на основе условий Египта.</p>
+                    </div>
+                </div>
+                
+                <h3 class="mt-30">Чек-лист подготовки к частному туру по Египту:</h3>
+                <ul>
+                    <li><strong>За 3-6 месяцев до:</strong> Забронировать частный тур (пиковый сезон), обсудить опции кастомизации с консультантом, решить о включении фотосессии, подать заявку на визу</li>
+                    <li><strong>За 1-3 месяца до:</strong> Зафинализировать детали маршрута, забронировать международные рейсы, организовать туристическую страховку, начать чтение/исследование на основе фокуса тура</li>
+                    <li><strong>За 1 месяц до:</strong> Подтвердить все договоренности, проверить оборудование, если включает фотографию, просмотреть список упаковки для условий Египта</li>
+                    <li><strong>За 1 неделю до:</strong> Финальная упаковка, обмен валюты, загрузить карты/офлайн ресурсы, подтвердить договоренности о встрече с гидом</li>
+                    <li><strong>Во время тура:</strong> Ежедневно сообщать предпочтения гиду, использовать преимущества гибкости, задавать неограниченные вопросы, наслаждаться персонализированным опытом</li>
+                    <li><strong>После тура:</strong> Предоставить обратную связь, получить фотографии (если забронирована фотосессия), поделиться опытом с другими, рассматривающими частные туры по Египту</li>
+                </ul>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-content">
-            <!-- UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT -->
-            <div class="footer-brand">
-                <h3 class="footer-title">Egypt Photography Tours</h3>
-                <p class="footer-text">&copy; 2025 Egypt Photography Tours.</p>
-                <p class="footer-text">Все права защищены.</p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Быстрые ссылки</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="tours.html">Наши туры</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
-                    <li><a href="resources.html">Ресурсы</a></li>
-                    <li><a href="blog.html">Блог</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                    <li><a href="faqs.html">Частые вопросы</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Свяжитесь с нами</h4>
-                <p class="footer-text">Адрес: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <!-- MOVED PHONE AND EMAIL TO CONNECT WITH US SECTION -->
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Egypt Photography Tours</h3>
+                    <p>Профессиональные частные туры по Египту с опциональными фотоуслугами с 2009 года. Лицензированные гиды-египтологи. Обслуживание с рейтингом 4.9 звезд, специализирующееся на персонализированных впечатлениях в Каире, Гизе, Александрии и Луксоре.</p>
+                    <p>&copy; 2009-2024 Egypt Photography Tours. Все права защищены.</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                
+                <div>
+                    <h3 class="footer-title">Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="tours.html">Частные туры</a></li>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="resources.html">Ресурсы</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="faqs.html">Вопросы</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div>
+                    <h3 class="footer-title">Свяжитесь с нами</h3>
+                    <p><i class="fab fa-whatsapp"></i> +20 155 073 5673</p>
+                    <p><i class="far fa-envelope"></i> info@egyptphotographytours.com</p>
+                    <p>📍 Гиза, Египет - Рядом с пирамидами</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.1413113!3d29.9749687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1701715200000" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Расположение Egypt Photography Tours">
+                    </iframe>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT - OPTIMIZED FOR PAGE SPEED -->
     <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
+        // MOBILE MENU
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                
-                // Change icon based on menu state
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-            
-            // Close menu when clicking on a link (for mobile)
-            document.querySelectorAll('.nav-link a').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768) {
-                        navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
-            });
+            }
             
-            // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
+            // HERO SLIDER WITH 5 IMAGES (8-second rotation)
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevButton = document.querySelector('.slider-arrow.prev');
             const nextButton = document.querySelector('.slider-arrow.next');
             let currentSlide = 0;
             let slideInterval;
-            const slideDuration = 7000; // 7 seconds
             
             function showSlide(index) {
                 slides.forEach(slide => slide.classList.remove('active'));
@@ -1706,129 +1962,192 @@
                 showSlide(prevIndex);
             }
             
-            function startSlideShow() {
-                slideInterval = setInterval(nextSlide, slideDuration);
+            if (prevButton && nextButton) {
+                prevButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    prevSlide();
+                    startSlider();
+                });
+                
+                nextButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    nextSlide();
+                    startSlider();
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(slideInterval);
+                        showSlide(index);
+                        startSlider();
+                    });
+                });
+                
+                // Start automatic slider with 8-second intervals
+                function startSlider() {
+                    slideInterval = setInterval(nextSlide, 8000);
+                }
+                
+                startSlider();
+                
+                // Pause on hover for better UX
+                const heroSlider = document.querySelector('.hero-slider');
+                heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                heroSlider.addEventListener('mouseleave', startSlider);
             }
             
-            function stopSlideShow() {
-                clearInterval(slideInterval);
-            }
-            
-            // Event listeners
-            prevButton.addEventListener('click', function() {
-                stopSlideShow();
-                prevSlide();
-                startSlideShow();
-            });
-            
-            nextButton.addEventListener('click', function() {
-                stopSlideShow();
-                nextSlide();
-                startSlideShow();
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    stopSlideShow();
-                    showSlide(index);
-                    startSlideShow();
+            // FAQ ACCORDION
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        document.querySelectorAll('.faq-answer').forEach(ans => {
+                            ans.classList.remove('active');
+                        });
+                        document.querySelectorAll('.faq-question i').forEach(i => {
+                            i.classList.remove('fa-chevron-up');
+                            i.classList.add('fa-chevron-down');
+                        });
+                        
+                        answer.classList.add('active');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
                 });
             });
             
-            const heroSlider = document.querySelector('.hero-slider');
-            heroSlider.addEventListener('mouseenter', stopSlideShow);
-            heroSlider.addEventListener('mouseleave', startSlideShow);
-            heroSlider.addEventListener('touchstart', stopSlideShow);
-            heroSlider.addEventListener('touchend', startSlideShow);
+            // LANGUAGE SWITCHER
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (languageSwitcher) {
+                const currentLanguage = languageSwitcher.querySelector('.current-language');
+                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+                
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
+                    dropdownIcon.classList.toggle('fa-chevron-up');
+                    dropdownIcon.classList.toggle('fa-chevron-down');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!languageSwitcher.contains(e.target)) {
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Handle language selection
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Update current language display
+                        const flag = this.dataset.flag;
+                        const text = this.querySelector('.language-text').textContent;
+                        const lang = this.dataset.lang;
+                        
+                        currentLanguage.querySelector('.current-flag').textContent = flag;
+                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+                        
+                        // Close dropdown
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                        
+                        // Redirect to selected language page
+                        const href = this.getAttribute('href');
+                        if (href && href !== window.location.pathname) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+            }
             
-            // Initialize
-            startSlideShow();
-            
-            // ✅ LAZY LOADING IMAGES
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
+            // LAZY LOAD IMAGES
             if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
+                const imageObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
+                            imageObserver.unobserve(img);
                         }
                     });
                 });
                 
-                images.forEach(img => imageObserver.observe(img));
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                    imageObserver.observe(img);
+                });
             }
             
-            // ✅ LANGUAGE SWITCHER
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            currentLanguage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                languageSwitcher.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                // Measure page load time
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log('Page load time:', loadTime + 'ms');
+                
+                // Send performance data to analytics
+                if (typeof gtag !== 'undefined' && loadTime < 10000) {
+                    gtag('event', 'timing_complete', {
+                        'name': 'page_load',
+                        'value': loadTime,
+                        'event_category': 'Performance'
+                    });
                 }
             });
             
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
+            // Service Worker Registration for PWA
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }).catch(function(error) {
+                        console.log('ServiceWorker registration failed: ', error);
                     });
-                    
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
                 });
+            }
+            
+            // Add focus-visible polyfill for better accessibility
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
             });
             
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA'
-                };
-                return codes[languageName] || languageName;
-            }
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
         });
-
-        // ✅ PRELOAD FIRST HERO IMAGE ONLY
-        function preloadImages() {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = '../images/hero-image1.jpg';
-            document.head.appendChild(link);
-        }
         
-        // Preload only first image for performance
-        preloadImages();
+        // Handle reduced motion preference
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (mediaQuery.matches) {
+            // Disable or adjust animations
+            const style = document.createElement('style');
+            style.textContent = `
+                .hero-slide {
+                    transition: none !important;
+                }
+                .tour-card:hover {
+                    transform: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     </script>
 </body>
 </html>
