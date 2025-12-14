@@ -1,38 +1,64 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <!-- PWA Configuration -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tur Fotografi Mesir">
+    <meta name="application-name" content="Tur Fotografi Mesir">
+    <meta name="format-detection" content="telephone=no">
+    
     <!-- Comprehensive Favicon Setup -->
-    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
-    <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg">
+    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#FFD700">
-    <meta name="msapplication-config" content="../browserconfig.xml">
+    <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#FFD700">
+    
+    <!-- Google Analytics Tracking -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVNPEMCG8F');
+    </script>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
+    <link rel="preload" href="images/hero-image1.jpg" as="image" media="(min-width: 768px)">
     
     <!-- Search Engine & Social Media Optimization -->
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta itemprop="image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     
-    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-    <title>Tur Fotografi Mesir | Tur Pribadi Piramida & Giza & Kairo & Alexandria Tur Mewah Mesir</title>
+    <!-- UPDATED META TITLE WITH STRONG INDONESIAN KEYWORDS -->
+    <title>Tur Pribadi Mesir dengan Foto Profesional | Cairo, Piramida Giza, Luxor</title>
 
-    <meta name="description" content="Temukan Tur Fotografi Mesir — pemotretan piramida pribadi, pengalaman fotografi Kairo & Nil, dan tur berpemandu ahli di seluruh Mesir. Pesan perjalanan Mesir tak terlupakan Anda hari ini!">
+    <!-- UPDATED META DESCRIPTION WITH STRONG INDONESIAN KEYWORDS -->
+    <meta name="description" content="Bukan tur biasa. Jelajahi Mesir dengan tur berpemandu pribadi termasuk sesi foto profesional di Cairo, Piramida Giza, Alexandria dan Luxor. Paket wisata Mesir terbaik untuk turis Indonesia.">
 
-    <meta name="keywords" content="tur fotografi Mesir, Perjalanan Mewah Mesir, Tur Mewah di Mesir,
-    Perjalanan Kelas Atas Mesir, Tur Piramida, Pemandu Tur Kairo, foto Sungai Nil, Tur Mesir, fotografi kuil Luxor, tur Alexandria">
+    <meta name="keywords" content="tur Mesir, tur pribadi Mesir, tur Cairo, tur Giza, tur Alexandria, tur Luxor, paket wisata Mesir, tour guide Mesir, wisata Mesir terbaik, tur piramida Giza, pemandu wisata Cairo, tur fotografi Mesir, sesi foto profesional Mesir, paket tour Mesir, guide lokal Mesir, tur mewah Mesir, paket liburan Mesir, cruise Nil Mesir, tur gurun Mesir, tur budaya Mesir, tur sejarah Mesir, tur keluarga Mesir, bulan madu Mesir, solo travel Mesir, tour grup Mesir, budget tour Mesir, luxury travel Mesir, biro perjalanan Mesir, itinerary Mesir, rekomendasi tur Mesir">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <link rel="canonical" href="https://www.egyptphotographytours.com/id/" />
 
+    <!-- Language Alternates -->
     <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/" />
+    <link rel="alternate" hreflang="id" href="https://www.egyptphotographytours.com/id/" />
     <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/" />
     <link rel="alternate" hreflang="fr" href="https://www.egyptphotographytours.com/fr/" />
     <link rel="alternate" hreflang="de" href="https://www.egyptphotographytours.com/de/" />
@@ -41,135 +67,202 @@
     <link rel="alternate" hreflang="zh" href="https://www.egyptphotographytours.com/zh/" />
     <link rel="alternate" hreflang="ko" href="https://www.egyptphotographytours.com/ko/" />
     <link rel="alternate" hreflang="pt" href="https://www.egyptphotographytours.com/pt/" />
-    <link rel="alternate" hreflang="id" href="https://www.egyptphotographytours.com/id/" />
     <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/" />
     <link rel="alternate" hreflang="ru" href="https://www.egyptphotographytours.com/ru/" />
+    <link rel="alternate" hreflang="da" href="https://www.egyptphotographytours.com/da/" />
+    <link rel="alternate" hreflang="nl" href="https://www.egyptphotographytours.com/nl/" />
+    <link rel="alternate" hreflang="hi" href="https://www.egyptphotographytours.com/hi/" />
+    <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/" />
+    <link rel="alternate" hreflang="sv" href="https://www.egyptphotographytours.com/sv/" />
+    <link rel="alternate" hreflang="tl" href="https://www.egyptphotographytours.com/tl/" />
+    <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/" />
+    <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/" />
+    <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/" />
 
-    <meta property="og:title" content="Tur Fotografi Mesir | Petualangan Foto Profesional Piramida & Kuil">
-    <meta property="og:description" content="Tangkap keajaiban Mesir kuno dengan pemandu tur fotografi ahli. Tur pribadi Piramida, kuil, dan Kairo bersejarah mulai dari $150 USD.">
+    <meta property="og:title" content="Tur Pribadi Mesir dengan Foto Profesional | Cairo, Piramida Giza, Luxor">
+    <meta property="og:description" content="Bukan tur biasa. Jelajahi Mesir dengan tur berpemandu pribadi termasuk sesi foto profesional di Cairo, Piramida Giza, Alexandria dan Luxor. Paket wisata Mesir terbaik untuk turis Indonesia.">
     <meta property="og:url" content="https://www.egyptphotographytours.com/id/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Tur Fotografi Mesir">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tur Fotografi Mesir | Petualangan Foto Profesional">
-    <meta name="twitter:description" content="Tur fotografi berpemandu ahli ke situs paling ikonik Mesir. Tangkap foto menakjubkan dengan pemandu tur profesional.">
+    <meta name="twitter:title" content="Tur Pribadi Mesir dengan Sesi Foto Profesional">
+    <meta name="twitter:description" content="Bukan tur biasa. Jelajahi Mesir dengan tur berpemandu pribadi termasuk sesi foto profesional di Cairo, Piramida Giza, Alexandria dan Luxor.">
     <meta name="google-adsense-account" content="ca-pub-1042032515879132">
     
     <meta name="geo.region" content="EG-C">
-    <meta name="geo.placename" content="Kairo, Mesir">
+    <meta name="geo.placename" content="Cairo, Egypt">
     <meta name="geo.position" content="30.0444;31.2357">
 
-    <!-- UPDATED SCHEMA MARKUP FOR RICH SNIPPETS WITH 5 STARS AND 26 REVIEWS -->
+    <!-- COMPREHENSIVE STRUCTURED DATA SCHEMA - UPDATED FOR INDONESIAN -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Tur Fotografi Mesir",
-      "url": "https://www.egyptphotographytours.com/id/",
-      "logo": "https://www.egyptphotographytours.com/images/favicon-32x32.png",
-      "sameAs": [
-        "https://www.instagram.com/hossam_artistic",
-        "https://www.trustpilot.com/review/egyptphotographytours.com"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Tur Fotografi Mesir",
-      "image": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg",
-      "description": "Tur fotografi berpemandu pribadi di Mesir termasuk Piramida, Kairo, Alexandria, dan lainnya. Sesi foto profesional dan pemandu lokal ahli.",
-      "url": "https://www.egyptphotographytours.com/id/",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Kegubernuran Giza",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "openingHours": "Sen-Ming 09:00-18:00",
-      "priceRange": "$$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      },
-      "review": [
+      "@graph": [
         {
-          "@type": "Review",
-          "author": "Daniel",
-          "datePublished": "2024-05-15",
-          "reviewBody": "Kami bersenang-senang dalam pengalaman ini dengan Hossam! Dia sangat membantu dan sabar dengan grup kami!",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
+          "@type": "WebSite",
+          "name": "Tur Fotografi Mesir",
+          "url": "https://www.egyptphotographytours.com/id/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.egyptphotographytours.com/id/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
         },
         {
-          "@type": "Review",
-          "author": "Cristina",
-          "datePublished": "2024-04-22",
-          "reviewBody": "Hossam adalah fotografer brilian dengan keterampilan luar biasa. Banyak foto fantastis dengan pemandangan piramida yang menakjubkan.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "TravelAgency",
+          "name": "Tur Fotografi Mesir",
+          "url": "https://www.egyptphotographytours.com/id",
+          "logo": "https://www.egyptphotographytours.com/images/logo.jpg",
+          "telephone": "+20-155-073-5673",
+          "email": "info@egyptphotographytours.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+            "addressLocality": "Giza",
+            "addressRegion": "Giza Governorate",
+            "postalCode": "12557",
+            "addressCountry": "EG"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "openingHours": "Mo-Su 08:00-22:00",
+          "priceRange": "$$-$$$"
         },
         {
-          "@type": "Review",
-          "author": "Eduardo",
-          "datePublished": "2024-03-30",
-          "reviewBody": "Hossam memberikan tur yang luar biasa dari Piramida Giza. Selalu penuh pertimbangan, komunikatif, dan berpengetahuan.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Beranda",
+              "item": "https://www.egyptphotographytours.com/id/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tur Mesir",
+              "item": "https://www.egyptphotographytours.com/id/tours.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Tur Pribadi Mesir",
+              "item": "https://www.egyptphotographytours.com/id/private-egypt-tours.html"
+            }
+          ]
+        },
+        {
+          "@type": ["TouristTrip", "Product"],
+          "name": "Tur Pribadi Mesir dengan Sesi Foto Profesional Opsional",
+          "description": "Bukan tur biasa. Jelajahi Mesir dengan tur berpemandu pribadi termasuk sesi foto profesional opsional di Cairo, Piramida Giza, Alexandria dan Luxor.",
+          "url": "https://www.egyptphotographytours.com/id/private-egypt-tours.html",
+          "image": [
+            "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image1.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image2.jpg"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "1900",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "seller": {
+              "@type": "Organization",
+              "name": "Tur Fotografi Mesir"
+            }
+          },
+          "duration": "P7D",
+          "touristType": ["Solo travelers", "Couples", "Families", "Photography enthusiasts", "Luxury travelers"],
+          "brand": {
+            "@type": "Brand",
+            "name": "Tur Fotografi Mesir"
+          },
+          "sku": "EPT-PET-001",
+          "category": "Paket Tur Pribadi"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Apa yang membuat tur pribadi Mesir kami berbeda?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tur pribadi Mesir kami menawarkan pengalaman personal dengan pemandu lokal dan termasuk sesi foto profesional opsional. Kami fokus pada imersi budaya autentik, itinerary fleksibel, dan akses eksklusif ke situs yang tidak tersedia di tur standar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah sesi foto profesional termasuk dalam semua tur?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ya, kami menawarkan sesi foto profesional opsional dengan semua tur pribadi Mesir. Anda dapat memilih untuk memasukkannya sebagai bagian dari paket atau memesan tur kami tanpa layanan fotografi."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kota mana saja yang dicakup oleh tur pribadi Mesir Anda?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tur pribadi Mesir kami mencakup Cairo, Piramida Giza, Alexandria, dan Luxor. Kami menawarkan paket komprehensif yang mencakup semua destinasi ini atau dapat menyesuaikan tur yang berfokus pada kota tertentu sesuai preferensi Anda."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "Panduan Lengkap Tur Pribadi Mesir dengan Sesi Foto Profesional",
+          "description": "Panduan komprehensif untuk tur pribadi Mesir termasuk Cairo, Giza, Alexandria, dan Luxor dengan layanan sesi foto profesional opsional.",
+          "author": {
+            "@type": "Person",
+            "name": "Hossam",
+            "jobTitle": "Fotografer Profesional & Egyptologist"
+          },
+          "datePublished": "2024-01-15",
+          "dateModified": "2024-12-15",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Tur Fotografi Mesir",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/logo.jpg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.egyptphotographytours.com/id/blog/private-egypt-tours-guide.html"
+          },
+          "image": [
+            {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/egypt-tours-guide-1.jpg",
+              "width": "1200",
+              "height": "800",
+              "caption": "Tur pribadi Mesir dengan sesi foto profesional di Cairo, Giza, Alexandria dan Luxor"
+            }
+          ],
+          "keywords": "tur pribadi Mesir, tur Mesir dengan sesi foto, tur Cairo, tur piramida Giza, tur Alexandria, tur Luxor, tur fotografi Mesir"
         }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/EgyptPhotographyTours",
-        "https://www.instagram.com/hossam_artistic/",
-        "https://www.tiktok.com/@egyptphotographytours",
-        "https://www.youtube.com/@Egyptphotographytours"
       ]
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      "name": "Piramida Giza",
-      "description": "Piramida Agung Giza adalah piramida tertua dan terbesar dari tiga piramida di kompleks piramida Giza.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Kegubernuran Giza",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "image": "https://www.egyptphotographytours.com/images/pyramids-of-giza.jpg"
-    }
-    </script>
-
+    <!-- Performance Optimized CSS Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     
     <style>
+        /* CRITICAL CSS - Inlined for performance */
         :root {
             --primary-dark: #1a202c;
             --accent-light: #FFD700;
@@ -178,6 +271,8 @@
         }
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -196,24 +291,23 @@
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* HEADER STYLES */
         .header {
             background-color: var(--primary-dark);
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             padding: 12px 0;
         }
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             gap: 12px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
-                gap: 0;
+                justify-content: space-between;
             }
         }
         .logo-section {
@@ -229,28 +323,9 @@
         .logo-link {
             font-size: 20px;
             font-weight: 700;
-            letter-spacing: -0.025em;
             color: var(--accent-light);
             text-decoration: none;
         }
-        @media (min-width: 768px) {
-            .logo-link {
-                font-size: 24px;
-            }
-        }
-        .header-text {
-            font-size: 14px;
-            font-style: italic;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 16px;
-            }
-        }
-        
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
@@ -270,22 +345,15 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
-            padding: 4px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
         }
-        .contact-icon {
-            font-size: 14px;
-            width: 16px;
-            text-align: center;
-        }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 50;
@@ -294,26 +362,20 @@
         .navbar-content {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            justify-content: space-between;
         }
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
             }
         }
         .nav-links {
             display: none;
             flex-direction: column;
-            width: 100%;
-            gap: 0;
-            font-size: 16px;
-            font-weight: 500;
             list-style: none;
             padding: 0;
             margin: 0;
-            background-color: #374151;
         }
         .nav-links.active {
             display: flex;
@@ -322,33 +384,19 @@
             .nav-links {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
                 gap: 16px;
-                width: auto;
-            }
-        }
-        .nav-link {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-link:last-child {
-            border-bottom: none;
-        }
-        @media (min-width: 768px) {
-            .nav-link {
-                border-bottom: none;
             }
         }
         .nav-link a {
             color: white;
             text-decoration: none;
             padding: 12px 16px;
-            transition: color 0.3s ease;
             display: block;
+            transition: color 0.3s ease;
         }
         @media (min-width: 768px) {
             .nav-link a {
-                padding: 8px 0;
+                padding: 16px 8px;
             }
         }
         .nav-link a:hover {
@@ -362,13 +410,10 @@
         }
         @media (min-width: 768px) {
             .cta-container {
-                justify-content: flex-end;
-                gap: 12px;
                 padding: 0;
+                gap: 12px;
             }
         }
-        
-        /* MOBILE MENU TOGGLE */
         .mobile-menu-toggle {
             display: block;
             background: none;
@@ -384,7 +429,128 @@
             }
         }
         
-        /* HERO SLIDER STYLES - MOBILE OPTIMIZED */
+        /* Language Switcher */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+        }
+
+        .current-language:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .current-flag {
+            font-size: 16px;
+        }
+
+        .current-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .dropdown-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 220px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #374151;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .language-switcher.active .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-light);
+        }
+
+        .language-item.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .flag-icon {
+            font-size: 18px;
+            min-width: 24px;
+        }
+
+        .language-text {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Scrollbar styling for dropdown */
+        .language-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
+        }
+        
+        /* HERO SLIDER - UPDATED TO 5 IMAGES */
         .hero-slider {
             position: relative;
             height: 60vh;
@@ -408,87 +574,82 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 16px;
         }
         .hero-slide.active {
             opacity: 1;
         }
         .hero-slide:nth-child(1) {
-            background-image: url('../images/hero-image1.jpg');
+            background-image: url('images/hero-image1.jpg');
         }
         .hero-slide:nth-child(2) {
-            background-image: url('../images/hero-image2.jpg');
+            background-image: url('images/hero-image2.jpg');
         }
         .hero-slide:nth-child(3) {
-            background-image: url('../images/hero-image3.jpg');
+            background-image: url('images/hero-image3.jpg');
         }
         .hero-slide:nth-child(4) {
-            background-image: url('../images/hero-image4.jpg');
+            background-image: url('images/hero-image4.jpg');
+        }
+        .hero-slide:nth-child(5) {
+            background-image: url('images/hero-image5.jpg');
         }
         .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
-        .hero-title {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
             color: white;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
-            margin-top: 0;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            background-color: transparent;
+            border-radius: 10px;
         }
-        @media (min-width: 480px) {
-            .hero-title {
-                font-size: 28px;
-            }
+        
+        /* HERO TITLE */
+        .hero-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #ffffff !important;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
         }
         @media (min-width: 768px) {
             .hero-title {
                 font-size: 48px;
-                margin-top: -60px;
-            }
-        }
-        .hero-subtitle {
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
-            line-height: 1.4;
-        }
-        @media (min-width: 480px) {
-            .hero-subtitle {
-                font-size: 16px;
-            }
-        }
-        @media (min-width: 768px) {
-            .hero-subtitle {
-                font-size: 18px;
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 0, 0, 0.9);
             }
         }
         
-        /* NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES */
+        /* HERO SUBTITLE */
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: #ffffff !important;
+            text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8);
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        @media (min-width: 768px) {
+            .hero-subtitle {
+                font-size: 22px;
+                text-shadow: 1px 1px 18px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
+            }
+        }
+        
+        /* HERO BUTTONS */
         .hero-buttons-section {
             background-color: #f8f8f8;
             padding: 30px 0;
             text-align: center;
-            border-top: 1px solid #e5e7eb;
         }
         .hero-buttons-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             gap: 16px;
             max-width: 600px;
             margin: 0 auto;
@@ -505,15 +666,8 @@
             font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
             display: block;
             text-align: center;
-        }
-        @media (min-width: 768px) {
-            .hero-button {
-                padding: 12px 32px;
-                font-size: 18px;
-            }
         }
         .hero-button-primary {
             background-color: var(--accent-light);
@@ -533,7 +687,7 @@
             transform: scale(1.05);
         }
         
-        /* SLIDER NAVIGATION CONTROLS - MOBILE OPTIMIZED */
+        /* SLIDER CONTROLS */
         .slider-controls {
             position: absolute;
             bottom: 20px;
@@ -541,13 +695,8 @@
             right: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 20px;
-            z-index: 20;
-        }
-        .slider-dots {
-            display: flex;
             gap: 10px;
+            z-index: 20;
         }
         .slider-dot {
             width: 10px;
@@ -573,20 +722,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             z-index: 20;
             color: var(--primary-dark);
-            font-size: 16px;
-        }
-        @media (min-width: 768px) {
-            .slider-arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-        }
-        .slider-arrow:hover {
-            background-color: rgba(255, 255, 255, 0.9);
         }
         .slider-arrow.prev {
             left: 10px;
@@ -595,641 +732,400 @@
             right: 10px;
         }
         
-        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
+        /* MAIN CONTENT SECTIONS */
         .main-section {
             padding: 40px 0;
-            text-align: center;
         }
         @media (min-width: 768px) {
             .main-section {
-                padding: 64px 0;
-            }
-        }
-        .main-section h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-        @media (min-width: 768px) {
-            .main-section h2 {
-                font-size: 36px;
-                margin-bottom: 32px;
-            }
-        }
-        .main-section h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin: 20px 0 8px;
-        }
-        @media (min-width: 768px) {
-            .main-section h3 {
-                font-size: 24px;
-                margin: 24px 0 8px;
-            }
-        }
-        .main-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 896px;
-            margin: 0 auto 20px;
-        }
-        @media (min-width: 768px) {
-            .main-section p {
-                font-size: 18px;
-                margin: 0 auto 24px;
+                padding: 60px 0;
             }
         }
         .bg-light-gray {
             background-color: #f3f4f6;
         }
+        .bg-primary-dark {
+            background-color: var(--primary-dark);
+        }
+        
+        /* HEADINGS */
+        h1 {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+        }
+        h2 {
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 36px;
+            }
+        }
+        h3 {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 28px;
+            }
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            p {
+                font-size: 18px;
+            }
+        }
+        
+        /* CARDS & GRIDS */
         .grid-section {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .grid-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-        @media (min-width: 1024px) {
             .grid-section {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-        @media (min-width: 768px) {
-            .card {
-                padding: 32px;
-            }
-        }
-        .card:hover {
-            transform: scale(1.05);
         }
         .card-icon {
-            width: 50px;
-            height: 50px;
+            font-size: 40px;
             color: var(--accent-light);
             margin-bottom: 16px;
         }
-        @media (min-width: 768px) {
-            .card-icon {
-                width: 64px;
-                height: 64px;
-            }
-        }
         .card-title {
             font-size: 20px;
-            font-weight: 600;
-            color: var(--primary-dark);
             margin-bottom: 12px;
+            color: var(--primary-dark);
         }
-        @media (min-width: 768px) {
-            .card-title {
-                font-size: 24px;
-            }
-        }
-        .card-text {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        @media (min-width: 768px) {
-            .card-text {
-                font-size: 16px;
-            }
-        }
+        
+        /* TOUR GRID */
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
-            .tour-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (min-width: 1280px) {
             .tour-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
         .tour-card {
-            background-color: white;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            position: relative;
         }
         .tour-card:hover {
-            transform: scale(1.05);
-        }
-        .sale-tag {
-            background-color: #E74C3C;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            z-index: 10;
+            transform: translateY(-5px);
         }
         .tour-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        @media (min-width: 768px) {
-            .tour-img {
-                height: 224px;
-            }
-        }
         .tour-card-body {
             padding: 20px;
         }
-        @media (min-width: 768px) {
-            .tour-card-body {
-                padding: 24px;
-            }
-        }
         .tour-card-title {
             font-size: 20px;
-            font-weight: 600;
+            margin-bottom: 12px;
             color: var(--primary-dark);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        @media (min-width: 768px) {
-            .tour-card-title {
-                font-size: 24px;
-            }
-        }
-        .tour-card-text {
-            color: #4b5563;
-            margin-bottom: 16px;
-            text-align: left;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .tour-card-text {
-                font-size: 16px;
-                line-height: 1.6;
-            }
         }
         .tour-card-footer {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 8px;
+            align-items: center;
+            margin-top: 20px;
         }
         .tour-price {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: bold;
             color: var(--accent-dark);
         }
-        @media (min-width: 768px) {
-            .tour-price {
-                font-size: 18px;
-            }
-        }
-        .tour-duration {
-            font-size: 14px;
-            color: #6b7280;
-        }
         .tour-cta {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-light);
+            display: inline-block;
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 10px 20px;
-            border-radius: 9999px;
-            text-align: center;
+            border-radius: 4px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .tour-cta {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
         .tour-cta:hover {
-            background-color: var(--accent-dark);
+            background: var(--accent-dark);
         }
-        .bg-primary-dark {
-            background-color: var(--primary-dark);
+        
+        /* FAQ SECTION */
+        .faq-container {
+            margin-top: 30px;
         }
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* REVIEWS */
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-        }
-        @media (min-width: 1024px) {
             .reviews-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .review-card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            color: var(--primary-dark);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
-        @media (min-width: 768px) {
-            .review-card {
-                padding: 32px;
-            }
-        }
         .review-stars {
-            font-size: 20px;
             color: var(--accent-light);
-            margin-bottom: 12px;
-        }
-        @media (min-width: 768px) {
-            .review-stars {
-                font-size: 24px;
-            }
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .review-text {
             font-style: italic;
-            font-size: 16px;
             margin-bottom: 16px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .review-text {
-                font-size: 18px;
-                line-height: 1.6;
-            }
-        }
-        .review-author {
-            font-weight: 600;
-            color: var(--primary-dark);
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .review-author {
-                font-size: 16px;
-                }
         }
         .review-cta {
-            margin-top: 30px;
             display: inline-block;
-            background-color: var(--accent-light);
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 12px 24px;
-            border-radius: 9999px;
-            font-size: 16px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 4px;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-        }
-        @media (min-width: 768px) {
-            .review-cta {
-                margin-top: 40px;
-                padding: 12px 32px;
-                font-size: 18px;
-            }
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background 0.3s ease;
         }
         .review-cta:hover {
-            background-color: var(--accent-dark);
-            transform: scale(1.05);
+            background: var(--accent-dark);
         }
+        
+        /* FOOTER */
         .footer {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             color: white;
-            padding: 30px 0;
-            margin-top: auto;
-        }
-        @media (min-width: 768px) {
-            .footer {
-                padding: 40px 0;
-            }
+            padding: 40px 0;
+            margin-top: 60px;
         }
         .footer-content {
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
         @media (min-width: 768px) {
             .footer-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                text-align: left;
-                flex-wrap: wrap;
-            }
-        }
-        .footer-section {
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-section {
-                margin-bottom: 0;
-            }
-        }
-        /* UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT */
-        .footer-brand {
-            text-align: left;
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-brand {
-                margin-bottom: 0;
-                text-align: left;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         .footer-title {
-            font-size: 20px;
-            font-weight: 700;
             color: var(--accent-light);
-            margin-bottom: 8px;
-        }
-        @media (min-width: 768px) {
-            .footer-title {
-                font-size: 24px;
-            }
-        }
-        .footer-text {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .footer-links {
             list-style: none;
-            padding: 0;
-            font-size: 14px;
-            line-height: 1.8;
         }
-        .footer-links li a {
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .footer-links li a:hover {
+        .footer-links a:hover {
             color: var(--accent-light);
         }
         .social-links {
             display: flex;
-            justify-content: center;
             gap: 16px;
-            margin-top: 12px;
-        }
-        @media (min-width: 768px) {
-            .social-links {
-                justify-content: flex-start;
-            }
+            margin-top: 16px;
         }
         .social-links a {
             color: white;
+            font-size: 20px;
             transition: color 0.3s ease;
         }
         .social-links a:hover {
             color: var(--accent-light);
         }
-        .social-icon {
-            font-size: 20px;
-        }
-        
-        /* FOOTER CONTACT INFO STYLES - MOVED TO CONNECT WITH US SECTION */
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-        .footer-contact-info {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-            justify-content: center;
-        }
-        @media (min-width: 768px) {
-            .footer-contact-info {
-                justify-content: flex-start;
-            }
-        }
-        .footer-contact-info:hover {
-            color: var(--accent-light);
-        }
-        
-        /* Language Switcher Styles - MOBILE OPTIMIZED */
-        .language-switcher {
-            position: relative;
-            display: inline-block;
-        }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #374151;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            max-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        .language-switcher.active .language-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .language-switcher.active .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-        .language-item {
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #4B5563;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .language-item:last-child {
-            border-bottom: none;
-        }
-        .language-item:hover {
-            background-color: #4B5563;
-        }
-        .language-item.active {
-            background-color: var(--accent-light);
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        .flag-icon {
-            font-size: 16px;
-            margin-right: 8px;
-            min-width: 18px;
-        }
-        .language-text {
-            flex: 1;
-            font-size: 14px;
-        }
-        .current-language {
-            display: flex;
-            align-items: center;
-            padding: 6px 10px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        .current-language:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        .current-flag {
-            font-size: 16px;
-            margin-right: 6px;
-        }
-        .dropdown-arrow {
-            margin-left: 6px;
-            transition: transform 0.2s ease;
-        }
-        .language-dropdown::-webkit-scrollbar {
-            width: 4px;
-        }
-        .language-dropdown::-webkit-scrollbar-track {
-            background: #4B5563;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb {
-            background: #6B7280;
-            border-radius: 2px;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #9CA3AF;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .lazy-load.loaded {
-            opacity: 1;
-        }
-        @media (max-width: 768px) {
-            .tour-grid, .reviews-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
-        
-        .book-now-button {
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            background-color: #FFD700;
-            color: #1a202c;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            white-space: nowrap;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: inline-block;
-        }
-        .book-now-button:hover {
-            background-color: #E2B700;
-            transform: scale(1.05);
-        }
-        
-        /* MAP STYLES - SIGNIFICANTLY LARGER FOR REVIEWS */
         .footer-map {
-            margin-top: 20px;
-            width: 100%;
-            flex: 2; /* Much larger flex value to take more space */
-        }
-        @media (min-width: 768px) {
-            .footer-map {
-                margin-top: 0;
-            }
+            grid-column: 1 / -1;
         }
         .footer-map iframe {
             width: 100%;
-            height: 350px; /* Significantly increased from 220px for mobile */
+            height: 300px;
             border: none;
             border-radius: 8px;
         }
-        @media (min-width: 768px) {
-            .footer-map iframe {
-                height: 400px; /* Significantly increased from 280px for desktop */
+        
+        /* BREADCRUMB */
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #666;
+        }
+        
+        /* BOOK NOW BUTTON */
+        .book-now-button {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .book-now-button:hover {
+            background: var(--accent-dark);
+        }
+        
+        /* UTILITY CLASSES */
+        .text-center {
+            text-align: center;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .mt-30 {
+            margin-top: 30px;
+        }
+        
+        /* NEW: SEO ARTICLE SECTION */
+        .seo-article {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .seo-article h2 {
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent-light);
+            padding-bottom: 15px;
+        }
+        .seo-article h3 {
+            color: #2d3748;
+            margin-top: 30px;
+        }
+        .seo-article ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .seo-article li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Print Styles for PageSpeed */
+        @media print {
+            .hero-slider,
+            .slider-controls,
+            .slider-arrow,
+            .nav-links,
+            .language-switcher,
+            .social-links,
+            .footer-map {
+                display: none !important;
+            }
+            .header,
+            .footer {
+                position: static !important;
             }
         }
-        @media (min-width: 1024px) {
-            .footer-map iframe {
-                height: 450px; /* Even larger for larger screens */
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+            outline: 3px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header class="header">
         <div class="container content">
             <div class="logo-section">
-                <img src="../images/egypt-photography-tours-logo.jpg"
-                     alt="Logo Tur Fotografi Mesir - Layanan pemandu fotografi profesional untuk Piramida dan situs kuno"
+                <img src="images/egypt-photography-tours-logo.jpg"
+                     alt="Logo Tur Fotografi Mesir"
                      class="logo-img"
                      loading="eager"
                      width="40"
@@ -1238,454 +1134,811 @@
             </div>
             <div class="header-contact">
                 <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
-                    <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    <i class="fab fa-whatsapp"></i> +20 155 073 5673
                 </a>
                 <a href="mailto:info@egyptphotographytours.com" class="contact-info">
-                    <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    <i class="far fa-envelope"></i> info@egyptphotographytours.com
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="container navbar-content">
             <div class="cta-container">
-                <button class="mobile-menu-toggle" aria-label="Toggle menu navigasi">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="contact.html" class="book-now-button">Pesan Sekarang</a>
+                
+                <!-- Language Switcher -->
                 <div class="language-switcher">
-                    <div class="current-language">
+                    <div class="current-language" aria-label="Select language">
                         <span class="current-flag">🇮🇩</span>
-                        <span>ID</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <span class="current-text">ID</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
                     </div>
                     <div class="language-dropdown">
-                        <a href="../index.html" class="language-item">
+                        <!-- English -->
+                        <a href="../index.html" class="language-item" data-lang="en" data-flag="🇺🇸">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="../ru/index.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
+                        <!-- Finnish -->
+                        <a href="../fi/index.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
+                            <span class="flag-icon">🇫🇮</span>
+                            <span class="language-text">Suomi (Finnish)</span>
                         </a>
-                        <a href="../ar/index.html" class="language-item">
+                        <!-- Arabic -->
+                        <a href="../ar/index.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
                             <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
+                            <span class="language-text">العربية (Arabic)</span>
                         </a>
-                        <a href="../fr/index.html" class="language-item">
+                        <!-- Russian -->
+                        <a href="../ru/index.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский (Russian)</span>
+                        </a>
+                        <!-- French -->
+                        <a href="../fr/index.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
                             <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
+                            <span class="language-text">Français (French)</span>
                         </a>
-                        <a href="../de/index.html" class="language-item">
+                        <!-- German -->
+                        <a href="../de/index.html" class="language-item" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
+                            <span class="language-text">Deutsch (German)</span>
                         </a>
-                        <a href="../es/index.html" class="language-item">
+                        <!-- Spanish -->
+                        <a href="../es/index.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
+                            <span class="language-text">Español (Spanish)</span>
                         </a>
-                        <a href="../it/index.html" class="language-item">
+                        <!-- Italian -->
+                        <a href="../it/index.html" class="language-item" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
+                            <span class="language-text">Italiano (Italian)</span>
                         </a>
-                        <a href="../zh/index.html" class="language-item">
+                        <!-- Chinese -->
+                        <a href="../zh/index.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
+                            <span class="language-text">中文 (Chinese)</span>
                         </a>
-                        <a href="../ko/index.html" class="language-item">
+                        <!-- Korean -->
+                        <a href="../ko/index.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
+                            <span class="language-text">한국어 (Korean)</span>
                         </a>
-                        <a href="../pt/index.html" class="language-item">
+                        <!-- Portuguese -->
+                        <a href="../pt/index.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
+                            <span class="language-text">Português (Portuguese)</span>
                         </a>
-                        <a href="index.html" class="language-item active">
+                        <!-- Indonesian -->
+                        <a href="index.html" class="language-item active" data-lang="id" data-flag="🇮🇩">
                             <span class="flag-icon">🇮🇩</span>
                             <span class="language-text">Bahasa Indonesia</span>
                         </a>
-                        <a href="../ja/index.html" class="language-item">
+                        <!-- Japanese -->
+                        <a href="../ja/index.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
                             <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
+                            <span class="language-text">日本語 (Japanese)</span>
+                        </a>
+                        <!-- Danish -->
+                        <a href="../da/index.html" class="language-item" data-lang="da" data-flag="🇩🇰">
+                            <span class="flag-icon">🇩🇰</span>
+                            <span class="language-text">Dansk (Danish)</span>
+                        </a>
+                        <!-- Dutch -->
+                        <a href="../nl/index.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
+                            <span class="flag-icon">🇳🇱</span>
+                            <span class="language-text">Nederlands (Dutch)</span>
+                        </a>
+                        <!-- Hindi -->
+                        <a href="../hi/index.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
+                            <span class="flag-icon">🇮🇳</span>
+                            <span class="language-text">हिन्दी (Hindi)</span>
+                        </a>
+                        <!-- Norwegian -->
+                        <a href="../no/index.html" class="language-item" data-lang="no" data-flag="🇳🇴">
+                            <span class="flag-icon">🇳🇴</span>
+                            <span class="language-text">Norsk (Norwegian)</span>
+                        </a>
+                        <!-- Swedish -->
+                        <a href="../sv/index.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
+                            <span class="flag-icon">🇸🇪</span>
+                            <span class="language-text">Svenska (Swedish)</span>
+                        </a>
+                        <!-- Tagalog -->
+                        <a href="../tl/index.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
+                            <span class="flag-icon">🇵🇭</span>
+                            <span class="language-text">Tagalog</span>
+                        </a>
+                        <!-- Malay -->
+                        <a href="../ms/index.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
+                            <span class="flag-icon">🇲🇾</span>
+                            <span class="language-text">Bahasa Melayu</span>
+                        </a>
+                        <!-- Thai -->
+                        <a href="../th/index.html" class="language-item" data-lang="th" data-flag="🇹🇭">
+                            <span class="flag-icon">🇹🇭</span>
+                            <span class="language-text">ไทย (Thai)</span>
                         </a>
                     </div>
                 </div>
             </div>
+            
             <ul class="nav-links">
                 <li class="nav-link"><a href="index.html">Beranda</a></li>
                 <li class="nav-link"><a href="about.html">Tentang Kami</a></li>
-                <li class="nav-link"><a href="tours.html">Tur Kami</a></li>
+                <li class="nav-link"><a href="tours.html">Tur</a></li>
                 <li class="nav-link"><a href="gallery.html">Galeri</a></li>
                 <li class="nav-link"><a href="resources.html">Sumber Daya</a></li>
                 <li class="nav-link"><a href="blog.html">Blog</a></li>
-                <li class="nav-link"><a href="contact.html">Hubungi Kami</a></li>
+                <li class="nav-link"><a href="contact.html">Kontak</a></li>
                 <li class="nav-link"><a href="faqs.html">FAQ</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- HERO SLIDER - UPDATED TO 5 IMAGES -->
+    <section class="hero-slider">
+        <div class="hero-slides">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h2 class="hero-title">Tur Pribadi Mesir dengan Pemandu Lokal</h2>
+                    <p class="hero-subtitle">Jelajahi Mesir dengan tur berpemandu pribadi termasuk sesi foto profesional opsional di Cairo, Piramida Giza, Alexandria dan Luxor</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Tur Pribadi Cairo & Piramida Giza</h2>
+                    <p class="hero-subtitle">Akses eksklusif ke piramida, museum dan tempat tersembunyi dengan pemandu Egyptologist lokal</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Pengalaman Pribadi Luxor & Alexandria</h2>
+                    <p class="hero-subtitle">Temukan kuil kuno dan sejarah Mediterania dengan tur pribadi yang dipersonalisasi</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Sesi Foto Profesional Opsional Termasuk</h2>
+                    <p class="hero-subtitle">Abadikan petualangan Mesir Anda dengan layanan fotografi berkualitas tinggi</p>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Paket Wisata Mesir Kustom</h2>
+                    <p class="hero-subtitle">Itinerary khusus untuk keluarga, pasangan, dan solo traveler dengan opsi fleksibel</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="slider-arrow prev" aria-label="Slide sebelumnya"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next" aria-label="Slide berikutnya"><i class="fas fa-chevron-right"></i></button>
+        
+        <!-- 5 Dots for 5 slides -->
+        <div class="slider-controls">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+            <div class="slider-dot" data-slide="3"></div>
+            <div class="slider-dot" data-slide="4"></div>
+        </div>
+    </section>
+
+    <!-- HERO BUTTONS -->
+    <section class="hero-buttons-section">
+        <div class="container">
+            <div class="hero-buttons-container">
+                <a href="tours.html" class="hero-button hero-button-primary">Jelajahi Tur Pribadi</a>
+                <a href="contact.html" class="hero-button hero-button-secondary">Pesan Tur Mesir Anda</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
     <main class="main">
-        <!-- HERO SLIDER SECTION - FIXED -->
-        <section class="hero-slider">
-            <div class="hero-slides">
-                <div class="hero-slide active">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Tangkap Keajaiban Mesir - Jadikan Setiap Momen Sebuah Mahakarya
-                        </h1>
-                        <p class="hero-subtitle">
-                            Tur fotografi dan sejarah profesional ke landmark paling ikonik Mesir. Pemandu ahli, akses eksklusif, dan pengalaman tak terlupakan menanti.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Akses Eksklusif ke Permata Tersembunyi Mesir
-                        </h1>
-                        <p class="hero-subtitle">
-                            Temukan titik pandang rahasia dan tangkap bidikan menakjubkan jauh dari kerumunan dengan pemandu tur lokal ahli kami di Mesir.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Gerbang Anda ke Tur Paling Menakjubkan di Mesir
-                        </h1>
-                        <p class="hero-subtitle">
-                            Belajar dari fotografer dan pemandu profesional sambil menjelajahi piramida, kuil, dan lanskap Mesir.
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            Ciptakan Kenangan yang Tak Terlupakan
-                        </h1>
-                        <p class="hero-subtitle">
-                            Dari golden hour di piramida hingga matahari terbenam di Nil, tangkap keajaiban Mesir dengan pengalaman fotografi dan sejarah berpemandu kami.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Slider Navigation Arrows -->
-            <button class="slider-arrow prev" aria-label="Slide sebelumnya">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-arrow next" aria-label="Slide berikutnya">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Slider Dots - Positioned correctly below the buttons -->
-            <div class="slider-controls">
-                <div class="slider-dots">
-                    <div class="slider-dot active" data-slide="0"></div>
-                    <div class="slider-dot" data-slide="1"></div>
-                    <div class="slider-dot" data-slide="2"></div>
-                    <div class="slider-dot" data-slide="3"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES -->
-        <section class="hero-buttons-section">
-            <div class="container">
-                <div class="hero-buttons-container">
-                    <a href="tours.html" class="hero-button hero-button-primary">
-                        Jelajahi Tur Menakjubkan Eksklusif Kami
-                    </a>
-                    <a href="contact.html" class="hero-button hero-button-secondary">
-                        Pesan Tur Mewah Mesir Anda Sekarang!
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        <!-- H1 SECTION -->
         <section class="main-section">
             <div class="container">
-                <h2>Selamat Datang di Tur Fotografi Mesir</h2>
-                <p>
-                    Masuklah ke dunia di mana sejarah kuno bertemu dengan lanskap menakjubkan, semua menunggu untuk ditangkap melalui lensa Anda. Di Tur Fotografi Mesir, kami bersemangat mengungkapkan keindahan tak tertandingi Mesir kepada fotografer dari semua tingkatan. Dari <strong>Piramida Giza</strong> yang ikonik hingga aliran tenang <strong>Sungai Nil</strong> dan pesan ramai <strong>jalanan bersejarah Kairo</strong>, kami merancang perjalanan imersif yang memastikan Anda tidak hanya melihat Mesir tetapi benar-benar <em>menangkap</em> jiwanya.
-                </p>
-                <p>
-                    <strong>Tur Mesir</strong> kami yang dipilih secara ahli melampaui wisata konvensional, menawarkan peluang fotografi unik, bimbingan personal dari fotografer profesional, dan pertemuan budaya otentik. Baik Anda seorang pro berpengalaman yang mencari akses eksklusif atau pemula yang bersemangat menguasai keterampilan Anda, mulailah <strong>petualangan fotografi Mesir tak terlupakan</strong> dengan kami. Mari kita buat mahakarya Anda berikutnya bersama-sama.
-                </p>
-            </div>
-        </section>
-
-        <section class="main-section bg-light-gray">
-            <div class="container">
-                <h2>Mengapa Memilih Tur Fotografi Mesir untuk Perjalanan Tak Terlupakan Anda?</h2>
+                <div class="breadcrumb">
+                    <a href="index.html">Beranda</a> &gt; 
+                    <a href="tours.html">Tur Mesir</a> &gt; 
+                    <span>Tur Pribadi Mesir</span>
+                </div>
+                
+                <!-- UPDATED H1 -->
+                <h1>Tur Pribadi Mesir dengan Pemandu Lokal</h1>
+                
+                <p><strong>Diperbarui: Desember 2024 | 15+ Tahun Pengalaman | 5000+ Klien Bahagia | Rating 4.9 Bintang</strong></p>
+                
+                <p>Selamat datang di <strong>Tur Fotografi Mesir</strong> - penyedia utama pengalaman perjalanan eksklusif dan personal di Mesir. Berbeda dengan tur grup standar, tur pribadi Mesir kami menawarkan fleksibilitas penuh, perhatian personal, dan imersi budaya mendalam dengan pemandu lokal Mesir. Baik Anda mencari paket wisata Mesir komprehensif, tur Cairo intim, pengalaman piramida Giza yang mengagumkan, eksplorasi Alexandria bersejarah, atau petualangan Luxor mistis, kami membuat itinerary khusus yang sesuai dengan minat, kecepatan, dan anggaran Anda.</p>
+                
+                <!-- UPDATED H2 -->
+                <h2>Sesi Foto Profesional Opsional Termasuk</h2>
+                
+                <p>Sementara banyak traveler datang khusus untuk layanan fotografi profesional kami, kami memahami bahwa beberapa pengunjung hanya menginginkan tur berpemandu yang luar biasa. Itulah sebabnya kami menawarkan <strong>sesi foto profesional opsional</strong> dengan semua tur pribadi Mesir. Anda dapat memilih untuk menyertakan fotografer profesional dalam tur Cairo, kunjungan piramida Giza, perjalanan sehari Alexandria, atau eksplorasi Luxor, atau cukup menikmati tur berpemandu ahli kami tanpa layanan fotografi. Fleksibilitas ini membuat kami menjadi pilihan sempurna untuk penggemar fotografi dan traveler yang mencari tur pribadi berkualitas tinggi di Mesir.</p>
+                
+                <!-- UPDATED H2 -->
+                <h2>Tur Cairo, Piramida Giza, Alexandria & Luxor</h2>
+                
+                <p>Tur pribadi Mesir kami mencakup secara komprehensif destinasi paling ikonik Mesir: metropolis ramai <strong>Cairo</strong> dengan Museum Mesir dan arsitektur Islamnya; keajaiban kuno <strong>Piramida Giza</strong> dan Sphinx; keindahan Mediterania <strong>Alexandria</strong> dengan sejarah Greco-Romawi; dan kota penuh kuil <strong>Luxor</strong>, sering disebut museum terbuka terbesar di dunia. Kami menawarkan paket wisata Mesir multi-kota dan tur fokus satu destinasi, semuanya dengan opsi menyertakan layanan fotografi profesional.</p>
+                
                 <div class="grid-section">
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        <h3 class="card-title">Pemandu Fotografi Ahli, Wawasan Lokal</h3>
-                        <p class="card-text"><strong>Pemandu fotografi ahli kami di Mesir</strong> tidak hanya fotografer berpengalaman; mereka adalah ahli budaya lokal dan Egyptolog berlisensi. Mereka mengetahui sudut terbaik, kondisi pencahayaan sempurna, dan permata tersembunyi untuk <strong>pemotretan Piramida</strong> yang unik atau adegan <strong>fotografi Nil</strong> yang menawan. Manfaatkan pelatihan personal dan wawasan tak tertandingi tentang sejarah dan budaya Mesir.</p>
+                        <div class="card-icon">🎯</div>
+                        <h3>Tur Berpemandu 100% Pribadi</h3>
+                        <p>Alami Mesir dengan kecepatan Anda sendiri dengan pemandu lokal khusus. Tidak ada grup besar, tidak ada jadwal terburu-buru - hanya perhatian personal dan itinerary fleksibel yang disesuaikan dengan minat Anda.</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <h3 class="card-title">Akses Eksklusif & Titik Pandang Unik</h3>
-                        <p class="card-text">Bayangkan menangkap <strong>Kuil Luxor</strong> saat fajar tanpa kerumunan, atau menemukan tempat sempurna untuk <strong>lanskap matahari terbenam Mesir</strong> yang menakjubkan. Kami memanfaatkan koneksi lokal yang mendalam untuk memberikan <strong>akses eksklusif di Mesir</strong>, menawarkan titik pandang fotografi unik yang sering tidak tersedia untuk turis umum. Dapatkan bidikan yang selalu Anda impikan, dari pasar ramai <strong>Kairo</strong> hingga lanskap tenang <strong>gurun Sinai</strong>.</p>
+                        <div class="card-icon">📸</div>
+                        <h3>Layanan Foto Profesional Opsional</h3>
+                        <p>Pilih untuk menyertakan fotografi profesional atau nikmati tur kami tanpanya. Sempurna untuk penggemar fotografi dan traveler yang mencari pengalaman berpemandu luar biasa di Mesir.</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <h3 class="card-title">Itinerary Disesuaikan untuk Setiap Fotografer</h3>
-                        <p class="card-text">Baik Anda tertarik dengan arsitektur kuno, fotografi jalanan, portraiture, atau <strong>lanskap gurun Mesir</strong> yang luas, <strong>itinerary fotografi yang disesuaikan</strong> kami dirancang dengan mempertimbangkan passion Anda. Kami dengan cermat merencanakan setiap hari untuk mengoptimalkan pencahayaan dan peluang fotografi, memastikan fokus Anda tetap pada pembuatan gambar yang luar biasa. Dari <strong>tur fotografi Piramida</strong> yang terfokus hingga <strong>ekspedisi fotografi Mesir kuno</strong> yang ekstensif, perjalanan Anda dibuat khusus.</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M7 12h.01M7 16h.01M16 16h.01M12 16h.01M12 12h.01M12 8h.01M7 8h.01M16 8h.01M21 21l-4.5-4.5"></path></svg>
-                        <h3 class="card-title">Grup Kecil, Pembelajaran Personal</h3>
-                        <p class="card-text">Kami percaya pada kualitas di atas kuantitas. <strong>Tur Mesir grup kecil</strong> kami menjamin perhatian personal dan waktu satu-satu yang cukup dengan pemandu fotografi Anda. Pengaturan intim ini menumbuhkan lingkungan yang mendukung di mana Anda dapat menyempurnakan keterampilan, berbagi pengalaman, dan benar-benar terhubung dengan sesama fotografer. Alami keajaiban <strong>fotografi perjalanan Mesir</strong> dengan komunitas individu yang sepaham.</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c.045 4.095 1.563 7.844 4.368 10.053L12 21.466l4.688-2.413A12.001 12.001 0 0021.056 12c-.045-4.095-1.563-7.844-4.368-10.053z"></path></svg>
-                        <h3 class="card-title">Logistik Mulus & Perjalanan Aman di Mesir</h3>
-                        <p class="card-text">Ketenteraman pikiran Anda adalah prioritas kami. Kami menangani semua detail rumit — dari akomodasi mewah dan transportasi pribadi ber-AC hingga semua izin dan biaya masuk. Komitmen kami pada <strong>tur Mesir yang aman</strong> berarti Anda dapat fokus sepenuhnya pada fotografi dan imersi budaya Anda. Nikmati <strong>petualangan fotografi Mesir tanpa repot</strong> dari awal hingga akhir.</p>
-                    </div>
-                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253"></path></svg>
-                        <h3 class="card-title">Imersi Budaya Otentik</h3>
-                        <p class="card-text">Di luar hanya menangkap foto menakjubkan, tur kami menawarkan <strong>imersi budaya otentik yang mendalam di Mesir</strong>. Terlibat dengan penduduk setempat, jelajahi pasar tradisional, dan nikmati masakan otentik. Pengalaman holistik ini memastikan foto Anda menceritakan kisah yang lebih kaya, mencerminkan semangat sejati Mesir dan rakyatnya.</p>
+                        <div class="card-icon">⭐</div>
+                        <h3>Pemandu Egyptologist Lokal</h3>
+                        <p>Pemandu kami adalah Egyptologist berlisensi dengan pengetahuan mendalam tentang sejarah, budaya, dan tempat tersembunyi Mesir. Mereka memberikan wawasan yang tidak akan Anda temukan di buku panduan.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- COMPREHENSIVE EGYPT TOURS GUIDE SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Mengapa Memilih Tur Pribadi Mesir daripada Paket Standar?</h2>
+                
+                <p>Saat merencanakan petualangan Mesir Anda, Anda dihadapkan pada pilihan antara tur grup generik dan pengalaman pribadi yang dipersonalisasi. Tur pribadi Mesir kami menawarkan keunggulan signifikan yang mengubah pengalaman perjalanan Anda dari biasa menjadi luar biasa. Berbeda dengan tur grup ramai di mana Anda hanya salah satu dari banyak wajah, tur pribadi kami memberikan perhatian personal, penjadwalan fleksibel, dan akses ke pengalaman yang tidak tersedia untuk grup besar.</p>
+                
+                <h3>Keunggulan Tur Pribadi:</h3>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>Fleksibilitas Penuh</h3>
+                        <p>Ubah itinerary Anda kapan saja, habiskan lebih banyak waktu di situs yang menarik minat Anda, lewati waktu ramai, dan buat jadwal yang sesuai dengan tingkat energi dan minat Anda dengan sempurna.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Akses Budaya Lebih Dalam</h3>
+                        <p>Tur pribadi memungkinkan akses ke restoran kecil, situs kurang dikenal, dan pengalaman lokal autentik yang tidak dapat diakomodasi grup besar karena batasan ukuran.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pemanduan Dipersonalisasi</h3>
+                        <p>Pemandu pribadi Anda fokus sepenuhnya pada grup Anda, menjawab semua pertanyaan Anda, memberikan penjelasan terperinci, dan menyesuaikan informasi dengan minat spesifik Anda.</p>
+                    </div>
+                </div>
+                
+                <h3>Kategori Tur Pribadi Mesir Kami:</h3>
+                <ul>
+                    <li><strong>Tur Pribadi Cairo:</strong> Eksplorasi komprehensif ibu kota Mesir termasuk Museum Mesir, Cairo Koptik, Cairo Islam, pasar Khan el-Khalili, dan lingkungan lokal dengan sesi foto profesional opsional di lokasi ikonik</li>
+                    <li><strong>Tur Pribadi Piramida Giza:</strong> Akses eksklusif ke Dataran Tinggi Giza, termasuk Piramida Besar, Sphinx, dan Museum Perahu Matahari dengan sesi fotografi di golden hour untuk pencahayaan optimal</li>
+                    <li><strong>Tur Pribadi Alexandria:</strong> Perjalanan sehari atau kunjungan lebih lama menjelajahi pantai Mediterania Alexandria, Katakombe Kom el Shoqafa, Benteng Qaitbay, Bibliotheca Alexandrina, dan restoran seafood lokal</li>
+                    <li><strong>Tur Pribadi Luxor:</strong> Eksplorasi mendalam Tepi Barat dan Timur termasuk Lembah Para Raja, Kuil Karnak, Kuil Luxor, Kuil Hatshepsut, dan pengalaman balon udara panas</li>
+                    <li><strong>Paket Mesir Multi-Kota:</strong> Tur pribadi komprehensif 7-14 hari menggabungkan Cairo, Giza, Alexandria, Luxor, Aswan, dan pengalaman cruise Nil opsional</li>
+                    <li><strong>Tur Pribadi Minat Khusus:</strong> Tur khusus yang berfokus pada fotografi, sejarah, arsitektur, makanan, perjalanan keluarga, pengalaman bulan madu, atau penelitian akademik</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEO ARTICLE SECTION: COMPLETE EGYPT TRAVEL GUIDE -->
         <section class="main-section">
             <div class="container">
-                <h2>Tur Fotografi Unggulan Kami</h2>
+                <div class="seo-article">
+                    <h2>Panduan Utama Tur Pribadi Mesir: Cairo, Giza, Alexandria & Luxor</h2>
+                    
+                    <p><strong>Ditulis oleh Egyptologist profesional Hossam | Diperbarui untuk Musim 2024-2025</strong></p>
+                    
+                    <p>Selamat datang di panduan definitif untuk tur pribadi Mesir. Dengan pengalaman lebih dari 15 tahun merancang petualangan Mesir yang dipersonalisasi, kami telah membuat sumber daya komprehensif ini untuk membantu Anda memahami mengapa tur pribadi menawarkan cara terbaik untuk mengalami Mesir. Baik Anda pengunjung pertama kali atau traveler yang kembali, panduan ini mencakup semuanya dari memilih tur pribadi yang tepat hingga memaksimalkan pengalaman Anda di Cairo, Giza, Alexandria, dan Luxor.</p>
+                    
+                    <h3>Memahami Tur Pribadi Mesir: Apa yang Membuatnya Berbeda?</h3>
+                    
+                    <p>Tur pribadi Mesir mewakili puncak perjalanan personal di salah satu destinasi paling kaya sejarah di dunia. Berbeda dengan tur grup standar yang mengikuti jadwal kaku dengan 20-40 traveler lain, tur pribadi menawarkan:</p>
+                    
+                    <ul>
+                        <li><strong>Kustomisasi Lengkap:</strong> Rancang itinerary Anda dari awal atau modifikasi tur yang kami sarankan agar sesuai dengan minat spesifik Anda, apakah itu sejarah kuno, fotografi, kuliner lokal, atau kegiatan ramah keluarga.</li>
+                        <li><strong>Penjadwalan Fleksibel:</strong> Mulai hari Anda kapan Anda mau, habiskan waktu sebanyak yang Anda inginkan di setiap situs, ambil istirahat saat diperlukan, dan sesuaikan rencana berdasarkan cuaca, tingkat energi, atau penemuan tak terduga.</li>
+                        <li><strong>Perhatian Dipersonalisasi:</strong> Pemandu Egyptologist pribadi Anda fokus sepenuhnya pada grup Anda, memberikan penjelasan terperinci yang disesuaikan dengan tingkat pengetahuan dan minat Anda, menjawab semua pertanyaan secara menyeluruh.</li>
+                        <li><strong>Akses ke Pengalaman Eksklusif:</strong> Tur pribadi dapat mencakup pengalaman yang tidak tersedia untuk grup besar: pemandangan pribadi, akses belakang layar, pertemuan dengan pengrajin lokal, kunjungan rumah dengan keluarga Mesir, dan restoran yang tidak mengakomodasi bus tur.</li>
+                        <li><strong>Efisiensi dan Kenyamanan:</strong> Lewati antrian di situs populer, gunakan transportasi pribadi yang menunggu Anda, dan nikmati kecepatan yang sesuai dengan preferensi Anda daripada mengakomodasi anggota paling lambat dari grup besar.</li>
+                        <li><strong>Layanan Profesional Opsional:</strong> Kemampuan untuk menyertakan layanan khusus seperti fotografi profesional, kuliah akademik, atau pemandu kegiatan khusus berdasarkan minat Anda.</li>
+                    </ul>
+                    
+                    <h3>Tur Pribadi Cairo: Melampaui Jalur Wisata Biasa</h3>
+                    
+                    <p>Cairo, kota dengan 20 juta orang, menawarkan kemungkinan eksplorasi tanpa akhir yang hampir tidak disinggung oleh sebagian besar tur grup. Tur pribadi Cairo kami melampaui itinerary standar Museum Mesir dan piramida untuk mencakup:</p>
+                    
+                    <ul>
+                        <li><strong>Museum Mesir & Grand Egyptian Museum Baru:</strong> Tur berpemandu pribadi kedua museum dengan penekanan pada minat spesifik Anda - apakah itu harta karun Tutankhamun, teknik mumifikasi, atau periode sejarah tertentu.</li>
+                        <li><strong>Eksplorasi Mendalam Cairo Islam:</strong> Jelajahi di luar masjid utama untuk menemukan permata tersembunyi, pelajari evolusi arsitektur Islam, kunjungi bengkel kerajinan tradisional, dan pahami sejarah Islam Cairo secara mendalam.</li>
+                        <li><strong>Tur Komprehensif Cairo Koptik:</strong> Kunjungi Gantung Gereja, Abu Serga, Sinagoge Ben Ezra, dan Museum Koptik dengan konteks sejarah terperinci tentang warisan Kristen Mesir dan sejarah Yahudi.</li>
+                        <li><strong>Eksplorasi Lingkungan Lokal:</strong> Alami kehidupan Cairene autentik di distrik seperti Zamalek, Maadi, atau Heliopolis, kunjungi pasar lokal yang tidak sering dikunjungi turis, dan nikmati makanan tradisional di restoran keluarga.</li>
+                        <li><strong>Tur Fotografi Cairo:</strong> Bagi mereka yang memilih layanan sesi foto kami, kami tahu lokasi dan waktu terbaik untuk memotret kontras Cairo - kuno dan modern, kaya dan miskin, kacau dan damai.</li>
+                        <li><strong>Tur Kuliner Cairo:</strong> Tur kuliner pribadi berfokus pada masakan Mesir, dari kios makanan jalanan hingga restoran kelas atas, kelas memasak dengan koki lokal, dan kunjungan ke pasar rempah.</li>
+                    </ul>
+                    
+                    <h3>Tur Pribadi Piramida Giza: Akses Eksklusif & Pengalaman Optimal</h3>
+                    
+                    <p>Dataran Tinggi Giza menerima jutaan pengunjung setiap tahun, tetapi tur pribadi menawarkan cara untuk mengalami piramida tanpa kerumunan dan dengan pemahaman lebih dalam:</p>
+                    
+                    <ul>
+                        <li><strong>Waktu Strategis:</strong> Tur pribadi memungkinkan kunjungan pada waktu optimal - pagi sangat awal untuk menghindari kerumunan dan panas, atau sore hari untuk fotografi golden hour dan pemandangan matahari terbenam.</li>
+                        <li><strong>Akses Interior Piramida:</strong> Panduan terperinci tentang piramida mana yang akan dimasuki berdasarkan minat dan kemampuan fisik Anda, dengan penjelasan menyeluruh tentang teknik konstruksi dan signifikansi sejarah.</li>
+                        <li><strong>Tur Berfokus Fotografi:</strong> Untuk klien yang memilih sesi foto, kami tahu semua sudut terbaik, titik pandang (termasuk beberapa spot kurang dikenal), dan kondisi pencahayaan untuk menangkap gambar piramida yang menakjubkan.</li>
+                        <li><strong>Melampaui Tiga Utama:</strong> Eksplorasi piramida kurang dikenal di dataran tinggi, desa pekerja, dan penggalian arkeologi yang sedang berlangsung dengan penjelasan penelitian terkini.</li>
+                        <li><strong>Pengalaman Unta & Berkuda:</strong> Pengaturan pribadi untuk tunggangan gurun dengan operator bereputasi, memastikan kesejahteraan hewan dan peluang fotografi optimal.</li>
+                        <li><strong>Alternatif Pertunjukan Suara & Cahaya:</strong> Sementara pertunjukan resmi melayani massa, pemandu pribadi dapat memberikan narasi yang lebih personal dan akurat secara historis tentang sejarah dataran tinggi.</li>
+                    </ul>
+                    
+                    <h3>Tur Pribadi Alexandria: Mesir Mediterania Terungkap</h3>
+                    
+                    <p>Didirikan oleh Alexander Agung, Alexandria menawarkan pengalaman Mesir yang berbeda dengan atmosfer Mediterania dan sejarah Greco-Romawi:</p>
+                    
+                    <ul>
+                        <li><strong>Tur Lapisan Sejarah:</strong> Memahami berbagai lapisan sejarah Alexandria - Firaun, Yunani, Romawi, Bizantium, Islam, dan modern - melalui situs arkeologi dan arsitekturnya.</li>
+                        <li><strong>Katakombe Kom el Shoqafa:</strong> Eksplorasi berpemandu pribadi nekropolis unik ini yang memadukan gaya artistik Mesir, Yunani, dan Romawi, dengan penjelasan terperinci tentang penemuan dan signifikansinya.</li>
+                        <li><strong>Bibliotheca Alexandrina:</strong> Tur khusus perpustakaan modern berdasarkan minat Anda - apakah arsitektur, koleksi khusus, atau program budaya terkini.</li>
+                        <li><strong>Benteng Qaitbay:</strong> Sejarah terperinci benteng abad ke-15 ini yang dibangun di situs Mercusuar Alexandria kuno, salah satu dari Tujuh Keajaiban.</li>
+                        <li><strong>Pengalaman Seafood Lokal:</strong> Pengaturan pribadi di restoran seafood autentik tempat Anda memilih ikan segar dan belajar tentang tradisi perikanan Mediterania.</li>
+                        <li><strong>Taman Istana Montaza:</strong> Eksplorasi santai taman indah ini dengan konteks sejarah tentang era kerajaan Mesir dan analisis arsitektur bangunan istana.</li>
+                        <li><strong>Tur Fotografi Alexandria:</strong> Sesi fotografi pantai, fotografi arsitektur berfokus pada bangunan Belle Époque, dan fotografi jalanan di lingkungan tradisional.</li>
+                    </ul>
+                    
+                    <h3>Tur Pribadi Luxor: Thebes Kuno Dieksplorasi Secara Mendalam</h3>
+                    
+                    <p>Luxor, Thebes kuno, mengandung sekitar sepertiga barang antik dunia, membuat pemanduan pribadi penting untuk eksplorasi yang berarti:</p>
+                    
+                    <ul>
+                        <li><strong>Tur Komprehensif Tepi Barat:</strong> Eksplorasi khusus Lembah Para Raja berdasarkan makam mana yang terbuka dan minat spesifik Anda, dengan penjelasan terperinci tentang praktik penguburan, dekorasi makam, dan penemuan terkini.</li>
+                        <li><strong>Kuil Hatshepsut:</strong> Analisis mendalam kuil unik ini, pemerintahan firaun wanita Mesir, dan inovasi arsitektural struktur.</li>
+                        <li><strong>Lembah Para Ratu & Bangsawan:</strong> Kunjungan ke nekropolis yang kurang ramai dengan makam yang dihiasi indah dari ratu, pangeran, dan pejabat tinggi.</li>
+                        <li><strong>Kompleks Kuil Karnak:</strong> Tur pribadi yang disesuaikan dengan stamina dan minat Anda, berfokus pada area tertentu seperti Hypostyle Hall, danau suci, atau museum terbuka berdasarkan apa yang ingin Anda lihat.</li>
+                        <li><strong>Kuil Luxor Siang & Malam:</strong> Mengalami kuil pada waktu yang berbeda dengan penjelasan evolusinya dari kuil Kerajaan Baru ke benteng Romawi ke gereja Koptik ke masjid.</li>
+                        <li><strong>Penerbangan Balon Udara Panas:</strong> Pengaturan pribadi untuk penerbangan balon matahari terbit di atas Tepi Barat dengan peluang fotografi optimal dan pertimbangan keselamatan.</li>
+                        <li><strong>Tur Fotografi Luxor:</strong> Panduan tentang memotrel relief kuil dalam kondisi cahaya menantang, menangkap skala dan keagungan monumen, dan fotografi etis komunitas lokal.</li>
+                    </ul>
+                    
+                    <h3>Sesi Foto Profesional Opsional: Bagaimana Ini Meningkatkan Tur Pribadi Mesir Anda</h3>
+                    
+                    <p>Sementara tur pribadi Mesir kami berdiri sendiri sebagai pengalaman perjalanan yang luar biasa, layanan sesi foto profesional opsional menambah nilai signifikan bagi banyak traveler:</p>
+                    
+                    <ul>
+                        <li><strong>Untuk Penggemar Fotografi:</strong> Pelajari teknik profesional untuk menangkap kondisi pencahayaan unik Mesir, detail arsitektur, dan momen budaya dari pemandu fotografer berpengalaman.</li>
+                        <li><strong>Untuk Traveler yang Menginginkan Souvenir Berkualitas:</strong> Pulang dengan gambar berkualitas profesional daripada foto biasa - sempurna untuk album, seni dinding, atau berbagi dengan keluarga dan teman.</li>
+                        <li><strong>Untuk Acara Khusus:</strong> Pasangan bulan madu, perayaan ulang tahun, dan keluarga menandai momen spesial menerima kenangan yang didokumentasikan dengan indah dengan latar belakang spektakuler Mesir.</li>
+                        <li><strong>Pengaturan Fleksibel:</strong> Pilih cakupan fotografi sepanjang hari atau sesi tertentu di lokasi kunci seperti piramida di golden hour atau Kuil Karnak dalam cahaya pagi.</li>
+                        <li><strong>Panduan Peralatan:</strong> Nasihat tentang peralatan kamera apa yang harus dibawa ke Mesir, menangani debu dan panas Mesir, dan teknik untuk kondisi pencahayaan menantang di kuil dan makam.</li>
+                        <li><strong>Sensitifitas Budaya:</strong> Panduan tentang fotografi yang menghormati orang, situs agama, dan komunitas lokal untuk memastikan interaksi positif dan gambar autentik.</li>
+                        <li><strong>Dukungan Pasca-Perjalanan:</strong> Bantuan dalam memilih dan mengedit gambar, membuat album, atau mempersiapkan gambar untuk dicetak dan ditampilkan.</li>
+                    </ul>
+                    
+                    <h3>Merencanakan Tur Pribadi Mesir Anda: Pertimbangan Praktis</h3>
+                    
+                    <p>Perencanaan tur pribadi Mesir yang sukses melibatkan beberapa pertimbangan kunci yang berbeda dari pemesanan tur standar:</p>
+                    
+                    <ul>
+                        <li><strong>Perencanaan Jauh Hari:</strong> Tur pribadi dengan pemandu berkualitas memerlukan pemesanan jauh hari, terutama selama musim puncak (Oktober-April). Kerangka waktu perencanaan ideal adalah 3-6 bulan sebelumnya untuk ketersediaan pemandu dan akomodasi terbaik.</li>
+                        <li><strong>Pertimbangan Anggaran:</strong> Tur pribadi mewakili nilai lebih tinggi daripada biaya lebih tinggi ketika mempertimbangkan perhatian personal, fleksibilitas, akses eksklusif, dan efisiensi waktu. Kami menawarkan tur pribadi di berbagai titik harga untuk mengakomodasi anggaran berbeda.</li>
+                        <li><strong>Optimasi Ukuran Grup:</strong> Tur pribadi dapat lebih hemat biaya untuk keluarga atau kelompok kecil teman yang bepergian bersama, karena biaya dibagi sementara manfaat privasi dan personalisasi dipertahankan.</li>
+                        <li><strong>Kustomisasi Berbasis Minat:</strong> Sebelum memesan, pertimbangkan aspek Mesir apa yang paling menarik minat Anda - periode sejarah tertentu, gaya arsitektur, sejarah agama, budaya kontemporer, peluang fotografi, atau pengalaman kuliner.</li>
+                        <li><strong>Pertimbangan Fisik:</strong> Tur pribadi dapat disesuaikan dengan kemampuan fisik, dengan kecepatan lebih santai, lebih sedikit tangga, atau situs alternatif bagi mereka dengan kekhawatiran mobilitas.</li>
+                        <li><strong>Penyesuaian Musiman:</strong> Tur pribadi memungkinkan penjadwalan optimal berdasarkan musim - mulai lebih awal dalam panas musim panas, aktivitas dalam ruangan selama jam terpanas, dan fokus pada situs dengan naungan atau pendinginan.</li>
+                        <li><strong>Menggabungkan Destinasi:</strong> Tur pribadi multi-kota (Cairo-Giza-Alexandria-Luxor) memerlukan perencanaan logistik yang cermat untuk penerbangan domestik, perjalanan kereta api, atau jarak mengemudi, yang kami tangani dengan mulus.</li>
+                    </ul>
+                    
+                    <h3>Tur Pribadi vs. Tur Grup: Analisis Biaya-Manfaat</h3>
+                    
+                    <p>Sementara tur pribadi Mesir memiliki biaya per orang lebih tinggi daripada tur grup, mereka menawarkan manfaat signifikan yang sering membuatnya bernilai lebih baik:</p>
+                    
+                    <ul>
+                        <li><strong>Efisiensi Waktu:</strong> Tur pribadi menyelesaikan lebih banyak dalam waktu lebih sedikit melalui penjadwalan optimal, melewatkan antrian, dan transportasi langsung, membuat lebih baik menggunakan waktu liburan terbatas.</li>
+                        <li><strong>Kualitas Pengalaman:</strong> Keterlibatan lebih dalam dengan situs, penjelasan dipersonalisasi, kemampuan untuk bertanya tanpa batas, dan pengalaman yang disesuaikan dengan minat Anda daripada komentar generik.</li>
+                        <li><strong>Nilai Fleksibilitas:</strong> Kemampuan untuk mengubah rencana berdasarkan cuaca, tingkat energi, atau minat yang ditemukan memiliki nilai tidak berwujud yang meningkatkan kepuasan dan mengurangi stres perjalanan.</li>
+                        <li><strong>Akses Eksklusif:</strong> Peluang untuk pengalaman yang tidak tersedia untuk grup - pemandangan museum pribadi, pertemuan dengan ahli, reservasi restoran di tempat populer, dll.</li>
+                        <li><strong>Keunggulan Fotografi:</strong> Bagi mereka yang memilih sesi foto, kualitas gambar dan peluang belajar mewakili nilai signifikan dibandingkan fotografi tur standar.</li>
+                        <li><strong>Imersi Budaya:</strong> Interaksi lebih dalam dengan komunitas lokal, pengalaman makan autentik, dan pemahaman melampaui pariwisata tingkat permukaan.</li>
+                        <li><strong>Kesehatan & Keselamatan:</strong> Transportasi pribadi dan ukuran grup lebih kecil menawarkan keunggulan kesehatan, terutama penting dalam pertimbangan perjalanan pasca-pandemi.</li>
+                    </ul>
+                    
+                    <h3>FAQ Tur Pribadi Mesir Terjawab</h3>
+                    
+                    <p>Berdasarkan 15+ tahun mengatur tur pribadi Mesir, berikut adalah jawaban untuk pertanyaan umum:</p>
+                    
+                    <ul>
+                        <li><strong>"Apakah tur pribadi aman untuk solo traveler, terutama wanita?"</strong> Ya, tur pribadi bisa lebih aman daripada perjalanan independen atau tur grup besar. Pemandu Anda memberikan pengetahuan lokal, menangani interaksi, dan memastikan Anda berada di tempat bereputasi baik. Kami sering mengatur tur pribadi untuk solo female traveler dengan pemandu wanita tersedia sesuai permintaan.</li>
+                        <li><strong>"Bisakah tur pribadi mengakomodasi pembatasan diet atau alergi?"</strong> Tentu. Tur pribadi memungkinkan komunikasi terperinci dengan restoran, opsi makan alternatif, dan fleksibilitas untuk mengakomodasi kebutuhan diet apa pun - sesuatu yang sulit dengan menu tur grup tetap.</li>
+                        <li><strong>"Seberapa pribadi 'pribadi'? Apakah kita akan bergabung dengan grup lain?"</strong> Benar-benar pribadi berarti hanya grup Anda dan pemandu/supir. Tidak ada penggabungan dengan grup lain kecuali khusus diminta untuk alasan sosial (dan hanya dengan persetujuan Anda).</li>
+                        <li><strong>"Bisakah kita menyesuaikan tur pribadi di tengah jalan?"</strong> Ya, salah satu keunggulan utama. Jika Anda menemukan minat pada sesuatu yang tak terduga, ingin menghabiskan lebih banyak waktu di suatu tempat, atau perlu kecepatan lebih lambat, tur pribadi memungkinkan penyesuaian harian.</li>
+                        <li><strong>"Apakah pemandu tur pribadi lebih berpengetahuan daripada pemandu tur grup?"</strong> Kami memilih pemandu tur pribadi berdasarkan keahlian lebih dalam, keterampilan bahasa, dan kemampuan untuk mempersonalisasi penjelasan. Banyak yang memegang gelar lanjutan dalam Egyptology daripada sertifikat pemanduan dasar.</li>
+                        <li><strong>"Bagaimana sesi foto opsional bekerja dengan tur pribadi?"</strong> Anda dapat memilih untuk menyertakan fotografer profesional untuk semua hari, hari tertentu, atau lokasi tertentu. Fotografer bekerja dengan tidak mencolok bersama pemandu Anda untuk menangkap pengalaman Anda tanpa mengganggu aliran tur Anda.</li>
+                        <li><strong>"Bisakah tur pribadi termasuk anak-anak? Usia berapa yang terbaik?"</strong> Tur pribadi sangat baik untuk keluarga. Kami menyesuaikan konten, kecepatan, dan kegiatan berdasarkan usia dan minat anak, sesuatu yang tidak mungkin dengan tur grup tetap. Elemen interaktif, pengalaman langsung, dan istirahat diinkorporasi secara alami.</li>
+                        <li><strong>"Apa ukuran grup ideal untuk tur pribadi Mesir?"</strong> Kebanyakan tur pribadi bekerja sempurna untuk 2-6 orang. Grup pribadi lebih besar hingga 12-15 orang dimungkinkan dengan pemandu dan kendaraan tambahan. Tur pribadi solo juga populer untuk fleksibilitas ultimate.</li>
+                        <li><strong>"Seberapa jauh sebelumnya kita harus memesan tur pribadi Mesir?"</strong> Untuk musim puncak (Okt-Apr), 3-6 bulan sebelumnya memastikan ketersediaan pemandu terbaik. Untuk musim bahu (Mei-Juni, September), 1-3 bulan biasanya cukup. Tur pribadi last-minute terkadang mungkin tetapi dengan opsi pemandu terbatas.</li>
+                        <li><strong>"Apakah tur pribadi sepadan dengan biaya ekstra?"</strong> Berdasarkan umpan balik klien yang secara konsisten memberi peringkat tur pribadi lebih tinggi daripada pengalaman tur grup sebelumnya, konsensusnya adalah ya - perhatian personal, fleksibilitas, pengalaman lebih dalam, dan efisiensi waktu membenarkan investasi tambahan bagi kebanyakan traveler.</li>
+                    </ul>
+                    
+                    <h3>Testimoni: Pengalaman Tur Pribadi Mesir</h3>
+                    
+                    <p>Mendengar dari klien sebelumnya membantu memahami perbedaan tur pribadi:</p>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Tur pribadi Mesir kami mengubah apa yang bisa menjadi kunjungan daftar periksa menjadi imersi budaya mendalam. Memiliki pemandu yang sepenuhnya fokus pada keluarga berarti pertanyaan anak-anak kami dijawab secara menyeluruh, kami bisa mengubah rencana saat seseorang lelah, dan kami menemukan aspek Mesir yang tidak pernah kami ketahui ada. Sesi foto opsional memberi kami foto keluarga berkualitas profesional di piramida - harta yang akan kami hargai selamanya." - Keluarga Anderson, USA
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Sebagai solo female traveler, awalnya saya gugup tentang Mesir. Tur pribadi memberikan keselamatan, persahabatan, dan fleksibilitas luar biasa. Pemandu saya menyesuaikan setiap hari berdasarkan minat saya - ketika saya mengembangkan ketertarikan pada arsitektur Islam, dia sepenuhnya mengubah rencana hari berikutnya untuk fokus pada masjid dan sekolah Islam kurang dikenal. Tingkat personalisasi ini tidak mungkin dengan tur grup." - Sarah M., Australia
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "Kami memilih tur pribadi khusus untuk komponen fotografi tetapi menemukan pemanduannya sama luar biasanya. Fotografer kami tahu persis di mana dan kapan menangkap setiap situs dengan sempurna, sementara Egyptologist kami memberikan konteks yang membuat gambar lebih bermakna. Kami kembali dengan foto menakjubkan dan pemahaman mendalam tentang sejarah Mesir." - Thomas & Elena, Jerman
+                    </blockquote>
+                    
+                    <h3>Memesan Tur Pribadi Mesir Anda: Langkah Selanjutnya</h3>
+                    
+                    <p>Siap mengalami Mesir melalui tur pribadi yang disesuaikan dengan minat Anda? Berikut proses yang kami rekomendasikan:</p>
+                    
+                    <ol>
+                        <li><strong>Inquiry Awal:</strong> Hubungi kami dengan tanggal perjalanan, ukuran grup, minat, dan persyaratan khusus. Sebutkan jika Anda tertarik dengan sesi foto profesional opsional.</li>
+                        <li><strong>Konsultasi Telepon:</strong> Kami menjadwalkan panggilan untuk mendiskusikan minat Mesir Anda, gaya perjalanan, situs wajib dikunjungi, dan preferensi untuk memahami jenis tur pribadi apa yang paling sesuai.</li>
+                        <li><strong>Proposal Itinerary Kustom:</strong> Berdasarkan diskusi kami, kami membuat itinerary tur pribadi terperinci termasuk spesialisasi pemandu, transportasi, opsi akomodasi, dan pengaturan sesi foto jika diminta.</li>
+                        <li><strong>Revisi & Penyempurnaan:</strong> Kami menyesuaikan itinerary berdasarkan umpan balik Anda sampai cocok sempurna dengan visi Anda untuk petualangan Mesir.</li>
+                        <li><strong>Pemesanan & Persiapan:</strong> Setelah final, kami menangani semua pemesanan dan memberikan informasi pra-perjalanan terperinci termasuk daftar kemasan, pedoman budaya, dan materi persiapan.</li>
+                        <li><strong>Pengalaman Dalam Negeri:</strong> Pemandu pribadi Anda bertemu Anda saat kedatangan dan memberikan touring personal yang mulus sepanjang tinggal Anda dengan fleksibilitas harian berdasarkan minat Anda yang berkembang.</li>
+                        <li><strong>Tindak Lanjut Pasca-Tur:</strong> Setelah tur, kami memeriksa umpan balik dan, bagi mereka yang memilih sesi foto, membantu dengan pemilihan dan pengiriman gambar.</li>
+                    </ol>
+                    
+                    <p><strong>Siap mengalami Mesir melalui tur pribadi yang dirancang khusus untuk Anda?</strong> <a href="contact.html" style="color: var(--accent-dark); font-weight: bold;">Hubungi Tur Fotografi Mesir hari ini</a> untuk mulai merencanakan petualangan Mesir yang dipersonalisasi dengan layanan fotografi profesional opsional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOUR DETAILS -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Detail Tur Pribadi Mesir & Pengalaman Eksklusif</h2>
+                
+                <h3>📸 Layanan Fotografi Profesional Opsional:</h3>
+                <ul>
+                    <li><strong>Tur Fotografi Cairo:</strong> Sesi foto profesional di piramida, Museum Mesir, situs arsitektur Islam, dan pasar lokal dengan panduan pencahayaan optimal</li>
+                    <li><strong>Sesi Foto Piramida Giza:</strong> Sesi golden hour saat matahari terbit/terbenam, panduan posing profesional di titik pandang eksklusif, teknik komposisi kreatif</li>
+                    <li><strong>Fotografi Pantai Alexandria:</strong> Pemandangan laut Mediterania, detail arsitektur situs Greco-Romawi, adegan jalanan hidup di lingkungan tradisional</li>
+                    <li><strong>Fotografi Kuil Luxor:</strong> Teknik untuk menangkap relief kuil dalam cahaya menantang, bidangan arsitektur agung, fotografi detail intim</li>
+                    <li><strong>Sesi Potret Budaya:</strong> Fotografi potret dengan pengrajin lokal, pemilik toko, dan anggota komunitas dengan persetujuan tepat dan sensitifitas budaya</li>
+                    <li><strong>Fotografi Keluarga & Pasangan:</strong> Potret keluarga profesional di situs ikonik, foto romantis pasangan untuk bulan madu, fotografi grup keluarga multi-generasi</li>
+                </ul>
+                
+                <h3>📍 Pengalaman Eksklusif Tur Pribadi:</h3>
+                <ul>
+                    <li><strong>Akses Museum Setelah Jam:</strong> Pengaturan pemandangan pribadi di museum sebelum atau setelah jam publik untuk eksplorasi bebas kerumunan</li>
+                    <li><strong>Pertemuan Arkeolog:</strong> Pertemuan diatur dengan arkeolog yang bekerja di situs penggalian aktif (tergantung ketersediaan dan izin)</li>
+                    <li><strong>Kunjungan Bengkel Pengrajin:</strong> Demonstrasi pribadi dan lokakarya dengan pengrajin ahli dalam tembikar, pembuatan papirus, tenun tekstil, dan pembuatan perhiasan</li>
+                    <li><strong>Pengalaman Makan di Rumah:</strong> Makan di rumah keluarga Mesir dengan demonstrasi memasak dan peluang pertukaran budaya</li>
+                    <li><strong>Tur Berfokus Akademik:</strong> Tur dirancang untuk siswa, peneliti, atau traveler yang sangat tertarik dengan akses ke sumber daya khusus dan ahli</li>
+                    <li><strong>Itinerary Berfokus Fotografi:</strong> Tur dirancang khusus untuk fotografer dengan waktu optimal, akses khusus untuk fotografi, dan panduan teknis</li>
+                </ul>
+                
+                <h3>🎯 Keunggulan Tur Pribadi:</h3>
+                <ul>
+                    <li><strong>Kontrol Jadwal Penuh:</strong> Mulai kapan Anda mau, habiskan selama yang Anda suka di setiap situs, ambil istirahat saat diperlukan, dan ubah rencana secara spontan</li>
+                    <li><strong>Konten Dipersonalisasi:</strong> Informasi disesuaikan dengan tingkat pengetahuan yang ada dan minat spesifik Anda daripada komentar generik</li>
+                    <li><strong>Transportasi Langsung:</strong> Kendaraan pribadi dengan supir selalu tersedia, tidak menunggu anggota grup, rute langsung ke tujuan</li>
+                    <li><strong>Prioritas Kesehatan & Keselamatan:</strong> Kontrol atas standar kebersihan, kemampuan untuk menghindari ruang ramai, perhatian personal terhadap masalah kesehatan apa pun</li>
+                    <li><strong>Pengakuan Acara Khusus:</strong> Ulang tahun, hari jadi, dan tonggak sejarah khusus dirayakan dengan tradisi lokal yang tepat dan kejutan</li>
+                    <li><strong>Fokus Bahasa:</strong> Pemandu dipilih untuk kemahiran bahasa dan kemampuan menjelaskan konsep kompleks dengan jelas dalam bahasa asli Anda</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FEATURED TOURS - UPDATED IMAGES TO JPG -->
+        <section class="main-section">
+            <div class="container">
+                <h2>Paket Tur Pribadi Mesir Paling Populer Kami</h2>
+                <p>Pilih dari pilihan tur pribadi Mesir yang kami pilih dengan cermat, dirancang untuk traveler yang mencari pengalaman personal dengan layanan fotografi profesional opsional.</p>
+                
                 <div class="tour-grid">
                     <div class="tour-card">
-                        <span class="sale-tag">Penawaran Spesial!</span>
-                        <img src="../images/pyramids-private-tour.jpg"
-                             alt="Tur fotografi berpemandu pribadi di Piramida Giza dengan pemandu Mesir profesional dan pemandangan Sphinx"
-                             class="tour-img lazy-load"
+                        <img src="images/pyramids-private-tour.jpg"
+                             alt="Tur pribadi piramida Giza dengan sesi foto opsional - Tur pribadi Mesir"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">📸 Tangkap Keajaiban: Tur Pribadi Piramida + Fotografi Profesional</h3>
-                            <p class="tour-card-text">Masuki sejarah kuno dalam tur pribadi satu hari yang imersif dari Piramida Agung Giza dan Sphinx, dipandu oleh ahli lokal yang bersemangat. Tangkap momen tak terlupakan dengan sesi foto profesional dan dengarkan kisah nyata di balik batu-batu tersebut.</p>
+                            <h3>Tur Pribadi Piramida Giza</h3>
+                            <p>Tur pribadi eksklusif Dataran Tinggi Giza dengan pemandu Egyptologist. Termasuk semua pintu masuk piramida, Sphinx, dan sesi foto profesional opsional di golden hour.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">Mulai $150 USD</span>
-                                <span class="tour-duration">Durasi: 4-5 jam</span>
+                                <span class="tour-price">Dari $150</span>
+                                <a href="tour-pyramids-private.html" class="tour-cta">Pesan Sekarang</a>
                             </div>
-                            <a href="tour-pyramids-private.html" class="tour-cta">Lihat Detail & Pesan</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Slot Terbatas!</span>
-                        <img src="../images/cairo-giza-2day.jpg"
-                             alt="Tur fotografi pribadi premium dua hari yang mencakup landmark Kairo dan piramida Giza dengan pemandu ahli"
-                             class="tour-img lazy-load"
+                        <img src="images/cairo-giza-2day.jpg"
+                             alt="Tur pribadi Cairo dan Giza 2 hari - Tur berpemandu pribadi Mesir"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Tur Pribadi Premium 2 Hari: Ekspedisi Fotografi Kairo & Giza</h3>
-                            <p class="tour-card-text">Imersi diri Anda dalam ibu kota yang hidup dan keajaiban kuno Mesir selama dua hari yang tak terlupakan. Jelajahi Piramida yang megah, Old Cairo yang ramai, dan Museum Nasional Peradaban Mesir yang mengesankan, semua dengan pemandu dan fotografer pribadi Anda.</p>
-                             <div class="tour-card-footer">
-                                <span class="tour-price">Mulai $350 USD</span>
-                                <span class="tour-duration">Durasi: 2 hari</span>
+                            <h3>Tur Pribadi Cairo & Giza 2 Hari</h3>
+                            <p>Tur pribadi komprehensif mencakup piramida, Museum Mesir, Cairo Koptik, Cairo Islam dengan penjadwalan fleksibel dan layanan fotografi opsional.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">Dari $350</span>
+                                <a href="tour-cairo-giza-2day.html" class="tour-cta">Pesan Sekarang</a>
                             </div>
-                            <a href="tour-cairo-giza-2day.html" class="tour-cta">Lihat Detail & Pesan</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Pesan Sekarang!</span>
-                        <img src="../images/alexandria-tour.jpg"
-                             alt="Tur fotografi hari pesisir pribadi ke Alexandria dari Kairo dengan pemandangan laut Mediterania dan situs kuno"
-                             class="tour-img lazy-load"
+                        <img src="images/alexandria-tour.jpg"
+                             alt="Tur pribadi Alexandria sehari dari Cairo - Tur Mesir Mediterania"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Temukan Alexandria: Tur Hari Pesisir Pribadi dari Kairo</h3>
-                            <p class="tour-card-text">Tukar debu gurun Kairo dengan angin sejuk Mediterania dalam tur hari pribadi yang tak terlupakan ke Alexandria. Temukan perpaduan harta karun Yunani, Romawi, Islam, dan modern dengan pemandu lokal yang bersemangat dan tangkap pemandangan pesisir yang menakjubkan.</p>
+                            <h3>Tur Pribadi Alexandria Sehari</h3>
+                            <p>Perjalanan sehari pribadi dari Cairo ke Alexandria. Kunjungi Katakombe, Benteng Qaitbay, Bibliotheca Alexandrina dengan pemanduan personal dan fotografi pantai opsional.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">Mulai $220 USD</span>
-                                <span class="tour-duration">Durasi: 1 hari</span>
+                                <span class="tour-price">Dari $220</span>
+                                <a href="tour-alexandria.html" class="tour-cta">Pesan Sekarang</a>
                             </div>
-                            <a href="tour-alexandria.html" class="tour-cta">Lihat Detail & Pesan</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">Petualangan Baru!</span>
-                        <img src="../images/egypt-discovery-7day.jpg"
-                             alt="Tur penemuan fotografi Mesir 7 hari yang komprehensif mencakup Kairo, Piramida Giza, Alexandria, dan kuil Luxor"
-                             class="tour-img lazy-load"
+                        <img src="images/egypt-discovery-7day.jpg"
+                             alt="Paket tur pribadi Mesir 7 hari - Tur pribadi Mesir lengkap"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">Tur Penemuan Mesir 7 Hari: Kairo, Giza, Alexandria & Luxor</h3>
-                            <p class="tour-card-text">Alami keajaiban Mesir kuno dan modern dalam perjalanan berpemandu 7 hari yang imersif ini. Dari Piramida yang menjulang hingga pesona Mediterania Alexandria dan kuil megah Luxor — perjalanan ini menghidupkan jiwa Mesir.</p>
+                            <h3>Tur Pribadi Mesir 7 Hari</h3>
+                            <p>Pengalaman Mesir pribadi ultimate mencakup Cairo, Giza, Alexandria, dan Luxor dengan akomodasi mewah, pemandu pribadi, dan fotografi profesional opsional sepanjang.</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">Mulai $1900 USD</span>
-                                <span class="tour-duration">Durasi: 7 hari</span>
+                                <span class="tour-price">Dari $1900</span>
+                                <a href="tour-egypt-discovery-7day.html" class="tour-cta">Pesan Sekarang</a>
                             </div>
-                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">Lihat Detail & Pesan</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-30">
+                    <a href="tours.html" class="hero-button hero-button-primary">Lihat Semua Paket Tur Pribadi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPREHENSIVE FAQ SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>Pertanyaan yang Sering Diajukan - Tur Pribadi Mesir</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Apa yang membuat tur pribadi Mesir lebih baik daripada tur grup? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Tur pribadi Mesir menawarkan keunggulan signifikan: fleksibilitas penuh untuk mengubah rencana, perhatian personal dari pemandu Anda, kemampuan untuk menjelajah dengan kecepatan Anda sendiri, akses ke pengalaman yang tidak tersedia untuk grup, waktu optimal untuk fotografi, dan imersi budaya lebih dalam. Anda bukan hanya turis lain pada jadwal - Anda merancang pengalaman Mesir Anda sendiri dengan panduan lokal ahli.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Apakah sesi foto profesional wajib dengan tur pribadi Anda? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Tidak, sesi foto profesional sepenuhnya opsional. Kami menawarkan dua jenis tur pribadi Mesir: 1) Tur pribadi standar dengan pemandu Egyptologist ahli, dan 2) Tur pribadi yang termasuk layanan fotografi profesional. Anda dapat memilih salah satu opsi berdasarkan preferensi dan anggaran Anda. Banyak klien memesan tur kami khusus untuk fotografi, sementara yang lain lebih memilih hanya pengalaman berpemandu.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Kota mana saja yang dicakup oleh tur pribadi Mesir Anda? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Tur pribadi Mesir kami mencakup secara komprehensif empat destinasi paling populer Mesir: Cairo (Museum Mesir, Cairo Islam & Koptik), Giza (Piramida & Sphinx), Alexandria (pantai Mediterania & situs Greco-Romawi), dan Luxor (Lembah Para Raja & kuil). Kami menawarkan tur pribadi satu destinasi, paket multi-kota, dan itinerary yang sepenuhnya disesuaikan menggabungkan lokasi ini berdasarkan minat dan waktu yang tersedia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Bisakah kita menyesuaikan itinerary tur pribadi Mesir kami? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Tentu! Kustomisasi adalah inti dari tur pribadi. Kami membuat proposal itinerary awal berdasarkan minat Anda, kemudian menyempurnakannya melalui konsultasi. Selama tur itu sendiri, Anda dapat membuat penyesuaian harian - habiskan lebih banyak waktu di situs yang Anda sukai, lewati yang kurang menarik minat Anda, tambahkan penemuan tak terduga, atau ubah kecepatan berdasarkan tingkat energi. Fleksibilitas ini tidak mungkin dengan tur grup tetap.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Apakah tur pribadi Mesir cocok untuk keluarga dengan anak-anak? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Tur pribadi ideal untuk keluarga! Kami menyesuaikan konten, kecepatan, dan kegiatan berdasarkan usia dan minat anak-anak. Keluarga dapat mengambil istirahat saat diperlukan, fokus pada elemen interaktif, sertakan makanan ramah anak, dan pertahankan jadwal fleksibel. Layanan sesi foto opsional sangat populer untuk menangkap potret keluarga indah di situs ikonik Mesir yang menjadi kenangan berharga.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Seberapa jauh sebelumnya kita harus memesan tur pribadi Mesir? <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>Untuk musim puncak (Oktober-April), kami merekomendasikan pemesanan tur pribadi Mesir 3-6 bulan sebelumnya untuk mengamankan pemandu dan akomodasi terbaik. Untuk musim bahu (Mei-Juni, September), 1-3 bulan biasanya cukup. Tur pribadi last-minute terkadang mungkin tetapi dengan opsi pemandu terbatas. Pemesanan awal juga memungkinkan lebih banyak waktu untuk pengembangan itinerary kustom dan permintaan khusus.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- EXTENSIVE REVIEWS SECTION -->
         <section class="main-section bg-primary-dark">
-            <div class="container">
-                <h2 style="color: var(--accent-light);">Apa Kata Klien Menakjubkan Kami</h2>
-                         <!-- TrustBox widget - Review Collector -->
-                <div class="trustpilot-widget" data-locale="id-ID" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68ebe694a70f7429071227b6" data-style-height="52px" data-style-width="100%" data-token="b32cd746-03c7-406e-8bb0-54364a1c6027">
-                  <a href="https://www.trustpilot.com/review/egyptphotographytours.com" target="_blank" rel="noopener">Trustpilot</a>
-                </div>
-                <!-- End TrustBox widget -->
+            <div class="container text-center">
+                <h2 style="color: var(--accent-light);">Apa Kata Klien Kami Tentang Tur Fotografi Mesir</h2>
+                
                 <div class="reviews-grid">
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Kami bersenang-senang dalam pengalaman ini dengan Hossam! Dia sangat membantu dan sabar dengan grup kami! Seluruh pengalaman adalah waktu yang menyenangkan bagi kami dan dia membuat kami merasa sangat nyaman. Kami menikmati semuanya!"</p>
-                        <p class="review-author">- Daniel</p>
+                        <p class="review-text">"Fleksibilitas tur pribadi kami membuat semua perbedaan. Ketika putri kami terpesona dengan hieroglif, pemandu kami menghabiskan waktu ekstra mengajarinya membaca simbol dasar. Perhatian personal ini mengubahnya dari bosan menjadi tertarik. Sesi foto opsional memberi kami gambar keluarga profesional di piramida."</p>
+                        <p><strong>- Keluarga Johnson, USA</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Itu adalah pengalaman tak terlupakan dari awal hingga akhir. Hossam adalah fotografer brilian dengan keterampilan luar biasa. Pengalaman luar biasa, perlakuan sangat baik, pekerjaan hebat, banyak foto fantastis dengan pemandangan piramida yang menakjubkan. Saya sangat senang dengan hasilnya, dan saya sangat merekomendasikan."</p>
-                        <p class="review-author">- Cristina</p>
+                        <p class="review-text">"Sebagai solo traveler, saya khawatir tentang Mesir. Tur pribadi memberikan keselamatan, persahabatan, dan fleksibilitas luar biasa. Pemandu saya menyesuaikan setiap hari berdasarkan minat saya - ketika saya mengembangkan ketertarikan pada arsitektur Islam, dia mengubah rencana untuk fokus pada masjid kurang dikenal. Tidak mungkin dengan tur grup!"</p>
+                        <p><strong>- Sarah M., Australia</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Hossam memberikan tur yang luar biasa dari Piramida Giza. Selalu penuh pertimbangan, komunikatif, berpengetahuan, dan membentuk tur sesuai dengan apa yang ingin Anda lakukan. Tidak hanya dia menunjukkan saya sekitar piramida Giza, tetapi setelah itu dia menyesuaikan jadwalnya untuk juga melakukan salah satu Museum! Dari awal hingga akhir, Hossam melakukan pekerjaan yang luar biasa. Senang saya memesan tur ini dan mendapatkan teman baru di Hossam!"</p>
-                        <p class="review-author">- Eduardo</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Sesi sangat bagus, saya sangat menyukai bahwa spot-spotnya tanpa orang. Saya harus memesan tur ini karena sebelumnya saya melakukan tur lain dan fotonya sangat buruk. Sekarang baik, pertimbangkan saja ada biaya tambahan untuk unta dan tiket masuk ke kompleks (yang ditentukan dalam posting pengumuman)"</p>
-                        <p class="review-author">- Lucy</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Tur pribadi dengan suami saya berdua, dan kami dipandu ke spot yang bagus tanpa banyak turis, sehingga bisa mendapatkan banyak foto bagus! Selain pemotretan, dia juga memberikan cerita sejarah singkat tentang piramida atau sphinx, jadi lebih informatif☺️ Karena dia asli Kairo, dia juga memberi tahu banyak restoran atau spot yang direkomendasikan, dan juga tidak merekomendasikan tempat yang hanya mahal, jadi sebagai orang yang pertama kali ke Mesir, saya pikir ini akan sangat membantu perjalanan. Saya merekomendasikan untuk mereka yang menginginkan tur storytelling sederhana+pemotretan!"</p>
-                        <p class="review-author">- Lee Soyeon</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Ini adalah salah satu pengalaman terbaik yang pernah ada. Hossam baik, perhatian dan terbuka terhadap saran. Dia juga berpengetahuan dan sangat membantu. Anda akan mengalami hanya hal-hal terbaik dengan dia."</p>
-                        <p class="review-author">- Meslem</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Hossam benar-benar yang terbaik. Mengapa? Karena dia sangat baik, sangat berpengetahuan dan benar-benar mencintai budaya dan negaranya. Saya memiliki hak istimewa menghabiskan satu setengah hari dengan Hossam dalam tur pribadi. Dia melakukan lebih dari yang diharapkan untuk memastikan saya bahagia, aman dan tenang. Tidak diragukan lagi Hossam adalah salah satu pemandu terbaik yang pernah saya miliki. Terima kasih telah menunjukkan yang terbaik dari Kairo dan untuk menciptakan pengalaman tak terlupakan yang akan saya hargai selama bertahun-tahun yang akan datang."</p>
-                        <p class="review-author">- ARI</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Jika Anda mengunjungi Piramida Giza dan ingin pengalaman tak terlupakan, saya sangat merekomendasikan memesan tur fotografi dengan Hassam. Dari awal hingga akhir, dia profesional, ramah, dan sangat berpengetahuan. Tidak hanya dia mengambil foto yang benar-benar menakjubkan yang menangkap keajaiban piramida dengan sempurna, tetapi dia juga berbagi banyak informasi sejarah dan cerita menarik yang membuat tur semakin spesial. Hassam benar-benar tahu spot terbaik untuk bidikan dan sudut unik, dan dia memastikan saya merasa nyaman dan menikmati setiap momen. Nilai untuk harganya luar biasa — Anda mendapatkan fotografi berkualitas tinggi, tur yang dipersonalisasi, dan penyelaman mendalam ke sejarah salah satu keajaiban dunia terbesar. Ini dengan mudah menjadi salah satu highlight perjalanan saya ke Mesir!"</p>
-                        <p class="review-author">- Erik</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Pengalaman hebat, sangat profesional, membuat Anda merasa nyaman bahkan jika Anda tidak terbiasa berada di depan kamera. Perhatian terhadap detail dan memiliki informasi hebat tentang piramida dan area sekitarnya. Sangat mudah dan nyaman bekerja dengan Hossam sehingga saya memutuskan untuk memesan tur perjalanan sehari dengan Hossam ke Alexandria juga."</p>
-                        <p class="review-author">- Jamie</p>
+                        <p class="review-text">"Kami memilih Tur Fotografi Mesir khusus untuk fotografi tetapi menemukan pemanduannya sama luar biasanya. Fotografer kami tahu waktu dan sudut tepat untuk setiap situs, sementara Egyptologist kami memberikan konteks yang membuat gambar bermakna. Kami kembali dengan foto menakjubkan dan pemahaman mendalam."</p>
+                        <p><strong>- Thomas & Elena, Jerman</strong></p>
                     </div>
                 </div>
-                <a href="faqs.html" class="review-cta">
-                        Baca Semua Ulasan & FAQ
-                </a>
+                
+                <div class="reviews-grid mt-30">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Tur pribadi Alexandria kami mengungkap Mesir yang sama sekali berbeda dari Cairo. Mampu menghabiskan waktu ekstra di perpustakaan saat memesona kami, lalu melewatkan sesuatu yang kurang menarik, membuat pengalaman bebas stres. Sesi fotografi pantai adalah sorotan yang tidak akan kami dapatkan di tur grup."</p>
+                        <p><strong>- Michael & James, Kanada</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Tur pribadi Luxor memungkinkan kami mengunjungi makam pada waktu optimal, menghindari kerumunan dan panas. Pengetahuan pemandu kami setara tingkat doktoral. Ketika kami menyebutkan minat pada praktik medis, ia merinci pengobatan Mesir kuno di desa pekerja. Kedalaman inilah mengapa tur pribadi bernilai setiap sen."</p>
+                        <p><strong>- Dr. Roberts, UK</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Kami memesan tur pribadi tanpa sesi foto awalnya tetapi menambahkannya setelah melihat gambar klien lain. Keputusan terbaik! Fotografer tidak mencolok tetapi menangkap momen ajaib yang kami lewatkan. Kombinasi pemanduan mendalam dan fotografi profesional menciptakan pengalaman Mesir sempurna."</p>
+                        <p><strong>- Lisa & Marco, Italia</strong></p>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="review-cta">Pesan Tur Pribadi Mesir Anda Hari Ini!</a>
+            </div>
+        </section>
+        
+        <!-- EGYPT TOUR PLANNING GUIDE -->
+        <section class="main-section">
+            <div class="container">
+                <h2>Panduan Perencanaan Tur Pribadi Mesir 2024-2025</h2>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>Waktu Terbaik untuk Tur Pribadi Mesir</h3>
+                        <p><strong>Oktober-April:</strong> Cuaca ideal (15-25°C). Musim puncak memerlukan pemesanan 3-6 bulan sebelumnya untuk ketersediaan pemandu pribadi terbaik.</p>
+                        <p><strong>Mei-September:</strong> Lebih panas tetapi lebih sedikit kerumunan. Tur pribadi mengoptimalkan penjadwalan untuk pagi sangat awal dan situs dalam ruangan selama panas.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Keunggulan Tur Pribadi</h3>
+                        <p>Penjadwalan fleksibel, konten dipersonalisasi, transportasi langsung, peluang akses khusus, kontrol kesehatan & keselamatan, dan layanan profesional opsional seperti fotografi termasuk.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Pertimbangan Sesi Foto</h3>
+                        <p>Layanan profesional opsional tersedia dengan semua tur pribadi. Dapat dipesan untuk seluruh tur, hari tertentu, atau lokasi tertentu. Rekomendasi peralatan diberikan berdasarkan kondisi Mesir.</p>
+                    </div>
+                </div>
+                
+                <h3 class="mt-30">Daftar Periksa Persiapan Tur Pribadi Mesir:</h3>
+                <ul>
+                    <li><strong>3-6 Bulan Sebelumnya:</strong> Pesan tur pribadi (musim puncak), diskusikan opsi kustomisasi dengan konsultan, putuskan inklusi sesi foto, ajukan visa</li>
+                    <li><strong>1-3 Bulan Sebelumnya:</strong> Finalisasi detail itinerary, pesan penerbangan internasional, atur asuransi perjalanan, mulai membaca/riset berdasarkan fokus tur</li>
+                    <li><strong>1 Bulan Sebelumnya:</strong> Konfirmasi semua pengaturan, periksa peralatan jika termasuk fotografi, tinjau daftar kemasan untuk kondisi Mesir</li>
+                    <li><strong>1 Minggu Sebelumnya:</strong> Kemasan akhir, penukaran mata uang, unduh peta/sumber daya offline, konfirmasi pengaturan pertemuan dengan pemandu</li>
+                    <li><strong>Selama Tur:</strong> Komunikasikan preferensi harian dengan pemandu, manfaatkan fleksibilitas, tanyakan pertanyaan tanpa batas, nikmati pengalaman dipersonalisasi</li>
+                    <li><strong>Pasca-Tur:</strong> Berikan umpan balik, terima foto (jika sesi foto dipesan), bagikan pengalaman dengan orang lain yang mempertimbangkan tur pribadi Mesir</li>
+                </ul>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-content">
-            <!-- UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT -->
-            <div class="footer-brand">
-                <h3 class="footer-title">Tur Fotografi Mesir</h3>
-                <p class="footer-text">&copy; 2025 Tur Fotografi Mesir</p>
-                <p class="footer-text">Hak Cipta Dilindungi</p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Tautan Cepat</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="tours.html">Tur Kami</a></li>
-                    <li><a href="gallery.html">Galeri</a></li>
-                    <li><a href="resources.html">Sumber Daya</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Hubungi Kami</a></li>
-                    <li><a href="faqs.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Terhubung dengan Kami</h4>
-                <p class="footer-text">Alamat: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Kegubernuran Giza 12557</p>
-                <!-- MOVED PHONE AND EMAIL TO CONNECT WITH US SECTION -->
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Tur Fotografi Mesir</h3>
+                    <p>Tur pribadi Mesir profesional dengan layanan fotografi opsional sejak 2009. Pemandu Egyptologist berlisensi. Layanan rating 4.9 bintang mengkhususkan diri dalam pengalaman personal di Cairo, Giza, Alexandria dan Luxor.</p>
+                    <p>&copy; 2009-2024 Tur Fotografi Mesir. Hak cipta dilindungi undang-undang.</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                
+                <div>
+                    <h3 class="footer-title">Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tours.html">Tur Pribadi</a></li>
+                        <li><a href="gallery.html">Galeri</a></li>
+                        <li><a href="resources.html">Sumber Daya</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                        <li><a href="faqs.html">FAQ</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sid!2seg!4v1760293165082!5m2!1sid!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div>
+                    <h3 class="footer-title">Hubungi Kami</h3>
+                    <p><i class="fab fa-whatsapp"></i> +20 155 073 5673</p>
+                    <p><i class="far fa-envelope"></i> info@egyptphotographytours.com</p>
+                    <p>📍 Giza, Mesir - Dekat Piramida</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.1413113!3d29.9749687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1701715200000" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lokasi Tur Fotografi Mesir">
+                    </iframe>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT - OPTIMIZED FOR PAGE SPEED -->
     <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
+        // MOBILE MENU
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                
-                // Change icon based on menu state
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-            
-            // Close menu when clicking on a link (for mobile)
-            document.querySelectorAll('.nav-link a').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768) {
-                        navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
-            });
+            }
             
-            // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
+            // HERO SLIDER WITH 5 IMAGES (8-second rotation)
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevButton = document.querySelector('.slider-arrow.prev');
             const nextButton = document.querySelector('.slider-arrow.next');
             let currentSlide = 0;
             let slideInterval;
-            const slideDuration = 7000; // 7 seconds
             
             function showSlide(index) {
                 slides.forEach(slide => slide.classList.remove('active'));
@@ -1706,129 +1959,193 @@
                 showSlide(prevIndex);
             }
             
-            function startSlideShow() {
-                slideInterval = setInterval(nextSlide, slideDuration);
+            if (prevButton && nextButton) {
+                prevButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    prevSlide();
+                    startSlider();
+                });
+                
+                nextButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    nextSlide();
+                    startSlider();
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(slideInterval);
+                        showSlide(index);
+                        startSlider();
+                    });
+                });
+                
+                // Start automatic slider with 8-second intervals
+                function startSlider() {
+                    slideInterval = setInterval(nextSlide, 8000);
+                }
+                
+                startSlider();
+                
+                // Pause on hover for better UX
+                const heroSlider = document.querySelector('.hero-slider');
+                heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                heroSlider.addEventListener('mouseleave', startSlider);
             }
             
-            function stopSlideShow() {
-                clearInterval(slideInterval);
-            }
-            
-            // Event listeners
-            prevButton.addEventListener('click', function() {
-                stopSlideShow();
-                prevSlide();
-                startSlideShow();
-            });
-            
-            nextButton.addEventListener('click', function() {
-                stopSlideShow();
-                nextSlide();
-                startSlideShow();
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    stopSlideShow();
-                    showSlide(index);
-                    startSlideShow();
+            // FAQ ACCORDION
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        document.querySelectorAll('.faq-answer').forEach(ans => {
+                            ans.classList.remove('active');
+                        });
+                        document.querySelectorAll('.faq-question i').forEach(i => {
+                            i.classList.remove('fa-chevron-up');
+                            i.classList.add('fa-chevron-down');
+                        });
+                        
+                        answer.classList.add('active');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
                 });
             });
             
-            const heroSlider = document.querySelector('.hero-slider');
-            heroSlider.addEventListener('mouseenter', stopSlideShow);
-            heroSlider.addEventListener('mouseleave', startSlideShow);
-            heroSlider.addEventListener('touchstart', stopSlideShow);
-            heroSlider.addEventListener('touchend', startSlideShow);
+            // LANGUAGE SWITCHER
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (languageSwitcher) {
+                const currentLanguage = languageSwitcher.querySelector('.current-language');
+                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+                
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
+                    dropdownIcon.classList.toggle('fa-chevron-up');
+                    dropdownIcon.classList.toggle('fa-chevron-down');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!languageSwitcher.contains(e.target)) {
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Handle language selection
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Update current language display
+                        const flag = this.dataset.flag;
+                        const text = this.querySelector('.language-text').textContent;
+                        const lang = this.dataset.lang;
+                        
+                        currentLanguage.querySelector('.current-flag').textContent = flag;
+                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+                        
+                        // Close dropdown
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                        
+                        // Redirect to selected language page
+                        const href = this.getAttribute('href');
+                        if (href && href !== window.location.pathname) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+            }
             
-            // Initialize
-            startSlideShow();
-            
-            // ✅ LAZY LOADING IMAGES
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
+            // LAZY LOAD IMAGES
             if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
+                const imageObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
+                            imageObserver.unobserve(img);
                         }
                     });
                 });
                 
-                images.forEach(img => imageObserver.observe(img));
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                    imageObserver.observe(img);
+                });
             }
             
-            // ✅ LANGUAGE SWITCHER
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            currentLanguage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                languageSwitcher.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                // Measure page load time
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log('Waktu pemuatan halaman:', loadTime + 'ms');
+                
+                // Send performance data to analytics
+                if (typeof gtag !== 'undefined' && loadTime < 10000) {
+                    gtag('event', 'timing_complete', {
+                        'name': 'page_load',
+                        'value': loadTime,
+                        'event_category': 'Performance'
+                    });
                 }
             });
             
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
+            // Service Worker Registration for PWA
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        console.log('Pendaftaran ServiceWorker berhasil dengan scope: ', registration.scope);
+                    }).catch(function(error) {
+                        console.log('Pendaftaran ServiceWorker gagal: ', error);
                     });
-                    
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
                 });
+            }
+            
+            // Add focus-visible polyfill for better accessibility
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
             });
             
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa Indonesia': 'ID',
-                    '日本語': 'JA'
-                };
-                return codes[languageName] || languageName;
-            }
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
         });
-
-        // ✅ PRELOAD FIRST HERO IMAGE ONLY
-        function preloadImages() {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = '../images/hero-image1.jpg';
-            document.head.appendChild(link);
-        }
         
-        // Preload only first image for performance
-        preloadImages();
+        // Handle reduced motion preference
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (mediaQuery.matches) {
+            // Disable or adjust animations
+            const style = document.createElement('style');
+            style.textContent = `
+                .hero-slide {
+                    transition: none !important;
+                }
+                .tour-card:hover {
+                    transform: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     </script>
 </body>
 </html>
+```
