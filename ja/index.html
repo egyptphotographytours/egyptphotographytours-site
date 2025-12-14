@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <!-- PWA Configuration -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="エジプト写真ツアー">
+    <meta name="application-name" content="エジプト写真ツアー">
+    <meta name="format-detection" content="telephone=no">
+    
     <!-- Comprehensive Favicon Setup -->
     <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
     <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.jpg">
+    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#FFD700">
     <meta name="msapplication-config" content="../browserconfig.xml">
     <meta name="theme-color" content="#FFD700">
+    
+    <!-- Google Analytics Tracking -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVNPEMCG8F');
+    </script>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
+    <link rel="preload" href="../images/hero-image1.jpg" as="image" media="(min-width: 768px)">
     
     <!-- Search Engine & Social Media Optimization -->
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta itemprop="image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     
-    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-    <title>エジプト写真ツアー | プライベートピラミッド＆ギザ＆カイロ＆アレクサンドリア ラグジュアリーエジプトツアー</title>
+    <!-- UPDATED META TITLE WITH JAPANESE SEO KEYWORDS -->
+    <title>プライベートエジプトツアー＋プロ写真撮影付き｜カイロ、ギザ、ルクソール</title>
 
-    <meta name="description" content="エジプト写真ツアーを発見 — プライベートピラミッドフォトシュート、カイロ＆ナイル写真体験、専門家ガイド付きエジプトツアー。今日から忘れられないエジプトの旅を予約しましょう！">
+    <!-- UPDATED META DESCRIPTION WITH JAPANESE SEO KEYWORDS -->
+    <meta name="description" content="普通のツアーではありません。カイロ、ギザピラミッド、アレクサンドリア、ルクソールでプライベートガイド付きツアーとプロ写真撮影付きのエジプト体験を">
 
-    <meta name="keywords" content="エジプト写真ツアー, ラグジュアリーエジプト旅行, エジプトの高級ツアー,
-    エジプトの高級旅, ピラミッドツアー, カイロツアーガイド, ナイル川写真, エジプトツアー, ルクソール神殿写真, アレクサンドリアツアー">
+    <meta name="keywords" content="エジプトツアー, プライベートエジプトツアー, カイロツアー, ギザツアー, アレクサンドリアツアー, ルクソールツアー, エジプト旅行パッケージ, ガイド付きエジプトツアー, エジプト観光ツアー, ギザピラミッドツアー, カイロプライベートガイド, エジプト写真ツアー, エジプト写真撮影ツアー, プロ写真撮影エジプト, カスタムエジプトツアー, 現地ガイドエジプト, エジプトプライベートツアー, ラグジュアリーエジプトツアー, エジプトガイド付きツアー, エジプト旅行パッケージ, ナイルクルーズエジプト, エジプト砂漠ツアー, エジプト文化ツアー, エジプト歴史ツアー, エジプトアドベンチャーツアー, エジプト家族旅行, エジプトハネムーンツアー, エジプト個人旅行, エジプトグループツアー, エジプト格安ツアー, エジプトラグジュアリートラベル, エジプトツアーオペレーター, エジプト旅行代理店, エジプトツアーパッケージ, エジプト旅程, エジプト旅行ガイド">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <link rel="canonical" href="https://www.egyptphotographytours.com/ja/" />
 
+    <!-- Language Alternates -->
     <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/" />
+    <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/" />
+    <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/" />
     <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/" />
     <link rel="alternate" hreflang="fr" href="https://www.egyptphotographytours.com/fr/" />
     <link rel="alternate" hreflang="de" href="https://www.egyptphotographytours.com/de/" />
@@ -42,134 +68,200 @@
     <link rel="alternate" hreflang="ko" href="https://www.egyptphotographytours.com/ko/" />
     <link rel="alternate" hreflang="pt" href="https://www.egyptphotographytours.com/pt/" />
     <link rel="alternate" hreflang="id" href="https://www.egyptphotographytours.com/id/" />
-    <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/" />
     <link rel="alternate" hreflang="ru" href="https://www.egyptphotographytours.com/ru/" />
+    <link rel="alternate" hreflang="da" href="https://www.egyptphotographytours.com/da/" />
+    <link rel="alternate" hreflang="nl" href="https://www.egyptphotographytours.com/nl/" />
+    <link rel="alternate" hreflang="hi" href="https://www.egyptphotographytours.com/hi/" />
+    <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/" />
+    <link rel="alternate" hreflang="sv" href="https://www.egyptphotographytours.com/sv/" />
+    <link rel="alternate" hreflang="tl" href="https://www.egyptphotographytours.com/tl/" />
+    <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/" />
+    <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/" />
 
-    <meta property="og:title" content="エジプト写真ツアー | プロフェッショナルピラミッド＆神殿写真アドベンチャー">
-    <meta property="og:description" content="専門家写真ツアーガイドとともに古代エジプトの魔法をキャプチャ。ピラミッド、神殿、歴史的なカイロのプライベートツアーは150米ドルから。">
+    <meta property="og:title" content="プライベートエジプトツアー＋プロ写真撮影付き｜カイロ、ギザ、ルクソール">
+    <meta property="og:description" content="普通のツアーではありません。カイロ、ギザピラミッド、アレクサンドリア、ルクソールでプライベートガイド付きツアーとプロ写真撮影付きのエジプト体験を">
     <meta property="og:url" content="https://www.egyptphotographytours.com/ja/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="エジプト写真ツアー">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="エジプト写真ツアー | プロフェッショナル写真アドベンチャー">
-    <meta name="twitter:description" content="エジプトの最も象徴的な場所の専門家ガイド付き写真ツアー。プロフェッショナルツアーガイドとともに素晴らしい写真をキャプチャ。">
+    <meta name="twitter:title" content="プライベートエジプトツアー＋プロ写真撮影付き">
+    <meta name="twitter:description" content="普通のツアーではありません。カイロ、ギザピラミッド、アレクサンドリア、ルクソールでプライベートガイド付きツアーとプロ写真撮影付きのエジプト体験を">
     <meta name="google-adsense-account" content="ca-pub-1042032515879132">
     
     <meta name="geo.region" content="EG-C">
-    <meta name="geo.placename" content="カイロ, エジプト">
+    <meta name="geo.placename" content="Cairo, Egypt">
     <meta name="geo.position" content="30.0444;31.2357">
 
-    <!-- UPDATED SCHEMA MARKUP FOR RICH SNIPPETS WITH 5 STARS AND 26 REVIEWS -->
+    <!-- COMPREHENSIVE STRUCTURED DATA SCHEMA - UPDATED FOR JAPANESE -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "エジプト写真ツアー",
-      "url": "https://www.egyptphotographytours.com/ja/",
-      "logo": "https://www.egyptphotographytours.com/images/favicon-32x32.png",
-      "sameAs": [
-        "https://www.instagram.com/hossam_artistic",
-        "https://www.trustpilot.com/review/egyptphotographytours.com"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "エジプト写真ツアー",
-      "image": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg",
-      "description": "ピラミッド、カイロ、アレクサンドリアなどを含むエジプトのプライベートガイド付き写真ツアー。プロフェッショナルフォトセッションと専門家現地ガイド。",
-      "url": "https://www.egyptphotographytours.com/ja/",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "ギザ",
-        "addressRegion": "ギザ県",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "openingHours": "月-日 09:00-18:00",
-      "priceRange": "$$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      },
-      "review": [
+      "@graph": [
         {
-          "@type": "Review",
-          "author": "ダニエル",
-          "datePublished": "2024-05-15",
-          "reviewBody": "ホサムさんとのこの体験は素晴らしい時間でした！私たちのグループにとても親切で忍耐強く接してくれました！",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
+          "@type": "WebSite",
+          "name": "エジプト写真ツアー",
+          "url": "https://www.egyptphotographytours.com/ja/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.egyptphotographytours.com/ja/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
         },
         {
-          "@type": "Review",
-          "author": "クリスティーナ",
-          "datePublished": "2024-04-22",
-          "reviewBody": "ホサムは素晴らしいスキルを持つ優秀な写真家です。ピラミッドの驚くべき景色とともにたくさんの素晴らしい写真が撮れました。",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "TravelAgency",
+          "name": "エジプト写真ツアー",
+          "url": "https://www.egyptphotographytours.com/ja",
+          "logo": "https://www.egyptphotographytours.com/images/logo.jpg",
+          "telephone": "+20-155-073-5673",
+          "email": "info@egyptphotographytours.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+            "addressLocality": "Giza",
+            "addressRegion": "Giza Governorate",
+            "postalCode": "12557",
+            "addressCountry": "EG"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "openingHours": "Mo-Su 08:00-22:00",
+          "priceRange": "$$-$$$"
         },
         {
-          "@type": "Review",
-          "author": "エドゥアルド",
-          "datePublished": "2024-03-30",
-          "reviewBody": "ホサムはギザピラミッドの素晴らしいツアーを提供してくれました。常に思慮深く、コミュニケーションが取れて、知識が豊富でした。",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "ホーム",
+              "item": "https://www.egyptphotographytours.com/ja/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "エジプトツアー",
+              "item": "https://www.egyptphotographytours.com/ja/tours.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "プライベートエジプトツアー",
+              "item": "https://www.egyptphotographytours.com/ja/private-egypt-tours.html"
+            }
+          ]
+        },
+        {
+          "@type": ["TouristTrip", "Product"],
+          "name": "オプションでプロ写真撮影付きプライベートエジプトツアー",
+          "description": "普通のツアーではありません。カイロ、ギザピラミッド、アレクサンドリア、ルクソールでオプションのプロ写真撮影付きプライベートガイドツアーでエジプトを体験してください。",
+          "url": "https://www.egyptphotographytours.com/ja/private-egypt-tours.html",
+          "image": [
+            "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image1.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image2.jpg"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "1900",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "seller": {
+              "@type": "Organization",
+              "name": "エジプト写真ツアー"
+            }
+          },
+          "duration": "P7D",
+          "touristType": ["個人旅行者", "カップル", "家族", "写真愛好家", "ラグジュアリートラベラー"],
+          "brand": {
+            "@type": "Brand",
+            "name": "エジプト写真ツアー"
+          },
+          "sku": "EPT-PET-001",
+          "category": "プライベートツアーパッケージ"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "あなたのプライベートエジプトツアーは他のツアーとどう違いますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "私たちのプライベートエジプトツアーは、現地ガイドとのパーソナライズされた体験を提供し、オプションのプロ写真撮影を含みます。本物の文化的没入体験、柔軟な旅程、一般ツアーでは利用できないサイトへの特別アクセスに焦点を当てています。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "プロ写真撮影はすべてのツアーに含まれていますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい、すべてのプライベートエジプトツアーでオプションのプロ写真撮影を提供しています。パッケージの一部として含めるか、写真撮影サービスなしでツアーを予約するかを選択できます。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "プライベートエジプトツアーはどの都市をカバーしていますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "プライベートエジプトツアーはカイロ、ギザピラミッド、アレクサンドリア、ルクソールをカバーしています。これらの目的地すべてを含む包括的なパッケージを提供するか、ご希望に応じて特定の都市に焦点を当てたカスタムツアーを作成できます。"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "プライベートエジプトツアー完全ガイド：写真撮影付き",
+          "description": "カイロ、ギザ、アレクサンドリア、ルクソールを含むプライベートエジプトツアーとオプションのプロ写真撮影サービスの包括的ガイド。",
+          "author": {
+            "@type": "Person",
+            "name": "ホッサム",
+            "jobTitle": "プロカメラマン＆エジプト学者"
+          },
+          "datePublished": "2024-01-15",
+          "dateModified": "2024-12-15",
+          "publisher": {
+            "@type": "Organization",
+            "name": "エジプト写真ツアー",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/logo.jpg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.egyptphotographytours.com/ja/blog/private-egypt-tours-guide.html"
+          },
+          "image": [
+            {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/egypt-tours-guide-1.jpg",
+              "width": "1200",
+              "height": "800",
+              "caption": "カイロ、ギザ、アレクサンドリア、ルクソールでのプロ写真撮影付きプライベートエジプトツアー"
+            }
+          ],
+          "keywords": "プライベートエジプトツアー, 写真撮影付きエジプトツアー, カイロツアー, ギザピラミッドツアー, アレクサンドリアツアー, ルクソールツアー, エジプト写真ツアー"
         }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/EgyptPhotographyTours",
-        "https://www.instagram.com/hossam_artistic/",
-        "https://www.tiktok.com/@egyptphotographytours",
-        "https://www.youtube.com/@Egyptphotographytours"
       ]
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      "name": "ギザのピラミッド",
-      "description": "ギザの大ピラミッドは、ギザピラミッド複合体にある3つのピラミッドの中で最も古く、最大のピラミッドです。",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "ギザ",
-        "addressRegion": "ギザ県",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "image": "https://www.egyptphotographytours.com/images/pyramids-of-giza.jpg"
-    }
-    </script>
-
+    <!-- Performance Optimized CSS Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     
     <style>
+        /* CRITICAL CSS - Inlined for performance */
         :root {
             --primary-dark: #1a202c;
             --accent-light: #FFD700;
@@ -178,9 +270,11 @@
         }
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, sans-serif;
             background-color: #f8f8f8;
             color: var(--text-color);
             margin: 0;
@@ -196,24 +290,23 @@
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* HEADER STYLES */
         .header {
             background-color: var(--primary-dark);
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             padding: 12px 0;
         }
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             gap: 12px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
-                gap: 0;
+                justify-content: space-between;
             }
         }
         .logo-section {
@@ -229,28 +322,9 @@
         .logo-link {
             font-size: 20px;
             font-weight: 700;
-            letter-spacing: -0.025em;
             color: var(--accent-light);
             text-decoration: none;
         }
-        @media (min-width: 768px) {
-            .logo-link {
-                font-size: 24px;
-            }
-        }
-        .header-text {
-            font-size: 14px;
-            font-style: italic;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 16px;
-            }
-        }
-        
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
@@ -270,22 +344,15 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
-            padding: 4px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
         }
-        .contact-icon {
-            font-size: 14px;
-            width: 16px;
-            text-align: center;
-        }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 50;
@@ -294,26 +361,20 @@
         .navbar-content {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            justify-content: space-between;
         }
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
             }
         }
         .nav-links {
             display: none;
             flex-direction: column;
-            width: 100%;
-            gap: 0;
-            font-size: 16px;
-            font-weight: 500;
             list-style: none;
             padding: 0;
             margin: 0;
-            background-color: #374151;
         }
         .nav-links.active {
             display: flex;
@@ -322,33 +383,19 @@
             .nav-links {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
                 gap: 16px;
-                width: auto;
-            }
-        }
-        .nav-link {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-link:last-child {
-            border-bottom: none;
-        }
-        @media (min-width: 768px) {
-            .nav-link {
-                border-bottom: none;
             }
         }
         .nav-link a {
             color: white;
             text-decoration: none;
             padding: 12px 16px;
-            transition: color 0.3s ease;
             display: block;
+            transition: color 0.3s ease;
         }
         @media (min-width: 768px) {
             .nav-link a {
-                padding: 8px 0;
+                padding: 16px 8px;
             }
         }
         .nav-link a:hover {
@@ -362,13 +409,10 @@
         }
         @media (min-width: 768px) {
             .cta-container {
-                justify-content: flex-end;
-                gap: 12px;
                 padding: 0;
+                gap: 12px;
             }
         }
-        
-        /* MOBILE MENU TOGGLE */
         .mobile-menu-toggle {
             display: block;
             background: none;
@@ -384,7 +428,128 @@
             }
         }
         
-        /* HERO SLIDER STYLES - MOBILE OPTIMIZED */
+        /* Language Switcher */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+        }
+
+        .current-language:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .current-flag {
+            font-size: 16px;
+        }
+
+        .current-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .dropdown-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 220px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #374151;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .language-switcher.active .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-light);
+        }
+
+        .language-item.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .flag-icon {
+            font-size: 18px;
+            min-width: 24px;
+        }
+
+        .language-text {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Scrollbar styling for dropdown */
+        .language-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
+        }
+        
+        /* HERO SLIDER - UPDATED TO 5 IMAGES */
         .hero-slider {
             position: relative;
             height: 60vh;
@@ -408,14 +573,8 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 16px;
         }
         .hero-slide.active {
             opacity: 1;
@@ -432,63 +591,64 @@
         .hero-slide:nth-child(4) {
             background-image: url('../images/hero-image4.jpg');
         }
+        .hero-slide:nth-child(5) {
+            background-image: url('../images/hero-image5.jpg');
+        }
         .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            background-color: transparent;
+            border-radius: 10px;
         }
-        /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
+        
+        /* HERO TITLE */
         .hero-title {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 12px;
-            color: white;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
-            margin-top: 0;
-        }
-        @media (min-width: 480px) {
-            .hero-title {
-                font-size: 28px;
-            }
-        }
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 48px;
-                margin-top: -60px;
-            }
-        }
-        .hero-subtitle {
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #ffffff !important;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
             line-height: 1.4;
         }
-        @media (min-width: 480px) {
-            .hero-subtitle {
-                font-size: 16px;
-            }
-        }
         @media (min-width: 768px) {
-            .hero-subtitle {
-                font-size: 18px;
+            .hero-title {
+                font-size: 42px;
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 0, 0, 0.9);
             }
         }
         
-        /* NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES */
+        /* HERO SUBTITLE */
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: #ffffff !important;
+            text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8);
+            line-height: 1.6;
+            font-weight: 600;
+        }
+        @media (min-width: 768px) {
+            .hero-subtitle {
+                font-size: 22px;
+                text-shadow: 1px 1px 18px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
+            }
+        }
+        
+        /* HERO BUTTONS */
         .hero-buttons-section {
             background-color: #f8f8f8;
             padding: 30px 0;
             text-align: center;
-            border-top: 1px solid #e5e7eb;
         }
         .hero-buttons-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             gap: 16px;
             max-width: 600px;
             margin: 0 auto;
@@ -505,15 +665,8 @@
             font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
             display: block;
             text-align: center;
-        }
-        @media (min-width: 768px) {
-            .hero-button {
-                padding: 12px 32px;
-                font-size: 18px;
-            }
         }
         .hero-button-primary {
             background-color: var(--accent-light);
@@ -533,7 +686,7 @@
             transform: scale(1.05);
         }
         
-        /* SLIDER NAVIGATION CONTROLS - MOBILE OPTIMIZED */
+        /* SLIDER CONTROLS */
         .slider-controls {
             position: absolute;
             bottom: 20px;
@@ -541,13 +694,8 @@
             right: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 20px;
-            z-index: 20;
-        }
-        .slider-dots {
-            display: flex;
             gap: 10px;
+            z-index: 20;
         }
         .slider-dot {
             width: 10px;
@@ -573,20 +721,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             z-index: 20;
             color: var(--primary-dark);
-            font-size: 16px;
-        }
-        @media (min-width: 768px) {
-            .slider-arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-        }
-        .slider-arrow:hover {
-            background-color: rgba(255, 255, 255, 0.9);
         }
         .slider-arrow.prev {
             left: 10px;
@@ -595,641 +731,401 @@
             right: 10px;
         }
         
-        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
+        /* MAIN CONTENT SECTIONS */
         .main-section {
             padding: 40px 0;
-            text-align: center;
         }
         @media (min-width: 768px) {
             .main-section {
-                padding: 64px 0;
-            }
-        }
-        .main-section h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-        @media (min-width: 768px) {
-            .main-section h2 {
-                font-size: 36px;
-                margin-bottom: 32px;
-            }
-        }
-        .main-section h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin: 20px 0 8px;
-        }
-        @media (min-width: 768px) {
-            .main-section h3 {
-                font-size: 24px;
-                margin: 24px 0 8px;
-            }
-        }
-        .main-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 896px;
-            margin: 0 auto 20px;
-        }
-        @media (min-width: 768px) {
-            .main-section p {
-                font-size: 18px;
-                margin: 0 auto 24px;
+                padding: 60px 0;
             }
         }
         .bg-light-gray {
             background-color: #f3f4f6;
         }
+        .bg-primary-dark {
+            background-color: var(--primary-dark);
+        }
+        
+        /* HEADINGS */
+        h1 {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+        }
+        h2 {
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 36px;
+            }
+        }
+        h3 {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 28px;
+            }
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            p {
+                font-size: 18px;
+            }
+        }
+        
+        /* CARDS & GRIDS */
         .grid-section {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .grid-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-        @media (min-width: 1024px) {
             .grid-section {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-        @media (min-width: 768px) {
-            .card {
-                padding: 32px;
-            }
-        }
-        .card:hover {
-            transform: scale(1.05);
         }
         .card-icon {
-            width: 50px;
-            height: 50px;
+            font-size: 40px;
             color: var(--accent-light);
             margin-bottom: 16px;
         }
-        @media (min-width: 768px) {
-            .card-icon {
-                width: 64px;
-                height: 64px;
-            }
-        }
         .card-title {
             font-size: 20px;
-            font-weight: 600;
-            color: var(--primary-dark);
             margin-bottom: 12px;
+            color: var(--primary-dark);
         }
-        @media (min-width: 768px) {
-            .card-title {
-                font-size: 24px;
-            }
-        }
-        .card-text {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        @media (min-width: 768px) {
-            .card-text {
-                font-size: 16px;
-            }
-        }
+        
+        /* TOUR GRID */
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
-            .tour-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (min-width: 1280px) {
             .tour-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
         .tour-card {
-            background-color: white;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            position: relative;
         }
         .tour-card:hover {
-            transform: scale(1.05);
-        }
-        .sale-tag {
-            background-color: #E74C3C;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            z-index: 10;
+            transform: translateY(-5px);
         }
         .tour-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        @media (min-width: 768px) {
-            .tour-img {
-                height: 224px;
-            }
-        }
         .tour-card-body {
             padding: 20px;
         }
-        @media (min-width: 768px) {
-            .tour-card-body {
-                padding: 24px;
-            }
-        }
         .tour-card-title {
             font-size: 20px;
-            font-weight: 600;
+            margin-bottom: 12px;
             color: var(--primary-dark);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        @media (min-width: 768px) {
-            .tour-card-title {
-                font-size: 24px;
-            }
-        }
-        .tour-card-text {
-            color: #4b5563;
-            margin-bottom: 16px;
-            text-align: left;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .tour-card-text {
-                font-size: 16px;
-                line-height: 1.6;
-            }
         }
         .tour-card-footer {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 8px;
+            align-items: center;
+            margin-top: 20px;
         }
         .tour-price {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: bold;
             color: var(--accent-dark);
         }
-        @media (min-width: 768px) {
-            .tour-price {
-                font-size: 18px;
-            }
-        }
-        .tour-duration {
-            font-size: 14px;
-            color: #6b7280;
-        }
         .tour-cta {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-light);
+            display: inline-block;
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 10px 20px;
-            border-radius: 9999px;
-            text-align: center;
+            border-radius: 4px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .tour-cta {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
         .tour-cta:hover {
-            background-color: var(--accent-dark);
+            background: var(--accent-dark);
         }
-        .bg-primary-dark {
-            background-color: var(--primary-dark);
+        
+        /* FAQ SECTION */
+        .faq-container {
+            margin-top: 30px;
         }
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* REVIEWS */
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-        }
-        @media (min-width: 1024px) {
             .reviews-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .review-card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            color: var(--primary-dark);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
-        @media (min-width: 768px) {
-            .review-card {
-                padding: 32px;
-            }
-        }
         .review-stars {
-            font-size: 20px;
             color: var(--accent-light);
-            margin-bottom: 12px;
-        }
-        @media (min-width: 768px) {
-            .review-stars {
-                font-size: 24px;
-            }
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .review-text {
             font-style: italic;
-            font-size: 16px;
             margin-bottom: 16px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .review-text {
-                font-size: 18px;
-                line-height: 1.6;
-            }
-        }
-        .review-author {
-            font-weight: 600;
-            color: var(--primary-dark);
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .review-author {
-                font-size: 16px;
-                }
+            line-height: 1.6;
         }
         .review-cta {
-            margin-top: 30px;
             display: inline-block;
-            background-color: var(--accent-light);
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 12px 24px;
-            border-radius: 9999px;
-            font-size: 16px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 4px;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-        }
-        @media (min-width: 768px) {
-            .review-cta {
-                margin-top: 40px;
-                padding: 12px 32px;
-                font-size: 18px;
-            }
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background 0.3s ease;
         }
         .review-cta:hover {
-            background-color: var(--accent-dark);
-            transform: scale(1.05);
+            background: var(--accent-dark);
         }
+        
+        /* FOOTER */
         .footer {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             color: white;
-            padding: 30px 0;
-            margin-top: auto;
-        }
-        @media (min-width: 768px) {
-            .footer {
-                padding: 40px 0;
-            }
+            padding: 40px 0;
+            margin-top: 60px;
         }
         .footer-content {
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
         @media (min-width: 768px) {
             .footer-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                text-align: left;
-                flex-wrap: wrap;
-            }
-        }
-        .footer-section {
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-section {
-                margin-bottom: 0;
-            }
-        }
-        /* UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT */
-        .footer-brand {
-            text-align: left;
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-brand {
-                margin-bottom: 0;
-                text-align: left;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         .footer-title {
-            font-size: 20px;
-            font-weight: 700;
             color: var(--accent-light);
-            margin-bottom: 8px;
-        }
-        @media (min-width: 768px) {
-            .footer-title {
-                font-size: 24px;
-            }
-        }
-        .footer-text {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .footer-links {
             list-style: none;
-            padding: 0;
-            font-size: 14px;
-            line-height: 1.8;
         }
-        .footer-links li a {
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .footer-links li a:hover {
+        .footer-links a:hover {
             color: var(--accent-light);
         }
         .social-links {
             display: flex;
-            justify-content: center;
             gap: 16px;
-            margin-top: 12px;
-        }
-        @media (min-width: 768px) {
-            .social-links {
-                justify-content: flex-start;
-            }
+            margin-top: 16px;
         }
         .social-links a {
             color: white;
+            font-size: 20px;
             transition: color 0.3s ease;
         }
         .social-links a:hover {
             color: var(--accent-light);
         }
-        .social-icon {
-            font-size: 20px;
-        }
-        
-        /* FOOTER CONTACT INFO STYLES - MOVED TO CONNECT WITH US SECTION */
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-        .footer-contact-info {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-            justify-content: center;
-        }
-        @media (min-width: 768px) {
-            .footer-contact-info {
-                justify-content: flex-start;
-            }
-        }
-        .footer-contact-info:hover {
-            color: var(--accent-light);
-        }
-        
-        /* Language Switcher Styles - MOBILE OPTIMIZED */
-        .language-switcher {
-            position: relative;
-            display: inline-block;
-        }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #374151;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            max-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        .language-switcher.active .language-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .language-switcher.active .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-        .language-item {
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #4B5563;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .language-item:last-child {
-            border-bottom: none;
-        }
-        .language-item:hover {
-            background-color: #4B5563;
-        }
-        .language-item.active {
-            background-color: var(--accent-light);
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        .flag-icon {
-            font-size: 16px;
-            margin-right: 8px;
-            min-width: 18px;
-        }
-        .language-text {
-            flex: 1;
-            font-size: 14px;
-        }
-        .current-language {
-            display: flex;
-            align-items: center;
-            padding: 6px 10px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        .current-language:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        .current-flag {
-            font-size: 16px;
-            margin-right: 6px;
-        }
-        .dropdown-arrow {
-            margin-left: 6px;
-            transition: transform 0.2s ease;
-        }
-        .language-dropdown::-webkit-scrollbar {
-            width: 4px;
-        }
-        .language-dropdown::-webkit-scrollbar-track {
-            background: #4B5563;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb {
-            background: #6B7280;
-            border-radius: 2px;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #9CA3AF;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .lazy-load.loaded {
-            opacity: 1;
-        }
-        @media (max-width: 768px) {
-            .tour-grid, .reviews-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
-        
-        .book-now-button {
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            background-color: #FFD700;
-            color: #1a202c;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            white-space: nowrap;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: inline-block;
-        }
-        .book-now-button:hover {
-            background-color: #E2B700;
-            transform: scale(1.05);
-        }
-        
-        /* MAP STYLES - SIGNIFICANTLY LARGER FOR REVIEWS */
         .footer-map {
-            margin-top: 20px;
-            width: 100%;
-            flex: 2; /* Much larger flex value to take more space */
-        }
-        @media (min-width: 768px) {
-            .footer-map {
-                margin-top: 0;
-            }
+            grid-column: 1 / -1;
         }
         .footer-map iframe {
             width: 100%;
-            height: 350px; /* Significantly increased from 220px for mobile */
+            height: 300px;
             border: none;
             border-radius: 8px;
         }
-        @media (min-width: 768px) {
-            .footer-map iframe {
-                height: 400px; /* Significantly increased from 280px for desktop */
+        
+        /* BREADCRUMB */
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #666;
+        }
+        
+        /* BOOK NOW BUTTON */
+        .book-now-button {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .book-now-button:hover {
+            background: var(--accent-dark);
+        }
+        
+        /* UTILITY CLASSES */
+        .text-center {
+            text-align: center;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .mt-30 {
+            margin-top: 30px;
+        }
+        
+        /* NEW: SEO ARTICLE SECTION */
+        .seo-article {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .seo-article h2 {
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent-light);
+            padding-bottom: 15px;
+        }
+        .seo-article h3 {
+            color: #2d3748;
+            margin-top: 30px;
+        }
+        .seo-article ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .seo-article li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        /* Print Styles for PageSpeed */
+        @media print {
+            .hero-slider,
+            .slider-controls,
+            .slider-arrow,
+            .nav-links,
+            .language-switcher,
+            .social-links,
+            .footer-map {
+                display: none !important;
+            }
+            .header,
+            .footer {
+                position: static !important;
             }
         }
-        @media (min-width: 1024px) {
-            .footer-map iframe {
-                height: 450px; /* Even larger for larger screens */
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+            outline: 3px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header class="header">
         <div class="container content">
             <div class="logo-section">
                 <img src="../images/egypt-photography-tours-logo.jpg"
-                     alt="エジプト写真ツアーロゴ - ピラミッドと古代遺跡のためのプロフェッショナル写真ガイドサービス"
+                     alt="エジプト写真ツアーロゴ"
                      class="logo-img"
                      loading="eager"
                      width="40"
@@ -1238,86 +1134,145 @@
             </div>
             <div class="header-contact">
                 <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
-                    <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    <i class="fab fa-whatsapp"></i> +20 155 073 5673
                 </a>
                 <a href="mailto:info@egyptphotographytours.com" class="contact-info">
-                    <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    <i class="far fa-envelope"></i> info@egyptphotographytours.com
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="container navbar-content">
             <div class="cta-container">
-                <button class="mobile-menu-toggle" aria-label="ナビゲーションメニューを切り替え">
+                <button class="mobile-menu-toggle" aria-label="メニューを切り替える">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="contact.html" class="book-now-button">今すぐ予約</a>
+                
+                <!-- Language Switcher -->
                 <div class="language-switcher">
-                    <div class="current-language">
+                    <div class="current-language" aria-label="言語を選択">
                         <span class="current-flag">🇯🇵</span>
-                        <span>JA</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <span class="current-text">JA</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
                     </div>
                     <div class="language-dropdown">
-                        <a href="../index.html" class="language-item">
+                        <!-- Japanese -->
+                        <a href="index.html" class="language-item active" data-lang="ja" data-flag="🇯🇵">
+                            <span class="flag-icon">🇯🇵</span>
+                            <span class="language-text">日本語 (Japanese)</span>
+                        </a>
+                        <!-- English -->
+                        <a href="../index.html" class="language-item" data-lang="en" data-flag="🇺🇸">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="../ru/index.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
+                        <!-- Finnish -->
+                        <a href="../fi/index.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
+                            <span class="flag-icon">🇫🇮</span>
+                            <span class="language-text">Suomi (Finnish)</span>
                         </a>
-                        <a href="../ar/index.html" class="language-item">
+                        <!-- Arabic -->
+                        <a href="../ar/index.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
                             <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
+                            <span class="language-text">العربية (Arabic)</span>
                         </a>
-                        <a href="../fr/index.html" class="language-item">
+                        <!-- Russian -->
+                        <a href="../ru/index.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский (Russian)</span>
+                        </a>
+                        <!-- French -->
+                        <a href="../fr/index.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
                             <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
+                            <span class="language-text">Français (French)</span>
                         </a>
-                        <a href="../de/index.html" class="language-item">
+                        <!-- German -->
+                        <a href="../de/index.html" class="language-item" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
+                            <span class="language-text">Deutsch (German)</span>
                         </a>
-                        <a href="../es/index.html" class="language-item">
+                        <!-- Spanish -->
+                        <a href="../es/index.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
+                            <span class="language-text">Español (Spanish)</span>
                         </a>
-                        <a href="../it/index.html" class="language-item">
+                        <!-- Italian -->
+                        <a href="../it/index.html" class="language-item" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
+                            <span class="language-text">Italiano (Italian)</span>
                         </a>
-                        <a href="../zh/index.html" class="language-item">
+                        <!-- Chinese -->
+                        <a href="../zh/index.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
+                            <span class="language-text">中文 (Chinese)</span>
                         </a>
-                        <a href="../ko/index.html" class="language-item">
+                        <!-- Korean -->
+                        <a href="../ko/index.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
+                            <span class="language-text">한국어 (Korean)</span>
                         </a>
-                        <a href="../pt/index.html" class="language-item">
+                        <!-- Portuguese -->
+                        <a href="../pt/index.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
+                            <span class="language-text">Português (Portuguese)</span>
                         </a>
-                        <a href="../id/index.html" class="language-item">
+                        <!-- Indonesian -->
+                        <a href="../id/index.html" class="language-item" data-lang="id" data-flag="🇮🇩">
                             <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
+                            <span class="language-text">Bahasa Indonesia</span>
                         </a>
-                        <a href="index.html" class="language-item active">
-                            <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
+                        <!-- Danish -->
+                        <a href="../da/index.html" class="language-item" data-lang="da" data-flag="🇩🇰">
+                            <span class="flag-icon">🇩🇰</span>
+                            <span class="language-text">Dansk (Danish)</span>
+                        </a>
+                        <!-- Dutch -->
+                        <a href="../nl/index.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
+                            <span class="flag-icon">🇳🇱</span>
+                            <span class="language-text">Nederlands (Dutch)</span>
+                        </a>
+                        <!-- Hindi -->
+                        <a href="../hi/index.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
+                            <span class="flag-icon">🇮🇳</span>
+                            <span class="language-text">हिन्दी (Hindi)</span>
+                        </a>
+                        <!-- Norwegian -->
+                        <a href="../no/index.html" class="language-item" data-lang="no" data-flag="🇳🇴">
+                            <span class="flag-icon">🇳🇴</span>
+                            <span class="language-text">Norsk (Norwegian)</span>
+                        </a>
+                        <!-- Swedish -->
+                        <a href="../sv/index.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
+                            <span class="flag-icon">🇸🇪</span>
+                            <span class="language-text">Svenska (Swedish)</span>
+                        </a>
+                        <!-- Tagalog -->
+                        <a href="../tl/index.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
+                            <span class="flag-icon">🇵🇭</span>
+                            <span class="language-text">Tagalog</span>
+                        </a>
+                        <!-- Malay -->
+                        <a href="../ms/index.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
+                            <span class="flag-icon">🇲🇾</span>
+                            <span class="language-text">Bahasa Melayu</span>
+                        </a>
+                        <!-- Thai -->
+                        <a href="../th/index.html" class="language-item" data-lang="th" data-flag="🇹🇭">
+                            <span class="flag-icon">🇹🇭</span>
+                            <span class="language-text">ไทย (Thai)</span>
                         </a>
                     </div>
                 </div>
             </div>
+            
             <ul class="nav-links">
                 <li class="nav-link"><a href="index.html">ホーム</a></li>
-                <li class="nav-link"><a href="about.html">私たちについて</a></li>
-                <li class="nav-link"><a href="tours.html">ツアー一覧</a></li>
+                <li class="nav-link"><a href="about.html">会社概要</a></li>
+                <li class="nav-link"><a href="tours.html">ツアー</a></li>
                 <li class="nav-link"><a href="gallery.html">ギャラリー</a></li>
                 <li class="nav-link"><a href="resources.html">リソース</a></li>
                 <li class="nav-link"><a href="blog.html">ブログ</a></li>
@@ -1327,365 +1282,663 @@
         </div>
     </nav>
 
+    <!-- HERO SLIDER - UPDATED TO 5 IMAGES -->
+    <section class="hero-slider">
+        <div class="hero-slides">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h2 class="hero-title">現地ガイド付きプライベートエジプトツアー</h2>
+                    <p class="hero-subtitle">カイロ、ギザピラミッド、アレクサンドリア、ルクソールでプロ写真撮影付きプライベートガイドツアーでエジプトを体験</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">カイロ＆ギザピラミッドプライベートツアー</h2>
+                    <p class="hero-subtitle">現地エジプト学者ガイドによるピラミッド、博物館、隠れた名所への特別アクセス</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">ルクソール＆アレクサンドリアプライベート体験</h2>
+                    <p class="hero-subtitle">カスタマイズされたプライベートツアーで古代寺院と地中海の歴史を発見</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">オプションでプロ写真撮影付き</h2>
+                    <p class="hero-subtitle">高品質な写真撮影サービスでエジプトの冒険を記録</p>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">カスタムエジプト旅行パッケージ</h2>
+                    <p class="hero-subtitle">家族、カップル、個人旅行者向けの柔軟なオプション付きテーラーメイド旅程</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="slider-arrow prev" aria-label="前のスライド"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next" aria-label="次のスライド"><i class="fas fa-chevron-right"></i></button>
+        
+        <!-- 5 Dots for 5 slides -->
+        <div class="slider-controls">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+            <div class="slider-dot" data-slide="3"></div>
+            <div class="slider-dot" data-slide="4"></div>
+        </div>
+    </section>
+
+    <!-- HERO BUTTONS -->
+    <section class="hero-buttons-section">
+        <div class="container">
+            <div class="hero-buttons-container">
+                <a href="tours.html" class="hero-button hero-button-primary">プライベートツアーを探す</a>
+                <a href="contact.html" class="hero-button hero-button-secondary">エジプトツアーを予約</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
     <main class="main">
-        <!-- HERO SLIDER SECTION - FIXED -->
-        <section class="hero-slider">
-            <div class="hero-slides">
-                <div class="hero-slide active">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            エジプトの魔法をキャプチャ - すべての瞬間を傑作に
-                        </h1>
-                        <p class="hero-subtitle">
-                            エジプトの最も象徴的なランドマークへのプロフェッショナル写真と歴史ツアー。専門家ガイド、独占アクセス、忘れられない体験が待っています。
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            エジプトの隠れた名所への独占アクセス
-                        </h1>
-                        <p class="hero-subtitle">
-                            専門家現地ツアーガイドとともに、混雑から離れた秘密の展望点を発見し、息をのむようなショットをキャプチャしましょう。
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            エジプトの最も息をのむようなツアーへのゲートウェイ
-                        </h1>
-                        <p class="hero-subtitle">
-                            エジプトのピラミッド、神殿、風景を探索しながら、プロフェッショナル写真家とガイドから学びましょう。
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            一生続く思い出を作りましょう
-                        </h1>
-                        <p class="hero-subtitle">
-                            ピラミッドでのゴールデンアワーからナイル川の夕日まで、ガイド付き写真と歴史体験でエジプトの魔法をキャプチャ。
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Slider Navigation Arrows -->
-            <button class="slider-arrow prev" aria-label="前のスライド">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-arrow next" aria-label="次のスライド">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Slider Dots - Positioned correctly below the buttons -->
-            <div class="slider-controls">
-                <div class="slider-dots">
-                    <div class="slider-dot active" data-slide="0"></div>
-                    <div class="slider-dot" data-slide="1"></div>
-                    <div class="slider-dot" data-slide="2"></div>
-                    <div class="slider-dot" data-slide="3"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES -->
-        <section class="hero-buttons-section">
-            <div class="container">
-                <div class="hero-buttons-container">
-                    <a href="tours.html" class="hero-button hero-button-primary">
-                        独占的な素晴らしいツアーを探索
-                    </a>
-                    <a href="contact.html" class="hero-button hero-button-secondary">
-                        ラグジュアリーエジプトツアーを今すぐ予約！
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        <!-- H1 SECTION -->
         <section class="main-section">
             <div class="container">
-                <h2>エジプト写真ツアーへようこそ</h2>
-                <p>
-                    古代の歴史と息をのむような風景が交わる世界に足を踏み入れ、あなたのレンズを通してキャプチャされるのを待っています。エジプト写真ツアーでは、あらゆるレベルの写真家にエジプトの比類ない美しさを紹介することに情熱を注いでいます。象徴的な<strong>ギザのピラミッド</strong>から<strong>ナイル川</strong>の静かな流れ、<strong>カイロの歴史的な通り</strong>の活気ある魅力まで、私たちは没入型の旅を設計し、単にエジプトを見るだけでなく、その魂を真に<em>キャプチャ</em>することを保証します。
-                </p>
-                <p>
-                    私たちが専門的に選び抜いた<strong>エジプトツアー</strong>は、従来の観光を超え、ユニークな写真の機会、プロフェッショナル写真家からの個別ガイダンス、本物の文化的出会いを提供します。独占的なアクセスを求める熟練のプロでも、技術を習得したい初心者でも、私たちと一緒に<strong>忘れられないエジプトの写真アドベンチャー</strong>に乗り出しましょう。一緒にあなたの次の傑作を作りましょう。
-                </p>
-            </div>
-        </section>
-
-        <section class="main-section bg-light-gray">
-            <div class="container">
-                <h2>忘れられない旅にエジプト写真ツアーを選ぶ理由</h2>
+                <div class="breadcrumb">
+                    <a href="index.html">ホーム</a> &gt; 
+                    <a href="tours.html">エジプトツアー</a> &gt; 
+                    <span>プライベートエジプトツアー</span>
+                </div>
+                
+                <!-- UPDATED H1 -->
+                <h1>現地ガイド付きプライベートエジプトツアー</h1>
+                
+                <p><strong>最終更新: 2024年12月 | 15年以上の経験 | 5000人以上の満足顧客 | 4.9星評価</strong></p>
+                
+                <p><strong>エジプト写真ツアー</strong>へようこそ - エジプトの一流の独占的でパーソナライズされた旅行体験プロバイダー。通常の団体ツアーとは異なり、私たちのプライベートエジプトツアーは、完全な柔軟性、個人的な注意、現地のエジプト人ガイドとの深い文化的没入を提供します。包括的なエジプト旅行パッケージ、親密なカイロツアー、驚異的なギザピラミッド体験、歴史的なアレクサンドリア探検、神秘的なルクソール冒険をお探しの方に、ご興味、ペース、予算に合わせてテーラーメイドの旅程を作成します。</p>
+                
+                <!-- UPDATED H2 -->
+                <h2>オプションでプロ写真撮影付き</h2>
+                
+                <p>多くの旅行者がプロ写真撮影サービスを目的に当社を訪れますが、一部の訪問者は単に優れたガイドツアーを望んでいることも理解しています。そのため、すべてのプライベートエジプトツアーに<strong>オプションのプロ写真撮影</strong>を提供しています。カイロツアー、ギザピラミッド訪問、アレクサンドリア日帰り旅行、ルクソール探検にプロカメラマンを組み込むか、写真撮影サービスなしで専門ガイドツアーを楽しむかを選択できます。この柔軟性により、写真愛好家と高品質なプライベートツアーを求める旅行者の両方にとって完璧な選択肢となります。</p>
+                
+                <!-- UPDATED H2 -->
+                <h2>カイロ、ギザピラミッド、アレクサンドリア＆ルクソールツアー</h2>
+                
+                <p>私たちのプライベートエジプトツアーは、エジプトの最も象徴的な目的地を包括的にカバーします：エジプト博物館とイスラム建築が特徴のにぎやかな大都市<strong>カイロ</strong>；古代の驚異<strong>ギザピラミッド</strong>とスフィンクス；ギリシャ・ローマの歴史を持つ地中海の美しさ<strong>アレクサンドリア</strong>；世界最大の野外博物館と呼ばれる寺院が満ちた都市<strong>ルクソール</strong>。複数都市のエジプト旅行パッケージと集中型の単一目的地ツアーの両方を提供し、すべてオプションのプロ写真撮影サービス付きです。</p>
+                
                 <div class="grid-section">
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        <h3 class="card-title">専門家写真ガイド、現地の洞察</h3>
-                        <p class="card-text">私たちの<strong>エジプトの専門家写真ガイド</strong>は、経験豊富な写真家であるだけでなく、公認のエジプト学者および現地文化の専門家です。彼らは、ユニークな<strong>ピラミッドフォトシュート</strong>や魅力的な<strong>ナイル写真</strong>シーンのための最適な角度、完璧な照明条件、隠れた名所を知っています。個別のコーチングと、エジプトの歴史と文化への比類ない洞察の恩恵を受けましょう。</p>
+                        <div class="card-icon">🎯</div>
+                        <h3>100%プライベートガイド付きツアー</h3>
+                        <p>専任の現地ガイドと共に自分のペースでエジプトを体験。大人数のグループも、急がされたスケジュールもありません。ご興味に合わせた個人的な注意と柔軟な旅程だけです。</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <h3 class="card-title">独占アクセスとユニークな展望点</h3>
-                        <p class="card-text">混雑のない夜明けの<strong>ルクソール神殿</strong>をキャプチャしたり、素晴らしい<strong>エジプトの夕日風景</strong>の完璧な場所を見つけたりすることを想像してみてください。私たちは深い現地のつながりを活用して、一般の観光客にはしばしば利用できないユニークな写真の展望点を提供する<strong>エジプトでの独占アクセス</strong>を提供します。<strong>カイロ</strong>の活気ある市場から<strong>シナイ砂漠</strong>の静かな風景まで、あなたが常に夢見てきたショットを手に入れましょう。</p>
+                        <div class="card-icon">📸</div>
+                        <h3>オプション写真撮影サービス</h3>
+                        <p>プロ写真撮影を含めるか、写真なしでツアーを楽しむかを選択。写真愛好家とエジプトでの優れたガイド体験を求める旅行者の両方に最適です。</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <h3 class="card-title">すべての写真家のためのカスタマイズされた旅程</h3>
-                        <p class="card-text">古代建築、ストリート写真、ポートレート、または広大な<strong>エジプトの砂漠風景</strong>に興味があるかどうかに関係なく、私たちの<strong>カスタマイズされた写真旅程</strong>はあなたの情熱を考慮して設計されています。私たちは照明と写真の機会を最適化するために各日を綿密に計画し、あなたの焦点が素晴らしい画像の作成に留まることを保証します。集中した<strong>ピラミッド写真ツアー</strong>から広範な<strong>古代エジプト写真探検</strong>まで、あなたの旅はカスタムビルトです。</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M7 12h.01M7 16h.01M16 16h.01M12 16h.01M12 12h.01M12 8h.01M7 8h.01M16 8h.01M21 21l-4.5-4.5"></path></svg>
-                        <h3 class="card-title">少人数グループ、個別学習</h3>
-                        <p class="card-text">私たちは量より質を信じています。私たちの<strong>少人数グループエジプトツアー</strong>は、個別の注意と写真ガイドとの十分な1対1の時間を保証します。この親密な環境は、スキルを磨き、経験を共有し、仲間の写真家と真につながることができる支援的な環境を育みます。志を同じくする個人のコミュニティとともに、<strong>エジプト旅行写真</strong>の魔法を体験してください。</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c.045 4.095 1.563 7.844 4.368 10.053L12 21.466l4.688-2.413A12.001 12.001 0 0021.056 12c-.045-4.095-1.563-7.844-4.368-10.053z"></path></svg>
-                        <h3 class="card-title">シームレスなロジスティクスと安全なエジプト旅行</h3>
-                        <p class="card-text">あなたの安心が私たちの優先事項です。私たちは、豪華な宿泊施設とプライベートのエアコン付き輸送からすべての許可と入場料まで、すべての複雑な詳細を処理します。<strong>安全なエジプトツアー</strong>への私たちのコミットメントは、あなたが写真と文化的没頭に完全に集中できることを意味します。最初から最後まで<strong>手間のかからないエジプト写真アドベンチャー</strong>をお楽しみください。</p>
-                    </div>
-                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253"></path></svg>
-                        <h3 class="card-title">本物の文化的没入</h3>
-                        <p class="card-text">素晴らしい写真をキャプチャするだけでなく、私たちのツアーは深い<strong>エジプトでの本物の文化的没入</strong>を提供します。地元の人々と交流し、伝統的な市場を探索し、本物の料理を味わいます。この包括的な体験は、あなたの写真がより豊かな物語を語り、エジプトとその人々の真の精神を反映することを保証します。</p>
+                        <div class="card-icon">⭐</div>
+                        <h3>現地エジプト学者ガイド</h3>
+                        <p>当社のガイドは、エジプトの歴史、文化、隠れた名所に関する深い知識を持つ有資格エジプト学者です。ガイドブックでは見つからない洞察を提供します。</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- COMPREHENSIVE EGYPT TOURS GUIDE SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>なぜ標準パッケージではなくプライベートエジプトツアーを選ぶのか？</h2>
+                
+                <p>エジプトの冒険を計画する際、一般的なグループツアーとパーソナライズされたプライベート体験の選択に直面します。私たちのプライベートエジプトツアーは、あなたの旅行体験を普通から特別なものに変える重要な利点を提供します。群衆の中でただの一人に過ぎない大人数のグループツアーとは異なり、私たちのプライベートツアーは個人的な注意、柔軟なスケジューリング、大規模グループには利用できない体験へのアクセスを提供します。</p>
+                
+                <h3>プライベートツアーの利点：</h3>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>完全な柔軟性</h3>
+                        <p>その場で旅程を変更し、興味のある場所により長く滞在し、混雑する時間を避け、エネルギーレベルと興味に完全に合ったスケジュールを作成します。</p>
+                    </div>
+                    <div class="card">
+                        <h3>より深い文化アクセス</h3>
+                        <p>プライベートツアーは、規模制限により大人数グループが対応できない小さなレストラン、あまり知られていない場所、本物の現地体験へのアクセスを可能にします。</p>
+                    </div>
+                    <div class="card">
+                        <h3>パーソナライズされたガイダンス</h3>
+                        <p>あなたのプライベートガイドはグループに完全に集中し、すべての質問に答え、詳細な説明を提供し、特定の興味に合わせて情報を調整します。</p>
+                    </div>
+                </div>
+                
+                <h3>私たちのプライベートエジプトツアーカテゴリー：</h3>
+                <ul>
+                    <li><strong>プライベートカイロツアー：</strong>エジプト博物館、コプトカイロ、イスラムカイロ、ハーン・ハリリバザール、現地地区を含むエジプトの首都の包括的な探検（象徴的な場所でのオプションのプロ写真撮影付き）</li>
+                    <li><strong>プライベートギザピラミッドツアー：</strong>大ピラミッド、スフィンクス、太陽の船博物館を含むギザ高原への独占的アクセス（最適な照明のためのゴールデンアワーの写真撮影セッション付き）</li>
+                    <li><strong>プライベートアレクサンドリアツアー：</strong>コム・エル・ショカファのカタコンベ、カイトベイ要塞、アレクサンドリア図書館、現地のシーフードレストランを訪れる日帰り旅行または延長滞在</li>
+                    <li><strong>プライベートルクソールツアー：</strong>王家の谷、カルナック神殿、ルクソール神殿、ハトシェプスト女王葬祭殿、熱気球体験を含む東岸と西岸の詳細な探検</li>
+                    <li><strong>複数都市エジプトパッケージ：</strong>カイロ、ギザ、アレクサンドリア、ルクソール、アスワン、オプションのナイル川クルーズ体験を組み合わせた包括的な7-14日間のプライベートツアー</li>
+                    <li><strong>特別興味プライベートツアー：</strong>写真、歴史、建築、食事、家族旅行、ハネムーン体験、学術研究に焦点を当てたカスタマイズツアー</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEO ARTICLE SECTION: COMPLETE EGYPT TRAVEL GUIDE -->
         <section class="main-section">
             <div class="container">
-                <h2>注目の写真ツアー</h2>
+                <div class="seo-article">
+                    <h2>プライベートエジプトツアー完全ガイド：カイロ、ギザ、アレクサンドリア＆ルクソール</h2>
+                    
+                    <p><strong>プロエジプト学者ホッサム著 | 2024-2025シーズン向け更新</strong></p>
+                    
+                    <p>プライベートエジプトツアーの決定版ガイドへようこそ。15年以上にわたってパーソナライズされたエジプトの冒険を作り上げてきた経験から、なぜプライベートツアーがエジプトを体験する最良の方法かを理解するのに役立つこの包括的なリソースを作成しました。初めての訪問者でも再訪者でも、このガイドは適切なプライベートツアーの選択からカイロ、ギザ、アレクサンドリア、ルクソールでの体験最大化までを網羅しています。</p>
+                    
+                    <h3>プライベートエジプトツアーの理解：何が違うのか？</h3>
+                    
+                    <p>プライベートエジプトツアーは、世界で最も歴史的に豊かな目的地の一つでパーソナライズされた旅行の頂点を代表しています。20〜40人の他の旅行者と厳格なスケジュールを守る標準的なグループツアーとは異なり、プライベートツアーは以下を提供します：</p>
+                    
+                    <ul>
+                        <li><strong>完全なカスタマイズ：</strong>古代史、写真、現地料理、または家族向けアクティビティにかかわらず、特定の興味に合わせて旅程を一から設計するか、提案されたツアーを修正します。</li>
+                        <li><strong>柔軟なスケジューリング：</strong>好きな時に一日を始め、各場所で望むだけの時間を過ごし、必要に応じて休憩を取り、天候、エネルギーレベル、予期せぬ発見に基づいて計画を調整します。</li>
+                        <li><strong>パーソナライズされた注意：</strong>あなたのプライベートエジプト学者ガイドはグループに完全に集中し、知識レベルと興味に合わせて詳細な説明を提供し、すべての質問に徹底的に答えます。</li>
+                        <li><strong>独占的体験へのアクセス：</strong>プライベートツアーには大人数グループには利用できない体験を含めることができます：プライベート鑑賞、舞台裏アクセス、現地職人との面会、エジプト人家族の家庭訪問、観光バスに対応しないレストラン。</li>
+                        <li><strong>効率性と快適さ：</strong>人気スポットでの行列をスキップし、あなたを待つプライベート交通手段を使用し、大規模グループの最も遅いメンバーに合わせるのではなく、好みに合ったペースを楽しみます。</li>
+                        <li><strong>オプションの専門サービス：</strong>興味に基づいてプロ写真撮影、学術講義、または特定のアクティビティガイドなどの専門サービスを含める能力。</li>
+                    </ul>
+                    
+                    <h3>プライベートカイロツアー：観光ルートを超えて</h3>
+                    
+                    <p>カイロ、2,000万人の都市は、ほとんどのグループツアーが表面をかすめるだけの無限の探求の可能性を提供します。私たちのプライベートカイロツアーは、標準的なエジプト博物館とピラミッドの旅程を超えて以下を含みます：</p>
+                    
+                    <ul>
+                        <li><strong>エジプト博物館＆新大エジプト博物館：</strong>ツタンカーメンの財宝、ミイラ化技術、特定の歴史的時代にかかわらず、特定の興味を強調した両博物館のプライベートガイドツアー。</li>
+                        <li><strong>イスラムカイロの深掘り：</strong>主要なモスクを超えて隠れた宝石を発見し、イスラム建築の進化について学び、伝統的な工房を訪問し、カイロのイスラム史を深く理解します。</li>
+                        <li><strong>コプトカイロ包括的ツアー：</strong>ハンギングチャーチ、アブ・セルガ、ベン・エズラシナゴーグ、コプト博物館を訪問し、エジプトのキリスト教遺産とユダヤ史に関する詳細な歴史的文脈を提供します。</li>
+                        <li><strong>現地地区の探検：</strong>ザマレク、マアディ、ヘリオポリスなどの地区で本物のカイロ生活を体験し、観光客が訪れない現地市場を訪問し、家族経営のレストランで伝統的な食事を楽しみます。</li>
+                        <li><strong>カイロ写真ツアー：</strong>オプションの写真撮影サービスを選択された方のために、カイロの対照 - 古代と現代、豊かさと貧困、混沌と平和 - を撮影する最適な場所と時間を知っています。</li>
+                        <li><strong>美食家カイロツアー：</strong>ストリートフードスタンドから高級レストランまで、現地シェフとの料理教室、スパイスマーケット訪問に焦点を当てたエジプト料理のプライベートグルメツアー。</li>
+                    </ul>
+                    
+                    <h3>プライベートギザピラミッドツアー：独占的アクセスと最適体験</h3>
+                    
+                    <p>ギザ高原は毎年数百万人の訪問者を受け入れますが、プライベートツアーは群衆なしで、より深い理解をもってピラミッドを体験する方法を提供します：</p>
+                    
+                    <ul>
+                        <li><strong>戦略的タイミング：</strong>プライベートツアーは最適な時間帯での訪問を可能にします - 群衆と熱さを避ける早朝、またはゴールデンアワーの写真撮影と夕焼けの景色のための夕方遅く。</li>
+                        <li><strong>ピラミッド内部へのアクセス：</strong>興味と身体的機能に基づいてどのピラミッドに入るかの詳細なガイダンス、建設技術と歴史的重要性の徹底的な説明。</li>
+                        <li><strong>写真に焦点を当てたツアー：</strong>写真撮影を選択されたクライアントのために、最高の角度、視点（あまり知られていない場所を含む）、壮大なピラミッド画像をキャプチャするための照明条件を知っています。</li>
+                        <li><strong>主要3基を超えて：</strong>高原上のあまり知られていないピラミッド、労働者の村、現在の研究の説明付き進行中の考古学的発掘の探求。</li>
+                        <li><strong>ラクダ＆乗馬体験：</strong>動物の福祉と最適な写真撮影の機会を確保する信頼できるオペレーターによる砂漠乗馬のプライベート手配。</li>
+                        <li><strong>サウンド＆ライトショーの代替：</strong>公式ショーが大衆向けである間、プライベートガイドは高原の歴史のよりパーソナライズされた歴史的に正確な物語を提供できます。</li>
+                    </ul>
+                    
+                    <h3>プライベートアレクサンドリアツアー：地中海エジプトの魅力を明らかに</h3>
+                    
+                    <p>アレキサンダー大王によって設立されたアレクサンドリアは、地中海の雰囲気とギリシャ・ローマの歴史で異なるエジプト体験を提供します：</p>
+                    
+                    <ul>
+                        <li><strong>歴史的レイヤーツアー：</strong>考古学的遺跡と建築を通じてアレクサンドリアの複数の歴史的レイヤー - ファラオ、ギリシャ、ローマ、ビザンチン、イスラム、現代 - の理解。</li>
+                        <li><strong>コム・エル・ショカファのカタコンベ：</strong>エジプト、ギリシャ、ローマの芸術様式を融合したこのユニークな墓地のプライベートガイド探検、発見と重要性の詳細な説明付き。</li>
+                        <li><strong>アレクサンドリア図書館：</strong>建築、特別コレクション、または現在の文化プログラムにかかわらず、興味に基づいた現代図書館のカスタマイズツアー。</li>
+                        <li><strong>カイトベイ要塞：</strong>古代のアレクサンドリアの灯台の跡地に建てられたこの15世紀の要塞の詳細な歴史、七不思議の一つ。</li>
+                        <li><strong>現地シーフード体験：</strong>新鮮な魚を選び、地中海の漁業伝統について学ぶ本物のシーフードレストランでのプライベート手配。</li>
+                        <li><strong>モンタザ宮殿庭園：</strong>エジプトの王室時代の歴史的文脈と宮殿建築の建築分析を伴うこれらの美しい庭園の余暇探検。</li>
+                        <li><strong>アレクサンドリア写真ツアー：</strong>海岸写真セッション、ベル・エポック建築に焦点を当てた建築写真、伝統的な地区でのストリート写真。</li>
+                    </ul>
+                    
+                    <h3>プライベートルクソールツアー：古代テーベの詳細な探求</h3>
+                    
+                    <p>ルクソール、古代テーベは、世界の遺跡の約3分の1を含み、有意義な探求にはプライベートガイダンスが不可欠です：</p>
+                    
+                    <ul>
+                        <li><strong>西岸包括的ツアー：</strong>どの墓が開いているかと特定の興味に基づいた王家の谷のカスタマイズ探求、埋葬慣行、墓の装飾、最近の発見の詳細な説明付き。</li>
+                        <li><strong>ハトシェプスト女王葬祭殿：</strong>このユニークな寺院、エジプトの女性ファラオの統治、建造物の建築的革新の詳細な分析。</li>
+                        <li><strong>王妃の谷＆貴族の墓：</strong>王妃、王子、高官の美しく装飾された墓がある、あまり混雑していない墓地への訪問。</li>
+                        <li><strong>カルナック神殿複合体：</strong>持久力と興味に合わせたプライベートツアー、見たいものに基づいて柱の広間、聖なる湖、野外博物館などの特定の領域に焦点を当てます。</li>
+                        <li><strong>ルクソール神殿の昼と夜：</strong>新王国神殿からローマ要塞、コプト教会、モスクへの進化の説明と共に異なる時間帯で寺院を体験。</li>
+                        <li><strong>熱気球飛行：</strong>西岸上空での日の出熱気球飛行のプライベート手配、最適な写真撮影の機会と安全上の考慮事項。</li>
+                        <li><strong>ルクソール写真ツアー：</strong>困難な照明条件下での寺院レリーフの撮影、記念碑の規模と壮大さのキャプチャ、現地コミュニティの倫理的写真撮影のガイダンス。</li>
+                    </ul>
+                    
+                    <h3>オプションのプロ写真撮影：プライベートエジプトツアーをどのように強化するか</h3>
+                    
+                    <p>私たちのプライベートエジプトツアーは独自の優れた旅行体験として機能しますが、オプションのプロ写真撮影サービスは多くの旅行者に重要な価値を追加します：</p>
+                    
+                    <ul>
+                        <li><strong>写真愛好家向け：</strong>経験豊富な写真家ガイドから、エジプトのユニークな照明条件、建築詳細、文化的瞬間をキャプチャするプロ技術を学びます。</li>
+                        <li><strong>高品質なお土産を望む旅行者向け：</strong>スナップショットではなくプロ品質の画像で帰国 - アルバム、壁の芸術、または家族や友人との共有に最適です。</li>
+                        <li><strong>特別な機会向け：</strong>ハネムーン、記念日を祝う方、特別な瞬間を記念する家族は、エジプトの壮大な背景で美しく文書化された思い出を受け取ります。</li>
+                        <li><strong>柔軟な手配：</strong>ゴールデンアワーのピラミッドや朝の光のカルナック神殿などの主要な場所での全日写真撮影カバレッジまたは特定のセッションを選択します。</li>
+                        <li><strong>設備のガイダンス：</strong>エジプトに持って行くべきカメラ機器、エジプトのほこりと熱への対処、寺院や墓の困難な照明条件の技術に関するアドバイス。</li>
+                        <li><strong>文化的配慮：</strong>人々、宗教的場所、現地コミュニティの尊重ある写真撮影のガイダンスにより、肯定的な相互作用と本物の画像を確保します。</li>
+                        <li><strong>旅行後のサポート：</strong>画像の選択と編集、アルバムの作成、または印刷と展示のための画像の準備の支援。</li>
+                    </ul>
+                    
+                    <h3>プライベートエジプトツアーの計画：実用的な考慮事項</h3>
+                    
+                    <p>成功するプライベートエジプトツアーの計画には、標準的なツアーブッキングとは異なるいくつかの重要な考慮事項が含まれます：</p>
+                    
+                    <ul>
+                        <li><strong>事前計画：</strong>高品質のガイドとのプライベートツアーは、特にピークシーズン（10月〜4月）には事前予約が必要です。最適なガイドの可用性と宿泊オプションのためには、理想的な計画期間は3〜6か月前です。</li>
+                        <li><strong>予算の考慮：</strong>プライベートツアーは、個人的な注意、柔軟性、独占的アクセス、時間効率を考慮すると、コストが高いのではなく、より高い価値を表します。異なる予算に対応するさまざまな価格帯でプライベートツアーを提供しています。</li>
+                        <li><strong>グループサイズの最適化：</strong>プライベートツアーは、一緒に旅行する家族や友人などの小グループにとって、費用が共有されながらもプライバシーとパーソナライゼーションの利点が維持されるため、費用対効果が高くなります。</li>
+                        <li><strong>興味に基づくカスタマイズ：</strong>予約する前に、エジプトのどの側面が最も興味を引くかを考慮してください - 特定の歴史的期間、建築様式、宗教史、現代文化、写真撮影の機会、または食体験。</li>
+                        <li><strong>身体的な考慮事項：</strong>プライベートツアーは、よりリラックスしたペース、少ない階段、または移動制限がある方のための代替サイトで、身体的能力に合わせて調整できます。</li>
+                        <li><strong>季節による調整：</strong>プライベートツアーは季節に基づいて最適なスケジューリングを可能にします - 夏の暑さでは早めの開始、最も暑い時間帯は屋内アクティビティ、日陰や冷房のあるサイトへの焦点。</li>
+                        <li><strong>目的地の組み合わせ：</strong>複数都市のプライベートツアー（カイロ-ギザ-アレクサンドリア-ルクソール）には、国内線、電車旅行、または運転距離の慎重なロジスティック計画が必要で、私たちがシームレスに処理します。</li>
+                    </ul>
+                    
+                    <h3>プライベート vs グループツアー：費用対効果分析</h3>
+                    
+                    <p>プライベートエジプトツアーはグループツアーよりも一人当たりのコストが高いですが、多くの場合それらをより良い価値にする重要な利点を提供します：</p>
+                    
+                    <ul>
+                        <li><strong>時間効率：</strong>プライベートツアーは、最適化されたスケジューリング、行列のスキップ、直接輸送を通じて、より短い時間でより多くのことを達成し、限られた休暇時間をより効果的に使用します。</li>
+                        <li><strong>体験の質：</strong>サイトとの深い関わり、パーソナライズされた説明、無制限の質問をする能力、一般的な解説ではなく興味に合わせた体験。</li>
+                        <li><strong>柔軟性の価値：</strong>天候、エネルギーレベル、または発見された興味に基づいて計画を変更する能力は、満足度を高め旅行ストレスを軽減する無形の価値を持ちます。</li>
+                        <li><strong>独占的アクセス：</strong>グループには利用できない体験の機会 - プライベート博物館鑑賞、専門家との面会、人気スポットでのレストラン予約など。</li>
+                        <li><strong>写真撮影の利点：</strong>写真撮影を選択された方にとって、画像の質と学習機会は標準的なツアー写真と比較して重要な価値を表します。</li>
+                        <li><strong>文化的没入：</strong>現地コミュニティとの深い相互作用、本物の食事体験、表面的な観光を超えた理解。</li>
+                        <li><strong>健康と安全：</strong>プライベート輸送と小グループサイズは健康上の利点を提供し、特にパンデミック後の旅行考慮事項で重要です。</li>
+                    </ul>
+                    
+                    <h3>プライベートエジプトツアーFAQへの回答</h3>
+                    
+                    <p>15年以上にわたるプライベートエジプトツアーの組織に基づき、以下は一般的な質問への回答です：</p>
+                    
+                    <ul>
+                        <li><strong>「プライベートツアーは、特に女性の一人旅に安全ですか？」</strong> はい、プライベートツアーは独立旅行や大規模グループツアーよりも安全な場合があります。ガイドは現地の知識を提供し、相互作用を処理し、信頼できる施設にいることを確認します。要望に応じて女性ガイドを手配できる一人旅の女性旅行者向けに頻繁にプライベートツアーを手配します。</li>
+                        <li><strong>「プライベートツアーは食事制限やアレルギーに対応できますか？」</strong> 絶対にできます。プライベートツアーはレストランとの詳細なコミュニケーション、代替食事オプション、あらゆる食事制限に対応する柔軟性を可能にします - 固定されたグループツアーメニューでは困難なことです。</li>
+                        <li><strong>「『プライベート』はどの程度プライベートですか？他のグループと合流することはありますか？」</strong> 真にプライベートとは、あなたのパーティーとガイド/ドライバーのみを意味します。社会的理由で特別に要求されない限り（その場合も同意の上でのみ）、他のグループとの結合はありません。</li>
+                        <li><strong>「プライベートツアーを途中でカスタマイズできますか？」</strong> はい、主要な利点の一つです。予期しないものに興味を発見したり、どこかにより長く滞在したり、より遅いペースが必要な場合、プライベートツアーは毎日の調整を可能にします。</li>
+                        <li><strong>「プライベートツアーガイドはグループツアーガイドよりも知識が豊富ですか？」</strong> 私たちは、より深い専門知識、言語スキル、説明をパーソナライズする能力に基づいてプライベートツアーガイドを選びます。多くの人は基本的なガイド資格ではなく、エジプト学の高度な学位を保持しています。</li>
+                        <li><strong>「オプションの写真撮影はプライベートツアーとどのように機能しますか？」</strong> 全日、特定の日、または特定の場所のためにプロカメラマンを含めることを選択できます。カメラマンはツアーの流れを中断することなく体験をキャプチャするために、ガイドと一緒に目立たないように作業します。</li>
+                        <li><strong>「プライベートツアーに子供を含めることはできますか？どの年齢が最適ですか？」</strong> プライベートツアーは家族に最適です。子供の年齢と興味に基づいて内容、ペース、アクティビティを調整します。固定されたグループツアーでは不可能なことです。インタラクティブな要素、実践的な体験、休憩が自然に組み込まれます。</li>
+                        <li><strong>「プライベートエジプトツアーの理想的なグループサイズは？」</strong> ほとんどのプライベートツアーは2〜6人で完璧に機能します。追加のガイドと車両で最大12〜15人のより大きなプライベートグループも可能です。究極の柔軟性のための一人用プライベートツアーも人気です。</li>
+                        <li><strong>「プライベートエジプトツアーはどれくらい前に予約すべきですか？」</strong> ピークシーズン（10〜4月）には、最適なガイドの可用性を確保するために3〜6か月前の予約をお勧めします。中間期には通常1〜3か月で十分です。直前のプライベートツアーは時々可能ですが、ガイドオプションは限られています。</li>
+                        <li><strong>「プライベートツアーは追加費用に見合う価値がありますか？」</strong> 以前のグループツアー体験よりも一貫して高く評価される顧客フィードバックに基づくと、コンセンサスははいです - パーソナライズされた注意、柔軟性、深い体験、時間効率は、ほとんどの旅行者にとって追加投資を正当化します。</li>
+                    </ul>
+                    
+                    <h3>お客様の声：プライベートエジプトツアー体験</h3>
+                    
+                    <p>以前のクライアントからの話を聞くことは、プライベートツアーの違いを理解するのに役立ちます：</p>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        「私たちのプライベートエジプトツアーは、チェックリスト訪問になり得たものを深い文化的没入に変えました。家族に完全に集中するガイドを持つことは、子供たちの質問に徹底的に答えられ、誰かが疲れたときに計画を変更でき、存在すら知らなかったエジプトの側面を発見できたことを意味しました。オプションの写真撮影は、ピラミッドでプロ品質の家族写真を私たちに与えました - 永遠に大切にする宝物です。」 - アンダーソン家族、アメリカ
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        「一人旅の女性旅行者として、当初エジプトについて緊張していました。プライベートツアーは安全性、仲間意識、信じられないほどの柔軟性を提供しました。私のガイドは興味に基づいて毎日調整しました - イスラム建築に夢中になったとき、彼女はあまり知られていないモスクとイスラム学校に焦点を当てるために翌日の計画を完全に変更しました。このレベルのパーソナライゼーションはグループツアーでは不可能です。」 - サラ・M、オーストラリア
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        「私たちは写真コンポーネントのために特にエジプト写真ツアーを選びましたが、ガイダンスが同様に優れていることを発見しました。私たちの写真家は各サイトを完璧にキャプチャするための正確な場所と時間を知っており、エジプト学者は画像をより意味のあるものにする文脈を提供しました。私たちは素晴らしい写真とエジプト史の深い理解の両方を持って帰国しました。」 - トーマス＆エレナ、ドイツ
+                    </blockquote>
+                    
+                    <h3>プライベートエジプトツアーの予約：次のステップ</h3>
+                    
+                    <p>興味に合わせて調整されたプライベートツアーでエジプトを体験する準備はできましたか？以下はお勧めのプロセスです：</p>
+                    
+                    <ol>
+                        <li><strong>最初の問い合わせ：</strong>旅行日程、グループサイズ、興味、特別な要件を添えてご連絡ください。オプションのプロ写真撮影に興味がある場合はお知らせください。</li>
+                        <li><strong>相談電話：</strong>エジプトの興味、旅行スタイル、必見のサイト、好みについて話し合い、どのようなプライベートツアーが最適かを理解するための電話を予定します。</li>
+                        <li><strong>カスタム旅程提案：</strong>私たちの議論に基づいて、ガイドの専門性、交通手段、宿泊オプション、要求に応じた写真撮影手配を含む詳細なプライベートツアー旅程を作成します。</li>
+                        <li><strong>修正と調整：</strong>エジプトの冒険に対するビジョンに完全に合うまで、フィードバックに基づいて旅程を調整します。</li>
+                        <li><strong>予約と準備：</strong>最終決定後、すべての予約を処理し、パッキングリスト、文化的ガイドライン、準備資料を含む詳細な旅行前情報を提供します。</li>
+                        <li><strong>現地体験：</strong>プライベートガイドが到着時にあなたを迎え、進化する興味に基づく日常的な柔軟性であなたの滞在中シームレスでパーソナライズされたツアーを提供します。</li>
+                        <li><strong>旅行後のフォローアップ：</strong>ツアーの後、フィードバックのために確認し、写真撮影を選択された方には画像の選択と配信を支援します。</li>
+                    </ol>
+                    
+                    <p><strong>あなたのために特別に設計されたプライベートツアーでエジプトを体験する準備はできましたか？</strong> <a href="contact.html" style="color: var(--accent-dark); font-weight: bold;">エジプト写真ツアーに今すぐお問い合わせください</a>、オプションのプロ写真撮影サービス付きでパーソナライズされたエジプトの冒険の計画を開始します。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOUR DETAILS -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>プライベートエジプトツアーの詳細と独占的体験</h2>
+                
+                <h3>📸 オプションのプロ写真撮影サービス：</h3>
+                <ul>
+                    <li><strong>カイロ写真ツアー：</strong>ピラミッド、エジプト博物館、イスラム建築サイト、現地市場での最適な照明ガイダンス付きプロ写真撮影</li>
+                    <li><strong>ギザピラミッド写真撮影：</strong>日の出/日の入りのゴールデンアワーセッション、独占的な視点でのプロのポージングガイダンス、創造的な構図技術</li>
+                    <li><strong>アレクサンドリア海岸写真：</strong>地中海の海景、ギリシャ・ローマ遺跡の建築詳細、伝統的地区の活気あるストリートシーン</li>
+                    <li><strong>ルクソール神殿写真：</strong>困難な光の中での寺院レリーフ撮影の技術、壮大な建築写真、親密な詳細写真</li>
+                    <li><strong>文化的ポートレートセッション：</strong>適切な同意と文化的配慮を伴う現地職人、店主、コミュニティメンバーとの尊敬あるポートレート写真撮影</li>
+                    <li><strong>家族＆カップル写真：</strong>象徴的な場所でのプロフェッショナル家族ポートレート、ハネムーンカップルのロマンチックな写真、多世代家族グループ写真</li>
+                </ul>
+                
+                <h3>📍 プライベートツアーの独占的体験：</h3>
+                <ul>
+                    <li><strong>営業時間外の博物館アクセス：</strong>群衆のない探求のための公開時間前後の博物館でのプライベート鑑賞手配</li>
+                    <li><strong>考古学者との面会：</strong>活動的な発掘現場での働く考古学者との手配された面会（可用性と許可に応じて）</li>
+                    <li><strong>職人工房訪問：</strong>陶器、パピルス作り、織物、宝飾品作りのマスタークラフトマンによるプライベート実演とワークショップ</li>
+                    <li><strong>家庭での食事体験：</strong>調理実演と文化交流の機会を伴うエジプト人家族の家庭での食事</li>
+                    <li><strong>学術的に焦点を当てたツアー：</strong>専門的なリソースと専門家へのアクセスを備えた学生、研究者、または深く興味を持つ旅行者向けに設計されたツアー</li>
+                    <li><strong>写真に焦点を当てた旅程：</strong>最適なタイミング、写真撮影の特別アクセス、技術的ガイダンスを備えた写真家のために特別に設計されたツアー</li>
+                </ul>
+                
+                <h3>🎯 プライベートツアーの利点：</h3>
+                <ul>
+                    <li><strong>完全なスケジュールコントロール：</strong>好きな時に開始し、各サイトで好きなだけ時間を過ごし、必要に応じて休憩し、計画を自発的に変更</li>
+                    <li><strong>パーソナライズされた内容：</strong>一般的な解説ではなく、既存の知識レベルと特定の興味に合わせた情報</li>
+                    <li><strong>直接輸送：</strong>常に利用可能なドライバー付きプライベート車両、グループメンバーの待機なし、目的地への直接ルート</li>
+                    <li><strong>健康と安全の優先：</strong>衛生基準のコントロール、混雑した空間の回避能力、あらゆる健康上の懸念への個人的な注意</li>
+                    <li><strong>特別な機会の認識：</strong>適切な現地の伝統とサプライズを伴う誕生日、記念日、特別な節目の祝賀</li>
+                    <li><strong>言語の焦点：</strong>言語能力と母国語で複雑な概念を明確に説明する能力に基づいて選ばれたガイド</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FEATURED TOURS - UPDATED IMAGES TO JPG -->
+        <section class="main-section">
+            <div class="container">
+                <h2>最も人気のあるプライベートエジプトツアーパッケージ</h2>
+                <p>オプションのプロ写真撮影サービス付きでパーソナライズされた体験を求める旅行者向けに設計された、慎重に選ばれたプライベートエジプトツアーからお選びください。</p>
+                
                 <div class="tour-grid">
                     <div class="tour-card">
-                        <span class="sale-tag">特別オファー！</span>
                         <img src="../images/pyramids-private-tour.jpg"
-                             alt="ギザピラミッドでのプライベートガイド付き写真ツアー、プロフェッショナルエジプト人ガイドとスフィンクスの景色"
-                             class="tour-img lazy-load"
+                             alt="オプション写真撮影付きプライベートギザピラミッドツアー - エジプトプライベートツアー"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">📸 魔法をキャプチャ：プライベートピラミッドガイドツアー＋プロフェッショナル写真</h3>
-                            <p class="tour-card-text">情熱的な現地専門家に導かれて、ギザの大ピラミッドとスフィンクスの没入型一日プライベートツアーで古代史に足を踏み入れましょう。プロフェッショナルな写真撮影で忘れられない瞬間をキャプチャし、石の背後にある本当の物語を聞きましょう。</p>
+                            <h3>プライベートギザピラミッドツアー</h3>
+                            <p>エジプト学者ガイド付きギザ高原の独占的プライベートツアー。すべてのピラミッド入場、スフィンクス、ゴールデンアワーのオプションのプロ写真撮影を含みます。</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">150米ドルから</span>
-                                <span class="tour-duration">所要時間: 4-5時間</span>
+                                <span class="tour-price">$150より</span>
+                                <a href="tour-pyramids-private.html" class="tour-cta">今すぐ予約</a>
                             </div>
-                            <a href="tour-pyramids-private.html" class="tour-cta">詳細と予約</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">限定枠！</span>
                         <img src="../images/cairo-giza-2day.jpg"
-                             alt="カイロのランドマークとギザピラミッドをカバーする2日間のプレミアムプライベート写真ツアー、専門家ガイド付き"
-                             class="tour-img lazy-load"
+                             alt="カイロとギザの2日間プライベートツアー - エジプトプライベートガイド付きツアー"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">2日間プレミアムプライベートツアー：カイロ＆ギザ写真探検</h3>
-                            <p class="tour-card-text">2日間にわたる忘れられない日々で、エジプトの活気ある首都と古代の驚異に没頭しましょう。あなたのプライベートガイドと写真家とともに、壮大なピラミッド、活気あるオールドカイロ、印象的な国立エジプト文明博物館を探索します。</p>
-                             <div class="tour-card-footer">
-                                <span class="tour-price">350米ドルから</span>
-                                <span class="tour-duration">所要時間: 2日間</span>
+                            <h3>カイロ＆ギザ2日間プライベートツアー</h3>
+                            <p>柔軟なスケジューリングとオプションの写真撮影サービス付きで、ピラミッド、エジプト博物館、コプトカイロ、イスラムカイロをカバーする包括的なプライベートツアー。</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">$350より</span>
+                                <a href="tour-cairo-giza-2day.html" class="tour-cta">今すぐ予約</a>
                             </div>
-                            <a href="tour-cairo-giza-2day.html" class="tour-cta">詳細と予約</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">今すぐ予約！</span>
                         <img src="../images/alexandria-tour.jpg"
-                             alt="カイロからのアレクサンドリアへのプライベート海岸日帰り写真ツアー、地中海の景色と古代遺跡"
-                             class="tour-img lazy-load"
+                             alt="カイロからのプライベートアレクサンドリア日帰りツアー - 地中海エジプトツアー"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">アレクサンドリアを発見：カイロからのプライベート海岸日帰りツアー</h3>
-                            <p class="tour-card-text">カイロの砂漠の砂塵を地中海の新鮮な風と交換して、アレクサンドリアへの忘れられないプライベート日帰りツアーをお楽しみください。情熱的な現地ガイドとともに、ギリシャ、ローマ、イスラム、現代の宝物のミックスを発見し、素晴らしい海岸の景色をキャプチャしましょう。</p>
+                            <h3>プライベートアレクサンドリア日帰りツアー</h3>
+                            <p>カイロからアレクサンドリアへのプライベート日帰り旅行。カタコンベ、カイトベイ要塞、アレクサンドリア図書館を訪問、パーソナライズされたガイダンスとオプションの海岸写真撮影付き。</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">220米ドルから</span>
-                                <span class="tour-duration">所要時間: 1日</span>
+                                <span class="tour-price">$220より</span>
+                                <a href="tour-alexandria.html" class="tour-cta">今すぐ予約</a>
                             </div>
-                            <a href="tour-alexandria.html" class="tour-cta">詳細と予約</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">新しい冒険！</span>
                         <img src="../images/egypt-discovery-7day.jpg"
-                             alt="カイロ、ギザピラミッド、アレクサンドリア、ルクソール神殿をカバーする7日間の包括的なエジプト写真発見ツアー"
-                             class="tour-img lazy-load"
+                             alt="7日間プライベートエジプトツアーパッケージ - 完全なエジプトプライベートツアー"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">7日間エジプト発見ツアー：カイロ、ギザ、アレクサンドリア＆ルクソール</h3>
-                            <p class="tour-card-text">この没入型7日間ガイド付き旅行で、古代と現代のエジプトの驚異を体験してください。そびえ立つピラミッドからアレクサンドリアの地中海の魅力、ルクソールの壮大な神殿まで—この旅はエジプトの魂を生き生きとさせます。</p>
+                            <h3>7日間プライベートエジプトツアー</h3>
+                            <p>カイロ、ギザ、アレクサンドリア、ルクソールをカバーする究極のプライベートエジプト体験、ラグジュアリー宿泊施設、プライベートガイド、ツアー全体でのオプションのプロ写真撮影付き。</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">1900米ドルから</span>
-                                <span class="tour-duration">所要時間: 7日間</span>
+                                <span class="tour-price">$1900より</span>
+                                <a href="tour-egypt-discovery-7day.html" class="tour-cta">今すぐ予約</a>
                             </div>
-                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">詳細と予約</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-30">
+                    <a href="tours.html" class="hero-button hero-button-primary">すべてのプライベートツアーパッケージを見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPREHENSIVE FAQ SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>よくある質問 - プライベートエジプトツアー</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question">プライベートエジプトツアーはグループツアーよりも何が優れていますか？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>プライベートエジプトツアーは重要な利点を提供します：計画を変更する完全な柔軟性、ガイドからの個人的な注意、自分のペースで探求する能力、グループには利用できない体験へのアクセス、写真撮影の最適なタイミング、より深い文化的没入。あなたはスケジュール上のただの観光客ではありません - 専門の現地ガイダンスで独自のエジプト体験を設計しています。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">プロ写真撮影はあなたのプライベートツアーで必須ですか？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>いいえ、プロ写真撮影は完全にオプションです。2種類のプライベートエジプトツアーを提供しています：1）専門エジプト学者ガイド付き標準プライベートツアー、および2）プロ写真撮影サービスを含むプライベートツアー。好みと予算に基づいてどちらのオプションも選択できます。多くのクライアントは特に写真撮影のために私たちのツアーを予約しますが、他の人はガイド付き体験だけを好みます。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">あなたのプライベートエジプトツアーはどの都市をカバーしていますか？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>私たちのプライベートエジプトツアーは、エジプトの4つの最も人気のある目的地を包括的にカバーします：カイロ（エジプト博物館、イスラム＆コプトカイロ）、ギザ（ピラミッド＆スフィンクス）、アレクサンドリア（地中海沿岸＆ギリシャ・ローマ遺跡）、ルクソール（王家の谷＆神殿）。単一目的地プライベートツアー、複数都市パッケージ、興味と利用可能な時間に基づいてこれらの場所を組み合わせた完全にカスタマイズされた旅程を提供します。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">プライベートエジプトツアーの旅程をカスタマイズできますか？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>もちろんです！カスタマイズはプライベートツアーの本質です。興味に基づいて初期の旅程提案を作成し、相談を通じて調整します。ツアー自体では、日常的な調整が可能です - 好きな場所により長く滞在し、興味の少ないものをスキップし、予期せぬ発見を追加し、エネルギーレベルに基づいてペースを変更します。この柔軟性は固定されたグループツアーでは不可能です。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">プライベートエジプトツアーは子供のいる家族に適していますか？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>プライベートツアーは家族に最適です！子供の年齢と興味に基づいて内容、ペース、アクティビティを調整します。家族は必要な時に休憩を取り、インタラクティブな要素に焦点を当て、子供向けの食事を含め、柔軟なスケジュールを維持できます。オプションの写真撮影サービスは、象徴的なエジプトの場所で美しい家族ポートレートをキャプチャするのに特に人気があり、大切な思い出になります。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">プライベートエジプトツアーはどれくらい前に予約すべきですか？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>ピークシーズン（10月〜4月）には、最高のガイドと宿泊施設を確保するためにプライベートエジプトツアーを3〜6か月前に予約することをお勧めします。中間期（5〜6月、9月）には通常1〜3か月で十分です。直前のプライベートツアーは時々可能ですが、ガイドオプションは限られています。早期予約はまた、カスタム旅程開発と特別なリクエストのためにより多くの時間を可能にします。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- EXTENSIVE REVIEWS SECTION -->
         <section class="main-section bg-primary-dark">
-            <div class="container">
-                <h2 style="color: var(--accent-light);">素晴らしいお客様の声</h2>
-                         <!-- TrustBox widget - Review Collector -->
-                <div class="trustpilot-widget" data-locale="ja-JP" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68ebe694a70f7429071227b6" data-style-height="52px" data-style-width="100%" data-token="b32cd746-03c7-406e-8bb0-54364a1c6027">
-                  <a href="https://www.trustpilot.com/review/egyptphotographytours.com" target="_blank" rel="noopener">Trustpilot</a>
-                </div>
-                <!-- End TrustBox widget -->
+            <div class="container text-center">
+                <h2 style="color: var(--accent-light);">お客様の声：エジプト写真ツアーについて</h2>
+                
                 <div class="reviews-grid">
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「ホサムさんとのこの体験は素晴らしい時間でした！私たちのグループにとても親切で忍耐強く接してくれました！全体の体験は楽しい時間であり、彼は私たちをとても快適に感じさせてくれました。すべてを楽しみました！」</p>
-                        <p class="review-author">- ダニエル</p>
+                        <p class="review-text">「プライベートツアーの柔軟性がすべての違いを生みました。娘がヒエログリフに夢中になったとき、ガイドは追加の時間を使って彼女に基本的なシンボルの読み方を教えました。この個人的な注意は、彼女を退屈から夢中に変えました。オプションの写真撮影は、ピラミッドでプロの家族写真を私たちに与えました。」</p>
+                        <p><strong>- ジョンソン家族、アメリカ</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「最初から最後まで忘れられない体験でした。ホサムは素晴らしいスキルを持つ優秀な写真家です。素晴らしい体験、優れた対応、素晴らしい仕事、ピラミッドの驚くべき景色とともにたくさんの素晴らしい写真。結果に非常に満足しており、完全にお勧めします。」</p>
-                        <p class="review-author">- クリスティーナ</p>
+                        <p class="review-text">「一人旅として、エジプトについて心配していました。プライベートツアーは安全性、仲間意識、信じられないほどの柔軟性を提供しました。私のガイドは興味に基づいて毎日調整しました - イスラム建築に夢中になったとき、彼女はあまり知られていないモスクに焦点を当てるために計画を変更しました。グループツアーでは不可能です！」</p>
+                        <p><strong>- サラ・M、オーストラリア</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「ホサムはギザピラミッドの素晴らしいツアーを提供してくれました。常に思慮深く、コミュニケーションが取れて、知識が豊富で、あなたがやりたいことに応じてツアーを形成してくれました。彼は私にギザピラミッドを見せてくれただけでなく、その後、博物館の1つも調整してくれました！最初から最後まで、ホサムは素晴らしい仕事をしました。このツアーを予約して、ホサムという新しい友達を作ってうれしいです！」</p>
-                        <p class="review-author">- エドゥアルド</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「セッションはとても良かったです、人がいないスポットがとても気に入りました。前回別のツアーを予約して写真がとても悪かったので、このツアーを予約しなければなりませんでした。さて、ラクダと敷地内への入場に追加費用がかかることを考慮してください（これは投稿の告知で指定されています）」</p>
-                        <p class="review-author">- ルーシー</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「プライベートツアーで夫と二人で参加しましたが、観光客が多くない良いスポットに案内してくれて、素敵な写真がたくさん撮れました！写真撮影だけでなく、ピラミッドやスフィンクスについての簡単な歴史の話もしてくれて、より有益でした☺️ カイロの生まれ育ちなので、お勧めのレストランやスポットもたくさん教えてくれましたし、高価なだけの場所はお勧めしないと言ってくれたので、エジプトに初めて来る立場として旅行に多くの役立つと思います。簡単なストーリーテリングツアー＋写真撮影を希望する方にお勧めします！」</p>
-                        <p class="review-author">- イ・ソヨン</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「これは今までで最高の体験の一つでした。ホサムは親切で、気配りができ、提案に対してオープンです。彼は知識が豊富で、非常に役立ちます。彼と一緒なら最高のものだけを体験するでしょう。」</p>
-                        <p class="review-author">- メスレム</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「ホサムは単純に最高です。なぜですか？彼はとても親切で、非常に知識が豊富で、自分の文化と国を本当に愛しているからです。私はプライベートツアーで一日半ホサムと過ごす特権を持ちました。彼は私が幸せで、安全で、安心していることを確認するために通常以上のことをしてくれました。ホサムが私が今まで持った最高のガイドの一人であることは間違いありません。カイロの最高のものを見せてくれて、今後何年も大切にする忘れられない体験を作ってくれてありがとう。」</p>
-                        <p class="review-author">- アリ</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「ギザのピラミッドを訪れ、忘れられない体験をしたい場合は、ハッサムとの写真ツアーを予約することを強くお勧めします。最初から最後まで、彼はプロフェッショナルで、友好的で、信じられないほど知識が豊富でした。彼はピラミッドの魔法を完璧にキャプチャした absolutely stunning な写真を撮っただけでなく、ツアーをさらに特別にした豊富な歴史情報と興味深い物語も共有してくれました。ハッサムはユニークなショットと角度のための最高のスポットを本当に知っており、私が快適に感じ、すべての瞬間を楽しむことを確認してくれました。価格に対する価値は outstanding です — 高品質の写真、個別のツアー、世界最大の驚異の一つである歴史への深いダイブを手に入れられます。これは私のエジプト旅行のハイライトの一つでした！」</p>
-                        <p class="review-author">- エリック</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">「素晴らしい体験、非常にプロフェッショナル、カメラの前にいることに慣れていなくても快適に感じさせてくれます。細部への注意と、ピラミッドと周辺地域についての素晴らしい情報を持っていました。ホサムと働くのがとても簡単で快適だったので、アレクサンドリアへの日帰り旅行ツアーも予約することに決めました。」</p>
-                        <p class="review-author">- ジェイミー</p>
+                        <p class="review-text">「私たちは特に写真撮影のためにエジプト写真ツアーを選びましたが、ガイダンスが同様に優れていることを発見しました。私たちの写真家は各サイトの正確な時間と角度を知っており、エジプト学者は画像をより意味のあるものにする文脈を提供しました。私たちは素晴らしい写真と深い理解の両方を持って帰国しました。」</p>
+                        <p><strong>- トーマス＆エレナ、ドイツ</strong></p>
                     </div>
                 </div>
-                <a href="faqs.html" class="review-cta">
-                        すべてのレビューとよくある質問を読む
-                </a>
+                
+                <div class="reviews-grid mt-30">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">「私たちのプライベートアレクサンドリアツアーは、カイロとは完全に異なるエジプトを明らかにしました。図書館に夢中になったときに追加の時間を過ごす能力、次にあまり興味のないものをスキップする能力は、体験をストレスフリーにしました。海岸写真セッションは、グループツアーでは得られなかったハイライトでした。」</p>
+                        <p><strong>- マイケル＆ジェームズ、カナダ</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">「プライベートルクソールツアーは、墓を最適な時間に訪問し、群衆と熱さの両方を避けることを可能にしました。私たちのガイドの知識は博士レベルでした。医療慣行に興味があると述べたとき、彼は労働者の村で古代エジプトの医学を詳しく説明しました。この深さが、プライベートツアーがすべての費用に見合う価値がある理由です。」</p>
+                        <p><strong>- ロバーツ博士、イギリス</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">「私たちは最初に写真撮影なしでプライベートツアーを予約しましたが、別のクライアントの写真を見て追加しました。最高の決断！写真家は目立たないが、私たちが見逃した魔法の瞬間をキャプチャしました。深いガイダンスとプロ写真撮影の組み合わせは、完璧なエジプト体験を作り出しました。」</p>
+                        <p><strong>- リサ＆マルコ、イタリア</strong></p>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="review-cta">今すぐプライベートエジプトツアーを予約！</a>
+            </div>
+        </section>
+        
+        <!-- EGYPT TOUR PLANNING GUIDE -->
+        <section class="main-section">
+            <div class="container">
+                <h2>プライベートエジプトツアー計画ガイド 2024-2025</h2>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>プライベートエジプトツアーの最適な時期</h3>
+                        <p><strong>10月〜4月：</strong>理想的な気候（15-25°C）。ピークシーズンには最高のプライベートガイドの可用性のために3〜6か月前の予約が必要です。</p>
+                        <p><strong>5月〜9月：</strong>より暑いですが、混雑が少ないです。プライベートツアーは、早朝と暑さの時間帯の屋内サイトのスケジューリングを最適化します。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>プライベートツアーの利点</h3>
+                        <p>柔軟なスケジューリング、パーソナライズされた内容、直接輸送、特別アクセスの機会、健康＆安全のコントロール、写真撮影などのオプションのプロサービスが含まれます。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>写真撮影の考慮事項</h3>
+                        <p>すべてのプライベートツアーで利用可能なオプションのプロサービス。ツアー全体、特定の日、または特定の場所で予約できます。エジプトの状況に基づいて設備の推奨事項が提供されます。</p>
+                    </div>
+                </div>
+                
+                <h3 class="mt-30">プライベートエジプトツアー準備チェックリスト：</h3>
+                <ul>
+                    <li><strong>3〜6か月前：</strong>プライベートツアーを予約（ピークシーズン）、コンサルタントとカスタマイズオプションについて話し合う、写真撮影の包含を決定、ビザを申請</li>
+                    <li><strong>1〜3か月前：</strong>旅程の詳細を確定、国際線を予約、旅行保険を手配、ツアーの焦点に基づいて読み物/研究を開始</li>
+                    <li><strong>1か月前：</strong>すべての手配を確認、写真撮影を含む場合は設備を確認、エジプトの状況のためのパッキングリストを確認</li>
+                    <li><strong>1週間前：</strong>最終的なパッキング、通貨交換、地図/オフラインリソースをダウンロード、ガイドとの打ち合わせ手配を確認</li>
+                    <li><strong>ツアー中：</strong>毎日ガイドと好みをコミュニケーション、柔軟性を活用、無制限の質問をする、パーソナライズされた体験を楽しむ</li>
+                    <li><strong>ツアー後：</strong>フィードバックを提供、写真を受け取る（写真撮影を予約した場合）、プライベートエジプトツアーを検討している他の人と体験を共有</li>
+                </ul>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-content">
-            <!-- UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT -->
-            <div class="footer-brand">
-                <h3 class="footer-title">エジプト写真ツアー</h3>
-                <p class="footer-text">&copy; 2025 エジプト写真ツアー</p>
-                <p class="footer-text">全著作権所有</p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">クイックリンク</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">ホーム</a></li>
-                    <li><a href="about.html">私たちについて</a></li>
-                    <li><a href="tours.html">ツアー一覧</a></li>
-                    <li><a href="gallery.html">ギャラリー</a></li>
-                    <li><a href="resources.html">リソース</a></li>
-                    <li><a href="blog.html">ブログ</a></li>
-                    <li><a href="contact.html">お問い合わせ</a></li>
-                    <li><a href="faqs.html">よくある質問</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">お問い合わせ</h4>
-                <p class="footer-text">住所: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <!-- MOVED PHONE AND EMAIL TO CONNECT WITH US SECTION -->
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">エジプト写真ツアー</h3>
+                    <p>2009年からオプションの写真撮影サービス付きプロフェッショナルプライベートエジプトツアー。有資格エジプト学者ガイド。4.9星評価サービス、カイロ、ギザ、アレクサンドリア、ルクソールでのパーソナライズされた体験を専門としています。</p>
+                    <p>&copy; 2009-2024 エジプト写真ツアー。全著作権所有。</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                
+                <div>
+                    <h3 class="footer-title">クイックリンク</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="tours.html">プライベートツアー</a></li>
+                        <li><a href="gallery.html">ギャラリー</a></li>
+                        <li><a href="resources.html">リソース</a></li>
+                        <li><a href="blog.html">ブログ</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faqs.html">よくある質問</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sja!2seg!4v1760293165082!5m2!1sja!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div>
+                    <h3 class="footer-title">お問い合わせ</h3>
+                    <p><i class="fab fa-whatsapp"></i> +20 155 073 5673</p>
+                    <p><i class="far fa-envelope"></i> info@egyptphotographytours.com</p>
+                    <p>📍 ギザ、エジプト - ピラミッド近く</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.1413113!3d29.9749687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1701715200000" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="エジプト写真ツアー所在地">
+                    </iframe>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT - OPTIMIZED FOR PAGE SPEED -->
     <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
+        // MOBILE MENU
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                
-                // Change icon based on menu state
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-            
-            // Close menu when clicking on a link (for mobile)
-            document.querySelectorAll('.nav-link a').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768) {
-                        navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
-            });
+            }
             
-            // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
+            // HERO SLIDER WITH 5 IMAGES (8-second rotation)
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevButton = document.querySelector('.slider-arrow.prev');
             const nextButton = document.querySelector('.slider-arrow.next');
             let currentSlide = 0;
             let slideInterval;
-            const slideDuration = 7000; // 7 seconds
             
             function showSlide(index) {
                 slides.forEach(slide => slide.classList.remove('active'));
@@ -1706,129 +1959,192 @@
                 showSlide(prevIndex);
             }
             
-            function startSlideShow() {
-                slideInterval = setInterval(nextSlide, slideDuration);
+            if (prevButton && nextButton) {
+                prevButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    prevSlide();
+                    startSlider();
+                });
+                
+                nextButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    nextSlide();
+                    startSlider();
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(slideInterval);
+                        showSlide(index);
+                        startSlider();
+                    });
+                });
+                
+                // Start automatic slider with 8-second intervals
+                function startSlider() {
+                    slideInterval = setInterval(nextSlide, 8000);
+                }
+                
+                startSlider();
+                
+                // Pause on hover for better UX
+                const heroSlider = document.querySelector('.hero-slider');
+                heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                heroSlider.addEventListener('mouseleave', startSlider);
             }
             
-            function stopSlideShow() {
-                clearInterval(slideInterval);
-            }
-            
-            // Event listeners
-            prevButton.addEventListener('click', function() {
-                stopSlideShow();
-                prevSlide();
-                startSlideShow();
-            });
-            
-            nextButton.addEventListener('click', function() {
-                stopSlideShow();
-                nextSlide();
-                startSlideShow();
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    stopSlideShow();
-                    showSlide(index);
-                    startSlideShow();
+            // FAQ ACCORDION
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        document.querySelectorAll('.faq-answer').forEach(ans => {
+                            ans.classList.remove('active');
+                        });
+                        document.querySelectorAll('.faq-question i').forEach(i => {
+                            i.classList.remove('fa-chevron-up');
+                            i.classList.add('fa-chevron-down');
+                        });
+                        
+                        answer.classList.add('active');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
                 });
             });
             
-            const heroSlider = document.querySelector('.hero-slider');
-            heroSlider.addEventListener('mouseenter', stopSlideShow);
-            heroSlider.addEventListener('mouseleave', startSlideShow);
-            heroSlider.addEventListener('touchstart', stopSlideShow);
-            heroSlider.addEventListener('touchend', startSlideShow);
+            // LANGUAGE SWITCHER
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (languageSwitcher) {
+                const currentLanguage = languageSwitcher.querySelector('.current-language');
+                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+                
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
+                    dropdownIcon.classList.toggle('fa-chevron-up');
+                    dropdownIcon.classList.toggle('fa-chevron-down');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!languageSwitcher.contains(e.target)) {
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Handle language selection
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Update current language display
+                        const flag = this.dataset.flag;
+                        const text = this.querySelector('.language-text').textContent;
+                        const lang = this.dataset.lang;
+                        
+                        currentLanguage.querySelector('.current-flag').textContent = flag;
+                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+                        
+                        // Close dropdown
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                        
+                        // Redirect to selected language page
+                        const href = this.getAttribute('href');
+                        if (href && href !== window.location.pathname) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+            }
             
-            // Initialize
-            startSlideShow();
-            
-            // ✅ LAZY LOADING IMAGES
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
+            // LAZY LOAD IMAGES
             if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
+                const imageObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
+                            imageObserver.unobserve(img);
                         }
                     });
                 });
                 
-                images.forEach(img => imageObserver.observe(img));
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                    imageObserver.observe(img);
+                });
             }
             
-            // ✅ LANGUAGE SWITCHER
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            currentLanguage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                languageSwitcher.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                // Measure page load time
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log('ページ読み込み時間:', loadTime + 'ms');
+                
+                // Send performance data to analytics
+                if (typeof gtag !== 'undefined' && loadTime < 10000) {
+                    gtag('event', 'timing_complete', {
+                        'name': 'page_load',
+                        'value': loadTime,
+                        'event_category': 'パフォーマンス'
+                    });
                 }
             });
             
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
+            // Service Worker Registration for PWA
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        console.log('ServiceWorker登録成功 スコープ: ', registration.scope);
+                    }).catch(function(error) {
+                        console.log('ServiceWorker登録失敗: ', error);
                     });
-                    
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
                 });
+            }
+            
+            // Add focus-visible polyfill for better accessibility
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
             });
             
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA'
-                };
-                return codes[languageName] || languageName;
-            }
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
         });
-
-        // ✅ PRELOAD FIRST HERO IMAGE ONLY
-        function preloadImages() {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = '../images/hero-image1.jpg';
-            document.head.appendChild(link);
-        }
         
-        // Preload only first image for performance
-        preloadImages();
+        // Handle reduced motion preference
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (mediaQuery.matches) {
+            // Disable or adjust animations
+            const style = document.createElement('style');
+            style.textContent = `
+                .hero-slide {
+                    transition: none !important;
+                }
+                .tour-card:hover {
+                    transform: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     </script>
 </body>
 </html>
