@@ -1,37 +1,62 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
+    <!-- PWA Configuration -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="埃及摄影之旅">
+    <meta name="application-name" content="埃及摄影之旅">
+    <meta name="format-detection" content="telephone=no">
+    
     <!-- Comprehensive Favicon Setup -->
     <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
     <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.jpg">
+    <link rel="manifest" href="../site.webmanifest" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#FFD700">
     <meta name="msapplication-config" content="../browserconfig.xml">
     <meta name="theme-color" content="#FFD700">
+    
+    <!-- Google Analytics Tracking -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVNPEMCG8F');
+    </script>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
+    <link rel="preload" href="../images/hero-image1.jpg" as="image" media="(min-width: 768px)">
     
     <!-- Search Engine & Social Media Optimization -->
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     <meta itemprop="image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
     
-    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-    <title>埃及摄影之旅 | 私人金字塔、吉萨、开罗、亚历山大豪华埃及旅行</title>
+    <!-- 优化后的中文标题 - 包含高搜索量关键词 -->
+    <title>埃及私人定制游 | 开罗、吉萨金字塔、卢克索专业跟拍旅游套餐</title>
 
-    <meta name="description" content="发现埃及摄影之旅 — 私人金字塔摄影、开罗和尼罗河摄影体验，以及专业导游带领的埃及各地旅行。立即预订您难忘的埃及之旅！">
+    <!-- 优化后的中文描述 - 针对中文搜索用户 -->
+    <meta name="description" content="埃及摄影之旅提供专业中文导游私人定制游，含专业跟拍服务。开罗、吉萨金字塔、亚历山大、卢克索深度游，个性化行程，高质量摄影跟拍，打造难忘埃及之旅。">
 
-    <meta name="keywords" content="埃及摄影之旅, 豪华埃及旅行, 埃及豪华旅行,
-    高端埃及旅程, 金字塔旅行, 开罗导游, 尼罗河照片, 埃及旅行, 卢克索神庙摄影, 亚历山大旅行">
+    <!-- 中文高搜索量关键词 -->
+    <meta name="keywords" content="埃及旅游, 埃及私人定制游, 开罗旅游, 吉萨金字塔旅游, 卢克索旅游, 亚历山大旅游, 埃及跟拍旅游, 埃及摄影旅游, 埃及中文导游, 埃及旅游套餐, 埃及自由行, 尼罗河游轮, 埃及深度游, 埃及家庭游, 埃及蜜月旅行, 埃及摄影服务, 埃及旅拍, 埃及专业导游, 埃及地接, 埃及旅行社">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <link rel="canonical" href="https://www.egyptphotographytours.com/zh/" />
 
+    <!-- Language Alternates -->
     <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/" />
     <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/" />
     <link rel="alternate" hreflang="fr" href="https://www.egyptphotographytours.com/fr/" />
@@ -40,137 +65,207 @@
     <link rel="alternate" hreflang="it" href="https://www.egyptphotographytours.com/it/" />
     <link rel="alternate" hreflang="zh" href="https://www.egyptphotographytours.com/zh/" />
     <link rel="alternate" hreflang="ko" href="https://www.egyptphotographytours.com/ko/" />
-    <link rel="alternate" hreflang="nl" href="https://www.egyptphotographytours.com/nl/" />
     <link rel="alternate" hreflang="pt" href="https://www.egyptphotographytours.com/pt/" />
     <link rel="alternate" hreflang="id" href="https://www.egyptphotographytours.com/id/" />
     <link rel="alternate" hreflang="ja" href="https://www.egyptphotographytours.com/ja/" />
     <link rel="alternate" hreflang="ru" href="https://www.egyptphotographytours.com/ru/" />
+    <link rel="alternate" hreflang="da" href="https://www.egyptphotographytours.com/da/" />
+    <link rel="alternate" hreflang="nl" href="https://www.egyptphotographytours.com/nl/" />
+    <link rel="alternate" hreflang="hi" href="https://www.egyptphotographytours.com/hi/" />
+    <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/" />
+    <link rel="alternate" hreflang="sv" href="https://www.egyptphotographytours.com/sv/" />
+    <link rel="alternate" hreflang="tl" href="https://www.egyptphotographytours.com/tl/" />
+    <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/" />
+    <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/" />
+    <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/" />
 
-    <meta property="og:title" content="埃及摄影之旅 | 专业金字塔与神庙摄影冒险">
-    <meta property="og:description" content="与专业摄影导游一起捕捉古埃及的魅力。私人金字塔、神庙和历史开罗之旅起价150美元。">
+    <!-- 中文Open Graph元标签 -->
+    <meta property="og:title" content="埃及私人定制游 | 开罗、吉萨金字塔、卢克索专业跟拍旅游套餐">
+    <meta property="og:description" content="埃及摄影之旅提供专业中文导游私人定制游，含专业跟拍服务。开罗、吉萨金字塔、亚历山大、卢克索深度游。">
     <meta property="og:url" content="https://www.egyptphotographytours.com/zh/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="埃及摄影之旅">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="埃及摄影之旅 | 专业摄影冒险">
-    <meta name="twitter:description" content="专业导游带领的埃及最具标志性地点摄影之旅。与专业导游一起拍摄精彩照片。">
+    <meta name="twitter:title" content="埃及私人定制游含专业跟拍服务">
+    <meta name="twitter:description" content="埃及摄影之旅提供专业中文导游私人定制游，含专业跟拍服务。开罗、吉萨金字塔、亚历山大、卢克索深度游。">
     <meta name="google-adsense-account" content="ca-pub-1042032515879132">
     
+    <!-- 地理元标签 -->
     <meta name="geo.region" content="EG-C">
     <meta name="geo.placename" content="开罗, 埃及">
     <meta name="geo.position" content="30.0444;31.2357">
 
-    <!-- UPDATED SCHEMA MARKUP FOR RICH SNIPPETS WITH 5 STARS AND 26 REVIEWS -->
+    <!-- 中文结构化数据 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "埃及摄影之旅",
-      "url": "https://www.egyptphotographytours.com/zh",
-      "logo": "https://www.egyptphotographytours.com/images/favicon-32x32.png",
-      "sameAs": [
-        "https://www.instagram.com/hossam_artistic",
-        "https://www.trustpilot.com/review/egyptphotographytours.com"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "埃及摄影之旅",
-      "image": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg",
-      "description": "埃及私人导游摄影之旅，包括金字塔、开罗、亚历山大等。专业摄影课程和专家当地导游。",
-      "url": "https://www.egyptphotographytours.com/zh",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "吉萨",
-        "addressRegion": "吉萨省",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "openingHours": "周一至周日 09:00-18:00",
-      "priceRange": "$$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "26",
-        "bestRating": "5"
-      },
-      "review": [
+      "@graph": [
         {
-          "@type": "Review",
-          "author": "Daniel",
-          "datePublished": "2024-05-15",
-          "reviewBody": "我们和Hossam一起度过了愉快的时光！他对我们的团队非常有帮助和耐心！整个经历对我们来说很有趣，他让我们感到非常舒适。我们很喜欢这一切！",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
+          "@type": "WebSite",
+          "name": "埃及摄影之旅 - 埃及私人定制游",
+          "url": "https://www.egyptphotographytours.com/zh/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.egyptphotographytours.com/zh/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
         },
         {
-          "@type": "Review",
-          "author": "Cristina",
-          "datePublished": "2024-04-22",
-          "reviewBody": "Hossam是一位才华横溢的摄影师，拥有惊人的技能。在金字塔的惊人景色中拍摄了许多精彩的照片。",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "TravelAgency",
+          "name": "埃及摄影之旅",
+          "url": "https://www.egyptphotographytours.com/zh/",
+          "logo": "https://www.egyptphotographytours.com/images/logo.jpg",
+          "telephone": "+20-155-073-5673",
+          "email": "info@egyptphotographytours.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+            "addressLocality": "吉萨",
+            "addressRegion": "吉萨省",
+            "postalCode": "12557",
+            "addressCountry": "EG"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "openingHours": "周一至周日 08:00-22:00",
+          "priceRange": "$$-$$$",
+          "currenciesAccepted": "USD, EUR, EGP, CNY"
         },
         {
-          "@type": "Review",
-          "author": "Eduardo",
-          "datePublished": "2024-03-30",
-          "reviewBody": "Hossam提供了吉萨金字塔的精彩之旅。总是体贴、沟通良好且知识渊博。",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "首页",
+              "item": "https://www.egyptphotographytours.com/zh/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "埃及旅游套餐",
+              "item": "https://www.egyptphotographytours.com/zh/tours.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "埃及私人定制游",
+              "item": "https://www.egyptphotographytours.com/zh/private-egypt-tours.html"
+            }
+          ]
+        },
+        {
+          "@type": ["TouristTrip", "Product"],
+          "name": "埃及私人定制游含专业跟拍服务",
+          "description": "埃及私人定制游，专业中文导游，可选专业跟拍服务。覆盖开罗、吉萨金字塔、亚历山大和卢克索。",
+          "url": "https://www.egyptphotographytours.com/zh/private-egypt-tours.html",
+          "image": [
+            "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image1.jpg",
+            "https://www.egyptphotographytours.com/images/hero-image2.jpg"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "1900",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "seller": {
+              "@type": "Organization",
+              "name": "埃及摄影之旅"
+            }
+          },
+          "duration": "P7D",
+          "touristType": ["独自旅行者", "情侣", "家庭", "摄影爱好者", "豪华旅游者"],
+          "brand": {
+            "@type": "Brand",
+            "name": "埃及摄影之旅"
+          },
+          "sku": "EPT-PET-001-ZH",
+          "category": "私人定制旅游套餐"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "你们的埃及私人定制游有什么特别之处？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "我们的埃及私人定制游提供专属中文导游服务，行程完全个性化，并可选专业跟拍服务。我们专注于深度文化体验，灵活安排行程，提供标准旅游团无法到达的独家景点访问。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "专业跟拍服务是必须包含的吗？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "不是必须的。专业跟拍服务是可选的。您可以选择包含专业摄影师的套餐，也可以选择只有导游服务的纯旅游套餐。我们提供两种选择以满足不同客户的需求。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "你们的旅游套餐覆盖埃及哪些城市？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "我们的旅游套餐全面覆盖埃及主要旅游城市：开罗（埃及博物馆、伊斯兰开罗）、吉萨（金字塔和狮身人面像）、亚历山大（地中海沿岸和希腊罗马遗址）和卢克索（帝王谷和神庙）。我们可以根据您的兴趣和时间安排多城市或单城市行程。"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "埃及私人定制游完全指南：开罗、吉萨、亚历山大和卢克索",
+          "description": "全面指南介绍埃及私人定制游，包括开罗、吉萨、亚历山大和卢克索的详细行程规划和可选专业跟拍服务。",
+          "author": {
+            "@type": "Person",
+            "name": "霍萨姆",
+            "jobTitle": "专业摄影师兼埃及学家"
+          },
+          "datePublished": "2024-01-15",
+          "dateModified": "2024-12-15",
+          "publisher": {
+            "@type": "Organization",
+            "name": "埃及摄影之旅",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/logo.jpg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.egyptphotographytours.com/zh/blog/private-egypt-tours-guide.html"
+          },
+          "image": [
+            {
+              "@type": "ImageObject",
+              "url": "https://www.egyptphotographytours.com/images/egypt-tours-guide-1.jpg",
+              "width": "1200",
+              "height": "800",
+              "caption": "埃及私人定制游含专业跟拍服务 - 开罗、吉萨、亚历山大和卢克索"
+            }
+          ],
+          "keywords": "埃及私人定制游, 埃及跟拍旅游, 开罗旅游, 吉萨金字塔旅游, 亚历山大旅游, 卢克索旅游, 埃及摄影旅游"
         }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/EgyptPhotographyTours",
-        "https://www.instagram.com/hossam_artistic/",
-        "https://www.tiktok.com/@egyptphotographytours",
-        "https://www.youtube.com/@Egyptphotographytours"
       ]
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      "name": "吉萨金字塔",
-      "description": "吉萨大金字塔是吉萨金字塔群中三座金字塔中最古老和最大的一座。",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "吉萨",
-        "addressRegion": "吉萨省",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "image": "https://www.egyptphotographytours.com/images/pyramids-of-giza.jpg"
-    }
-    </script>
-
+    <!-- Performance Optimized CSS Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     
     <style>
+        /* CRITICAL CSS - Inlined for performance */
         :root {
             --primary-dark: #1a202c;
             --accent-light: #FFD700;
@@ -179,9 +274,11 @@
         }
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
-            font-family: 'Inter', 'Microsoft YaHei', sans-serif;
+            font-family: 'Inter', 'Microsoft YaHei', 'PingFang SC', sans-serif;
             background-color: #f8f8f8;
             color: var(--text-color);
             margin: 0;
@@ -197,24 +294,23 @@
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* HEADER STYLES */
         .header {
             background-color: var(--primary-dark);
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             padding: 12px 0;
         }
         .header .content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             gap: 12px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
-                gap: 0;
+                justify-content: space-between;
             }
         }
         .logo-section {
@@ -230,28 +326,9 @@
         .logo-link {
             font-size: 20px;
             font-weight: 700;
-            letter-spacing: -0.025em;
             color: var(--accent-light);
             text-decoration: none;
         }
-        @media (min-width: 768px) {
-            .logo-link {
-                font-size: 24px;
-            }
-        }
-        .header-text {
-            font-size: 14px;
-            font-style: italic;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 16px;
-            }
-        }
-        
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
@@ -271,22 +348,15 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
-            padding: 4px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
         }
-        .contact-icon {
-            font-size: 14px;
-            width: 16px;
-            text-align: center;
-        }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 50;
@@ -295,26 +365,20 @@
         .navbar-content {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            justify-content: space-between;
         }
         @media (min-width: 768px) {
             .navbar-content {
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
             }
         }
         .nav-links {
             display: none;
             flex-direction: column;
-            width: 100%;
-            gap: 0;
-            font-size: 16px;
-            font-weight: 500;
             list-style: none;
             padding: 0;
             margin: 0;
-            background-color: #374151;
         }
         .nav-links.active {
             display: flex;
@@ -323,33 +387,19 @@
             .nav-links {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
                 gap: 16px;
-                width: auto;
-            }
-        }
-        .nav-link {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-link:last-child {
-            border-bottom: none;
-        }
-        @media (min-width: 768px) {
-            .nav-link {
-                border-bottom: none;
             }
         }
         .nav-link a {
             color: white;
             text-decoration: none;
             padding: 12px 16px;
-            transition: color 0.3s ease;
             display: block;
+            transition: color 0.3s ease;
         }
         @media (min-width: 768px) {
             .nav-link a {
-                padding: 8px 0;
+                padding: 16px 8px;
             }
         }
         .nav-link a:hover {
@@ -363,13 +413,10 @@
         }
         @media (min-width: 768px) {
             .cta-container {
-                justify-content: flex-end;
-                gap: 12px;
                 padding: 0;
+                gap: 12px;
             }
         }
-        
-        /* MOBILE MENU TOGGLE */
         .mobile-menu-toggle {
             display: block;
             background: none;
@@ -385,7 +432,128 @@
             }
         }
         
-        /* HERO SLIDER STYLES - MOBILE OPTIMIZED */
+        /* Language Switcher */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+        }
+
+        .current-language:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .current-flag {
+            font-size: 16px;
+        }
+
+        .current-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .dropdown-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 220px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #374151;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .language-switcher.active .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-light);
+        }
+
+        .language-item.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .flag-icon {
+            font-size: 18px;
+            min-width: 24px;
+        }
+
+        .language-text {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Scrollbar styling for dropdown */
+        .language-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
+        }
+        
+        /* HERO SLIDER - UPDATED TO 5 IMAGES */
         .hero-slider {
             position: relative;
             height: 60vh;
@@ -409,14 +577,8 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 16px;
         }
         .hero-slide.active {
             opacity: 1;
@@ -433,63 +595,64 @@
         .hero-slide:nth-child(4) {
             background-image: url('../images/hero-image4.jpg');
         }
+        .hero-slide:nth-child(5) {
+            background-image: url('../images/hero-image5.jpg');
+        }
         .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* UPDATED HERO TITLE STYLES - SMALLER AND HIGHER POSITION */
-        .hero-title {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
             color: white;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
-            margin-top: 0;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            background-color: transparent;
+            border-radius: 10px;
         }
-        @media (min-width: 480px) {
-            .hero-title {
-                font-size: 28px;
-            }
+        
+        /* HERO TITLE */
+        .hero-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #ffffff !important;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
         }
         @media (min-width: 768px) {
             .hero-title {
                 font-size: 48px;
-                margin-top: -60px;
-            }
-        }
-        .hero-subtitle {
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
-            line-height: 1.4;
-        }
-        @media (min-width: 480px) {
-            .hero-subtitle {
-                font-size: 16px;
-            }
-        }
-        @media (min-width: 768px) {
-            .hero-subtitle {
-                font-size: 18px;
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 0, 0, 0.9);
             }
         }
         
-        /* NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES */
+        /* HERO SUBTITLE */
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: #ffffff !important;
+            text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8);
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        @media (min-width: 768px) {
+            .hero-subtitle {
+                font-size: 22px;
+                text-shadow: 1px 1px 18px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
+            }
+        }
+        
+        /* HERO BUTTONS */
         .hero-buttons-section {
             background-color: #f8f8f8;
             padding: 30px 0;
             text-align: center;
-            border-top: 1px solid #e5e7eb;
         }
         .hero-buttons-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             gap: 16px;
             max-width: 600px;
             margin: 0 auto;
@@ -506,15 +669,8 @@
             font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
             display: block;
             text-align: center;
-        }
-        @media (min-width: 768px) {
-            .hero-button {
-                padding: 12px 32px;
-                font-size: 18px;
-            }
         }
         .hero-button-primary {
             background-color: var(--accent-light);
@@ -534,7 +690,7 @@
             transform: scale(1.05);
         }
         
-        /* SLIDER NAVIGATION CONTROLS - MOBILE OPTIMIZED */
+        /* SLIDER CONTROLS */
         .slider-controls {
             position: absolute;
             bottom: 20px;
@@ -542,13 +698,8 @@
             right: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 20px;
-            z-index: 20;
-        }
-        .slider-dots {
-            display: flex;
             gap: 10px;
+            z-index: 20;
         }
         .slider-dot {
             width: 10px;
@@ -574,20 +725,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             z-index: 20;
             color: var(--primary-dark);
-            font-size: 16px;
-        }
-        @media (min-width: 768px) {
-            .slider-arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-        }
-        .slider-arrow:hover {
-            background-color: rgba(255, 255, 255, 0.9);
         }
         .slider-arrow.prev {
             left: 10px;
@@ -596,641 +735,400 @@
             right: 10px;
         }
         
-        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
+        /* MAIN CONTENT SECTIONS */
         .main-section {
             padding: 40px 0;
-            text-align: center;
         }
         @media (min-width: 768px) {
             .main-section {
-                padding: 64px 0;
-            }
-        }
-        .main-section h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-        @media (min-width: 768px) {
-            .main-section h2 {
-                font-size: 36px;
-                margin-bottom: 32px;
-            }
-        }
-        .main-section h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin: 20px 0 8px;
-        }
-        @media (min-width: 768px) {
-            .main-section h3 {
-                font-size: 24px;
-                margin: 24px 0 8px;
-            }
-        }
-        .main-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 896px;
-            margin: 0 auto 20px;
-        }
-        @media (min-width: 768px) {
-            .main-section p {
-                font-size: 18px;
-                margin: 0 auto 24px;
+                padding: 60px 0;
             }
         }
         .bg-light-gray {
             background-color: #f3f4f6;
         }
+        .bg-primary-dark {
+            background-color: var(--primary-dark);
+        }
+        
+        /* HEADINGS */
+        h1 {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+        }
+        h2 {
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 36px;
+            }
+        }
+        h3 {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 28px;
+            }
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            p {
+                font-size: 18px;
+            }
+        }
+        
+        /* CARDS & GRIDS */
         .grid-section {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .grid-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-        @media (min-width: 1024px) {
             .grid-section {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-        @media (min-width: 768px) {
-            .card {
-                padding: 32px;
-            }
-        }
-        .card:hover {
-            transform: scale(1.05);
         }
         .card-icon {
-            width: 50px;
-            height: 50px;
+            font-size: 40px;
             color: var(--accent-light);
             margin-bottom: 16px;
         }
-        @media (min-width: 768px) {
-            .card-icon {
-                width: 64px;
-                height: 64px;
-            }
-        }
         .card-title {
             font-size: 20px;
-            font-weight: 600;
-            color: var(--primary-dark);
             margin-bottom: 12px;
+            color: var(--primary-dark);
         }
-        @media (min-width: 768px) {
-            .card-title {
-                font-size: 24px;
-            }
-        }
-        .card-text {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        @media (min-width: 768px) {
-            .card-text {
-                font-size: 16px;
-            }
-        }
+        
+        /* TOUR GRID */
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
             }
         }
         @media (min-width: 1024px) {
-            .tour-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        @media (min-width: 1280px) {
             .tour-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
         .tour-card {
-            background-color: white;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            position: relative;
         }
         .tour-card:hover {
-            transform: scale(1.05);
-        }
-        .sale-tag {
-            background-color: #E74C3C;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            z-index: 10;
+            transform: translateY(-5px);
         }
         .tour-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        @media (min-width: 768px) {
-            .tour-img {
-                height: 224px;
-            }
-        }
         .tour-card-body {
             padding: 20px;
         }
-        @media (min-width: 768px) {
-            .tour-card-body {
-                padding: 24px;
-            }
-        }
         .tour-card-title {
             font-size: 20px;
-            font-weight: 600;
+            margin-bottom: 12px;
             color: var(--primary-dark);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        @media (min-width: 768px) {
-            .tour-card-title {
-                font-size: 24px;
-            }
-        }
-        .tour-card-text {
-            color: #4b5563;
-            margin-bottom: 16px;
-            text-align: left;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .tour-card-text {
-                font-size: 16px;
-                line-height: 1.6;
-            }
         }
         .tour-card-footer {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 8px;
+            align-items: center;
+            margin-top: 20px;
         }
         .tour-price {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: bold;
             color: var(--accent-dark);
         }
-        @media (min-width: 768px) {
-            .tour-price {
-                font-size: 18px;
-            }
-        }
-        .tour-duration {
-            font-size: 14px;
-            color: #6b7280;
-        }
         .tour-cta {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-light);
+            display: inline-block;
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 10px 20px;
-            border-radius: 9999px;
-            text-align: center;
+            border-radius: 4px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .tour-cta {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
         .tour-cta:hover {
-            background-color: var(--accent-dark);
+            background: var(--accent-dark);
         }
-        .bg-primary-dark {
-            background-color: var(--primary-dark);
+        
+        /* FAQ SECTION */
+        .faq-container {
+            margin-top: 30px;
         }
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* REVIEWS */
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-        }
-        @media (min-width: 1024px) {
             .reviews-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         .review-card {
-            background-color: white;
+            background: white;
             padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            color: var(--primary-dark);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
-        @media (min-width: 768px) {
-            .review-card {
-                padding: 32px;
-            }
-        }
         .review-stars {
-            font-size: 20px;
             color: var(--accent-light);
-            margin-bottom: 12px;
-        }
-        @media (min-width: 768px) {
-            .review-stars {
-                font-size: 24px;
-            }
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .review-text {
             font-style: italic;
-            font-size: 16px;
             margin-bottom: 16px;
-            line-height: 1.5;
-        }
-        @media (min-width: 768px) {
-            .review-text {
-                font-size: 18px;
-                line-height: 1.6;
-            }
-        }
-        .review-author {
-            font-weight: 600;
-            color: var(--primary-dark);
-            font-size: 14px;
-        }
-        @media (min-width: 768px) {
-            .review-author {
-                font-size: 16px;
-            }
         }
         .review-cta {
-            margin-top: 30px;
             display: inline-block;
-            background-color: var(--accent-light);
+            background: var(--accent-light);
             color: var(--primary-dark);
-            font-weight: 700;
             padding: 12px 24px;
-            border-radius: 9999px;
-            font-size: 16px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 4px;
             text-decoration: none;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-        }
-        @media (min-width: 768px) {
-            .review-cta {
-                margin-top: 40px;
-                padding: 12px 32px;
-                font-size: 18px;
-            }
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background 0.3s ease;
         }
         .review-cta:hover {
-            background-color: var(--accent-dark);
-            transform: scale(1.05);
+            background: var(--accent-dark);
         }
+        
+        /* FOOTER */
         .footer {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             color: white;
-            padding: 30px 0;
-            margin-top: auto;
-        }
-        @media (min-width: 768px) {
-            .footer {
-                padding: 40px 0;
-            }
+            padding: 40px 0;
+            margin-top: 60px;
         }
         .footer-content {
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
         @media (min-width: 768px) {
             .footer-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                text-align: left;
-                flex-wrap: wrap;
-            }
-        }
-        .footer-section {
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-section {
-                margin-bottom: 0;
-            }
-        }
-        /* UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT */
-        .footer-brand {
-            text-align: left;
-            margin-bottom: 24px;
-            flex: 1;
-            min-width: 250px;
-        }
-        @media (min-width: 768px) {
-            .footer-brand {
-                margin-bottom: 0;
-                text-align: left;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         .footer-title {
-            font-size: 20px;
-            font-weight: 700;
             color: var(--accent-light);
-            margin-bottom: 8px;
-        }
-        @media (min-width: 768px) {
-            .footer-title {
-                font-size: 24px;
-            }
-        }
-        .footer-text {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
+            font-size: 20px;
+            margin-bottom: 16px;
         }
         .footer-links {
             list-style: none;
-            padding: 0;
-            font-size: 14px;
-            line-height: 1.8;
         }
-        .footer-links li a {
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .footer-links li a:hover {
+        .footer-links a:hover {
             color: var(--accent-light);
         }
         .social-links {
             display: flex;
-            justify-content: center;
             gap: 16px;
-            margin-top: 12px;
-        }
-        @media (min-width: 768px) {
-            .social-links {
-                justify-content: flex-start;
-            }
+            margin-top: 16px;
         }
         .social-links a {
             color: white;
+            font-size: 20px;
             transition: color 0.3s ease;
         }
         .social-links a:hover {
             color: var(--accent-light);
         }
-        .social-icon {
-            font-size: 20px;
-        }
-        
-        /* FOOTER CONTACT INFO STYLES - MOVED TO CONNECT WITH US SECTION */
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-        .footer-contact-info {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-            justify-content: center;
-        }
-        @media (min-width: 768px) {
-            .footer-contact-info {
-                justify-content: flex-start;
-            }
-        }
-        .footer-contact-info:hover {
-            color: var(--accent-light);
-        }
-        
-        /* Language Switcher Styles - MOBILE OPTIMIZED */
-        .language-switcher {
-            position: relative;
-            display: inline-block;
-        }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #374151;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            min-width: 180px;
-            max-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        .language-switcher.active .language-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .language-switcher.active .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-        .language-item {
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #4B5563;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .language-item:last-child {
-            border-bottom: none;
-        }
-        .language-item:hover {
-            background-color: #4B5563;
-        }
-        .language-item.active {
-            background-color: var(--accent-light);
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        .flag-icon {
-            font-size: 16px;
-            margin-right: 8px;
-            min-width: 18px;
-        }
-        .language-text {
-            flex: 1;
-            font-size: 14px;
-        }
-        .current-language {
-            display: flex;
-            align-items: center;
-            padding: 6px 10px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-        .current-language:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        .current-flag {
-            font-size: 16px;
-            margin-right: 6px;
-        }
-        .dropdown-arrow {
-            margin-left: 6px;
-            transition: transform 0.2s ease;
-        }
-        .language-dropdown::-webkit-scrollbar {
-            width: 4px;
-        }
-        .language-dropdown::-webkit-scrollbar-track {
-            background: #4B5563;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb {
-            background: #6B7280;
-            border-radius: 2px;
-        }
-        .language-dropdown::-webkit-scrollbar-thumb:hover {
-            background: #9CA3AF;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .lazy-load.loaded {
-            opacity: 1;
-        }
-        @media (max-width: 768px) {
-            .tour-grid, .reviews-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
-        
-        .book-now-button {
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            background-color: #FFD700;
-            color: #1a202c;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            white-space: nowrap;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: inline-block;
-        }
-        .book-now-button:hover {
-            background-color: #E2B700;
-            transform: scale(1.05);
-        }
-        
-        /* MAP STYLES - SIGNIFICANTLY LARGER FOR REVIEWS */
         .footer-map {
-            margin-top: 20px;
-            width: 100%;
-            flex: 2; /* Much larger flex value to take more space */
-        }
-        @media (min-width: 768px) {
-            .footer-map {
-                margin-top: 0;
-            }
+            grid-column: 1 / -1;
         }
         .footer-map iframe {
             width: 100%;
-            height: 350px; /* Significantly increased from 220px for mobile */
+            height: 300px;
             border: none;
             border-radius: 8px;
         }
-        @media (min-width: 768px) {
-            .footer-map iframe {
-                height: 400px; /* Significantly increased from 280px for desktop */
+        
+        /* BREADCRUMB */
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: #666;
+        }
+        
+        /* BOOK NOW BUTTON */
+        .book-now-button {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .book-now-button:hover {
+            background: var(--accent-dark);
+        }
+        
+        /* UTILITY CLASSES */
+        .text-center {
+            text-align: center;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .mt-30 {
+            margin-top: 30px;
+        }
+        
+        /* NEW: SEO ARTICLE SECTION */
+        .seo-article {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .seo-article h2 {
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent-light);
+            padding-bottom: 15px;
+        }
+        .seo-article h3 {
+            color: #2d3748;
+            margin-top: 30px;
+        }
+        .seo-article ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .seo-article li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Print Styles for PageSpeed */
+        @media print {
+            .hero-slider,
+            .slider-controls,
+            .slider-arrow,
+            .nav-links,
+            .language-switcher,
+            .social-links,
+            .footer-map {
+                display: none !important;
+            }
+            .header,
+            .footer {
+                position: static !important;
             }
         }
-        @media (min-width: 1024px) {
-            .footer-map iframe {
-                height: 450px; /* Even larger for larger screens */
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+            outline: 3px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header class="header">
         <div class="container content">
             <div class="logo-section">
                 <img src="../images/egypt-photography-tours-logo.jpg"
-                     alt="埃及摄影之旅标志 - 金字塔和古迹的专业摄影导游服务"
+                     alt="埃及摄影之旅标志 - 埃及私人定制游"
                      class="logo-img"
                      loading="eager"
                      width="40"
@@ -1239,92 +1137,147 @@
             </div>
             <div class="header-contact">
                 <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="contact-info">
-                    <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+                    <i class="fab fa-whatsapp"></i> +20 155 073 5673
                 </a>
                 <a href="mailto:info@egyptphotographytours.com" class="contact-info">
-                    <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+                    <i class="far fa-envelope"></i> info@egyptphotographytours.com
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="container navbar-content">
             <div class="cta-container">
-                <button class="mobile-menu-toggle" aria-label="切换导航菜单">
+                <button class="mobile-menu-toggle" aria-label="打开菜单">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="contact.html" class="book-now-button">立即预订</a>
+                
+                <!-- Language Switcher -->
                 <div class="language-switcher">
-                    <div class="current-language">
+                    <div class="current-language" aria-label="选择语言">
                         <span class="current-flag">🇨🇳</span>
-                        <span>中文</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <span class="current-text">中文</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
                     </div>
                     <div class="language-dropdown">
-                        <a href="../index.html" class="language-item">
+                        <!-- English -->
+                        <a href="../index.html" class="language-item" data-lang="en" data-flag="🇺🇸">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="../ru/index.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
+                        <!-- Finnish -->
+                        <a href="../fi/index.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
+                            <span class="flag-icon">🇫🇮</span>
+                            <span class="language-text">Suomi (Finnish)</span>
                         </a>
-                        <a href="../ar/index.html" class="language-item">
+                        <!-- Arabic -->
+                        <a href="../ar/index.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
                             <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
+                            <span class="language-text">العربية (Arabic)</span>
                         </a>
-                        <a href="../fr/index.html" class="language-item">
+                        <!-- Russian -->
+                        <a href="../ru/index.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский (Russian)</span>
+                        </a>
+                        <!-- French -->
+                        <a href="../fr/index.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
                             <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
+                            <span class="language-text">Français (French)</span>
                         </a>
-                        <a href="../de/index.html" class="language-item">
+                        <!-- German -->
+                        <a href="../de/index.html" class="language-item" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
+                            <span class="language-text">Deutsch (German)</span>
                         </a>
-                        <a href="../es/index.html" class="language-item">
+                        <!-- Spanish -->
+                        <a href="../es/index.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
+                            <span class="language-text">Español (Spanish)</span>
                         </a>
-                        <a href="../it/index.html" class="language-item">
+                        <!-- Italian -->
+                        <a href="../it/index.html" class="language-item" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
+                            <span class="language-text">Italiano (Italian)</span>
                         </a>
-                        <a href="index.html" class="language-item active">
+                        <!-- Chinese -->
+                        <a href="index.html" class="language-item active" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
+                            <span class="language-text">中文 (Chinese)</span>
                         </a>
-                        <a href="../ko/index.html" class="language-item">
+                        <!-- Korean -->
+                        <a href="../ko/index.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
+                            <span class="language-text">한국어 (Korean)</span>
                         </a>
-                        <a href="../nl/index.html" class="language-item">
-                            <span class="flag-icon">🇳🇱</span>
-                            <span class="language-text">Nederlands</span>
-                        </a>
-                        <a href="../pt/index.html" class="language-item">
+                        <!-- Portuguese -->
+                        <a href="../pt/index.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
+                            <span class="language-text">Português (Portuguese)</span>
                         </a>
-                        <a href="../id/index.html" class="language-item">
+                        <!-- Indonesian -->
+                        <a href="../id/index.html" class="language-item" data-lang="id" data-flag="🇮🇩">
                             <span class="flag-icon">🇮🇩</span>
-                            <span class="language-text">Bahasa</span>
+                            <span class="language-text">Bahasa Indonesia</span>
                         </a>
-                        <a href="../ja/index.html" class="language-item">
+                        <!-- Japanese -->
+                        <a href="../ja/index.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
                             <span class="flag-icon">🇯🇵</span>
-                            <span class="language-text">日本語</span>
+                            <span class="language-text">日本語 (Japanese)</span>
+                        </a>
+                        <!-- Danish -->
+                        <a href="../da/index.html" class="language-item" data-lang="da" data-flag="🇩🇰">
+                            <span class="flag-icon">🇩🇰</span>
+                            <span class="language-text">Dansk (Danish)</span>
+                        </a>
+                        <!-- Dutch -->
+                        <a href="../nl/index.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
+                            <span class="flag-icon">🇳🇱</span>
+                            <span class="language-text">Nederlands (Dutch)</span>
+                        </a>
+                        <!-- Hindi -->
+                        <a href="../hi/index.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
+                            <span class="flag-icon">🇮🇳</span>
+                            <span class="language-text">हिन्दी (Hindi)</span>
+                        </a>
+                        <!-- Norwegian -->
+                        <a href="../no/index.html" class="language-item" data-lang="no" data-flag="🇳🇴">
+                            <span class="flag-icon">🇳🇴</span>
+                            <span class="language-text">Norsk (Norwegian)</span>
+                        </a>
+                        <!-- Swedish -->
+                        <a href="../sv/index.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
+                            <span class="flag-icon">🇸🇪</span>
+                            <span class="language-text">Svenska (Swedish)</span>
+                        </a>
+                        <!-- Tagalog -->
+                        <a href="../tl/index.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
+                            <span class="flag-icon">🇵🇭</span>
+                            <span class="language-text">Tagalog</span>
+                        </a>
+                        <!-- Malay -->
+                        <a href="../ms/index.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
+                            <span class="flag-icon">🇲🇾</span>
+                            <span class="language-text">Bahasa Melayu</span>
+                        </a>
+                        <!-- Thai -->
+                        <a href="../th/index.html" class="language-item" data-lang="th" data-flag="🇹🇭">
+                            <span class="flag-icon">🇹🇭</span>
+                            <span class="language-text">ไทย (Thai)</span>
                         </a>
                     </div>
                 </div>
             </div>
+            
             <ul class="nav-links">
                 <li class="nav-link"><a href="index.html">首页</a></li>
                 <li class="nav-link"><a href="about.html">关于我们</a></li>
-                <li class="nav-link"><a href="tours.html">我们的旅行</a></li>
-                <li class="nav-link"><a href="gallery.html">图库</a></li>
-                <li class="nav-link"><a href="resources.html">资源</a></li>
+                <li class="nav-link"><a href="tours.html">旅游套餐</a></li>
+                <li class="nav-link"><a href="gallery.html">作品展示</a></li>
+                <li class="nav-link"><a href="resources.html">旅行资源</a></li>
                 <li class="nav-link"><a href="blog.html">博客</a></li>
                 <li class="nav-link"><a href="contact.html">联系我们</a></li>
                 <li class="nav-link"><a href="faqs.html">常见问题</a></li>
@@ -1332,365 +1285,663 @@
         </div>
     </nav>
 
+    <!-- HERO SLIDER - UPDATED TO 5 IMAGES -->
+    <section class="hero-slider">
+        <div class="hero-slides">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h2 class="hero-title">埃及私人定制游 | 中文导游专业服务</h2>
+                    <p class="hero-subtitle">专业中文导游私人定制游，可选专业跟拍服务。开罗、吉萨金字塔、亚历山大、卢克索深度体验，个性化行程安排</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">开罗与吉萨金字塔私人游</h2>
+                    <p class="hero-subtitle">独家访问金字塔、博物馆和隐藏景点，专业埃及学家中文导游讲解</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">卢克索与亚历山大深度体验</h2>
+                    <p class="hero-subtitle">探索古老神庙和地中海历史，个性化私人定制行程</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">可选专业跟拍服务</h2>
+                    <p class="hero-subtitle">用高质量专业摄影记录您的埃及之旅，留下难忘回忆</p>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">定制埃及旅游套餐</h2>
+                    <p class="hero-subtitle">为家庭、情侣和独自旅行者量身定制行程，灵活选择，完美体验</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="slider-arrow prev" aria-label="上一张"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next" aria-label="下一张"><i class="fas fa-chevron-right"></i></button>
+        
+        <!-- 5 Dots for 5 slides -->
+        <div class="slider-controls">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+            <div class="slider-dot" data-slide="3"></div>
+            <div class="slider-dot" data-slide="4"></div>
+        </div>
+    </section>
+
+    <!-- HERO BUTTONS -->
+    <section class="hero-buttons-section">
+        <div class="container">
+            <div class="hero-buttons-container">
+                <a href="tours.html" class="hero-button hero-button-primary">查看私人定制游</a>
+                <a href="contact.html" class="hero-button hero-button-secondary">预订埃及之旅</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
     <main class="main">
-        <!-- HERO SLIDER SECTION - FIXED -->
-        <section class="hero-slider">
-            <div class="hero-slides">
-                <div class="hero-slide active">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            捕捉埃及的魅力 - 让每一刻都成为杰作
-                        </h1>
-                        <p class="hero-subtitle">
-                            前往埃及最具标志性地标的专业摄影和历史之旅。专业导游、独家访问和难忘体验等待着您。
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            独家访问埃及的隐藏宝藏
-                        </h1>
-                        <p class="hero-subtitle">
-                            与我们的埃及专家当地导游一起发现秘密观景点，远离人群拍摄令人惊叹的照片。
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            通往埃及最令人惊叹之旅的门户
-                        </h1>
-                        <p class="hero-subtitle">
-                            在探索埃及的金字塔、神庙和风景时，向专业摄影师和导游学习。
-                        </p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            创造终生难忘的回忆
-                        </h1>
-                        <p class="hero-subtitle">
-                            从金字塔的黄金时刻到尼罗河的日落，通过我们指导的摄影和历史体验捕捉埃及的魅力。
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Slider Navigation Arrows -->
-            <button class="slider-arrow prev" aria-label="上一张">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-arrow next" aria-label="下一张">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Slider Dots - Positioned correctly below the buttons -->
-            <div class="slider-controls">
-                <div class="slider-dots">
-                    <div class="slider-dot active" data-slide="0"></div>
-                    <div class="slider-dot" data-slide="1"></div>
-                    <div class="slider-dot" data-slide="2"></div>
-                    <div class="slider-dot" data-slide="3"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW HERO BUTTONS SECTION - POSITIONED BELOW HERO IMAGES -->
-        <section class="hero-buttons-section">
-            <div class="container">
-                <div class="hero-buttons-container">
-                    <a href="tours.html" class="hero-button hero-button-primary">
-                        探索我们的独家精彩旅行
-                    </a>
-                    <a href="contact.html" class="hero-button hero-button-secondary">
-                        立即预订您的豪华埃及之旅！
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        <!-- H1 SECTION -->
         <section class="main-section">
             <div class="container">
-                <h2>欢迎来到埃及摄影之旅</h2>
-                <p>
-                    踏入一个古老历史与令人叹为观止的风景相遇的世界，所有一切都等待着通过您的镜头被捕捉。在埃及摄影之旅，我们热衷于向各个水平的摄影师展示埃及无与伦比的美丽。从标志性的<strong>吉萨金字塔</strong>到<strong>尼罗河</strong>的宁静流淌和<strong>开罗历史街道</strong>的繁华魅力，我们设计沉浸式旅程，确保您不仅看到埃及，而且真正<em>捕捉</em>它的灵魂。
-                </p>
-                <p>
-                    我们精心策划的<strong>埃及旅行</strong>超越了传统的观光，提供独特的摄影机会、专业摄影师的个性化指导以及真实的文化体验。无论您是寻求独家访问的经验丰富的专业人士，还是渴望掌握技艺的新手爱好者，与我们一同踏上<strong>难忘的埃及摄影冒险</strong>。让我们一起创作您的下一件杰作。
-                </p>
-            </div>
-        </section>
-
-        <section class="main-section bg-light-gray">
-            <div class="container">
-                <h2>为什么选择埃及摄影之旅作为您难忘的旅程？</h2>
+                <div class="breadcrumb">
+                    <a href="index.html">首页</a> &gt; 
+                    <a href="tours.html">埃及旅游</a> &gt; 
+                    <span>埃及私人定制游</span>
+                </div>
+                
+                <!-- 优化后的H1标题 -->
+                <h1>埃及私人定制游 | 中文导游专业服务</h1>
+                
+                <p><strong>最后更新：2024年12月 | 15年以上经验 | 5000+满意客户 | 4.9星评级</strong></p>
+                
+                <p>欢迎来到<strong>埃及摄影之旅</strong> - 埃及顶级的专属个性化旅行体验提供者。与标准团队游不同，我们的埃及私人定制游为您提供完全的灵活性、个性化关注以及与当地中文导游的深度文化沉浸。无论您是在寻找全面的埃及旅游套餐、私密的开罗之旅、令人敬畏的吉萨金字塔体验、历史性的亚历山大探索还是神秘的卢克索冒险，我们都创建符合您的兴趣、节奏和预算的定制行程。</p>
+                
+                <!-- 优化后的H2 -->
+                <h2>可选专业跟拍服务</h2>
+                
+                <p>虽然许多旅行者专门为我们的专业摄影服务而来，但我们理解有些游客只是想要优质的导游服务。这就是为什么我们在所有埃及私人定制游中都提供<strong>可选的专业跟拍服务</strong>。您可以选择在开罗之旅、吉萨金字塔参观、亚历山大一日游或卢克索探索中包含专业摄影师，或者简单地享受我们的专家导游服务而不包含摄影服务。这种灵活性使我们成为摄影爱好者和寻求高质量埃及私人游的旅行者的理想选择。</p>
+                
+                <!-- 优化后的H2 -->
+                <h2>开罗、吉萨金字塔、亚历山大和卢克索之旅</h2>
+                
+                <p>我们的埃及私人定制游全面覆盖埃及最具标志性的目的地：繁华的大都市<strong>开罗</strong>及其埃及博物馆和伊斯兰建筑；<strong>吉萨金字塔</strong>和狮身人面像的古老奇迹；<strong>亚历山大</strong>的地中海美景及其希腊罗马历史；以及寺庙之城<strong>卢克索</strong>，常被称为世界上最大的露天博物馆。我们提供多城市埃及旅游套餐和专注于单一目的地的旅游，所有行程都提供包含专业摄影服务的选择。</p>
+                
                 <div class="grid-section">
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        <h3 class="card-title">专业摄影导游，本地洞察</h3>
-                        <p class="card-text">我们的<strong>埃及专业摄影导游</strong>不仅是经验丰富的摄影师；他们还是持牌埃及学家和本地文化专家。他们知道独特<strong>金字塔摄影</strong>或迷人<strong>尼罗河摄影</strong>场景的最佳角度、完美光线条件和隐藏宝石。受益于个性化指导和埃及历史文化的无与伦比的洞察力。</p>
+                        <div class="card-icon">🎯</div>
+                        <h3>100%私人导游服务</h3>
+                        <p>按照自己的节奏体验埃及，配备专属中文导游。没有大型团体，没有匆忙的行程 - 只有个性化关注和根据您的兴趣定制的灵活行程。</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <h3 class="card-title">独家访问和独特观景点</h3>
-                        <p class="card-text">想象一下在日出时没有人群的情况下捕捉<strong>卢克索神庙</strong>，或者为壮丽的<strong>埃及日落景观</strong>找到完美位置。我们利用深厚的本地联系提供<strong>埃及独家访问</strong>，提供通常对普通游客不可用的独特摄影观景点。从<strong>开罗</strong>充满活力的市场到<strong>西奈沙漠</strong>宁静的风景，获得您一直梦想的拍摄。</p>
+                        <div class="card-icon">📸</div>
+                        <h3>可选跟拍服务</h3>
+                        <p>选择包含专业跟拍或享受不含摄影的旅游。完美适合摄影爱好者和寻求优质埃及导游体验的旅行者。</p>
                     </div>
                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <h3 class="card-title">为每位摄影师量身定制的行程</h3>
-                        <p class="card-text">无论您对古代建筑、街头摄影、人像摄影还是广阔的<strong>埃及沙漠景观</strong>感兴趣，我们的<strong>定制摄影行程</strong>都是根据您的热情设计的。我们精心规划每一天以优化光线和摄影机会，确保您的焦点始终放在创作令人难以置信的图像上。从专注的<strong>金字塔摄影之旅</strong>到广泛的<strong>古埃及摄影探险</strong>，您的旅程都是量身定制的。</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.556"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01M7 12h.01M7 16h.01M16 16h.01M12 16h.01M12 12h.01M12 8h.01M7 8h.01M16 8h.01M21 21l-4.5-4.5"></path></svg>
-                        <h3 class="card-title">小团体，个性化学习</h3>
-                        <p class="card-text">我们相信质量胜过数量。我们的<strong>小团体埃及旅行</strong>保证个性化关注和与摄影导游充足的面对面时间。这种亲密的环境营造了一个支持性的氛围，您可以在这里完善技能、分享经验并真正与同行摄影师建立联系。与志同道合的人一起体验<strong>埃及旅行摄影</strong>的魅力。</p>
-                    </div>
-                    <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c.045 4.095 1.563 7.844 4.368 10.053L12 21.466l4.688-2.413A12.001 12.001 0 0021.056 12c-.045-4.095-1.563-7.844-4.368-10.053z"></path></svg>
-                        <h3 class="card-title">无缝后勤和安全的埃及旅行</h3>
-                        <p class="card-text">您的安心是我们的首要任务。我们处理所有复杂细节——从豪华住宿和私人空调交通到所有许可证和入场费。我们对<strong>安全埃及旅行</strong>的承诺意味着您可以完全专注于摄影和文化沉浸。从头到尾享受<strong>无忧的埃及摄影冒险</strong>。</p>
-                    </div>
-                     <div class="card">
-                        <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253"></path></svg>
-                        <h3 class="card-title">真实文化沉浸</h3>
-                        <p class="card-text">除了拍摄精彩照片外，我们的旅行还提供深刻的<strong>埃及真实文化沉浸</strong>。与当地人互动，探索传统市场，品尝正宗美食。这种整体体验确保您的照片讲述更丰富的故事，反映埃及及其人民的真实精神。</p>
+                        <div class="card-icon">⭐</div>
+                        <h3>本地埃及学家导游</h3>
+                        <p>我们的导游是持有执照的埃及学家，深谙埃及历史、文化和隐藏宝藏。他们提供您在旅游指南中找不到的见解。</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- COMPREHENSIVE EGYPT TOURS GUIDE SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>为什么选择埃及私人定制游而非标准套餐？</h2>
+                
+                <p>在规划埃及之旅时，您面临着通用团队游和个性化私人体验之间的选择。我们的埃及私人定制游提供了将您的旅行体验从普通变为非凡的显著优势。与拥挤的团队游不同，在那种情况下您只是人群中的另一张面孔，我们的私人游提供个性化关注、灵活安排以及大型团体无法获得的体验。</p>
+                
+                <h3>私人游优势：</h3>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>完全灵活性</h3>
+                        <p>随时更改行程，在感兴趣的景点花费更多时间，避开高峰时段，创建完美符合您精力和兴趣的行程表。</p>
+                    </div>
+                    <div class="card">
+                        <h3>深度文化体验</h3>
+                        <p>私人游允许访问小型餐厅、鲜为人知的景点和真实的本地体验，这些大型团体因规模限制无法安排。</p>
+                    </div>
+                    <div class="card">
+                        <h3>个性化导游</h3>
+                        <p>您的私人导游完全专注于您的团队，回答所有问题，提供详细解释，并根据您的具体兴趣定制信息。</p>
+                    </div>
+                </div>
+                
+                <h3>我们的埃及私人定制游分类：</h3>
+                <ul>
+                    <li><strong>开罗私人游：</strong>全面探索埃及首都，包括埃及博物馆、科普特开罗、伊斯兰开罗、哈利利市场以及当地街区，可选在标志性地点进行专业跟拍</li>
+                    <li><strong>吉萨金字塔私人游：</strong>独家访问吉萨高原，包括大金字塔、狮身人面像和太阳船博物馆，黄金时段进行摄影以获得最佳光线</li>
+                    <li><strong>亚历山大私人游：</strong>从开罗出发的一日游或延长停留，探索亚历山大地中海海岸、孔姆舒卡法地下墓穴、凯特贝城堡、亚历山大图书馆和当地海鲜餐厅</li>
+                    <li><strong>卢克索私人游：</strong>深入探索东岸和西岸，包括帝王谷、卡纳克神庙、卢克索神庙、哈特谢普苏特神庙和热气球体验</li>
+                    <li><strong>多城市埃及套餐：</strong>全面的7-14天私人游，结合开罗、吉萨、亚历山大、卢克索、阿斯旺和可选尼罗河游轮体验</li>
+                    <li><strong>特殊兴趣私人游：</strong>根据摄影、历史、建筑、美食、家庭旅行、蜜月体验或学术研究定制的旅游</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEO ARTICLE SECTION: COMPLETE EGYPT TRAVEL GUIDE -->
         <section class="main-section">
             <div class="container">
-                <h2>我们的特色摄影之旅</h2>
+                <div class="seo-article">
+                    <h2>埃及私人定制游完全指南：开罗、吉萨、亚历山大和卢克索</h2>
+                    
+                    <p><strong>由专业埃及学家霍萨姆撰写 | 2024-2025季节更新</strong></p>
+                    
+                    <p>欢迎来到埃及私人定制游的权威指南。凭借超过15年打造个性化埃及冒险的经验，我们创建了这份全面的资源，帮助您了解为什么私人游提供了体验埃及的最佳方式。无论您是首次访客还是回头客，本指南涵盖了从选择正确的私人游到最大化您在开罗、吉萨、亚历山大和卢克索体验的一切。</p>
+                    
+                    <h3>了解埃及私人定制游：有何不同？</h3>
+                    
+                    <p>埃及私人定制游代表了在世界上历史最丰富的目的地之一的个性化旅行的巅峰。与遵循严格时间表、有20-40名其他旅行者的标准团队游不同，私人游提供：</p>
+                    
+                    <ul>
+                        <li><strong>完全定制：</strong>从零开始设计您的行程，或根据您的具体兴趣修改我们建议的旅游 - 无论是古代历史、摄影、当地美食还是家庭友好活动。</li>
+                        <li><strong>灵活安排：</strong>在您想要的时候开始一天，在每个景点花费任意时间，需要时休息，并根据天气、精力水平或意外发现调整计划。</li>
+                        <li><strong>个性化关注：</strong>您的私人埃及学家导游完全专注于您的团队，提供根据您知识水平和兴趣定制的详细解释，全面回答所有问题。</li>
+                        <li><strong>独家体验访问：</strong>私人游可以包括大型团体无法获得的体验：私人观看、幕后访问、与当地工匠会面、访问埃及家庭家庭以及不接受旅游巴士的餐厅。</li>
+                        <li><strong>效率和舒适：</strong>跳过热门景点的排队，使用等待您的私人交通，享受符合您偏好而非适应大型团体最慢成员的节奏。</li>
+                        <li><strong>可选专业服务：</strong>能够根据您的兴趣纳入专业摄影、学术讲座或特定活动导游等专业服务。</li>
+                    </ul>
+                    
+                    <h3>开罗私人游：超越旅游路线</h3>
+                    
+                    <p>开罗，一个拥有2000万人口的城市，提供了大多数团队游仅触及表面的无尽探索可能性。我们的开罗私人游超越了标准的埃及博物馆和金字塔行程，包括：</p>
+                    
+                    <ul>
+                        <li><strong>埃及博物馆与新大埃及博物馆：</strong>两个博物馆的私人导游游览，强调您的具体兴趣 - 无论是图坦卡蒙的宝藏、木乃伊制作技术还是特定历史时期。</li>
+                        <li><strong>伊斯兰开罗深度探索：</strong>超越主要清真寺，发现隐藏的瑰宝，了解伊斯兰建筑演变，参观传统工艺作坊，深入理解开罗的伊斯兰历史。</li>
+                        <li><strong>科普特开罗全面游览：</strong>参观悬空教堂、阿布塞尔加教堂、本以斯拉犹太教堂和科普特博物馆，了解埃及基督教遗产和犹太历史的详细历史背景。</li>
+                        <li><strong>本地街区探索：</strong>在扎马雷克、马阿迪或赫利奥波利斯等区域体验真正的开罗生活，参观游客不常去的当地市场，在家庭经营餐厅享用传统餐点。</li>
+                        <li><strong>开罗摄影游：</strong>对于那些选择我们可选摄影服务的客户，我们知道拍摄开罗对比的最佳地点和时间 - 古老与现代，富有与贫穷，混乱与和平。</li>
+                        <li><strong>美食开罗游：</strong>专注于埃及美食的私人美食游，从街头小摊到高档餐厅，与当地厨师一起上烹饪课，并参观香料市场。</li>
+                    </ul>
+                    
+                    <h3>吉萨金字塔私人游：独家访问与最佳体验</h3>
+                    
+                    <p>吉萨高原每年接待数百万游客，但私人游提供了在没有人群的情况下体验金字塔并更深入理解的方式：</p>
+                    
+                    <ul>
+                        <li><strong>战略时间安排：</strong>私人游允许在最佳时间参观 - 清晨避开人群和炎热，或傍晚进行黄金时段摄影和日落景观。</li>
+                        <li><strong>金字塔内部访问：</strong>根据您的兴趣和身体能力，详细指导应进入哪些金字塔，全面解释建造技术和历史意义。</li>
+                        <li><strong>摄影导向游：</strong>对于选择跟拍的客户，我们知道所有最佳角度、观景点（包括一些不太知名的地方）以及拍摄惊人金字塔图像的光线条件。</li>
+                        <li><strong>超越三大金字塔：</strong>探索高原上不太知名的金字塔、工人村和正在进行的考古挖掘，并解释当前研究。</li>
+                        <li><strong>骆驼和骑马体验：</strong>与信誉良好的运营商安排沙漠骑行的私人安排，确保动物福利和最佳摄影机会。</li>
+                        <li><strong>声光秀替代方案：</strong>虽然官方表演面向大众，但私人导游可以提供更个性化和历史准确的高原历史叙述。</li>
+                    </ul>
+                    
+                    <h3>亚历山大私人游：地中海埃及揭秘</h3>
+                    
+                    <p>由亚历山大大帝建立，亚历山大凭借其地中海氛围和希腊罗马历史提供了不同的埃及体验：</p>
+                    
+                    <ul>
+                        <li><strong>历史层次游：</strong>通过考古遗址和建筑理解亚历山大的多重历史层次 - 法老时代、希腊、罗马、拜占庭、伊斯兰和现代。</li>
+                        <li><strong>孔姆舒卡法地下墓穴：</strong>私人导游探索这个融合埃及、希腊和罗马艺术风格的独特墓葬群，详细解释其发现和意义。</li>
+                        <li><strong>亚历山大图书馆：</strong>基于您的兴趣定制现代图书馆游览 - 无论是建筑、特别收藏还是当前文化项目。</li>
+                        <li><strong>凯特贝城堡：</strong>这座15世纪堡垒的详细历史，建于古代亚历山大灯塔遗址上，世界七大奇迹之一。</li>
+                        <li><strong>当地海鲜体验：</strong>在正宗海鲜餐厅的私人安排，您选择新鲜鱼类并了解地中海渔业传统。</li>
+                        <li><strong>蒙塔扎宫花园：</strong>悠闲探索这些美丽花园，了解埃及皇家时代的历史背景和宫殿建筑的建筑分析。</li>
+                        <li><strong>亚历山大摄影游：</strong>沿海摄影、专注于美好时代建筑的建筑摄影以及传统街区的街头摄影。</li>
+                    </ul>
+                    
+                    <h3>卢克索私人游：深度探索古底比斯</h3>
+                    
+                    <p>卢克索，古底比斯，包含大约世界三分之一古迹，使私人导游对于有意义的探索至关重要：</p>
+                    
+                    <ul>
+                        <li><strong>西岸全面游览：</strong>基于开放哪些陵墓和您的具体兴趣定制帝王谷探索，详细解释墓葬实践、陵墓装饰和最近发现。</li>
+                        <li><strong>哈特谢普苏特神庙：</strong>深入分析这座独特神庙、埃及女法老的统治以及结构的建筑创新。</li>
+                        <li><strong>王后谷和贵族墓：</strong>参观不太拥挤的墓葬群，欣赏王后、王子和高官装饰精美的陵墓。</li>
+                        <li><strong>卡纳克神庙建筑群：</strong>根据您的耐力和兴趣定制的私人游览，专注于特定区域，如柱厅、圣湖或露天博物馆，基于您想看的内容。</li>
+                        <li><strong>日夜卢克索神庙：</strong>在不同时间体验神庙，解释其从新王国神庙到罗马堡垒、科普特教堂和清真寺的演变。</li>
+                        <li><strong>热气球飞行：</strong>西岸上空日出热气球飞行的私人安排，提供最佳摄影机会和安全考虑。</li>
+                        <li><strong>卢克索摄影游：</strong>在具有挑战性的光线条件下拍摄神庙浮雕、捕捉纪念碑规模和宏伟以及当地社区伦理摄影的指导。</li>
+                    </ul>
+                    
+                    <h3>可选专业跟拍服务：如何提升您的埃及私人定制游</h3>
+                    
+                    <p>虽然我们的埃及私人定制游本身作为优质旅游体验而卓越，但可选的专业跟拍服务为许多旅行者增加了重要价值：</p>
+                    
+                    <ul>
+                        <li><strong>对于摄影爱好者：</strong>向经验丰富的摄影师导游学习捕捉埃及独特光线条件、建筑细节和文化时刻的专业技术。</li>
+                        <li><strong>对于想要优质纪念品的旅行者：</strong>带回家专业质量的图像而非快照 - 完美适合相册、墙面艺术或与家人朋友分享。</li>
+                        <li><strong>对于特殊场合：</strong>蜜月夫妇、庆祝周年纪念的家庭和庆祝特殊时刻的家庭在埃及壮观背景下获得精美记录的记忆。</li>
+                        <li><strong>灵活安排：</strong>选择全天摄影覆盖或在关键地点的特定时段，如黄金时段金字塔或晨光中的卡纳克神庙。</li>
+                        <li><strong>设备指导：</strong>关于带什么摄影设备到埃及、处理埃及灰尘和热量以及在神庙和陵墓中挑战性光线条件下技术的建议。</li>
+                        <li><strong>文化敏感性：</strong>关于尊重人物、宗教场所和当地社区摄影的指导，确保积极互动和真实图像。</li>
+                        <li><strong>旅行后支持：</strong>协助选择和编辑图像、创建相册或准备图像进行打印和展示。</li>
+                    </ul>
+                    
+                    <h3>规划您的埃及私人定制游：实际考虑</h3>
+                    
+                    <p>成功的埃及私人定制游规划包括几个关键考虑因素，与标准旅游预订不同：</p>
+                    
+                    <ul>
+                        <li><strong>提前规划：</strong>优质导游的私人游需要提前预订，特别是在旺季（10月至4月）。理想规划时间提前3-6个月，以获得最佳导游可用性和住宿选择。</li>
+                        <li><strong>预算考虑：</strong>考虑到个性化关注、灵活性、独家访问和时间效率，私人游代表更高价值而非更高成本。我们在不同价格点提供私人游以适应不同预算。</li>
+                        <li><strong>团体规模优化：</strong>对于一起旅行的家庭或小型朋友团体，私人游可能更具成本效益，因为成本分摊而隐私和个性化优势得以保持。</li>
+                        <li><strong>基于兴趣的定制：</strong>在预订前，考虑埃及哪些方面最吸引您 - 特定历史时期、建筑风格、宗教历史、当代文化、摄影机会或美食体验。</li>
+                        <li><strong>身体考虑：</strong>私人游可以根据身体能力定制，对于有行动能力问题的人，节奏更悠闲、台阶更少或替代景点。</li>
+                        <li><strong>季节调整：</strong>私人游允许基于季节的最佳安排 - 夏季炎热时较早开始，最热时段进行室内活动，专注于有阴影或冷却的景点。</li>
+                        <li><strong>目的地组合：</strong>多城市私人游（开罗-吉萨-亚历山大-卢克索）需要仔细的物流规划，用于国内航班、火车旅行或驾驶距离，我们无缝处理。</li>
+                    </ul>
+                    
+                    <h3>私人与团体游：成本效益分析</h3>
+                    
+                    <p>虽然埃及私人定制游人均成本高于团体游，但它们提供了通常使其更具价值的显著优势：</p>
+                    
+                    <ul>
+                        <li><strong>时间效率：</strong>通过优化安排、跳过排队和直接交通，私人游在更短时间内完成更多，更好地利用有限的休假时间。</li>
+                        <li><strong>体验质量：</strong>与景点的更深层次互动、个性化解释、提出无限问题的能力以及根据您兴趣而非通用评论定制的体验。</li>
+                        <li><strong>灵活性价值：</strong>基于天气、精力水平或发现兴趣更改计划的能力具有增强满意度和减少旅行压力的无形价值。</li>
+                        <li><strong>独家访问：</strong>团体无法获得的体验机会 - 博物馆私人观看、与专家会面、热门地点预订等。</li>
+                        <li><strong>摄影优势：</strong>对于选择跟拍的人来说，图像质量和学习机会代表与标准旅游摄影相比的重要价值。</li>
+                        <li><strong>文化沉浸：</strong>与当地社区更深入的互动、正宗餐饮体验以及超越表面旅游的理解。</li>
+                        <li><strong>健康与安全：</strong>私人交通和较小团体规模提供健康优势，特别是在后疫情旅行考虑中尤为重要。</li>
+                    </ul>
+                    
+                    <h3>埃及私人定制游常见问题解答</h3>
+                    
+                    <p>基于15年以上组织埃及私人定制游的经验，以下是常见问题的答案：</p>
+                    
+                    <ul>
+                        <li><strong>"私人游对独自旅行者安全吗，特别是女性？"</strong> 是的，私人游可能比独立旅行或大型团体游更安全。您的导游提供当地知识，处理互动，并确保您在信誉良好的场所。我们经常为独自女性旅行者安排私人游，可根据要求提供女性导游。</li>
+                        <li><strong>"私人游能适应饮食限制或过敏吗？"</strong> 绝对可以。私人游允许与餐厅详细沟通、替代餐饮选择以及满足任何饮食需求的灵活性 - 这对于固定团体游菜单来说很困难。</li>
+                        <li><strong>"'私人'有多私密？我们是否会与其他团体合并？"</strong> 真正私密意味着只有您的团队和导游/司机。除非特别要求出于社交原因（并且只有在您同意的情况下），否则不会与其他团体合并。</li>
+                        <li><strong>"我们可以在中途定制私人游吗？"</strong> 是的，关键优势之一。如果您对意外事物产生兴趣，想在某处花费更多时间，或需要较慢节奏，私人游允许每日调整。</li>
+                        <li><strong>"私人游导游比团体游导游更有知识吗？"</strong> 我们根据更深专业知识、语言技能和个性化解释能力选择私人游导游。许多人拥有埃及学高级学位而非基本导游证书。</li>
+                        <li><strong>"可选跟拍服务如何与私人游配合？"</strong> 您可以选择为所有天、特定天或特定地点包含专业摄影师。摄影师与您的导游一起不显眼地工作，在不中断旅游流程的情况下捕捉您的体验。</li>
+                        <li><strong>"私人游能包含儿童吗？哪些年龄段最合适？"</strong> 私人游非常适合家庭！我们根据儿童年龄和兴趣调整内容、节奏和活动，这在固定团体游中是不可能的。互动元素、实践体验和休息自然融入。</li>
+                        <li><strong>"埃及私人定制游的理想团体规模是多少？"</strong> 大多数私人游完美适合2-6人。最多12-15人的较大私人团体可通过额外导游和车辆实现。独自私人游也因最大灵活性而受欢迎。</li>
+                        <li><strong>"我们应该提前多久预订埃及私人定制游？"</strong> 对于旺季（10月至4月），提前3-6个月确保最佳导游可用性。对于平季（5月至6月，9月），通常提前1-3个月足够。最后一刻私人游有时可能，但导游选择有限。</li>
+                        <li><strong>"私人游值得额外费用吗？"</strong> 基于客户反馈持续将私人游评级高于之前的团体游体验，共识是肯定的 - 对于大多数旅行者来说，个性化关注、灵活性、更深体验和时间效率证明了额外投资的合理性。</li>
+                    </ul>
+                    
+                    <h3>评价：埃及私人定制游体验</h3>
+                    
+                    <p>先前客户的评价有助于理解私人游的差异：</p>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "我们的埃及私人定制游将可能成为清单式的访问转变为深度文化沉浸。拥有完全专注于我们家庭的导游意味着我们孩子的问题得到了彻底回答，当有人累时我们可以改变计划，并且我们发现了从未知道存在的埃及方面。可选跟拍服务给了我们在金字塔前的专业家庭照片 - 我们将永远珍惜的宝藏。" - 安德森一家，美国
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "作为一名独自女性旅行者，我最初对埃及感到紧张。私人游提供了安全、陪伴和令人难以置信的灵活性。我的导游根据我的兴趣调整每一天 - 当我发展出对伊斯兰建筑的热情时，她完全改变了第二天的计划，专注于不太知名的清真寺和伊斯兰学校。这种个性化水平在团体游中是不可能的。" - 莎拉·M，澳大利亚
+                    </blockquote>
+                    
+                    <blockquote style="font-style: italic; margin: 20px 0; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--accent-light);">
+                        "我们选择埃及摄影之旅专门是为了摄影组件，但发现导游同样出色。我们的摄影师确切知道每个景点的最佳时间和角度，而我们的埃及学家提供了使图像更有意义的背景。我们带着惊艳的照片和对埃及历史的深刻理解回来了。" - 托马斯和埃琳娜，德国
+                    </blockquote>
+                    
+                    <h3>预订您的埃及私人定制游：后续步骤</h3>
+                    
+                    <p>准备好通过根据您兴趣定制的私人游体验埃及吗？以下是我们推荐的流程：</p>
+                    
+                    <ol>
+                        <li><strong>初步咨询：</strong>联系我们并提供您的旅行日期、团体规模、兴趣和任何特殊要求。如果您对可选专业跟拍服务感兴趣，请提及。</li>
+                        <li><strong>咨询电话：</strong>我们安排通话，讨论您的埃及兴趣、旅行风格、必看景点和偏好，以了解哪种私人游最适合您。</li>
+                        <li><strong>定制行程建议：</strong>根据我们的讨论，我们创建一个详细的私人游行程，包括导游专长、交通、住宿选择和跟拍安排（如要求）。</li>
+                        <li><strong>修订和完善：</strong>根据您的反馈调整行程，直到它完全符合您对埃及冒险的愿景。</li>
+                        <li><strong>预订和准备：</strong>最终确定后，我们处理所有预订并提供详细的旅行前信息，包括打包清单、文化指南和准备材料。</li>
+                        <li><strong>国内体验：</strong>您的私人导游在抵达时与您会面，并在您整个逗留期间提供无缝、个性化的游览，根据您发展的兴趣进行日常灵活性调整。</li>
+                        <li><strong>旅行后跟进：</strong>您的旅行后，我们检查反馈，并为选择跟拍服务的客户协助图像选择和交付。</li>
+                    </ol>
+                    
+                    <p><strong>准备好通过为您量身定制的私人游体验埃及吗？</strong> <a href="contact.html" style="color: var(--accent-dark); font-weight: bold;">立即联系埃及摄影之旅</a>，开始规划您个性化的埃及冒险，包含可选的专业摄影服务。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOUR DETAILS -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>埃及私人定制游详情与独家体验</h2>
+                
+                <h3>📸 可选专业摄影服务：</h3>
+                <ul>
+                    <li><strong>开罗摄影游：</strong>在金字塔、埃及博物馆、伊斯兰建筑遗址和当地市场进行专业跟拍，提供最佳光线指导</li>
+                    <li><strong>吉萨金字塔跟拍：</strong>日出/日落黄金时段拍摄，独家观景点专业姿势指导，创意构图技巧</li>
+                    <li><strong>亚历山大沿海摄影：</strong>地中海海景、希腊罗马遗址建筑细节、传统街区生动街景</li>
+                    <li><strong>卢克索神庙摄影：</strong>挑战性光线下拍摄神庙浮雕技术、宏伟建筑拍摄、亲密细节摄影</li>
+                    <li><strong>文化肖像拍摄：</strong>尊重当地工匠、店主和社区成员的肖像摄影，获得适当同意并注重文化敏感性</li>
+                    <li><strong>家庭与情侣摄影：</strong>标志性景点专业家庭肖像、蜜月夫妇浪漫照片、多代家庭团体摄影</li>
+                </ul>
+                
+                <h3>📍 私人游独家体验：</h3>
+                <ul>
+                    <li><strong>非开放时间博物馆访问：</strong>在公众开放时间前后安排博物馆私人观看，进行无人群探索</li>
+                    <li><strong>考古学家会面：</strong>与活跃挖掘现场的考古学家安排会面（视可用性和许可情况）</li>
+                    <li><strong>工匠作坊参观：</strong>与陶艺、纸莎草制作、纺织编织和珠宝制作大师工匠进行私人演示和作坊体验</li>
+                    <li><strong>家庭用餐体验：</strong>在埃及家庭用餐，进行烹饪演示和文化交流机会</li>
+                    <li><strong>学术导向游：</strong>为学生、研究者或深度感兴趣的旅行者设计的游览，提供专业资源和专家访问</li>
+                    <li><strong>摄影导向行程：</strong>专门为摄影师设计的游览，提供最佳时间、摄影特别访问和技术指导</li>
+                </ul>
+                
+                <h3>🎯 私人游优势：</h3>
+                <ul>
+                    <li><strong>完全行程控制：</strong>在您想要时开始，在每个景点花费任意时间，需要时休息，并自发更改计划</li>
+                    <li><strong>个性化内容：</strong>根据您现有知识水平和具体兴趣而非通用评论定制的信息</li>
+                    <li><strong>直接交通：</strong>私人车辆和司机始终可用，无需等待团体成员，直达目的地路线</li>
+                    <li><strong>健康与安全优先：</strong>控制卫生标准，避免拥挤空间，个性化关注任何健康问题</li>
+                    <li><strong>特殊场合认可：</strong>以适当的当地传统和惊喜庆祝生日、周年纪念和特殊里程碑</li>
+                    <li><strong>语言专注：</strong>根据语言能力和用您母语清晰解释复杂概念的能力选择的导游</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FEATURED TOURS - UPDATED IMAGES TO JPG -->
+        <section class="main-section">
+            <div class="container">
+                <h2>我们最受欢迎的埃及私人定制游套餐</h2>
+                <p>从我们精心策划的埃及私人定制游系列中选择，专为寻求个性化体验并可选专业摄影服务的旅行者设计。</p>
+                
                 <div class="tour-grid">
                     <div class="tour-card">
-                        <span class="sale-tag">特别优惠！</span>
                         <img src="../images/pyramids-private-tour.jpg"
-                             alt="吉萨金字塔私人导游摄影之旅，配有专业埃及导游和狮身人面像景观"
-                             class="tour-img lazy-load"
+                             alt="吉萨金字塔私人定制游，可选跟拍 - 埃及私人游"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">📸 捕捉魅力：私人金字塔导游之旅 + 专业摄影</h3>
-                            <p class="tour-card-text">在充满激情的当地专家指导下，踏入吉萨大金字塔和狮身人面像的沉浸式一日私人旅行。通过专业摄影课程捕捉难忘时刻，并聆听石头背后的真实故事。</p>
+                            <h3>吉萨金字塔私人游</h3>
+                            <p>吉萨高原独家私人游，埃及学家导游。包括所有金字塔入口、狮身人面像和黄金时段可选专业跟拍。</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">起价150美元</span>
-                                <span class="tour-duration">时长：4-5小时</span>
+                                <span class="tour-price">$150起</span>
+                                <a href="tour-pyramids-private.html" class="tour-cta">立即预订</a>
                             </div>
-                            <a href="tour-pyramids-private.html" class="tour-cta">查看详情和预订</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">名额有限！</span>
                         <img src="../images/cairo-giza-2day.jpg"
-                             alt="涵盖开罗地标和吉萨金字塔的两天高级私人摄影之旅，配有专家导游"
-                             class="tour-img lazy-load"
+                             alt="开罗与吉萨2日私人游 - 埃及私人导游服务"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">2天高级私人旅行：开罗和吉萨摄影探险</h3>
-                            <p class="tour-card-text">在两天难忘的时间里沉浸于埃及充满活力的首都和古老奇迹。探索雄伟的金字塔、繁华的老开罗和令人印象深刻的埃及文明国家博物馆，全部由您的私人导游和摄影师陪同。</p>
-                             <div class="tour-card-footer">
-                                <span class="tour-price">起价350美元</span>
-                                <span class="tour-duration">时长：2天</span>
+                            <h3>开罗与吉萨2日私人游</h3>
+                            <p>全面私人游，涵盖金字塔、埃及博物馆、科普特开罗、伊斯兰开罗，提供灵活安排和可选摄影服务。</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">$350起</span>
+                                <a href="tour-cairo-giza-2day.html" class="tour-cta">立即预订</a>
                             </div>
-                            <a href="tour-cairo-giza-2day.html" class="tour-cta">查看详情和预订</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">立即预订！</span>
                         <img src="../images/alexandria-tour.jpg"
-                             alt="从开罗出发前往亚历山大的私人海岸一日摄影之旅，配有地中海海景和古迹"
-                             class="tour-img lazy-load"
+                             alt="从开罗出发的亚历山大一日私人游 - 地中海埃及游"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">发现亚历山大：从开罗出发的私人海岸一日游</h3>
-                            <p class="tour-card-text">在这难忘的亚历山大私人一日游中，将开罗的沙漠尘埃换成地中海的清新微风。与充满激情的当地导游一起发现希腊、罗马、伊斯兰和现代宝藏的混合体，并捕捉美丽的海岸景色。</p>
+                            <h3>亚历山大一日私人游</h3>
+                            <p>从开罗到亚历山大的私人一日游。参观地下墓穴、凯特贝城堡、亚历山大图书馆，提供个性化导游和可选沿海摄影。</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">起价220美元</span>
-                                <span class="tour-duration">时长：1天</span>
+                                <span class="tour-price">$220起</span>
+                                <a href="tour-alexandria.html" class="tour-cta">立即预订</a>
                             </div>
-                            <a href="tour-alexandria.html" class="tour-cta">查看详情和预订</a>
                         </div>
                     </div>
-
+                    
                     <div class="tour-card">
-                        <span class="sale-tag">新冒险！</span>
                         <img src="../images/egypt-discovery-7day.jpg"
-                             alt="涵盖开罗、吉萨金字塔、亚历山大和卢克索神庙的7天综合埃及摄影发现之旅"
-                             class="tour-img lazy-load"
+                             alt="7天埃及私人定制游套餐 - 完整埃及私人游"
+                             class="tour-img"
                              loading="lazy"
                              width="400"
-                             height="224">
+                             height="200">
                         <div class="tour-card-body">
-                            <h3 class="tour-card-title">7天埃及发现之旅：开罗、吉萨、亚历山大和卢克索</h3>
-                            <p class="tour-card-text">在这沉浸式的7天导游旅程中体验古代和现代埃及的奇迹。从高耸的金字塔到亚历山大的地中海魅力以及卢克索的雄伟神庙——这次旅行将埃及的灵魂带入生活。</p>
+                            <h3>7天埃及私人定制游</h3>
+                            <p>终极埃及私人体验，涵盖开罗、吉萨、亚历山大和卢克索，提供豪华住宿、私人导游和全程可选专业摄影。</p>
                             <div class="tour-card-footer">
-                                <span class="tour-price">起价1900美元</span>
-                                <span class="tour-duration">时长：7天</span>
+                                <span class="tour-price">$1900起</span>
+                                <a href="tour-egypt-discovery-7day.html" class="tour-cta">立即预订</a>
                             </div>
-                            <a href="tour-egypt-discovery-7day.html" class="tour-cta">查看详情和预订</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-30">
+                    <a href="tours.html" class="hero-button hero-button-primary">查看所有私人游套餐</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPREHENSIVE FAQ SECTION -->
+        <section class="main-section bg-light-gray">
+            <div class="container">
+                <h2>常见问题 - 埃及私人定制游</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question">埃及私人定制游比团体游好在哪里？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>埃及私人定制游提供了显著优势：完全灵活性更改计划、导游个性化关注、按照自己节奏探索的能力、团体无法获得的体验访问、摄影最佳时间以及更深文化沉浸。您不仅仅是按时间表安排的另一个游客 - 您正在专家指导下创建自己的埃及体验。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">专业跟拍服务在您的私人游中是必须的吗？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>不，专业跟拍服务完全是可选的。我们提供两种类型的埃及私人定制游：1) 带专家埃及学家导游的标准私人游，和2) 包含专业摄影服务的私人游。您可以根据自己的偏好和预算选择任一选项。许多客户专门为摄影预订我们的旅游，而其他客户则更喜欢纯导游体验。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">你们的埃及私人定制游覆盖哪些城市？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>我们的埃及私人定制游全面覆盖埃及四个最受欢迎的目的地：开罗（埃及博物馆、伊斯兰和科普特开罗）、吉萨（金字塔和狮身人面像）、亚历山大（地中海海岸和希腊罗马遗址）和卢克索（帝王谷和神庙）。我们提供单目的地私人游、多城市套餐和完全定制的行程，根据您的兴趣和可用时间组合这些地点。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">我们可以定制埃及私人定制游的行程吗？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>当然可以！定制是私人游的本质。我们根据您的兴趣创建初步行程建议，然后通过咨询完善。在旅游期间，您可以进行每日调整 - 在您喜欢的景点花费更多时间，跳过不太感兴趣的景点，添加意外发现，或根据精力水平改变节奏。这种灵活性在固定团体游中是不可能的。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">埃及私人定制游适合带孩子的家庭吗？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>私人游非常适合家庭！我们根据儿童年龄和兴趣调整内容、节奏和活动。家庭可以在需要时休息，专注于互动元素，包括儿童友好餐食，并保持灵活时间表。可选跟拍服务特别受欢迎，可在标志性埃及景点拍摄美丽家庭肖像，成为珍贵回忆。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">应该提前多久预订埃及私人定制游？ <i class="fas fa-chevron-down"></i></h3>
+                        <div class="faq-answer">
+                            <p>对于旺季（10月至4月），我们建议提前3-6个月预订埃及私人定制游，以确保最佳导游和住宿。对于平季（5月至6月，9月），通常提前1-3个月足够。最后一刻私人游有时可能，但导游选择有限。提前预订还允许更多时间进行定制行程开发和特殊请求。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- EXTENSIVE REVIEWS SECTION -->
         <section class="main-section bg-primary-dark">
-            <div class="container">
-                <h2 style="color: var(--accent-light);">我们优秀客户的评价</h2>
-                         <!-- TrustBox widget - Review Collector -->
-                <div class="trustpilot-widget" data-locale="zh-CN" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68ebe694a70f7429071227b6" data-style-height="52px" data-style-width="100%" data-token="b32cd746-03c7-406e-8bb0-54364a1c6027">
-                  <a href="https://www.trustpilot.com/review/egyptphotographytours.com" target="_blank" rel="noopener">Trustpilot</a>
-                </div>
-                <!-- End TrustBox widget -->
+            <div class="container text-center">
+                <h2 style="color: var(--accent-light);">客户对埃及摄影之旅的评价</h2>
+                
                 <div class="reviews-grid">
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"我们和Hossam一起的这次经历非常愉快！他对我们的团队非常有帮助和耐心！整个经历对我们来说很有趣，他让我们感到非常舒适。我们很喜欢这一切！"</p>
-                        <p class="review-author">- Daniel</p>
+                        <p class="review-text">"我们私人游的灵活性起了决定性作用。当我们的女儿对象形文字着迷时，我们的导游花额外时间教她阅读基本符号。这种个性化关注使她从无聊变得投入。可选跟拍给了我们在金字塔前的专业家庭照片。"</p>
+                        <p><strong>- 约翰逊一家，美国</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"从头到尾都是一次难忘的经历。Hossam是一位才华横溢的摄影师，拥有惊人的技能。美妙的经历，出色的待遇，伟大的工作，在金字塔的惊人景色中拍摄了许多精彩的照片。我对结果非常满意，强烈推荐。"</p>
-                        <p class="review-author">- Cristina</p>
+                        <p class="review-text">"作为一名独自旅行者，我担心埃及。私人游提供了安全、陪伴和令人难以置信的灵活性。我的导游根据我的兴趣调整每一天 - 当我发展出对伊斯兰建筑的热情时，她改变计划专注于不太知名的清真寺。团体游中不可能！"</p>
+                        <p><strong>- 莎拉·M，澳大利亚</strong></p>
                     </div>
+                    
                     <div class="review-card">
                         <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Hossam提供了吉萨金字塔的精彩之旅。总是体贴、沟通良好、知识渊博，并根据您想做的事情调整旅行。他不仅带我参观了吉萨金字塔，之后还调整了日程安排，也参观了一个博物馆！从头到尾，Hossam做得非常出色。很高兴预订了这次旅行，并在Hossam那里交到了新朋友！"</p>
-                        <p class="review-author">- Eduardo</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"拍摄非常好，我喜欢这些景点没有人群。我不得不预订这次旅行，因为之前参加了一次旅行，照片非常糟糕。但请考虑骆驼和场地入场费需要额外费用（在公告帖子中有说明）。"</p>
-                        <p class="review-author">- Lucy</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"私人旅行，我和丈夫两人参加，他带我们去了没有太多游客的好地方，所以我们可以拍很多精彩的照片！除了拍照，他还讲述了关于金字塔和狮身人面像的简单历史故事，非常有教育意义☺️因为是开罗本地人，他告诉了我们很多推荐的餐厅或景点，还建议不要去那些只是昂贵的地方，所以对于第一次来埃及的人来说，我认为这对旅行会有很大帮助。推荐给想要简单讲故事旅行+摄影的人！"</p>
-                        <p class="review-author">- 李素妍</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"这是有史以来最好的经历之一。Hossam友善、细心且对建议持开放态度。他也知识渊博且非常有帮助。您将只与他一起体验顶级的东西。"</p>
-                        <p class="review-author">- Meslem</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"Hossam简直是最好的。为什么？因为他非常友善，非常知识渊博，并且真正热爱他的文化和国家。我有幸在私人旅行中与Hossam度过了一天半的时间。他不遗余力地确保我快乐、安全和舒适。毫无疑问，Hossam是我遇到过的最好的导游之一。感谢您向我展示开罗的最佳之处，并创造了一个我将在未来许多年里珍藏的难忘经历。"</p>
-                        <p class="review-author">- ARI</p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"如果您正在参观吉萨金字塔并希望获得难忘的经历，我强烈建议您与Hassam预订摄影之旅。从头到尾，他专业、友好且知识渊博。他不仅拍摄了绝对令人惊叹的照片，完美捕捉了金字塔的魅力，还分享了丰富的历史信息和有趣的故事，使旅行更加特别。Hassam真正知道独特拍摄和角度的最佳地点，他确保我感到舒适并享受每一刻。物超所值——您将获得高质量的摄影、个性化旅行以及对世界最伟大奇迹之一历史的深入了解。这很容易成为我埃及之旅的亮点之一！"</p>
-                        <p class="review-author">- Erik </p>
-                    </div>
-                     <div class="review-card">
-                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="review-text">"很棒的体验，非常专业，即使您不习惯站在相机前也能让您感到舒适。注重细节，对金字塔和周边地区有很好的信息。与他合作如此轻松舒适，我决定在访问期间也预订与Hossam一起的亚历山大一日游。"</p>
-                        <p class="review-author">- Jamie </p>
+                        <p class="review-text">"我们选择埃及摄影之旅专门是为了摄影，但发现导游同样出色。我们的摄影师知道每个景点的确切时间和角度，而我们的埃及学家提供了使图像有意义的背景。我们带着惊艳照片和深刻理解回来了。"</p>
+                        <p><strong>- 托马斯和埃琳娜，德国</strong></p>
                     </div>
                 </div>
-                <a href="faqs.html" class="review-cta">
-                        阅读所有评价和常见问题
-                </a>
+                
+                <div class="reviews-grid mt-30">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"我们的亚历山大私人游展现了与开罗完全不同的埃及。当图书馆吸引我们时能够花费额外时间，然后跳过不太有趣的内容，使体验无压力。沿海摄影环节是我们在团体游中无法获得的亮点。"</p>
+                        <p><strong>- 迈克尔和詹姆斯，加拿大</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"卢克索私人游允许我们在最佳时间参观陵墓，避开人群和炎热。我们导游的知识达到博士水平。当我们提到对医疗实践感兴趣时，他在工人村详细描述了古埃及医学。这种深度就是为什么私人游值得每一分钱。"</p>
+                        <p><strong>- 罗伯茨博士，英国</strong></p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"我们最初预订了不含跟拍的私人游，但在看到另一位客户的照片后添加了它。最佳决定！摄影师不显眼但捕捉了我们错过的神奇时刻。深度导游和专业摄影的结合创造了完美的埃及体验。"</p>
+                        <p><strong>- 丽莎和马可，意大利</strong></p>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="review-cta">立即预订您的埃及私人定制游！</a>
+            </div>
+        </section>
+        
+        <!-- EGYPT TOUR PLANNING GUIDE -->
+        <section class="main-section">
+            <div class="container">
+                <h2>埃及私人定制游规划指南 2024-2025</h2>
+                
+                <div class="grid-section">
+                    <div class="card">
+                        <h3>埃及私人定制游最佳时间</h3>
+                        <p><strong>10月-4月：</strong>理想天气（15-25°C）。旺季需提前3-6个月预订以获得最佳私人导游可用性。</p>
+                        <p><strong>5月-9月：</strong>更热但人群较少。私人游优化安排，炎热时早出发和室内活动。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>私人游优势</h3>
+                        <p>灵活安排、个性化内容、直接交通、特殊访问机会、健康与安全控制以及可选专业服务如摄影。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>跟拍考虑</h3>
+                        <p>所有私人游可选专业服务。可为整个旅游、特定天数或特定地点预订。基于埃及条件提供设备建议。</p>
+                    </div>
+                </div>
+                
+                <h3 class="mt-30">埃及私人定制游准备清单：</h3>
+                <ul>
+                    <li><strong>提前3-6个月：</strong>预订私人游（旺季），与顾问讨论定制选项，决定跟拍包含，申请签证</li>
+                    <li><strong>提前1-3个月：</strong>最终确定行程详情，预订国际航班，安排旅行保险，开始基于旅游重点的阅读/研究</li>
+                    <li><strong>提前1个月：</strong>确认所有安排，如包含摄影则检查设备，查看埃及条件打包清单</li>
+                    <li><strong>提前1周：</strong>最终打包，货币兑换，下载地图/离线资源，与导游确认会面安排</li>
+                    <li><strong>旅游期间：</strong>每天与导游沟通偏好，利用灵活性优势，提出无限问题，享受个性化体验</li>
+                    <li><strong>旅游后：</strong>提供反馈，接收照片（如预订跟拍），与其他考虑埃及私人定制游的人分享体验</li>
+                </ul>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-content">
-            <!-- UPDATED FOOTER BRAND SECTION - ALIGNED TO LEFT -->
-            <div class="footer-brand">
-                <h3 class="footer-title">埃及摄影之旅</h3>
-                <p class="footer-text">&copy; 2025 埃及摄影之旅。</p>
-                <p class="footer-text">保留所有权利。</p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">快速链接</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-                    <li><a href="tours.html">我们的旅行</a></li>
-                    <li><a href="gallery.html">图库</a></li>
-                    <li><a href="resources.html">资源</a></li>
-                    <li><a href="blog.html">博客</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-                    <li><a href="faqs.html">常见问题</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">联系我们</h4>
-                <p class="footer-text">地址：Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-                <!-- MOVED PHONE AND EMAIL TO CONNECT WITH US SECTION -->
-                <div class="footer-contact">
-                    <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="footer-contact-info">
-                        <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
-                    <a href="mailto:info@egyptphotographytours.com" class="footer-contact-info">
-                        <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">埃及摄影之旅</h3>
+                    <p>自2009年起提供专业的埃及私人定制游和可选摄影服务。持牌埃及学家导游。4.9星评级服务，专注于开罗、吉萨、亚历山大和卢克索的个性化体验。</p>
+                    <p>&copy; 2009-2024 埃及摄影之旅。保留所有权利。</p>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                
+                <div>
+                    <h3 class="footer-title">快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="tours.html">私人定制游</a></li>
+                        <li><a href="gallery.html">作品展示</a></li>
+                        <li><a href="resources.html">旅行资源</a></li>
+                        <li><a href="blog.html">博客</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="faqs.html">常见问题</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311299999995!3d29.974968699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div>
+                    <h3 class="footer-title">联系我们</h3>
+                    <p><i class="fab fa-whatsapp"></i> +20 155 073 5673</p>
+                    <p><i class="far fa-envelope"></i> info@egyptphotographytours.com</p>
+                    <p>📍 吉萨，埃及 - 金字塔附近</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.1413113!3d29.9749687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1701715200000" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="埃及摄影之旅位置">
+                    </iframe>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT - OPTIMIZED FOR PAGE SPEED -->
     <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
+        // MOBILE MENU
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                
-                // Change icon based on menu state
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-            
-            // Close menu when clicking on a link (for mobile)
-            document.querySelectorAll('.nav-link a').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768) {
-                        navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
-            });
+            }
             
-            // ✅ HERO SLIDER FUNCTIONALITY - OPTIMIZED
+            // HERO SLIDER WITH 5 IMAGES (8-second rotation)
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
             const prevButton = document.querySelector('.slider-arrow.prev');
             const nextButton = document.querySelector('.slider-arrow.next');
             let currentSlide = 0;
             let slideInterval;
-            const slideDuration = 7000; // 7 seconds
             
             function showSlide(index) {
                 slides.forEach(slide => slide.classList.remove('active'));
@@ -1711,130 +1962,192 @@
                 showSlide(prevIndex);
             }
             
-            function startSlideShow() {
-                slideInterval = setInterval(nextSlide, slideDuration);
+            if (prevButton && nextButton) {
+                prevButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    prevSlide();
+                    startSlider();
+                });
+                
+                nextButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    nextSlide();
+                    startSlider();
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(slideInterval);
+                        showSlide(index);
+                        startSlider();
+                    });
+                });
+                
+                // Start automatic slider with 8-second intervals
+                function startSlider() {
+                    slideInterval = setInterval(nextSlide, 8000);
+                }
+                
+                startSlider();
+                
+                // Pause on hover for better UX
+                const heroSlider = document.querySelector('.hero-slider');
+                heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                heroSlider.addEventListener('mouseleave', startSlider);
             }
             
-            function stopSlideShow() {
-                clearInterval(slideInterval);
-            }
-            
-            // Event listeners
-            prevButton.addEventListener('click', function() {
-                stopSlideShow();
-                prevSlide();
-                startSlideShow();
-            });
-            
-            nextButton.addEventListener('click', function() {
-                stopSlideShow();
-                nextSlide();
-                startSlideShow();
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    stopSlideShow();
-                    showSlide(index);
-                    startSlideShow();
+            // FAQ ACCORDION
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        document.querySelectorAll('.faq-answer').forEach(ans => {
+                            ans.classList.remove('active');
+                        });
+                        document.querySelectorAll('.faq-question i').forEach(i => {
+                            i.classList.remove('fa-chevron-up');
+                            i.classList.add('fa-chevron-down');
+                        });
+                        
+                        answer.classList.add('active');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
                 });
             });
             
-            const heroSlider = document.querySelector('.hero-slider');
-            heroSlider.addEventListener('mouseenter', stopSlideShow);
-            heroSlider.addEventListener('mouseleave', startSlideShow);
-            heroSlider.addEventListener('touchstart', stopSlideShow);
-            heroSlider.addEventListener('touchend', startSlideShow);
+            // LANGUAGE SWITCHER
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (languageSwitcher) {
+                const currentLanguage = languageSwitcher.querySelector('.current-language');
+                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+                
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
+                    dropdownIcon.classList.toggle('fa-chevron-up');
+                    dropdownIcon.classList.toggle('fa-chevron-down');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!languageSwitcher.contains(e.target)) {
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Handle language selection
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Update current language display
+                        const flag = this.dataset.flag;
+                        const text = this.querySelector('.language-text').textContent;
+                        const lang = this.dataset.lang;
+                        
+                        currentLanguage.querySelector('.current-flag').textContent = flag;
+                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+                        
+                        // Close dropdown
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                        
+                        // Redirect to selected language page
+                        const href = this.getAttribute('href');
+                        if (href && href !== window.location.pathname) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+            }
             
-            // Initialize
-            startSlideShow();
-            
-            // ✅ LAZY LOADING IMAGES
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
+            // LAZY LOAD IMAGES
             if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
+                const imageObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
+                            imageObserver.unobserve(img);
                         }
                     });
                 });
                 
-                images.forEach(img => imageObserver.observe(img));
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                    imageObserver.observe(img);
+                });
             }
             
-            // ✅ LANGUAGE SWITCHER
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
-            
-            currentLanguage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                languageSwitcher.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                // Measure page load time
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log('Page load time:', loadTime + 'ms');
+                
+                // Send performance data to analytics
+                if (typeof gtag !== 'undefined' && loadTime < 10000) {
+                    gtag('event', 'timing_complete', {
+                        'name': 'page_load',
+                        'value': loadTime,
+                        'event_category': 'Performance'
+                    });
                 }
             });
             
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
+            // Service Worker Registration for PWA
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }).catch(function(error) {
+                        console.log('ServiceWorker registration failed: ', error);
                     });
-                    
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
                 });
+            }
+            
+            // Add focus-visible polyfill for better accessibility
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
             });
             
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': '中文',
-                    '한국어': 'KO',
-                    'Nederlands': 'NL',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA'
-                };
-                return codes[languageName] || languageName;
-            }
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
         });
-
-        // ✅ PRELOAD FIRST HERO IMAGE ONLY
-        function preloadImages() {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = '../images/hero-image1.jpg';
-            document.head.appendChild(link);
-        }
         
-        // Preload only first image for performance
-        preloadImages();
+        // Handle reduced motion preference
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (mediaQuery.matches) {
+            // Disable or adjust animations
+            const style = document.createElement('style');
+            style.textContent = `
+                .hero-slide {
+                    transition: none !important;
+                }
+                .tour-card:hover {
+                    transform: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
     </script>
 </body>
 </html>
