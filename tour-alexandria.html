@@ -516,7 +516,7 @@
             }
         }
         
-        /* HERO SLIDER - 5 IMAGES */
+        /* UPDATED: HERO SLIDER WITH ARROW BUTTONS */
         .hero-slider {
             position: relative;
             height: 60vh;
@@ -573,6 +573,57 @@
             max-width: 800px;
             background-color: transparent;
             border-radius: 10px;
+            z-index: 10;
+        }
+        
+        /* NEW: ARROW BUTTONS FOR NAVIGATION */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .slider-arrow.left-arrow {
+            left: 20px;
+        }
+        
+        .slider-arrow.right-arrow {
+            right: 20px;
+        }
+        
+        /* Hide arrows on mobile if you prefer, or make them smaller */
+        @media (max-width: 768px) {
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .slider-arrow.left-arrow {
+                left: 10px;
+            }
+            
+            .slider-arrow.right-arrow {
+                right: 10px;
+            }
         }
         
         /* HERO TITLE */
@@ -838,7 +889,7 @@
             background: white;
             border: 1px solid #e5e7eb;
             border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             z-index: 100;
             max-height: 300px;
             overflow-y: auto;
@@ -1537,7 +1588,7 @@
         </div>
     </nav>
 
-    <!-- HERO SLIDER WITH 5 IMAGES -->
+    <!-- UPDATED: HERO SLIDER WITH 5 IMAGES AND ARROW BUTTONS -->
     <section class="hero-slider">
         <div class="hero-slides">
             <!-- Slide 1 -->
@@ -1580,6 +1631,14 @@
                 </div>
             </div>
         </div>
+        
+        <!-- NEW: LEFT AND RIGHT ARROW BUTTONS -->
+        <button class="slider-arrow left-arrow" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrow right-arrow" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
         
         <!-- 5 Dots for 5 slides -->
         <div class="slider-controls">
@@ -2073,14 +2132,23 @@
             });
         }
 
-        // HERO SLIDER WITH 5 IMAGES (8-second rotation)
+        // UPDATED: HERO SLIDER WITH ARROW CONTROLS (5 IMAGES, 8-second rotation)
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.slider-dot');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
             let currentSlide = 0;
             let slideInterval;
             
             function showSlide(index) {
+                // Handle wrap-around for infinite loop
+                if (index >= slides.length) {
+                    index = 0;
+                } else if (index < 0) {
+                    index = slides.length - 1;
+                }
+                
                 slides.forEach(slide => slide.classList.remove('active'));
                 dots.forEach(dot => dot.classList.remove('active'));
                 
@@ -2094,10 +2162,30 @@
                 showSlide(nextIndex);
             }
             
+            function prevSlide() {
+                let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prevIndex);
+            }
+            
             function startSlider() {
+                clearInterval(slideInterval);
                 slideInterval = setInterval(nextSlide, 8000); // 8 seconds
             }
             
+            // Arrow click events
+            leftArrow.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                prevSlide();
+                startSlider();
+            });
+            
+            rightArrow.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                nextSlide();
+                startSlider();
+            });
+            
+            // Dot click events
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     clearInterval(slideInterval);
@@ -2105,6 +2193,52 @@
                     startSlider();
                 });
             });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    clearInterval(slideInterval);
+                    prevSlide();
+                    startSlider();
+                } else if (e.key === 'ArrowRight') {
+                    clearInterval(slideInterval);
+                    nextSlide();
+                    startSlider();
+                }
+            });
+            
+            // Swipe support for touch devices
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            const slider = document.querySelector('.hero-slider');
+            
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            slider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50; // Minimum swipe distance in pixels
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left - next slide
+                    clearInterval(slideInterval);
+                    nextSlide();
+                    startSlider();
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right - previous slide
+                    clearInterval(slideInterval);
+                    prevSlide();
+                    startSlider();
+                }
+            }
             
             startSlider();
             
