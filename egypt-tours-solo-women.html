@@ -81,6 +81,9 @@
     <link rel="alternate" hreflang="da" href="https://www.egyptphotographytours.com/da/egypt-tours-solo-women.html" />
     <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/egypt-tours-solo-women.html" />
     <link rel="alternate" hreflang="sv" href="https://www.egyptphotographytours.com/sv/egypt-tours-solo-women.html" />
+    <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/egypt-tours-solo-women.html" />
+    <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/egypt-tours-solo-women.html" />
+    <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/egypt-tours-solo-women.html" />
 
     <!-- SEO-optimized Open Graph tags -->
     <meta property="og:title" content="Solo Women Egypt Tours 2026: #1 Safe Travel Guide for Female Travelers">
@@ -1111,12 +1114,13 @@
             margin: 0 5px;
         }
         
-        /* Language Switcher */
+        /* Language Switcher - Updated to match index page */
         .language-switcher {
             position: relative;
             display: inline-block;
             z-index: 1000;
         }
+
         .current-language {
             display: flex;
             align-items: center;
@@ -1130,19 +1134,31 @@
             color: white;
             font-weight: 500;
         }
+
         .current-language:hover {
             background: rgba(255, 215, 0, 0.2);
             border-color: rgba(255, 215, 0, 0.5);
         }
+
+        .current-flag {
+            font-size: 16px;
+        }
+
+        .current-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
         .dropdown-icon {
             font-size: 12px;
             transition: transform 0.3s ease;
         }
+
         .language-dropdown {
             position: absolute;
             top: 100%;
             right: 0;
-            width: 200px;
+            width: 220px;
             max-height: 400px;
             overflow-y: auto;
             background: #374151;
@@ -1155,11 +1171,13 @@
             transition: all 0.3s ease;
             z-index: 1001;
         }
+
         .language-switcher.active .language-dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         .language-item {
             display: flex;
             align-items: center;
@@ -1170,12 +1188,51 @@
             transition: all 0.2s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .language-item:last-child {
             border-bottom: none;
         }
+
         .language-item:hover {
             background: rgba(255, 215, 0, 0.1);
             color: var(--accent-light);
+        }
+
+        .language-item.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .flag-icon {
+            font-size: 18px;
+            min-width: 24px;
+        }
+
+        .language-text {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Scrollbar styling for dropdown */
+        .language-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
         }
         
         /* Book Now Button */
@@ -1234,7 +1291,7 @@
                 </button>
                 <a href="contact.html" class="book-now-button">Book Now</a>
                 
-                <!-- Language Switcher -->
+                <!-- Language Switcher - Updated with all languages from index page -->
                 <div class="language-switcher">
                     <div class="current-language" aria-label="Select language">
                         <span class="current-flag">🇺🇸</span>
@@ -1242,45 +1299,110 @@
                         <i class="fas fa-chevron-down dropdown-icon"></i>
                     </div>
                     <div class="language-dropdown">
-                        <a href="egypt-tours-solo-women.html" class="language-item active">
+                        <!-- English -->
+                        <a href="egypt-tours-solo-women.html" class="language-item active" data-lang="en" data-flag="🇺🇸">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="ru/egypt-tours-solo-women.html" class="language-item">
-                            <span class="flag-icon">🇷🇺</span>
-                            <span class="language-text">Русский</span>
+                        <!-- Finnish -->
+                        <a href="fi/egypt-tours-solo-women.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
+                            <span class="flag-icon">🇫🇮</span>
+                            <span class="language-text">Suomi (Finnish)</span>
                         </a>
-                        <a href="ar/egypt-tours-solo-women.html" class="language-item">
+                        <!-- Arabic -->
+                        <a href="ar/egypt-tours-solo-women.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
                             <span class="flag-icon">🇪🇬</span>
-                            <span class="language-text">العربية</span>
+                            <span class="language-text">العربية (Arabic)</span>
                         </a>
-                        <a href="fr/egypt-tours-solo-women.html" class="language-item">
+                        <!-- Russian -->
+                        <a href="ru/egypt-tours-solo-women.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский (Russian)</span>
+                        </a>
+                        <!-- French -->
+                        <a href="fr/egypt-tours-solo-women.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
                             <span class="flag-icon">🇫🇷</span>
-                            <span class="language-text">Français</span>
+                            <span class="language-text">Français (French)</span>
                         </a>
-                        <a href="de/egypt-tours-solo-women.html" class="language-item">
+                        <!-- German -->
+                        <a href="de/egypt-tours-solo-women.html" class="language-item" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
-                            <span class="language-text">Deutsch</span>
+                            <span class="language-text">Deutsch (German)</span>
                         </a>
-                        <a href="es/egypt-tours-solo-women.html" class="language-item">
+                        <!-- Spanish -->
+                        <a href="es/egypt-tours-solo-women.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
-                            <span class="language-text">Español</span>
+                            <span class="language-text">Español (Spanish)</span>
                         </a>
-                        <a href="it/egypt-tours-solo-women.html" class="language-item">
+                        <!-- Italian -->
+                        <a href="it/egypt-tours-solo-women.html" class="language-item" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
-                            <span class="language-text">Italiano</span>
+                            <span class="language-text">Italiano (Italian)</span>
                         </a>
-                        <a href="zh/egypt-tours-solo-women.html" class="language-item">
+                        <!-- Chinese -->
+                        <a href="zh/egypt-tours-solo-women.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
-                            <span class="language-text">中文</span>
+                            <span class="language-text">中文 (Chinese)</span>
                         </a>
-                        <a href="ko/egypt-tours-solo-women.html" class="language-item">
+                        <!-- Korean -->
+                        <a href="ko/egypt-tours-solo-women.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
-                            <span class="language-text">한국어</span>
+                            <span class="language-text">한국어 (Korean)</span>
                         </a>
-                        <a href="pt/egypt-tours-solo-women.html" class="language-item">
+                        <!-- Portuguese -->
+                        <a href="pt/egypt-tours-solo-women.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
-                            <span class="language-text">Português</span>
+                            <span class="language-text">Português (Portuguese)</span>
+                        </a>
+                        <!-- Indonesian -->
+                        <a href="id/egypt-tours-solo-women.html" class="language-item" data-lang="id" data-flag="🇮🇩">
+                            <span class="flag-icon">🇮🇩</span>
+                            <span class="language-text">Bahasa Indonesia</span>
+                        </a>
+                        <!-- Japanese -->
+                        <a href="ja/egypt-tours-solo-women.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
+                            <span class="flag-icon">🇯🇵</span>
+                            <span class="language-text">日本語 (Japanese)</span>
+                        </a>
+                        <!-- Danish -->
+                        <a href="da/egypt-tours-solo-women.html" class="language-item" data-lang="da" data-flag="🇩🇰">
+                            <span class="flag-icon">🇩🇰</span>
+                            <span class="language-text">Dansk (Danish)</span>
+                        </a>
+                        <!-- Dutch -->
+                        <a href="nl/egypt-tours-solo-women.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
+                            <span class="flag-icon">🇳🇱</span>
+                            <span class="language-text">Nederlands (Dutch)</span>
+                        </a>
+                        <!-- Hindi -->
+                        <a href="hi/egypt-tours-solo-women.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
+                            <span class="flag-icon">🇮🇳</span>
+                            <span class="language-text">हिन्दी (Hindi)</span>
+                        </a>
+                        <!-- Norwegian -->
+                        <a href="no/egypt-tours-solo-women.html" class="language-item" data-lang="no" data-flag="🇳🇴">
+                            <span class="flag-icon">🇳🇴</span>
+                            <span class="language-text">Norsk (Norwegian)</span>
+                        </a>
+                        <!-- Swedish -->
+                        <a href="sv/egypt-tours-solo-women.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
+                            <span class="flag-icon">🇸🇪</span>
+                            <span class="language-text">Svenska (Swedish)</span>
+                        </a>
+                        <!-- Tagalog -->
+                        <a href="tl/egypt-tours-solo-women.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
+                            <span class="flag-icon">🇵🇭</span>
+                            <span class="language-text">Tagalog</span>
+                        </a>
+                        <!-- Malay -->
+                        <a href="ms/egypt-tours-solo-women.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
+                            <span class="flag-icon">🇲🇾</span>
+                            <span class="language-text">Bahasa Melayu</span>
+                        </a>
+                        <!-- Thai -->
+                        <a href="th/egypt-tours-solo-women.html" class="language-item" data-lang="th" data-flag="🇹🇭">
+                            <span class="flag-icon">🇹🇭</span>
+                            <span class="language-text">ไทย (Thai)</span>
                         </a>
                     </div>
                 </div>
@@ -2202,10 +2324,11 @@
                 });
             });
             
-            // LANGUAGE SWITCHER
+            // LANGUAGE SWITCHER - Updated to match index page
             const languageSwitcher = document.querySelector('.language-switcher');
             if (languageSwitcher) {
                 const currentLanguage = languageSwitcher.querySelector('.current-language');
+                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
                 const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
                 
                 currentLanguage.addEventListener('click', function(e) {
@@ -2225,14 +2348,28 @@
                 });
                 
                 // Handle language selection
-                languageSwitcher.querySelectorAll('.language-item').forEach(item => {
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
                     item.addEventListener('click', function(e) {
                         e.preventDefault();
-                        // Note: Actual redirection would be handled by the href
-                        // For demo, we just close the dropdown
+                        
+                        // Update current language display
+                        const flag = this.dataset.flag;
+                        const text = this.querySelector('.language-text').textContent;
+                        const lang = this.dataset.lang;
+                        
+                        currentLanguage.querySelector('.current-flag').textContent = flag;
+                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+                        
+                        // Close dropdown
                         languageSwitcher.classList.remove('active');
                         dropdownIcon.classList.remove('fa-chevron-up');
                         dropdownIcon.classList.add('fa-chevron-down');
+                        
+                        // Redirect to selected language page
+                        const href = this.getAttribute('href');
+                        if (href && href !== window.location.pathname) {
+                            window.location.href = href;
+                        }
                     });
                 });
             }
