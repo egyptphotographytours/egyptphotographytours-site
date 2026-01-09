@@ -37,8 +37,8 @@
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
-    <link rel="preload" href="images/solo-women-egypt-tours.jpg" as="image" media="(min-width: 768px)" fetchpriority="high">
-    <link rel="preload" href="images/egypt-photography-tours-logo.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="/images/solo-women-egypt-tours.jpg" as="image" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" href="/images/egypt-photography-tours-logo.jpg" as="image" fetchpriority="high">
     
     <!-- Search Engine & Social Media Optimization -->
     <meta property="og:image" content="https://www.egyptphotographytours.com/images/solo-women-egypt-tours.jpg">
@@ -480,6 +480,13 @@
             width: 40px;
             border-radius: 9999px;
             object-fit: cover;
+            background-color: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-weight: bold;
+            font-size: 18px;
         }
         .logo-link {
             font-size: 20px;
@@ -589,10 +596,10 @@
             }
         }
         
-        /* HERO SECTION - FIXED: Removed dark overlay */
+        /* HERO SECTION - FIXED: Removed dark overlay and fixed image path */
         .hero-section {
             position: relative;
-            background: url('images/solo-women-egypt-tours.jpg') no-repeat center center;
+            background: url('/images/solo-women-egypt-tours.jpg') no-repeat center center;
             background-size: cover;
             height: 60vh;
             min-height: 500px;
@@ -602,11 +609,25 @@
             text-align: center;
             padding: 20px;
         }
+        /* Fallback if image doesn't load */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2d3748 100%);
+            opacity: 0.7;
+            z-index: 1;
+        }
         .hero-content {
             color: white;
             max-width: 800px;
             margin: 0 auto;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
         }
         .hero-title {
             font-size: 36px;
@@ -753,6 +774,13 @@
             border-radius: 8px;
             margin: 20px 0;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: #f5f5f5;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
         }
         .image-caption {
             text-align: center;
@@ -795,6 +823,12 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
         }
         .tour-card-body {
             padding: 20px;
@@ -996,6 +1030,11 @@
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
         }
         
         /* FOOTER */
@@ -1250,6 +1289,17 @@
             background: var(--accent-dark);
             transform: scale(1.05);
         }
+
+        /* Image fallback styling */
+        .image-fallback {
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            min-height: 200px;
+        }
     </style>
     
     <!-- Deferred Non-Critical CSS -->
@@ -1263,13 +1313,10 @@
     <header class="header">
         <div class="container content">
             <div class="logo-section">
-                <img src="images/egypt-photography-tours-logo.jpg"
-                     alt="Egypt Photography Tours Logo - Ligtas na mga tour para sa mga babaeng nag-iisang manlalakbay sa Egypt"
-                     class="logo-img"
-                     loading="eager"
-                     width="40"
-                     height="40">
-                <a href="index.html" class="logo-link">Egypt Photography Tours</a>
+                <div class="logo-img" alt="Egypt Photography Tours Logo">
+                    EPT
+                </div>
+                <a href="/index.html" class="logo-link">Egypt Photography Tours</a>
             </div>
             <div class="header-contact">
                 <a href="https://wa.me/201550735673" target="_blank" rel="noopener nofollow" class="contact-info">
@@ -1289,9 +1336,9 @@
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a href="contact.html" class="book-now-button">Mag-book Na</a>
+                <a href="/contact.html" class="book-now-button">Mag-book Na</a>
                 
-                <!-- Language Switcher - Updated with all languages from index page -->
+                <!-- Language Switcher - Fixed with absolute paths -->
                 <div class="language-switcher">
                     <div class="current-language" aria-label="Select language">
                         <span class="current-flag">🇵🇭</span>
@@ -1300,107 +1347,107 @@
                     </div>
                     <div class="language-dropdown">
                         <!-- English -->
-                        <a href="egypt-tours-solo-women.html" class="language-item" data-lang="en" data-flag="🇺🇸">
+                        <a href="/egypt-tours-solo-women.html" class="language-item" data-lang="en" data-flag="🇺🇸">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
                         <!-- Finnish -->
-                        <a href="fi/egypt-tours-solo-women.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
+                        <a href="/fi/egypt-tours-solo-women.html" class="language-item" data-lang="fi" data-flag="🇫🇮">
                             <span class="flag-icon">🇫🇮</span>
                             <span class="language-text">Suomi (Finnish)</span>
                         </a>
                         <!-- Arabic -->
-                        <a href="ar/egypt-tours-solo-women.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
+                        <a href="/ar/egypt-tours-solo-women.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
                             <span class="flag-icon">🇪🇬</span>
                             <span class="language-text">العربية (Arabic)</span>
                         </a>
                         <!-- Russian -->
-                        <a href="ru/egypt-tours-solo-women.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                        <a href="/ru/egypt-tours-solo-women.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
                             <span class="flag-icon">🇷🇺</span>
                             <span class="language-text">Русский (Russian)</span>
                         </a>
                         <!-- French -->
-                        <a href="fr/egypt-tours-solo-women.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
+                        <a href="/fr/egypt-tours-solo-women.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
                             <span class="flag-icon">🇫🇷</span>
                             <span class="language-text">Français (French)</span>
                         </a>
                         <!-- German -->
-                        <a href="de/egypt-tours-solo-women.html" class="language-item" data-lang="de" data-flag="🇩🇪">
+                        <a href="/de/egypt-tours-solo-women.html" class="language-item" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
                             <span class="language-text">Deutsch (German)</span>
                         </a>
                         <!-- Spanish -->
-                        <a href="es/egypt-tours-solo-women.html" class="language-item" data-lang="es" data-flag="🇪🇸">
+                        <a href="/es/egypt-tours-solo-women.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
                             <span class="language-text">Español (Spanish)</span>
                         </a>
                         <!-- Italian -->
-                        <a href="it/egypt-tours-solo-women.html" class="language-item" data-lang="it" data-flag="🇮🇹">
+                        <a href="/it/egypt-tours-solo-women.html" class="language-item" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
                             <span class="language-text">Italiano (Italian)</span>
                         </a>
                         <!-- Chinese -->
-                        <a href="zh/egypt-tours-solo-women.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
+                        <a href="/zh/egypt-tours-solo-women.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
                             <span class="language-text">中文 (Chinese)</span>
                         </a>
                         <!-- Korean -->
-                        <a href="ko/egypt-tours-solo-women.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
+                        <a href="/ko/egypt-tours-solo-women.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
                             <span class="language-text">한국어 (Korean)</span>
                         </a>
                         <!-- Portuguese -->
-                        <a href="pt/egypt-tours-solo-women.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
+                        <a href="/pt/egypt-tours-solo-women.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
                             <span class="language-text">Português (Portuguese)</span>
                         </a>
                         <!-- Indonesian -->
-                        <a href="id/egypt-tours-solo-women.html" class="language-item" data-lang="id" data-flag="🇮🇩">
+                        <a href="/id/egypt-tours-solo-women.html" class="language-item" data-lang="id" data-flag="🇮🇩">
                             <span class="flag-icon">🇮🇩</span>
                             <span class="language-text">Bahasa Indonesia</span>
                         </a>
                         <!-- Japanese -->
-                        <a href="ja/egypt-tours-solo-women.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
+                        <a href="/ja/egypt-tours-solo-women.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
                             <span class="flag-icon">🇯🇵</span>
                             <span class="language-text">日本語 (Japanese)</span>
                         </a>
                         <!-- Danish -->
-                        <a href="da/egypt-tours-solo-women.html" class="language-item" data-lang="da" data-flag="🇩🇰">
+                        <a href="/da/egypt-tours-solo-women.html" class="language-item" data-lang="da" data-flag="🇩🇰">
                             <span class="flag-icon">🇩🇰</span>
                             <span class="language-text">Dansk (Danish)</span>
                         </a>
                         <!-- Dutch -->
-                        <a href="nl/egypt-tours-solo-women.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
+                        <a href="/nl/egypt-tours-solo-women.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
                             <span class="flag-icon">🇳🇱</span>
                             <span class="language-text">Nederlands (Dutch)</span>
                         </a>
                         <!-- Hindi -->
-                        <a href="hi/egypt-tours-solo-women.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
+                        <a href="/hi/egypt-tours-solo-women.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
                             <span class="flag-icon">🇮🇳</span>
                             <span class="language-text">हिन्दी (Hindi)</span>
                         </a>
                         <!-- Norwegian -->
-                        <a href="no/egypt-tours-solo-women.html" class="language-item" data-lang="no" data-flag="🇳🇴">
+                        <a href="/no/egypt-tours-solo-women.html" class="language-item" data-lang="no" data-flag="🇳🇴">
                             <span class="flag-icon">🇳🇴</span>
                             <span class="language-text">Norsk (Norwegian)</span>
                         </a>
                         <!-- Swedish -->
-                        <a href="sv/egypt-tours-solo-women.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
+                        <a href="/sv/egypt-tours-solo-women.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
                             <span class="flag-icon">🇸🇪</span>
                             <span class="language-text">Svenska (Swedish)</span>
                         </a>
                         <!-- Tagalog -->
-                        <a href="tl/egypt-tours-solo-women.html" class="language-item active" data-lang="tl" data-flag="🇵🇭">
+                        <a href="/tl/egypt-tours-solo-women.html" class="language-item active" data-lang="tl" data-flag="🇵🇭">
                             <span class="flag-icon">🇵🇭</span>
                             <span class="language-text">Tagalog</span>
                         </a>
                         <!-- Malay -->
-                        <a href="ms/egypt-tours-solo-women.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
+                        <a href="/ms/egypt-tours-solo-women.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
                             <span class="flag-icon">🇲🇾</span>
                             <span class="language-text">Bahasa Melayu</span>
                         </a>
                         <!-- Thai -->
-                        <a href="th/egypt-tours-solo-women.html" class="language-item" data-lang="th" data-flag="🇹🇭">
+                        <a href="/th/egypt-tours-solo-women.html" class="language-item" data-lang="th" data-flag="🇹🇭">
                             <span class="flag-icon">🇹🇭</span>
                             <span class="language-text">ไทย (Thai)</span>
                         </a>
@@ -1409,14 +1456,14 @@
             </div>
             
             <ul class="nav-links">
-                <li class="nav-link"><a href="index.html">Home</a></li>
-                <li class="nav-link"><a href="about.html">Tungkol</a></li>
-                <li class="nav-link"><a href="tours.html">Mga Tour</a></li>
-                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
-                <li class="nav-link"><a href="resources.html">Mga Mapagkukunan</a></li>
-                <li class="nav-link"><a href="blog.html">Blog</a></li>
-                <li class="nav-link"><a href="contact.html">Kontak</a></li>
-                <li class="nav-link"><a href="faqs.html">Mga FAQ</a></li>
+                <li class="nav-link"><a href="/index.html">Home</a></li>
+                <li class="nav-link"><a href="/about.html">Tungkol</a></li>
+                <li class="nav-link"><a href="/tours.html">Mga Tour</a></li>
+                <li class="nav-link"><a href="/gallery.html">Gallery</a></li>
+                <li class="nav-link"><a href="/resources.html">Mga Mapagkukunan</a></li>
+                <li class="nav-link"><a href="/blog.html">Blog</a></li>
+                <li class="nav-link"><a href="/contact.html">Kontak</a></li>
+                <li class="nav-link"><a href="/faqs.html">Mga FAQ</a></li>
             </ul>
         </div>
     </nav>
@@ -1441,8 +1488,8 @@
         <div class="container">
             <!-- Breadcrumb -->
             <div class="breadcrumb">
-                <a href="index.html">Home</a> <span>></span>
-                <a href="tours.html">Egypt Tours</a> <span>></span>
+                <a href="/index.html">Home</a> <span>></span>
+                <a href="/tours.html">Egypt Tours</a> <span>></span>
                 <span>Mga Egypt Tour para sa Babaeng Nag-iisang Maglakbay 2026</span>
             </div>
             
@@ -1482,12 +1529,9 @@
                 
                 <p>Ito ang pinakakaraniwang tanong na natatanggap namin mula sa mga babaeng nag-iisip ng nag-iisang paglalakbay sa Egypt. Ang sagot ay isang malakas na <strong>OO</strong> – kapag ikaw ay naglalakbay nang may tamang paghahanda at suporta. Tinatanggap ng Egypt ang milyun-milyong babaeng manlalakbay taun-taon, at sa aming mga espesyal na tour para sa babae lamang, maaari mong galugarin ang kahanga-hangang bansang ito nang may buong kumpiyansa.</p>
                 
-                <img src="images/women-egypt-luxor-temple.jpg" 
-                     alt="Mga babaeng nag-iisang manlalakbay na nag-eexplore ng Luxor Temple kasama ang babaeng gabay - Ligtas na mga tour sa Egypt 2026"
-                     class="content-image"
-                     loading="lazy"
-                     width="900"
-                     height="600">
+                <div class="content-image image-fallback">
+                    Babaeng nag-iisang manlalakbay na nag-eexplore ng Luxor Temple
+                </div>
                 <p class="image-caption">Mga babaeng manlalakbay na nag-eexplore ng Luxor Temple kasama ang aming babaeng gabay na Egyptologist - Isang ligtas at mayamang karanasan</p>
                 
                 <h3>Mga Estadistika sa Kaligtasan at Katotohanan</h3>
@@ -1651,12 +1695,9 @@
                 <div class="tour-grid">
                     <!-- Tour 1 -->
                     <div class="tour-card">
-                        <img src="images/7day-egypt-women-tour.jpg"
-                             alt="7-Day Discovery Tour ng Egypt para sa Babaeng Nag-iisa 2026 - Kumpletong package para sa mga babaeng manlalakbay"
-                             class="tour-img"
-                             loading="lazy"
-                             width="400"
-                             height="200">
+                        <div class="tour-img image-fallback">
+                            7-Day Discovery Tour ng Egypt
+                        </div>
                         <div class="tour-card-body">
                             <h3 class="tour-card-title">7-Day Discovery ng Egypt para sa Babaeng Nag-iisa</h3>
                             <p>Perpektong pagpapakilala para sa mga unang beses na bumibisita. Sakop ang mga pyramid, Egyptian Museum, mga templo ng Luxor, at Nile cruise.</p>
@@ -1669,19 +1710,16 @@
                             </ul>
                             <div class="tour-card-footer">
                                 <span class="tour-price">$1,299</span>
-                                <a href="tour-egypt-discovery-7day.html" class="tour-cta">Mag-book Na</a>
+                                <a href="/tour-egypt-discovery-7day.html" class="tour-cta">Mag-book Na</a>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Tour 2 -->
                     <div class="tour-card">
-                        <img src="images/pyramids-women-tour.jpg"
-                             alt="Pribadong Pyramids Tour para sa Babaeng Nag-iisa 2026 - Eksklusibong karanasan sa Giza"
-                             class="tour-img"
-                             loading="lazy"
-                             width="400"
-                             height="200">
+                        <div class="tour-img image-fallback">
+                            Pribadong Karanasan sa Pyramids
+                        </div>
                         <div class="tour-card-body">
                             <h3 class="tour-card-title">Pribadong Karanasan sa Pyramids</h3>
                             <p>Eksklusibong pribadong tour ng Giza Plateau na may camel ride at propesyonal na photoshoot sa golden hour.</p>
@@ -1694,19 +1732,16 @@
                             </ul>
                             <div class="tour-card-footer">
                                 <span class="tour-price">$249</span>
-                                <a href="tour-pyramids-private.html" class="tour-cta">Mag-book Na</a>
+                                <a href="/tour-pyramids-private.html" class="tour-cta">Mag-book Na</a>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Tour 3 -->
                     <div class="tour-card">
-                        <img src="images/luxor-aswan-women-tour.jpg"
-                             alt="Luxor & Aswan Nile Cruise para sa Babae Lamang 2026 - 5-day luxury cruise"
-                             class="tour-img"
-                             loading="lazy"
-                             width="400"
-                             height="200">
+                        <div class="tour-img image-fallback">
+                            Luxor & Aswan Nile Cruise
+                        </div>
                         <div class="tour-card-body">
                             <h3 class="tour-card-title">Luxor & Aswan Nile Cruise</h3>
                             <p>5-day luxury na Nile cruise na bumibisita sa Valley of the Kings, Karnak Temple, Abu Simbel, at marami pa.</p>
@@ -1719,7 +1754,7 @@
                             </ul>
                             <div class="tour-card-footer">
                                 <span class="tour-price">$1,899</span>
-                                <a href="tour-nile-cruise-women.html" class="tour-cta">Mag-book Na</a>
+                                <a href="/tour-nile-cruise-women.html" class="tour-cta">Mag-book Na</a>
                             </div>
                         </div>
                     </div>
@@ -1729,12 +1764,9 @@
                 <div class="tour-grid">
                     <!-- Tour 4 -->
                     <div class="tour-card">
-                        <img src="images/alexandria-women-tour.jpg"
-                             alt="Alexandria Day Tour para sa Babaeng Nag-iisa - Karanasan sa Mediterranean Egypt"
-                             class="tour-img"
-                             loading="lazy"
-                             width="400"
-                             height="200">
+                        <div class="tour-img image-fallback">
+                            Alexandria Coastal Escape
+                        </div>
                         <div class="tour-card-body">
                             <h3 class="tour-card-title">Alexandria Coastal Escape</h3>
                             <p>Arawang biyahe mula Cairo papuntang Alexandria na nagtatampok ng Catacombs, Library, Citadel, at Mediterranean lunch.</p>
@@ -1747,19 +1779,16 @@
                             </ul>
                             <div class="tour-card-footer">
                                 <span class="tour-price">$199</span>
-                                <a href="tour-alexandria-women.html" class="tour-cta">Mag-book Na</a>
+                                <a href="/tour-alexandria-women.html" class="tour-cta">Mag-book Na</a>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Tour 5 -->
                     <div class="tour-card">
-                        <img src="images/photography-women-tour.jpg"
-                             alt="Egypt Photography Tour para sa Babae - Propesyonal na photoshoot package"
-                             class="tour-img"
-                             loading="lazy"
-                             width="400"
-                             height="200">
+                        <div class="tour-img image-fallback">
+                            Photography & Culture Tour
+                        </div>
                         <div class="tour-card-body">
                             <h3 class="tour-card-title">Photography & Culture Tour</h3>
                             <p>7-day tour na pinagsasama ang paglulubog sa kultura sa propesyonal na pagtuturo sa photography sa mga iconic na lugar.</p>
@@ -1772,19 +1801,16 @@
                             </ul>
                             <div class="tour-card-footer">
                                 <span class="tour-price">$1,599</span>
-                                <a href="tour-photography-women.html" class="tour-cta">Mag-book Na</a>
+                                <a href="/tour-photography-women.html" class="tour-cta">Mag-book Na</a>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Tour 6 -->
                     <div class="tour-card">
-                        <img src="images/desert-women-tour.jpg"
-                             alt="Egypt Desert Adventure para sa Babae - Karanasan sa camping sa White Desert"
-                             class="tour-img"
-                             loading="lazy"
-                             width="400"
-                             height="200">
+                        <div class="tour-img image-fallback">
+                            Desert Adventure Safari
+                        </div>
                         <div class="tour-card-body">
                             <h3 class="tour-card-title">Desert Adventure Safari</h3>
                             <p>3-day White Desert camping experience na may babaeng mga gabay na Bedouin, stargazing, at paggalugad sa disyerto.</p>
@@ -1797,7 +1823,7 @@
                             </ul>
                             <div class="tour-card-footer">
                                 <span class="tour-price">$799</span>
-                                <a href="tour-desert-women.html" class="tour-cta">Mag-book Na</a>
+                                <a href="/tour-desert-women.html" class="tour-cta">Mag-book Na</a>
                             </div>
                         </div>
                     </div>
@@ -1835,7 +1861,7 @@
                             </ul>
                             <div class="tour-card-footer">
                                 <span class="tour-price">$2,199</span>
-                                <a href="tour-new-year-2026.html" class="tour-cta">Limitadong Mga Espasyo</a>
+                                <a href="/tour-new-year-2026.html" class="tour-cta">Limitadong Mga Espasyo</a>
                             </div>
                         </div>
                     </div>
@@ -1853,7 +1879,7 @@
                             </ul>
                             <div class="tour-card-footer">
                                 <span class="tour-price">$1,499</span>
-                                <a href="tour-cairo-new-year.html" class="tour-cta">Mag-book Na</a>
+                                <a href="/tour-cairo-new-year.html" class="tour-cta">Mag-book Na</a>
                             </div>
                         </div>
                     </div>
@@ -1863,7 +1889,7 @@
                 <div class="cta-section">
                     <h2 class="cta-title">Handa na para sa Iyong 2026 Egypt Adventure?</h2>
                     <p>Sumali sa daan-daang mga babaeng nag-iisa na nakaranas ng Egypt nang ligtas at kahanga-hanga sa aming mga tour para sa babae lamang. Mag-book ng iyong 2026 tour ngayon at secure ang pinakamahusay na mga petsa para sa New Year celebrations o mga prefer na travel season.</p>
-                    <a href="contact.html" class="cta-button">Mag-book ng Iyong 2026 Tour Ngayon</a>
+                    <a href="/contact.html" class="cta-button">Mag-book ng Iyong 2026 Tour Ngayon</a>
                     <p style="margin-top: 20px; font-size: 14px;"><i class="fas fa-shield-alt"></i> <strong>Garantiya sa Kaligtasan:</strong> Buong refund kung hindi natugunan ang mga pamantayan sa kaligtasan</p>
                 </div>
                 
@@ -2117,7 +2143,7 @@
                     <div class="faq-item">
                         <h3 class="faq-question">Anong mga paraan ng pagbabayad ang tinatanggap ninyo? <i class="fas fa-chevron-down"></i></h3>
                         <div class="faq-answer">
-                            <p>Tumatanggap kami ng mga credit card (Visa, MasterCard, American Express), PayPal, at bank transfers. Isang 30% deposit ang nagse-secure ng iyong booking, na may balanse na dapat bayaran 30 araw bago ang paglalakbay. Nag-aalok kami ng mga flexible na payment plan para sa mga tour na nai-book nang 6+ buwan nang maaga.</p>
+                            <p>Tumatanggap kami ng mga credit cards (Visa, MasterCard, American Express), PayPal, at bank transfers. Isang 30% deposit ang nagse-secure ng iyong booking, na may balanse na dapat bayaran 30 araw bago ang paglalakbay. Nag-aalok kami ng mga flexible na payment plan para sa mga tour na nai-book nang 6+ buwan nang maaga.</p>
                         </div>
                     </div>
                 </div>
@@ -2132,7 +2158,7 @@
                         </div>
                         <p class="testimonial-text">"Bilang isang babaeng nag-iisang manlalakbay, kinabahan ako tungkol sa Egypt. Ang tour para sa babae lamang ay perpekto! Ang aming babaeng gabay na si Amira ay kamangha-mangha - matalino, maprotekta, at masaya. Hindi ako nakaramdam ng hindi ligtas. Ang grupo ng mga babae na nakilala ko ay naging mga kaibigan agad. Hindi na makapaghintay na bumalik!"</p>
                         <div class="testimonial-author">
-                            <img src="images/testimonial-sarah.jpg" alt="Sarah mula Australia - Testimonial ng tour sa Egypt para sa babaeng nag-iisa" loading="lazy" width="50" height="50">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #666;">SM</div>
                             <div>
                                 <strong>Sarah M.</strong>
                                 <div>Australia | Nobyembre 2025</div>
@@ -2146,7 +2172,7 @@
                         </div>
                         <p class="testimonial-text">"Ang New Year's Eve celebration sa pyramids ay mahiwaga! Ang pagsama sa isang grupo ng mga babaeng nag-iisa ay ginawa itong espesyal. Ang seguridad ay mahusay, ang mga gabay ay mapagmasid, at nakaramdam ako ng ganap na ligtas sa buong tour. Ang karagdagan ng photography tour ay sulit ang bawat sentimo - kamangha-mangha ang aking mga larawan!"</p>
                         <div class="testimonial-author">
-                            <img src="images/testimonial-emily.jpg" alt="Emily mula USA - Testimonial ng New Year tour sa Egypt" loading="lazy" width="50" height="50">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #666;">ER</div>
                             <div>
                                 <strong>Emily R.</strong>
                                 <div>USA | Disyembre 2025</div>
@@ -2162,7 +2188,7 @@
                         </div>
                         <p class="testimonial-text">"Naglakbay ako nang mag-isa sa Egypt sa edad na 62 at nag-aalangan. Ang tour para sa babae lamang ay perpekto! Lahat ay inasikaso - transportasyon, tirahan, pagkain. Ang babaeng gabay ay parang personal na tagapag-alaga. Nag-explore ako ng mga templo, nag-cruise sa Nile, at naramdaman kong empowered. Lubos na inirerekomenda para sa anumang edad!"</p>
                         <div class="testimonial-author">
-                            <img src="images/testimonial-margaret.jpg" alt="Margaret mula UK - Senior na babaeng nag-iisang tour sa Egypt" loading="lazy" width="50" height="50">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #666;">MT</div>
                             <div>
                                 <strong>Margaret T.</strong>
                                 <div>UK | Marso 2025</div>
@@ -2176,7 +2202,7 @@
                         </div>
                         <p class="testimonial-text">"Ang photography tour ay lumampas sa lahat ng inaasahan. Hindi lamang ako natuto ng mga propesyonal na pamamaraan, ngunit ang aming babaeng photographer na gabay ay alam ang lahat ng mga ligtas na lugar at pinakamahusay na oras para sa mga larawan. Ang grupo para sa babae lamang ay lumikha ng isang suportadong kapaligiran. Umuwi ako ng portfolio-quality na mga larawan at kamangha-manghang mga alaala."</p>
                         <div class="testimonial-author">
-                            <img src="images/testimonial-lisa.jpg" alt="Lisa mula Canada - Testimonial ng photography tour sa Egypt" loading="lazy" width="50" height="50">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #666;">LC</div>
                             <div>
                                 <strong>Lisa Chen</strong>
                                 <div>Canada | Oktubre 2025</div>
@@ -2190,8 +2216,8 @@
                     <h2 class="cta-title">Simulan ang Pagpaplano ng Iyong 2026 Egypt Adventure Ngayon</h2>
                     <p>Huwag hayaang pigilan ka ng mga alalahanin tungkol sa nag-iisang paglalakbay na maranasan ang isa sa mga pinaka hindi kapani-paniwalang destinasyon sa mundo. Sa aming mga tour para sa babae lamang, dalubhasang mga babaeng gabay, at komprehensibong mga hakbang sa kaligtasan, maaari mong galugarin ang Egypt nang may buong kumpiyansa at lumikha ng mga alaala na magtatagal habang buhay.</p>
                     <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 30px 0;">
-                        <a href="contact.html" class="cta-button"><i class="fas fa-calendar-check"></i> Mag-book ng Konsultasyon</a>
-                        <a href="tours.html" class="cta-button" style="background: white; color: var(--primary-dark);"><i class="fas fa-binoculars"></i> Tingnan ang Lahat ng Mga Tour</a>
+                        <a href="/contact.html" class="cta-button"><i class="fas fa-calendar-check"></i> Mag-book ng Konsultasyon</a>
+                        <a href="/tours.html" class="cta-button" style="background: white; color: var(--primary-dark);"><i class="fas fa-binoculars"></i> Tingnan ang Lahat ng Mga Tour</a>
                         <a href="https://wa.me/201550735673" class="cta-button" style="background: #25D366; color: white;"><i class="fab fa-whatsapp"></i> WhatsApp Kami</a>
                     </div>
                     <p><strong>Limitadong Availability 2026:</strong> Mabilis na pinupuno ang mga New Year tour | Mga diskwento sa maagang pag-book na available hanggang Enero 31, 2026</p>
@@ -2200,7 +2226,7 @@
                 <!-- Author Bio -->
                 <div style="border-top: 2px solid var(--accent-light); padding-top: 30px; margin-top: 50px;">
                     <div style="display: flex; align-items: center; gap: 20px;">
-                        <img src="images/hossam-profile.jpg" alt="Hossam - Propesyonal na Photographer & Egyptologist" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" loading="lazy">
+                        <div style="width: 100px; height: 100px; border-radius: 50%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #666; font-weight: bold;">H</div>
                         <div>
                             <h3>Tungkol sa May-akda</h3>
                             <p><strong>Hossam</strong> ay isang propesyonal na photographer at lisensyadong Egyptologist na may higit sa 15 taong karanasan sa paggabay sa mga babae sa Egypt. Bilang tagapagtatag ng Egypt Photography Tours, personal niyang dinisenyo ang lahat ng mga programa ng tour para sa babae lamang upang matiyak ang maximum na kaligtasan, sensitivity sa kultura, at mga pagkakataon sa pagkuha ng larawan para sa mga babaeng nag-iisang manlalakbay.</p>
@@ -2229,12 +2255,12 @@
                 <div>
                     <h3 class="footer-title">Mga Tour para sa Babaeng Nag-iisa</h3>
                     <ul class="footer-links">
-                        <li><a href="egypt-tours-solo-women.html">2026 Mga Tour para sa Babae Lamang</a></li>
-                        <li><a href="tour-egypt-discovery-7day.html">7-Day Discovery Tour</a></li>
-                        <li><a href="tour-nile-cruise-women.html">Nile Cruise para sa Babae</a></li>
-                        <li><a href="tour-new-year-2026.html">Espesyal para sa New Year 2026</a></li>
-                        <li><a href="tour-photography-women.html">Mga Photography Tour</a></li>
-                        <li><a href="tour-desert-women.html">Mga Pakikipagsapalaran sa Disyerto</a></li>
+                        <li><a href="/egypt-tours-solo-women.html">2026 Mga Tour para sa Babae Lamang</a></li>
+                        <li><a href="/tour-egypt-discovery-7day.html">7-Day Discovery Tour</a></li>
+                        <li><a href="/tour-nile-cruise-women.html">Nile Cruise para sa Babae</a></li>
+                        <li><a href="/tour-new-year-2026.html">Espesyal para sa New Year 2026</a></li>
+                        <li><a href="/tour-photography-women.html">Mga Photography Tour</a></li>
+                        <li><a href="/tour-desert-women.html">Mga Pakikipagsapalaran sa Disyerto</a></li>
                     </ul>
                 </div>
                 
@@ -2324,7 +2350,7 @@
                 });
             });
             
-            // LANGUAGE SWITCHER - Updated to match index page
+            // LANGUAGE SWITCHER - Fixed with absolute paths
             const languageSwitcher = document.querySelector('.language-switcher');
             if (languageSwitcher) {
                 const currentLanguage = languageSwitcher.querySelector('.current-language');
@@ -2517,9 +2543,9 @@
         // Preload important tour images
         window.addEventListener('load', function() {
             const imagesToPreload = [
-                'images/7day-egypt-women-tour.jpg',
-                'images/pyramids-women-tour.jpg',
-                'images/luxor-aswan-women-tour.jpg'
+                '/images/7day-egypt-women-tour.jpg',
+                '/images/pyramids-women-tour.jpg',
+                '/images/luxor-aswan-women-tour.jpg'
             ];
             
             imagesToPreload.forEach(preloadImage);
@@ -2530,7 +2556,7 @@
             if (e.target.tagName === 'IMG') {
                 console.warn('Image failed to load:', e.target.src);
                 // Optionally set a placeholder image
-                // e.target.src = 'images/placeholder.jpg';
+                // e.target.src = '/images/placeholder.jpg';
             }
         }, true);
     </script>
