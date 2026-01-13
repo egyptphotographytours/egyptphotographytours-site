@@ -63,11 +63,96 @@
     <meta name="geo.placename" content="Cairo, Egypt">
     <meta name="geo.position" content="30.0444;31.2357">
 
-    <!-- COMPREHENSIVE STRUCTURED DATA SCHEMA FOR WEATHER & TOURS -->
+    <!-- COMPREHENSIVE STRUCTURED DATA SCHEMA FOR WEATHER & TOURS - UPDATED -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Egypt Photography Tours Weather Guide",
+          "url": "https://www.egyptphotographytours.com/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.egyptphotographytours.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          },
+          "keywords": "Egypt weather, photography tours, best time to visit Egypt, climate guide"
+        },
+        {
+          "@type": ["TravelAgency", "PhotographyService"],
+          "name": "Egypt Photography Tours",
+          "url": "https://www.egyptphotographytours.com",
+          "logo": "https://www.egyptphotographytours.com/images/logo.jpg",
+          "telephone": "+20-155-073-5673",
+          "email": "info@egyptphotographytours.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
+            "addressLocality": "Giza",
+            "addressRegion": "Giza Governorate",
+            "postalCode": "12557",
+            "addressCountry": "EG"
+          },
+          "foundingDate": "2015",
+          "founder": {
+            "@type": "Person",
+            "name": "Hossam",
+            "jobTitle": "Professional Photographer & Egyptologist"
+          },
+          "description": "Egypt's premier photography tour company offering unique fusion of luxury travel, historical exploration, local culture experiences and professional photoshoots with advanced camera equipment.",
+          "knowsAbout": ["Egyptian History", "Professional Photography", "Egypt Weather Patterns", "Luxury Travel", "Photoshoot Tours"],
+          "serviceType": ["Photography Tours", "Luxury Egypt Tours", "Weather-Optimized Tours", "Professional Photoshoots"],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "openingHours": "Mo-Su 08:00-22:00",
+          "priceRange": "$$-$$$",
+          "currenciesAccepted": "USD, EUR, GBP, EGP",
+          "paymentAccepted": "Credit Card, PayPal, Bank Transfer"
+        },
+        {
+          "@type": "Place",
+          "name": "Pyramids of Giza",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Giza",
+            "addressRegion": "Giza Governorate",
+            "addressCountry": "Egypt"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "29.9792",
+            "longitude": "31.1342"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.egyptphotographytours.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Resources",
+              "item": "https://www.egyptphotographytours.com/resources.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Egypt Weather Guide 2026",
+              "item": "https://www.egyptphotographytours.com/egypt-weather-guide-best-time-to-visit.html"
+            }
+          ]
+        },
         {
           "@type": "Article",
           "headline": "Egypt Weather Guide 2026: Best Time to Visit Cairo, Pyramids & Red Sea for Photography Tours",
@@ -98,7 +183,9 @@
           ],
           "keywords": "Egypt weather, best time to visit Egypt, Cairo weather, Egypt climate, photography tours Egypt",
           "articleSection": "Egypt Travel Guide",
-          "articleBody": "Comprehensive guide to Egypt's climate throughout the year with monthly temperature data, regional variations, and perfect timing for photography tours to pyramids, historical sites, and Red Sea resorts."
+          "articleBody": "Comprehensive guide to Egypt's climate throughout the year with monthly temperature data, regional variations, and perfect timing for photography tours to pyramids, historical sites, and Red Sea resorts.",
+          "wordCount": "2500",
+          "timeRequired": "PT15M"
         },
         {
           "@type": "FAQPage",
@@ -156,6 +243,43 @@
           "climate": "Hot desert climate (BWh) with moderate Mediterranean coastal conditions",
           "bestTimeToVisit": "October to April",
           "touristType": ["Photography enthusiasts", "History travelers", "Beach vacationers", "Cultural explorers"]
+        },
+        {
+          "@type": ["TouristTrip", "Product", "PhotographyService"],
+          "name": "Weather-Optimized Egypt Photography Tours",
+          "description": "Unique Egypt photography tours designed around optimal weather conditions, combining luxury travel, ancient history exploration, and professional photoshoots with advanced camera equipment during perfect climate windows.",
+          "url": "https://www.egyptphotographytours.com/tours.html",
+          "image": [
+            "https://www.egyptphotographytours.com/images/blog-egypt-weather-guide.jpg",
+            "https://www.egyptphotographytours.com/images/pyramids-sunset.jpg",
+            "https://www.egyptphotographytours.com/images/red-sea-beach.jpg"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "1200",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2026-01-01",
+            "seller": {
+              "@type": "Organization",
+              "name": "Egypt Photography Tours"
+            }
+          },
+          "duration": "P7D",
+          "touristType": ["Solo travelers", "Couples", "Families", "Honeymooners", "Photography enthusiasts", "Luxury travelers"],
+          "brand": {
+            "@type": "Brand",
+            "name": "Egypt Photography Tours",
+            "slogan": "Where Luxury Meets History Through Professional Photography"
+          },
+          "sku": "EPT-2026-WEATHER",
+          "category": ["Luxury Tour", "Photography Tour", "Weather-Optimized Tour"],
+          "additionalProperty": {
+            "@type": "PropertyValue",
+            "name": "Photography Equipment",
+            "value": "Latest Professional Cameras Included"
+          }
         }
       ]
     }
@@ -360,6 +484,127 @@
                 gap: 12px;
                 padding: 0;
             }
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+        }
+
+        .current-language:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .current-flag {
+            font-size: 16px;
+        }
+
+        .current-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .dropdown-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 220px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #374151;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .language-switcher.active .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-light);
+        }
+
+        .language-item.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .flag-icon {
+            font-size: 18px;
+            min-width: 24px;
+        }
+
+        .language-text {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Scrollbar styling for dropdown */
+        .language-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .language-dropdown::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
         }
 
         /* MOBILE MENU TOGGLE */
@@ -955,6 +1200,67 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="contact.html" class="book-now-button">Book Now</a>
+                
+                <!-- Language Switcher Added Here -->
+                <div class="language-switcher">
+                    <div class="current-language" aria-label="Select language">
+                        <span class="current-flag">🇺🇸</span>
+                        <span class="current-text">EN</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </div>
+                    <div class="language-dropdown">
+                        <!-- English -->
+                        <a href="https://www.egyptphotographytours.com/egypt-weather-guide-best-time-to-visit.html" class="language-item active" data-lang="en" data-flag="🇺🇸">
+                            <span class="flag-icon">🇺🇸</span>
+                            <span class="language-text">English</span>
+                        </a>
+                        <!-- Arabic -->
+                        <a href="https://www.egyptphotographytours.com/ar/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
+                            <span class="flag-icon">🇪🇬</span>
+                            <span class="language-text">العربية (Arabic)</span>
+                        </a>
+                        <!-- French -->
+                        <a href="https://www.egyptphotographytours.com/fr/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
+                            <span class="flag-icon">🇫🇷</span>
+                            <span class="language-text">Français (French)</span>
+                        </a>
+                        <!-- German -->
+                        <a href="https://www.egyptphotographytours.com/de/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="de" data-flag="🇩🇪">
+                            <span class="flag-icon">🇩🇪</span>
+                            <span class="language-text">Deutsch (German)</span>
+                        </a>
+                        <!-- Spanish -->
+                        <a href="https://www.egyptphotographytours.com/es/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="es" data-flag="🇪🇸">
+                            <span class="flag-icon">🇪🇸</span>
+                            <span class="language-text">Español (Spanish)</span>
+                        </a>
+                        <!-- Italian -->
+                        <a href="https://www.egyptphotographytours.com/it/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="it" data-flag="🇮🇹">
+                            <span class="flag-icon">🇮🇹</span>
+                            <span class="language-text">Italiano (Italian)</span>
+                        </a>
+                        <!-- Chinese -->
+                        <a href="https://www.egyptphotographytours.com/zh/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
+                            <span class="flag-icon">🇨🇳</span>
+                            <span class="language-text">中文 (Chinese)</span>
+                        </a>
+                        <!-- Korean -->
+                        <a href="https://www.egyptphotographytours.com/ko/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
+                            <span class="flag-icon">🇰🇷</span>
+                            <span class="language-text">한국어 (Korean)</span>
+                        </a>
+                        <!-- Portuguese -->
+                        <a href="https://www.egyptphotographytours.com/pt/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
+                            <span class="flag-icon">🇵🇹</span>
+                            <span class="language-text">Português (Portuguese)</span>
+                        </a>
+                        <!-- Russian -->
+                        <a href="https://www.egyptphotographytours.com/ru/egypt-weather-guide-best-time-to-visit.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span class="language-text">Русский (Russian)</span>
+                        </a>
+                    </div>
+                </div>
             </div>
             <ul class="nav-links">
                 <li class="nav-link"><a href="index.html">Home</a></li>
@@ -1295,6 +1601,77 @@
                     }
                 });
             });
+
+            // LANGUAGE SWITCHER FUNCTIONALITY
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (languageSwitcher) {
+                const currentLanguage = languageSwitcher.querySelector('.current-language');
+                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+                
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
+                    dropdownIcon.classList.toggle('fa-chevron-up');
+                    dropdownIcon.classList.toggle('fa-chevron-down');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!languageSwitcher.contains(e.target)) {
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Handle language selection
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Update current language display
+                        const flag = this.dataset.flag;
+                        const lang = this.dataset.lang;
+                        
+                        currentLanguage.querySelector('.current-flag').textContent = flag;
+                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+                        
+                        // Close dropdown
+                        languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
+                        
+                        // Highlight selected language
+                        languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Redirect to selected language page
+                        const href = this.getAttribute('href');
+                        if (href && href !== window.location.pathname) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+                
+                // Set active language based on current URL
+                const currentPath = window.location.pathname;
+                languageDropdown.querySelectorAll('.language-item').forEach(item => {
+                    const itemHref = item.getAttribute('href');
+                    if (currentPath.includes(itemHref) || 
+                        (currentPath.endsWith('egypt-weather-guide-best-time-to-visit.html') && 
+                         itemHref.includes('egypt-weather-guide-best-time-to-visit.html') && 
+                         item.dataset.lang === 'en')) {
+                        item.classList.add('active');
+                        const flag = item.dataset.flag;
+                        const lang = item.dataset.lang;
+                        currentLanguage.querySelector('.current-flag').textContent = flag;
+                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+                    }
+                });
+            }
 
             // Add current year to footer
             const copyrightText = document.querySelector('.footer-text');
