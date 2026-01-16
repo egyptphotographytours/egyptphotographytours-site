@@ -1112,15 +1112,31 @@
             line-height: 1.6;
         }
 
+        /* REVIEWS WIDGETS GRID */
+        .reviews-widgets-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        @media (min-width: 768px) {
+            .reviews-widgets-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         /* GOOGLE REVIEWS WIDGET STYLES */
         .google-reviews-widget {
             background: white;
             border-radius: 12px;
             padding: 30px;
-            margin: 40px 0;
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
             text-align: center;
-            border-top: 5px solid #FFD700;
+            border-top: 5px solid #4285F4;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .google-rating {
@@ -1170,6 +1186,7 @@
             font-size: 16px;
             transition: all 0.3s ease;
             border: none;
+            margin-top: auto;
         }
 
         .google-review-link:hover {
@@ -1188,6 +1205,168 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* TRIPADVISOR WIDGET STYLES */
+        .tripadvisor-widget {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid #00AF87;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tripadvisor-logo {
+            margin-bottom: 20px;
+        }
+
+        .tripadvisor-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .tripadvisor-widget h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .tripadvisor-stars {
+            color: #00AF87;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .tripadvisor-text {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .tripadvisor-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #00AF87 0%, #00876B 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .tripadvisor-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 175, 135, 0.3);
+            color: white;
+        }
+
+        .tripadvisor-link i {
+            font-size: 20px;
+        }
+
+        /* FACEBOOK REVIEWS WIDGET */
+        .facebook-reviews-widget {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid #1877F2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .facebook-logo {
+            margin-bottom: 20px;
+        }
+
+        .facebook-logo i {
+            font-size: 48px;
+            color: #1877F2;
+        }
+
+        .facebook-widget h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .facebook-stars {
+            color: #FFD700;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .facebook-text {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .facebook-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #1877F2 0%, #0D5CB6 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .facebook-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(24, 119, 242, 0.3);
+            color: white;
+        }
+
+        .facebook-link i {
+            font-size: 20px;
+        }
+
+        /* FACEBOOK PAGE PLUGIN */
+        .facebook-plugin-container {
+            margin-top: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .facebook-plugin-placeholder {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .facebook-plugin-placeholder i {
+            font-size: 48px;
+            color: #1877F2;
+            margin-bottom: 15px;
+        }
+
+        .facebook-plugin-placeholder p {
+            color: #4a5568;
+            margin-bottom: 0;
         }
 
         /* Print Styles for PageSpeed */
@@ -1855,32 +2034,95 @@
             </div>
         </section>
 
-        <!-- GOOGLE REVIEWS WIDGET SECTION -->
+        <!-- REVIEWS WIDGETS SECTION -->
         <section class="main-section">
             <div class="container">
-                <div class="google-reviews-widget">
-                    <h2 style="color: var(--primary-dark); margin-bottom: 30px;">Rated Excellent by Our Travelers</h2>
-                    
-                    <div class="google-rating">
-                        <div class="stars-display">⭐⭐⭐⭐⭐</div>
-                        <div>
-                            <div class="rating-number">4.9</div>
-                            <div class="rating-scale">out of 5</div>
+                <h2 class="text-center" style="margin-bottom: 40px;">Rated Excellent Across All Platforms</h2>
+                <p class="text-center" style="font-size: 18px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">Our travelers consistently rate us excellent across all major review platforms. See what real travelers say about their Egypt photography experience.</p>
+                
+                <div class="reviews-widgets-grid">
+                    <!-- Google Reviews Widget -->
+                    <div class="google-reviews-widget">
+                        <div class="google-logo">
+                            <i class="fab fa-google" style="font-size: 48px; color: #4285F4; margin-bottom: 20px;"></i>
                         </div>
+                        <h3>Google Reviews</h3>
+                        <div class="google-rating">
+                            <div class="stars-display">⭐⭐⭐⭐⭐</div>
+                            <div>
+                                <div class="rating-number">4.9</div>
+                                <div class="rating-scale">out of 5</div>
+                            </div>
+                        </div>
+                        <p class="review-count">Based on <strong>16 Reviews</strong></p>
+                        <a href="https://g.page/r/CRiFZvb5dH4wEBM/review" 
+                           target="_blank" 
+                           rel="noopener noreferrer nofollow" 
+                           class="google-review-link">
+                            <i class="fab fa-google"></i>
+                            Read Our Google Reviews
+                        </a>
                     </div>
                     
-                    <p class="review-count">Based on <strong>16 Google Reviews</strong></p>
+                    <!-- TripAdvisor Widget -->
+                    <div class="tripadvisor-widget">
+                        <div class="tripadvisor-logo">
+                            <i class="fab fa-tripadvisor" style="font-size: 48px; color: #00AF87; margin-bottom: 20px;"></i>
+                        </div>
+                        <h3>TripAdvisor Reviews</h3>
+                        <div class="tripadvisor-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="tripadvisor-text">Rated #1 for Photography Tours in Cairo. Read authentic reviews from travelers who've experienced our unique photography tours.</p>
+                        
+                        <!-- TripAdvisor Badge Widget -->
+                        <div id="TA_rated502" class="TA_rated">
+                            <ul id="VyhrJIAOSBsH" class="TA_links I90B9kprxBE">
+                                <li id="PyOmCBhp3a" class="wcVFRHn">
+                                    <a target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g294201-d20816594-Reviews-Egypt_Photography_Tours-Cairo_Cairo_Governorate.html">
+                                        <img src="https://www.tripadvisor.com/img/cdsi/img2/badges/ollie-11424-2.gif" alt="TripAdvisor" style="max-width: 100%; height: auto;"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d20816594-Reviews-Egypt_Photography_Tours-Cairo_Cairo_Governorate.html" 
+                           target="_blank" 
+                           rel="noopener noreferrer nofollow" 
+                           class="tripadvisor-link">
+                            <i class="fab fa-tripadvisor"></i>
+                            View on TripAdvisor
+                        </a>
+                    </div>
                     
-                    <a href="https://g.page/r/CRiFZvb5dH4wEBM/review" 
-                       target="_blank" 
-                       rel="noopener noreferrer nofollow" 
-                       class="google-review-link">
-                        <i class="fab fa-google"></i>
-                        Read Our Reviews on <span class="google-logo">Google</span>
-                    </a>
-                    
-                    <p style="margin-top: 20px; color: #666; font-size: 14px;">
-                        <i class="fas fa-shield-alt"></i> Verified Reviews from Real Travelers
+                    <!-- Facebook Reviews Widget -->
+                    <div class="facebook-reviews-widget">
+                        <div class="facebook-logo">
+                            <i class="fab fa-facebook" style="font-size: 48px; color: #1877F2; margin-bottom: 20px;"></i>
+                        </div>
+                        <h3>Facebook Reviews</h3>
+                        <div class="facebook-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="facebook-text">Join our community of photography enthusiasts. See real traveler photos and read reviews from our Facebook community.</p>
+                        
+                        <!-- Facebook Page Plugin Placeholder -->
+                        <div class="facebook-plugin-container">
+                            <div class="facebook-plugin-placeholder">
+                                <i class="fab fa-facebook"></i>
+                                <p>Connect with us on Facebook to see reviews and traveler photos</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://www.facebook.com/egyptphotographytours" 
+                           target="_blank" 
+                           rel="noopener noreferrer nofollow" 
+                           class="facebook-link">
+                            <i class="fab fa-facebook"></i>
+                            Visit Our Facebook Page
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-30">
+                    <p style="color: #666; font-size: 16px;">
+                        <i class="fas fa-shield-alt"></i> All reviews are verified from real travelers
                     </p>
                 </div>
             </div>
@@ -2378,5 +2620,17 @@
             document.head.appendChild(style);
         }
     </script>
+    
+    <!-- TripAdvisor Widget Script -->
+    <script async src="https://www.jscache.com/wejs?wtype=rated&uniq=502&locationId=20816594&lang=en_US&display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
+    
+    <!-- Facebook SDK for Reviews Plugin (Optional - can be enabled later) -->
+    <!--
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0" 
+            nonce="YOUR_NONCE_VALUE">
+    </script>
+    -->
 </body>
 </html>
