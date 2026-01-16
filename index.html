@@ -161,9 +161,26 @@
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "150",
+            "reviewCount": "16",
             "bestRating": "5",
-            "worstRating": "1"
+            "worstRating": "1",
+            "reviewAspect": ["Photography Tours", "Luxury Experience", "Cultural Immersion", "Professional Service"]
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "4.9",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "Google Reviews"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Google"
+            }
           },
           "openingHours": "Mo-Su 08:00-22:00",
           "priceRange": "$$-$$$",
@@ -309,6 +326,24 @@
           ],
           "keywords": "egypt photography tours, luxury egypt tours, professional photoshoot egypt, advanced camera equipment tours, historical tours egypt"
         }
+      ]
+    }
+    </script>
+
+    <!-- ADD THIS GOOGLE REVIEWS SCHEMA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Egypt Photography Tours",
+      "url": "https://www.egyptphotographytours.com",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "16"
+      },
+      "sameAs": [
+        "https://g.page/r/CRiFZvb5dH4wEBM/review"
       ]
     }
     </script>
@@ -1150,6 +1185,84 @@
             line-height: 1.6;
         }
 
+        /* GOOGLE REVIEWS WIDGET STYLES */
+        .google-reviews-widget {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid #FFD700;
+        }
+
+        .google-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stars-display {
+            color: #FFD700;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        .rating-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+
+        .rating-scale {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .review-count {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 25px;
+        }
+
+        .google-review-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .google-review-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(66, 133, 244, 0.3);
+            color: white;
+        }
+
+        .google-review-link i {
+            font-size: 20px;
+        }
+
+        .google-logo {
+            font-weight: 700;
+            background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         /* Print Styles for PageSpeed */
         @media print {
             .hero-slider,
@@ -1811,6 +1924,37 @@
                         <h3>Secure International Payments</h3>
                         <p>SSL encrypted payments with multiple currency options and secure international transaction processing. Book with confidence using your preferred payment method.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOOGLE REVIEWS WIDGET SECTION -->
+        <section class="main-section">
+            <div class="container">
+                <div class="google-reviews-widget">
+                    <h2 style="color: var(--primary-dark); margin-bottom: 30px;">Rated Excellent by Our Travelers</h2>
+                    
+                    <div class="google-rating">
+                        <div class="stars-display">⭐⭐⭐⭐⭐</div>
+                        <div>
+                            <div class="rating-number">4.9</div>
+                            <div class="rating-scale">out of 5</div>
+                        </div>
+                    </div>
+                    
+                    <p class="review-count">Based on <strong>16 Google Reviews</strong></p>
+                    
+                    <a href="https://g.page/r/CRiFZvb5dH4wEBM/review" 
+                       target="_blank" 
+                       rel="noopener noreferrer nofollow" 
+                       class="google-review-link">
+                        <i class="fab fa-google"></i>
+                        Read Our Reviews on <span class="google-logo">Google</span>
+                    </a>
+                    
+                    <p style="margin-top: 20px; color: #666; font-size: 14px;">
+                        <i class="fas fa-shield-alt"></i> Verified Reviews from Real Travelers
+                    </p>
                 </div>
             </div>
         </section>
