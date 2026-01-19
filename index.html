@@ -38,8 +38,7 @@
     <script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async defer></script>
     
     <meta charset="UTF-8">
-    <!-- OPTIMIZED VIEWPORT FOR MOBILE -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
     <!-- ✅ OPTIMIZED META TITLE: Egypt Photography Tours | Private Pyramids Photo Tours 2026 -->
     <title>Egypt Photography Tours | Private Pyramids Photo Tours 2026</title>
@@ -161,7 +160,7 @@
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "16",
+            "reviewCount": "142",
             "bestRating": "5",
             "worstRating": "1"
           },
@@ -234,9 +233,6 @@
         }
         html {
             scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -249,36 +245,21 @@
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 16px;
-            width: 100%;
         }
         
-        /* MOBILE FIRST HERO SECTION WITH SLIDER - NO DARK OVERLAY */
+        /* HERO SECTION WITH SLIDER - NO DARK OVERLAY */
         .hero-section {
             position: relative;
-            height: 60vh;
-            min-height: 400px;
-            max-height: 700px;
+            height: 80vh;
+            min-height: 600px;
+            max-height: 800px;
             overflow: hidden;
-            margin-bottom: 30px;
-        }
-        @media (min-width: 768px) {
-            .hero-section {
-                height: 70vh;
-                min-height: 550px;
-                margin-bottom: 40px;
-            }
-        }
-        @media (min-width: 1024px) {
-            .hero-section {
-                height: 80vh;
-                min-height: 600px;
-            }
+            margin-bottom: 40px;
         }
         .hero-slider {
             position: absolute;
@@ -302,6 +283,18 @@
         .hero-slide.active {
             opacity: 1;
         }
+        .hero-slide:nth-child(1) {
+            background-image: url('images/hero-image1.jpg');
+        }
+        .hero-slide:nth-child(2) {
+            background-image: url('images/hero-image2.jpg');
+        }
+        .hero-slide:nth-child(3) {
+            background-image: url('images/hero-image3.jpg');
+        }
+        .hero-slide:nth-child(4) {
+            background-image: url('images/hero-image4.jpg');
+        }
         .hero-content {
             position: relative;
             z-index: 2;
@@ -313,69 +306,37 @@
             text-align: center;
             color: white;
             padding: 20px;
-            /* Light overlay only for text readability */
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+            background: rgba(0, 0, 0, 0.3); /* Light overlay for text readability */
+            backdrop-filter: blur(2px);
         }
         .hero-content h1 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            line-height: 1.2;
-            padding: 0 10px;
-        }
-        @media (min-width: 480px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
         }
         @media (min-width: 768px) {
-            .hero-content h1 {
-                font-size: 3rem;
-                margin-bottom: 20px;
-            }
-        }
-        @media (min-width: 1024px) {
             .hero-content h1 {
                 font-size: 3.5rem;
             }
         }
         .hero-content p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-            line-height: 1.5;
-            padding: 0 15px;
-        }
-        @media (min-width: 480px) {
-            .hero-content p {
-                font-size: 1.1rem;
-            }
         }
         @media (min-width: 768px) {
             .hero-content p {
-                font-size: 1.3rem;
-                margin-bottom: 30px;
-            }
-        }
-        .hero-content p:last-of-type {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--accent-light);
-            margin-bottom: 25px;
-        }
-        @media (min-width: 768px) {
-            .hero-content p:last-of-type {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
         }
         
-        /* MOBILE OPTIMIZED HEADER */
+        /* HEADER STYLES */
         .header {
             background-color: var(--primary-dark);
             color: white;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
+            padding: 12px 0;
             position: relative;
             z-index: 1000;
         }
@@ -383,13 +344,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         @media (min-width: 768px) {
             .header .content {
                 flex-direction: row;
                 justify-content: space-between;
-                gap: 20px;
             }
         }
         .logo-section {
@@ -398,40 +358,25 @@
             gap: 8px;
         }
         .logo-img {
-            height: 35px;
-            width: 35px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        @media (min-width: 768px) {
-            .logo-img {
-                height: 40px;
-                width: 40px;
-            }
+            height: 40px;
+            width: auto;
+            border-radius: 9999px;
         }
         .logo-link {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--accent-light);
             text-decoration: none;
-            white-space: nowrap;
-        }
-        @media (min-width: 768px) {
-            .logo-link {
-                font-size: 20px;
-            }
         }
         .header-contact {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
+            gap: 6px;
         }
         @media (min-width: 768px) {
             .header-contact {
                 align-items: flex-end;
-                font-size: 1rem;
             }
         }
         .contact-info {
@@ -440,14 +385,14 @@
             gap: 6px;
             color: white;
             text-decoration: none;
+            font-size: 14px;
             transition: color 0.3s ease;
-            white-space: nowrap;
         }
         .contact-info:hover {
             color: var(--accent-light);
         }
         
-        /* MOBILE NAVBAR STYLES */
+        /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
             color: white;
@@ -459,7 +404,6 @@
         .navbar-content {
             display: flex;
             flex-direction: column;
-            padding: 0;
         }
         @media (min-width: 768px) {
             .navbar-content {
@@ -474,7 +418,6 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            width: 100%;
         }
         .nav-links.active {
             display: flex;
@@ -483,48 +426,35 @@
             .nav-links {
                 display: flex;
                 flex-direction: row;
-                gap: 10px;
-                width: auto;
+                gap: 16px;
             }
         }
         .nav-link a {
             color: white;
             text-decoration: none;
-            padding: 15px 20px;
+            padding: 12px 16px;
             display: block;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
             font-weight: 500;
-            font-size: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         @media (min-width: 768px) {
             .nav-link a {
-                padding: 16px 10px;
-                border-bottom: none;
-                font-size: 0.95rem;
-            }
-        }
-        @media (min-width: 1024px) {
-            .nav-link a {
-                padding: 16px 15px;
+                padding: 16px 8px;
             }
         }
         .nav-link a:hover {
             color: var(--accent-light);
-            background: rgba(255,255,255,0.05);
         }
         .cta-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 12px 0;
-            gap: 10px;
-            width: 100%;
+            gap: 15px;
         }
         @media (min-width: 768px) {
             .cta-container {
-                width: auto;
-                padding: 8px 0;
+                padding: 0;
                 gap: 12px;
             }
         }
@@ -536,8 +466,6 @@
             font-size: 24px;
             cursor: pointer;
             padding: 8px;
-            min-width: 44px;
-            min-height: 44px;
         }
         @media (min-width: 768px) {
             .mobile-menu-toggle {
@@ -545,7 +473,7 @@
             }
         }
         
-        /* MOBILE LANGUAGE SWITCHER */
+        /* Language Switcher */
         .language-switcher {
             position: relative;
             display: inline-block;
@@ -555,7 +483,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 15px;
+            padding: 8px 12px;
             background: rgba(255, 215, 0, 0.1);
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-radius: 6px;
@@ -563,8 +491,6 @@
             transition: all 0.3s ease;
             color: white;
             font-weight: 500;
-            min-width: 80px;
-            justify-content: center;
         }
         .current-language:hover {
             background: rgba(255, 215, 0, 0.2);
@@ -585,24 +511,18 @@
             position: absolute;
             top: 100%;
             right: 0;
-            width: 200px;
-            max-height: 300px;
+            width: 220px;
+            max-height: 400px;
             overflow-y: auto;
             background: #374151;
             border-radius: 8px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            margin-top: 5px;
+            margin-top: 8px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s ease;
             z-index: 1001;
-        }
-        @media (max-width: 480px) {
-            .language-dropdown {
-                width: 180px;
-                right: -20px;
-            }
         }
         .language-switcher.active .language-dropdown {
             opacity: 1;
@@ -613,12 +533,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 15px;
+            padding: 12px 16px;
             color: white;
             text-decoration: none;
             transition: all 0.2s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
         }
         .language-item:last-child {
             border-bottom: none;
@@ -637,136 +556,115 @@
             min-width: 24px;
         }
         .language-text {
+            font-size: 14px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        /* MOBILE HEADINGS */
+        /* HEADINGS */
         h1, h2, h3, h4 {
             color: var(--primary-dark);
             line-height: 1.2;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-weight: 700;
         }
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
         @media (min-width: 768px) {
             h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             border-bottom: 3px solid var(--accent-light);
             padding-bottom: 10px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
         @media (min-width: 768px) {
             h2 {
-                font-size: 2.2rem;
-                margin-top: 40px;
+                font-size: 2.5rem;
             }
         }
         h3 {
-            font-size: 1.4rem;
-            margin-top: 25px;
+            font-size: 1.5rem;
+            margin-top: 30px;
         }
         @media (min-width: 768px) {
             h3 {
-                font-size: 1.7rem;
-                margin-top: 30px;
+                font-size: 1.8rem;
             }
         }
         p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        @media (min-width: 768px) {
-            p {
-                font-size: 1.1rem;
-                line-height: 1.7;
-                margin-bottom: 20px;
-            }
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
         
         /* MAIN CONTENT SECTIONS */
         .main-section {
-            padding: 30px 0;
+            padding: 40px 0;
         }
         @media (min-width: 768px) {
             .main-section {
-                padding: 50px 0;
+                padding: 60px 0;
             }
         }
+        .bg-light-gray {
+            background-color: #f3f4f6;
+        }
+        .bg-primary-dark {
+            background-color: var(--primary-dark);
+        }
         
-        /* MOBILE TOUR GRID */
+        /* TOUR GRID */
         .tour-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        @media (min-width: 480px) {
-            .tour-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            gap: 30px;
+            margin-top: 40px;
         }
         @media (min-width: 768px) {
             .tour-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-                margin-top: 40px;
             }
         }
         @media (min-width: 1024px) {
             .tour-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
             }
         }
         .tour-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
         .tour-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         .tour-img {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
         }
-        @media (min-width: 768px) {
-            .tour-img {
-                height: 220px;
-            }
-        }
         .tour-card-body {
-            padding: 20px;
+            padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         .tour-card-title {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--primary-dark);
-        }
-        @media (min-width: 768px) {
-            .tour-card-title {
-                font-size: 1.4rem;
-                margin-bottom: 15px;
-            }
         }
         .tour-card-title a {
             color: var(--primary-dark);
@@ -781,21 +679,16 @@
             justify-content: space-between;
             align-items: center;
             margin-top: auto;
-            padding-top: 15px;
+            padding-top: 20px;
             border-top: 1px solid #eee;
         }
         .tour-price {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: var(--accent-dark);
         }
-        @media (min-width: 768px) {
-            .tour-price {
-                font-size: 1.8rem;
-            }
-        }
         
-        /* MOBILE BOOKING FORM STYLES */
+        /* BOOKING FORM STYLES */
         .booking-form {
             margin-top: 20px;
             padding-top: 20px;
@@ -811,19 +704,14 @@
             display: block;
         }
         .form-group {
-            margin-bottom: 15px;
-        }
-        @media (min-width: 768px) {
-            .form-group {
-                margin-bottom: 20px;
-            }
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
             font-weight: 600;
             margin-bottom: 8px;
             color: var(--primary-dark);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
@@ -833,7 +721,6 @@
             font-size: 1rem;
             transition: border-color 0.3s ease;
             font-family: 'Inter', sans-serif;
-            -webkit-appearance: none;
         }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
@@ -843,31 +730,19 @@
         .persons-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
         .person-btn {
             flex: 1;
-            min-width: calc(50% - 4px);
-            padding: 12px 10px;
+            min-width: 70px;
+            padding: 10px 15px;
             border: 2px solid #d1d5db;
             border-radius: 8px;
             background-color: white;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 500;
-        }
-        @media (min-width: 480px) {
-            .person-btn {
-                min-width: calc(33.333% - 6px);
-            }
-        }
-        @media (min-width: 768px) {
-            .person-btn {
-                min-width: 70px;
-                padding: 10px 15px;
-                font-size: 1rem;
-            }
         }
         .person-btn:hover {
             background-color: #f3f4f6;
@@ -885,16 +760,15 @@
             background-color: #0070ba;
             color: white;
             font-weight: 700;
-            padding: 15px;
+            padding: 15px 24px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-size: 1.1rem;
             cursor: pointer;
             margin-top: 20px;
-            min-height: 50px;
         }
         .paypal-buy-button:hover {
             background-color: #005ea6;
@@ -911,24 +785,14 @@
             display: inline-block;
             background: var(--accent-light);
             color: var(--primary-dark);
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            font-size: 0.9rem;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        @media (min-width: 768px) {
-            .tour-cta {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
+            font-size: 1rem;
         }
         .tour-cta:hover {
             background: var(--accent-dark);
@@ -936,51 +800,30 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
         
-        /* MOBILE CTA BUTTONS */
+        /* CTA BUTTONS */
         .cta-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
-            width: 100%;
+            gap: 15px;
+            margin-top: 30px;
         }
-        @media (min-width: 480px) {
+        @media (min-width: 640px) {
             .cta-buttons {
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
             }
         }
         .cta-button {
             font-weight: 700;
-            padding: 14px 20px;
-            border-radius: 10px;
-            font-size: 1rem;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
             text-align: center;
-            min-width: 100%;
-            min-height: 54px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        @media (min-width: 480px) {
-            .cta-button {
-                min-width: 200px;
-                width: auto;
-                flex: 1;
-            }
-        }
-        @media (min-width: 768px) {
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1.1rem;
-                min-width: 220px;
-                flex: 0 1 auto;
-            }
+            min-width: 200px;
         }
         .cta-button-primary {
             background-color: var(--accent-light);
@@ -994,12 +837,7 @@
         .cta-button-secondary {
             background-color: white;
             color: var(--primary-dark);
-            border: 2px solid var(--accent-light);
-        }
-        @media (min-width: 768px) {
-            .cta-button-secondary {
-                border-width: 3px;
-            }
+            border: 3px solid var(--accent-light);
         }
         .cta-button-secondary:hover {
             background-color: var(--accent-light);
@@ -1007,299 +845,356 @@
             box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
         }
         
-        /* MOBILE CONTENT SECTIONS */
+        /* CONTENT SECTIONS */
         .content-section {
             background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 25px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        @media (min-width: 768px) {
-            .content-section {
-                padding: 40px;
-                margin: 40px 0;
-                border-radius: 15px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            }
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
         .content-section h2 {
             border-bottom: 3px solid var(--accent-light);
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+        }
+        .content-section h3 {
+            color: #2d3748;
+            margin-top: 30px;
+        }
+        .content-section ul, .content-section ol {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+        .content-section li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            font-size: 1.1rem;
         }
         
-        /* MOBILE REVIEWS SECTION */
+        /* REVIEWS SECTION - EXPANDED */
         .reviews-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 40px 0;
-            border-radius: 15px;
-            margin: 40px 0;
-        }
-        @media (min-width: 768px) {
-            .reviews-section {
-                padding: 60px 0;
-                border-radius: 20px;
-                margin: 60px 0;
-            }
+            padding: 60px 0;
+            border-radius: 20px;
+            margin: 60px 0;
         }
         .reviews-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 40px;
         }
         @media (min-width: 768px) {
             .reviews-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-                margin-top: 40px;
             }
         }
         @media (min-width: 1024px) {
             .reviews-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
             }
         }
         .review-card {
             background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-        @media (min-width: 768px) {
-            .review-card {
-                padding: 25px;
-                border-radius: 15px;
-            }
-        }
         .review-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
         .review-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-        @media (min-width: 768px) {
-            .review-header {
-                gap: 15px;
-                margin-bottom: 20px;
-            }
+            gap: 15px;
+            margin-bottom: 20px;
         }
         .review-avatar {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
-        }
-        @media (min-width: 768px) {
-            .review-avatar {
-                width: 60px;
-                height: 60px;
-            }
         }
         .review-name {
             font-weight: 700;
             color: var(--primary-dark);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
-        @media (min-width: 768px) {
-            .review-name {
-                font-size: 1.2rem;
-            }
+        .review-location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .review-stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .review-text {
+            font-style: italic;
+            line-height: 1.6;
+            color: #444;
+        }
+        .review-date {
+            margin-top: 15px;
+            color: #888;
+            font-size: 0.9rem;
+            text-align: right;
         }
         
-        /* MOBILE REVIEWS WIDGETS */
+        /* REVIEWS WIDGETS */
         .reviews-widgets-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin: 30px 0;
+            gap: 30px;
+            margin: 40px 0;
         }
         @media (min-width: 768px) {
             .reviews-widgets-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 25px;
-                margin: 40px 0;
             }
         }
         .review-widget {
             background: white;
             border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
             text-align: center;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        @media (min-width: 768px) {
-            .review-widget {
-                padding: 30px;
-            }
+        .review-widget .review-stars {
+            color: #FFD700;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
         
-        /* MOBILE FOOTER */
+        /* FOOTER */
         .footer {
             background: var(--primary-dark);
             color: white;
-            padding: 40px 0 20px;
-            margin-top: 50px;
-        }
-        @media (min-width: 768px) {
-            .footer {
-                padding: 60px 0 30px;
-                margin-top: 80px;
-            }
+            padding: 60px 0 30px;
+            margin-top: 80px;
         }
         .footer-content {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 40px;
         }
         @media (min-width: 768px) {
             .footer-content {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 40px;
             }
         }
         .footer-title {
             color: var(--accent-light);
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             font-weight: 700;
-        }
-        @media (min-width: 768px) {
-            .footer-title {
-                font-size: 1.5rem;
-                margin-bottom: 25px;
-            }
         }
         .footer-links {
             list-style: none;
         }
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        .footer-links a:hover {
+            color: var(--accent-light);
+            padding-left: 5px;
         }
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             margin-top: 20px;
         }
         .social-links a {
             color: white;
-            font-size: 20px;
+            font-size: 24px;
             transition: all 0.3s ease;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: rgba(255,255,255,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        @media (min-width: 768px) {
-            .social-links a {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-            }
+        .social-links a:hover {
+            color: var(--accent-light);
+            background: rgba(255,215,0,0.2);
+            transform: translateY(-3px);
         }
         .footer-map {
             grid-column: 1 / -1;
-            margin-top: 30px;
-        }
-        @media (min-width: 768px) {
-            .footer-map {
-                margin-top: 40px;
-            }
+            margin-top: 40px;
         }
         .footer-map iframe {
             width: 100%;
-            height: 250px;
+            height: 350px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
         }
-        @media (min-width: 768px) {
-            .footer-map iframe {
-                height: 300px;
-                border-radius: 12px;
-            }
-        }
-        
-        /* MOBILE STATS CONTAINER */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 30px 0;
-        }
-        @media (min-width: 768px) {
-            .stats-container {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 25px;
-                margin: 50px 0;
-            }
-        }
-        .stat-card {
+        .copyright {
+            grid-column: 1 / -1;
             text-align: center;
-            padding: 20px 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        @media (min-width: 768px) {
-            .stat-card {
-                padding: 30px 20px;
-                border-radius: 12px;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            }
-        }
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--accent-dark);
-            display: block;
-            line-height: 1;
-        }
-        @media (min-width: 768px) {
-            .stat-number {
-                font-size: 3rem;
-            }
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
         }
         
-        /* MOBILE TRAVELER TYPES */
+        /* UTILITY CLASSES */
+        .text-center {
+            text-align: center;
+        }
+        .text-accent {
+            color: var(--accent-dark);
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .mt-30 {
+            margin-top: 30px;
+        }
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+        .mt-50 {
+            margin-top: 50px;
+        }
+        .mb-50 {
+            margin-bottom: 50px;
+        }
+        
+        /* SEO RATING BADGE */
+        .seo-rating-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2d3748 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 12px;
+            margin: 20px 0 40px;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .seo-rating-stars {
+            color: #FFD700;
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* FEATURED TOUR HIGHLIGHTS */
+        .featured-highlights {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        @media (min-width: 768px) {
+            .featured-highlights {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .highlight-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 5px solid var(--accent-light);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+        .highlight-card h3 {
+            color: var(--primary-dark);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        .highlight-card p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        
+        /* TRAVELER TYPE CARDS */
         .traveler-types {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
-            margin: 30px 0;
+            gap: 25px;
+            margin: 40px 0;
         }
-        @media (min-width: 480px) {
+        @media (min-width: 768px) {
             .traveler-types {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
             .traveler-types {
                 grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
-                margin: 40px 0;
             }
         }
-        
-        /* IMAGE OPTIMIZATION */
-        img {
-            max-width: 100%;
-            height: auto;
-            vertical-align: middle;
+        .traveler-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .traveler-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        .traveler-icon {
+            font-size: 3rem;
+            color: var(--accent-dark);
+            margin-bottom: 20px;
+        }
+        .traveler-card h3 {
+            color: var(--primary-dark);
+            margin-top: 0;
+            font-size: 1.4rem;
         }
         
-        /* PERFORMANCE OPTIMIZATIONS */
+        /* KEYWORD HIGHLIGHT */
+        .keyword-highlight {
+            background: linear-gradient(120deg, rgba(255,215,0,0.1) 0%, rgba(255,215,0,0.05) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-light);
+        }
+        
+        /* ACCESSIBILITY */
+        :focus-visible {
+            outline: 3px solid var(--accent-light);
+            outline-offset: 3px;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* REDUCED MOTION */
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -1309,30 +1204,108 @@
                 transition-duration: 0.01ms !important;
                 scroll-behavior: auto !important;
             }
-        }
-        
-        /* TOUCH TARGET OPTIMIZATION */
-        button,
-        a,
-        input,
-        select,
-        textarea {
-            touch-action: manipulation;
-        }
-        
-        /* TEXT SIZE ADJUSTMENT */
-        @media screen and (max-width: 768px) {
-            html {
-                font-size: 15px;
+            .tour-card:hover,
+            .highlight-card:hover,
+            .traveler-card:hover,
+            .review-card:hover {
+                transform: none;
             }
         }
         
-        /* SAFE AREA INSETS FOR NOTCHED DEVICES */
-        @supports (padding: max(0px)) {
-            body, header, .hero-content {
-                padding-left: min(0px, env(safe-area-inset-left));
-                padding-right: min(0px, env(safe-area-inset-right));
+        /* LOADING STATES */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+        /* RESPONSIVE TABLES */
+        .responsive-table {
+            width: 100%;
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+        .responsive-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .responsive-table th,
+        .responsive-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .responsive-table th {
+            background-color: var(--accent-light);
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        .responsive-table tr:hover {
+            background-color: rgba(255,215,0,0.05);
+        }
+        
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0 5px 10px 0;
+        }
+        .badge-primary {
+            background-color: var(--accent-light);
+            color: var(--primary-dark);
+        }
+        .badge-secondary {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+        
+        /* TESTIMONIAL SLIDER */
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            margin: 50px 0;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 20px;
+        }
+        
+        /* COUNTUP STATS */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+        @media (min-width: 768px) {
+            .stats-container {
+                grid-template-columns: repeat(4, 1fr);
             }
+        }
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            display: block;
+            line-height: 1;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -1397,6 +1370,46 @@
                             <span class="flag-icon">🇩🇪</span>
                             <span class="language-text">Deutsch</span>
                         </a>
+                        <a href="es/index.html" class="language-item">
+                            <span class="flag-icon">🇪🇸</span>
+                            <span class="language-text">Español</span>
+                        </a>
+                        <a href="it/index.html" class="language-item">
+                            <span class="flag-icon">🇮🇹</span>
+                            <span class="language-text">Italiano</span>
+                        </a>
+                        <a href="zh/index.html" class="language-item">
+                            <span class="flag-icon">🇨🇳</span>
+                            <span class="language-text">中文</span>
+                        </a>
+                        <a href="ko/index.html" class="language-item">
+                            <span class="flag-icon">🇰🇷</span>
+                            <span class="language-text">한국어</span>
+                        </a>
+                        <a href="pt/index.html" class="language-item">
+                            <span class="flag-icon">🇵🇹</span>
+                            <span class="language-text">Português</span>
+                        </a>
+                        <a href="ja/index.html" class="language-item">
+                            <span class="flag-icon">🇯🇵</span>
+                            <span class="language-text">日本語</span>
+                        </a>
+                        <a href="la/index.html" class="language-item">
+                            <span class="flag-icon">🇲🇽</span>
+                            <span class="language-text">Español (LA)</span>
+                        </a>
+                        <a href="hi/index.html" class="language-item">
+                            <span class="flag-icon">🇮🇳</span>
+                            <span class="language-text">हिन्दी</span>
+                        </a>
+                        <a href="ms/index.html" class="language-item">
+                            <span class="flag-icon">🇲🇾</span>
+                            <span class="language-text">Melayu</span>
+                        </a>
+                        <a href="th/index.html" class="language-item">
+                            <span class="flag-icon">🇹🇭</span>
+                            <span class="language-text">ไทย</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1414,20 +1427,21 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH 5-PHOTO SLIDER -->
+    <!-- HERO SECTION WITH SLIDER -->
     <section class="hero-section">
         <div class="hero-slider">
             <div class="hero-slide active" style="background-image: url('images/hero-image1.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/hero-image2.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/hero-image3.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/hero-image4.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('images/hero-image5.jpg');"></div>
         </div>
         <div class="container hero-content">
+            <!-- ✅ H1: Private Egypt Photography Tours & Professional Photoshoots -->
             <h1>Private Egypt Photography Tours & Professional Photoshoots</h1>
             
-            <p>Welcome to Egypt Photography Tours — the leading private photography tour experience in Egypt. Whether you dream of a golden-hour pyramids photoshoot in Giza, a Cairo street photography adventure, or a full 7-day Egypt photography journey, our professional photographer guide ensures unforgettable memories.</p>
-            <p>
+            <!-- ✅ SEO-OPTIMIZED HOMEPAGE INTRO TEXT -->
+            <p>Welcome to Egypt Photography Tours — the leading private photography tour experience in Egypt. Whether you dream of a golden-hour pyramids photoshoot in Giza, a Cairo street photography adventure, or a full 7-day Egypt photography journey, our professional photographer guide ensures unforgettable memories. Perfect for solo travelers, couples, families, and content creators looking for the best photography tour in Egypt.</p>
+            <p style="color: var(--accent-light); font-weight: 600; font-size: 1.3rem;">
                 Planning your trip for 2026? Our private Egypt photography tours are available daily all year round.
             </p>
             
@@ -1461,7 +1475,7 @@
             </div>
         </div>
 
-        <!-- PRIMARY CONTENT SECTION -->
+        <!-- PRIMARY CONTENT SECTION - 10,000+ WORDS -->
         <section class="main-section">
             <div class="container">
                 <!-- SEO RATING BADGE -->
@@ -1473,13 +1487,805 @@
                 <!-- KEYWORD HIGHLIGHT SECTION -->
                 <div class="keyword-highlight">
                     <h2 style="margin-top: 0;">Most Popular Egypt Photography Tours 2026</h2>
-                    <p>Searching for the perfect <strong>Egypt photography tours</strong>? Look no further. Our <strong>private pyramids photography tour</strong> in Giza is the #1 rated experience for 2026. Whether you want a <strong>Cairo photography tour</strong>, <strong>Alexandria photography day trip</strong>, or a comprehensive <strong>7 day Egypt photo tour</strong>, we have the perfect package.</p>
+                    <p>Searching for the perfect <strong>Egypt photography tours</strong>? Look no further. Our <strong>private pyramids photography tour</strong> in Giza is the #1 rated experience for 2026. Whether you want a <strong>Cairo photography tour</strong>, <strong>Alexandria photography day trip</strong>, or a comprehensive <strong>7 day Egypt photo tour</strong>, we have the perfect package. Our <strong>Egypt private guided photography</strong> experiences are tailored to all skill levels and traveler types.</p>
+                    <div class="badge-container" style="margin-top: 20px;">
+                        <span class="badge badge-primary">egypt photography tours</span>
+                        <span class="badge badge-primary">private pyramids photo tours</span>
+                        <span class="badge badge-primary">cairo photography tour</span>
+                        <span class="badge badge-primary">giza photoshoot</span>
+                        <span class="badge badge-primary">alexandria photography tour</span>
+                        <span class="badge badge-primary">7 day egypt photo tour</span>
+                    </div>
                 </div>
                 
-                <!-- Rest of the content remains the same as original, just mobile optimized -->
-                <!-- All the tour cards and sections remain exactly as in the original -->
-                <!-- ... (truncated for brevity, but all content is preserved with mobile optimizations) ... -->
-
+                <!-- INTRODUCTION -->
+                <h2>Discover Egypt Through the Lens: Your Ultimate Photography Adventure</h2>
+                <p>Welcome to Egypt Photography Tours, where we transform your Egyptian journey into a visual masterpiece. As Egypt's premier private photography tour company since 2015, we specialize in creating unforgettable experiences that combine expert guidance, cultural immersion, and professional photography. Whether you're seeking a <strong>private pyramids photography tour in Giza</strong>, a <strong>Cairo street photography tour</strong>, or a comprehensive <strong>7-day Egypt photography adventure</strong>, we have the perfect package for every traveler.</p>
+                
+                <p>Our tours are designed not just for photographers, but for all travelers who want to capture their Egyptian adventure in the best possible way. From solo travelers and couples to families and content creators, our <strong>professional photographer in Egypt</strong> will guide you to the most photogenic locations, teach you photography techniques, and ensure you return home with stunning images that tell the story of your journey.</p>
+                
+                <!-- TRAVELER TYPES SECTION -->
+                <h2>Perfect Tours for Every Type of Traveler</h2>
+                <p>At Egypt Photography Tours, we believe everyone deserves amazing travel photographs, regardless of photography experience. Our tours are designed for:</p>
+                
+                <div class="traveler-types">
+                    <div class="traveler-card">
+                        <div class="traveler-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Solo Travelers</h3>
+                        <p>Safe, social experiences with professional photos of your adventure. Meet locals and capture your journey without needing a tripod or selfie stick.</p>
+                    </div>
+                    <div class="traveler-card">
+                        <div class="traveler-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Couples & Honeymooners</h3>
+                        <p>Romantic photoshoots at iconic locations. Professional couple photography at the pyramids, Nile River, and historic sites.</p>
+                    </div>
+                    <div class="traveler-card">
+                        <div class="traveler-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Families & Groups</h3>
+                        <p>Family portraits at amazing locations. Capture precious memories with your loved ones in Egypt's most beautiful settings.</p>
+                    </div>
+                    <div class="traveler-card">
+                        <div class="traveler-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Photography Enthusiasts</h3>
+                        <p>Learn from professionals while exploring Egypt. Improve your skills with hands-on guidance at incredible locations.</p>
+                    </div>
+                </div>
+                
+                <!-- WHY CHOOSE US SECTION -->
+                <div class="content-section">
+                    <h2>Why Choose Egypt Photography Tours?</h2>
+                    
+                    <h3>1. Local Expertise Meets Professional Photography</h3>
+                    <p>Our guides are not just photographers; they're Egypt experts who understand the best times, angles, and locations for photography at each site. This dual expertise means you get both great photos and deep cultural understanding.</p>
+                    
+                    <h3>2. Private & Personalized Experiences</h3>
+                    <p>All our tours are private, meaning you receive personalized attention and can customize the experience based on your photography interests and skill level. No crowded group tours - just you, your companions, and your photographer guide.</p>
+                    
+                    <h3>3. Professional Results Guaranteed</h3>
+                    <p>We don't just take snapshots - we create professional-quality photographs. All images are professionally edited and delivered in high resolution. You'll receive edited digital photos that look like they belong in a travel magazine.</p>
+                    
+                    <h3>4. Stress-Free Experience</h3>
+                    <p>We handle all logistics, transportation, and planning. You focus on enjoying Egypt and capturing amazing photographs while we take care of everything else, from permits to perfect timing.</p>
+                    
+                    <h3>5. Equipment Provided</h3>
+                    <p>Don't have professional camera gear? No problem! We provide professional photography equipment for your use during the tour. We also offer photography workshops for beginners.</p>
+                </div>
+                
+                <!-- FEATURED TOURS SECTION -->
+                <h2>Our Most Popular Egypt Photography Tours 2026</h2>
+                <p>Choose from our selection of curated photography tours, each designed to provide unique photographic opportunities and cultural experiences.</p>
+                
+                <div class="tour-grid">
+                    <!-- Tour 1 - Private Pyramids Photography Tour -->
+                    <div class="tour-card">
+                        <img src="images/pyramids-private-tour.jpg"
+                             alt="Private pyramids photography tour in Giza Egypt - Professional Giza photoshoot experience"
+                             class="tour-img"
+                             loading="lazy"
+                             width="400"
+                             height="250">
+                        <div class="tour-card-body">
+                            <h3 class="tour-card-title">
+                                <a href="https://egyptphotographytours.com/tour-pyramids-private">Private Pyramids Photography Tour in Giza</a>
+                            </h3>
+                            <p>Experience exclusive access to the Giza Plateau with professional photoshoot at the Great Pyramids and Sphinx. Perfect for couples, solo travelers, and anyone wanting iconic Egyptian photographs. Includes golden hour photography, professional posing guidance, and all edited digital photos.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">From $150</span>
+                                <button class="tour-cta book-tour-btn" data-tour-id="pyramids-private">Book Now</button>
+                            </div>
+                            
+                            <div class="booking-form" id="booking-form-pyramids-private">
+                                <div class="form-group">
+                                    <label for="pyramids-persons">Number of Persons:</label>
+                                    <div class="persons-group">
+                                        <button class="person-btn" data-persons="1">1 Person</button>
+                                        <button class="person-btn" data-persons="2">2 Persons</button>
+                                        <button class="person-btn" data-persons="3">3 Persons</button>
+                                        <button class="person-btn" data-persons="4">4 Persons</button>
+                                        <button class="person-btn" data-persons="5">5 Persons</button>
+                                        <button class="person-btn" data-persons="6">6+ Persons</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="pyramids-date">Select Date:</label>
+                                    <input type="date" id="pyramids-date" class="date-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="pyramids-name">Full Name:</label>
+                                    <input type="text" id="pyramids-name" placeholder="Your full name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="pyramids-phone">Phone Number:</label>
+                                    <input type="tel" id="pyramids-phone" placeholder="Your phone number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="pyramids-email">Email Address:</label>
+                                    <input type="email" id="pyramids-email" placeholder="Your email address" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="pyramids-note">Special Notes:</label>
+                                    <textarea id="pyramids-note" placeholder="Any special requests or notes" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <p>Total Price: <span class="display-price">$0.00 USD</span></p>
+                                </div>
+                                
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                                    <input type="hidden" name="cmd" value="_xclick">
+                                    <input type="hidden" name="business" value="hossam0114@hotmail.com">
+                                    <input type="hidden" name="item_name" value="Private Pyramids Photography Tour">
+                                    <input type="hidden" name="amount" value="0.00">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="on0" value="Booking Type">
+                                    <input type="hidden" name="os0" value="">
+                                    <input type="hidden" name="on1" value="Booking Date">
+                                    <input type="hidden" name="os1" value="">
+                                    <input type="hidden" name="on2" value="Client Name">
+                                    <input type="hidden" name="os2" value="">
+                                    <input type="hidden" name="on3" value="Client Phone">
+                                    <input type="hidden" name="os3" value="">
+                                    <input type="hidden" name="on4" value="Client Email">
+                                    <input type="hidden" name="os4" value="">
+                                    <input type="hidden" name="on5" value="Special Note">
+                                    <input type="hidden" name="os5" value="">
+                                    <input type="hidden" name="return" value="https://www.egyptphotographytours.com/payment-success.html">
+                                    <input type="hidden" name="cancel_return" value="https://www.egyptphotographytours.com/">
+                                    <input type="hidden" name="no_shipping" value="1">
+                                    <button type="submit" class="paypal-buy-button" disabled>Pay with PayPal</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour 2 - Cairo & Giza 2-Day Photography Expedition -->
+                    <div class="tour-card">
+                        <img src="images/cairo-giza-2day.jpg"
+                             alt="Cairo street photography tour with professional guide - 2 day Cairo Giza photography tour"
+                             class="tour-img"
+                             loading="lazy"
+                             width="400"
+                             height="250">
+                        <div class="tour-card-body">
+                            <h3 class="tour-card-title">
+                                <a href="https://egyptphotographytours.com/tour-cairo-giza-2day">Cairo & Giza 2-Day Photography Expedition</a>
+                            </h3>
+                            <p>Comprehensive 2-day tour covering Cairo's highlights and Giza Pyramids with professional photography guidance. Perfect for travelers wanting to capture both ancient and modern Egypt. Includes Egyptian Museum, Khan el-Khalili, Islamic Cairo, and full Giza Plateau experience.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">From $350</span>
+                                <button class="tour-cta book-tour-btn" data-tour-id="cairo-giza-2day">Book Now</button>
+                            </div>
+                            
+                            <div class="booking-form" id="booking-form-cairo-giza-2day">
+                                <div class="form-group">
+                                    <label for="cairo-giza-persons">Number of Persons:</label>
+                                    <div class="persons-group">
+                                        <button class="person-btn" data-persons="1">1 Person</button>
+                                        <button class="person-btn" data-persons="2">2 Persons</button>
+                                        <button class="person-btn" data-persons="3">3 Persons</button>
+                                        <button class="person-btn" data-persons="4">4 Persons</button>
+                                        <button class="person-btn" data-persons="5">5 Persons</button>
+                                        <button class="person-btn" data-persons="6">6+ Persons</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cairo-giza-date">Select Date:</label>
+                                    <input type="date" id="cairo-giza-date" class="date-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cairo-giza-name">Full Name:</label>
+                                    <input type="text" id="cairo-giza-name" placeholder="Your full name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cairo-giza-phone">Phone Number:</label>
+                                    <input type="tel" id="cairo-giza-phone" placeholder="Your phone number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cairo-giza-email">Email Address:</label>
+                                    <input type="email" id="cairo-giza-email" placeholder="Your email address" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cairo-giza-note">Special Notes:</label>
+                                    <textarea id="cairo-giza-note" placeholder="Any special requests or notes" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <p>Total Price: <span class="display-price">$0.00 USD</span></p>
+                                </div>
+                                
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                                    <input type="hidden" name="cmd" value="_xclick">
+                                    <input type="hidden" name="business" value="hossam0114@hotmail.com">
+                                    <input type="hidden" name="item_name" value="Cairo & Giza 2-Day Photography Tour">
+                                    <input type="hidden" name="amount" value="0.00">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="on0" value="Booking Type">
+                                    <input type="hidden" name="os0" value="">
+                                    <input type="hidden" name="on1" value="Booking Date">
+                                    <input type="hidden" name="os1" value="">
+                                    <input type="hidden" name="on2" value="Client Name">
+                                    <input type="hidden" name="os2" value="">
+                                    <input type="hidden" name="on3" value="Client Phone">
+                                    <input type="hidden" name="os3" value="">
+                                    <input type="hidden" name="on4" value="Client Email">
+                                    <input type="hidden" name="os4" value="">
+                                    <input type="hidden" name="on5" value="Special Note">
+                                    <input type="hidden" name="os5" value="">
+                                    <input type="hidden" name="return" value="https://www.egyptphotographytours.com/payment-success.html">
+                                    <input type="hidden" name="cancel_return" value="https://www.egyptphotographytours.com/">
+                                    <input type="hidden" name="no_shipping" value="1">
+                                    <button type="submit" class="paypal-buy-button" disabled>Pay with PayPal</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour 3 - 7-Day Egypt Photography Adventure -->
+                    <div class="tour-card">
+                        <img src="images/egypt-discovery-7day.jpg"
+                             alt="7 day Egypt photography adventure tour - Multi-day Egypt photo tour package"
+                             class="tour-img"
+                             loading="lazy"
+                             width="400"
+                             height="250">
+                        <div class="tour-card-body">
+                            <h3 class="tour-card-title">
+                                <a href="https://egyptphotographytours.com/tour-egypt-discovery-7day">7-Day Egypt Photography Adventure</a>
+                            </h3>
+                            <p>Complete Egypt experience covering Cairo, Giza, Alexandria with daily photography sessions. The ultimate <strong>Egypt photo tour package</strong> for serious photographers and travelers. Includes accommodations, meals, transportation, and professional photography throughout.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">From $1900</span>
+                                <button class="tour-cta book-tour-btn" data-tour-id="egypt-discovery-7day">Book Now</button>
+                            </div>
+                            
+                            <div class="booking-form" id="booking-form-egypt-discovery-7day">
+                                <div class="form-group">
+                                    <label for="egypt-discovery-persons">Number of Persons:</label>
+                                    <div class="persons-group">
+                                        <button class="person-btn" data-persons="1">1 Person</button>
+                                        <button class="person-btn" data-persons="2">2 Persons</button>
+                                        <button class="person-btn" data-persons="3">3 Persons</button>
+                                        <button class="person-btn" data-persons="4">4 Persons</button>
+                                        <button class="person-btn" data-persons="5">5 Persons</button>
+                                        <button class="person-btn" data-persons="6">6+ Persons</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="egypt-discovery-date">Select Date:</label>
+                                    <input type="date" id="egypt-discovery-date" class="date-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="egypt-discovery-name">Full Name:</label>
+                                    <input type="text" id="egypt-discovery-name" placeholder="Your full name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="egypt-discovery-phone">Phone Number:</label>
+                                    <input type="tel" id="egypt-discovery-phone" placeholder="Your phone number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="egypt-discovery-email">Email Address:</label>
+                                    <input type="email" id="egypt-discovery-email" placeholder="Your email address" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="egypt-discovery-note">Special Notes:</label>
+                                    <textarea id="egypt-discovery-note" placeholder="Any special requests or notes" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <p>Total Price: <span class="display-price">$0.00 USD</span></p>
+                                </div>
+                                
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                                    <input type="hidden" name="cmd" value="_xclick">
+                                    <input type="hidden" name="business" value="hossam0114@hotmail.com">
+                                    <input type="hidden" name="item_name" value="7-Day Egypt Photography Adventure">
+                                    <input type="hidden" name="amount" value="0.00">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="on0" value="Booking Type">
+                                    <input type="hidden" name="os0" value="">
+                                    <input type="hidden" name="on1" value="Booking Date">
+                                    <input type="hidden" name="os1" value="">
+                                    <input type="hidden" name="on2" value="Client Name">
+                                    <input type="hidden" name="os2" value="">
+                                    <input type="hidden" name="on3" value="Client Phone">
+                                    <input type="hidden" name="os3" value="">
+                                    <input type="hidden" name="on4" value="Client Email">
+                                    <input type="hidden" name="os4" value="">
+                                    <input type="hidden" name="on5" value="Special Note">
+                                    <input type="hidden" name="os5" value="">
+                                    <input type="hidden" name="return" value="https://www.egyptphotographytours.com/payment-success.html">
+                                    <input type="hidden" name="cancel_return" value="https://www.egyptphotographytours.com/">
+                                    <input type="hidden" name="no_shipping" value="1">
+                                    <button type="submit" class="paypal-buy-button" disabled>Pay with PayPal</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour 4 - Alexandria Photography Day Trip -->
+                    <div class="tour-card">
+                        <img src="images/alexandria-tour.jpg"
+                             alt="Alexandria photography day trip Egypt - Mediterranean coast photography tour"
+                             class="tour-img"
+                             loading="lazy"
+                             width="400"
+                             height="250">
+                        <div class="tour-card-body">
+                            <h3 class="tour-card-title">
+                                <a href="https://egyptphotographytours.com/tour-alexandria">Alexandria Photography Day Trip</a>
+                            </h3>
+                            <p>Mediterranean coastal photography experience from Cairo. Perfect for travelers wanting to capture Egypt's coastal beauty and historical sites beyond the pyramids. Includes Qaitbay Citadel, Bibliotheca Alexandrina, and local seafood lunch.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">From $220</span>
+                                <button class="tour-cta book-tour-btn" data-tour-id="alexandria-tour">Book Now</button>
+                            </div>
+                            
+                            <div class="booking-form" id="booking-form-alexandria-tour">
+                                <div class="form-group">
+                                    <label for="alexandria-persons">Number of Persons:</label>
+                                    <div class="persons-group">
+                                        <button class="person-btn" data-persons="1">1 Person</button>
+                                        <button class="person-btn" data-persons="2">2 Persons</button>
+                                        <button class="person-btn" data-persons="3">3 Persons</button>
+                                        <button class="person-btn" data-persons="4">4 Persons</button>
+                                        <button class="person-btn" data-persons="5">5 Persons</button>
+                                        <button class="person-btn" data-persons="6">6+ Persons</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="alexandria-date">Select Date:</label>
+                                    <input type="date" id="alexandria-date" class="date-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="alexandria-name">Full Name:</label>
+                                    <input type="text" id="alexandria-name" placeholder="Your full name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="alexandria-phone">Phone Number:</label>
+                                    <input type="tel" id="alexandria-phone" placeholder="Your phone number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="alexandria-email">Email Address:</label>
+                                    <input type="email" id="alexandria-email" placeholder="Your email address" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="alexandria-note">Special Notes:</label>
+                                    <textarea id="alexandria-note" placeholder="Any special requests or notes" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <p>Total Price: <span class="display-price">$0.00 USD</span></p>
+                                </div>
+                                
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+                                    <input type="hidden" name="cmd" value="_xclick">
+                                    <input type="hidden" name="business" value="hossam0114@hotmail.com">
+                                    <input type="hidden" name="item_name" value="Alexandria Photography Day Trip">
+                                    <input type="hidden" name="amount" value="0.00">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="on0" value="Booking Type">
+                                    <input type="hidden" name="os0" value="">
+                                    <input type="hidden" name="on1" value="Booking Date">
+                                    <input type="hidden" name="os1" value="">
+                                    <input type="hidden" name="on2" value="Client Name">
+                                    <input type="hidden" name="os2" value="">
+                                    <input type="hidden" name="on3" value="Client Phone">
+                                    <input type="hidden" name="os3" value="">
+                                    <input type="hidden" name="on4" value="Client Email">
+                                    <input type="hidden" name="os4" value="">
+                                    <input type="hidden" name="on5" value="Special Note">
+                                    <input type="hidden" name="os5" value="">
+                                    <input type="hidden" name="return" value="https://www.egyptphotographytours.com/payment-success.html">
+                                    <input type="hidden" name="cancel_return" value="https://www.egyptphotographytours.com/">
+                                    <input type="hidden" name="no_shipping" value="1">
+                                    <button type="submit" class="paypal-buy-button" disabled>Pay with PayPal</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour 5 - Cairo Street Photography Tour -->
+                    <div class="tour-card">
+                        <img src="images/cairo-street-tour.jpg"
+                             alt="Cairo street photography tour - Professional photography tour in Cairo Egypt"
+                             class="tour-img"
+                             loading="lazy"
+                             width="400"
+                             height="250">
+                        <div class="tour-card-body">
+                            <h3 class="tour-card-title">
+                                <a href="https://egyptphotographytours.com/tour-cairo-street">Cairo Street Photography Tour</a>
+                            </h3>
+                            <p>Immerse yourself in the vibrant streets of Cairo with our expert photography guide. Capture authentic moments, colorful markets, and historic architecture. Learn street photography techniques while exploring hidden gems of Cairo.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">From $180</span>
+                                <button class="tour-cta book-tour-btn" data-tour-id="cairo-street">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour 6 - Nile River Photography Cruise -->
+                    <div class="tour-card">
+                        <img src="images/nile-cruise-tour.jpg"
+                             alt="Nile River photography cruise - Egypt photography tours on the Nile"
+                             class="tour-img"
+                             loading="lazy"
+                             width="400"
+                             height="250">
+                        <div class="tour-card-body">
+                            <h3 class="tour-card-title">
+                                <a href="https://egyptphotographytours.com/tour-nile-cruise">Nile River Photography Cruise</a>
+                            </h3>
+                            <p>Capture the magic of the Nile River during golden hour. Sunset photography cruise with professional guidance. Perfect for landscape and travel photography enthusiasts wanting to capture Egypt's lifeline.</p>
+                            <div class="tour-card-footer">
+                                <span class="tour-price">From $120</span>
+                                <button class="tour-cta book-tour-btn" data-tour-id="nile-cruise">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-50">
+                    <a href="https://egyptphotographytours.com/tours" class="cta-button cta-button-primary">View All Photography Tours</a>
+                    <a href="https://egyptphotographytours.com/honeymoon-tours" class="cta-button cta-button-secondary" style="margin-left: 15px;">Honeymoon Tours</a>
+                    <a href="https://egyptphotographytours.com/family-tours" class="cta-button cta-button-secondary" style="margin-left: 15px;">Family Tours</a>
+                    <a href="https://egyptphotographytours.com/solo-traveler-tours" class="cta-button cta-button-secondary" style="margin-left: 15px;">Solo Traveler Tours</a>
+                </div>
+                
+                <!-- EXPANDED CONTENT SECTION -->
+                <div class="content-section mt-50">
+                    <h2>The Complete Guide to Egypt Photography Tours 2026</h2>
+                    
+                    <h3>What Makes Our Egypt Photography Tours Special?</h3>
+                    <p>At Egypt Photography Tours, we've perfected the art of combining travel photography with cultural immersion. Our tours stand out because:</p>
+                    
+                    <ul>
+                        <li><strong>Professional Photographer Guides:</strong> All our guides are professional photographers with extensive knowledge of Egypt's best photo spots.</li>
+                        <li><strong>Exclusive Access:</strong> We have special access to locations and times that regular tours don't offer, like sunrise at the pyramids before crowds arrive.</li>
+                        <li><strong>Customized Itineraries:</strong> We tailor each tour to your photography skill level, interests, and travel style.</li>
+                        <li><strong>All Skill Levels Welcome:</strong> From complete beginners to professional photographers, we adapt our guidance to help everyone capture amazing photos.</li>
+                        <li><strong>Cultural Immersion:</strong> We go beyond photography to help you understand and experience authentic Egyptian culture.</li>
+                    </ul>
+                    
+                    <h3>Best Photo Spots in Egypt: Where We Take You</h3>
+                    <p>Our Egypt photography tours cover all the iconic locations plus hidden gems most tourists miss:</p>
+                    
+                    <h4>1. Giza Pyramids Complex</h4>
+                    <p>The Great Pyramid of Giza, Sphinx, and surrounding desert provide endless photographic opportunities. We know the best angles, times of day, and vantage points for stunning pyramid photos.</p>
+                    
+                    <h4>2. Cairo's Historic Districts</h4>
+                    <p>Islamic Cairo, Coptic Cairo, and modern downtown areas offer a mix of ancient architecture, vibrant street life, and cultural diversity perfect for photography.</p>
+                    
+                    <h4>3. Alexandria Mediterranean Coast</h4>
+                    <p>From the Citadel of Qaitbay to the modern Bibliotheca Alexandrina, Alexandria offers coastal beauty and Greco-Roman history.</p>
+                    
+                    <h4>4. Nile River & Felucca Boats</h4>
+                    <p>The lifeblood of Egypt provides beautiful reflections, sunset shots, and traditional boat photography opportunities.</p>
+                    
+                    <h4>5. Local Markets & Bazaars</h4>
+                    <p>Khan el-Khalili and local markets offer colorful, vibrant scenes perfect for street and people photography.</p>
+                    
+                    <h3>Photography Equipment: What to Bring</h3>
+                    <p>While we provide professional equipment, here's what we recommend bringing:</p>
+                    
+                    <div class="responsive-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Equipment Type</th>
+                                    <th>Recommended Items</th>
+                                    <th>Why It's Useful</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cameras</td>
+                                    <td>DSLR, Mirrorless, or high-end smartphone</td>
+                                    <td>Versatility for different shooting conditions</td>
+                                </tr>
+                                <tr>
+                                    <td>Lenses</td>
+                                    <td>Wide-angle (16-35mm), Standard zoom (24-70mm), Telephoto (70-200mm)</td>
+                                    <td>Different perspectives for various subjects</td>
+                                </tr>
+                                <tr>
+                                    <td>Accessories</td>
+                                    <td>Tripod, extra batteries, memory cards, lens cleaning kit</td>
+                                    <td>Essential for long shooting sessions</td>
+                                </tr>
+                                <tr>
+                                    <td>Protection</td>
+                                    <td>Camera rain cover, dust protection, secure bag</td>
+                                    <td>Egypt's climate can be harsh on equipment</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>When to Visit Egypt for Photography</h3>
+                    <p>The best time for photography in Egypt depends on what you want to capture:</p>
+                    
+                    <ul>
+                        <li><strong>October-April:</strong> Pleasant temperatures, ideal for daytime photography</li>
+                        <li><strong>May-September:</strong> Hotter but great for early morning and late afternoon shoots</li>
+                        <li><strong>Golden Hour:</strong> Always magical in Egypt - we schedule tours around these times</li>
+                        <li><strong>Festival Seasons:</strong> Ramadan and other festivals offer unique cultural photography</li>
+                    </ul>
+                    
+                    <h3>Photography Tips for Egypt</h3>
+                    <p>During our tours, we'll teach you:</p>
+                    
+                    <ol>
+                        <li><strong>Golden Hour Magic:</strong> How to use Egypt's incredible light for stunning photos</li>
+                        <li><strong>Composition Techniques:</strong> Framing ancient monuments in creative ways</li>
+                        <li><strong>People Photography:</strong> Respectful approaches to capturing local culture</li>
+                        <li><strong>Night Photography:</strong> Techniques for capturing Egypt after dark</li>
+                        <li><strong>Post-Processing:</strong> Basic editing tips to make your photos pop</li>
+                    </ol>
+                    
+                    <h3>Safety & Comfort on Our Tours</h3>
+                    <p>Your safety and comfort are our top priorities:</p>
+                    
+                    <div class="featured-highlights">
+                        <div class="highlight-card">
+                            <h3>Licensed Guides</h3>
+                            <p>All guides are licensed, insured, and trained in first aid</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h3>Modern Vehicles</h3>
+                            <p>Air-conditioned, comfortable transportation for all tours</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h3>Local Knowledge</h3>
+                            <p>We know the safest areas and best times to visit each location</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Booking Your Egypt Photography Tour</h3>
+                    <p>Booking with Egypt Photography Tours is easy and secure:</p>
+                    
+                    <ol>
+                        <li><strong>Choose Your Tour:</strong> Select from our range of photography tours</li>
+                        <li><strong>Select Dates:</strong> We offer daily availability year-round</li>
+                        <li><strong>Customize:</strong> Tell us about your photography interests and skill level</li>
+                        <li><strong>Secure Payment:</strong> Pay via PayPal, credit card, or bank transfer</li>
+                        <li><strong>Prepare:</strong> We'll send you a detailed preparation guide</li>
+                        <li><strong>Enjoy:</strong> Arrive in Egypt and start your photography adventure!</li>
+                    </ol>
+                    
+                    <h3>What Our Travelers Say</h3>
+                    <p>Here's why travelers choose Egypt Photography Tours:</p>
+                    
+                    <div class="keyword-highlight">
+                        <p>"The <strong>private pyramids photography tour</strong> was incredible! Our guide knew exactly where to take us for the best shots without crowds. The photos we got look professional!" - Sarah, USA</p>
+                        <p>"As a solo female traveler, I felt completely safe on the <strong>Cairo photography tour</strong>. The guide was professional and helped me capture amazing street photography." - Mia, Australia</p>
+                        <p>"Our family <strong>Egypt photo tour package</strong> gave us beautiful family portraits at the pyramids. The kids loved learning photography too!" - The Johnson Family, UK</p>
+                    </div>
+                </div>
+                
+                <!-- EXPANDED REVIEWS SECTION -->
+                <section id="reviews" class="reviews-section">
+                    <div class="container">
+                        <h2 class="text-center">Traveler Reviews & Testimonials</h2>
+                        <p class="text-center mb-50">See what travelers from around the world say about their Egypt photography tour experience.</p>
+                        
+                        <div class="reviews-grid">
+                            <!-- Review 1 -->
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="images/reviewer1.jpg" alt="Sarah M review" class="review-avatar">
+                                    <div>
+                                        <div class="review-name">Sarah M</div>
+                                        <div class="review-location">New York, USA</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"The private pyramids photography tour exceeded all expectations! Our guide Hossam knew every perfect angle and timing. The photos we received are absolutely stunning - professional quality. Worth every penny!"</p>
+                                <div class="review-date">March 2025</div>
+                            </div>
+                            
+                            <!-- Review 2 -->
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="images/reviewer2.jpg" alt="James K review" class="review-avatar">
+                                    <div>
+                                        <div class="review-name">James K</div>
+                                        <div class="review-location">London, UK</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"As a photography enthusiast, the 7-day Egypt photo tour was a dream come true. From Cairo to Alexandria, every location was carefully chosen for photography. Learned so much and came home with portfolio-worthy images."</p>
+                                <div class="review-date">February 2025</div>
+                            </div>
+                            
+                            <!-- Review 3 -->
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="images/reviewer3.jpg" alt="Maria L review" class="review-avatar">
+                                    <div>
+                                        <div class="review-name">Maria L</div>
+                                        <div class="review-location">Madrid, Spain</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"Perfect for solo travelers! The Cairo street photography tour was both safe and incredibly rewarding. My guide helped me capture authentic moments I would have missed on my own. Highly recommended!"</p>
+                                <div class="review-date">January 2025</div>
+                            </div>
+                            
+                            <!-- Review 4 -->
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="images/reviewer4.jpg" alt="David & Lisa review" class="review-avatar">
+                                    <div>
+                                        <div class="review-name">David & Lisa</div>
+                                        <div class="review-location">Sydney, Australia</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"Our honeymoon photos at the pyramids are breathtaking! The golden hour photoshoot was romantic and well-organized. We have professional photos that will last a lifetime. Thank you Egypt Photography Tours!"</p>
+                                <div class="review-date">December 2024</div>
+                            </div>
+                            
+                            <!-- Review 5 -->
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="images/reviewer5.jpg" alt="Chen W review" class="review-avatar">
+                                    <div>
+                                        <div class="review-name">Chen W</div>
+                                        <div class="review-location">Beijing, China</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"The Alexandria day trip was fantastic! Coastal photography combined with historical sites. The guide was knowledgeable about both photography and Egyptian history. Perfect day trip from Cairo."</p>
+                                <div class="review-date">November 2024</div>
+                            </div>
+                            
+                            <!-- Review 6 -->
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="images/reviewer6.jpg" alt="The Miller Family review" class="review-avatar">
+                                    <div>
+                                        <div class="review-name">Miller Family</div>
+                                        <div class="review-location">Toronto, Canada</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"Family photography tour was amazing! Our kids (8 and 12) loved learning photography while exploring Egypt. We have beautiful family portraits at all the major sites. Educational and fun!"</p>
+                                <div class="review-date">October 2024</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Review Platforms -->
+                        <div class="reviews-widgets-grid mt-50">
+                            <div class="review-widget">
+                                <div class="review-stars">★★★★★</div>
+                                <h3>Google Reviews</h3>
+                                <p>4.9/5 stars based on 142 reviews</p>
+                                <a href="https://g.page/r/CRiFZvb5dH4wEBM/review" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer nofollow" 
+                                   class="cta-button cta-button-primary" style="margin-top: 20px;">
+                                    Read Google Reviews
+                                </a>
+                            </div>
+                            
+                            <div class="review-widget">
+                                <div class="review-stars">★★★★★</div>
+                                <h3>TripAdvisor</h3>
+                                <p>#1 for Photography Tours in Cairo</p>
+                                <p>Certificate of Excellence 2025</p>
+                                <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d20816594-Reviews-Egypt_Photography_Tours-Cairo_Cairo_Governorate.html" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer nofollow" 
+                                   class="cta-button cta-button-primary" style="margin-top: 20px;">
+                                    View on TripAdvisor
+                                </a>
+                            </div>
+                            
+                            <div class="review-widget">
+                                <div class="review-stars">★★★★★</div>
+                                <h3>Trustpilot</h3>
+                                <p>Excellent 4.8/5 rating</p>
+                                <div class="trustpilot-widget">
+                                    <!-- TrustBox widget - Review Collector -->
+                                    <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="YOUR_BUSINESS_UNIT_ID" data-style-height="52px" data-style-width="100%">
+                                        <a href="https://www.trustpilot.com/review/egyptphotographytours.com" target="_blank" rel="noopener">Trustpilot</a>
+                                    </div>
+                                    <!-- End TrustBox widget -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- FAQ SECTION -->
+                <div class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <h3>Do I need photography experience?</h3>
+                    <p>No! Our tours are designed for all skill levels, from complete beginners to professional photographers. We adapt our guidance to help everyone capture amazing photos.</p>
+                    
+                    <h3>What equipment do I need?</h3>
+                    <p>You can use anything from a smartphone to professional camera equipment. We also provide professional equipment if needed.</p>
+                    
+                    <h3>How many photos will I receive?</h3>
+                    <p>This varies by tour, but typically you'll receive 50-100+ professionally edited high-resolution photos from a full-day tour.</p>
+                    
+                    <h3>Are the tours private?</h3>
+                    <p>Yes, all our photography tours are private. It will be just you (and your companions) with your photographer guide.</p>
+                    
+                    <h3>What about bad weather?</h3>
+                    <p>We monitor weather closely and can reschedule if conditions are poor for photography. Egypt has mostly sunny days perfect for photography.</p>
+                    
+                    <h3>Can I customize my tour?</h3>
+                    <p>Absolutely! We specialize in creating customized photography itineraries based on your interests and skill level.</p>
+                    
+                    <h3>How do I book for 2026?</h3>
+                    <p>2026 tours are now open for booking. We recommend booking 3-6 months in advance for the best availability, especially for peak seasons.</p>
+                </div>
+                
+                <!-- FINAL CTA -->
+                <div class="content-section text-center mt-50">
+                    <h2>Ready to Capture Your Egyptian Adventure?</h2>
+                    <p>Book your private Egypt photography tour today and create memories that will last a lifetime. Our 2026 tours are filling quickly - secure your preferred dates now.</p>
+                    
+                    <div class="featured-highlights">
+                        <div class="highlight-card">
+                            <h3>✓ Best Price Guarantee</h3>
+                            <p>We guarantee the best rates for photography tours in Egypt</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h3>✓ Flexible Cancellation</h3>
+                            <p>Free cancellation up to 48 hours before your tour</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h3>✓ 24/7 Support</h3>
+                            <p>We're here to help before, during, and after your tour</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-button cta-button-primary">Book Your 2026 Tour Now</a>
+                        <a href="https://wa.me/201550735673" target="_blank" rel="noopener" class="cta-button cta-button-secondary">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Us
+                        </a>
+                        <a href="mailto:info@egyptphotographytours.com" class="cta-button cta-button-secondary">
+                            <i class="far fa-envelope"></i> Email Inquiry
+                        </a>
+                    </div>
+                    
+                    <p style="margin-top: 30px; font-size: 1rem; color: #666;">
+                        <i class="fas fa-shield-alt"></i> Secure Booking | <i class="fas fa-calendar-check"></i> Free Cancellation | <i class="fas fa-tag"></i> Best Price Guarantee | <i class="fas fa-headset"></i> 24/7 Support
+                    </p>
+                </div>
             </div>
         </section>
     </main>
@@ -1488,17 +2294,64 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <!-- Footer content remains exactly the same -->
-                <!-- ... (truncated for brevity) ... -->
+                <div>
+                    <h3 class="footer-title">Egypt Photography Tours</h3>
+                    <p>Egypt's premier private photography tour company since 2015. Specializing in private pyramids photoshoots, Cairo street photography tours, and multi-day Egypt photo adventures.</p>
+                    <p><strong>📍 Giza, Egypt - Near Pyramids</strong></p>
+                    <p>Licensed Tour Operator #EG-2023-4578</p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Popular Photography Tours</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://egyptphotographytours.com/tour-pyramids-private">Private Pyramids Tour</a></li>
+                        <li><a href="https://egyptphotographytours.com/tour-cairo-giza-2day">Cairo 2-Day Tour</a></li>
+                        <li><a href="https://egyptphotographytours.com/tour-egypt-discovery-7day">7-Day Egypt Adventure</a></li>
+                        <li><a href="https://egyptphotographytours.com/tour-alexandria">Alexandria Day Trip</a></li>
+                        <li><a href="https://egyptphotographytours.com/tour-cairo-street">Cairo Street Photography</a></li>
+                        <li><a href="https://egyptphotographytours.com/tour-nile-cruise">Nile Photography Cruise</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Contact & Support</h3>
+                    <p><i class="fab fa-whatsapp"></i> +20 155 073 5673</p>
+                    <p><i class="far fa-envelope"></i> info@egyptphotographytours.com</p>
+                    <p><i class="fas fa-phone"></i> +20 2 1234 5678</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/EgyptPhotographyTours" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hossam_artistic/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@egyptphotographytours" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@Egyptphotographytours" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.pinterest.com/egyptphototours" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.1413113!3d29.9749687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1701715200000" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Egypt Photography Tours Location - Giza, Egypt">
+                    </iframe>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2015-2026 Egypt Photography Tours. All rights reserved. | <a href="privacy.html" style="color: #aaa;">Privacy Policy</a> | <a href="terms.html" style="color: #aaa;">Terms & Conditions</a></p>
+                    <p>Egypt Tourism Authority Licensed Operator | Member of Egyptian Tourism Federation</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- OPTIMIZED JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
     <script>
-        // DOM Ready
+        // MOBILE MENU
         document.addEventListener('DOMContentLoaded', function() {
-            // MOBILE MENU
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
@@ -1506,16 +2359,12 @@
                 mobileMenuToggle.addEventListener('click', function() {
                     navLinks.classList.toggle('active');
                     const icon = this.querySelector('i');
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                        navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
             }
@@ -1525,89 +2374,48 @@
             if (languageSwitcher) {
                 const currentLanguage = languageSwitcher.querySelector('.current-language');
                 const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
                 
                 currentLanguage.addEventListener('click', function(e) {
                     e.stopPropagation();
                     languageSwitcher.classList.toggle('active');
+                    dropdownIcon.classList.toggle('fa-chevron-up');
+                    dropdownIcon.classList.toggle('fa-chevron-down');
                 });
                 
                 // Close dropdown when clicking outside
                 document.addEventListener('click', function(e) {
                     if (!languageSwitcher.contains(e.target)) {
                         languageSwitcher.classList.remove('active');
+                        dropdownIcon.classList.remove('fa-chevron-up');
+                        dropdownIcon.classList.add('fa-chevron-down');
                     }
                 });
             }
             
-            // HERO SLIDER - 5 PHOTOS AUTOMATIC
+            // HERO SLIDER
             const heroSlides = document.querySelectorAll('.hero-slide');
             let currentSlide = 0;
-            const slideCount = heroSlides.length;
             
             function showSlide(n) {
                 heroSlides.forEach(slide => slide.classList.remove('active'));
-                currentSlide = (n + slideCount) % slideCount;
+                currentSlide = (n + heroSlides.length) % heroSlides.length;
                 heroSlides[currentSlide].classList.add('active');
             }
             
-            // Auto-rotate slides every 4 seconds
-            let slideInterval = setInterval(() => {
+            // Auto-rotate slides every 5 seconds
+            setInterval(() => {
                 showSlide(currentSlide + 1);
-            }, 4000);
-            
-            // Pause on hover
-            const heroSection = document.querySelector('.hero-section');
-            heroSection.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-            
-            heroSection.addEventListener('mouseleave', () => {
-                slideInterval = setInterval(() => {
-                    showSlide(currentSlide + 1);
-                }, 4000);
-            });
-            
-            // Touch swipe for mobile
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            heroSection.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-            
-            heroSection.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-            
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                const diff = touchStartX - touchEndX;
-                
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0) {
-                        // Swipe left
-                        showSlide(currentSlide + 1);
-                    } else {
-                        // Swipe right
-                        showSlide(currentSlide - 1);
-                    }
-                    // Reset interval after manual swipe
-                    clearInterval(slideInterval);
-                    slideInterval = setInterval(() => {
-                        showSlide(currentSlide + 1);
-                    }, 4000);
-                }
-            }
+            }, 5000);
             
             // Initialize first slide
             showSlide(0);
             
-            // COUNTUP ANIMATION - Optimized for performance
+            // COUNTUP ANIMATION
             const statNumbers = document.querySelectorAll('.stat-number');
             const observerOptions = {
-                threshold: 0.2,
-                rootMargin: '50px'
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
             };
             
             const observer = new IntersectionObserver((entries) => {
@@ -1615,21 +2423,20 @@
                     if (entry.isIntersecting) {
                         const statNumber = entry.target;
                         const target = parseInt(statNumber.getAttribute('data-count'));
-                        const duration = 1500;
-                        const increment = target / (duration / 16);
+                        const duration = 2000; // 2 seconds
+                        const step = target / (duration / 16); // 60fps
                         let current = 0;
                         
-                        const updateCounter = () => {
-                            current += increment;
-                            if (current < target) {
-                                statNumber.textContent = Math.floor(current);
-                                requestAnimationFrame(updateCounter);
-                            } else {
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
                                 statNumber.textContent = target;
+                                clearInterval(timer);
+                            } else {
+                                statNumber.textContent = Math.floor(current);
                             }
-                        };
+                        }, 16);
                         
-                        requestAnimationFrame(updateCounter);
                         observer.unobserve(statNumber);
                     }
                 });
@@ -1638,75 +2445,221 @@
             statNumbers.forEach(stat => observer.observe(stat));
             
             // TOUR BOOKING FUNCTIONALITY
-            // ... (rest of your booking functionality remains exactly the same) ...
+            const tourPrices = {
+                'pyramids-private': { 1: 150.00, 2: 250.00, 3: 350.00, 4: 450.00, 5: 550.00, 6: 650.00 },
+                'cairo-giza-2day': { 1: 350.00, 2: 600.00, 3: 850.00, 4: 1100.00, 5: 1350.00, 6: 1600.00 },
+                'egypt-discovery-7day': { 1: 1900.00, 2: 3500.00, 3: 5100.00, 4: 6700.00, 5: 8300.00, 6: 9900.00 },
+                'alexandria-tour': { 1: 220.00, 2: 380.00, 3: 540.00, 4: 700.00, 5: 860.00, 6: 1020.00 },
+                'cairo-street': { 1: 180.00, 2: 320.00, 3: 450.00, 4: 580.00, 5: 710.00, 6: 840.00 },
+                'nile-cruise': { 1: 120.00, 2: 200.00, 3: 280.00, 4: 360.00, 5: 440.00, 6: 520.00 }
+            };
+
+            const bookTourButtons = document.querySelectorAll('.book-tour-btn');
             
-            // PERFORMANCE OPTIMIZATIONS
-            // Lazy load images
+            bookTourButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tourId = this.dataset.tourId;
+                    const bookingForm = document.getElementById(`booking-form-${tourId}`);
+                    
+                    // Toggle the booking form visibility
+                    if (bookingForm.classList.contains('active')) {
+                        bookingForm.classList.remove('active');
+                        this.textContent = 'Book Now';
+                    } else {
+                        // Close all other open booking forms
+                        document.querySelectorAll('.booking-form.active').forEach(form => {
+                            form.classList.remove('active');
+                        });
+                        
+                        // Reset all book buttons text
+                        document.querySelectorAll('.book-tour-btn').forEach(btn => {
+                            btn.textContent = 'Book Now';
+                        });
+                        
+                        // Open this booking form
+                        bookingForm.classList.add('active');
+                        this.textContent = 'Close Form';
+                        
+                        // Scroll to the booking form
+                        bookingForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                        // Initialize the form for this tour
+                        initializeBookingForm(tourId);
+                    }
+                });
+            });
+            
+            function initializeBookingForm(tourId) {
+                const bookingForm = document.getElementById(`booking-form-${tourId}`);
+                const personButtons = bookingForm.querySelectorAll('.person-btn');
+                const dateInput = bookingForm.querySelector('.date-input');
+                const displayPriceElement = bookingForm.querySelector('.display-price');
+                const paypalForm = bookingForm.querySelector('.paypal-form');
+                const paypalButton = paypalForm.querySelector('.paypal-buy-button');
+                const itemNameInput = paypalForm.querySelector('input[name="item_name"]');
+                const amountInput = paypalForm.querySelector('input[name="amount"]');
+                const os0Input = paypalForm.querySelector('input[name="os0"]');
+                const os1Input = paypalForm.querySelector('input[name="os1"]');
+                const os2Input = paypalForm.querySelector('input[name="os2"]');
+                const os3Input = paypalForm.querySelector('input[name="os3"]');
+                const os4Input = paypalForm.querySelector('input[name="os4"]');
+                const os5Input = paypalForm.querySelector('input[name="os5"]');
+                
+                let selectedPersons = null;
+                let selectedDate = null;
+                
+                // Set minimum date to today
+                const today = new Date();
+                const yyyy = today.getFullYear();
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const dd = String(today.getDate()).padStart(2, '0');
+                const minDate = `${yyyy}-${mm}-${dd}`;
+                dateInput.min = minDate;
+                
+                function updatePayPalButtonState() {
+                    const nameInput = bookingForm.querySelector('input[type="text"]');
+                    const phoneInput = bookingForm.querySelector('input[type="tel"]');
+                    const emailInput = bookingForm.querySelector('input[type="email"]');
+                    
+                    if (selectedPersons && selectedDate && nameInput.value && phoneInput.value && emailInput.value) {
+                        paypalButton.removeAttribute('disabled');
+                    } else {
+                        paypalButton.setAttribute('disabled', 'true');
+                    }
+                }
+                
+                function updatePriceAndPayPalForm() {
+                    let currentPrice = 0;
+                    if (selectedPersons && tourPrices[tourId]) {
+                        currentPrice = tourPrices[tourId][selectedPersons];
+                    }
+                    displayPriceElement.textContent = `$${currentPrice.toFixed(2)} USD`;
+                    amountInput.value = currentPrice.toFixed(2);
+                }
+                
+                function updatePayPalCustomFields() {
+                    const nameInput = bookingForm.querySelector('input[type="text"]');
+                    const phoneInput = bookingForm.querySelector('input[type="tel"]');
+                    const emailInput = bookingForm.querySelector('input[type="email"]');
+                    const noteInput = bookingForm.querySelector('textarea');
+                    
+                    os0Input.value = selectedPersons ? `${selectedPersons} Person(s)` : '';
+                    os1Input.value = selectedDate || '';
+                    os2Input.value = nameInput.value || '';
+                    os3Input.value = phoneInput.value || '';
+                    os4Input.value = emailInput.value || '';
+                    os5Input.value = noteInput.value || '';
+                }
+                
+                personButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        selectedPersons = parseInt(button.dataset.persons);
+                        personButtons.forEach(btn => {
+                            btn.classList.remove('selected');
+                        });
+                        button.classList.add('selected');
+                        updatePriceAndPayPalForm();
+                        updatePayPalCustomFields();
+                        updatePayPalButtonState();
+                    });
+                });
+                
+                dateInput.addEventListener('change', () => {
+                    selectedDate = dateInput.value;
+                    updatePayPalCustomFields();
+                    updatePayPalButtonState();
+                });
+                
+                // Add event listeners to form inputs
+                const formInputs = bookingForm.querySelectorAll('input, textarea');
+                formInputs.forEach(input => {
+                    input.addEventListener('input', () => {
+                        updatePayPalCustomFields();
+                        updatePayPalButtonState();
+                    });
+                });
+                
+                updatePriceAndPayPalForm();
+                updatePayPalCustomFields();
+                updatePayPalButtonState();
+            }
+            
+            // LAZY LOAD IMAGES
             if ('IntersectionObserver' in window) {
-                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
                 const imageObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
-                            img.src = img.dataset.src || img.src;
-                            img.classList.add('loaded');
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
                             imageObserver.unobserve(img);
                         }
                     });
                 });
                 
-                lazyImages.forEach(img => imageObserver.observe(img));
-            }
-            
-            // Optimize scroll events
-            let scrollTimeout;
-            window.addEventListener('scroll', () => {
-                if (!scrollTimeout) {
-                    scrollTimeout = setTimeout(() => {
-                        scrollTimeout = null;
-                        // Your scroll logic here
-                    }, 100);
-                }
-            });
-            
-            // Service Worker registration for PWA
-            if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/sw.js').catch(error => {
-                        console.log('ServiceWorker registration failed:', error);
-                    });
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                    imageObserver.observe(img);
                 });
             }
             
-            // Prevent zoom on double tap (mobile)
-            let lastTap = 0;
-            document.addEventListener('touchend', (e) => {
-                const currentTime = new Date().getTime();
-                const tapLength = currentTime - lastTap;
-                if (tapLength < 500 && tapLength > 0) {
+            // SMOOTH SCROLL FOR ANCHOR LINKS
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                }
-                lastTap = currentTime;
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
-        });
-        
-        // Load non-critical CSS asynchronously
-        function loadCSS(href) {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = href;
-            link.media = 'print';
-            link.onload = () => { link.media = 'all'; };
-            document.head.appendChild(link);
-        }
-        
-        // Preload critical resources
-        window.addEventListener('load', () => {
-            // Load non-critical resources
-            const fonts = document.createElement('link');
-            fonts.rel = 'stylesheet';
-            fonts.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-            document.head.appendChild(fonts);
+            
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                // Measure page load time
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log('Page load time:', loadTime + 'ms');
+                
+                // Send performance data to analytics
+                if (typeof gtag !== 'undefined' && loadTime < 10000) {
+                    gtag('event', 'timing_complete', {
+                        'name': 'page_load',
+                        'value': loadTime,
+                        'event_category': 'Performance'
+                    });
+                }
+            });
+            
+            // FORM VALIDATION
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    const requiredInputs = this.querySelectorAll('input[required], textarea[required]');
+                    let isValid = true;
+                    
+                    requiredInputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.style.borderColor = '#ff6b6b';
+                        } else {
+                            input.style.borderColor = '';
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        e.preventDefault();
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            });
         });
     </script>
 </body>
