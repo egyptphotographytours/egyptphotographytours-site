@@ -261,6 +261,20 @@
             overflow: hidden;
             margin-bottom: 40px;
         }
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh;
+                min-height: 500px;
+                max-height: 700px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-section {
+                height: 65vh;
+                min-height: 450px;
+                max-height: 600px;
+            }
+        }
         .hero-slider {
             position: absolute;
             top: 0;
@@ -295,6 +309,9 @@
         .hero-slide:nth-child(4) {
             background-image: url('images/hero-image4.jpg');
         }
+        .hero-slide:nth-child(5) {
+            background-image: url('images/hero-image5.jpg');
+        }
         .hero-content {
             position: relative;
             z-index: 2;
@@ -306,28 +323,64 @@
             text-align: center;
             color: white;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.3); /* Light overlay for text readability */
-            backdrop-filter: blur(2px);
+            /* Removed overlay: background: rgba(0, 0, 0, 0.3) and backdrop-filter */
         }
         .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        @media (min-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
         }
         @media (min-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+        }
+        @media (min-width: 1024px) {
             .hero-content h1 {
                 font-size: 3.5rem;
             }
         }
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 20px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            line-height: 1.5;
+        }
+        @media (min-width: 480px) {
+            .hero-content p {
+                font-size: 1.1rem;
+            }
         }
         @media (min-width: 768px) {
             .hero-content p {
+                font-size: 1.3rem;
+                margin-bottom: 30px;
+                line-height: 1.6;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-content p {
                 font-size: 1.4rem;
+            }
+        }
+        .hero-content .highlight-text {
+            color: var(--accent-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 10px 0 20px;
+        }
+        @media (min-width: 768px) {
+            .hero-content .highlight-text {
+                font-size: 1.3rem;
+                margin: 15px 0 25px;
             }
         }
         
@@ -800,12 +853,14 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
         
-        /* CTA BUTTONS */
+        /* CTA BUTTONS - Updated for better visibility and shape */
         .cta-buttons {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin-top: 30px;
+            width: 100%;
+            max-width: 600px;
         }
         @media (min-width: 640px) {
             .cta-buttons {
@@ -816,33 +871,45 @@
         }
         .cta-button {
             font-weight: 700;
-            padding: 15px 30px;
-            border-radius: 12px;
-            font-size: 1.1rem;
+            padding: 15px 25px;
+            border-radius: 50px; /* More rounded shape */
+            font-size: 1rem;
             transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            min-width: 200px;
+            min-width: 180px;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        @media (min-width: 480px) {
+            .cta-button {
+                font-size: 1.1rem;
+                padding: 16px 30px;
+            }
         }
         .cta-button-primary {
             background-color: var(--accent-light);
             color: var(--primary-dark);
+            border-color: var(--accent-light);
         }
         .cta-button-primary:hover {
             background-color: var(--accent-dark);
-            transform: translateY(-3px);
+            border-color: var(--accent-dark);
+            transform: translateY(-3px) scale(1.05);
             box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
         }
         .cta-button-secondary {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             color: var(--primary-dark);
-            border: 3px solid var(--accent-light);
+            border: 2px solid white;
         }
         .cta-button-secondary:hover {
-            background-color: var(--accent-light);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+            background-color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
         }
         
         /* CONTENT SECTIONS */
@@ -1427,13 +1494,14 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH SLIDER -->
+    <!-- HERO SECTION WITH SLIDER - UPDATED -->
     <section class="hero-section">
         <div class="hero-slider">
             <div class="hero-slide active" style="background-image: url('images/hero-image1.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/hero-image2.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/hero-image3.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/hero-image4.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/hero-image5.jpg');"></div> <!-- Added 5th image -->
         </div>
         <div class="container hero-content">
             <!-- ✅ H1: Private Egypt Photography Tours & Professional Photoshoots -->
@@ -1441,7 +1509,7 @@
             
             <!-- ✅ SEO-OPTIMIZED HOMEPAGE INTRO TEXT -->
             <p>Welcome to Egypt Photography Tours — the leading private photography tour experience in Egypt. Whether you dream of a golden-hour pyramids photoshoot in Giza, a Cairo street photography adventure, or a full 7-day Egypt photography journey, our professional photographer guide ensures unforgettable memories. Perfect for solo travelers, couples, families, and content creators looking for the best photography tour in Egypt.</p>
-            <p style="color: var(--accent-light); font-weight: 600; font-size: 1.3rem;">
+            <p class="highlight-text">
                 Planning your trip for 2026? Our private Egypt photography tours are available daily all year round.
             </p>
             
@@ -2393,7 +2461,7 @@
                 });
             }
             
-            // HERO SLIDER
+            // HERO SLIDER - UPDATED FOR 5 SLIDES
             const heroSlides = document.querySelectorAll('.hero-slide');
             let currentSlide = 0;
             
