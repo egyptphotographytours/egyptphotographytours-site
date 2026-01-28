@@ -250,7 +250,7 @@
             --hieroglyph-blue: #0056B3;
             --papyrus-yellow: #F5E8B0;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8;
@@ -261,12 +261,7 @@
             min-height: 100vh;
             line-height: 1.7;
         }
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 16px; 
-            width: 100%;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
 
         /* HEADER & NAV STYLES - IDENTICAL TO REFERENCE */
         .header {
@@ -274,7 +269,6 @@
             color: white;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             padding: 12px 0;
-            width: 100%;
         }
         .header .content {
             display: flex;
@@ -284,25 +278,11 @@
             gap: 12px;
         }
         @media (min-width: 768px) {
-            .header .content { 
-                flex-direction: row; 
-                gap: 0; 
-            }
-            .header-text { 
-                margin-top: 0; 
-                font-size: 16px; 
-            }
+            .header .content { flex-direction: row; gap: 0; }
+            .header-text { margin-top: 0; font-size: 16px; }
         }
-        .logo-section { 
-            display: flex; 
-            align-items: center; 
-            gap: 8px; 
-        }
-        .logo-img { 
-            height: 40px; 
-            width: auto; 
-            border-radius: 9999px; 
-        }
+        .logo-section { display: flex; align-items: center; gap: 8px; }
+        .logo-img { height: 40px; width: auto; border-radius: 9999px; }
         .logo-link {
             font-size: 20px;
             font-weight: 700;
@@ -322,11 +302,7 @@
             align-items: center;
             gap: 6px;
         }
-        @media (min-width: 768px) { 
-            .header-contact { 
-                align-items: flex-end; 
-            } 
-        }
+        @media (min-width: 768px) { .header-contact { align-items: flex-end; } }
         .contact-info {
             display: flex;
             align-items: center;
@@ -349,7 +325,6 @@
             top: 0;
             z-index: 50;
             padding: 0;
-            width: 100%;
         }
         .navbar-content {
             display: flex;
@@ -358,10 +333,7 @@
             justify-content: space-between;
         }
         @media (min-width: 768px) {
-            .navbar-content { 
-                flex-direction: row; 
-                align-items: center; 
-            }
+            .navbar-content { flex-direction: row; align-items: center; }
         }
         .nav-links {
             display: none;
@@ -371,9 +343,9 @@
             font-size: 16px;
             font-weight: 500;
             list-style: none;
-            background-color: #374151;
-            margin: 0;
             padding: 0;
+            margin: 0;
+            background-color: #374151;
         }
         .nav-links.active { display: flex; }
         @media (min-width: 768px) {
@@ -386,15 +358,9 @@
                 width: auto;
             }
         }
-        .nav-link { 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-        }
+        .nav-link { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
         .nav-link:last-child { border-bottom: none; }
-        @media (min-width: 768px) { 
-            .nav-link { 
-                border-bottom: none; 
-            } 
-        }
+        @media (min-width: 768px) { .nav-link { border-bottom: none; } }
         .nav-link a {
             color: white;
             text-decoration: none;
@@ -402,11 +368,7 @@
             transition: color 0.3s ease;
             display: block;
         }
-        @media (min-width: 768px) { 
-            .nav-link a { 
-                padding: 8px 0; 
-            } 
-        }
+        @media (min-width: 768px) { .nav-link a { padding: 8px 0; } }
         .nav-link a:hover { color: var(--accent-light); }
         .cta-container {
             display: flex;
@@ -423,11 +385,7 @@
         }
 
         /* LANGUAGE SWITCHER - IDENTICAL TO REFERENCE WITH ALL LANGUAGES */
-        .language-switcher { 
-            position: relative; 
-            display: inline-block; 
-            z-index: 1000; 
-        }
+        .language-switcher { position: relative; display: inline-block; z-index: 1000; }
         .current-language {
             display: flex;
             align-items: center;
@@ -491,12 +449,7 @@
             font-weight: 600;
         }
         .flag-icon { font-size: 18px; min-width: 24px; }
-        .language-text { 
-            font-size: 14px; 
-            white-space: nowrap; 
-            overflow: hidden; 
-            text-overflow: ellipsis; 
-        }
+        .language-text { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
         /* MOBILE MENU TOGGLE - IDENTICAL */
         .mobile-menu-toggle {
@@ -508,26 +461,20 @@
             cursor: pointer;
             padding: 8px;
         }
-        @media (min-width: 768px) { 
-            .mobile-menu-toggle { 
-                display: none; 
-            } 
-        }
+        @media (min-width: 768px) { .mobile-menu-toggle { display: none; } }
 
         /* HERO SECTION - MEMPHIS SAQQARA THEME */
         .hero-section {
             position: relative;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.egyptphotographytours.com/images/memphis-saqqara-pyramid-beginnings-2026.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/memphis-saqqara-pyramid-beginnings-2026.jpg');
             background-size: cover;
             background-position: center 30%;
             height: 60vh;
-            min-height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 24px;
-            width: 100%;
         }
         .hero-overlay {
             position: absolute;
@@ -551,16 +498,8 @@
             text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
             color: var(--accent-light);
         }
-        @media (min-width: 768px) { 
-            .hero-title { 
-                font-size: 56px; 
-            } 
-        }
-        @media (min-width: 1024px) { 
-            .hero-title { 
-                font-size: 64px; 
-            } 
-        }
+        @media (min-width: 768px) { .hero-title { font-size: 56px; } }
+        @media (min-width: 1024px) { .hero-title { font-size: 64px; } }
         .hero-subtitle {
             font-size: 18px;
             margin-bottom: 32px;
@@ -568,13 +507,8 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.5;
         }
-        @media (min-width: 768px) { 
-            .hero-subtitle { 
-                font-size: 22px; 
-            } 
-        }
+        @media (min-width: 768px) { .hero-subtitle { font-size: 22px; } }
         .hero-highlights {
             display: flex;
             flex-wrap: wrap;
@@ -589,30 +523,13 @@
             border-radius: 50px;
             font-size: 14px;
             font-weight: 600;
-            white-space: nowrap;
         }
-        @media (min-width: 768px) { 
-            .hero-highlight { 
-                font-size: 16px; 
-            } 
-        }
+        @media (min-width: 768px) { .hero-highlight { font-size: 16px; } }
 
         /* MAIN CONTENT STYLES - MATCHING REFERENCE ARTICLE */
-        .article-section { 
-            padding: 40px 0; 
-            width: 100%;
-        }
-        @media (min-width: 768px) { 
-            .article-section { 
-                padding: 64px 0; 
-            } 
-        }
-        .article-container { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 0 16px; 
-            width: 100%;
-        }
+        .article-section { padding: 40px 0; }
+        @media (min-width: 768px) { .article-section { padding: 64px 0; } }
+        .article-container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
         .article-meta {
             display: flex;
             justify-content: center;
@@ -620,13 +537,8 @@
             margin-bottom: 32px;
             font-size: 14px;
             color: #6b7280;
-            flex-wrap: wrap;
         }
-        @media (min-width: 768px) { 
-            .article-meta { 
-                font-size: 16px; 
-            } 
-        }
+        @media (min-width: 768px) { .article-meta { font-size: 16px; } }
         .article-content h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 36px;
@@ -646,10 +558,7 @@
             border-bottom: 2px solid var(--stone-color);
         }
         @media (min-width: 768px) {
-            .article-content h2 { 
-                font-size: 38px; 
-                margin: 60px 0 30px; 
-            }
+            .article-content h2 { font-size: 38px; margin: 60px 0 30px; }
         }
         .article-content h3 {
             font-size: 26px;
@@ -657,12 +566,7 @@
             color: var(--primary-dark);
             margin: 40px 0 20px;
         }
-        @media (min-width: 768px) { 
-            .article-content h3 { 
-                font-size: 30px; 
-                margin: 45px 0 22px; 
-            } 
-        }
+        @media (min-width: 768px) { .article-content h3 { font-size: 30px; margin: 45px 0 22px; } }
         .article-content h4 {
             font-size: 22px;
             font-weight: 600;
@@ -675,10 +579,7 @@
             margin-bottom: 25px;
         }
         @media (min-width: 768px) {
-            .article-content p { 
-                font-size: 20px; 
-                margin-bottom: 28px; 
-            }
+            .article-content p { font-size: 20px; margin-bottom: 28px; }
         }
         .article-content ul, .article-content ol {
             margin-bottom: 28px;
@@ -689,11 +590,7 @@
             line-height: 1.8;
             margin-bottom: 12px;
         }
-        @media (min-width: 768px) { 
-            .article-content li { 
-                font-size: 20px; 
-            } 
-        }
+        @media (min-width: 768px) { .article-content li { font-size: 20px; } }
         .article-content strong {
             color: var(--historical-brown);
             font-weight: 700;
@@ -709,7 +606,6 @@
             font-style: italic;
             font-size: 20px;
             position: relative;
-            line-height: 1.6;
         }
         .historical-highlight:before {
             content: "𓀀";
@@ -720,11 +616,7 @@
             font-size: 40px;
             color: var(--historical-brown);
         }
-        @media (min-width: 768px) { 
-            .historical-highlight { 
-                padding: 35px; 
-            } 
-        }
+        @media (min-width: 768px) { .historical-highlight { padding: 35px; } }
 
         .historical-table {
             width: 100%;
@@ -733,15 +625,8 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             font-size: 16px;
             background-color: white;
-            overflow-x: auto;
-            display: block;
         }
-        @media (min-width: 768px) { 
-            .historical-table { 
-                font-size: 18px; 
-                display: table;
-            } 
-        }
+        @media (min-width: 768px) { .historical-table { font-size: 18px; } }
         .historical-table th {
             background-color: var(--historical-brown);
             color: white;
@@ -750,29 +635,16 @@
             font-weight: 600;
             font-family: 'Cormorant Garamond', serif;
             font-size: 20px;
-            white-space: nowrap;
         }
-        @media (min-width: 768px) { 
-            .historical-table th { 
-                padding: 20px; 
-            } 
-        }
+        @media (min-width: 768px) { .historical-table th { padding: 20px; } }
         .historical-table td {
             padding: 16px;
             border-bottom: 1px solid var(--stone-color);
             vertical-align: top;
         }
-        @media (min-width: 768px) { 
-            .historical-table td { 
-                padding: 20px; 
-            } 
-        }
-        .historical-table tr:nth-child(even) { 
-            background-color: #f9f7f2; 
-        }
-        .historical-table tr:hover { 
-            background-color: #f5f1e6; 
-        }
+        @media (min-width: 768px) { .historical-table td { padding: 20px; } }
+        .historical-table tr:nth-child(even) { background-color: #f9f7f2; }
+        .historical-table tr:hover { background-color: #f5f1e6; }
 
         .historical-category {
             background: white;
@@ -794,11 +666,7 @@
             background: linear-gradient(135deg, transparent 50%, rgba(139,69,19,0.05) 50%);
             z-index: 0;
         }
-        @media (min-width: 768px) { 
-            .historical-category { 
-                padding: 40px; 
-            } 
-        }
+        @media (min-width: 768px) { .historical-category { padding: 40px; } }
         .memphis-category { border-color: #8B4513; }
         .saqqara-category { border-color: #B8860B; }
         .imhotep-category { border-color: #0056B3; }
@@ -822,14 +690,10 @@
             margin: 40px 0;
         }
         @media (min-width: 768px) {
-            .historical-highlights { 
-                grid-template-columns: repeat(2, 1fr); 
-            }
+            .historical-highlights { grid-template-columns: repeat(2, 1fr); }
         }
         @media (min-width: 1024px) {
-            .historical-highlights { 
-                grid-template-columns: repeat(3, 1fr); 
-            }
+            .historical-highlights { grid-template-columns: repeat(3, 1fr); }
         }
         .historical-item {
             background: white;
@@ -859,7 +723,6 @@
             margin: 50px 0;
             position: relative;
             overflow: hidden;
-            width: 100%;
         }
         .trust-section:before {
             content: "𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇";
@@ -881,22 +744,14 @@
             position: relative;
             z-index: 1;
         }
-        @media (min-width: 768px) { 
-            .trust-section h2 { 
-                font-size: 42px; 
-            } 
-        }
+        @media (min-width: 768px) { .trust-section h2 { font-size: 42px; } }
         .trust-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 35px;
             margin-top: 40px;
         }
-        @media (min-width: 768px) { 
-            .trust-grid { 
-                grid-template-columns: repeat(3, 1fr); 
-            } 
-        }
+        @media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
         .trust-card {
             background: rgba(255, 255, 255, 0.1);
             padding: 35px;
@@ -977,12 +832,11 @@
             font-size: 18px;
             box-shadow: 0 10px 20px -3px rgba(0,0,0,0.2);
             border: 2px solid transparent;
-            cursor: pointer;
         }
         .cta-button:hover, .cta-button:active, .cta-button:focus {
             background-color: var(--accent-dark);
             transform: scale(1.05);
-            color: var(--primary-dark);
+            color: var(--primary-dark) !important;
             text-decoration: none;
             border-color: var(--primary-dark);
             box-shadow: 0 15px 30px -5px rgba(0,0,0,0.3);
@@ -1010,10 +864,7 @@
             z-index: 0;
         }
         @media (min-width: 768px) {
-            .cta-section { 
-                padding: 80px 0; 
-                margin-top: 80px; 
-            }
+            .cta-section { padding: 80px 0; margin-top: 80px; }
         }
         .cta-section h2 {
             color: var(--accent-light);
@@ -1023,11 +874,7 @@
             position: relative;
             z-index: 1;
         }
-        @media (min-width: 768px) { 
-            .cta-section h2 { 
-                font-size: 42px; 
-            } 
-        }
+        @media (min-width: 768px) { .cta-section h2 { font-size: 42px; } }
         .cta-section p {
             max-width: 800px;
             margin: 0 auto 35px;
@@ -1037,10 +884,7 @@
             z-index: 1;
         }
         @media (min-width: 768px) {
-            .cta-section p { 
-                font-size: 22px; 
-                margin: 0 auto 45px; 
-            }
+            .cta-section p { font-size: 22px; margin: 0 auto 45px; }
         }
 
         /* FOOTER STYLES - EXACT MATCH TO REFERENCE ARTICLE */
@@ -1049,13 +893,8 @@
             color: white;
             padding: 30px 0;
             margin-top: auto;
-            width: 100%;
         }
-        @media (min-width: 768px) { 
-            .footer { 
-                padding: 40px 0; 
-            } 
-        }
+        @media (min-width: 768px) { .footer { padding: 40px 0; } }
         .footer-content {
             text-align: center;
         }
@@ -1073,34 +912,21 @@
             flex: 1;
             min-width: 250px;
         }
-        @media (min-width: 768px) { 
-            .footer-section { 
-                margin-bottom: 0; 
-            } 
-        }
+        @media (min-width: 768px) { .footer-section { margin-bottom: 0; } }
         .footer-brand {
             text-align: left;
             margin-bottom: 24px;
             flex: 1;
             min-width: 250px;
         }
-        @media (min-width: 768px) { 
-            .footer-brand { 
-                margin-bottom: 0; 
-                text-align: left; 
-            } 
-        }
+        @media (min-width: 768px) { .footer-brand { margin-bottom: 0; text-align: left; } }
         .footer-title {
             font-size: 20px;
             font-weight: 700;
             color: var(--accent-light);
             margin-bottom: 8px;
         }
-        @media (min-width: 768px) { 
-            .footer-title { 
-                font-size: 24px; 
-            } 
-        }
+        @media (min-width: 768px) { .footer-title { font-size: 24px; } }
         .footer-text {
             font-size: 14px;
             line-height: 1.5;
@@ -1124,11 +950,7 @@
             gap: 16px;
             margin-top: 12px;
         }
-        @media (min-width: 768px) { 
-            .social-links { 
-                justify-content: flex-start; 
-            } 
-        }
+        @media (min-width: 768px) { .social-links { justify-content: flex-start; } }
         .social-links a {
             color: white;
             transition: color 0.3s ease;
@@ -1151,38 +973,22 @@
             transition: color 0.3s ease;
             justify-content: center;
         }
-        @media (min-width: 768px) { 
-            .footer-contact-info { 
-                justify-content: flex-start; 
-            } 
-        }
+        @media (min-width: 768px) { .footer-contact-info { justify-content: flex-start; } }
         .footer-contact-info:hover { color: var(--accent-light); }
         .footer-map {
             margin-top: 20px;
             width: 100%;
             flex: 2;
         }
-        @media (min-width: 768px) { 
-            .footer-map { 
-                margin-top: 0; 
-            } 
-        }
+        @media (min-width: 768px) { .footer-map { margin-top: 0; } }
         .footer-map iframe {
             width: 100%;
             height: 350px;
             border: none;
             border-radius: 8px;
         }
-        @media (min-width: 768px) { 
-            .footer-map iframe { 
-                height: 400px; 
-            } 
-        }
-        @media (min-width: 1024px) { 
-            .footer-map iframe { 
-                height: 450px; 
-            } 
-        }
+        @media (min-width: 768px) { .footer-map iframe { height: 400px; } }
+        @media (min-width: 1024px) { .footer-map iframe { height: 450px; } }
 
         /* BOOK NOW BUTTON */
         .book-now-button {
@@ -1197,13 +1003,11 @@
             white-space: nowrap;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             display: inline-block;
-            border: none;
-            cursor: pointer;
         }
         .book-now-button:hover, .book-now-button:active, .book-now-button:focus {
             background-color: var(--accent-dark);
             transform: scale(1.05);
-            color: #1a202c;
+            color: #1a202c !important;
             text-decoration: none;
         }
 
@@ -1213,9 +1017,7 @@
             transition: color 0.3s ease;
             font-weight: 600;
         }
-        .article-content a:hover { 
-            color: var(--historical-brown); 
-        }
+        .article-content a:hover { color: var(--historical-brown); }
 
         /* BADGES */
         .must-see-badge {
@@ -1270,9 +1072,7 @@
             transform: translateX(-50%);
         }
         @media (max-width: 768px) {
-            .timeline:before { 
-                left: 30px; 
-            }
+            .timeline:before { left: 30px; }
         }
         .timeline-item {
             position: relative;
@@ -1287,10 +1087,7 @@
             position: relative;
         }
         @media (max-width: 768px) {
-            .timeline-content { 
-                width: calc(100% - 70px); 
-                margin-left: 70px; 
-            }
+            .timeline-content { width: calc(100% - 70px); margin-left: 70px; }
         }
         .timeline-item:nth-child(odd) .timeline-content {
             left: 0;
@@ -1375,7 +1172,6 @@
             opacity: 0.3;
             margin: 30px 0;
             letter-spacing: 20px;
-            overflow: hidden;
         }
 
         /* SCROLL ANIMATION */
@@ -1388,61 +1184,19 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* MAIN CONTENT AREA */
-        .main {
-            flex: 1;
-            width: 100%;
-        }
-        
-        /* FIXES FOR TABLES ON MOBILE */
-        @media (max-width: 767px) {
-            .historical-table {
-                display: block;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            .historical-table thead {
-                display: none;
-            }
-            .historical-table tbody {
-                display: block;
-                width: 100%;
-            }
-            .historical-table tr {
-                display: block;
-                margin-bottom: 20px;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                padding: 10px;
-            }
-            .historical-table td {
-                display: block;
-                text-align: right;
-                padding: 10px;
-                position: relative;
-            }
-            .historical-table td:before {
-                content: attr(data-label);
-                position: absolute;
-                left: 10px;
-                font-weight: bold;
-                text-align: left;
-            }
-        }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container content">
             <div class="logo-section">
-                <img src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.jpg"
+                <img src="images/egypt-photography-tours-logo.jpg"
                      alt="Egypt Photography Tours Logo - Expert Memphis and Saqqara historical photography tours"
                      class="logo-img"
                      loading="eager"
                      width="40"
                      height="40">
-                <a href="https://www.egyptphotographytours.com/" class="logo-link">Egypt Photography Tours</a>
+                <a href="index.html" class="logo-link">Egypt Photography Tours</a>
             </div>
             <div class="header-text">Where History Comes Alive Through Professional Photography</div>
             <div class="header-contact">
@@ -1473,102 +1227,102 @@
                     </div>
                     <div class="language-dropdown">
                         <!-- English -->
-                        <a href="https://www.egyptphotographytours.com/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item active" data-lang="en" data-flag="🇺🇸">
+                        <a href="memphis-saqqara-pyramid-beginnings-2026.html" class="language-item active" data-lang="en" data-flag="🇺🇸">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
                         <!-- Danish (Dansk) -->
-                        <a href="https://www.egyptphotographytours.com/da/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="da" data-flag="🇩🇰">
+                        <a href="da/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="da" data-flag="🇩🇰">
                             <span class="flag-icon">🇩🇰</span>
                             <span class="language-text">Dansk (Danish)</span>
                         </a>
                         <!-- Dutch (Nederlands) -->
-                        <a href="https://www.egyptphotographytours.com/nl/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
+                        <a href="nl/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="nl" data-flag="🇳🇱">
                             <span class="flag-icon">🇳🇱</span>
                             <span class="language-text">Nederlands (Dutch)</span>
                         </a>
                         <!-- Hindi (हिन्दी) -->
-                        <a href="https://www.egyptphotographytours.com/hi/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
+                        <a href="hi/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="hi" data-flag="🇮🇳">
                             <span class="flag-icon">🇮🇳</span>
                             <span class="language-text">हिन्दी (Hindi)</span>
                         </a>
                         <!-- Norwegian (Norsk) -->
-                        <a href="https://www.egyptphotographytours.com/no/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="no" data-flag="🇳🇴">
+                        <a href="no/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="no" data-flag="🇳🇴">
                             <span class="flag-icon">🇳🇴</span>
                             <span class="language-text">Norsk (Norwegian)</span>
                         </a>
                         <!-- Swedish (Svenska) -->
-                        <a href="https://www.egyptphotographytours.com/sv/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
+                        <a href="sv/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="sv" data-flag="🇸🇪">
                             <span class="flag-icon">🇸🇪</span>
                             <span class="language-text">Svenska (Swedish)</span>
                         </a>
                         <!-- Tagalog (Tagalog) -->
-                        <a href="https://www.egyptphotographytours.com/tl/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
+                        <a href="tl/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="tl" data-flag="🇵🇭">
                             <span class="flag-icon">🇵🇭</span>
                             <span class="language-text">Tagalog</span>
                         </a>
                         <!-- Malay (Melayu) -->
-                        <a href="https://www.egyptphotographytours.com/ms/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
+                        <a href="ms/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ms" data-flag="🇲🇾">
                             <span class="flag-icon">🇲🇾</span>
                             <span class="language-text">Melayu (Malay)</span>
                         </a>
                         <!-- Thai (ไทย) -->
-                        <a href="https://www.egyptphotographytours.com/th/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="th" data-flag="🇹🇭">
+                        <a href="th/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="th" data-flag="🇹🇭">
                             <span class="flag-icon">🇹🇭</span>
                             <span class="language-text">ไทย (Thai)</span>
                         </a>
                         <!-- Russian (Русский) -->
-                        <a href="https://www.egyptphotographytours.com/ru/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
+                        <a href="ru/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ru" data-flag="🇷🇺">
                             <span class="flag-icon">🇷🇺</span>
                             <span class="language-text">Русский (Russian)</span>
                         </a>
                         <!-- Arabic (العربية) -->
-                        <a href="https://www.egyptphotographytours.com/ar/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
+                        <a href="ar/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ar" data-flag="🇪🇬">
                             <span class="flag-icon">🇪🇬</span>
                             <span class="language-text">العربية (Arabic)</span>
                         </a>
                         <!-- French (Français) -->
-                        <a href="https://www.egyptphotographytours.com/fr/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
+                        <a href="fr/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="fr" data-flag="🇫🇷">
                             <span class="flag-icon">🇫🇷</span>
                             <span class="language-text">Français (French)</span>
                         </a>
                         <!-- German (Deutsch) -->
-                        <a href="https://www.egyptphotographytours.com/de/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="de" data-flag="🇩🇪">
+                        <a href="de/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="de" data-flag="🇩🇪">
                             <span class="flag-icon">🇩🇪</span>
                             <span class="language-text">Deutsch (German)</span>
                         </a>
                         <!-- Spanish (Español) -->
-                        <a href="https://www.egyptphotographytours.com/es/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="es" data-flag="🇪🇸">
+                        <a href="es/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="es" data-flag="🇪🇸">
                             <span class="flag-icon">🇪🇸</span>
                             <span class="language-text">Español (Spanish)</span>
                         </a>
                         <!-- Italian (Italiano) -->
-                        <a href="https://www.egyptphotographytours.com/it/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="it" data-flag="🇮🇹">
+                        <a href="it/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="it" data-flag="🇮🇹">
                             <span class="flag-icon">🇮🇹</span>
                             <span class="language-text">Italiano (Italian)</span>
                         </a>
                         <!-- Chinese (中文) -->
-                        <a href="https://www.egyptphotographytours.com/zh/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
+                        <a href="zh/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="zh" data-flag="🇨🇳">
                             <span class="flag-icon">🇨🇳</span>
                             <span class="language-text">中文 (Chinese)</span>
                         </a>
                         <!-- Korean (한국어) -->
-                        <a href="https://www.egyptphotographytours.com/ko/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
+                        <a href="ko/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ko" data-flag="🇰🇷">
                             <span class="flag-icon">🇰🇷</span>
                             <span class="language-text">한국어 (Korean)</span>
                         </a>
                         <!-- Portuguese (Português) -->
-                        <a href="https://www.egyptphotographytours.com/pt/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
+                        <a href="pt/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="pt" data-flag="🇵🇹">
                             <span class="flag-icon">🇵🇹</span>
                             <span class="language-text">Português (Portuguese)</span>
                         </a>
                         <!-- Indonesian (Bahasa Indonesia) -->
-                        <a href="https://www.egyptphotographytours.com/id/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="id" data-flag="🇮🇩">
+                        <a href="id/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="id" data-flag="🇮🇩">
                             <span class="flag-icon">🇮🇩</span>
                             <span class="language-text">Bahasa Indonesia</span>
                         </a>
                         <!-- Japanese (日本語) -->
-                        <a href="https://www.egyptphotographytours.com/ja/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
+                        <a href="ja/memphis-saqqara-pyramid-beginnings-2026.html" class="language-item" data-lang="ja" data-flag="🇯🇵">
                             <span class="flag-icon">🇯🇵</span>
                             <span class="language-text">日本語 (Japanese)</span>
                         </a>
@@ -1576,14 +1330,14 @@
                 </div>
             </div>
             <ul class="nav-links">
-                <li class="nav-link"><a href="https://www.egyptphotographytours.com/">Home</a></li>
-                <li class="nav-link"><a href="https://www.egyptphotographytours.com/about.html">About Us</a></li>
+                <li class="nav-link"><a href="index.html">Home</a></li>
+                <li class="nav-link"><a href="about.html">About Us</a></li>
                 <li class="nav-link"><a href="https://egyptphotographytours.com/tours">Our Tours</a></li>
-                <li class="nav-link"><a href="https://www.egyptphotographytours.com/gallery.html">Gallery</a></li>
-                <li class="nav-link"><a href="https://www.egyptphotographytours.com/resources.html">Resources</a></li>
-                <li class="nav-link"><a href="https://www.egyptphotographytours.com/blog.html">Blog</a></li>
+                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-link"><a href="resources.html">Resources</a></li>
+                <li class="nav-link"><a href="blog.html">Blog</a></li>
                 <li class="nav-link"><a href="https://egyptphotographytours.com/contact">Contact Us</a></li>
-                <li class="nav-link"><a href="https://www.egyptphotographytours.com/faqs.html">FAQs</a></li>
+                <li class="nav-link"><a href="faqs.html">FAQs</a></li>
             </ul>
         </div>
     </nav>
@@ -1627,7 +1381,6 @@
                         "At Saqqara, humanity first conceived of building for eternity. The Step Pyramid wasn't merely a tomb; it was a declaration that stone could defy time, that architecture could bridge earth and heaven, and that a civilization had arrived capable of dreaming in millennia rather than years." – Dr. Zahi Hawass, Egyptian Archaeologist
                     </div>
                     
-                    <!-- Fixed: Added proper closing div for historical-highlights -->
                     <div class="historical-highlights">
                         <div class="historical-item fade-in">
                             <span class="historical-icon">𓋹</span>
@@ -1688,56 +1441,53 @@
                     
                     <p>The <strong>Step Pyramid of Djoser</strong> (Netjerikhet) represents nothing less than the architectural big bang of Egyptian civilization. Built around <strong>2670 BCE</strong> during the 3rd Dynasty, this structure marks humanity's first attempt at large-scale stone construction and the prototype for all subsequent pyramids.</p>
                     
-                    <!-- Fixed: Added proper table structure with thead and tbody -->
                     <div class="historical-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Architectural Feature</th>
-                                    <th>Description</th>
-                                    <th>Historical Significance</th>
-                                    <th>2026 Access Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td data-label="Architectural Feature"><strong>Step Pyramid</strong></td>
-                                    <td data-label="Description">62m height, 6 stepped layers, originally clad in polished limestone</td>
-                                    <td data-label="Historical Significance">World's first pyramid, earliest colossal stone building</td>
-                                    <td data-label="2026 Access Status">✅ Exterior viewing, limited interior access with special permission</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Architectural Feature"><strong>Great Court</strong></td>
-                                    <td data-label="Description">Vast ceremonial space for Heb-Sed festival rituals</td>
-                                    <td data-label="Historical Significance">Demonstrates pyramid's function beyond mere tomb</td>
-                                    <td data-label="2026 Access Status">✅ Fully accessible</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Architectural Feature"><strong>Heb-Sed Court</strong></td>
-                                    <td data-label="Description">Chapels representing Upper and Lower Egypt</td>
-                                    <td data-label="Historical Significance">Ritual space for king's eternal rejuvenation ceremony</td>
-                                    <td data-label="2026 Access Status">✅ Partially accessible</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Architectural Feature"><strong>South Tomb</strong></td>
-                                    <td data-label="Description">Smaller pyramid with elaborate substructure</td>
-                                    <td data-label="Historical Significance">Possibly ka (spirit) tomb or symbolic southern burial</td>
-                                    <td data-label="2026 Access Status">❌ Currently closed for conservation</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Architectural Feature"><strong>Entrance Colonnade</strong></td>
-                                    <td data-label="Description">40 pairs of engaged columns resembling bundled reeds</td>
-                                    <td data-label="Historical Significance">Earliest stone imitation of organic architectural forms</td>
-                                    <td data-label="2026 Access Status">✅ Fully accessible</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Architectural Feature"><strong>Burial Chamber</strong></td>
-                                    <td data-label="Description">Central shaft 28m deep, lined with granite</td>
-                                    <td data-label="Historical Significance">Original resting place of Djoser (now empty)</td>
-                                    <td data-label="2026 Access Status">❌ Closed except for special archaeological access</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <thead>
+                            <tr>
+                                <th>Architectural Feature</th>
+                                <th>Description</th>
+                                <th>Historical Significance</th>
+                                <th>2026 Access Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Step Pyramid</strong></td>
+                                <td>62m height, 6 stepped layers, originally clad in polished limestone</td>
+                                <td>World's first pyramid, earliest colossal stone building</td>
+                                <td>✅ Exterior viewing, limited interior access with special permission</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Great Court</strong></td>
+                                <td>Vast ceremonial space for Heb-Sed festival rituals</td>
+                                <td>Demonstrates pyramid's function beyond mere tomb</td>
+                                <td>✅ Fully accessible</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Heb-Sed Court</strong></td>
+                                <td>Chapels representing Upper and Lower Egypt</td>
+                                <td>Ritual space for king's eternal rejuvenation ceremony</td>
+                                <td>✅ Partially accessible</td>
+                            </tr>
+                            <tr>
+                                <td><strong>South Tomb</strong></td>
+                                <td>Smaller pyramid with elaborate substructure</td>
+                                <td>Possibly ka (spirit) tomb or symbolic southern burial</td>
+                                <td>❌ Currently closed for conservation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Entrance Colonnade</strong></td>
+                                <td>40 pairs of engaged columns resembling bundled reeds</td>
+                                <td>Earliest stone imitation of organic architectural forms</td>
+                                <td>✅ Fully accessible</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Burial Chamber</strong></td>
+                                <td>Central shaft 28m deep, lined with granite</td>
+                                <td>Original resting place of Djoser (now empty)</td>
+                                <td>❌ Closed except for special archaeological access</td>
+                            </tr>
+                        </tbody>
                     </div>
                     
                     <h4>Imhotep: The First Architect in Recorded History</h4>
@@ -1758,7 +1508,8 @@
                         <p><strong>Later Deification:</strong> By the Late Period (c. 700 BCE), Imhotep was worshipped as god of medicine, wisdom, and architecture. The Greeks identified him with Asclepius, their god of healing.</p>
                     </div>
                     
-                    <!-- Fixed: Added proper closing tags for the timeline -->
+                    <h3>The Evolution from Mastaba to Pyramid: Architectural Breakthrough</h3>
+                    
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-year">c. 3100 BCE</div>
@@ -1804,7 +1555,95 @@
                         </div>
                     </div>
                     
-                    <!-- Fixed: Added missing closing divs and corrected structure -->
+                    <h2>Chapter 2: Significant Tombs and Monuments of Saqqara</h2>
+                    
+                    <div class="historical-category">
+                        <h3>The Serapeum: Underground Gallery of Sacred Bulls <span class="archaeological-badge">Engineering Marvel</span></h3>
+                        <p>Discovered by French archaeologist Auguste Mariette in 1851, the <strong>Serapeum</strong> is a subterranean gallery containing massive granite sarcophagi for the sacred Apis bulls worshipped at Memphis. Each bull was believed to be an incarnation of the god Ptah.</p>
+                        
+                        <h4>Key Features of the Serapeum:</h4>
+                        <ul>
+                            <li><strong>Main Gallery:</strong> 340 meters long, with side chambers containing 24 granite sarcophagi</li>
+                            <li><strong>Sarcophagi:</strong> Each weighs 60-80 tons, carved from single blocks of Aswan granite</li>
+                            <li><strong>Dating:</strong> Use spanned from Amenhotep III (14th century BCE) to Ptolemaic period (ending c. 30 BCE)</li>
+                            <li><strong>Ritual Significance:</strong> Bulls were mummified and buried with elaborate ceremonies</li>
+                            <li><strong>Discovery Impact:</strong> Mariette's find revolutionized understanding of Egyptian animal worship</li>
+                        </ul>
+                        
+                        <p><strong>2026 Access:</strong> The Serapeum is accessible to visitors, though some sections may be closed for conservation. The scale of the sarcophagi and precision of their placement remains awe-inspiring.</p>
+                    </div>
+                    
+                    <div class="historical-highlight">
+                        "The Serapeum represents one of ancient Egypt's most remarkable engineering achievements. Moving 80-ton granite boxes through narrow underground passages required not just brute force but sophisticated understanding of physics, leverage, and spatial management that still impresses modern engineers." – Dr. Salima Ikram, Professor of Egyptology
+                    </div>
+                    
+                    <h3>Mastaba Tombs of High Officials</h3>
+                    
+                    <p>While pyramids were reserved for royalty, high officials and nobles constructed elaborate <strong>mastaba tombs</strong> at Saqqara. These provide invaluable insights into daily life, administration, and beliefs of the Old Kingdom elite.</p>
+                    
+      <div class="historical-table">
+                        <thead>
+                            <tr>
+                                <th>Mastaba Tomb</th>
+                                <th>Owner & Position</th>
+                                <th>Key Features</th>
+                                <th>Artistic Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mastaba of Ti</strong></td>
+                                <td>Ti, overseer of pyramids and sun temples (5th Dynasty)</td>
+                                <td>Exceptionally preserved reliefs of daily life, hunting scenes, offering rituals</td>
+                                <td>Masterpiece of Old Kingdom art, "encyclopedia" of Egyptian life</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mastaba of Mereruka</strong></td>
+                                <td>Mereruka, vizier to Teti (6th Dynasty)</td>
+                                <td>33 chambers, largest non-royal tomb at Saqqara, vivid painted reliefs</td>
+                                <td>Shows evolution of tomb design, elaborate family depictions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mastaba of Akhet-hotep</strong></td>
+                                <td>Akhet-hotep, royal administrator (5th Dynasty)</td>
+                                <td>Double tomb shared with son Ptah-hotep, exquisite relief quality</td>
+                                <td>Famous "geese of Meidum" painting (now in Egyptian Museum)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mastaba of Kagemni</strong></td>
+                                <td>Kagemni, vizier to Teti (6th Dynasty)</td>
+                                <td>Well-preserved reliefs of market scenes, crafts, agricultural activities</td>
+                                <td>Important source for understanding Old Kingdom economy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mastaba of Nefer & Kahay</strong></td>
+                                <td>Royal scribes and priests (5th Dynasty)</td>
+                                <td>Recently discovered (2021), exceptionally colorful painted reliefs</td>
+                                <td>Revolutionized understanding of Old Kingdom painting techniques</td>
+                            </tr>
+                        </tbody>
+                    </div>
+                    
+                    <h3>New Discoveries at Saqqara (2020-2026)</h3>
+                    
+                    <div class="historical-category">
+                        <h3>Ongoing Archaeological Revolution <span class="archaeological-badge">Active Excavations</span></h3>
+                        <p>Saqqara continues to yield spectacular discoveries, with multiple international missions making significant finds almost annually. These recent discoveries have transformed our understanding of the site's use and importance.</p>
+                        
+                        <h4>Major Recent Discoveries:</h4>
+                        <ul>
+                            <li><strong>2020:</strong> 100+ intact painted wooden coffins from Late Period, sealed for 2,500 years</li>
+                            <li><strong>2021:</strong> Funerary temple of Queen Nearit (wife of Pharaoh Teti), plus 50+ sarcophagi</li>
+                            <li><strong>2022:</strong> 250+ mummies and 150+ bronze statues from Late/Ptolemaic periods</li>
+                            <li><strong>2023:</strong> 4,300-year-old tomb of a palace official named "Mehti" with vivid wall paintings</li>
+                            <li><strong>2024:</strong> Cache of mummified animals including lions, crocodiles, and cobras</li>
+                            <li><strong>2025:</strong> Previously unknown pyramid complex of a 6th Dynasty queen</li>
+                            <li><strong>2026 (ongoing):</strong> Excavation of massive administrative complex from Old Kingdom</li>
+                        </ul>
+                        
+                        <p><strong>Significance:</strong> These discoveries confirm Saqqara remained an active burial site for over 3,000 years, far longer than previously understood, and reveal continuous evolution of burial practices and artistic styles.</p>
+                    </div>
+                    
                     <div class="trust-section">
                         <div class="container">
                             <h2>Why Choose Our Memphis & Saqqara Photography Tours</h2>
@@ -1815,22 +1654,341 @@
                                     <p>Our guides hold dual expertise in Egyptology and professional photography, providing historical context while optimizing photographic opportunities at each site.</p>
                                 </div>
                                 <div class="trust-card fade-in">
-                                    <span class="trust-icon">⏱️</span>
+                                    <span class="trust-icon">𓅨</span>
                                     <h3>Exclusive Access Timing</h3>
                                     <p>We schedule visits during golden hours and arrange special access times to avoid crowds, ensuring optimal lighting conditions for photography of these ancient monuments.</p>
                                 </div>
                                 <div class="trust-card fade-in">
-                                    <span class="trust-icon">🛡️</span>
-                                    <h3>Emergency Support</h3>
-                                    <p>Should any visa issues arise, our local team in Egypt provides immediate assistance and solutions to ensure your entry and stay proceed smoothly.</p>
+                                    <span class="trust-icon">𓆓</span>
+                                    <h3>Comprehensive Site Coverage</h3>
+                                    <p>Unlike standard tours, we dedicate full days to Memphis and Saqqara, covering not just major monuments but lesser-known tombs and recent archaeological discoveries.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Fixed: Correct tour integration section with proper closing tags -->
+                    <h2>Chapter 3: Memphis – The Ancient Capital</h2>
+                    
+                    <div class="historical-category memphis-category">
+                        <h3>Memphis: Foundation of Egyptian Statehood <span class="must-see-badge">First Capital of United Egypt</span></h3>
+                        <p>According to tradition, <strong>Memphis</strong> (Ineb-Hedj, "White Walls") was founded around 3100 BCE by the legendary first pharaoh <strong>Menes</strong> (Narmer) after he unified Upper and Lower Egypt. Strategically located at the apex of the Nile Delta, it served as Egypt's administrative capital for much of the Old Kingdom and remained an important religious and economic center for over three millennia.</p>
+                        
+                        <h4>Memphis Through the Ages:</h4>
+                        <ul>
+                            <li><strong>Old Kingdom (2686–2181 BCE):</strong> Flourishing capital, center of pyramid age administration</li>
+                            <li><strong>Middle Kingdom (2055–1650 BCE):</strong> Secondary to Thebes but remained important religious center</li>
+                            <li><strong>New Kingdom (1550–1069 BCE):</strong> Resurgence under 18th Dynasty, major military and administrative hub</li>
+                            <li><strong>Late Period (664–332 BCE):</strong> Continued importance as religious center, home to Ptah's main temple</li>
+                            <li><strong>Ptolemaic-Roman Period (332 BCE–641 CE):</strong> Gradual decline but maintained religious significance</li>
+                            <li><strong>Medieval Period:</strong> Building materials quarried for nearby settlements, leading to extensive destruction</li>
+                        </ul>
+                        
+                        <p><strong>Modern Rediscovery:</strong> Systematic excavation began with Napoleon's 1798 expedition, with major work by Flinders Petrie (early 1900s) and ongoing excavations by Egyptian and international teams.</p>
+                    </div>
+                    
+                    <h3>The Memphis Open-Air Museum: Key Artifacts</h3>
+                    
+                    <p>While little remains of the ancient city itself due to centuries of stone quarrying, the <strong>Memphis Open-Air Museum</strong> preserves some of its most significant monumental artifacts in situ.</p>
+                    
+                    <div class="historical-table">
+                        <thead>
+                            <tr>
+                                <th>Artifact</th>
+                                <th>Date & Origin</th>
+                                <th>Dimensions & Material</th>
+                                <th>Historical Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Colossal Statue of Ramses II</strong></td>
+                                <td>19th Dynasty, c. 1279–1213 BCE</td>
+                                <td>10m length (originally 13m), red granite</td>
+                                <td>One of largest Egyptian statues ever carved, originally stood in Ptah temple</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alabaster Sphinx</strong></td>
+                                <td>18th Dynasty, c. 1400 BCE (possibly Hatshepsut)</td>
+                                <td>4m height, 8m length, alabaster</td>
+                                <td>Rare alabaster sphinx, possibly represents Queen Hatshepsut</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Statue of Ramses II (standing)</strong></td>
+                                <td>19th Dynasty, c. 1250 BCE</td>
+                                <td>11m height (with base), granite</td>
+                                <td>Once adorned great temple of Ptah, shows Ramses in traditional pose</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bed of the Sacred Apis Bull</strong></td>
+                                <td>Late Period, c. 600 BCE</td>
+                                <td>4m stone slab with bull-shaped depression</td>
+                                <td>Ritual platform where Apis bull rested during ceremonies</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Remains of Ptah Temple Wall</strong></td>
+                                <td>Various periods, primarily New Kingdom</td>
+                                <td>Fragmentary remains over large area</td>
+                                <td>Hints at scale of Ptah's main temple, one of ancient Egypt's largest</td>
+                            </tr>
+                        </tbody>
+                    </div>
+                    
+                    <div class="historical-highlight">
+                        "Memphis was not merely a city but the embodiment of Egyptian statehood. For the ancient Egyptians, Memphis represented the political and spiritual center of the world, the place where divine kingship was most perfectly manifested, and where the gods themselves chose to dwell among humanity." – Dr. David O'Connor, Professor of Ancient Egyptian Art
+                    </div>
+                    
+                    <h3>The Cult of Ptah: Memphis as Religious Center</h3>
+                    
+                    <p>Memphis was the cult center of <strong>Ptah</strong>, the creator god who fashioned the world through thought and speech. The <strong>Temple of Ptah</strong> (Hut-ka-Ptah, from which "Egypt" derives) was one of ancient Egypt's largest and most important religious complexes.</p>
+                    
+                    <div class="historical-category">
+                        <h4>The Memphite Theology and Creation Myth:</h4>
+                        <p>The Memphite creation story, preserved on the Shabaka Stone (now in British Museum), presents Ptah as the supreme creator who brought all things into existence through his heart (mind) and tongue (speech). This sophisticated theological concept positioned Memphis as the site of original creation and Ptah as superior to other creator gods like Atum of Heliopolis.</p>
+                        
+                        <h4>Key Elements of Ptah's Cult:</h4>
+                        <ul>
+                            <li><strong>Triad:</strong> Ptah, his consort Sekhmet (lioness goddess), and their son Nefertem (lotus god)</li>
+                            <li><strong>Temple Complex:</strong> Enormous precinct containing multiple temples, workshops, storage facilities</li>
+                            <li><strong>Priestly Hierarchy:</strong> High priests of Ptah were among Egypt's most powerful officials</li>
+                            <li><strong>International Recognition:</strong> Known throughout ancient Mediterranean as "Egypt's greatest temple"</li>
+                            <li><strong>Royal Connections:</strong> Pharaohs crowned here even when capital was elsewhere</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>Chapter 4: The Pyramid Evolution from Saqqara to Giza</h2>
+                    
+                    <div class="historical-category evolution-category">
+                        <h3>Architectural Learning Curve: 100 Years of Experimentation <span class="archaeological-badge">Engineering Progression</span></h3>
+                        <p>The journey from Djoser's Step Pyramid to Khufu's Great Pyramid represents one of history's most rapid and ambitious architectural learning processes. In just over a century, Egyptian builders evolved from tentative stone experiments to constructing the most precisely engineered monument of the ancient world.</p>
+                        
+                        <h4>Key Evolutionary Stages:</h4>
+                        <ul>
+                            <li><strong>Stage 1 (Djoser, c. 2670 BCE):</strong> Mastery of stone cutting, stacking, and basic structural principles</li>
+                            <li><strong>Stage 2 (Sekhemkhet, c. 2650 BCE):</strong> Attempt at larger step pyramid (unfinished), shows ambition exceeding technical capability</li>
+                            <li><strong>Stage 3 (Sneferu, c. 2610 BCE):</strong> Experimental bent pyramid demonstrates understanding of structural stress angles</li>
+                            <li><strong>Stage 4 (Sneferu, c. 2600 BCE):</strong> Red Pyramid achieves first successful true pyramid form</li>
+                            <li><strong>Stage 5 (Khufu, c. 2580 BCE):</strong> Great Pyramid perfects form, scale, precision, and internal complexity</li>
+                            <li><strong>Stage 6 (Subsequent pyramids):</strong> Refinements in construction techniques, structural innovations, and internal layouts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="historical-table">
+                        <thead>
+                            <tr>
+                                <th>Pyramid</th>
+                                <th>Pharaoh</th>
+                                <th>Date</th>
+                                <th>Height</th>
+                                <th>Architectural Significance</th>
+                                <th>Status at Saqqara</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Step Pyramid</strong></td>
+                                <td>Djoser</td>
+                                <td>c. 2670 BCE</td>
+                                <td>62m</td>
+                                <td>First pyramid, first large-scale stone construction</td>
+                                <td>✅ Complete</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Buried Pyramid</strong></td>
+                                <td>Sekhemkhet</td>
+                                <td>c. 2650 BCE</td>
+                                <td>7m (unfinished)</td>
+                                <td>Attempt at larger step pyramid, abandoned early</td>
+                                <td>✅ Foundations visible</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Layer Pyramid</strong></td>
+                                <td>Khaba</td>
+                                <td>c. 2630 BCE</td>
+                                <td>20m (planned)</td>
+                                <td>Transitional design, shows development of stepped form</td>
+                                <td>✅ Partially preserved</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bent Pyramid</strong></td>
+                                <td>Sneferu</td>
+                                <td>c. 2610 BCE</td>
+                                <td>105m</td>
+                                <td>First attempt at true pyramid, angle changed mid-construction</td>
+                                <td>❌ At Dahshur</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Red Pyramid</strong></td>
+                                <td>Sneferu</td>
+                                <td>c. 2600 BCE</td>
+                                <td>105m</td>
+                                <td>First successful true pyramid</td>
+                                <td>❌ At Dahshur</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Great Pyramid</strong></td>
+                                <td>Khufu</td>
+                                <td>c. 2580 BCE</td>
+                                <td>146m (original)</td>
+                                <td>Culmination of pyramid evolution, precision engineering</td>
+                                <td>❌ At Giza</td>
+                            </tr>
+                        </tbody>
+                    </div>
+                    
+                    <h3>Construction Techniques: From Saqqara to Giza</h3>
+                    
+                    <p>The technological leap between Saqqara's Step Pyramid and Giza's Great Pyramid reveals a century of intense innovation in quarrying, transportation, engineering, and labor organization.</p>
+                    
+                    <div class="key-takeaways">
+                        <h4>Technological Innovations Developed at Saqqara:</h4>
+                        <div class="takeaway-item">
+                            <div class="takeaway-icon">𓁛</div>
+                            <div>
+                                <strong>Stone Dressing:</strong> Saqqara masons developed techniques for cutting, shaping, and polishing limestone blocks with copper tools and abrasives
+                            </div>
+                        </div>
+                        <div class="takeaway-item">
+                            <div class="takeaway-icon">𓁧</div>
+                            <div>
+                                <strong>Structural Understanding:</strong> Learning proper foundation preparation, weight distribution, and internal support systems through trial and error
+                            </div>
+                        </div>
+                        <div class="takeaway-item">
+                            <div class="takeaway-icon">𓁩</div>
+                            <div>
+                                <strong>Labor Organization:</strong> Development of rotational workforce system that reached perfection at Giza with estimated 10,000-20,000 workers
+                            </div>
+                        </div>
+                        <div class="takeaway-item">
+                            <div class="takeaway-icon">𓁫</div>
+                            <div>
+                                <strong>Measurement Precision:</strong> Progressive improvement in alignment accuracy, from Saqqara's 4° error to Giza's 0.05° precision
+                            </div>
+                        </div>
+                        <div class="takeaway-item">
+                            <div class="takeaway-icon">𓁬</div>
+                            <div>
+                                <strong>Ramp Systems:</strong> Evolution from straight ramps at Saqqara to sophisticated spiral or zigzag ramps at later pyramids
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Chapter 5: Photography Guide to Memphis and Saqqara</h2>
+                    
+                    <div class="historical-category photography-category">
+                        <h3>Capturing Ancient Wonders: Photography Strategies <span class="photography-badge">Pro Tips</span></h3>
+                        <p>Memphis and Saqqara present unique photographic challenges and opportunities. The scale of monuments, quality of light, and density of detail require specialized approaches to capture effectively.</p>
+                        
+                        <h4>Essential Equipment for Memphis & Saqqara Photography:</h4>
+                        <ul>
+                            <li><strong>Wide-angle lens (16-35mm):</strong> Essential for capturing pyramid exteriors and large statues</li>
+                            <li><strong>Telephoto lens (70-200mm):</strong> For detail shots of reliefs, hieroglyphs, and distant subjects</li>
+                            <li><strong>Tripod:</strong> Crucial for interior tomb photography with low light (check current restrictions)</li>
+                            <li><strong>Polarizing filter:</strong> Reduces glare on stone surfaces and enhances sky contrast</li>
+                            <li><strong>Lens cleaning kit:</strong> Desert dust is pervasive and constant challenge</li>
+                            <li><strong>Multiple memory cards & batteries:</strong> Full days of shooting consume substantial storage and power</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="photography-tips">
+                        <h3>Optimal Photography Times and Locations</h3>
+                        
+                        <div class="tip-item">
+                            <h4>Step Pyramid Exterior:</h4>
+                            <p><strong>Best Time:</strong> Early morning (7-9 AM) for eastern side, late afternoon (3-5 PM) for western side. The low-angle sunlight creates dramatic shadows that emphasize the stepped structure.</p>
+                        </div>
+                        
+                        <div class="tip-item">
+                            <h4>Mastaba Tomb Interiors:</h4>
+                            <p><strong>Challenge:</strong> Extremely low light. Use tripod where permitted, high ISO (1600-3200), and wide aperture (f/2.8-f/4). Focus on capturing details of reliefs rather than entire chambers.</p>
+                        </div>
+                        
+                        <div class="tip-item">
+                            <h4>Memphis Open-Air Museum:</h4>
+                            <p><strong>Best Time:</strong> Mid-morning (9-11 AM) when sunlight reaches into the covered areas. Use polarizing filter to reduce glare on alabaster sphinx and polished granite surfaces.</p>
+                        </div>
+                        
+                        <div class="tip-item">
+                            <h4>Serapeum Interior:</h4>
+                            <p><strong>Technical Approach:</strong> Required: tripod and remote shutter release. Exposure times of 2-8 seconds at f/8, ISO 800. Bracket exposures for HDR merging later.</p>
+                        </div>
+                        
+                        <div class="tip-item">
+                            <h4>Landscape Panoramas:</h4>
+                            <p><strong>Location:</strong> High points around Saqqara overlooking the necropolis. Best at sunrise or sunset. Use panoramic head on tripod for seamless stitching.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="historical-highlight">
+                        <h3>Join Our Specialized Memphis & Saqqara Photography Tour</h3>
+                        <p>Capture these ancient wonders with guidance from professional photographer-Egyptologists. Our tours provide exclusive early access, specialized photographic instruction, and in-depth historical context to elevate your images from snapshots to storytelling masterpieces.</p>
+                        <a href="https://egyptphotographytours.com/contact" class="cta-button">Book Photography-Focused Memphis Saqqara Tour</a>
+                    </div>
+                    
+                    <h2>Chapter 6: Practical Visitor Information for 2026</h2>
+                    
+                    <div class="historical-category">
+                        <h3>Planning Your Memphis & Saqqara Visit <span class="must-see-badge">Updated for 2026</span></h3>
+                        <p>Visiting Memphis and Saqqara requires careful planning due to their extensive size, desert location, and multiple separate sites. This section provides current practical information for 2026 visitors.</p>
+                        
+                        <div class="historical-table">
+                            <thead>
+                                <tr>
+                                    <th>Aspect</th>
+                                    <th>Memphis</th>
+                                    <th>Saqqara</th>
+                                    <th>Combined Visit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Opening Hours</strong></td>
+                                    <td>8:00 AM – 4:00 PM daily</td>
+                                    <td>8:00 AM – 5:00 PM daily</td>
+                                    <td>Start at Saqqara when opens, Memphis after lunch</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Entrance Fees (2026)</strong></td>
+                                    <td>200 EGP (approx. $7)</td>
+                                    <td>300 EGP (approx. $10)</td>
+                                    <td>Additional fees for certain tombs (50-100 EGP each)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Best Season</strong></td>
+                                    <td colspan="3">October-April (mild temperatures 15-25°C/59-77°F). Avoid summer (35-45°C/95-113°F)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Time Required</strong></td>
+                                    <td>1.5-2 hours</td>
+                                    <td>4-6 hours minimum</td>
+                                    <td>Full day (7-8 hours) recommended</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Photography Rules</strong></td>
+                                    <td>Permitted, tripods usually allowed</td>
+                                    <td>Permitted, tripod requires additional fee (200 EGP)</td>
+                                    <td>No flash in tombs, drone photography prohibited</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Guides</strong></td>
+                                    <td colspan="3">Highly recommended. Official guides available at entrance or book through reputable tour company</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                        
+                        <h4>Essential Tips for 2026 Visitors:</h4>
+                        <ul>
+                            <li><strong>Hydration:</strong> Carry ample water (2+ liters per person), limited availability on site</li>
+                            <li><strong>Footwear:</strong> Sturdy walking shoes essential for uneven terrain and sand</li>
+                            <li><strong>Sun Protection:</strong> Hat, sunscreen, sunglasses mandatory even in winter</li>
+                            <li><strong>Cash:</strong> Bring Egyptian pounds for entrance fees, additional tomb tickets, tips</li>
+                            <li><strong>Transportation:</strong> Private car or organized tour recommended; limited public transport</li>
+                            <li><strong>Combination Tickets:</strong> Available for Saqqara, Dahshur, and Memphis (saves 20%)</li>
+                        </ul>
+                    </div>
+                    
                     <div class="tour-integration">
-                        <h3>Recommended Egypt Tours with Memphis & Saqqara Visits</h3>
+                        <h3>Recommended Egypt Photography Tours Including Memphis & Saqqara</h3>
                         <p>All Egypt Photography Tours packages include expert guidance, transportation, and photographic support. Here are our top tours featuring comprehensive Memphis and Saqqara experiences:</p>
 
                         <div class="tour-recommendation">
@@ -1874,7 +2032,63 @@
                         </div>
                     </div>
                     
-                    <!-- Fixed: Correct CTA section structure -->
+                    <h2>Chapter 7: Archaeological Significance and Ongoing Research</h2>
+                    
+                    <div class="historical-category">
+                        <h3>Saqqara as Archaeological Laboratory <span class="archaeological-badge">Active Research Site</span></h3>
+                        <p>Saqqara represents one of the world's most important archaeological sites not just for what has been found, but for what continues to be discovered. Its layered history provides a continuous record of Egyptian civilization from its beginnings to its end.</p>
+                        
+                        <h4>Current International Missions at Saqqara (2026):</h4>
+                        <ul>
+                            <li><strong>Egyptian Ministry of Antiquities:</strong> Multiple ongoing excavations, particularly in areas south of Step Pyramid</li>
+                            <li><strong>Leiden University (Netherlands):</strong> Excavation of New Kingdom tombs and settlement remains</li>
+                            <li><strong>University of Cairo (Egypt):</strong> Documentation and conservation of Old Kingdom mastabas</li>
+                            <li><strong>Waseda University (Japan):</strong> Geophysical survey and excavation of unidentified structures</li>
+                            <li><strong>French Institute of Oriental Archaeology:</strong> Study of Late Period animal cults and burial practices</li>
+                            <li><strong>University of Liverpool (UK):</strong> Digital documentation and 3D modeling of endangered reliefs</li>
+                        </ul>
+                        
+                        <h4>Key Research Questions Being Explored:</h4>
+                        <ul>
+                            <li><strong>Origins of Stone Architecture:</strong> How did Imhotep and his team develop techniques so rapidly?</li>
+                            <li><strong>Labor Organization:</strong> What can worker settlements reveal about Old Kingdom society?</li>
+                            <li><strong>Religious Evolution:</strong> How did burial practices and beliefs change over 3,000 years?</li>
+                            <li><strong>Environmental History:</strong> What can Saqqara tell us about climate change in ancient Egypt?</li>
+                            <li><strong>Artistic Development:</strong> How did artistic styles and techniques evolve across dynasties?</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="historical-highlight">
+                        "Saqqara is not merely an archaeological site; it is a library written in stone. Each layer represents a chapter in Egypt's history, each tomb a paragraph, each inscription a sentence. We have read only the first few pages of this immense volume, and each year of excavation reveals new stories that transform our understanding of ancient civilization." – Dr. Mostafa Waziri, Secretary General of Egypt's Supreme Council of Antiquities
+                    </div>
+                    
+                    <h2>Chapter 8: Conservation Challenges and Future Preservation</h2>
+                    
+                    <div class="historical-category">
+                        <h3>Preserving the Birthplace of Pyramids for Future Generations <span class="archaeological-badge">Critical Conservation Work</span></h3>
+                        <p>The very age and significance of Memphis and Saqqara create unique preservation challenges. These sites face threats from environmental factors, tourism pressure, and urban encroachment that require sophisticated conservation strategies.</p>
+                        
+                        <h4>Major Conservation Challenges:</h4>
+                        <ul>
+                            <li><strong>Environmental Factors:</strong> Wind erosion, temperature fluctuations, salt crystallization within stone</li>
+                            <li><strong>Groundwater Rise:</strong> Changing water table threatens subsurface structures</li>
+                            <li><strong>Tourism Impact:</strong> Physical wear, increased humidity from visitors, accidental damage</li>
+                            <li><strong>Urban Encroachment:</strong> Nearby settlement expansion and agricultural development</li>
+                            <li><strong>Structural Stability:</strong> Aging of 4,700-year-old stonework requiring continuous monitoring</li>
+                        </ul>
+                        
+                        <h4>2026 Conservation Initiatives:</h4>
+                        <ul>
+                            <li><strong>Step Pyramid Restoration:</strong> Ongoing project to stabilize internal chambers and restore outer casing stones</li>
+                            <li><strong>Climate-Controlled Shelters:</strong> New protective structures over vulnerable mastaba tombs</li>
+                            <li><strong>Digital Documentation:</strong> Comprehensive 3D scanning of all monuments for monitoring and virtual preservation</li>
+                            <li><strong>Visitor Management:</strong> Implemented timed ticketing and restricted access to most fragile areas</li>
+                            <li><strong>Community Engagement:</strong> Programs involving local communities in site protection and benefit sharing</li>
+                        </ul>
+                        
+                        <p><strong>Sustainable Tourism Approach:</strong> Egypt Photography Tours follows strict guidelines to minimize impact: limiting group sizes, avoiding physical contact with monuments, educating visitors on preservation importance, and contributing to conservation funds.</p>
+                    </div>
+                    
                     <div class="cta-section">
                         <h2>Experience Where Pyramid History Began</h2>
                         <p>Memphis and Saqqara represent more than archaeological sites—they are the physical manifestation of humanity's first attempt to build for eternity. Standing before the Step Pyramid of Djoser, you stand at the precise moment when architecture transformed from shelter to statement, from practical to profound.</p>
@@ -1944,21 +2158,21 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <h3 class="footer-title">Egypt Photography Tours</h3>
-                <p class="footer-text">&copy; <span id="current-year">2026</span> Egypt Photography Tours.</p>
+                <p class="footer-text">&copy; <script>document.write(new Date().getFullYear())</script> Egypt Photography Tours.</p>
                 <p class="footer-text">All Rights Reserved.</p>
                 <p class="footer-text">Specialists in Memphis & Saqqara Historical Photography Tours</p>
             </div>
             <div class="footer-section">
                 <h4 class="footer-title">Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="https://www.egyptphotographytours.com/">Home</a></li>
-                    <li><a href="https://www.egyptphotographytours.com/about.html">About Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="https://egyptphotographytours.com/tours">Our Tours</a></li>
-                    <li><a href="https://www.egyptphotographytours.com/gallery.html">Gallery</a></li>
-                    <li><a href="https://www.egyptphotographytours.com/resources.html">Resources</a></li>
-                    <li><a href="https://www.egyptphotographytours.com/blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="https://egyptphotographytours.com/contact">Contact Us</a></li>
-                    <li><a href="https://www.egyptphotographytours.com/faqs.html">FAQs</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -2064,12 +2278,13 @@
                     });
                 });
                 
-                // Set current language based on URL
                 const currentPath = window.location.pathname;
-                const currentPage = currentPath.split('/').pop();
                 languageDropdown.querySelectorAll('.language-item').forEach(item => {
                     const itemHref = item.getAttribute('href');
-                    if (itemHref.includes(currentPage)) {
+                    if (currentPath.includes(itemHref) || 
+                        (currentPath.endsWith('memphis-saqqara-pyramid-beginnings-2026.html') && 
+                         itemHref.includes('memphis-saqqara-pyramid-beginnings-2026.html') && 
+                         item.dataset.lang === 'en')) {
                         item.classList.add('active');
                         const flag = item.dataset.flag;
                         const lang = item.dataset.lang;
@@ -2163,36 +2378,15 @@
                     glyph.style.transition = "opacity 1s ease";
                 }, index * 500);
             });
-
-            // Update current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Fix for tables on mobile
-            if (window.innerWidth < 768) {
-                const tables = document.querySelectorAll('.historical-table');
-                tables.forEach(table => {
-                    const headers = [];
-                    const thElements = table.querySelectorAll('th');
-                    thElements.forEach(th => {
-                        headers.push(th.textContent);
-                    });
-                    
-                    const tdElements = table.querySelectorAll('td');
-                    tdElements.forEach((td, index) => {
-                        const headerIndex = index % headers.length;
-                        td.setAttribute('data-label', headers[headerIndex]);
-                    });
-                });
-            }
         });
 
         // Preload critical images
         function preloadImages() {
             const criticalImages = [
-                'https://www.egyptphotographytours.com/images/memphis-saqqara-pyramid-beginnings-2026.jpg',
-                'https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.jpg',
-                'https://www.egyptphotographytours.com/images/step-pyramid-djoser-saqqara.jpg',
-                'https://www.egyptphotographytours.com/images/memphis-open-air-museum.jpg'
+                'images/memphis-saqqara-pyramid-beginnings-2026.jpg',
+                'images/egypt-photography-tours-logo.jpg',
+                'images/step-pyramid-djoser-saqqara.jpg',
+                'images/memphis-open-air-museum.jpg'
             ];
             
             criticalImages.forEach(src => {
