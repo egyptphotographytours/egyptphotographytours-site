@@ -1,5 +1,3 @@
-Here is the complete HTML article with the full multi-language switcher, matching the design and functionality of your reference file. It now includes all 20+ language options with correct flags and paths, ready for your website.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -244,7 +242,7 @@ Here is the complete HTML article with the full multi-language switcher, matchin
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- All CSS styles from reference (identical) -->
+    <!-- All CSS styles from reference (identical) with trust card contrast fix -->
     <style>
         /* (All CSS from reference remains identical – copy here) */
         :root {
@@ -732,9 +730,18 @@ Here is the complete HTML article with the full multi-language switcher, matchin
             margin-bottom: 20px;
         }
         .trust-card p {
-            color: #e2e8f0;
+            color: #ffffff; /* increased contrast from #e2e8f0 to pure white */
             font-size: 18px;
             line-height: 1.7;
+        }
+        /* Ensure any links inside trust cards are visible */
+        .trust-card a {
+            color: white;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        .trust-card a:hover {
+            color: var(--accent-light);
         }
         .tour-integration {
             background: linear-gradient(135deg, #e6f7ff 0%, #d1ecff 100%);
@@ -1405,7 +1412,7 @@ Here is the complete HTML article with the full multi-language switcher, matchin
                     </ul>
                     <p>Add an extra dash of adventure with a <a href="https://egyptphotographytours.com/tour-pyramids-private">private pyramids photography session</a> (great for family portraits!).</p>
 
-                    <!-- Chapter 7: Why Egypt Photography Tours for Your Family -->
+                    <!-- Chapter 7: Why Egypt Photography Tours for Your Family (contrast improved) -->
                     <h2>Chapter 7: Why Egypt Photography Tours is the Perfect Choice for Families</h2>
                     <p>We specialize in private, customizable tours that put families first. Here's what we offer:</p>
                     <div class="trust-grid" style="margin-top:0">
@@ -1654,4 +1661,3 @@ Here is the complete HTML article with the full multi-language switcher, matchin
     </script>
 </body>
 </html>
-```
