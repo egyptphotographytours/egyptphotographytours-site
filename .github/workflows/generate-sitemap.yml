@@ -5,25 +5,26 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-sitemap:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Generate sitemap
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
-
+          
           for file in $(find . -name "*.html"); do
             page=$(echo $file | sed 's|./||')
-            if [ "$page" != "404.html" ]; then
-              echo "<url><loc>https://www.egyptphotographytours.com/$page</loc></url>" >> sitemap.xml
-            fi
+            echo "<url><loc>https://www.egyptphotographytours.com/$page</loc></url>" >> sitemap.xml
           done
-
+          
           echo '</urlset>' >> sitemap.xml
 
       - name: Commit sitemap
