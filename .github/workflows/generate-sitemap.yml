@@ -38,7 +38,14 @@ jobs:
 
           echo '</urlset>' >> sitemap.xml
 
-      # Step 3: Commit sitemap
+      # Step 3: Copy sitemap to Netlify deploy folder
+      - name: Move sitemap to Netlify root
+        run: |
+          # Replace 'public/' with your actual Netlify deploy folder if different
+          mkdir -p public
+          cp sitemap.xml public/sitemap.xml
+
+      # Step 4: Commit sitemap back to GitHub
       - name: Commit sitemap
         run: |
           git config --global user.name "github-actions"
