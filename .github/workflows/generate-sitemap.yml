@@ -13,24 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
       - uses: actions/checkout@v4
 
-      # Step 2: Generate sitemap with ISO 8601 lastmod
-      - name: Generate sitemap with lastmod
+      - name: Generate sitemap
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          # Find all HTML files including language subfolders
           for file in $(find . -name "*.html"); do
             page=$(echo $file | sed 's|^\./||')
 
-            # Skip unwanted files
             if [[ "$page" != "404.html" ]]; then
-              # Get last commit date in ISO 8601 format for Google
-              lastmod=$(git log -1 --format=%cd --date=format:'%Y-%m-%d' -- "$file")
-              # Build URL with www
+              lastmod=$(git log -1 --format=%cd --date=iso-strict -- "$file" | cut -d'T' -f1)
               url="https://www.egyptphotographytours.com/$page"
               echo "<url><loc>$url</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
             fi
@@ -38,18 +32,10 @@ jobs:
 
           echo '</urlset>' >> sitemap.xml
 
-      # Step 3: Copy sitemap to Netlify deploy root
-      - name: Move sitemap to Netlify root
-        run: |
-          # Replace 'public/' with your actual Netlify deploy folder if different
-          mkdir -p public
-          cp sitemap.xml public/sitemap.xml
-
-      # Step 4: Commit sitemap back to GitHub
       - name: Commit sitemap
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add sitemap.xml
-          git commit -m "Auto update sitemap with lastmod (ISO 8601 for Google)" || echo "No changes"
+          git commit -m "Regenerate sitemap with valid ISO dates" || echo "No changes"
           git push
