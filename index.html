@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <!-- FIXED: Content Security Policy (CSP) -->
-<!-- NOTE: 'unsafe-inline' is required here because CSS/JS are embedded. 
-     For maximum security in production, externalize CSS/JS and remove 'unsafe-inline'. -->
+<!-- NOTE: 'unsafe-inline' is required here because CSS/JS are embedded.
+For maximum security in production, externalize CSS/JS and remove 'unsafe-inline'. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://www.jscache.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https: data:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src 'self' https://www.google.com https://www.facebook.com https://www.tripadvisor.com; connect-src 'self' https://www.google-analytics.com;">
 <link rel="amphtml" href="https://www.egyptphotographytours.com/index.amp.html">
 <!-- Comprehensive Favicon Setup -->
@@ -103,7 +103,7 @@ gtag('config', 'G-FVNPEMCG8F');
       "name": "Egypt Photography Tours",
       "url": "https://www.egyptphotographytours.com/",
       "dateCreated": "2015-06-15",
-      "dateModified": "2024-05-20",
+      "dateModified": "2026-03-14",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://www.egyptphotographytours.com/search?q={search_term_string}",
@@ -204,7 +204,7 @@ gtag('config', 'G-FVNPEMCG8F');
   --primary-dark: #1a202c;
   --accent-light: #FFD700;
   /* FIXED: Darkened for better text contrast (WCAG AA) */
-  --accent-dark: #B59500; 
+  --accent-dark: #B59500;
   --text-color: #333;
 }
 * {
@@ -1148,7 +1148,7 @@ p {
 .tripadvisor-link i {
   font-size: 20px;
 }
-/* FACEBOOK REVIEWS WIDGET */
+/* FACEBOOK REVIEWS WIDGET - UPDATED FOR TIMELINE + PHOTOS */
 .facebook-reviews-widget {
   background: white;
   border-radius: 12px;
@@ -1196,7 +1196,7 @@ p {
   font-weight: 600;
   font-size: 16px;
   transition: all 0.3s ease;
-  margin-top: auto;
+  margin-top: 15px;
 }
 .facebook-link:hover {
   transform: translateY(-3px);
@@ -1206,13 +1206,13 @@ p {
 .facebook-link i {
   font-size: 20px;
 }
-/* FACEBOOK PAGE PLUGIN */
+/* FACEBOOK PAGE PLUGIN - UPDATED FOR TIMELINE */
 .facebook-plugin-container {
   margin-top: 20px;
   background: #f8f9fa;
   border-radius: 8px;
   padding: 15px;
-  min-height: 200px;
+  min-height: 600px; /* Increased height for timeline content */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1981,7 +1981,7 @@ p {
       </div>
     </div>
   </section>
-  <!-- REVIEWS SECTION WITH FACEBOOK SDK -->
+  <!-- REVIEWS SECTION WITH FACEBOOK SDK - UPDATED -->
   <section class="main-section">
     <div class="container">
       <h2 class="text-center">Rated Excellent by Travelers Worldwide</h2>
@@ -2033,21 +2033,21 @@ p {
             View on TripAdvisor
           </a>
         </div>
-        <!-- Facebook Reviews -->
+        <!-- Facebook Reviews & Feed - UPDATED -->
         <div class="facebook-reviews-widget">
           <div class="facebook-logo">
             <i class="fab fa-facebook review-icon-large icon-facebook"></i>
           </div>
-          <h3>Facebook Reviews</h3>
-          <div class="facebook-stars">⭐⭐⭐⭐⭐</div>
-          <p class="facebook-text">Join our community and see real traveler photos from our Facebook page.</p>
-          <!-- Facebook Page Plugin -->
+          <h3>Facebook Posts & Reviews</h3>
+          <p class="facebook-text">Follow us for latest photos, tour updates, and traveler reviews.</p>
+          
+          <!-- Facebook Page Plugin (Timeline for Posts/Photos) -->
           <div class="facebook-plugin-container">
             <div class="fb-page"
                  data-href="https://www.facebook.com/egyptphotographytours"
-                 data-tabs="reviews"
+                 data-tabs="timeline"
                  data-width="500"
-                 data-height="300"
+                 data-height="600"
                  data-small-header="false"
                  data-adapt-container-width="true"
                  data-hide-cover="false"
@@ -2057,12 +2057,14 @@ p {
               </blockquote>
             </div>
           </div>
-          <a href="https://www.facebook.com/egyptphotographytours"
+          
+          <!-- Direct Link for Reviews (More Reliable than Embedded Tab) -->
+          <a href="https://www.facebook.com/egyptphotographytours/reviews"
              target="_blank"
              rel="noopener noreferrer nofollow"
              class="facebook-link">
             <i class="fab fa-facebook"></i>
-            Visit Our Facebook Page
+            Read All Facebook Reviews
           </a>
         </div>
       </div>
@@ -2195,7 +2197,7 @@ p {
         <p>Egypt's premier private photography tour company since 2015. Professional photographer-guided tours capturing unforgettable Egyptian memories for all types of travelers.</p>
         <!-- FIXED: Dynamic Copyright Year -->
         <p>&copy; 2015-<span id="copyright-year"></span> Egypt Photography Tours. All rights reserved.</p>
-        <p><strong>Updated: January 2026</strong></p>
+        <p><strong>Updated: March 2026</strong></p>
       </div>
       <div>
         <h3 class="footer-title">Quick Links</h3>
@@ -2426,15 +2428,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- Facebook SDK Initialization -->
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      // ⚠️ CRITICAL: Replace 'YOUR_FACEBOOK_APP_ID' with your actual App ID from Meta Developers
-      // Without this, the Facebook Reviews widget will not load.
-      appId : '1581238396326492',
-      xfbml : true,
-      version : 'v19.0'
-    });
-  };
+window.fbAsyncInit = function() {
+  FB.init({
+    // ⚠️ IMPORTANT: Replace 'YOUR_FACEBOOK_APP_ID' with your numeric Facebook App ID from Meta Developers
+    // This is DIFFERENT from your Page ID. Get it at: https://developers.facebook.com/apps/
+    appId : '1581238396326492',
+    xfbml : true,
+    version : 'v19.0'
+  });
+};
 </script>
 <!-- Facebook SDK -->
 <div id="fb-root"></div>
