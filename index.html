@@ -1462,6 +1462,40 @@ p {
 .icon-google { color: #4285F4; }
 .icon-tripadvisor { color: #00AF87; }
 .icon-facebook { color: #1877F2; }
+
+/* ========== STRONG MOBILE CUSTOMIZATION - FIX RIGHT SPACE ========== */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+body {
+    overflow-x: hidden;
+}
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+/* Ensure no element causes accidental overflow */
+* {
+    max-width: 100%;
+}
+.hero-slider {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+/* ========== END MOBILE CUSTOMIZATION ========== */
+
 </style>
 </head>
 <body>
@@ -2445,3 +2479,4 @@ window.fbAsyncInit = function() {
 <script async src="https://www.jscache.com/wejs?wtype=rated&uniq=502&locationId=20816594&lang=en_US&display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
 </body>
 </html>
+```
