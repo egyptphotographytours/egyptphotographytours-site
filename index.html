@@ -202,9 +202,9 @@ gtag('config', 'G-FVNPEMCG8F');
 /* CRITICAL CSS - Inlined for performance */
 :root {
   --primary-dark: #1a202c;
-  --accent-light: #FFD700;
-  /* FIXED: Darkened for better text contrast (WCAG AA) */
-  --accent-dark: #B59500;
+  --accent-light: #FFD700; /* original bright yellow */
+  /* Use the same bright yellow for hover and accents – no darkening */
+  --accent-dark: #FFD700;
   --text-color: #333;
 }
 * {
@@ -603,7 +603,8 @@ body {
   color: var(--primary-dark);
 }
 .hero-button-primary:hover {
-  background-color: var(--accent-dark);
+  background-color: var(--accent-light);
+  filter: brightness(0.95);
   transform: scale(1.05);
 }
 .hero-button-secondary {
@@ -793,7 +794,7 @@ p {
   transition: color 0.3s ease;
 }
 .tour-card-title a:hover {
-  color: var(--accent-dark);
+  color: var(--accent-light);
 }
 .tour-card-footer {
   display: flex;
@@ -801,11 +802,11 @@ p {
   align-items: center;
   margin-top: 20px;
 }
-/* FIXED: Contrast improved using accent-dark for text */
+/* FIXED: price now uses bright yellow */
 .tour-price {
   font-size: 20px;
   font-weight: bold;
-  color: var(--accent-dark);
+  color: var(--accent-light);
 }
 .tour-cta {
   display: inline-block;
@@ -818,7 +819,8 @@ p {
   transition: background 0.3s ease;
 }
 .tour-cta:hover {
-  background: var(--accent-dark);
+  background: var(--accent-light);
+  filter: brightness(0.95);
 }
 /* FAQ SECTION */
 .faq-container {
@@ -886,7 +888,8 @@ p {
   transition: background 0.3s ease;
 }
 .review-cta:hover {
-  background: var(--accent-dark);
+  background: var(--accent-light);
+  filter: brightness(0.95);
 }
 /* FOOTER */
 .footer {
@@ -971,7 +974,8 @@ p {
   transition: background 0.3s ease;
 }
 .book-now-button:hover {
-  background: var(--accent-dark);
+  background: var(--accent-light);
+  filter: brightness(0.95);
 }
 /* UTILITY CLASSES */
 .text-center {
@@ -1216,6 +1220,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 .facebook-plugin-placeholder {
   text-align: center;
@@ -1358,7 +1364,7 @@ p {
 }
 /* CTA SECTION */
 .cta-section {
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+  background: linear-gradient(135deg, var(--accent-light) 0%, #e6c200 100%);
   padding: 80px 0;
   text-align: center;
 }
@@ -1496,6 +1502,24 @@ img, video, iframe {
 }
 /* ========== END MOBILE CUSTOMIZATION ========== */
 
+/* Additional mobile tweaks for reviews section */
+@media (max-width: 767px) {
+  .reviews-widgets-grid {
+    gap: 20px;
+  }
+  .facebook-plugin-container {
+    min-height: 400px; /* smaller on mobile */
+    padding: 10px;
+  }
+  .fb-page {
+    width: 100% !important;
+  }
+  .facebook-reviews-widget,
+  .google-reviews-widget,
+  .tripadvisor-widget {
+    padding: 20px;
+  }
+}
 </style>
 </head>
 <body>
@@ -2015,7 +2039,7 @@ img, video, iframe {
       </div>
     </div>
   </section>
-  <!-- REVIEWS SECTION WITH FACEBOOK SDK - UPDATED -->
+  <!-- REVIEWS SECTION WITH FACEBOOK SDK - UPDATED & MOBILE OPTIMIZED -->
   <section class="main-section">
     <div class="container">
       <h2 class="text-center">Rated Excellent by Travelers Worldwide</h2>
@@ -2067,7 +2091,7 @@ img, video, iframe {
             View on TripAdvisor
           </a>
         </div>
-        <!-- Facebook Reviews & Feed - UPDATED -->
+        <!-- Facebook Reviews & Feed - UPDATED & MOBILE OPTIMIZED -->
         <div class="facebook-reviews-widget">
           <div class="facebook-logo">
             <i class="fab fa-facebook review-icon-large icon-facebook"></i>
@@ -2075,7 +2099,7 @@ img, video, iframe {
           <h3>Facebook Posts & Reviews</h3>
           <p class="facebook-text">Follow us for latest photos, tour updates, and traveler reviews.</p>
           
-          <!-- Facebook Page Plugin (Timeline for Posts/Photos) -->
+          <!-- Facebook Page Plugin (Timeline for Posts/Photos) - Responsive -->
           <div class="facebook-plugin-container">
             <div class="fb-page"
                  data-href="https://www.facebook.com/egyptphotographytours"
