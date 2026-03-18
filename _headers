@@ -1,2 +1,95 @@
+# ======================================================
+# DEFAULT SECURITY + SEO HEADERS (ALL PAGES)
+# ======================================================
+/*  
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
+  Content-Security-Policy: default-src 'self' https: data: 'unsafe-inline';
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Robots-Tag: index, follow
+  Cache-Control: no-cache
+  # Open Graph + Twitter card default headers
+  og:title: Egypt Photography Tours
+  og:description: Private guided photography tours in Cairo, Giza, Alexandria, and all Egypt.
+  og:type: website
+  og:url: https://www.egyptphotographytours.com
+  og:image: https://www.egyptphotographytours.com/images/og-image.jpg
+  twitter:card: summary_large_image
+  twitter:title: Egypt Photography Tours
+  twitter:description: Private guided photography tours in Cairo, Giza, Alexandria, and all Egypt.
+  twitter:image: https://www.egyptphotographytours.com/images/og-image.jpg
+
+# ======================================================
+# RSS FEED
+# ======================================================
 /feed.xml
   Content-Type: application/rss+xml
+  X-Robots-Tag: index, follow
+
+# ======================================================
+# STATIC ASSETS (CACHE + INDEX)
+# ======================================================
+/images/*
+  Cache-Control: max-age=86400
+  X-Robots-Tag: index, follow
+
+/videos/*
+  Cache-Control: max-age=86400
+  X-Robots-Tag: index, follow
+
+/css/*
+  Cache-Control: max-age=604800
+  X-Robots-Tag: index, follow
+
+/js/*
+  Cache-Control: max-age=604800
+  X-Robots-Tag: index, follow
+
+/fonts/*
+  Cache-Control: max-age=604800
+  X-Robots-Tag: index, follow
+
+# ======================================================
+# MULTILINGUAL PAGES
+# ======================================================
+/ar/*
+  Cache-Control: max-age=3600
+  X-Robots-Tag: index, follow
+
+/es/*
+  Cache-Control: max-age=3600
+  X-Robots-Tag: index, follow
+
+/fr/*
+  Cache-Control: max-age=3600
+  X-Robots-Tag: index, follow
+
+/it/*
+  Cache-Control: max-age=3600
+  X-Robots-Tag: index, follow
+
+/de/*
+  Cache-Control: max-age=3600
+  X-Robots-Tag: index, follow
+
+/pt/*
+  Cache-Control: max-age=3600
+  X-Robots-Tag: index, follow
+
+/kr/*
+  Cache-Control: max-age=3600
+  X-Robots-Tag: index, follow
+
+/cn/*
+  Cache-Control: max-age=3600
+  X-Robots-Tag: index, follow
+
+# ======================================================
+# BLOCK ADMIN / PRIVATE FOLDERS
+# ======================================================
+/admin/*
+  X-Robots-Tag: noindex, nofollow
+
+/private/*
+  X-Robots-Tag: noindex, nofollow
