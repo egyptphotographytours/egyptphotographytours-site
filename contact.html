@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!-- Content Security Policy for Security - reCAPTCHA Compatible -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https:; frame-src https://www.google.com https://www.gstatic.com https://www.google.com/maps; connect-src 'self' https://www.google.com https://www.gstatic.com;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https:; frame-src https://www.google.com https://www.gstatic.com https://www.google.com/maps https://challenges.cloudflare.com; connect-src 'self' https://www.google.com https://www.gstatic.com;">
 
 <!-- Comprehensive Favicon Setup -->
 <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
@@ -102,9 +102,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Security: Font Awesome with SRI -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<!-- reCAPTCHA Script - REQUIRED -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <style>
 :root {
@@ -801,19 +798,20 @@ img {
   height: auto;
   display: block;
 }
-/* Mobile Optimization */
+/* Mobile Optimization - FIXED ALIGNMENT */
 @media (max-width: 480px) {
   html, body {
     overflow-x: hidden;
     width: 100%;
   }
   .container {
-    padding: 0 10px;
+    padding: 0 10px; /* Reduced padding for max width */
     width: 100%;
     max-width: 100%;
   }
   .contact-form-container, .contact-info-container {
-    padding: 12px;
+    padding: 12px; /* Reduced padding */
+    margin: 0 -10px; /* Compensate for container padding */
   }
   .main-section h1 {
     font-size: 24px;
@@ -856,6 +854,10 @@ html {
 /* Prevent horizontal scroll */
 body * {
   max-width: 100%;
+}
+/* Netlify reCAPTCHA container spacing */
+.mb-4 {
+  margin-bottom: 1.5rem;
 }
 </style>
 </head>
@@ -1014,29 +1016,51 @@ body * {
       <p>
         Whether you're interested in private pyramids photoshoots, luxury Cairo tours, or comprehensive Egypt photography experiences, we're here to make your dream trip a reality. Get in touch today!
       </p>
-                                          </div>
-                            
-                            <div class="form-group">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Tour inquiry, booking, etc.">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message" class="form-label">Your Message *</label>
-                                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your photography interests, preferred dates, and any questions..." required></textarea>
-                            </div>
-                            
-                            <!-- Netlify reCAPTCHA container – Netlify will inject the widget here.
-                                 To use your own site key (6LcEpY4sAAAAAIeQueoT9D9d7_OHPPaYUdDKfYfa), 
-                                 go to Netlify Dashboard → Forms → Spam prevention and enable "Use your own reCAPTCHA keys".
-                                 Paste your site key and secret key there. -->
-                            <div data-netlify-recaptcha="true" class="mb-4"></div>
-                            
-                            <button type="submit" class="submit-button">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
+      <div class="contact-grid">
+        <div class="contact-form-container">
+          <h2>Send Us a Message</h2>
+          <p class="text-center mb-6">Fill out the form below and we'll get back to you within 24 hours</p>
+          
+          <!-- NETLIFY FORM - FIXED WITH NATIVE reCAPTCHA -->
+          <form name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+            <!-- Required hidden field -->
+            <input type="hidden" name="form-name" value="contact-en" />
+            
+            <!-- Honeypot field -->
+            <p hidden>
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            
+            <!-- Form fields -->
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+20 123 456 7890" pattern="^\+?[0-9\s\-()]{7,15}$">
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Tour inquiry, booking, etc.">
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Your Message *</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your photography interests, preferred dates, and any questions..." required></textarea>
+            </div>
+            
+            <!-- NETLIFY NATIVE reCAPTCHA - CRITICAL FIX -->
+            <div data-netlify-recaptcha="true" class="mb-4"></div>
+            
+            <button type="submit" class="submit-button">
+              Send Message
+            </button>
+          </form>
+        </div>
         <div class="contact-info-container">
           <h2>Contact Information</h2>
           <p class="text-center mb-6">Get in touch with us through any of these methods</p>
