@@ -440,6 +440,7 @@ body {
 }
 .form-input, .form-textarea {
   width: 100%;
+  max-width: 100%;
   padding: 14px 16px;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
@@ -803,19 +804,19 @@ img {
   height: auto;
   display: block;
 }
-/* Mobile Optimization - Fix right distance issue */
+/* Mobile Optimization - Fixed alignment issue */
 @media (max-width: 480px) {
   html, body {
     overflow-x: hidden;
     width: 100%;
   }
   .container {
-    padding: 0 12px;
+    padding: 0 10px;
     width: 100%;
     max-width: 100%;
   }
   .contact-form-container, .contact-info-container {
-    padding: 16px;
+    padding: 12px;
   }
   .main-section h1 {
     font-size: 24px;
@@ -824,7 +825,7 @@ img {
     font-size: 20px;
   }
   .contact-grid {
-    gap: 20px;
+    gap: 15px;
   }
   .cta-container {
     flex-wrap: wrap;
@@ -837,6 +838,15 @@ img {
   .current-language {
     font-size: 13px;
     padding: 8px 12px;
+  }
+  .form-input, .form-textarea {
+    padding: 12px 14px;
+  }
+  .contact-method {
+    padding: 12px;
+  }
+  .map-container {
+    margin-top: 20px;
   }
 }
 html {
@@ -1256,3 +1266,4 @@ body * {
 </script>
 </body>
 </html>
+```
