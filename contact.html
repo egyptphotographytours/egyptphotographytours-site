@@ -78,7 +78,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background-color:#f8
 .faq-item h3{font-size:18px;color:var(--primary-dark);margin-bottom:12px;font-weight:600}
 .faq-item p{font-size:15px;line-height:1.6;color:var(--text-color);margin:0}
 .internal-links{background:linear-gradient(135deg,var(--primary-dark) 0%,#2d3748 100%);color:white;padding:30px 20px;border-radius:12px;margin-top:40px;text-align:center}
-.internal-links h3{margin-bottom:20px;color:var(--accent-light)}
+.internal-links h2{margin-bottom:20px;color:var(--accent-light);font-size:22px}
+@media(min-width:768px){.internal-links h2{font-size:28px}}
 .internal-links-grid{display:grid;grid-template-columns:1fr;gap:15px}
 @media(min-width:768px){.internal-links-grid{grid-template-columns:repeat(3,1fr)}}
 .internal-link{background:rgba(255,255,255,0.1);padding:20px;border-radius:8px;color:white;text-decoration:none;transition:all 0.3s ease;border:1px solid rgba(255,215,0,0.3)}
@@ -133,7 +134,7 @@ html{-webkit-text-size-adjust:100%}
 body *{max-width:100%}
 .mb-4{margin-bottom:1.5rem}
 </style>
-<!-- Preconnect Only to Critical Origins (Max 4 for Performance) -->
+<!-- Preconnect Only to Critical Origins -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Google Fonts with display=swap for Performance -->
@@ -538,9 +539,9 @@ Ready to capture the magic of Egypt with professional photography guidance? Cont
 <p>
 Whether you're interested in private pyramids photoshoots, luxury Cairo tours, or comprehensive Egypt photography experiences, we're here to make your dream trip a reality. Get in touch today!
 </p>
-<!-- Internal Linking Box -->
+<!-- Internal Linking Box - Changed H3 to H2 for proper heading hierarchy -->
 <div class="internal-links">
-<h3>Explore More</h3>
+<h2>Explore More</h2>
 <div class="internal-links-grid">
 <a href="tours.html" class="internal-link">
 <i class="fas fa-camera"></i>
@@ -717,12 +718,19 @@ Luxury: high-end experiences at lower prices than Europe or the USA</p>
 </div>
 </div>
 </footer>
-<!-- Deferred JavaScript - Loaded After Page Paint -->
-<script defer>
-// Main JavaScript - Deferred to Prevent Render Blocking
+<!-- Load Font Awesome Async After Page Load -->
+<script>
+// Load Font Awesome asynchronously
 (function() {
-// Wait for DOM to be ready before manipulating
-document.addEventListener('DOMContentLoaded', function() {
+var link = document.querySelector('link[rel="preload"][as="style"]');
+if(link) {
+link.onload = function() {
+this.rel = 'stylesheet';
+};
+}
+})();
+// Main JavaScript - Deferred
+(function() {
 // MOBILE MENU FUNCTIONALITY
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -803,8 +811,7 @@ currentLanguage.setAttribute('aria-expanded', 'false');
 });
 });
 }
-// TOUCH FEEDBACK - Only on mobile devices
-if ('ontouchstart' in window) {
+// TOUCH FEEDBACK
 document.querySelectorAll('button, a').forEach(element => {
 element.addEventListener('touchstart', function() {
 this.style.transform = 'scale(0.98)';
@@ -812,8 +819,6 @@ this.style.transform = 'scale(0.98)';
 element.addEventListener('touchend', function() {
 this.style.transform = '';
 });
-});
-}
 });
 })();
 </script>
