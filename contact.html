@@ -985,13 +985,13 @@
                         <h2>Send Us a Message</h2>
                         <p class="text-center mb-6">Fill out the form below and we'll get back to you within 24 hours</p>
                         
-                        <!-- Netlify integrated form with honeypot and reCAPTCHA -->
-                        <form action="/thank-you" method="POST" netlify data-netlify="true" name="contact" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
-                            <!-- Required hidden field for Netlify forms -->
-                            <input type="hidden" name="form-name" value="contact" />
+                        <!-- Netlify integrated form with correct attributes for spam prevention and thank-you redirect -->
+                        <form name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+                            <!-- Required hidden field to identify the form -->
+                            <input type="hidden" name="form-name" value="contact-en" />
                             
                             <!-- Honeypot field (hidden from real users) -->
-                            <p class="hidden-field">
+                            <p hidden>
                                 <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
                             </p>
                             
@@ -1002,7 +1002,6 @@
                             
                             <div class="form-group">
                                 <label for="email" class="form-label">Email Address *</label>
-                                <!-- changed name from _replyto to email for cleaner Netlify integration -->
                                 <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
                             </div>
                             
@@ -1013,7 +1012,6 @@
                             
                             <div class="form-group">
                                 <label for="subject" class="form-label">Subject</label>
-                                <!-- changed name from _subject to subject -->
                                 <input type="text" id="subject" name="subject" class="form-input" placeholder="Tour inquiry, booking, etc.">
                             </div>
                             
@@ -1022,7 +1020,7 @@
                                 <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your photography interests, preferred dates, and any questions..." required></textarea>
                             </div>
                             
-                            <!-- Netlify reCAPTCHA container -->
+                            <!-- Netlify reCAPTCHA container (if enabled in Netlify settings) -->
                             <div data-netlify-recaptcha="true" class="mb-4"></div>
                             
                             <button type="submit" class="submit-button">
