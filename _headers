@@ -5,21 +5,53 @@
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer-when-downgrade
-  Content-Security-Policy: default-src 'self' https: data:; script-src 'self'; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:;
+
+  Content-Security-Policy: 
+    default-src 'self' https: data: blob:;
+    script-src 'self' https: 'unsafe-inline' 'unsafe-eval';
+    style-src 'self' https: 'unsafe-inline';
+    img-src 'self' https: data: blob:;
+    font-src 'self' https: data:;
+    connect-src 'self' https:;
+    frame-src https://www.google.com https://www.gstatic.com;
+
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Robots-Tag: index, follow
   Cache-Control: no-cache
-  Permissions-Policy: geolocation=(self), payment=(self), camera=(), microphone=(), accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), bluetooth=(), clipboard-read=(), clipboard-write=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), gyroscope=(), magnetometer=(), midi=(), usb=()
+
+  Permissions-Policy: 
+    geolocation=(self), 
+    payment=(self), 
+    camera=(), 
+    microphone=(), 
+    accelerometer=(), 
+    ambient-light-sensor=(), 
+    autoplay=(), 
+    battery=(), 
+    bluetooth=(), 
+    clipboard-read=(), 
+    clipboard-write=(), 
+    display-capture=(), 
+    document-domain=(), 
+    encrypted-media=(), 
+    fullscreen=(), 
+    gyroscope=(), 
+    magnetometer=(), 
+    midi=(), 
+    usb=()
+
   # Open Graph + Twitter card default headers
   og:title: Egypt Photography Tours
   og:description: Private guided photography tours in Cairo, Giza, Alexandria, and all Egypt.
   og:type: website
   og:url: https://www.egyptphotographytours.com
   og:image: https://www.egyptphotographytours.com/images/og-image.jpg
+
   twitter:card: summary_large_image
   twitter:title: Egypt Photography Tours
   twitter:description: Private guided photography tours in Cairo, Giza, Alexandria, and all Egypt.
   twitter:image: https://www.egyptphotographytours.com/images/og-image.jpg
+
 
 # ======================================================
 # RSS FEED
@@ -27,6 +59,7 @@
 /feed.xml
   Content-Type: application/rss+xml
   X-Robots-Tag: index, follow
+
 
 # ======================================================
 # STATIC ASSETS (CACHE + INDEX)
@@ -50,6 +83,7 @@
 /fonts/*
   Cache-Control: max-age=604800
   X-Robots-Tag: index, follow
+
 
 # ======================================================
 # MULTILINGUAL PAGES
@@ -85,6 +119,7 @@
 /cn/*
   Cache-Control: max-age=3600
   X-Robots-Tag: index, follow
+
 
 # ======================================================
 # BLOCK ADMIN / PRIVATE FOLDERS
