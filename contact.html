@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Content Security Policy for Security - FIXED Font Awesome Fonts -->
-<meta http-equiv="Content-Security-Policy" content="
-default-src 'self' https:;
-script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://cdnjs.cloudflare.com;
-style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
-font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://fonts.googleapis.com;
-img-src 'self' data: https: blob:;
-frame-src https://www.google.com https://www.gstatic.com https://www.google.com/recaptcha/ https://challenges.cloudflare.com;
-connect-src 'self' https://www.google.com https://www.gstatic.com;
-">
 <!-- Critical CSS Only - Inline for Fast First Paint -->
 <style>
 :root{--primary-dark:#1a202c;--accent-light:#FFD700;--accent-dark:#E2B700;--text-color:#333}
@@ -143,6 +133,16 @@ html{-webkit-text-size-adjust:100%}
 body *{max-width:100%}
 .mb-4{margin-bottom:1.5rem}
 </style>
+<!-- FIXED CSP - Added Netlify domains for form submission -->
+<meta http-equiv="Content-Security-Policy" content="
+default-src 'self' https:;
+script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://cdnjs.cloudflare.com;
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+img-src 'self' data: https: blob:;
+frame-src https://www.google.com https://www.gstatic.com https://www.google.com/recaptcha/ https://challenges.cloudflare.com;
+connect-src 'self' https://www.google.com https://www.gstatic.com https://api.netlify.com https://*.netlify.com;
+">
 <!-- Preconnect Only to Critical Origins -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -570,11 +570,11 @@ Whether you're interested in private pyramids photoshoots, luxury Cairo tours, o
 <div class="contact-form-container">
 <h2>Send Us a Message</h2>
 <p class="text-center mb-6">Fill out the form below and we'll get back to you within 24 hours</p>
-<!-- NETLIFY FORM - FIXED WITH NATIVE reCAPTCHA -->
+<!-- NETLIFY FORM - FIXED FOR SUBMISSION -->
 <form name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-<!-- Required hidden field -->
+<!-- Required hidden field for Netlify detection -->
 <input type="hidden" name="form-name" value="contact-en" />
-<!-- Honeypot field -->
+<!-- Honeypot field for spam protection -->
 <p hidden>
 <label>Don't fill this out: <input name="bot-field" /></label>
 </p>
@@ -599,7 +599,7 @@ Whether you're interested in private pyramids photoshoots, luxury Cairo tours, o
 <label for="message" class="form-label">Your Message *</label>
 <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your itinerary interests, preferred dates, and any questions..." required></textarea>
 </div>
-<!-- NETLIFY NATIVE reCAPTCHA - Load Deferred -->
+<!-- NETLIFY NATIVE reCAPTCHA -->
 <div data-netlify-recaptcha="true" class="mb-4"></div>
 <button type="submit" class="submit-button">
 Send Message
