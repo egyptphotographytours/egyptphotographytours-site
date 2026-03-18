@@ -7,13 +7,15 @@
   Referrer-Policy: no-referrer-when-downgrade
   Content-Security-Policy: 
     default-src 'self' https: data: blob:; 
-    script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com 'unsafe-inline'; 
+    script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com; 
     style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; 
     img-src 'self' https: data: blob:; 
-    font-src 'self' https://fonts.gstatic.com data:; 
+    font-src 'self' https://fonts.gstatic.com; 
     connect-src 'self' https://www.google.com/recaptcha/ https:;
+    frame-src https://www.google.com/recaptcha/;
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Robots-Tag: index, follow
+  Cache-Control: no-cache
   Permissions-Policy: geolocation=(self), payment=(self)
   # Open Graph + Twitter card default headers
   og:title: Egypt Photography Tours
@@ -37,24 +39,42 @@
 # STATIC ASSETS (CACHE + INDEX)
 # ======================================================
 /images/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: max-age=31536000, immutable
   X-Robots-Tag: index, follow
 
 /videos/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: max-age=31536000, immutable
   X-Robots-Tag: index, follow
 
 /css/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: max-age=31536000, immutable
   X-Robots-Tag: index, follow
 
 /js/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: max-age=31536000, immutable
   X-Robots-Tag: index, follow
 
 /fonts/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: max-age=31536000, immutable
   X-Robots-Tag: index, follow
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
 
 # ======================================================
 # MULTILINGUAL PAGES
@@ -99,27 +119,3 @@
 
 /private/*
   X-Robots-Tag: noindex, nofollow
-
-# ======================================================
-# DEFAULT CACHE FOR ALL FILE TYPES
-# ======================================================
-/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
-
-/*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.png
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.webp
-  Cache-Control: public, max-age=31536000, immutable
