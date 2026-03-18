@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Content Security Policy for Security - Updated for reCAPTCHA Compatibility -->
+<!-- Content Security Policy for Security - reCAPTCHA Compatible -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https:; frame-src https://www.google.com https://www.gstatic.com https://www.google.com/maps; connect-src 'self' https://www.google.com https://www.gstatic.com;">
 
 <!-- Comprehensive Favicon Setup -->
@@ -21,7 +21,6 @@
 <meta itemprop="image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
 
 <meta charset="UTF-8">
-<!-- Enhanced viewport for better mobile experience - Fixed mobile overflow -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
 <title>Contact Egypt Photography Tours | Luxury Egypt Tours & Professional Photography Experiences</title>
 <meta name="description" content="Contact Egypt Photography Tours for luxury Egypt travel experiences. Book private pyramids photography tours, Cairo luxury trips, and professional photo sessions. WhatsApp +20 155 073 5673">
@@ -62,13 +61,13 @@
 <meta name="geo.placename" content="Cairo, Egypt">
 <meta name="geo.position" content="30.0444;31.2357">
 
-<!-- SCHEMA MARKUP FOR CONTACT PAGE -->
+<!-- SCHEMA MARKUP -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact Egypt Photography Tours",
-  "description": "Contact page for booking luxury Egypt photography tours and professional photography experiences",
+  "description": "Contact page for booking luxury Egypt photography tours",
   "url": "https://www.egyptphotographytours.com/contact.html",
   "mainEntity": {
     "@type": "Organization",
@@ -101,10 +100,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!-- Security: Added SRI and Crossorigin -->
+<!-- Security: Font Awesome with SRI -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- Netlify reCAPTCHA Script -->
+<!-- reCAPTCHA Script - REQUIRED -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <style>
@@ -114,7 +113,6 @@
   --accent-dark: #E2B700;
   --text-color: #333;
 }
-/* Mobile Overflow Fix */
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -440,7 +438,6 @@ body {
 }
 .form-input, .form-textarea {
   width: 100%;
-  max-width: 100%;
   padding: 14px 16px;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
@@ -693,7 +690,7 @@ body {
   color: var(--accent-light);
 }
 
-/* LANGUAGE SWITCHER - ENHANCED FOR RELIABLE TOGGLE & ACCESSIBILITY */
+/* LANGUAGE SWITCHER */
 .language-switcher {
   position: relative;
   display: inline-block;
@@ -804,7 +801,7 @@ img {
   height: auto;
   display: block;
 }
-/* Mobile Optimization - Fixed alignment issue */
+/* Mobile Optimization */
 @media (max-width: 480px) {
   html, body {
     overflow-x: hidden;
@@ -870,7 +867,7 @@ body * {
   <div class="container content">
     <div class="logo-section">
       <img src="images/egypt-photography-tours-logo.jpg"
-           alt="Egypt Photography Tours Logo - Professional photography guide services for Pyramids and ancient sites"
+           alt="Egypt Photography Tours Logo"
            class="logo-img"
            loading="eager"
            width="40"
@@ -896,7 +893,7 @@ body * {
       </button>
       <a href="contact.html" class="book-now-button">Book Now</a>
       
-      <!-- Accessibility: Added ARIA roles to Language Switcher -->
+      <!-- Language Switcher with ARIA -->
       <div class="language-switcher" id="languageSwitcher">
         <div class="current-language" id="currentLanguage" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0" aria-label="Select Language">
           <span class="current-flag">🇺🇸</span>
@@ -986,7 +983,6 @@ body * {
             <span class="flag-icon">🇹🇭</span>
             <span class="language-text">ไทย</span>
           </a>
-          <!-- FINNISH LANGUAGE ADDED -->
           <a href="fi/contact.html" class="language-item" data-lang="fi" data-flag="🇫🇮" data-code="FI" role="option" aria-selected="false" tabindex="-1">
             <span class="flag-icon">🇫🇮</span>
             <span class="language-text">Suomi</span>
@@ -1007,7 +1003,7 @@ body * {
   </div>
 </nav>
 
-<!-- Accessibility: Added ID for Skip Link -->
+<!-- Main Content -->
 <main class="main" id="main-content">
   <section class="main-section bg-light-gray">
     <div class="container">
@@ -1022,13 +1018,18 @@ body * {
         <div class="contact-form-container">
           <h2>Send Us a Message</h2>
           <p class="text-center mb-6">Fill out the form below and we'll get back to you within 24 hours</p>
-          <!-- Netlify form with reCAPTCHA enabled -->
+          
+          <!-- WORKING FORM - Fixed -->
           <form name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+            <!-- Hidden form name -->
             <input type="hidden" name="form-name" value="contact-en" />
+            
             <!-- Honeypot field -->
             <p hidden>
               <label>Don't fill this out: <input name="bot-field" /></label>
             </p>
+            
+            <!-- Form fields -->
             <div class="form-group">
               <label for="name" class="form-label">Full Name *</label>
               <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
@@ -1049,8 +1050,10 @@ body * {
               <label for="message" class="form-label">Your Message *</label>
               <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your photography interests, preferred dates, and any questions..." required></textarea>
             </div>
-            <!-- Netlify reCAPTCHA with site key -->
-            <div class="g-recaptcha mb-4" data-sitekey="6LcEpY4sAAAAAIeQueoT9D9d7_OHPPaYUdDKfYfa"></div>
+            
+            <!-- reCAPTCHA - Working Version -->
+            <div class="g-recaptcha" data-sitekey="6LcEpY4sAAAAAIeQueoT9D9d7_OHPPaYUdDKfYfa"></div>
+            
             <button type="submit" class="submit-button">
               Send Message
             </button>
@@ -1161,7 +1164,6 @@ body * {
     mobileMenuToggle.addEventListener('click', function() {
       const isActive = navLinks.classList.toggle('active');
       const icon = this.querySelector('i');
-      // Accessibility: Update aria-expanded
       this.setAttribute('aria-expanded', isActive);
       
       if (isActive) {
@@ -1187,14 +1189,13 @@ body * {
     });
   });
 
-  // LANGUAGE SWITCHER - ACCESSIBLE & ROBUST
+  // LANGUAGE SWITCHER
   const languageSwitcher = document.getElementById('languageSwitcher');
   const currentLanguage = document.getElementById('currentLanguage');
   const currentLangCode = document.getElementById('current-lang-code');
   const languageItems = document.querySelectorAll('.language-item');
 
   if (languageSwitcher && currentLanguage) {
-    // Toggle dropdown on click or Enter/Space
     const toggleDropdown = () => {
       const isExpanded = currentLanguage.getAttribute('aria-expanded') === 'true';
       currentLanguage.setAttribute('aria-expanded', !isExpanded);
@@ -1218,7 +1219,6 @@ body * {
       }
     });
 
-    // Close dropdown when clicking outside
     document.addEventListener('click', function(e) {
       if (!languageSwitcher.contains(e.target)) {
         languageSwitcher.classList.remove('active');
@@ -1226,10 +1226,8 @@ body * {
       }
     });
 
-    // Handle language item clicks
     languageItems.forEach(item => {
       item.addEventListener('click', function(e) {
-        // Update active state visually
         languageItems.forEach(langItem => {
           langItem.classList.remove('active');
           langItem.setAttribute('aria-selected', 'false');
@@ -1237,7 +1235,6 @@ body * {
         this.classList.add('active');
         this.setAttribute('aria-selected', 'true');
 
-        // Update the displayed flag and code using robust ID selector
         const flag = this.dataset.flag || '🇺🇸';
         const code = this.dataset.code || 'EN';
         document.querySelector('.current-flag').textContent = flag;
@@ -1245,10 +1242,8 @@ body * {
             currentLangCode.textContent = code;
         }
 
-        // Close dropdown
         languageSwitcher.classList.remove('active');
         currentLanguage.setAttribute('aria-expanded', 'false');
-        // Navigation happens via href
       });
     });
   }
