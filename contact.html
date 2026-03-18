@@ -1014,35 +1014,7 @@ body * {
       <p>
         Whether you're interested in private pyramids photoshoots, luxury Cairo tours, or comprehensive Egypt photography experiences, we're here to make your dream trip a reality. Get in touch today!
       </p>
-                <div class="contact-grid">
-                    <div class="contact-form-container">
-                        <h2>Send Us a Message</h2>
-                        <p class="text-center mb-6">Fill out the form below and we'll get back to you within 24 hours</p>
-                        
-                        <!-- Netlify integrated form with correct attributes for spam prevention and thank-you redirect -->
-                        <form name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-                            <!-- Required hidden field to identify the form -->
-                            <input type="hidden" name="form-name" value="contact-en" />
-                            
-                            <!-- Honeypot field (hidden from real users) -->
-                            <p hidden>
-                                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-                            </p>
-                            
-                            <div class="form-group">
-                                <label for="name" class="form-label">Full Name *</label>
-                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email Address *</label>
-                                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+20 123 456 7890">
-                            </div>
+                                          </div>
                             
                             <div class="form-group">
                                 <label for="subject" class="form-label">Subject</label>
@@ -1054,7 +1026,11 @@ body * {
                                 <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your photography interests, preferred dates, and any questions..." required></textarea>
                             </div>
                             
-                            <!-- reCAPTCHA removed as requested, only honeypot remains -->
+                            <!-- Netlify reCAPTCHA container – Netlify will inject the widget here.
+                                 To use your own site key (6LcEpY4sAAAAAIeQueoT9D9d7_OHPPaYUdDKfYfa), 
+                                 go to Netlify Dashboard → Forms → Spam prevention and enable "Use your own reCAPTCHA keys".
+                                 Paste your site key and secret key there. -->
+                            <div data-netlify-recaptcha="true" class="mb-4"></div>
                             
                             <button type="submit" class="submit-button">
                                 Send Message
