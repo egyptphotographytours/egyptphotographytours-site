@@ -1,5 +1,11 @@
 # --------------------------------------
-# Multilingual pages (no redirect loops)
+# FORCE WWW (MOST IMPORTANT)
+# --------------------------------------
+https://egyptphotographytours.com/* https://www.egyptphotographytours.com/:splat 301!
+
+
+# --------------------------------------
+# MULTILINGUAL PAGES (NO REDIRECT LOOPS)
 # --------------------------------------
 /ar/*    /ar/:splat   200
 /es/*    /es/:splat   200
@@ -10,13 +16,16 @@
 /kr/*    /kr/:splat   200
 /cn/*    /cn/:splat   200
 
-# --------------------------------------
-# Old pages or custom path redirects
-# --------------------------------------
-/old-pyramids-tour.html   /pyramids-tour.html   301
-/old-alexandria-tour.html /alexandria-tour.html 301
 
 # --------------------------------------
-# Optional: video pages (if you had different URLs)
-/videos/*   /videos/:splat  200
-/images/videos/* /images/videos/:splat 200
+# OLD URL REDIRECTS
+# --------------------------------------
+/old-pyramids-tour.html     /pyramids-tour.html     301
+/old-alexandria-tour.html   /alexandria-tour.html   301
+
+
+# --------------------------------------
+# OPTIONAL: KEEP VIDEO PATHS WORKING
+# --------------------------------------
+/videos/*            /videos/:splat            200
+/images/videos/*     /images/videos/:splat     200
