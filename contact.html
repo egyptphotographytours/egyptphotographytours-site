@@ -49,6 +49,7 @@
     <link rel="alternate" hreflang="hi" href="https://www.egyptphotographytours.com/hi/contact.html" />
     <link rel="alternate" hreflang="no" href="https://www.egyptphotographytours.com/no/contact.html" />
     <link rel="alternate" hreflang="sv" href="https://www.egyptphotographytours.com/sv/contact.html" />
+    <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/contact.html" />
     <link rel="alternate" hreflang="tl" href="https://www.egyptphotographytours.com/tl/contact.html" />
     <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/contact.html" />
     <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/contact.html" />
@@ -68,7 +69,7 @@
     <meta name="geo.placename" content="Cairo, Egypt">
     <meta name="geo.position" content="30.0444;31.2357">
 
-    <!-- UPDATED SCHEMA MARKUP FOR CONTACT PAGE -->
+    <!-- SCHEMA MARKUP FOR CONTACT PAGE -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -129,7 +130,6 @@
             min-height: 100vh;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
-            /* Prevent horizontal scroll on mobile */
             overflow-x: hidden;
         }
         .container {
@@ -138,7 +138,7 @@
             padding: 0 16px;
         }
         
-        /* SMALLER HEADER STYLES - MOBILE OPTIMIZED */
+        /* HEADER STYLES */
         .header {
             background-color: var(--primary-dark);
             color: white;
@@ -180,19 +180,6 @@
                 font-size: 24px;
             }
         }
-        .header-text {
-            font-size: 14px;
-            font-style: italic;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .header-text {
-                margin-top: 0;
-                font-size: 16px;
-            }
-        }
-        
-        /* HEADER CONTACT INFO STYLES - MOBILE OPTIMIZED */
         .header-contact {
             display: flex;
             flex-direction: column;
@@ -212,7 +199,7 @@
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
-            padding: 8px 0; /* Increased padding for better touch target */
+            padding: 8px 0;
         }
         .contact-info:hover {
             color: var(--accent-light);
@@ -223,7 +210,7 @@
             text-align: center;
         }
         
-        /* NAVBAR STYLES - MOBILE OPTIMIZED */
+        /* NAVBAR STYLES */
         .navbar {
             background-color: #374151;
             color: white;
@@ -284,10 +271,9 @@
         .nav-link a {
             color: white;
             text-decoration: none;
-            padding: 14px 16px; /* Increased padding for better touch target */
+            padding: 14px 16px;
             transition: color 0.3s ease;
             display: block;
-            /* Ensure minimum touch target size */
             min-height: 44px;
             display: flex;
             align-items: center;
@@ -323,8 +309,7 @@
             color: white;
             font-size: 24px;
             cursor: pointer;
-            padding: 12px; /* Increased padding for better touch target */
-            /* Ensure minimum touch target size */
+            padding: 12px;
             min-width: 44px;
             min-height: 44px;
             display: flex;
@@ -337,9 +322,9 @@
             }
         }
         
-        /* MAIN SECTION STYLES - MOBILE OPTIMIZED */
+        /* MAIN SECTION */
         .main-section {
-            padding: 30px 0; /* Reduced padding on mobile */
+            padding: 30px 0;
             text-align: center;
         }
         @media (min-width: 768px) {
@@ -361,7 +346,7 @@
             }
         }
         .main-section h2 {
-            font-size: 22px; /* Slightly smaller on mobile */
+            font-size: 22px;
             font-weight: 700;
             color: var(--primary-dark);
             margin-bottom: 20px;
@@ -389,11 +374,11 @@
             background-color: #f3f4f6;
         }
         
-        /* CONTACT PAGE SPECIFIC STYLES */
+        /* CONTACT PAGE SPECIFIC */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px; /* Reduced gap on mobile */
+            gap: 30px;
             margin-top: 30px;
         }
         @media (min-width: 1024px) {
@@ -404,7 +389,7 @@
         }
         .contact-form-container, .contact-info-container {
             background-color: white;
-            padding: 20px; /* Reduced padding on mobile */
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
@@ -422,16 +407,15 @@
             font-weight: 600;
             margin-bottom: 8px;
             color: var(--primary-dark);
-            font-size: 16px; /* Ensure good readability on mobile */
+            font-size: 16px;
         }
         .form-input, .form-textarea {
             width: 100%;
-            padding: 14px 16px; /* Increased padding for better touch targets */
+            padding: 14px 16px;
             border: 2px solid #e5e7eb;
             border-radius: 8px;
-            font-size: 16px; /* Prevents zoom on iOS */
+            font-size: 16px;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            /* Ensure minimum touch target size */
             min-height: 50px;
         }
         .form-input:focus, .form-textarea:focus {
@@ -441,13 +425,13 @@
         }
         .form-textarea {
             resize: vertical;
-            min-height: 140px; /* Slightly taller on mobile for easier typing */
+            min-height: 140px;
         }
         .submit-button {
             background-color: var(--accent-light);
             color: var(--primary-dark);
             font-weight: 700;
-            padding: 16px 32px; /* Increased padding for better touch target */
+            padding: 16px 32px;
             border-radius: 9999px;
             border: none;
             font-size: 18px;
@@ -455,7 +439,6 @@
             transition: all 0.3s ease;
             width: 100%;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            /* Ensure minimum touch target size */
             min-height: 56px;
         }
         .submit-button:hover {
@@ -467,8 +450,8 @@
         .contact-method {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px; /* Slightly reduced on mobile */
-            padding: 16px; /* Reduced padding on mobile */
+            margin-bottom: 20px;
+            padding: 16px;
             background-color: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid var(--accent-light);
@@ -503,16 +486,14 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
-            /* Ensure minimum touch target for links */
             display: inline-block;
-            padding: 4px 0; /* Add some padding for better touch targets */
+            padding: 4px 0;
         }
         .contact-link:hover {
             color: var(--accent-dark);
             text-decoration: underline;
         }
         
-        /* MAP STYLES */
         .map-container {
             margin-top: 30px;
             border-radius: 12px;
@@ -521,7 +502,7 @@
         }
         .map-iframe {
             width: 100%;
-            height: 300px; /* Slightly smaller on mobile */
+            height: 300px;
             border: none;
         }
         @media (min-width: 768px) {
@@ -532,7 +513,7 @@
         
         .book-now-button {
             font-weight: 600;
-            padding: 12px 20px; /* Increased padding for better touch target */
+            padding: 12px 20px;
             border-radius: 9999px;
             background-color: #FFD700;
             color: #1a202c;
@@ -542,7 +523,6 @@
             white-space: nowrap;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             display: inline-block;
-            /* Ensure minimum touch target size */
             min-height: 44px;
             display: flex;
             align-items: center;
@@ -553,7 +533,7 @@
             transform: scale(1.05);
         }
         
-        /* FOOTER STYLES - UPDATED WITHOUT MAP */
+        /* FOOTER */
         .footer {
             background-color: var(--primary-dark);
             color: white;
@@ -625,7 +605,7 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
-            padding: 4px 0; /* Add padding for better touch targets */
+            padding: 4px 0;
             display: inline-block;
         }
         .footer-links li a:hover {
@@ -645,7 +625,6 @@
         .social-links a {
             color: white;
             transition: color 0.3s ease;
-            /* Ensure minimum touch target for social icons */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -661,7 +640,7 @@
         .footer-contact {
             display: flex;
             flex-direction: column;
-            gap: 12px; /* Increased gap for better touch separation */
+            gap: 12px;
             margin-top: 16px;
             margin-bottom: 16px;
         }
@@ -674,7 +653,7 @@
             font-size: 14px;
             transition: color 0.3s ease;
             justify-content: center;
-            padding: 8px 0; /* Increased padding for better touch target */
+            padding: 8px 0;
         }
         @media (min-width: 768px) {
             .footer-contact-info {
@@ -685,7 +664,7 @@
             color: var(--accent-light);
         }
         
-        /* Language Switcher Styles - MOBILE OPTIMIZED */
+        /* LANGUAGE SWITCHER - ENHANCED FOR RELIABLE TOGGLE */
         .language-switcher {
             position: relative;
             display: inline-block;
@@ -702,21 +681,23 @@
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
-            transition: all 0.3s ease;
+            transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
             z-index: 1000;
             max-height: 300px;
             overflow-y: auto;
+            pointer-events: none; /* Prevents accidental clicks when hidden */
         }
         .language-switcher.active .language-dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+            pointer-events: auto;
         }
         .language-switcher.active .dropdown-arrow {
             transform: rotate(180deg);
         }
         .language-item {
-            padding: 12px 16px; /* Increased padding for better touch targets */
+            padding: 12px 16px;
             display: flex;
             align-items: center;
             color: white;
@@ -725,7 +706,6 @@
             border-bottom: 1px solid #4B5563;
             font-size: 14px;
             cursor: pointer;
-            /* Ensure minimum touch target size */
             min-height: 44px;
         }
         .language-item:last-child {
@@ -751,15 +731,15 @@
         .current-language {
             display: flex;
             align-items: center;
-            padding: 10px 14px; /* Increased padding for better touch target */
+            padding: 10px 14px;
             background: rgba(255, 215, 0, 0.1);
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s ease;
             font-size: 14px;
             border: 1px solid rgba(255, 215, 0, 0.3);
-            /* Ensure minimum touch target size */
             min-height: 44px;
+            user-select: none;
         }
         .current-language:hover {
             background: rgba(255, 215, 0, 0.2);
@@ -792,45 +772,32 @@
             height: auto;
             display: block;
         }
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .lazy-load.loaded {
-            opacity: 1;
-        }
         
-        /* Additional mobile optimizations */
         @media (max-width: 480px) {
             .container {
-                padding: 0 12px; /* Slightly reduced padding on very small screens */
+                padding: 0 12px;
             }
-            
             .contact-form-container, .contact-info-container {
-                padding: 16px; /* Further reduced padding on very small screens */
+                padding: 16px;
             }
-            
             .main-section h1 {
-                font-size: 24px; /* Smaller heading on very small screens */
+                font-size: 24px;
             }
-            
             .main-section h2 {
-                font-size: 20px; /* Smaller subheading on very small screens */
+                font-size: 20px;
             }
-            
             .contact-grid {
-                gap: 20px; /* Further reduced gap on very small screens */
+                gap: 20px;
             }
         }
         
-        /* Prevent text size adjustment on orientation change */
         html {
             -webkit-text-size-adjust: 100%;
         }
 
         /* honeypot field hidden */
-        .hidden-field {
-            display: none;
+        [hidden] {
+            display: none !important;
         }
     </style>
 </head>
@@ -864,92 +831,97 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="contact.html" class="book-now-button">Book Now</a>
-                <div class="language-switcher">
-                    <div class="current-language">
+                <div class="language-switcher" id="languageSwitcher">
+                    <div class="current-language" id="currentLanguage">
                         <span class="current-flag">🇺🇸</span>
                         <span>EN</span>
-                        <svg class="dropdown-arrow w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="dropdown-arrow" width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
-                    <div class="language-dropdown">
-                        <a href="contact.html" class="language-item active">
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="contact.html" class="language-item active" data-lang="en" data-flag="🇺🇸" data-code="EN">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="ru/contact.html" class="language-item">
+                        <a href="ru/contact.html" class="language-item" data-lang="ru" data-flag="🇷🇺" data-code="RU">
                             <span class="flag-icon">🇷🇺</span>
                             <span class="language-text">Русский</span>
                         </a>
-                        <a href="ar/contact.html" class="language-item">
+                        <a href="ar/contact.html" class="language-item" data-lang="ar" data-flag="🇪🇬" data-code="AR">
                             <span class="flag-icon">🇪🇬</span>
                             <span class="language-text">العربية</span>
                         </a>
-                        <a href="fr/contact.html" class="language-item">
+                        <a href="fr/contact.html" class="language-item" data-lang="fr" data-flag="🇫🇷" data-code="FR">
                             <span class="flag-icon">🇫🇷</span>
                             <span class="language-text">Français</span>
                         </a>
-                        <a href="de/contact.html" class="language-item">
+                        <a href="de/contact.html" class="language-item" data-lang="de" data-flag="🇩🇪" data-code="DE">
                             <span class="flag-icon">🇩🇪</span>
                             <span class="language-text">Deutsch</span>
                         </a>
-                        <a href="es/contact.html" class="language-item">
+                        <a href="es/contact.html" class="language-item" data-lang="es" data-flag="🇪🇸" data-code="ES">
                             <span class="flag-icon">🇪🇸</span>
                             <span class="language-text">Español</span>
                         </a>
-                        <a href="it/contact.html" class="language-item">
+                        <a href="it/contact.html" class="language-item" data-lang="it" data-flag="🇮🇹" data-code="IT">
                             <span class="flag-icon">🇮🇹</span>
                             <span class="language-text">Italiano</span>
                         </a>
-                        <a href="zh/contact.html" class="language-item">
+                        <a href="zh/contact.html" class="language-item" data-lang="zh" data-flag="🇨🇳" data-code="ZH">
                             <span class="flag-icon">🇨🇳</span>
                             <span class="language-text">中文</span>
                         </a>
-                        <a href="ko/contact.html" class="language-item">
+                        <a href="ko/contact.html" class="language-item" data-lang="ko" data-flag="🇰🇷" data-code="KO">
                             <span class="flag-icon">🇰🇷</span>
                             <span class="language-text">한국어</span>
                         </a>
-                        <a href="pt/contact.html" class="language-item">
+                        <a href="pt/contact.html" class="language-item" data-lang="pt" data-flag="🇵🇹" data-code="PT">
                             <span class="flag-icon">🇵🇹</span>
                             <span class="language-text">Português</span>
                         </a>
-                        <a href="id/contact.html" class="language-item">
+                        <a href="id/contact.html" class="language-item" data-lang="id" data-flag="🇮🇩" data-code="ID">
                             <span class="flag-icon">🇮🇩</span>
                             <span class="language-text">Bahasa</span>
                         </a>
-                        <a href="ja/contact.html" class="language-item">
+                        <a href="ja/contact.html" class="language-item" data-lang="ja" data-flag="🇯🇵" data-code="JA">
                             <span class="flag-icon">🇯🇵</span>
                             <span class="language-text">日本語</span>
                         </a>
-                        <a href="da/contact.html" class="language-item">
+                        <a href="da/contact.html" class="language-item" data-lang="da" data-flag="🇩🇰" data-code="DA">
                             <span class="flag-icon">🇩🇰</span>
                             <span class="language-text">Dansk</span>
                         </a>
-                        <a href="nl/contact.html" class="language-item">
+                        <a href="nl/contact.html" class="language-item" data-lang="nl" data-flag="🇳🇱" data-code="NL">
                             <span class="flag-icon">🇳🇱</span>
                             <span class="language-text">Nederlands</span>
                         </a>
-                        <a href="hi/contact.html" class="language-item">
+                        <a href="hi/contact.html" class="language-item" data-lang="hi" data-flag="🇮🇳" data-code="HI">
                             <span class="flag-icon">🇮🇳</span>
                             <span class="language-text">हिन्दी</span>
                         </a>
-                        <a href="no/contact.html" class="language-item">
+                        <a href="no/contact.html" class="language-item" data-lang="no" data-flag="🇳🇴" data-code="NO">
                             <span class="flag-icon">🇳🇴</span>
                             <span class="language-text">Norsk</span>
                         </a>
-                        <a href="sv/contact.html" class="language-item">
+                        <a href="sv/contact.html" class="language-item" data-lang="sv" data-flag="🇸🇪" data-code="SV">
                             <span class="flag-icon">🇸🇪</span>
                             <span class="language-text">Svenska</span>
                         </a>
-                        <a href="tl/contact.html" class="language-item">
+                        <!-- Finnish language added -->
+                        <a href="fi/contact.html" class="language-item" data-lang="fi" data-flag="🇫🇮" data-code="FI">
+                            <span class="flag-icon">🇫🇮</span>
+                            <span class="language-text">Suomi</span>
+                        </a>
+                        <a href="tl/contact.html" class="language-item" data-lang="tl" data-flag="🇵🇭" data-code="TL">
                             <span class="flag-icon">🇵🇭</span>
                             <span class="language-text">Tagalog</span>
                         </a>
-                        <a href="ms/contact.html" class="language-item">
+                        <a href="ms/contact.html" class="language-item" data-lang="ms" data-flag="🇲🇾" data-code="MS">
                             <span class="flag-icon">🇲🇾</span>
                             <span class="language-text">Melayu</span>
                         </a>
-                        <a href="th/contact.html" class="language-item">
+                        <a href="th/contact.html" class="language-item" data-lang="th" data-flag="🇹🇭" data-code="TH">
                             <span class="flag-icon">🇹🇭</span>
                             <span class="language-text">ไทย</span>
                         </a>
@@ -985,14 +957,13 @@
                         <h2>Send Us a Message</h2>
                         <p class="text-center mb-6">Fill out the form below and we'll get back to you within 24 hours</p>
                         
-                        <!-- Netlify integrated form with correct attributes for spam prevention and thank-you redirect -->
+                        <!-- Netlify form with reCAPTCHA enabled (use your own key in Netlify dashboard) -->
                         <form name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-                            <!-- Required hidden field to identify the form -->
                             <input type="hidden" name="form-name" value="contact-en" />
                             
-                            <!-- Honeypot field (hidden from real users) -->
+                            <!-- Honeypot field -->
                             <p hidden>
-                                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                                <label>Don’t fill this out: <input name="bot-field" /></label>
                             </p>
                             
                             <div class="form-group">
@@ -1020,7 +991,10 @@
                                 <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your photography interests, preferred dates, and any questions..." required></textarea>
                             </div>
                             
-                            <!-- Netlify reCAPTCHA container (if enabled in Netlify settings) -->
+                            <!-- Netlify reCAPTCHA container – Netlify will inject the widget here.
+                                 To use your own site key (6LcEpY4sAAAAAIeQueoT9D9d7_OHPPaYUdDKfYfa), 
+                                 go to Netlify Dashboard → Forms → Spam prevention and enable "Use your own reCAPTCHA keys".
+                                 Paste your site key and secret key there. -->
                             <div data-netlify-recaptcha="true" class="mb-4"></div>
                             
                             <button type="submit" class="submit-button">
@@ -1131,104 +1105,82 @@
     </footer>
 
     <script>
-        // ✅ MOBILE MENU FUNCTIONALITY
-        document.addEventListener('DOMContentLoaded', function() {
+        (function() {
+            // MOBILE MENU FUNCTIONALITY
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             
-            mobileMenuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                
-                // Change icon based on menu state
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
             
-            // Close menu when clicking on a link (for mobile)
+            // Close mobile menu when a link is clicked
             document.querySelectorAll('.nav-link a').forEach(link => {
                 link.addEventListener('click', function() {
-                    if (window.innerWidth < 768) {
+                    if (window.innerWidth < 768 && navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
-                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
             });
             
-            // ✅ LANGUAGE SWITCHER
-            const languageSwitcher = document.querySelector('.language-switcher');
-            const currentLanguage = document.querySelector('.current-language');
+            // LANGUAGE SWITCHER - RELIABLE TOGGLE
+            const languageSwitcher = document.getElementById('languageSwitcher');
+            const currentLanguage = document.getElementById('currentLanguage');
             
-            currentLanguage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                languageSwitcher.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!languageSwitcher.contains(e.target)) {
-                    languageSwitcher.classList.remove('active');
-                }
-            });
-            
-            document.querySelectorAll('.language-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    document.querySelectorAll('.language-item').forEach(langItem => {
-                        langItem.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                    
-                    const selectedFlag = this.querySelector('.flag-icon').textContent;
-                    const selectedLang = this.querySelector('.language-text').textContent;
-                    const selectedCode = getLanguageCode(selectedLang);
-                    
-                    document.querySelector('.current-flag').textContent = selectedFlag;
-                    document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = selectedCode;
-                    
-                    languageSwitcher.classList.remove('active');
-                    
-                    window.location.href = this.href;
+            if (languageSwitcher && currentLanguage) {
+                // Toggle dropdown on click
+                currentLanguage.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageSwitcher.classList.toggle('active');
                 });
-            });
-            
-            function getLanguageCode(languageName) {
-                const codes = {
-                    'English': 'EN',
-                    'Русский': 'RU',
-                    'العربية': 'AR',
-                    'Français': 'FR',
-                    'Deutsch': 'DE',
-                    'Español': 'ES',
-                    'Italiano': 'IT',
-                    '中文': 'ZH',
-                    '한국어': 'KO',
-                    'Português': 'PT',
-                    'Bahasa': 'ID',
-                    '日本語': 'JA',
-                    'Dansk': 'DA',
-                    'Nederlands': 'NL',
-                    'हिन्दी': 'HI',
-                    'Norsk': 'NO',
-                    'Svenska': 'SV',
-                    'Tagalog': 'TL',
-                    'Melayu': 'MS',
-                    'ไทย': 'TH'
-                };
-                return codes[languageName] || languageName;
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!languageSwitcher.contains(e.target)) {
+                        languageSwitcher.classList.remove('active');
+                    }
+                });
+                
+                // Handle language item clicks (update active state and close dropdown)
+                document.querySelectorAll('.language-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // Update active class for immediate visual feedback
+                        document.querySelectorAll('.language-item').forEach(langItem => {
+                            langItem.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Update the displayed flag and code based on the clicked item's data attributes
+                        const flag = this.dataset.flag || '🇺🇸';
+                        const code = this.dataset.code || 'EN';
+                        document.querySelector('.current-flag').textContent = flag;
+                        document.querySelector('.current-language span:not(.current-flag):not(.dropdown-arrow)').textContent = code;
+                        
+                        // Close dropdown
+                        languageSwitcher.classList.remove('active');
+                        
+                        // Navigation will happen via href
+                    });
+                });
             }
             
-            // ✅ LAZY LOADING IMAGES
+            // LAZY LOADING IMAGES (if any)
             const images = document.querySelectorAll('img[loading="lazy"]');
-            
-            if ('IntersectionObserver' in window) {
+            if ('IntersectionObserver' in window && images.length) {
                 const imageObserver = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -1238,22 +1190,20 @@
                         }
                     });
                 });
-                
                 images.forEach(img => imageObserver.observe(img));
             }
             
-            // ✅ IMPROVED TOUCH INTERACTIONS
-            // Add touch feedback for buttons
+            // TOUCH FEEDBACK
             document.querySelectorAll('button, a').forEach(element => {
                 element.addEventListener('touchstart', function() {
                     this.style.transform = 'scale(0.98)';
                 });
-                
                 element.addEventListener('touchend', function() {
                     this.style.transform = '';
                 });
             });
-        });
+        })();
     </script>
+    <!-- Note: reCAPTCHA will appear automatically when enabled in Netlify dashboard with your keys -->
 </body>
 </html>
