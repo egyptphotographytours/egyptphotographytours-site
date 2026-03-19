@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**.html'
+      - '!sitemap.xml'
 
 permissions:
   contents: write
@@ -14,28 +17,52 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate sitemap
+        shell: bash
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          find . -type f -name "*.html" | while read file; do
+          # Use null separators to handle any special characters in filenames
+          find . -type f -name "*.html" -not -path '*/\.*' -print0 |
+          sort -z |
+          while IFS= read -r -d '' file; do
+            page="${file#./}"
 
-            page=$(echo "$file" | sed 's|^\./||')
+            if [ "$page" != "404.html" ] && [ "$page" != "index.html" ]; then
+              lastmod=$(git log -1 --format=%cd --date=format:'%Y-%m-%d' -- "$page")
+              [ -z "$lastmod" ] && lastmod=$(date +%F)
 
-            if [ "$page" != "404.html" ]; then
-
-              lastmod=$(git log -1 --format=%cd --date=format:'%Y-%m-%d' -- "$file")
-
-              if [ -z "$lastmod" ]; then
-                lastmod=$(date +%F)
+              # Set priority and changefreq based on page type
+              if [[ "$page" == "contact.html" ]] || [[ "$page" == */contact.html ]]; then
+                priority="0.8"
+                changefreq="monthly"
+              elif [[ "$page" == "tours.html" ]] || [[ "$page" == */tours.html ]]; then
+                priority="0.9"
+                changefreq="weekly"
+              elif [[ "$page" == "blog.html" ]] || [[ "$page" == */blog.html ]]; then
+                priority="0.6"
+                changefreq="daily"
+              else
+                priority="0.5"
+                changefreq="monthly"
               fi
 
-              echo "<url><loc>https://www.egyptphotographytours.com/$page</loc><lastmod>$lastmod</lastmod></url>" >> sitemap.xml
-
+              # ✅ NO SPACES in URL
+              echo "<url><loc>https://www.egyptphotographytours.com/${page}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>" >> sitemap.xml
             fi
           done
+
+          # Add root index.html separately
+          if [ -f "index.html" ]; then
+            lastmod=$(git log -1 --format=%cd --date=format:'%Y-%m-%d' -- "index.html")
+            [ -z "$lastmod" ] && lastmod=$(date +%F)
+            # ✅ NO SPACES in root URL
+            echo "<url><loc>https://www.egyptphotographytours.com/</loc><lastmod>${lastmod}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>" >> sitemap.xml
+          fi
 
           echo '</urlset>' >> sitemap.xml
 
@@ -44,5 +71,9 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add sitemap.xml
-          git commit -m "Fix sitemap invalid dates and URLs" || echo "No changes"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update sitemap [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
