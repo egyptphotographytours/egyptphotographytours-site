@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- Content Security Policy for Security - reCAPTCHA Compatible -->
 <meta http-equiv="Content-Security-Policy" content="
 default-src 'self' https:;
 script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://cdnjs.cloudflare.com;
@@ -10,6 +11,7 @@ img-src 'self' data: https: blob:;
 frame-src https://www.google.com https://www.gstatic.com https://www.google.com/recaptcha/ https://challenges.cloudflare.com;
 connect-src 'self' https://www.google.com https://www.gstatic.com https://api.netlify.com https://*.netlify.com;
 ">
+<!-- Critical CSS Only - Inline for Fast First Paint -->
 <style>
 :root{--primary-dark:#1a202c;--accent-light:#FFD700;--accent-dark:#E2B700;--text-color:#333}
 html,body{overflow-x:hidden;width:100%;position:relative}
@@ -141,11 +143,15 @@ html{-webkit-text-size-adjust:100%}
 body *{max-width:100%}
 .mb-4{margin-bottom:1.5rem}
 </style>
+<!-- Preconnect Only to Critical Origins -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts with display=swap for Performance -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome - Load Async to Prevent Render Blocking -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+<!-- Comprehensive Favicon Setup -->
 <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
@@ -155,6 +161,7 @@ body *{max-width:100%}
 <meta name="msapplication-TileColor" content="#FFD700">
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="theme-color" content="#FFD700">
+<!-- Enhanced Meta Tags -->
 <meta name="author" content="Egypt Photography Tours">
 <meta name="publisher" content="Egypt Photography Tours">
 <meta name="copyright" content="© 2025 Egypt Photography Tours">
@@ -162,6 +169,7 @@ body *{max-width:100%}
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow">
 <meta name="bingbot" content="index, follow">
+<!-- Search Engine & Social Media Optimization -->
 <meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -172,7 +180,8 @@ body *{max-width:100%}
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
 <title>이집트 포토그래피 투어 문의 | 럭셔리 이집트 투어 및 전문 사진 경험</title>
 <meta name="description" content="이집트 포토그래피 투어에 문의하세요. 피라미드 프라이빗 사진 투어, 카이로 럭셔리 여행 및 전문 사진 세션을 예약하세요. WhatsApp +20 155 073 5673">
-<meta name="keywords" content="이집트 포토그래피 투어 문의, 럭셔리 이집트 여행, 이집트 투어 예약, 피라미드 프라이빗 사진, 카이로 럭셔리 투어, 전문 이집트 사진, 럭셔리 나일 투어, 이집트 여행사, 이집트 사진 투어 예약, 럭셔리 이집트 휴가, 기자 피라미드 투어, 이집트 투어 패키지, 럭셔리 이집트 여행, 이집트 사진 경험">
+<meta name="keywords" content="이집트 포토그래피 투어 문의, 럭셔리 이집트 여행, 이집트 투어 예약, 피라미드 프라이빗 사진, 카이로 럭셔리 투어, 전문 이집트 사진, 럭셔리 나일 투어, 이집트 여행사, 사진 투어 이집트 예약, 럭셔리 이집트 휴가, 기자 피라미드 투어, 이집트 투어 패키지, 럭셔리 여행 이집트, 이집트 사진 경험">
+<!-- Enhanced Canonical & Alternate URLs -->
 <link rel="canonical" href="https://www.egyptphotographytours.com/ko/contact.html" />
 <link rel="alternate" hreflang="x-default" href="https://www.egyptphotographytours.com/contact.html" />
 <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/contact.html" />
@@ -196,9 +205,12 @@ body *{max-width:100%}
 <link rel="alternate" hreflang="ms" href="https://www.egyptphotographytours.com/ms/contact.html" />
 <link rel="alternate" hreflang="th" href="https://www.egyptphotographytours.com/th/contact.html" />
 <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/contact.html" />
+<!-- Enhanced Open Graph -->
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ar_EG">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:title" content="이집트 포토그래피 투어 문의 | 럭셔리 이집트 투어 및 전문 사진">
 <meta property="og:description" content="전문 가이드와 함께 럭셔리 이집트 사진 투어를 예약하세요. 피라미드 프라이빗 사진 촬영, 카이로 투어 및 나일 사진 경험. 5 성급 서비스.">
 <meta property="og:url" content="https://www.egyptphotographytours.com/ko/contact.html">
@@ -206,17 +218,20 @@ body *{max-width:100%}
 <meta property="og:site_name" content="Egypt Photography Tours">
 <meta property="article:publisher" content="https://www.facebook.com/EgyptPhotographyTours">
 <meta property="og:updated_time" content="2025-01-15T00:00:00+00:00">
+<!-- Enhanced Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@EgyptPhotoTours">
 <meta name="twitter:creator" content="@EgyptPhotoTours">
 <meta name="twitter:title" content="이집트 포토그래피 투어 문의 | 럭셔리 이집트 투어">
 <meta name="twitter:description" content="이집트의 전문 사진 투어. 럭셔리 피라미드 투어, 카이로 사진 경험 및 전문가 가이드 이집트 모험을 예약하세요.">
+<!-- Verification Tags -->
 <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
 <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
 <meta name="google-adsense-account" content="ca-pub-1042032515879132">
 <meta name="geo.region" content="EG-C">
 <meta name="geo.placename" content="Cairo, Egypt">
 <meta name="geo.position" content="30.0444;31.2357">
+<!-- COMPREHENSIVE SCHEMA MARKUP - LocalBusiness with Phone, Address & Image -->
 <script type="application/ld+json">
 [
 {
@@ -383,6 +398,7 @@ body *{max-width:100%}
 </script>
 </head>
 <body>
+<!-- Accessibility: Skip Link -->
 <a href="#main-content" class="skip-link">콘텐츠로 이동</a>
 <header class="header">
 <div class="container content">
@@ -413,6 +429,7 @@ fetchpriority="high">
 <i class="fas fa-bars"></i>
 </button>
 <a href="/ko/contact.html" class="book-now-button">지금 예약</a>
+<!-- Language Switcher with ARIA -->
 <div class="language-switcher" id="languageSwitcher">
 <div class="current-language" id="currentLanguage" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0" aria-label="언어 선택">
 <span class="current-flag">🇰🇷</span>
@@ -521,6 +538,7 @@ fetchpriority="high">
 </ul>
 </div>
 </nav>
+<!-- Main Content -->
 <main class="main" id="main-content">
 <section class="main-section bg-light-gray">
 <div class="container">
@@ -531,6 +549,7 @@ fetchpriority="high">
 <p>
 프라이빗 피라미드 사진 촬영, 럭셔리 카이로 투어 또는 종합 이집트 사진 경험에 관심이 있으시든, 당사는 꿈의 여행을 현실로 만들어 드립니다. 오늘 문의하세요!
 </p>
+<!-- Internal Linking Box -->
 <div class="internal-links">
 <h3>더 알아보기</h3>
 <div class="internal-links-grid">
@@ -552,11 +571,15 @@ fetchpriority="high">
 <div class="contact-form-container">
 <h2>메시지 보내기</h2>
 <p class="text-center mb-6">아래 양식을 작성하시면 24 시간 이내에 답변드리겠습니다</p>
+<!-- NETLIFY FORM - FIXED FOR SUBMISSION -->
 <form name="contact-ko" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<!-- Required hidden field for Netlify detection -->
 <input type="hidden" name="form-name" value="contact-ko" />
+<!-- Honeypot field for spam protection -->
 <p hidden>
 <label>이것을 작성하지 마세요: <input name="bot-field" /></label>
 </p>
+<!-- Form fields -->
 <div class="form-group">
 <label for="name" class="form-label">성명 *</label>
 <input type="text" id="name" name="name" class="form-input" placeholder="성명을 입력하세요" required>
@@ -577,6 +600,7 @@ fetchpriority="high">
 <label for="message" class="form-label">메시지 *</label>
 <textarea id="message" name="message" class="form-textarea" placeholder="사진 관심사, 선호 날짜 및 질문 등에 대해 알려주세요..." required></textarea>
 </div>
+<!-- NETLIFY NATIVE reCAPTCHA -->
 <div data-netlify-recaptcha="true" class="mb-4"></div>
 <button type="submit" class="submit-button">
 메시지 보내기
@@ -634,6 +658,7 @@ title="이집트 포토그래피 투어 위치">
 </div>
 </div>
 </div>
+<!-- FAQ Section -->
 <section class="faq-section">
 <h2>자주 묻는 질문</h2>
 <div class="faq-item">
@@ -703,8 +728,20 @@ title="이집트 포토그래피 투어 위치">
 </div>
 </div>
 </footer>
+<!-- Load Font Awesome Async After Page Load -->
 <script>
+// Load Font Awesome asynchronously
 (function() {
+var link = document.querySelector('link[rel="preload"][as="style"]');
+if(link) {
+link.onload = function() {
+this.rel = 'stylesheet';
+};
+}
+})();
+// Main JavaScript - Deferred
+(function() {
+// MOBILE MENU FUNCTIONALITY
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 if (mobileMenuToggle) {
@@ -721,6 +758,7 @@ icon.classList.add('fa-bars');
 }
 });
 }
+// Close mobile menu when a link is clicked
 document.querySelectorAll('.nav-link a').forEach(link => {
 link.addEventListener('click', function() {
 if (window.innerWidth < 768 && navLinks.classList.contains('active')) {
@@ -732,6 +770,7 @@ icon.classList.add('fa-bars');
 }
 });
 });
+// LANGUAGE SWITCHER
 const languageSwitcher = document.getElementById('languageSwitcher');
 const currentLanguage = document.getElementById('currentLanguage');
 const currentLangCode = document.getElementById('current-lang-code');
@@ -782,6 +821,7 @@ currentLanguage.setAttribute('aria-expanded', 'false');
 });
 });
 }
+// TOUCH FEEDBACK
 document.querySelectorAll('button, a').forEach(element => {
 element.addEventListener('touchstart', function() {
 this.style.transform = 'scale(0.98)';
