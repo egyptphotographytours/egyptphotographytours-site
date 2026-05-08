@@ -2,183 +2,93 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
-// Configuration
 const DOMAIN = 'https://www.egyptphotographytours.com';
-const IMAGES_DIR = './images';
 const OUTPUT_FILE = './image-sitemap.xml';
+const EXCLUDED = ['favicon', 'icon', 'apple-touch', 'android-chrome', 'mstile', 'browserconfig', 'logo', 'thumb'];
 
-// Map images to their respective pages
-const IMAGE_TO_PAGE_MAP = {
-  // Homepage images
-  'hero-image1.jpg': '/',
-  'hero-image2.jpg': '/',
-  'hero-image3.jpg': '/',
-  'hero-image4.jpg': '/',
-  'hero-image5.jpg': '/',
-  'egypt-photography-tours-hero-image.jpg': '/',
-  
-  // Tour page images
-  'pyramids-private-tour.jpg': '/tour-pyramids-private',
-  'cairo-giza-2day.jpg': '/tour-cairo-giza-2day',
-  'alexandria-tour.jpg': '/tour-alexandria',
-  'egypt-discovery-7day.jpg': '/tour-egypt-discovery-7day',
-  
-  // About page
-  'hossam-photographer.jpg': '/about',
-  
-  // Logo (only if you want it indexed)
-  // 'logo.jpg': '/',
-};
+// 1️⃣ Auto-scan HTML files to find which page uses which image
+function scanHTMLForImages() {
+  const htmlFiles = glob.sync('**/*.html', { ignore: ['node_modules/**', '.github/**', '404.html'] });
+  const imageMap = {};
 
-// Images to exclude from sitemap (UI elements, icons, etc.)
-const EXCLUDED_PATTERNS = [
-  'favicon',
-  'icon',
-  'apple-touch',
-  'android-chrome',
-  'mstile',
-  'browserconfig',
-  'site.webmanifest'
-];
-
-// Image metadata templates
-const IMAGE_METADATA = {
-  'hero-image1.jpg': {
-    title: 'Professional photographer capturing golden hour sunset at Pyramids of Giza',
-    caption: 'Luxury private Egypt photography tour: Golden hour photoshoot at the Great Pyramid of Giza with professional photographer guide Hossam'
-  },
-  'hero-image2.jpg': {
-    title: 'Golden hour pyramids photoshoot luxury private tour Egypt',
-    caption: 'Magical sunset photography at the Giza Pyramids during private luxury photography experience'
-  },
-  'hero-image3.jpg': {
-    title: 'Cairo street photography adventure with professional guide',
-    caption: 'Explore vibrant Cairo markets and streets with expert photography guide'
-  },
-  'hero-image4.jpg': {
-    title: '7-day Egypt photography journey luxury tour',
-    caption: 'Complete luxury photography adventure from Cairo to Alexandria with daily photoshoots'
-  },
-  'hero-image5.jpg': {
-    title: 'Exclusive 2026 Egypt photography experiences',
-    caption: 'New personalized luxury photography tours and unforgettable moments in Egypt'
-  },
-  'egypt-photography-tours-hero-image.jpg': {
-    title: 'Egypt Photography Tours - Luxury Private Photography Experiences',
-    caption: 'Professional photographer capturing magical moments at Pyramids, Cairo streets and Alexandria coast for families, couples and solo travelers'
-  },
-  'pyramids-private-tour.jpg': {
-    title: 'Private luxury pyramids photography tour Giza Egypt golden hour',
-    caption: 'Romantic couples photography tour at Pyramids of Giza during golden hour - luxury private Egypt experience for families and content creators'
-  },
-  'cairo-giza-2day.jpg': {
-    title: 'Cairo Giza 2 day luxury photography tour professional guide',
-    caption: 'Family photography tour in Cairo and Giza: Professional photographer capturing memories at Egyptian landmarks with golden hour sessions'
-  },
-  'alexandria-tour.jpg': {
-    title: 'Alexandria luxury photography day trip Mediterranean coast Egypt',
-    caption: 'Luxury Alexandria coastal photography tour: Professional photographer guide at Mediterranean landmarks, Catacombs and Citadel with golden hour lighting'
-  },
-  'egypt-discovery-7day.jpg': {
-    title: '7 day luxury Egypt photography adventure Cairo Luxor professional guide',
-    caption: 'Multi-day luxury Egypt photography journey: Professional photographer capturing ancient temples and cultural moments in Cairo, Giza and Luxor with daily photoshoots'
-  },
-  'hossam-photographer.jpg': {
-    title: 'Hossam - Professional Photographer and Egyptologist Guide',
-    caption: 'Award-winning Egyptian professional photographer specializing in luxury private photography tours and golden hour Pyramids photoshoots since 2015'
-  }
-};
-
-function shouldExclude(filename) {
-  const lowerFilename = filename.toLowerCase();
-  return EXCLUDED_PATTERNS.some(pattern => lowerFilename.includes(pattern));
+  htmlFiles.forEach(file => {
+    const html = fs.readFileSync(file, 'utf8');
+    const matches = html.match(/<img[^>]+src=["']([^"']+)["']/gi) || [];
+    
+    matches.forEach(match => {
+      const srcMatch = match.match(/src=["']([^"']+)["']/i);
+      if (!srcMatch) return;
+      
+      const src = srcMatch[1].split('?')[0];
+      const filename = path.basename(src);
+      
+      if (!/\.(jpg|jpeg|png|webp|gif)$/i.test(filename)) return;
+      
+      // Convert HTML file path to clean URL
+      let url = '/' + file;
+      if (url === '/index.html') url = '/';
+      else if (url.endsWith('.html')) url = url.replace('.html', '');
+      
+      if (!imageMap[filename]) imageMap[filename] = [];
+      if (!imageMap[filename].includes(url)) imageMap[filename].push(url);
+    });
+  });
+  return imageMap;
 }
 
-function getImageMetadata(filename) {
-  return IMAGE_METADATA[filename] || {
-    title: filename.replace(/\.[^/.]+$/, '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) + ' - Egypt Photography Tour',
-    caption: 'Professional photography experience at iconic Egyptian landmark'
+// 2️⃣ Get all actual image files in /images/
+function getAllImages() {
+  return glob.sync('images/**/*.{jpg,jpeg,png,webp,gif}', { ignore: ['node_modules/**'] })
+    .map(p => ({ path: p, filename: path.basename(p) }))
+    .filter(img => !EXCLUDED.some(ex => img.filename.toLowerCase().includes(ex)));
+}
+
+// 3️⃣ Generate SEO-friendly metadata
+function getMeta(filename) {
+  const name = filename.replace(/\.[^/.]+$/, '').replace(/-/g, ' ');
+  return {
+    title: name.charAt(0).toUpperCase() + name.slice(1) + ' | Egypt Photography Tours',
+    caption: 'Professional photography experience showcasing luxury private tours in Egypt'
   };
 }
 
-function escapeXml(unsafe) {
-  return unsafe.replace(/[<>&'"]/g, c => {
-    switch (c) {
-      case '<': return '&lt;';
-      case '>': return '&gt;';
-      case '&': return '&amp;';
-      case '\'': return '&apos;';
-      case '"': return '&quot;';
-    }
-  });
+function escapeXml(str) {
+  return str.replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c] || c));
 }
 
-function generateSitemap() {
-  // Get all image files
-  const imageFiles = glob.sync('**/*.{jpg,jpeg,png,webp,gif}', {
-    cwd: IMAGES_DIR,
-    ignore: ['**/node_modules/**', '**/.git/**']
-  });
-
-  // Filter out excluded files
-  const validImages = imageFiles.filter(file => !shouldExclude(file));
-
-  // Group images by page URL
+// 4️⃣ Build XML Sitemap
+function generate() {
+  const htmlMap = scanHTMLForImages();
+  const images = getAllImages();
   const pageImages = {};
-  validImages.forEach(file => {
-    const page = IMAGE_TO_PAGE_MAP[file] || '/';
-    if (!pageImages[page]) {
-      pageImages[page] = [];
-    }
-    pageImages[page].push(file);
+
+  images.forEach(({ path: imgPath, filename }) => {
+    // Auto-map to HTML pages, fallback to homepage if not found in HTML
+    const pages = htmlMap[filename] || ['/'];
+    pages.forEach(page => {
+      if (!pageImages[page]) pageImages[page] = [];
+      pageImages[page].push({ path: imgPath, filename });
+    });
   });
 
-  // Generate XML
-  let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n`;
-  xml += `        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
 
-  Object.entries(pageImages).forEach(([pageUrl, images]) => {
-    xml += `  <url>\n`;
-    xml += `    <loc>${DOMAIN}${pageUrl}</loc>\n`;
-    
-    images.forEach(img => {
-      const metadata = getImageMetadata(img);
+  Object.entries(pageImages).forEach(([page, imgs]) => {
+    xml += `  <url>\n    <loc>${DOMAIN}${page}</loc>\n`;
+    imgs.forEach(({ path, filename }) => {
+      const meta = getMeta(filename);
       xml += `    <image:image>\n`;
-      xml += `      <image:loc>${DOMAIN}/images/${img}</image:loc>\n`;
-      xml += `      <image:title>${escapeXml(metadata.title)}</image:title>\n`;
-      xml += `      <image:caption>${escapeXml(metadata.caption)}</image:caption>\n`;
-      
-      // Add license for commercial images
-      if (img.includes('tour') || img.includes('hero')) {
-        xml += `      <image:license>${DOMAIN}/image-license</image:license>\n`;
-      }
-      
+      xml += `      <image:loc>${DOMAIN}/${path}</image:loc>\n`;
+      xml += `      <image:title>${escapeXml(meta.title)}</image:title>\n`;
+      xml += `      <image:caption>${escapeXml(meta.caption)}</image:caption>\n`;
       xml += `    </image:image>\n`;
     });
-
     xml += `  </url>\n`;
   });
 
   xml += `</urlset>`;
-
-  // Write file
-  fs.writeFileSync(OUTPUT_FILE, xml, 'utf8');
-  
-  console.log(`✅ Generated ${OUTPUT_FILE}`);
-  console.log(`📊 Total images indexed: ${validImages.length}`);
-  console.log(`📄 Total URLs with images: ${Object.keys(pageImages).length}`);
-  
-  // Log summary
-  Object.entries(pageImages).forEach(([page, imgs]) => {
-    console.log(`   ${page}: ${imgs.length} image(s)`);
-  });
+  fs.writeFileSync(OUTPUT_FILE, xml);
+  console.log(`✅ Sitemap updated: ${Object.values(pageImages).flat().length} images across ${Object.keys(pageImages).length} pages`);
 }
 
-// Run the generator
-try {
-  generateSitemap();
-} catch (error) {
-  console.error('❌ Error generating sitemap:', error.message);
-  process.exit(1);
-}
+generate();
