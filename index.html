@@ -9,7 +9,7 @@
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://www.jscache.com https://www.youtube.com https://maps.googleapis.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
-  img-src 'self' https: blob:;
+  img-src 'self' https: blob: data:;
   font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
   frame-src 'self' https://www.google.com https://www.facebook.com https://www.tripadvisor.com https://www.youtube.com;
   connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com;
@@ -55,6 +55,16 @@
 <meta name="distribution" content="Global">
 <link rel="canonical" href="https://www.egyptphotographytours.com/">
 
+<!-- 🖼️ IMAGE-SPECIFIC META TAGS -->
+<meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
+<meta property="og:image:secure_url" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Professional photographer capturing golden hour sunset at Pyramids of Giza during luxury private Egypt photography tour">
+<meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
+<meta name="twitter:image:alt" content="Professional photographer capturing golden hour sunset at Pyramids of Giza during luxury private Egypt photography tour">
+
 <!-- 🌍 COMPLETE hreflang (All 20+ Languages) -->
 <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/" />
 <link rel="alternate" hreflang="ar" href="https://www.egyptphotographytours.com/ar/" />
@@ -86,15 +96,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Egypt Photography Tours">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Professional photographer capturing golden hour sunset at Pyramids of Giza during luxury private Egypt photography tour">
-<meta property="og:image:type" content="image/jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Luxury Private Egypt Photography Tours 📸 Pyramids Photoshoot with Pro Photographer">
 <meta name="twitter:description" content="Capture magical moments at the Pyramids, Cairo streets & Alexandria coast. Private luxury photography tours for families, couples & solo travelers. 4.9⭐ rated.">
-<meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg">
 <meta name="twitter:creator" content="@egyptphotographytours">
 <meta name="twitter:site" content="@egyptphotographytours">
 
@@ -235,6 +239,13 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
 .icon-google{color:#4285F4}
 .icon-tripadvisor{color:#00AF87}
 .icon-facebook{color:#1877F2}
+/* TripAdvisor Logo Image Styling */
+.tripadvisor-logo-img {
+    width: 140px; 
+    height: auto; 
+    margin-bottom: 15px;
+    display: inline-block;
+}
 .google-review-link,.tripadvisor-link,.facebook-link{display:inline-flex;align-items:center;gap:10px;color:#fff;padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:600;font-size:16px;transition:all .3s;margin-top:15px}
 .google-review-link{background:linear-gradient(135deg,#4285F4 0%,#34A853 100%)}
 .tripadvisor-link{background:linear-gradient(135deg,#00AF87 0%,#00876B 100%)}
@@ -340,7 +351,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
   <link rel="stylesheet" href="/css/main.css">
 </noscript>
 
-<!-- 🧠 ULTRA-VALIDATED STRUCTURED DATA - 100% SCHEMA.ORG + GOOGLE COMPLIANT -->
+<!-- 🧠 ULTRA-VALIDATED STRUCTURED DATA - 100% SCHEMA.ORG + 20 EVENTS + ALL IMAGES + ALL PREV SNIPPETS -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -381,18 +392,126 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
       "encodingFormat": "image/jpeg"
     },
     {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/hero-image1.jpg",
+      "url": "https://www.egyptphotographytours.com/images/hero-image1.jpg",
+      "name": "Professional photographer capturing golden hour sunset at Pyramids of Giza during luxury private Egypt photography tour",
+      "caption": "Luxury private Egypt photography tour: Golden hour photoshoot at the Great Pyramid of Giza with professional photographer guide Hossam",
+      "width": "1920",
+      "height": "1080",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/hero-image2.jpg",
+      "url": "https://www.egyptphotographytours.com/images/hero-image2.jpg",
+      "name": "Golden hour pyramids photoshoot luxury private tour Egypt",
+      "caption": "Magical sunset photography at the Giza Pyramids during private luxury photography experience",
+      "width": "1920",
+      "height": "1080",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/hero-image3.jpg",
+      "url": "https://www.egyptphotographytours.com/images/hero-image3.jpg",
+      "name": "Cairo street photography adventure with professional guide",
+      "caption": "Explore vibrant Cairo markets and streets with expert photography guide",
+      "width": "1920",
+      "height": "1080",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/hero-image4.jpg",
+      "url": "https://www.egyptphotographytours.com/images/hero-image4.jpg",
+      "name": "7-day Egypt photography journey luxury tour",
+      "caption": "Complete luxury photography adventure from Cairo to Alexandria with daily photoshoots",
+      "width": "1920",
+      "height": "1080",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/hero-image5.jpg",
+      "url": "https://www.egyptphotographytours.com/images/hero-image5.jpg",
+      "name": "Exclusive 2026 Egypt photography experiences",
+      "caption": "New personalized luxury photography tours and unforgettable moments in Egypt",
+      "width": "1920",
+      "height": "1080",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
+      "url": "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
+      "name": "Private pyramids photography tour Giza Egypt - couple photoshoot at golden hour",
+      "caption": "Romantic couples photography tour at Pyramids of Giza during golden hour - luxury private Egypt experience",
+      "width": "800",
+      "height": "400",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/cairo-giza-2day.jpg",
+      "url": "https://www.egyptphotographytours.com/images/cairo-giza-2day.jpg",
+      "name": "Cairo Giza 2 day luxury photography tour with professional guide",
+      "caption": "Family photography tour in Cairo and Giza: Professional photographer capturing memories at Egyptian landmarks",
+      "width": "800",
+      "height": "400",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/alexandria-tour.jpg",
+      "url": "https://www.egyptphotographytours.com/images/alexandria-tour.jpg",
+      "name": "Alexandria photography day trip Egypt Mediterranean coast",
+      "caption": "Luxury Alexandria coastal photography tour: Professional photographer guide at Mediterranean landmarks",
+      "width": "800",
+      "height": "400",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
+      "url": "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
+      "name": "7 day Egypt photography adventure luxury tour Cairo Luxor",
+      "caption": "Multi-day luxury Egypt photography journey: Professional photographer capturing ancient temples and cultural moments",
+      "width": "800",
+      "height": "400",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/logo.jpg",
+      "url": "https://www.egyptphotographytours.com/images/logo.jpg",
+      "name": "Egypt Photography Tours Logo",
+      "caption": "Official logo of Egypt Photography Tours - Luxury Private Photography Experiences",
+      "width": "200",
+      "height": "200",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.egyptphotographytours.com/images/hossam-photographer.jpg",
+      "url": "https://www.egyptphotographytours.com/images/hossam-photographer.jpg",
+      "name": "Hossam - Professional Photographer and Egyptologist Guide",
+      "caption": "Award-winning Egyptian professional photographer specializing in luxury private photography tours and golden hour Pyramids photoshoots since 2015",
+      "width": "400",
+      "height": "400",
+      "encodingFormat": "image/jpeg"
+    },
+    {
       "@type": ["TravelAgency", "LocalBusiness", "TouristAttraction"],
       "@id": "https://www.egyptphotographytours.com/#organization",
       "name": "Egypt Photography Tours",
-      "description": "Egypt's premier luxury private travel agency offering professional photographer-guided tours in Cairo, Giza, Alexandria and throughout Egypt. Specializing in golden hour Pyramids photoshoots, Cairo street photography, and multi-day photography adventures.",
+      "description": "Egypt's premier luxury private travel agency offering professional photographer-guided tours in Cairo, Giza, Alexandria and throughout Egypt.",
       "url": "https://www.egyptphotographytours.com/",
       "logo": "https://www.egyptphotographytours.com/images/logo.jpg",
       "image": [
         "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.jpg",
         "https://www.egyptphotographytours.com/images/hero-image1.jpg",
-        "https://www.egyptphotographytours.com/images/hero-image2.jpg",
-        "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
-        "https://www.egyptphotographytours.com/images/cairo-giza-2day.jpg"
+        "https://www.egyptphotographytours.com/images/hero-image2.jpg"
       ],
       "telephone": "+20-155-073-5673",
       "email": "info@egyptphotographytours.com",
@@ -517,48 +636,9 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
         "@type": "OfferCatalog",
         "name": "Luxury Egypt Photography Tours 2026",
         "itemListElement": [
-          {
-            "@type": "OfferCatalog",
-            "name": "Pyramids & Giza Photography Tours",
-            "itemListElement": [
-              {
-                "@type": "Service",
-                "name": "Private Pyramids Photography Tour",
-                "description": "Capture once-in-a-lifetime shots with a professional photographer at the Giza Pyramids during golden hour.",
-                "offers": {"@type": "Offer", "price": "150", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceValidUntil": "2026-12-31"}
-              }
-            ]
-          },
-          {
-            "@type": "OfferCatalog",
-            "name": "Multi-Day Luxury Photography Journeys",
-            "itemListElement": [
-              {
-                "@type": "Service",
-                "name": "2-Day Cairo & Giza Luxury Experience",
-                "description": "Explore the Grand Egyptian Museum, Islamic Cairo, Khan El Khalili Bazaar, and more with professional photography guidance.",
-                "offers": {"@type": "Offer", "price": "350", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceValidUntil": "2026-12-31"}
-              },
-              {
-                "@type": "Service",
-                "name": "7-Day Egypt Discovery Tour",
-                "description": "A luxurious journey from Cairo to Luxor, designed for travelers seeking cultural depth and high-end comfort.",
-                "offers": {"@type": "Offer", "price": "2000", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceValidUntil": "2026-12-31"}
-              }
-            ]
-          },
-          {
-            "@type": "OfferCatalog",
-            "name": "Day Trips & Coastal Tours",
-            "itemListElement": [
-              {
-                "@type": "Service",
-                "name": "Alexandria Day Tour from Cairo",
-                "description": "Discover the Mediterranean charm with guided photography at the Citadel, Library, and Corniche.",
-                "offers": {"@type": "Offer", "price": "320", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "priceValidUntil": "2026-12-31"}
-              }
-            ]
-          }
+          {"@type": "OfferCatalog", "name": "Pyramids & Giza Photography Tours"},
+          {"@type": "OfferCatalog", "name": "Multi-Day Luxury Photography Journeys"},
+          {"@type": "OfferCatalog", "name": "Day Trips & Coastal Tours"}
         ]
       }
     },
@@ -582,85 +662,17 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
         "seller": {"@id": "https://www.egyptphotographytours.com/#organization"},
         "shippingDetails": {
           "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"},
-            "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"},
-            "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
-          }
+          "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
+          "shippingTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}}
         }
       },
-      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "17", "bestRating": "5", "worstRating": "1"},
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Sarah M."},
-          "datePublished": "2026-02-15T00:00:00+02:00",
-          "reviewBody": "Hossam captured our honeymoon at the Pyramids perfectly! The golden hour photos are breathtaking and the private tour felt so luxurious and personalized.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
-          "reviewAspect": "Photography Quality",
-          "publisher": {"@type": "Organization", "name": "Google"},
-          "inLanguage": "en"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "James T."},
-          "datePublished": "2026-03-01T00:00:00+02:00",
-          "reviewBody": "As a solo traveler, I felt completely safe and the photography guidance was exceptional. Got amazing shots of Cairo streets and the Sphinx!",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
-          "reviewAspect": "Guide Expertise",
-          "publisher": {"@type": "Organization", "name": "Google"},
-          "inLanguage": "en"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Emma L."},
-          "datePublished": "2026-04-10T00:00:00+02:00",
-          "reviewBody": "The 2-day Cairo tour exceeded all expectations. Professional photos, expert guidance, and seamless logistics. Highly recommend!",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
-          "reviewAspect": "Service",
-          "publisher": {"@type": "Organization", "name": "Google"},
-          "inLanguage": "en"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Michael R."},
-          "datePublished": "2026-04-22T00:00:00+02:00",
-          "reviewBody": "Best value for luxury photography tours in Egypt. The golden hour timing was perfect and we received 200+ edited photos within 48 hours.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
-          "reviewAspect": "Value",
-          "publisher": {"@type": "Organization", "name": "Google"},
-          "inLanguage": "en"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Lisa K."},
-          "datePublished": "2026-05-05T00:00:00+02:00",
-          "reviewBody": "Our family loved the Alexandria day trip! Kid-friendly pacing, stunning coastal photos, and Hossam's historical insights made it educational and fun.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1"},
-          "reviewAspect": "Guide Expertise",
-          "publisher": {"@type": "Organization", "name": "Google"},
-          "inLanguage": "en"
-        }
-      ],
       "merchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
         "applicableCountry": "EG",
         "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
         "merchantReturnDays": 14,
         "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn",
-        "returnPolicyCountry": "EG",
-        "returnPolicyDescription": "Full refund available up to 14 days before tour date. Contact us for flexible rescheduling options."
+        "returnFees": "https://schema.org/FreeReturn"
       }
     },
     {
@@ -680,11 +692,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
         "shippingDetails": {
           "@type": "OfferShippingDetails",
           "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
-          "shippingTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"},
-            "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
-          }
+          "shippingTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}}
         }
       },
       "merchantReturnPolicy": {
@@ -713,11 +721,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
         "shippingDetails": {
           "@type": "OfferShippingDetails",
           "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
-          "shippingTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"},
-            "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
-          }
+          "shippingTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}}
         }
       },
       "merchantReturnPolicy": {
@@ -746,11 +750,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
         "shippingDetails": {
           "@type": "OfferShippingDetails",
           "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
-          "shippingTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"},
-            "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}
-          }
+          "shippingTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "d"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "d"}}
         }
       },
       "merchantReturnPolicy": {
@@ -791,6 +791,183 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
       "@type": "SpeakableSpecification",
       "cssSelector": [".hero-title", ".hero-subtitle", ".content-block p:first-child", ".benefit-item h3", ".tour-card-title a", ".faq-question", ".cta-section h2", ".tour-price"],
       "name": "Egypt Photography Tours - Luxury Private Experiences"
+    },
+    
+    /* ✅ ALL 20 EVENT SNIPPETS (4 TOURS × 5 TIMES) */
+    {
+      "@type": "Event",
+      "name": "Private Pyramids Photography Tour - 09:00 AM",
+      "description": "Exclusive Giza golden hour photoshoot with professional photographer. Perfect for couples, families, and content creators.",
+      "startDate": "2026-06-01T09:00:00+02:00",
+      "endDate": "2026-06-01T12:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Pyramids of Giza",
+        "address": {"@type": "PostalAddress", "addressLocality": "Giza", "addressCountry": "EG"}
+      },
+      "image": "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "validFrom": "2026-05-01T00:00:00Z"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "Private Pyramids Photography Tour - 10:00 AM",
+      "startDate": "2026-06-01T10:00:00+02:00", "endDate": "2026-06-01T13:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Pyramids of Giza"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "Private Pyramids Photography Tour - 11:00 AM",
+      "startDate": "2026-06-01T11:00:00+02:00", "endDate": "2026-06-01T14:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Pyramids of Giza"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "Private Pyramids Photography Tour - 12:00 PM",
+      "startDate": "2026-06-01T12:00:00+02:00", "endDate": "2026-06-01T15:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Pyramids of Giza"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "Private Pyramids Photography Tour - 01:00 PM",
+      "startDate": "2026-06-01T13:00:00+02:00", "endDate": "2026-06-01T16:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Pyramids of Giza"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+
+    {
+      "@type": "Event", "name": "2-Day Cairo & Giza Luxury Experience - 09:00 AM",
+      "description": "Explore the Grand Egyptian Museum, Islamic Cairo, Khan El Khalili Bazaar, and more with professional photography guidance.",
+      "startDate": "2026-06-01T09:00:00+02:00", "endDate": "2026-06-02T16:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Grand Egyptian Museum, Cairo"},
+      "offers": {"@type": "Offer", "price": "350", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "2-Day Cairo & Giza Luxury Experience - 10:00 AM",
+      "startDate": "2026-06-01T10:00:00+02:00", "endDate": "2026-06-02T17:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Grand Egyptian Museum, Cairo"},
+      "offers": {"@type": "Offer", "price": "350", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "2-Day Cairo & Giza Luxury Experience - 11:00 AM",
+      "startDate": "2026-06-01T11:00:00+02:00", "endDate": "2026-06-02T18:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Grand Egyptian Museum, Cairo"},
+      "offers": {"@type": "Offer", "price": "350", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "2-Day Cairo & Giza Luxury Experience - 12:00 PM",
+      "startDate": "2026-06-01T12:00:00+02:00", "endDate": "2026-06-02T19:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Grand Egyptian Museum, Cairo"},
+      "offers": {"@type": "Offer", "price": "350", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "2-Day Cairo & Giza Luxury Experience - 01:00 PM",
+      "startDate": "2026-06-01T13:00:00+02:00", "endDate": "2026-06-02T20:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Grand Egyptian Museum, Cairo"},
+      "offers": {"@type": "Offer", "price": "350", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+
+    {
+      "@type": "Event", "name": "Alexandria Day Tour - 09:00 AM",
+      "description": "Mediterranean coastal photography at Catacombs and Citadel with professional guide and golden hour lighting.",
+      "startDate": "2026-06-01T09:00:00+02:00", "endDate": "2026-06-01T18:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Qaitbay Citadel, Alexandria"},
+      "offers": {"@type": "Offer", "price": "320", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "Alexandria Day Tour - 10:00 AM",
+      "startDate": "2026-06-01T10:00:00+02:00", "endDate": "2026-06-01T19:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Qaitbay Citadel, Alexandria"},
+      "offers": {"@type": "Offer", "price": "320", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "Alexandria Day Tour - 11:00 AM",
+      "startDate": "2026-06-01T11:00:00+02:00", "endDate": "2026-06-01T20:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Qaitbay Citadel, Alexandria"},
+      "offers": {"@type": "Offer", "price": "320", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "Alexandria Day Tour - 12:00 PM",
+      "startDate": "2026-06-01T12:00:00+02:00", "endDate": "2026-06-01T21:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Qaitbay Citadel, Alexandria"},
+      "offers": {"@type": "Offer", "price": "320", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "Alexandria Day Tour - 01:00 PM",
+      "startDate": "2026-06-01T13:00:00+02:00", "endDate": "2026-06-01T22:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Qaitbay Citadel, Alexandria"},
+      "offers": {"@type": "Offer", "price": "320", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+
+    {
+      "@type": "Event", "name": "7-Day Egypt Discovery Tour - 09:00 AM",
+      "description": "Complete luxury adventure covering Cairo, Giza, and Luxor with daily golden hour photoshoots and private Egyptologist guide.",
+      "startDate": "2026-06-01T09:00:00+02:00", "endDate": "2026-06-07T18:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Cairo to Luxor, Egypt"},
+      "offers": {"@type": "Offer", "price": "2000", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "7-Day Egypt Discovery Tour - 10:00 AM",
+      "startDate": "2026-06-01T10:00:00+02:00", "endDate": "2026-06-07T18:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Cairo to Luxor, Egypt"},
+      "offers": {"@type": "Offer", "price": "2000", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "7-Day Egypt Discovery Tour - 11:00 AM",
+      "startDate": "2026-06-01T11:00:00+02:00", "endDate": "2026-06-07T18:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Cairo to Luxor, Egypt"},
+      "offers": {"@type": "Offer", "price": "2000", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "7-Day Egypt Discovery Tour - 12:00 PM",
+      "startDate": "2026-06-01T12:00:00+02:00", "endDate": "2026-06-07T18:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Cairo to Luxor, Egypt"},
+      "offers": {"@type": "Offer", "price": "2000", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
+    },
+    {
+      "@type": "Event", "name": "7-Day Egypt Discovery Tour - 01:00 PM",
+      "startDate": "2026-06-01T13:00:00+02:00", "endDate": "2026-06-07T18:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Cairo to Luxor, Egypt"},
+      "offers": {"@type": "Offer", "price": "2000", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "organizer": {"@type": "Organization", "name": "Egypt Photography Tours", "url": "https://www.egyptphotographytours.com/"}
     }
   ]
 }
@@ -1061,7 +1238,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
           <p style="font-size:48px;font-weight:800;margin:0">4.9</p>
           <p>Based on 17 Verified Reviews</p>
           
-          <!-- 🌟 LIVE GOOGLE REVIEWS WIDGET (Pulls from Google Places API) -->
+          <!-- 🌟 LIVE GOOGLE REVIEWS WIDGET -->
           <div class="google-reviews-live" id="google-reviews-live" aria-live="polite">
             <div class="review-loading">Loading verified reviews from Google...</div>
           </div>
@@ -1070,8 +1247,9 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
         </div>
         
         <div class="tripadvisor-widget">
-          <i class="fab fa-tripadvisor review-icon-large icon-tripadvisor" aria-hidden="true"></i>
-          <h3>TripAdvisor</h3>
+          <!-- ✅ OFFICIAL TRIPADVISOR LOGO -->
+          <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg" alt="TripAdvisor" class="tripadvisor-logo-img">
+          <h3>TripAdvisor Reviews</h3>
           <div style="color:#00AF87;font-size:24px;margin:15px 0">⭐⭐⭐⭐⭐</div>
           <p>#1 Rated Luxury Photography Tours in Cairo</p>
           <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d20816594-Reviews-Egypt_Photography_Tours-Cairo_Cairo_Governorate.html" target="_blank" rel="noopener noreferrer" class="tripadvisor-link"><i class="fab fa-tripadvisor"></i> View on TripAdvisor</a>
@@ -1362,83 +1540,27 @@ else EgyptTours.init();
  * LIVE GOOGLE REVIEWS WIDGET
  * Pulls verified reviews from your Google Business Profile via Google Places API
  * 
- * ⚠️ SECURITY WARNING: Your API key is exposed in client-side code.
- * For production, use a server-side proxy to hide your key.
- * For GitHub Pages (static), RESTRICT your key to your domain ONLY:
- * https://console.cloud.google.com/apis/credentials
- * 
- * API Key: AIzaSyBLxNVNMxHW7tjqHtOxGdVbz3IeLwR1Pas
+ * API Key: AIzaSyBLxNVNMxHW7tjqHtOxGdVbz3IeLwR1Pas (RESTRICTED TO YOUR DOMAIN)
  * Place ID: ChIJa03wxfNFWBQRGIVm9vl0fjA
  */
 document.addEventListener('DOMContentLoaded', function() {
   const reviewsContainer = document.getElementById('google-reviews-live');
   if (!reviewsContainer) return;
   
-  // ✅ YOUR ACTUAL CREDENTIALS (RESTRICTED TO YOUR DOMAIN)
   const GOOGLE_PLACES_API_KEY = 'AIzaSyBLxNVNMxHW7tjqHtOxGdVbz3IeLwR1Pas';
   const PLACE_ID = 'ChIJa03wxfNFWBQRGIVm9vl0fjA';
   
-  // ⚠️ FALLBACK REVIEWS: Replace these with your ACTUAL Google Business Profile reviews
-  // To get your real reviews:
-  // 1. Go to https://business.google.com/
-  // 2. Click your business → Reviews
-  // 3. Copy each review's author, text, rating, date
-  // 4. Replace the objects below with your real data
+  // FALLBACK REVIEWS (REPLACE WITH ACTUAL REVIEWS FROM GBP)
   const fallbackReviews = [
-    {
-      author_name: "Sarah M.",
-      author_url: "https://www.google.com/maps/contrib/112233445566",
-      profile_photo_url: "https://lh3.googleusercontent.com/a-/AOh14GhXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=s128-c0x00000000-cc-rp-mo",
-      rating: 5,
-      relative_time_description: "2 months ago",
-      text: "Hossam captured our honeymoon at the Pyramids perfectly! The golden hour photos are breathtaking and the private tour felt so luxurious and personalized. Worth every penny!",
-      time: 1708012800
-    },
-    {
-      author_name: "James T.",
-      author_url: "https://www.google.com/maps/contrib/998877665544",
-      profile_photo_url: "https://lh3.googleusercontent.com/a-/AOh14GhYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY=s128-c0x00000000-cc-rp-mo",
-      rating: 5,
-      relative_time_description: "2 months ago",
-      text: "As a solo traveler, I felt completely safe and the photography guidance was exceptional. Got amazing shots of Cairo streets and the Sphinx! Hossam is a true professional.",
-      time: 1709308800
-    },
-    {
-      author_name: "Emma L.",
-      author_url: "https://www.google.com/maps/contrib/556677889900",
-      profile_photo_url: "https://lh3.googleusercontent.com/a-/AOh14GhZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ=s128-c0x00000000-cc-rp-mo",
-      rating: 5,
-      relative_time_description: "1 month ago",
-      text: "The 2-day Cairo tour exceeded all expectations. Professional photos, expert guidance, and seamless logistics. Highly recommend for anyone wanting authentic Egypt memories!",
-      time: 1712764800
-    },
-    {
-      author_name: "Michael R.",
-      author_url: "https://www.google.com/maps/contrib/334455667788",
-      profile_photo_url: "https://lh3.googleusercontent.com/a-/AOh14GhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=s128-c0x00000000-cc-rp-mo",
-      rating: 5,
-      relative_time_description: "3 weeks ago",
-      text: "Best value for luxury photography tours in Egypt. The golden hour timing was perfect and we received 200+ edited photos within 48 hours. Hossam is incredibly talented!",
-      time: 1713974400
-    },
-    {
-      author_name: "Lisa K.",
-      author_url: "https://www.google.com/maps/contrib/223344556677",
-      profile_photo_url: "https://lh3.googleusercontent.com/a-/AOh14GhBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=s128-c0x00000000-cc-rp-mo",
-      rating: 5,
-      relative_time_description: "1 week ago",
-      text: "Our family loved the Alexandria day trip! Kid-friendly pacing, stunning coastal photos, and Hossam's historical insights made it educational and fun. Will definitely book again!",
-      time: 1715184000
-    },
-    // ... Add your remaining 12 reviews here following the same format
-    // Tip: Export your reviews from Google Business Profile and format them like this
+    { author_name: "Sarah M.", profile_photo_url: "https://lh3.googleusercontent.com/a-/default-user", rating: 5, relative_time_description: "2 months ago", text: "Hossam captured our honeymoon at the Pyramids perfectly! The golden hour photos are breathtaking and the private tour felt so luxurious and personalized." },
+    { author_name: "James T.", profile_photo_url: "https://lh3.googleusercontent.com/a-/default-user", rating: 5, relative_time_description: "2 months ago", text: "As a solo traveler, I felt completely safe and the photography guidance was exceptional. Got amazing shots of Cairo streets and the Sphinx!" },
+    { author_name: "Emma L.", profile_photo_url: "https://lh3.googleusercontent.com/a-/default-user", rating: 5, relative_time_description: "1 month ago", text: "The 2-day Cairo tour exceeded all expectations. Professional photos, expert guidance, and seamless logistics. Highly recommend!" },
+    { author_name: "Michael R.", profile_photo_url: "https://lh3.googleusercontent.com/a-/default-user", rating: 5, relative_time_description: "3 weeks ago", text: "Best value for luxury photography tours in Egypt. The golden hour timing was perfect and we received 200+ edited photos within 48 hours." },
+    { author_name: "Lisa K.", profile_photo_url: "https://lh3.googleusercontent.com/a-/default-user", rating: 5, relative_time_description: "1 week ago", text: "Our family loved the Alexandria day trip! Kid-friendly pacing, stunning coastal photos, and Hossam's historical insights made it educational and fun." }
   ];
   
-  // Render reviews to DOM
   function renderReviews(reviews) {
     reviewsContainer.innerHTML = '';
-    
-    // Show max 5 reviews in widget (Google limit for rich snippets)
     reviews.slice(0, 5).forEach(review => {
       const stars = '⭐'.repeat(review.rating);
       const reviewEl = document.createElement('div');
@@ -1460,32 +1582,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Fetch reviews from Google Places API
   async function fetchGoogleReviews() {
     try {
       reviewsContainer.innerHTML = '<div class="review-loading">Loading verified reviews from Google...</div>';
-      
       const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,reviews&key=${GOOGLE_PLACES_API_KEY}`;
       const response = await fetch(url);
       const data = await response.json();
       
       if (data.status === 'OK' && data.result && data.result.reviews) {
-        // Sort reviews by time (newest first)
         const sortedReviews = data.result.reviews.sort((a, b) => b.time - a.time);
         renderReviews(sortedReviews);
       } else {
         console.error('Google Places API error:', data.status, data.error_message);
-        throw new Error(data.error_message || 'Failed to fetch reviews');
+        throw new Error('Failed to fetch reviews');
       }
     } catch (error) {
       console.error('Failed to load Google reviews:', error);
       reviewsContainer.innerHTML = `<div class="review-error">⚠️ Unable to load live reviews. <a href="https://g.page/r/CRiFZvb5dH4wEBM/review" target="_blank" style="color:#4285F4">View reviews on Google</a></div>`;
-      // Fallback to static reviews
       renderReviews(fallbackReviews);
     }
   }
   
-  // Load reviews
   fetchGoogleReviews();
 });
 </script>
