@@ -1,0 +1,42 @@
+name: Update Schema Dates
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC (2:00 AM Cairo time)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-schema:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Full history for accurate diffs
+
+      - name: Update priceValidUntil to end of current year
+        run: |
+          # Auto-calculate end of current year for priceValidUntil
+          CURRENT_YEAR=$(date +%Y)
+          sed -i "s|\"priceValidUntil\": \"[^\"]*\"|\"priceValidUntil\": \"${CURRENT_YEAR}-12-31\"|g" index.html
+          echo "✅ Updated priceValidUntil to ${CURRENT_YEAR}-12-31"
+
+      - name: Commit and push if changes exist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          
+          # Only commit if there are actual changes
+          if ! git diff --staged --quiet; then
+            git commit -m "🤖 Auto-update schema dates to $(date +%Y)-12-31 [skip ci]"
+            git push
+            echo "✅ Committed and pushed updated index.html"
+          else
+            echo "ℹ️ No changes detected - schema dates already up to date"
+          fi
