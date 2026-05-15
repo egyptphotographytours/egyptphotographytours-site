@@ -168,9 +168,24 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
 .language-dropdown::-webkit-scrollbar{width:6px}
 .language-dropdown::-webkit-scrollbar-track{background:rgba(255,255,255,.1);border-radius:3px}
 .language-dropdown::-webkit-scrollbar-thumb{background:rgba(255,215,0,.3);border-radius:3px}
+/* ✅ FIXED: Mobile Language Switcher - Full viewport visibility, no cutoff */
 @media(max-width:767px){
-  .language-dropdown{right:auto;left:50%;transform:translate(-50%, -10px)}
-  .language-switcher.active .language-dropdown{transform:translate(-50%, 0)}
+  .language-dropdown{
+    position: fixed;
+    top: 115px;
+    left: 16px;
+    right: 16px;
+    width: auto;
+    max-height: calc(100vh - 130px);
+    transform: none;
+    margin-top: 0;
+    z-index: 10001;
+  }
+  .language-switcher.active .language-dropdown{
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
 }
 .hero-slider{position:relative;height:60vh;overflow:hidden;touch-action:pan-y}
 @media(min-width:768px){.hero-slider{height:75vh}}
@@ -304,7 +319,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
 .review-loading{text-align:center;padding:20px;color:#666}
 .review-error{background:#fff3cd;color:#856404;padding:12px;border-radius:6px;margin:10px 0;font-size:13px}
 
-/* ✅ NEW: Logo Modal Styles */
+/* ✅ Logo Modal Styles */
 .logo-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:10000;opacity:0;visibility:hidden;transition:all .3s ease}
 .logo-modal.active{opacity:1;visibility:visible}
 .logo-modal-content{position:relative;max-width:90%;max-height:90%;background:#fff;border-radius:12px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
@@ -817,7 +832,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
   </div>
 </div>
 
-<!-- ✅ NEW: Logo Modal -->
+<!-- Logo Modal -->
 <div id="logo-modal" class="logo-modal" role="dialog" aria-modal="true" aria-label="Egypt Photography Tours Logo">
   <div class="logo-modal-content">
     <button class="logo-modal-close" aria-label="Close logo modal"><i class="fas fa-times"></i></button>
@@ -832,7 +847,6 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
 <header class="header">
   <div class="container content">
     <div class="logo-section">
-      <!-- ✅ FIX: Logo now clickable to open modal -->
       <button type="button" class="logo-trigger" aria-label="View Egypt Photography Tours logo" style="background:none;border:none;padding:0;cursor:pointer">
         <img src="images/egypt-photography-tours-logo.jpg" alt="Egypt Photography Tours Logo – Luxury Private Photography Experiences" class="logo-img" loading="eager" width="40" height="40" decoding="async">
       </button>
@@ -852,7 +866,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
       <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars" aria-hidden="true"></i></button>
       <a href="/contact" class="book-now-button">Book 2026 Luxury Tour</a>
       
-      <!-- 🌐 Language Switcher (moved closer to nav) -->
+      <!-- 🌐 Language Switcher -->
       <div class="language-switcher">
         <button class="current-language" aria-label="Select language" aria-expanded="false" aria-haspopup="true" aria-controls="language-dropdown">
           <span class="current-flag" aria-hidden="true">🇺🇸</span>
@@ -1340,7 +1354,7 @@ const EgyptTours = (function() {
         });
       });
       
-      // ✅ NEW: Logo Modal Functionality
+      // Logo Modal Functionality
       const logoTrigger = $('.logo-trigger');
       const logoModal = $('#logo-modal');
       const logoModalClose = $('.logo-modal-close');
