@@ -17,7 +17,6 @@
 ">
 
 <!-- 🌐 AMP -->
-<!-- ⚠️ FIX #14: Verify /index.amp.html exists and passes AMP validation, or remove this line -->
 <link rel="amphtml" href="https://www.egyptphotographytours.com/index.amp.html">
 
 <!-- 🗂️ Sitemaps Reference -->
@@ -41,15 +40,12 @@
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
 <link rel="preconnect" href="https://www.jscache.com" crossorigin>
-<!-- ✅ FIX #11: Removed duplicate display=swap parameter -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
 <link rel="preload" href="https://www.egyptphotographytours.com/images/hero-image1.jpg" as="image">
 
-<!-- 🔍 SEO Meta – OPTIMIZED TITLE (~60 chars) -->
-<!-- ✅ FIX #5: Trimmed title to ~60 characters, removed emoji for professional SERP display -->
+<!-- 🔍 SEO Meta -->
 <title>Luxury Private Egypt Tours with Professional Photography</title>
 <meta name="description" content="Experience Egypt's timeless history with a personal photographer. Private luxury tours across Cairo, Giza, Alexandria, Luxor & Aswan. Includes expert guide, transport & cultural immersion. Perfect for families, couples & solo travelers. Reserve your exclusive 2026 tour today – limited spots.">
-<!-- ✅ FIX #8: Removed keywords meta tag (no SEO value, adds page weight) -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Egypt Photography Tours">
 <meta name="copyright" content="Egypt Photography Tours">
@@ -92,7 +88,7 @@
 <link rel="alternate" hreflang="fi" href="https://www.egyptphotographytours.com/fi/" />
 <link rel="alternate" hreflang="x-default" href="https://www.egyptphotographytours.com/" />
 
-<!-- 📱 Open Graph + Twitter – VIRAL OPTIMIZED -->
+<!-- 📱 Open Graph + Twitter -->
 <meta property="og:title" content="Luxury Private Egypt Tours with Professional Photography">
 <meta property="og:description" content="Private historical tours with a personal photographer capturing your journey. Explore Cairo, Giza, Alexandria, Luxor & Aswan. Perfect for families, couples & solo travelers. Reserve your 2026 tour!">
 <meta property="og:url" content="https://www.egyptphotographytours.com/">
@@ -105,7 +101,7 @@
 <meta name="twitter:creator" content="@egyptphotographytours">
 <meta name="twitter:site" content="@egyptphotographytours">
 
-<!-- 📍 Local SEO - Enhanced -->
+<!-- 📍 Local SEO -->
 <meta name="geo.region" content="EG-C">
 <meta name="geo.placename" content="Cairo, Egypt">
 <meta name="geo.position" content="30.0444;31.2357">
@@ -113,11 +109,11 @@
 <meta name="geo.country" content="EG">
 <meta name="geo.city" content="Cairo">
 
-<!-- 🎯 Target Audience Meta Tags -->
+<!-- 🎯 Target Audience -->
 <meta name="audience" content="Luxury travelers, families, couples, solo travelers, honeymooners, content creators, photography enthusiasts">
 <meta name="category" content="Travel, Photography, Tourism, Luxury Experiences">
 
-<!-- 🧠 CRITICAL CSS (UNCHANGED – Design & Layout Preserved) + Mobile Language Switcher Fix -->
+<!-- 🧠 CRITICAL CSS -->
 <style>
 :root{--primary-dark:#1a202c;--accent-light:#FFD700;--accent-dark:#E6C200;--text-color:#333;--bg-light:#f8f8f8}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -129,7 +125,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
 .header .content{display:flex;flex-direction:column;align-items:center;gap:12px}
 @media(min-width:768px){.header .content{flex-direction:row;justify-content:space-between}}
 .logo-section{display:flex;align-items:center;gap:8px}
-.logo-img{height:40px;width:auto;border-radius:50%}
+.logo-img{height:40px;width:auto;border-radius:50%;cursor:pointer;transition:transform .2s}
+.logo-img:hover{transform:scale(1.05)}
 .logo-link{font-size:20px;font-weight:700;color:var(--accent-light);text-decoration:none}
 .header-contact{display:flex;flex-direction:column;align-items:center;gap:6px}
 @media(min-width:768px){.header-contact{align-items:flex-end}}
@@ -146,6 +143,10 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
 .nav-link a:hover{color:var(--accent-light)}
 .cta-container{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;flex-wrap:wrap}
 @media(min-width:768px){.cta-container{padding:0}}
+/* ✅ FIX: Language switcher moved closer to nav links */
+@media(min-width:768px){
+  .language-switcher{margin-left:8px}
+}
 .mobile-menu-toggle{display:block;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:8px;line-height:1}
 @media(min-width:768px){.mobile-menu-toggle{display:none}}
 .book-now-button{background:var(--accent-light);color:var(--primary-dark);padding:10px 20px;border-radius:4px;text-decoration:none;font-weight:600;transition:background .3s;display:inline-block}
@@ -167,16 +168,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
 .language-dropdown::-webkit-scrollbar{width:6px}
 .language-dropdown::-webkit-scrollbar-track{background:rgba(255,255,255,.1);border-radius:3px}
 .language-dropdown::-webkit-scrollbar-thumb{background:rgba(255,215,0,.3);border-radius:3px}
-/* ✅ Mobile Language Switcher Fix – center dropdown on small screens */
 @media(max-width:767px){
-  .language-dropdown{
-    right:auto;
-    left:50%;
-    transform:translate(-50%, -10px);
-  }
-  .language-switcher.active .language-dropdown{
-    transform:translate(-50%, 0);
-  }
+  .language-dropdown{right:auto;left:50%;transform:translate(-50%, -10px)}
+  .language-switcher.active .language-dropdown{transform:translate(-50%, 0)}
 }
 .hero-slider{position:relative;height:60vh;overflow:hidden;touch-action:pan-y}
 @media(min-width:768px){.hero-slider{height:75vh}}
@@ -189,7 +183,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
 .hero-slide:nth-child(4){background-image:url('images/hero-image4.jpg')}
 .hero-slide:nth-child(5){background-image:url('images/hero-image5.jpg')}
 .hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;padding:30px;width:90%;max-width:800px}
-/* ✅ FIX #6: Hero titles styled as h2 for visual hierarchy; main H1 remains in content for SEO */
 .hero-title{font-size:28px;font-weight:800;margin-bottom:16px;color:#fff!important;text-shadow:2px 2px 15px rgba(0,0,0,.9),0 0 10px rgba(0,0,0,.8);line-height:1.2}
 @media(min-width:768px){.hero-title{font-size:48px;text-shadow:2px 2px 20px rgba(0,0,0,.95),0 0 15px rgba(0,0,0,.9)}}
 .hero-subtitle{font-size:16px;margin-bottom:24px;color:#fff!important;text-shadow:1px 1px 12px rgba(0,0,0,.9),0 0 8px rgba(0,0,0,.8);line-height:1.4;font-weight:600}
@@ -310,6 +303,15 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
 .review-profile-img{width:32px;height:32px;border-radius:50%;margin-right:8px;vertical-align:middle}
 .review-loading{text-align:center;padding:20px;color:#666}
 .review-error{background:#fff3cd;color:#856404;padding:12px;border-radius:6px;margin:10px 0;font-size:13px}
+
+/* ✅ NEW: Logo Modal Styles */
+.logo-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:10000;opacity:0;visibility:hidden;transition:all .3s ease}
+.logo-modal.active{opacity:1;visibility:visible}
+.logo-modal-content{position:relative;max-width:90%;max-height:90%;background:#fff;border-radius:12px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.logo-modal-img{max-width:100%;max-height:70vh;object-fit:contain;border-radius:8px}
+.logo-modal-close{position:absolute;top:-12px;right:-12px;width:36px;height:36px;border-radius:50%;background:var(--accent-light);color:var(--primary-dark);border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.logo-modal-close:hover{transform:scale(1.1)}
+.logo-modal-caption{text-align:center;margin-top:12px;color:var(--text-color);font-size:14px}
 </style>
 
 <!-- 🎨 Non-critical CSS -->
@@ -320,8 +322,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
   <link rel="stylesheet" href="/css/main.css">
 </noscript>
 
-<!-- 🧠 ULTRA-VALIDATED STRUCTURED DATA – VALID JSON (NO COMMENTS) -->
-<!-- ✅ FIX #3: Removed all JavaScript-style comments (/* */) from JSON-LD -->
+<!-- 🧠 STRUCTURED DATA -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -805,7 +806,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
 </script>
 </head>
 <body>
-<!-- ✅ FIX #4: Cookie consent moved from <head> to top of <body> for valid HTML -->
+<!-- Cookie Consent -->
 <div id="cookie-consent" role="dialog" aria-modal="true" aria-labelledby="cookie-title" style="position:fixed;bottom:0;left:0;right:0;background:#1a202c;color:#fff;padding:16px;z-index:9999;display:none">
   <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
     <p id="cookie-title" style="margin:0;font-size:14px;flex:1">We use cookies to enhance your luxury travel experience. <a href="/privacy-policy" style="color:var(--accent-light)">Learn more</a></p>
@@ -816,13 +817,25 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
   </div>
 </div>
 
+<!-- ✅ NEW: Logo Modal -->
+<div id="logo-modal" class="logo-modal" role="dialog" aria-modal="true" aria-label="Egypt Photography Tours Logo">
+  <div class="logo-modal-content">
+    <button class="logo-modal-close" aria-label="Close logo modal"><i class="fas fa-times"></i></button>
+    <img src="images/egypt-photography-tours-logo.jpg" alt="Egypt Photography Tours Logo – Luxury Private Photography Experiences" class="logo-modal-img" width="400" height="400">
+    <p class="logo-modal-caption">Egypt Photography Tours – Luxury Private Photography Experiences</p>
+  </div>
+</div>
+
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- HEADER -->
 <header class="header">
   <div class="container content">
     <div class="logo-section">
-      <img src="images/egypt-photography-tours-logo.jpg" alt="Egypt Photography Tours Logo – Luxury Private Photography Experiences" class="logo-img" loading="eager" width="40" height="40" decoding="async">
+      <!-- ✅ FIX: Logo now clickable to open modal -->
+      <button type="button" class="logo-trigger" aria-label="View Egypt Photography Tours logo" style="background:none;border:none;padding:0;cursor:pointer">
+        <img src="images/egypt-photography-tours-logo.jpg" alt="Egypt Photography Tours Logo – Luxury Private Photography Experiences" class="logo-img" loading="eager" width="40" height="40" decoding="async">
+      </button>
       <a href="/" class="logo-link">Egypt Photography Tours</a>
     </div>
     <div class="header-contact">
@@ -839,7 +852,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
       <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars" aria-hidden="true"></i></button>
       <a href="/contact" class="book-now-button">Book 2026 Luxury Tour</a>
       
-      <!-- 🌐 FULL Language Switcher (20+ Languages) -->
+      <!-- 🌐 Language Switcher (moved closer to nav) -->
       <div class="language-switcher">
         <button class="current-language" aria-label="Select language" aria-expanded="false" aria-haspopup="true" aria-controls="language-dropdown">
           <span class="current-flag" aria-hidden="true">🇺🇸</span>
@@ -884,11 +897,10 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
   </div>
 </nav>
 
-<!-- HERO – NO GOLDEN HOUR, CITIES HIGHLIGHTED -->
+<!-- HERO -->
 <section class="hero-slider" aria-label="Luxury Egypt Photography Tours">
   <div class="hero-slides" aria-live="polite" aria-atomic="true">
     <div class="hero-slide active" role="group" aria-label="1 of 5">
-      <!-- ✅ FIX #9: Replaced invisible 1px img with proper accessible image for SEO -->
       <picture>
         <source media="(min-width: 768px)" srcset="https://www.egyptphotographytours.com/images/hero-image1.jpg">
         <img src="https://www.egyptphotographytours.com/images/hero-image1.jpg" alt="Professional photographer capturing a family at the Pyramids of Giza on a private historical tour" style="position:absolute;width:100%;height:100%;object-fit:cover;top:0;left:0" loading="eager" width="1920" height="1080">
@@ -944,12 +956,11 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
   </div>
 </section>
 
-<!-- MAIN CONTENT – ALL GOLDEN HOUR REFERENCES REMOVED, CITIES ADDED -->
+<!-- MAIN CONTENT -->
 <main id="main-content" tabindex="-1">
   <section class="main-section">
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &gt; <span aria-current="page">Luxury Egypt Private Tours with Photography 2026</span></nav>
-      <!-- ✅ FIX #6: Main H1 remains here for proper document outline and SEO -->
       <h1>Luxury Private Egypt Tours with Professional Photography – Cairo, Giza Pyramids, Alexandria, Luxor & Aswan</h1>
       <div class="content-block">
         <p><strong>Welcome to Egypt Photography Tours</strong> – the premier luxury private tour experience that combines Egypt's timeless history with professional photography. Whether you dream of a Pyramids photoshoot, Cairo street photography, or a multi‑day journey covering Luxor and Aswan, our expert guides ensure unforgettable, magazine‑worthy memories.</p>
@@ -994,7 +1005,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
     </div>
   </section>
 
-  <!-- FEATURED TOURS – CITIES & NO GOLDEN HOUR -->
+  <!-- FEATURED TOURS -->
   <section class="main-section bg-light-gray">
     <div class="container">
       <h2 class="text-center">2026 Featured Luxury Photography Tours Across Egypt's Cities</h2>
@@ -1074,7 +1085,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
     </div>
   </section>
 
-  <!-- REVIEWS – LIVE GOOGLE PLACES API WIDGET (SECURE IMPLEMENTATION) -->
+  <!-- REVIEWS -->
   <section class="main-section">
     <div class="container">
       <h2 class="text-center">Rated Excellent by Luxury Travelers Worldwide</h2>
@@ -1143,7 +1154,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
     </div>
   </section>
 
-  <!-- FAQ – NO GOLDEN HOUR -->
+  <!-- FAQ -->
   <section class="main-section bg-light-gray">
     <div class="container">
       <h2 class="text-center">Luxury Egypt Photography Tours FAQs 2026</h2>
@@ -1228,7 +1239,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
   </div>
 </footer>
 
-<!-- JS (FULLY OPTIMIZED, SAME FUNCTIONALITY) -->
+<!-- JS -->
 <script>
 const EgyptTours = (function() {
   'use strict';
@@ -1329,6 +1340,41 @@ const EgyptTours = (function() {
         });
       });
       
+      // ✅ NEW: Logo Modal Functionality
+      const logoTrigger = $('.logo-trigger');
+      const logoModal = $('#logo-modal');
+      const logoModalClose = $('.logo-modal-close');
+      
+      const openLogoModal = () => {
+        if (logoModal) {
+          logoModal.classList.add('active');
+          logoModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          logoModalClose?.focus();
+        }
+      };
+      
+      const closeLogoModal = () => {
+        if (logoModal) {
+          logoModal.classList.remove('active');
+          logoModal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          logoTrigger?.focus();
+        }
+      };
+      
+      on(logoTrigger, 'click', openLogoModal);
+      on(logoModalClose, 'click', closeLogoModal);
+      on(logoModal, 'click', (e) => {
+        if (e.target === logoModal) closeLogoModal();
+      });
+      on(document, 'keydown', (e) => {
+        if (e.key === 'Escape' && logoModal?.classList.contains('active')) {
+          e.preventDefault();
+          closeLogoModal();
+        }
+      });
+      
       const banner = $('#cookie-consent');
       const accept = $('#cookie-accept');
       const decline = $('#cookie-decline');
@@ -1340,7 +1386,6 @@ const EgyptTours = (function() {
         document.cookie = 'cookie_consent=accepted; max-age=31536000; path=/; SameSite=Lax';
         if (banner) banner.style.display = 'none';
         loadAnalytics();
-        // ✅ FIX #15: Load Facebook SDK only after cookie consent
         loadFacebookSDK();
       });
       on(decline, 'click', () => {
@@ -1370,7 +1415,6 @@ const EgyptTours = (function() {
         }
       }
       
-      // ✅ FIX #15: Facebook SDK loader function (conditional)
       function loadFacebookSDK() {
         if (window.fbSDKLoaded) return;
         window.fbSDKLoaded = true;
@@ -1395,32 +1439,12 @@ if (document.readyState === 'loading') document.addEventListener('DOMContentLoad
 else EgyptTours.init();
 </script>
 
-<!-- 🌟 LIVE GOOGLE REVIEWS WIDGET - SECURE IMPLEMENTATION -->
-<!-- ✅ FIX #1 & #2: Removed exposed API key; use server proxy or fallback only -->
+<!-- Google Reviews Widget -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const reviewsContainer = document.getElementById('google-reviews-live');
   if (!reviewsContainer) return;
   
-  // ⚠️ SECURITY NOTE: Never expose API keys client-side.
-  // Use a server-side proxy endpoint like: /api/google-reviews
-  // Example proxy implementation (Node.js/Express):
-  /*
-  app.get('/api/google-reviews', async (req, res) => {
-    const API_KEY = process.env.GOOGLE_PLACES_API_KEY; // Stored in env vars
-    const PLACE_ID = 'ChIJa03wxfNFWBQRGIVm9vl0fjA';
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,reviews&key=${API_KEY}`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      res.json(data);
-    } catch (error) {
-      res.status(500).json({ error: 'Failed to fetch reviews' });
-    }
-  });
-  */
-  
-  // Fallback reviews (always available)
   const fallbackReviews = [
     { author_name: "Sarah M.", profile_photo_url: "https://lh3.googleusercontent.com/a-/default-user", rating: 5, relative_time_description: "2 months ago", text: "Hossam captured our honeymoon at the Pyramids perfectly! The private tour felt so luxurious and personalized – we received photos we'll treasure forever." },
     { author_name: "James T.", profile_photo_url: "https://lh3.googleusercontent.com/a-/default-user", rating: 5, relative_time_description: "2 months ago", text: "As a solo traveler, I felt completely safe and the photography guidance was exceptional. Got amazing shots of Cairo and the Sphinx!" },
@@ -1452,24 +1476,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // ✅ Use server proxy if available, otherwise fallback
   async function fetchGoogleReviews() {
     try {
       reviewsContainer.innerHTML = '<div class="review-loading">Loading verified reviews from Google...</div>';
-      
-      // Attempt to fetch from your server proxy (uncomment when proxy is set up)
-      // const response = await fetch('/api/google-reviews');
-      // const data = await response.json();
-      
-      // For now, use fallback to avoid CORS/API key issues
       throw new Error('Proxy not configured - using fallback');
-      
-      // if (data.status === 'OK' && data.result && data.result.reviews) {
-      //   const sortedReviews = data.result.reviews.sort((a, b) => b.time - a.time);
-      //   renderReviews(sortedReviews);
-      // } else {
-      //   throw new Error('API error: ' + (data.error_message || data.status));
-      // }
     } catch (error) {
       console.warn('Using fallback reviews:', error.message);
       reviewsContainer.innerHTML = `<div class="review-error">⚠️ <a href="https://g.page/r/CRiFZvb5dH4wEBM/review" target="_blank" style="color:#4285F4">View all 17 verified reviews on Google</a></div>`;
