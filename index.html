@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
 
 <!-- 🔐 HARDENED CSP -->
 <meta http-equiv="Content-Security-Policy" content="
@@ -42,7 +42,7 @@
 <link rel="preconnect" href="https://www.jscache.com" crossorigin>
 <!-- FIX #11: Removed duplicate &display=swap parameter -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
-<link rel="preload" href="https://www.egyptphotographytours.com/images/hero-image1.jpg" as="image">
+<link rel="preload" href="https://www.egyptphotographytours.com/images/hero-image1.jpg" as="image" fetchpriority="high">
 
 <!-- SEO Meta -->
 <!-- FIX #5: Title trimmed to ~60 chars; emoji removed for clean SERP display -->
@@ -300,6 +300,41 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
 .review-profile-img{width:32px;height:32px;border-radius:50%;margin-right:8px;vertical-align:middle}
 .review-loading{text-align:center;padding:20px;color:#666}
 .review-error{background:#fff3cd;color:#856404;padding:12px;border-radius:6px;margin:10px 0;font-size:13px}
+
+/* 📱 Mobile Customization */
+@media (max-width: 768px) {
+  :root { --text-base: clamp(14px, 4vw, 16px); }
+  h1 { font-size: clamp(24px, 8vw, 32px); }
+  h2 { font-size: clamp(20px, 7vw, 28px); }
+  h3 { font-size: clamp(18px, 6vw, 22px); }
+  p, li { font-size: var(--text-base); }
+  .hero-slider { height: 65vh; }
+  .hero-content { padding: 20px; width: 95%; }
+  .hero-title { font-size: clamp(22px, 7vw, 28px) !important; }
+  .hero-subtitle { font-size: clamp(14px, 5vw, 16px) !important; }
+  button, a, .nav-link a, .faq-question, .slider-dot, .slider-arrow, .language-item, .tour-cta, .hero-button { min-height: 48px; min-width: 48px; }
+  .nav-links { background: var(--primary-dark); padding: 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .nav-link a { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav-link:last-child a { border-bottom: none; }
+  .nav-links.active { box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+  .tour-card-footer { flex-wrap: wrap; gap: 10px; }
+  .cta-section { padding: 60px 0; }
+  .cta-section h2 { font-size: clamp(24px, 6vw, 32px); }
+  .cta-section p { font-size: clamp(14px, 4vw, 18px); }
+  .footer-content { gap: 24px; }
+  @supports (padding: max(0px)) {
+    .header, .navbar, .footer { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+    .hero-slider { padding-top: env(safe-area-inset-top); }
+    .footer { padding-bottom: max(40px, env(safe-area-inset-bottom)); }
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .nav-link a:hover, .tour-card:hover, .fusion-card:hover, .traveler-card:hover { transform: none !important; }
+  .nav-link a:active, .tour-cta:active, .hero-button:active, .slider-arrow:active { background: rgba(255, 215, 0, 0.4) !important; transform: scale(0.98); transition: transform 0.1s ease; }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input, select, textarea, button { font-size: 16px !important; }
+}
 </style>
 
 <!-- Non-critical CSS – loaded async -->
@@ -758,7 +793,7 @@ p{font-size:16px;line-height:1.6;margin-bottom:20px}
   <div class="container content">
     <div class="logo-section">
       <img src="images/egypt-photography-tours-logo.jpg" alt="Egypt Photography Tours Logo – Luxury Private Photography Experiences" class="logo-img" loading="eager" width="40" height="40" decoding="async">
-      <a href="/" class="logo-link">Egypt Photography Tours</a>
+      <a href="#" id="logo-link" class="logo-link">Egypt Photography Tours</a>
     </div>
     <div class="header-contact">
       <a href="https://wa.me/201550735673" target="_blank" rel="noopener noreferrer" class="contact-info"><i class="fab fa-whatsapp" aria-hidden="true"></i> +20 155 073 5673</a>
@@ -1185,6 +1220,18 @@ const EgyptTours = (function() {
 
   return {
     init: function() {
+      // Logo click: smooth scroll to top, stay on same page
+      const logoLink = document.getElementById('logo-link');
+      if (logoLink) {
+        logoLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (history.replaceState) {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+        });
+      }
+
       // Mobile nav toggle
       const toggle = $('.mobile-menu-toggle');
       const nav = $('#nav-links');
@@ -1218,12 +1265,15 @@ const EgyptTours = (function() {
       on(nextBtn, 'click', () => { next(); start(); });
       dots.forEach((d, i) => on(d, 'click', () => { goTo(i); start(); }));
 
-      let startX = 0;
-      on($('.hero-slider'), 'touchstart', e => { startX = e.changedTouches[0].screenX; }, {passive: true});
+      let startX = 0, startY = 0;
+      on($('.hero-slider'), 'touchstart', e => { startX = e.changedTouches[0].screenX; startY = e.changedTouches[0].screenY; }, {passive: true});
       on($('.hero-slider'), 'touchend', e => {
-        const diff = startX - e.changedTouches[0].screenX;
-        if (diff > 50) next(); else if (diff < -50) prev();
-        start();
+        const diffX = startX - e.changedTouches[0].screenX;
+        const diffY = startY - e.changedTouches[0].screenY;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+          if (diffX > 0) next(); else prev();
+          start();
+        }
       }, {passive: true});
 
       if (slides.length) start();
@@ -1234,7 +1284,12 @@ const EgyptTours = (function() {
           const expanded = this.getAttribute('aria-expanded') === 'true';
           this.setAttribute('aria-expanded', !expanded);
           const answer = document.getElementById(this.getAttribute('aria-controls'));
-          if (answer) answer.classList.toggle('active');
+          if (answer) {
+            answer.classList.toggle('active');
+            if (window.innerWidth < 768 && !expanded) {
+              setTimeout(() => answer.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 300);
+            }
+          }
           const icon = this.querySelector('i');
           if (icon) { icon.classList.toggle('fa-chevron-down'); icon.classList.toggle('fa-chevron-up'); }
         });
