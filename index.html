@@ -264,8 +264,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
 @media(min-width:1024px){.nav-item{font-size:14px;padding:10px 14px}}
 
 /* Overlay backdrop for mobile menu */
-.menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:999}
-.menu-overlay.open{display:block}
+.menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:999;pointer-events:none}
+.menu-overlay.open{display:block;pointer-events:auto}
 
 /* ===================== HERO ===================== */
 .hero{position:relative;height:70vh;min-height:380px;max-height:600px;overflow:hidden;touch-action:pan-y}
@@ -557,7 +557,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
   <link rel="stylesheet" href="/css/main.css">
 </noscript>
 
-<!-- STRUCTURED DATA — Events schema added for tour rich snippets -->
+<!-- STRUCTURED DATA — FIXED: no JS comments, consolidated events, no shipping/return on services -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -736,141 +736,130 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
     {
       "@type": "Event",
       "name": "Pyramids Photoshoot & Private Tour – Giza",
-      "description": "Stand before the last remaining Wonder of the Ancient World. A professional photographer captures your perfect portraits while an Egyptologist reveals 4,500 years of history.",
-      "image": "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
-      "url": "https://www.egyptphotographytours.com/tour-pyramids-private",
-      "organizer": {"@id": "https://www.egyptphotographytours.com/#organization"},
+      "description": "Exclusive Giza photoshoot at the ancient Pyramids with professional photographer. Available daily at 9AM, 10AM, 11AM, 12PM, and 1PM Cairo time. Perfect for couples, families, solo travelers and content creators. Includes 150-300 edited photos delivered within 48 hours.",
+      "startDate": "2026-06-01T09:00:00+02:00",
+      "endDate": "2026-12-31T16:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
       "location": {
         "@type": "Place",
-        "name": "Giza Pyramids",
+        "name": "Pyramids of Giza",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Giza",
           "addressCountry": "EG"
         }
       },
-      "eventSchedule": {
-        "@type": "Schedule",
-        "repeatFrequency": "P1D",
-        "startDate": "2026-01-01",
-        "endDate": "2026-12-31",
-        "startTime": "09:00",
-        "endTime": "13:00"
-      },
+      "image": "https://www.egyptphotographytours.com/images/pyramids-private-tour.jpg",
       "offers": {
         "@type": "Offer",
         "price": "150",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.egyptphotographytours.com/tour-pyramids-private",
-        "validFrom": "2026-01-01"
+        "validFrom": "2026-05-01T00:00:00Z",
+        "url": "https://www.egyptphotographytours.com/tour-pyramids-private"
       },
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+      "organizer": {
+        "@type": "Organization",
+        "name": "Egypt Photography Tours",
+        "url": "https://www.egyptphotographytours.com/"
+      }
     },
     {
       "@type": "Event",
       "name": "2-Day Cairo & Giza Historic Tour",
-      "description": "The Grand Egyptian Museum, Saladin Citadel, Khan El Khalili Bazaar, Sphinx and the Great Pyramids – Cairo's greatest highlights covered in two immersive days with your expert guide.",
-      "image": "https://www.egyptphotographytours.com/images/cairo-giza-2day.jpg",
-      "url": "https://www.egyptphotographytours.com/tour-cairo-giza-2day",
-      "organizer": {"@id": "https://www.egyptphotographytours.com/#organization"},
+      "description": "Comprehensive 2-day luxury tour covering Pyramids, Grand Egyptian Museum, Islamic Cairo, Khan El Khalili Bazaar with professional photography guidance. Available daily with departures at 9AM, 10AM, 11AM, 12PM, and 1PM Cairo time.",
+      "startDate": "2026-06-01T09:00:00+02:00",
+      "endDate": "2026-12-31T20:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
       "location": {
         "@type": "Place",
-        "name": "Cairo & Giza",
+        "name": "Grand Egyptian Museum, Cairo",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Cairo",
           "addressCountry": "EG"
         }
       },
-      "eventSchedule": {
-        "@type": "Schedule",
-        "repeatFrequency": "P1D",
-        "startDate": "2026-01-01",
-        "endDate": "2026-12-31",
-        "startTime": "09:00",
-        "endTime": "17:00",
-        "duration": "P2D"
-      },
+      "image": "https://www.egyptphotographytours.com/images/cairo-giza-2day.jpg",
       "offers": {
         "@type": "Offer",
         "price": "350",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.egyptphotographytours.com/tour-cairo-giza-2day",
-        "validFrom": "2026-01-01"
+        "validFrom": "2026-05-01T00:00:00Z",
+        "url": "https://www.egyptphotographytours.com/tour-cairo-giza-2day"
       },
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+      "organizer": {
+        "@type": "Organization",
+        "name": "Egypt Photography Tours",
+        "url": "https://www.egyptphotographytours.com/"
+      }
     },
     {
       "@type": "Event",
       "name": "Alexandria Day Trip from Cairo",
-      "description": "Discover Greece-meets-Egypt at the Bibliotheca Alexandrina, Catacombs of Kom El Shoqafa, Qaitbay Citadel and the legendary Mediterranean Corniche – a world-class coastal day tour.",
-      "image": "https://www.egyptphotographytours.com/images/alexandria-tour.jpg",
-      "url": "https://www.egyptphotographytours.com/tour-alexandria",
-      "organizer": {"@id": "https://www.egyptphotographytours.com/#organization"},
+      "description": "Mediterranean coastal photography at Catacombs, Citadel, Library and Corniche with professional guide and optimal lighting. Available daily at 9AM, 10AM, 11AM, 12PM, and 1PM Cairo time. Private AC transportation included.",
+      "startDate": "2026-06-01T09:00:00+02:00",
+      "endDate": "2026-12-31T22:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
       "location": {
         "@type": "Place",
-        "name": "Alexandria",
+        "name": "Qaitbay Citadel, Alexandria",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Alexandria",
           "addressCountry": "EG"
         }
       },
-      "eventSchedule": {
-        "@type": "Schedule",
-        "repeatFrequency": "P1D",
-        "startDate": "2026-01-01",
-        "endDate": "2026-12-31",
-        "startTime": "07:00",
-        "endTime": "19:00"
-      },
+      "image": "https://www.egyptphotographytours.com/images/alexandria-tour.jpg",
       "offers": {
         "@type": "Offer",
         "price": "320",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.egyptphotographytours.com/tour-alexandria",
-        "validFrom": "2026-01-01"
+        "validFrom": "2026-05-01T00:00:00Z",
+        "url": "https://www.egyptphotographytours.com/tour-alexandria"
       },
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+      "organizer": {
+        "@type": "Organization",
+        "name": "Egypt Photography Tours",
+        "url": "https://www.egyptphotographytours.com/"
+      }
     },
     {
       "@type": "Event",
       "name": "7-Day Egypt Discovery – All-Inclusive",
-      "description": "Cairo · Pyramids · Alexandria · Luxor (Valley of the Kings, Karnak) · Aswan (Abu Simbel, Philae) – seven days of pure wonder with professional photography and Egyptologist guidance throughout.",
-      "image": "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
-      "url": "https://www.egyptphotographytours.com/tour-egypt-discovery-7day",
-      "organizer": {"@id": "https://www.egyptphotographytours.com/#organization"},
+      "description": "Complete luxury adventure covering Cairo, Giza, Alexandria, Luxor & Aswan with daily professional photoshoots and private Egyptologist guide. Available with daily departures at 9AM Cairo time. Hotels, meals, transport and entrance fees included.",
+      "startDate": "2026-06-01T09:00:00+02:00",
+      "endDate": "2026-12-31T18:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
       "location": {
         "@type": "Place",
-        "name": "Egypt – Cairo, Giza, Alexandria, Luxor, Aswan",
+        "name": "Cairo to Aswan, Egypt",
         "address": {
           "@type": "PostalAddress",
+          "addressLocality": "Cairo",
           "addressCountry": "EG"
         }
       },
-      "eventSchedule": {
-        "@type": "Schedule",
-        "repeatFrequency": "P1D",
-        "startDate": "2026-01-01",
-        "endDate": "2026-12-31",
-        "duration": "P7D"
-      },
+      "image": "https://www.egyptphotographytours.com/images/egypt-discovery-7day.jpg",
       "offers": {
         "@type": "Offer",
         "price": "2000",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.egyptphotographytours.com/tour-egypt-discovery-7day",
-        "validFrom": "2026-01-01"
+        "validFrom": "2026-05-01T00:00:00Z",
+        "url": "https://www.egyptphotographytours.com/tour-egypt-discovery-7day"
       },
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+      "organizer": {
+        "@type": "Organization",
+        "name": "Egypt Photography Tours",
+        "url": "https://www.egyptphotographytours.com/"
+      }
     }
   ]
 }
@@ -1878,7 +1867,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
   });
 
   /* ======================================================
-     MOBILE NAV HAMBURGER
+     MOBILE NAV HAMBURGER — FIXED: nav tabs now work on mobile
   ====================================================== */
   var hamburger = $('#hamburger');
   var navMenu = $('#nav-menu');
@@ -1907,10 +1896,18 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans
     navMenu.classList.contains('open') ? closeMenu() : openMenu();
   });
   on(overlay, 'click', closeMenu);
-  // Close on nav link click (mobile)
+  
+  // FIX: Close mobile menu when a nav link is clicked — let link navigate normally
   $$('.nav-item').forEach(function(link) {
-    on(link, 'click', closeMenu);
+    on(link, 'click', function() {
+      // Only close menu on mobile viewports (desktop menu is always visible)
+      if (window.innerWidth < 768 && navMenu.classList.contains('open')) {
+        closeMenu();
+      }
+      // IMPORTANT: Do NOT call e.preventDefault() — let the link navigate!
+    });
   });
+  
   // Close on Escape
   on(document, 'keydown', function(e) {
     if (e.key === 'Escape') { closeMenu(); closeLang(); }
