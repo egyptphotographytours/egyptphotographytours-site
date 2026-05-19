@@ -410,6 +410,14 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
 .faq-a.is-open{max-height:800px;padding:0 20px 18px}
 .faq-a p{font-size:14px;color:var(--mt);line-height:1.72}
 
+/* ── PAGINATION ── */
+.pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:48px;flex-wrap:wrap}
+.page-btn{min-width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;background:var(--wh);border:1.5px solid var(--br);color:var(--tx);transition:all var(--tr);cursor:pointer}
+.page-btn:hover,.page-btn.active{background:var(--gold);border-color:var(--gold);color:var(--dk)}
+.page-btn.next{background:var(--dk);color:var(--wh);border-color:var(--dk);border-radius:30px;padding:0 20px;min-width:auto}
+.page-btn.next:hover{background:var(--gold);color:var(--dk)}
+.page-info{font-size:13px;color:var(--mt);margin:0 12px}
+
 /* ── FOOTER ── */
 .footer{background:var(--dk);color:#fff;padding:52px 0 24px}
 .f-g{display:grid;grid-template-columns:1fr;gap:34px}
@@ -454,6 +462,7 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
 /* Utilities */
 .mt8{margin-top:8px}.mt16{margin-top:16px}.mt24{margin-top:24px}
 .mt32{margin-top:32px}.mt40{margin-top:40px}.mb24{margin-bottom:24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -478,7 +487,7 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
       "isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
       "about": {"@id": "https://www.egyptphotographytours.com/#org"},
       "datePublished": "2015-06-15",
-      "dateModified": "2026-05-17",
+      "dateModified": "2026-05-20",
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -539,14 +548,14 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
       "@id": "https://www.egyptphotographytours.com/resources#articles",
       "name": "Egypt Travel Resources & Planning Guides",
       "description": "Comprehensive collection of Egypt travel articles, planning guides and photography resources",
-      "numberOfItems": 18,
+      "numberOfItems": 30,
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Complete Egypt Travel Guide 2026", "url": "https://www.egyptphotographytours.com/blog/complete-egypt-travel-guide"},
-        {"@type": "ListItem", "position": 2, "name": "Pyramids Photoshoot Guide – Best Tips & Timing", "url": "https://www.egyptphotographytours.com/blog/pyramids-photoshoot-guide"},
-        {"@type": "ListItem", "position": 3, "name": "Egypt Visa Requirements 2026 – Complete Guide", "url": "https://www.egyptphotographytours.com/blog/egypt-visa-requirements"},
-        {"@type": "ListItem", "position": 4, "name": "Best Time to Visit Egypt – Monthly Breakdown", "url": "https://www.egyptphotographytours.com/blog/best-time-visit-egypt"},
-        {"@type": "ListItem", "position": 5, "name": "Luxor Travel Guide – Valley of the Kings & Karnak", "url": "https://www.egyptphotographytours.com/blog/luxor-travel-guide"},
-        {"@type": "ListItem", "position": 6, "name": "Aswan & Abu Simbel Complete Guide", "url": "https://www.egyptphotographytours.com/blog/aswan-abu-simbel-guide"}
+        {"@type": "ListItem", "position": 1, "name": "Complete Egypt Travel Guide 2026", "url": "https://www.egyptphotographytours.com/custom-egypt-tours-personalized-itineraries-guide-2026.html"},
+        {"@type": "ListItem", "position": 2, "name": "Pyramids Photoshoot Guide – Best Tips & Timing", "url": "https://www.egyptphotographytours.com/pyramid-pose-guide-2026.html"},
+        {"@type": "ListItem", "position": 3, "name": "Egypt Visa Requirements 2026 – Complete Guide", "url": "https://www.egyptphotographytours.com/egypt-visa-requirements-2026.html"},
+        {"@type": "ListItem", "position": 4, "name": "Best Time to Visit Egypt – Monthly Breakdown", "url": "https://www.egyptphotographytours.com/best-time-visit-egypt-2026.html"},
+        {"@type": "ListItem", "position": 5, "name": "Luxor Travel Guide – Valley of the Kings & Karnak", "url": "https://www.egyptphotographytours.com/luxor-valley-kings-karnak-guide-2026.html"},
+        {"@type": "ListItem", "position": 6, "name": "Aswan & Abu Simbel Complete Guide", "url": "https://www.egyptphotographytours.com/aswan-abu-simbel-complete-guide-2026.html"}
       ]
     }
   ]
@@ -769,7 +778,7 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
   <div class="filter-bar" id="filter-bar" aria-label="Filter articles by category">
     <div class="wrap">
       <div class="filter-wrap" role="list">
-        <button class="filter-btn is-on" data-cat="all" type="button" role="listitem"><i class="fas fa-th" aria-hidden="true"></i> All Guides <span class="fcount">18</span></button>
+        <button class="filter-btn is-on" data-cat="all" type="button" role="listitem"><i class="fas fa-th" aria-hidden="true"></i> All Guides <span class="fcount">30</span></button>
         <button class="filter-btn" data-cat="planning" type="button" role="listitem"><i class="fas fa-route" aria-hidden="true"></i> Trip Planning</button>
         <button class="filter-btn" data-cat="photo" type="button" role="listitem"><i class="fas fa-camera" aria-hidden="true"></i> Photography</button>
         <button class="filter-btn" data-cat="dest" type="button" role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Destinations</button>
@@ -786,7 +795,7 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
   <section class="sec" aria-labelledby="featured-h2">
     <div class="wrap">
       <div class="eyebrow">Featured Guide</div>
-      <a class="featured-art" href="/blog/complete-egypt-travel-guide" aria-labelledby="feat-title">
+      <a class="featured-art" href="/custom-egypt-tours-personalized-itineraries-guide-2026.html" aria-labelledby="feat-title">
         <div class="feat-img-w">
           <img src="images/hero-image1.jpg"
                alt="Complete Egypt travel guide 2026 – private tours, group packages, photography"
@@ -818,11 +827,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Giza Pyramids</span><span>Photoshoot</span></div>
-            <h3 class="art-title"><a href="/blog/pyramids-photoshoot-guide">Pyramids Photoshoot Guide – Best Angles, Timing &amp; Expert Tips</a></h3>
+            <h3 class="art-title"><a href="/pyramid-pose-guide-2026.html">Pyramids Photoshoot Guide – Best Angles, Timing &amp; Expert Tips</a></h3>
             <p class="art-excerpt">Discover the secret spots, optimal lighting times and professional composition tricks for stunning Pyramids portraits – from couples shots to solo travel photography and family portraits.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 12 min read</span>
-              <a href="/blog/pyramids-photoshoot-guide" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/pyramid-pose-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -835,11 +844,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Itinerary</span><span>7 Days</span></div>
-            <h3 class="art-title"><a href="/blog/egypt-7-day-itinerary">The Perfect 7-Day Egypt Itinerary – Cairo, Luxor, Aswan &amp; More</a></h3>
+            <h3 class="art-title"><a href="/egypt-7-day-itinerary-2026.html">The Perfect 7-Day Egypt Itinerary – Cairo, Luxor, Aswan &amp; More</a></h3>
             <p class="art-excerpt">Our expert-designed 7-day Egypt road map covers the Grand Egyptian Museum, Giza Pyramids, Karnak Temple, Valley of the Kings, Aswan, Abu Simbel and a Nile cruise – fully optimized for first-time visitors.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 18 min read</span>
-              <a href="/blog/egypt-7-day-itinerary" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egypt-7-day-itinerary-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -852,11 +861,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Visa</span><span>Entry Requirements</span></div>
-            <h3 class="art-title"><a href="/blog/egypt-visa-requirements-2026">Egypt Visa Requirements 2026 – e-Visa, Visa on Arrival &amp; Free Countries</a></h3>
+            <h3 class="art-title"><a href="/egypt-visa-requirements-2026.html">Egypt Visa Requirements 2026 – e-Visa, Visa on Arrival &amp; Free Countries</a></h3>
             <p class="art-excerpt">Step-by-step guide to obtaining your Egypt visa: who qualifies for free entry, how to apply for an e-visa online, what to expect at immigration and the latest 2026 entry regulations for all nationalities.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 10 min read</span>
-              <a href="/blog/egypt-visa-requirements-2026" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egypt-visa-requirements-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -869,11 +878,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Luxor</span><span>Upper Egypt</span></div>
-            <h3 class="art-title"><a href="/blog/luxor-travel-guide">Luxor Travel Guide – Valley of the Kings, Karnak &amp; Ancient Wonders</a></h3>
+            <h3 class="art-title"><a href="/luxor-valley-kings-karnak-guide-2026.html">Luxor Travel Guide – Valley of the Kings, Karnak &amp; Ancient Wonders</a></h3>
             <p class="art-excerpt">Explore Egypt's open-air museum: the Valley of the Kings with Tutankhamun's tomb, Karnak Temple Complex, Hatshepsut's Mortuary Temple, Colossi of Memnon and the magical Luxor Temple at night.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 16 min read</span>
-              <a href="/blog/luxor-travel-guide" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/luxor-valley-kings-karnak-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -886,11 +895,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Camera Tips</span><span>Travel Photography</span></div>
-            <h3 class="art-title"><a href="/blog/egypt-photography-tips">Egypt Photography Tips – Best Locations, Camera Settings &amp; Light Timing</a></h3>
+            <h3 class="art-title"><a href="/egypt-photography-tips-2026.html">Egypt Photography Tips – Best Locations, Camera Settings &amp; Light Timing</a></h3>
             <p class="art-excerpt">Master Egypt's unique photography challenges: harsh desert sun, crowded sites, interior lighting in tombs and temples. Expert advice on settings, lenses and the golden hours that transform ordinary shots into masterpieces.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 14 min read</span>
-              <a href="/blog/egypt-photography-tips" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egypt-photography-tips-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -903,11 +912,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Aswan</span><span>Abu Simbel</span></div>
-            <h3 class="art-title"><a href="/blog/aswan-abu-simbel-guide">Aswan &amp; Abu Simbel Complete Guide – Temples, Nile &amp; Nubian Culture</a></h3>
+            <h3 class="art-title"><a href="/aswan-abu-simbel-complete-guide-2026.html">Aswan &amp; Abu Simbel Complete Guide – Temples, Nile &amp; Nubian Culture</a></h3>
             <p class="art-excerpt">Everything about visiting Aswan: the magnificent Philae Temple, the Unfinished Obelisk, Aswan High Dam, authentic Nubian villages, felucca sunset sailing and the legendary Abu Simbel Temples of Ramses II.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 15 min read</span>
-              <a href="/blog/aswan-abu-simbel-guide" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/aswan-abu-simbel-complete-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -920,11 +929,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Packing</span><span>Preparation</span></div>
-            <h3 class="art-title"><a href="/blog/egypt-packing-list">Egypt Packing List 2026 – What to Wear, Bring &amp; Definitely Leave Behind</a></h3>
+            <h3 class="art-title"><a href="/egypt-packing-list-2026.html">Egypt Packing List 2026 – What to Wear, Bring &amp; Definitely Leave Behind</a></h3>
             <p class="art-excerpt">The definitive Egypt packing list: clothing for temples and mosques, sun protection for desert sites, what electronics to bring, medications, money and the items that experienced travelers swear by.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 11 min read</span>
-              <a href="/blog/egypt-packing-list" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egypt-packing-list-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -937,11 +946,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Seasons</span><span>Climate</span></div>
-            <h3 class="art-title"><a href="/blog/best-time-visit-egypt">Best Time to Visit Egypt – Month by Month Climate, Crowds &amp; Events</a></h3>
+            <h3 class="art-title"><a href="/best-time-visit-egypt-2026.html">Best Time to Visit Egypt – Month by Month Climate, Crowds &amp; Events</a></h3>
             <p class="art-excerpt">A month-by-month breakdown of Egyptian weather, tourist crowds, religious festivals and photography conditions – so you can choose the perfect time for your private tour, honeymoon or family adventure.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 13 min read</span>
-              <a href="/blog/best-time-visit-egypt" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/best-time-visit-egypt-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -954,11 +963,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Safety</span><span>Health Tips</span></div>
-            <h3 class="art-title"><a href="/blog/is-egypt-safe-for-tourists">Is Egypt Safe for Tourists in 2026? An Honest, Comprehensive Guide</a></h3>
+            <h3 class="art-title"><a href="/is-egypt-safe-to-visit-2026-guide.html">Is Egypt Safe for Tourists in 2026? An Honest, Comprehensive Guide</a></h3>
             <p class="art-excerpt">An honest safety assessment for tourists visiting Egypt in 2026: which areas are completely safe, what precautions to take, health advice, water safety, solo travel tips and how to stay comfortable throughout your trip.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 14 min read</span>
-              <a href="/blog/is-egypt-safe-for-tourists" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/is-egypt-safe-to-visit-2026-guide.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -971,11 +980,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Cairo</span><span>Islamic Cairo</span></div>
-            <h3 class="art-title"><a href="/blog/cairo-travel-guide">Cairo Travel Guide – Grand Egyptian Museum, Islamic Cairo &amp; Hidden Gems</a></h3>
+            <h3 class="art-title"><a href="/cairo-travel-guide-2026.html">Cairo Travel Guide – Grand Egyptian Museum, Islamic Cairo &amp; Hidden Gems</a></h3>
             <p class="art-excerpt">Navigate Cairo like an expert: the world's largest archaeological museum (Grand Egyptian Museum), the medieval Islamic quarter, Khan El Khalili bazaar, Coptic Cairo, rooftop cafés and the city's thriving street food scene.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 17 min read</span>
-              <a href="/blog/cairo-travel-guide" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/cairo-travel-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -988,11 +997,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Families</span><span>Kids</span></div>
-            <h3 class="art-title"><a href="/blog/egypt-with-kids">Egypt with Kids – Family Tours, Activities &amp; Making Memories at the Pyramids</a></h3>
+            <h3 class="art-title"><a href="/egypt-with-kids-family-tours-2026.html">Egypt with Kids – Family Tours, Activities &amp; Making Memories at the Pyramids</a></h3>
             <p class="art-excerpt">Egypt with children is magical. Discover the best family-friendly tour pacing, interactive mummy workshops, camel rides, felucca boat trips, the best sites for children and how professional family photography at the Pyramids creates memories for a lifetime.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 13 min read</span>
-              <a href="/blog/egypt-with-kids" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egypt-with-kids-family-tours-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -1005,11 +1014,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Egyptian Cuisine</span><span>Food Guide</span></div>
-            <h3 class="art-title"><a href="/blog/egyptian-food-guide">Egyptian Food Guide – Must-Try Dishes, Street Food &amp; Dining Culture</a></h3>
+            <h3 class="art-title"><a href="/egyptian-food-guide-restaurants-2026.html">Egyptian Food Guide – Must-Try Dishes, Street Food &amp; Dining Culture</a></h3>
             <p class="art-excerpt">Discover Egypt's extraordinary culinary world: koshari, ful medames, kofta, molokhia soup, fresh baladi bread and mezze spreads. Plus restaurant recommendations in Cairo and Luxor, food safety tips and vegetarian-friendly options.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 12 min read</span>
-              <a href="/blog/egyptian-food-guide" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egyptian-food-guide-restaurants-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -1022,11 +1031,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Budget</span><span>Backpacking</span></div>
-            <h3 class="art-title"><a href="/blog/egypt-budget-travel-guide">Egypt on a Budget 2026 – Affordable Tours, Cheap Eats &amp; Smart Savings</a></h3>
+            <h3 class="art-title"><a href="/egypt-budget-travel-guide-2026.html">Egypt on a Budget 2026 – Affordable Tours, Cheap Eats &amp; Smart Savings</a></h3>
             <p class="art-excerpt">Experience the best of Egypt without overspending. Group tours from $79 per person, budget accommodation options, free and low-cost attractions, how to negotiate at markets and the smartest ways to stretch your Egypt travel budget.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 11 min read</span>
-              <a href="/blog/egypt-budget-travel-guide" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egypt-budget-travel-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -1039,11 +1048,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Honeymoon</span><span>Couples</span></div>
-            <h3 class="art-title"><a href="/blog/egypt-honeymoon-photography">Egypt Honeymoon &amp; Couples Photography – Romantic Shoots at Ancient Wonders</a></h3>
+            <h3 class="art-title"><a href="/egypt-honeymoon-photography-guide-2026.html">Egypt Honeymoon &amp; Couples Photography – Romantic Shoots at Ancient Wonders</a></h3>
             <p class="art-excerpt">A complete guide to planning a dream Egypt honeymoon photoshoot: timing the Pyramids at golden hour, sunset Nile felucca sessions, temple backdrop portraits in Luxor and the most romantically atmospheric locations for couples photography across Egypt.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 13 min read</span>
-              <a href="/blog/egypt-honeymoon-photography" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egypt-honeymoon-photography-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -1056,11 +1065,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Solo Female</span><span>Safety</span></div>
-            <h3 class="art-title"><a href="/blog/egypt-solo-female-travel">Egypt Solo Female Travel Guide – Safety, Tips &amp; Empowering Experiences</a></h3>
+            <h3 class="art-title"><a href="/egypt-solo-female-travel-guide-2026.html">Egypt Solo Female Travel Guide – Safety, Tips &amp; Empowering Experiences</a></h3>
             <p class="art-excerpt">An honest, empowering guide for women traveling solo in Egypt: cultural norms, what to wear, how to navigate interactions, the safest tour options, accommodation recommendations and why Egypt is one of the most rewarding solo female destinations in the world.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 15 min read</span>
-              <a href="/blog/egypt-solo-female-travel" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egypt-solo-female-travel-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -1073,11 +1082,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Alexandria</span><span>Mediterranean</span></div>
-            <h3 class="art-title"><a href="/blog/alexandria-egypt-guide">Alexandria Travel Guide – Ancient History Meets Mediterranean Beauty</a></h3>
+            <h3 class="art-title"><a href="/alexandria-egypt-mediterranean-guide-2026.html">Alexandria Travel Guide – Ancient History Meets Mediterranean Beauty</a></h3>
             <p class="art-excerpt">Explore Egypt's second city where Greek, Roman and Egyptian history collide: the magnificent Bibliotheca Alexandrina, Qaitbay Citadel, Catacombs of Kom El Shoqafa, Pompey's Pillar and the iconic Corniche seafront promenade.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 14 min read</span>
-              <a href="/blog/alexandria-egypt-guide" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/alexandria-egypt-mediterranean-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -1090,11 +1099,11 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Tour Types</span><span>Comparison</span></div>
-            <h3 class="art-title"><a href="/blog/private-vs-group-tours-egypt">Private vs Group Tours in Egypt – Which Is Right for You?</a></h3>
+            <h3 class="art-title"><a href="/private-vs-group-tours-egypt-2026.html">Private vs Group Tours in Egypt – Which Is Right for You?</a></h3>
             <p class="art-excerpt">An honest comparison of private tours versus group packages in Egypt: cost breakdown, flexibility, social experience, photography quality, what each includes and exactly who benefits most from each option to help you make the right choice.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 10 min read</span>
-              <a href="/blog/private-vs-group-tours-egypt" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/private-vs-group-tours-egypt-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
@@ -1107,16 +1116,232 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
           </div>
           <div class="art-body">
             <div class="art-tag"><span>Culture</span><span>Etiquette</span></div>
-            <h3 class="art-title"><a href="/blog/egyptian-culture-customs">Egyptian Culture &amp; Customs Guide – Etiquette, Religion &amp; Social Life</a></h3>
+            <h3 class="art-title"><a href="/egyptian-culture-customs-etiquette-guide-2026.html">Egyptian Culture &amp; Customs Guide – Etiquette, Religion &amp; Social Life</a></h3>
             <p class="art-excerpt">Understanding Egyptian culture transforms a sightseeing trip into a genuine human experience. Learn the social customs, greeting etiquette, religious practices, tipping norms, dress codes and the cultural nuances that will earn you deep respect and genuine warmth from Egyptian locals.</p>
             <div class="art-meta">
               <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 16 min read</span>
-              <a href="/blog/egyptian-culture-customs" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a href="/egyptian-culture-customs-etiquette-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 19 – Photo -->
+        <article class="art-card" data-cat="photo">
+          <div class="art-img-w">
+            <img src="images/hero-image1.jpg" alt="Nile cruise photography guide – best shots from Luxor to Aswan" loading="lazy" width="400" height="200">
+            <span class="art-cat c-photo">Photography</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Nile Cruise</span><span>Photography</span></div>
+            <h3 class="art-title"><a href="/nile-cruise-photography-guide-2026.html">Nile Cruise Photography Guide – Capturing Egypt's River Magic</a></h3>
+            <p class="art-excerpt">Master the art of photographing Egypt from the water: golden hour shots of temples from the Nile, sunset felucca portraits, capturing local life along the riverbanks, and technical tips for dealing with reflections and changing light conditions.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 14 min read</span>
+              <a href="/nile-cruise-photography-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 20 – Planning -->
+        <article class="art-card" data-cat="planning">
+          <div class="art-img-w">
+            <img src="images/egypt-discovery-7day.jpg" alt="Egypt travel insurance guide – what you need to know" loading="lazy" width="400" height="200">
+            <span class="art-cat c-plan">Trip Planning</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Insurance</span><span>Protection</span></div>
+            <h3 class="art-title"><a href="/egypt-travel-insurance-guide-2026.html">Egypt Travel Insurance Guide – What You Need to Know for 2026</a></h3>
+            <p class="art-excerpt">Comprehensive advice on travel insurance for Egypt: medical coverage requirements, trip cancellation protection, adventure activity coverage, and how to choose the right policy for your Egypt itinerary and travel style.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 12 min read</span>
+              <a href="/egypt-travel-insurance-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 21 – Destinations -->
+        <article class="art-card" data-cat="dest">
+          <div class="art-img-w">
+            <img src="images/hero-image4.jpg" alt="Siwa Oasis travel guide – Egypt's hidden desert gem" loading="lazy" width="400" height="200">
+            <span class="art-cat c-dest">Destinations</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Siwa Oasis</span><span>Desert</span></div>
+            <h3 class="art-title"><a href="/siwa-oasis-desert-travel-guide-2026.html">Siwa Oasis Travel Guide – Egypt's Hidden Desert Gem</a></h3>
+            <p class="art-excerpt">Discover the magical Siwa Oasis: ancient Oracle Temple of Amun, crystal-clear salt lakes, Berber culture, desert safaris, and the best times to visit this remote paradise in Egypt's Western Desert.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 15 min read</span>
+              <a href="/siwa-oasis-desert-travel-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 22 – Tips -->
+        <article class="art-card" data-cat="tips">
+          <div class="art-img-w">
+            <img src="images/hero-image5.jpg" alt="Egypt transportation guide – getting around Cairo, Luxor, Aswan" loading="lazy" width="400" height="200">
+            <span class="art-cat c-tips">Travel Tips</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Transportation</span><span>Getting Around</span></div>
+            <h3 class="art-title"><a href="/egypt-transportation-guide-2026.html">Egypt Transportation Guide – Getting Around Cairo, Luxor &amp; Aswan</a></h3>
+            <p class="art-excerpt">Navigate Egypt like a pro: Uber vs taxis in Cairo, train travel between cities, domestic flights, private drivers, and how to avoid common transportation scams while getting the best value for your Egypt journey.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 13 min read</span>
+              <a href="/egypt-transportation-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 23 – Visa -->
+        <article class="art-card" data-cat="visa">
+          <div class="art-img-w">
+            <img src="images/hero-image3.jpg" alt="Egypt e-visa application step-by-step guide 2026" loading="lazy" width="400" height="200">
+            <span class="art-cat c-visa">Visa &amp; Entry</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>E-Visa</span><span>Application</span></div>
+            <h3 class="art-title"><a href="/egypt-e-visa-application-guide-2026.html">Egypt E-Visa Application – Step-by-Step Guide for 2026</a></h3>
+            <p class="art-excerpt">Complete walkthrough of applying for Egypt's e-visa online: required documents, application form tips, processing times, payment methods, and what to do if your application is delayed or rejected.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 9 min read</span>
+              <a href="/egypt-e-visa-application-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 24 – Safe -->
+        <article class="art-card" data-cat="safe">
+          <div class="art-img-w">
+            <img src="images/cairo-giza-2day.jpg" alt="Egypt health and medical guide for travelers 2026" loading="lazy" width="400" height="200">
+            <span class="art-cat c-safe">Safety &amp; Health</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Health</span><span>Medical</span></div>
+            <h3 class="art-title"><a href="/egypt-health-medical-guide-travelers-2026.html">Egypt Health &amp; Medical Guide for Travelers – 2026 Edition</a></h3>
+            <p class="art-excerpt">Essential health advice for Egypt: water safety, food precautions, vaccinations, dealing with heat and sun exposure, finding quality medical care, and what to pack in your travel first-aid kit.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 11 min read</span>
+              <a href="/egypt-health-medical-guide-travelers-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 25 – Photo -->
+        <article class="art-card" data-cat="photo">
+          <div class="art-img-w">
+            <img src="images/pyramids-private-tour.jpg" alt="Smartphone photography Egypt – pro tips for amazing travel photos" loading="lazy" width="400" height="200">
+            <span class="art-cat c-photo">Photography</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Smartphone</span><span>Mobile Photography</span></div>
+            <h3 class="art-title"><a href="/smartphone-photography-egypt-guide-2026.html">Smartphone Photography in Egypt – Pro Tips for Amazing Travel Photos</a></h3>
+            <p class="art-excerpt">Capture stunning Egypt memories with just your phone: best camera settings, composition techniques for ancient sites, editing apps that work great with Egyptian light, and how to avoid common smartphone photography mistakes at the Pyramids.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 10 min read</span>
+              <a href="/smartphone-photography-egypt-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 26 – Planning -->
+        <article class="art-card" data-cat="planning">
+          <div class="art-img-w">
+            <img src="images/hero-image2.jpg" alt="Egypt honeymoon planning guide – romantic itineraries and tips" loading="lazy" width="400" height="200">
+            <span class="art-cat c-plan">Trip Planning</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Honeymoon</span><span>Romance</span></div>
+            <h3 class="art-title"><a href="/egypt-honeymoon-planning-guide-2026.html">Egypt Honeymoon Planning Guide – Romantic Itineraries &amp; Tips</a></h3>
+            <p class="art-excerpt">Plan the perfect Egypt honeymoon: romantic hotels with Nile views, private sunset tours of the Pyramids, couples photography sessions, intimate dining experiences, and how to balance adventure with relaxation on your special trip.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 16 min read</span>
+              <a href="/egypt-honeymoon-planning-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 27 – Food -->
+        <article class="art-card" data-cat="food">
+          <div class="art-img-w">
+            <img src="images/hero-image3.jpg" alt="Vegetarian and vegan travel guide Egypt – plant-based dining" loading="lazy" width="400" height="200">
+            <span class="art-cat c-food">Food &amp; Culture</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Vegetarian</span><span>Vegan</span></div>
+            <h3 class="art-title"><a href="/vegetarian-vegan-egypt-travel-guide-2026.html">Vegetarian &amp; Vegan Egypt Travel Guide – Plant-Based Dining</a></h3>
+            <p class="art-excerpt">Enjoy Egypt's cuisine as a vegetarian or vegan: traditional plant-based dishes, how to communicate dietary needs in Arabic, best vegetarian-friendly restaurants in Cairo and Luxor, and tips for navigating food markets and street stalls.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 12 min read</span>
+              <a href="/vegetarian-vegan-egypt-travel-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 28 – Budget -->
+        <article class="art-card" data-cat="bud">
+          <div class="art-img-w">
+            <img src="images/hero-image4.jpg" alt="Egypt money saving tips – how to travel Egypt on a budget" loading="lazy" width="400" height="200">
+            <span class="art-cat c-bud">Budget Travel</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Budget</span><span>Savings</span></div>
+            <h3 class="art-title"><a href="/egypt-money-saving-tips-budget-travel-2026.html">Egypt Money-Saving Tips – How to Travel Egypt on a Budget</a></h3>
+            <p class="art-excerpt">Maximize your Egypt travel budget: free and low-cost attractions, bargaining strategies at markets, affordable accommodation options, when to splurge vs save, and insider tips for getting the best value on tours and experiences.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 14 min read</span>
+              <a href="/egypt-money-saving-tips-budget-travel-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 29 – Destinations -->
+        <article class="art-card" data-cat="dest">
+          <div class="art-img-w">
+            <img src="images/alexandria-tour.jpg" alt="Red Sea Egypt travel guide – Hurghada, Sharm El Sheikh, diving" loading="lazy" width="400" height="200">
+            <span class="art-cat c-dest">Destinations</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Red Sea</span><span>Diving</span></div>
+            <h3 class="art-title"><a href="/red-sea-egypt-travel-guide-2026.html">Red Sea Egypt Travel Guide – Hurghada, Sharm El Sheikh &amp; Diving</a></h3>
+            <p class="art-excerpt">Explore Egypt's stunning Red Sea coast: world-class diving and snorkeling, luxury resorts vs budget stays, day trips to historical sites from beach destinations, and how to combine beach relaxation with cultural exploration.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 15 min read</span>
+              <a href="/red-sea-egypt-travel-guide-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 30 – Tips -->
+        <article class="art-card" data-cat="tips">
+          <div class="art-img-w">
+            <img src="images/hero-image5.jpg" alt="Egypt cultural etiquette guide – respectful travel tips" loading="lazy" width="400" height="200">
+            <span class="art-cat c-tips">Travel Tips</span>
+          </div>
+          <div class="art-body">
+            <div class="art-tag"><span>Culture</span><span>Etiquette</span></div>
+            <h3 class="art-title"><a href="/egypt-cultural-etiquette-respectful-travel-2026.html">Egypt Cultural Etiquette – Respectful Travel Tips for 2026</a></h3>
+            <p class="art-excerpt">Travel respectfully in Egypt: understanding local customs, appropriate dress codes for different settings, photography etiquette at religious sites, tipping culture, and how to build genuine connections with Egyptian locals during your visit.</p>
+            <div class="art-meta">
+              <span class="art-meta-l"><i class="fas fa-clock" aria-hidden="true"></i> 13 min read</span>
+              <a href="/egypt-cultural-etiquette-respectful-travel-2026.html" class="art-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </article>
 
       </div>
+      
+      <!-- PAGINATION CONTROLS -->
+      <div class="pagination" id="pagination">
+        <button class="page-btn active" data-page="1">1</button>
+        <button class="page-btn" data-page="2">2</button>
+        <button class="page-btn" data-page="3">3</button>
+        <button class="page-btn" data-page="4">4</button>
+        <button class="page-btn" data-page="5">5</button>
+        <span class="page-info">Page <span id="current-page">1</span> of 5</span>
+        <button class="page-btn next" id="next-page">Next <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+      
       <!-- No results message -->
       <p id="no-results" style="display:none;text-align:center;color:var(--mt);padding:40px 20px;font-size:16px">
         No articles found in this category. <button type="button" onclick="resetFilter()" style="background:none;border:none;color:var(--gold-d);text-decoration:underline;cursor:pointer;font-size:16px">Show all guides</button>
@@ -1399,12 +1624,12 @@ p{font-size:15px;line-height:1.75;color:var(--tx)}
       <div>
         <h3 class="f-h">Resources</h3>
         <ul class="f-ls">
-          <li><a href="/blog/complete-egypt-travel-guide"><i class="fas fa-chevron-right"></i> Complete Egypt Guide</a></li>
-          <li><a href="/blog/pyramids-photoshoot-guide"><i class="fas fa-chevron-right"></i> Pyramids Photo Guide</a></li>
-          <li><a href="/blog/egypt-visa-requirements-2026"><i class="fas fa-chevron-right"></i> Visa Requirements</a></li>
-          <li><a href="/blog/best-time-visit-egypt"><i class="fas fa-chevron-right"></i> Best Time to Visit</a></li>
-          <li><a href="/blog/egypt-packing-list"><i class="fas fa-chevron-right"></i> Packing List</a></li>
-          <li><a href="/blog/is-egypt-safe-for-tourists"><i class="fas fa-chevron-right"></i> Safety Guide</a></li>
+          <li><a href="/custom-egypt-tours-personalized-itineraries-guide-2026.html"><i class="fas fa-chevron-right"></i> Complete Egypt Guide</a></li>
+          <li><a href="/pyramid-pose-guide-2026.html"><i class="fas fa-chevron-right"></i> Pyramids Photo Guide</a></li>
+          <li><a href="/egypt-visa-requirements-2026.html"><i class="fas fa-chevron-right"></i> Visa Requirements</a></li>
+          <li><a href="/best-time-visit-egypt-2026.html"><i class="fas fa-chevron-right"></i> Best Time to Visit</a></li>
+          <li><a href="/egypt-packing-list-2026.html"><i class="fas fa-chevron-right"></i> Packing List</a></li>
+          <li><a href="/is-egypt-safe-to-visit-2026-guide.html"><i class="fas fa-chevron-right"></i> Safety Guide</a></li>
           <li><a href="/blog"><i class="fas fa-chevron-right"></i> Travel Blog</a></li>
           <li><a href="/faqs"><i class="fas fa-chevron-right"></i> FAQs</a></li>
         </ul>
@@ -1548,6 +1773,70 @@ filterBtns.forEach(function(btn){
     applyFilter(this.getAttribute('data-cat'));
   });
 });
+
+/* ── Pagination System ── */
+var currentPage = 1;
+var articlesPerPage = 6;
+var totalPages = 5;
+var allArticles = document.querySelectorAll('.art-card');
+
+function showPage(page) {
+  // Update active page button
+  document.querySelectorAll('.page-btn').forEach(btn => {
+    if(btn.dataset.page) {
+      btn.classList.toggle('active', parseInt(btn.dataset.page) === page);
+    }
+  });
+  
+  // Update page info
+  $('current-page').textContent = page;
+  
+  // Show/hide articles based on page
+  var startIndex = (page - 1) * articlesPerPage;
+  var endIndex = startIndex + articlesPerPage;
+  
+  allArticles.forEach(function(article, index) {
+    if(index >= startIndex && index < endIndex) {
+      article.classList.remove('hidden');
+    } else {
+      article.classList.add('hidden');
+    }
+  });
+  
+  // Update next button state
+  var nextBtn = $('next-page');
+  if(page >= totalPages) {
+    nextBtn.disabled = true;
+    nextBtn.style.opacity = '0.6';
+    nextBtn.style.cursor = 'not-allowed';
+  } else {
+    nextBtn.disabled = false;
+    nextBtn.style.opacity = '1';
+    nextBtn.style.cursor = 'pointer';
+  }
+  
+  // Scroll to top of articles section
+  document.getElementById('articles-grid').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+// Page button click handlers
+document.querySelectorAll('.page-btn[data-page]').forEach(function(btn) {
+  on(btn, 'click', function() {
+    currentPage = parseInt(this.dataset.page);
+    showPage(currentPage);
+  });
+});
+
+// Next button handler
+on($('next-page'), 'click', function() {
+  if(currentPage < totalPages) {
+    currentPage++;
+    showPage(currentPage);
+  }
+});
+
+// Initialize pagination
+showPage(1);
 
 /* ── FAQ Accordion ── */
 document.querySelectorAll('.faq-q').forEach(function(btn){
