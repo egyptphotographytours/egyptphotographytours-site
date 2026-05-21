@@ -1,4 +1,4 @@
-name: Auto-Translate & Deploy
+name: Auto-Translate & Deploy to GitHub Pages
 
 on:
   push:
@@ -10,21 +10,39 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   translate:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js (LATEST)
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
-      - run: npm install
-      - run: node translate.js
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Commit translations
+      - name: Run Translation Script
+        run: node translate.js
+
+      - name: Debug on Failure
+        if: failure()
+        run: |
+          echo "❌ Translation failed"
+          node -v
+          npm -v
+          ls -la
+
+      - name: Commit Translated Files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -32,27 +50,46 @@ jobs:
           git add .
 
           if git diff --staged --quiet; then
-            echo "No changes"
+            echo "✅ No changes to commit"
           else
-            git commit -m "Auto translations [skip ci]"
+            git commit -m "🌍 Auto-translated pages [skip ci]"
             git push
           fi
 
   deploy:
     needs: translate
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-      - name: Build
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Public Folder
         run: |
           mkdir -p public
+
           cp -r *.html public/ 2>/dev/null || true
+
           cp -r ar fr es de it zh ko pt ru ja nl hi sv no da fi th ms tl id public/ 2>/dev/null || true
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
+          cp site.webmanifest browserconfig.xml public/ 2>/dev/null || true
 
-      - uses: actions/deploy-pages@v4
+          rm -rf public/node_modules
+          rm -rf public/.github
+          rm -f public/package.json
+          rm -f public/package-lock.json
+          rm -f public/translate.js
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
