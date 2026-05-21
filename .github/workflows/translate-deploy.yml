@@ -16,11 +16,10 @@ concurrency:
 
 jobs:
   translate:
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js (LATEST)
@@ -28,13 +27,13 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Run Translation Script
+      - name: Run translation script
         run: node translate.js
 
-      - name: Debug on Failure
+      - name: Show debug info if failed
         if: failure()
         run: |
           echo "❌ Translation failed"
@@ -42,7 +41,7 @@ jobs:
           npm -v
           ls -la
 
-      - name: Commit Translated Files
+      - name: Commit translated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -58,7 +57,6 @@ jobs:
 
   deploy:
     needs: translate
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
 
     environment:
@@ -66,10 +64,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build Public Folder
+      - name: Build public folder
         run: |
           mkdir -p public
 
@@ -85,7 +83,7 @@ jobs:
           rm -f public/package-lock.json
           rm -f public/translate.js
 
-      - name: Upload Pages Artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
