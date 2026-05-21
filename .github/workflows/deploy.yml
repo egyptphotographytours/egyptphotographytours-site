@@ -9,8 +9,16 @@ permissions:
   pages: write
   id-token: write
 
+# Silence Node.js 20 deprecation warning
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  translate-and-deploy:
+  translate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,26 +30,39 @@ jobs:
 
       - name: Translate Pages
         run: node translate.js
-        continue-on-error: true
+        continue-on-error: true  # Don't fail the whole workflow if translation has issues
 
       - name: Commit Translated Files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ar/ fr/ es/ de/ it/ zh/ ko/ pt/ ru/ ja/ nl/ hi/ sv/ no/ da/ fi/ th/ ms/ tl/ id/
-          git diff --quiet && git diff --staged --quiet || git commit -m "🌐 Auto-translate updated pages"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "No changes to push"
+          git add ar/ fr/ es/ de/ it/ zh/ ko/ pt/ ru/ ja/ nl/ hi/ sv/ no/ da/ fi/ th/ ms/ tl/ id/ 2>/dev/null || true
+          # Only commit if there are actual changes
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "🌐 Auto-translate updated pages"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          else
+            echo "✅ No translation changes to commit"
+          fi
+
+  deploy:
+    needs: translate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Prepare Clean Artifact
         run: |
-          mkdir -p deploy-dist
-          cp -r *.html css/ js/ images/ site.webmanifest browserconfig.xml deploy-dist/ 2>/dev/null || true
-          cp -r ar/ fr/ es/ de/ it/ zh/ ko/ pt/ ru/ ja/ nl/ hi/ sv/ no/ da/ fi/ th/ ms/ tl/ id/ deploy-dist/ 2>/dev/null || true
+          mkdir -p public
+          cp -r *.html css/ js/ images/ site.webmanifest browserconfig.xml public/ 2>/dev/null || true
+          cp -r ar/ fr/ es/ de/ it/ zh/ ko/ pt/ ru/ ja/ nl/ hi/ sv/ no/ da/ fi/ th/ ms/ tl/ id/ public/ 2>/dev/null || true
+          rm -rf public/package*.json public/translate.js public/.github public/node_modules 2>/dev/null || true
 
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
-        with: { path: ./deploy-dist }
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: ./public }
 
-      - name: Deploy to GitHub Pages
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4
