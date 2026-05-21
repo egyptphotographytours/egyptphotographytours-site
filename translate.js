@@ -8,29 +8,31 @@ const BASE_URL = 'https://www.egyptphotographytours.com';
 const LIBRE_API = 'https://libretranslate.com/translate';
 const SKIP_TAGS = 'script, style, link, meta, noscript, svg, code, pre, iframe, img, input, button, select, textarea, option';
 
-// Read ONLY root HTML files (ignores language folders)
-const allRootHtml = fs.readdirSync('.').filter(f => f.endsWith('.html') && fs.statSync(f).isFile());
+// CLI args: node translate.js about.html contact.html
 const rawArgs = process.argv.slice(2);
-const filesToTranslate = rawArgs.length > 0 ? rawArgs.filter(f => allRootHtml.includes(f)) : allRootHtml;
+const allRootHtml = fs.readdirSync('.').filter(f => f.endsWith('.html') && fs.statSync(f).isFile());
+const filesToTranslate = rawArgs.length > 0
+  ? rawArgs.filter(f => allRootHtml.includes(f))
+  : allRootHtml;
 
-async function translateText(text, lang, retries = 3) {
+async function translateText(text, lang) {
   if (!text || text.trim().length < 3) return text;
   if (/^[\d\s.,%$€£¥@/:\-]+$/.test(text)) return text;
 
-  for (let i = 0; i < retries; i++) {
-    try {
-      const res = await fetch(LIBRE_API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: text, source: 'en', target: lang, format: 'text' })
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      return data.translatedText || text;
-    } catch (err) {
-      if (i === retries - 1) return text;
-      await new Promise(r => setTimeout(r, 1500 * (i + 1)));
-    }
+  try {
+    const res = await fetch(LIBRE_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'User-Agent': 'EgyptPhotographyTours-CI/1.0'
+      },
+      body: JSON.stringify({ q: text, source: 'en', target: lang, format: 'text' })
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    return data.translatedText || text;
+  } catch {
+    return text; // Graceful fallback
   }
 }
 
@@ -44,7 +46,7 @@ async function processHtml($, lang, fileName) {
     if (!original) continue;
     const translated = await translateText(original, lang);
     if (translated !== original) node.html(translated.replace(/&/g, '&amp;'));
-    await new Promise(r => setTimeout(r, 350));
+    await new Promise(r => setTimeout(r, 300));
   }
 
   $('html').attr('lang', lang);
