@@ -9,10 +9,6 @@ permissions:
   pages: write
   id-token: write
 
-# Silence Node.js 20 deprecation warning
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -30,7 +26,7 @@ jobs:
 
       - name: Translate Pages
         run: node translate.js
-        continue-on-error: true  # Don't fail the whole workflow if translation has issues
+        continue-on-error: true  # Don't fail workflow if translation has issues
 
       - name: Commit Translated Files
         run: |
@@ -57,8 +53,15 @@ jobs:
       - name: Prepare Clean Artifact
         run: |
           mkdir -p public
-          cp -r *.html css/ js/ images/ site.webmanifest browserconfig.xml public/ 2>/dev/null || true
+          # Copy root HTML files
+          cp -r *.html public/ 2>/dev/null || true
+          # Copy asset folders
+          cp -r css/ js/ images/ public/ 2>/dev/null || true
+          # Copy config files
+          cp site.webmanifest browserconfig.xml public/ 2>/dev/null || true
+          # Copy translated language folders
           cp -r ar/ fr/ es/ de/ it/ zh/ ko/ pt/ ru/ ja/ nl/ hi/ sv/ no/ da/ fi/ th/ ms/ tl/ id/ public/ 2>/dev/null || true
+          # Remove automation files from deploy artifact
           rm -rf public/package*.json public/translate.js public/.github public/node_modules 2>/dev/null || true
 
       - uses: actions/upload-pages-artifact@v3
