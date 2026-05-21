@@ -1,7 +1,9 @@
 name: Auto-Translate & Deploy to GitHub Pages
 
 on:
-  push: { branches: [ main ] }
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -16,56 +18,70 @@ concurrency:
 jobs:
   translate:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with: { node-version: 20 }
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Translate Pages
+      - name: Run Translation Script
         run: node translate.js
-        continue-on-error: true  # Don't fail workflow if translation has issues
 
       - name: Commit Translated Files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ar/ fr/ es/ de/ it/ zh/ ko/ pt/ ru/ ja/ nl/ hi/ sv/ no/ da/ fi/ th/ ms/ tl/ id/ 2>/dev/null || true
-          # Only commit if there are actual changes
-          if ! git diff --quiet || ! git diff --staged --quiet; then
-            git commit -m "🌐 Auto-translate updated pages"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+
+          git add .
+
+          if git diff --staged --quiet; then
+            echo "✅ No changes to commit"
           else
-            echo "✅ No translation changes to commit"
+            git commit -m "🌐 Auto-translated pages [skip ci]"
+            git push
           fi
 
   deploy:
     needs: translate
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Prepare Clean Artifact
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Prepare Public Folder
         run: |
           mkdir -p public
-          # Copy root HTML files
+
           cp -r *.html public/ 2>/dev/null || true
-          # Copy asset folders
-          cp -r css/ js/ images/ public/ 2>/dev/null || true
-          # Copy config files
+          cp -r css js images public/ 2>/dev/null || true
+
+          cp -r ar fr es de it zh ko pt ru ja nl hi sv no da fi th ms tl id public/ 2>/dev/null || true
+
           cp site.webmanifest browserconfig.xml public/ 2>/dev/null || true
-          # Copy translated language folders
-          cp -r ar/ fr/ es/ de/ it/ zh/ ko/ pt/ ru/ ja/ nl/ hi/ sv/ no/ da/ fi/ th/ ms/ tl/ id/ public/ 2>/dev/null || true
-          # Remove automation files from deploy artifact
-          rm -rf public/package*.json public/translate.js public/.github public/node_modules 2>/dev/null || true
 
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: ./public }
+          rm -rf public/node_modules
+          rm -rf public/.github
+          rm -f public/package.json
+          rm -f public/package-lock.json
+          rm -f public/translate.js
 
-      - uses: actions/deploy-pages@v4
+      - name: Upload GitHub Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v4
