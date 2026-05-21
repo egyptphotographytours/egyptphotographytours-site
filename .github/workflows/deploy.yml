@@ -1,7 +1,8 @@
 name: Auto-Translate & Deploy to GitHub Pages
 
 on:
-  push: { branches: [ main ] }
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -9,7 +10,9 @@ permissions:
   pages: write
   id-token: write
 
-concurrency: { group: "pages", cancel-in-progress: true }
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   translate:
@@ -23,7 +26,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Detect Changed Root HTML Files
+      - name: Detect Changed HTML Files
         id: changes
         run: |
           CHANGED=$(git diff --name-only HEAD~1 HEAD -- "*.html" 2>/dev/null | grep -v '^ar/\|^fr/\|^es/\|^de/\|^it/\|^zh/\|^ko/\|^pt/\|^ru/\|^ja/\|^nl/\|^hi/\|^sv/\|^no/\|^da/\|^fi/\|^th/\|^ms/\|^tl/\|^id/' || echo "")
@@ -36,7 +39,6 @@ jobs:
           else
             npm run translate -- ${{ steps.changes.outputs.files }}
           fi
-        env: { DEEPL_AUTH_KEY: ${{ secrets.DEEPL_AUTH_KEY }} }
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -47,7 +49,9 @@ jobs:
   deploy:
     needs: translate
     runs-on: ubuntu-latest
-    environment: { name: github-pages, url: ${{ steps.deployment.outputs.page_url }} }
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v4
