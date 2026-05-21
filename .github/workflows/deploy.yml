@@ -1,0 +1,56 @@
+name: Auto-Translate & Deploy to GitHub Pages
+
+on:
+  push: { branches: [ main ] }
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency: { group: "pages", cancel-in-progress: true }
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+
+      - run: npm ci
+
+      - name: Detect Changed Root HTML Files
+        id: changes
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- "*.html" 2>/dev/null | grep -v '^ar/\|^fr/\|^es/\|^de/\|^it/\|^zh/\|^ko/\|^pt/\|^ru/\|^ja/\|^nl/\|^hi/\|^sv/\|^no/\|^da/\|^fi/\|^th/\|^ms/\|^tl/\|^id/' || echo "")
+          echo "files=$CHANGED" >> $GITHUB_OUTPUT
+
+      - name: Translate Pages
+        run: |
+          if [ -z "${{ steps.changes.outputs.files }}" ]; then
+            npm run translate
+          else
+            npm run translate -- ${{ steps.changes.outputs.files }}
+          fi
+        env: { DEEPL_AUTH_KEY: ${{ secrets.DEEPL_AUTH_KEY }} }
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🌐 Auto-translate updated pages"
+          file_pattern: "ar/ fr/ es/ de/ it/ zh/ ko/ pt/ ru/ ja/ nl/ hi/ sv/ no/ da/ fi/ th/ ms/ tl/ id/"
+          skip_dirty_check: true
+
+  deploy:
+    needs: translate
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: ${{ steps.deployment.outputs.page_url }} }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: ./ }
+      - uses: actions/deploy-pages@v4
