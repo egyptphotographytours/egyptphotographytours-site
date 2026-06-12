@@ -1,0 +1,54 @@
+name: DeepL Smart Translation
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # manual trigger
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 4          # Conservative to avoid rate limits
+      matrix:
+        lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install beautifulsoup4 deepl
+
+      - name: Run DeepL translation
+        env:
+          TARGET_LANG: ${{ matrix.lang }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: python translate_deepl.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -d "./${{ matrix.lang }}" ] && [ -n "$(ls -A ./${{ matrix.lang }})" ]; then
+            git add "./${{ matrix.lang }}/"
+            git commit -m "translate(${{ matrix.lang }}): update" || echo "No changes"
+            for i in 1 2 3 4 5; do
+              git push && break
+              git pull --rebase
+              sleep 5
+            done
+          else
+            echo "No files for ${{ matrix.lang }}"
+          fi
