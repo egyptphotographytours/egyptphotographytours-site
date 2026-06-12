@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 DOMAIN = "https://www.egyptphotographytours.com"
 SOURCE_LANG = "EN"
 
-# Language folder → DeepL target code
 LANG_MAP = {
     'es': 'ES', 'fr': 'FR', 'de': 'DE', 'it': 'IT', 'pt': 'PT',
     'ru': 'RU', 'ja': 'JA', 'zh-CN': 'ZH', 'ko': 'KO', 'ar': 'AR',
@@ -27,7 +26,6 @@ def get_changed_files():
         return ['FORCE_FULL_RUN']
 
 def delete_broken_translations(folder_path):
-    """Delete any HTML file that is empty, too small, or contains obvious English leftovers."""
     if not os.path.exists(folder_path):
         return 0
     deleted = 0
@@ -39,7 +37,6 @@ def delete_broken_translations(folder_path):
             try:
                 with open(full, 'r', encoding='utf-8') as f:
                     content = f.read()
-                # Broken if: empty, tiny (<100 chars), or still has English articles (very naive)
                 if len(content) < 100 or (' the ' in content.lower() and ' el ' not in content.lower()):
                     os.remove(full)
                     deleted += 1
@@ -60,11 +57,11 @@ def translate_text(text, translator, target_code, retries=2):
             return result.text
         except deepl.exceptions.QuotaExceededException:
             print("    ❌ Quota exceeded! Stopping this job.")
-            raise  # Stop entirely
+            raise
         except Exception as e:
             print(f"    ⚠️ Translation error (attempt {attempt+1}): {e}")
             time.sleep(2)
-    return text  # fallback
+    return text
 
 def translate_html(soup, translator, target_code):
     if soup.html:
@@ -121,37 +118,59 @@ def main():
         print(f"❌ Connection failed: {e}")
         return
 
-    # 1. DELETE any broken/empty files from previous failed runs
     out_folder = f"./{target}"
     deleted = delete_broken_translations(out_folder)
     if deleted:
         print(f"🧹 Deleted {deleted} broken translation files")
 
-    # 2. Get changed files
     changed = get_changed_files()
-    print(f"📝 Changed: {changed[:5]}{'...' if len(changed)>5 else ''}")
+    print(f"📝 Changed files: {changed[:5]}{'...' if len(changed)>5 else ''}")
 
     os.makedirs(out_folder, exist_ok=True)
 
-    # 3. Ignore all language folders + junk
-    ignore = set(LANG_MAP.keys()) | {'zh', 'ms', 'la', 'en', '.git', '.github', '__pycache__', 'node_modules'}
-
+    # --- NEW: Explicitly collect all HTML files, ignoring only language folders and hidden dirs ---
+    ignore_dirs = set(LANG_MAP.keys()) | {'.git', '.github', '__pycache__', 'node_modules', 'zh', 'ms', 'la'}
     source_files = []
+    
+    # First, check root directory directly
+    for file in os.listdir('.'):
+        if file.endswith('.html') and os.path.isfile(file):
+            source_files.append(file)
+    
+    # Then walk subdirectories, skipping ignored ones
     for root, dirs, files in os.walk('.'):
-        dirs[:] = [d for d in dirs if d not in ignore and not d.startswith('.')]
-        for f in files:
-            if f.endswith('.html'):
-                source_files.append(os.path.join(root, f))
+        # Skip the root because we already handled it (but if root has subdirs, walk will go into them)
+        if root == '.':
+            # Filter dirs to avoid descending into ignored folders
+            dirs[:] = [d for d in dirs if d not in ignore_dirs]
+            continue
+        # For subdirectories, add their HTML files
+        for file in files:
+            if file.endswith('.html'):
+                full_path = os.path.join(root, file)
+                source_files.append(full_path)
+    
+    # Also include files from root that might have been missed (just in case)
+    print(f"🔍 Found {len(source_files)} HTML files total")
+    for f in source_files[:10]:  # show first 10
+        print(f"   - {f}")
+    
+    if len(source_files) == 0:
+        print("❌ No source HTML files found. Check your repository structure.")
+        # Print debug: show all files in root
+        print("📂 Files in root directory:")
+        for item in os.listdir('.'):
+            print(f"   {item}")
+        return
 
-    print(f"🔍 Found {len(source_files)} HTML files")
     translated = 0
     skipped = 0
 
     for src in source_files:
-        rel = src[2:] if src.startswith('./') else src
+        # Normalize path (remove leading './')
+        rel = src if not src.startswith('./') else src[2:]
         out_path = os.path.join(out_folder, rel)
 
-        # Incremental check
         if os.path.exists(out_path) and rel not in changed and 'FORCE_FULL_RUN' not in changed:
             skipped += 1
             continue
