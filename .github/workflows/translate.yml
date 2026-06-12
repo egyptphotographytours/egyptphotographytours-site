@@ -1,4 +1,4 @@
-name: LibreTranslate Smart Translation
+name: LibreTranslate Smart Translation (Resilient)
 
 on:
   push:
@@ -8,10 +8,10 @@ on:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 480               # Max 8 hours (GitHub hard limit is 6h, but we commit frequently)
     strategy:
       fail-fast: false
-      max-parallel: 1                # Use 1 for stability; increase later if needed
+      max-parallel: 1                  # One language at a time to avoid resource clashes
       matrix:
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
 
@@ -20,6 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+          persist-credentials: true    # So git push works
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -31,41 +32,36 @@ jobs:
           pip install --upgrade pip
           pip install beautifulsoup4 requests
 
-      - name: Start LibreTranslate server (with timeout and logs)
+      - name: Start LibreTranslate server (with memory limit)
         run: |
-          docker run -d --name libretranslate -p 5000:5000 libretranslate/libretranslate:latest
+          docker run -d --name libretranslate \
+            -p 5000:5000 \
+            --memory="4g" \
+            libretranslate/libretranslate:latest
 
-          echo "⏳ Waiting up to 5 minutes for LibreTranslate to become ready..."
+          echo "⏳ Waiting up to 5 minutes for LibreTranslate to be ready..."
           for i in {1..60}; do
             if curl -s -f http://localhost:5000/languages >/dev/null 2>&1; then
-              echo "✅ LibreTranslate server is ready after $((i*5)) seconds"
+              echo "✅ LibreTranslate server ready after $((i*5)) seconds"
               exit 0
             fi
             sleep 5
           done
 
-          echo "❌ Server failed to start within 5 minutes. Showing Docker logs:"
+          echo "❌ Server failed to start. Docker logs:"
           docker logs libretranslate
           exit 1
 
-      - name: Run translation
+      - name: Run translation (with continuous commits)
         env:
           TARGET_LANG: ${{ matrix.lang }}
         run: python translate_libre.py
 
-      - name: Commit and push
+      - name: Final push (ensures everything is uploaded)
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -d "./${{ matrix.lang }}" ] && [ -n "$(ls -A ./${{ matrix.lang }})" ]; then
-            git add "./${{ matrix.lang }}/"
-            git commit -m "translate(${{ matrix.lang }}): update" || echo "No changes"
-            for i in 1 2 3 4 5; do
-              git push && break
-              echo "Retry $i..."
-              git pull --rebase
-              sleep 5
-            done
-          else
-            echo "No files for ${{ matrix.lang }}"
-          fi
+          git add "./${{ matrix.lang }}/" 2>/dev/null || true
+          git commit -m "translate(${{ matrix.lang }}): final sync" || echo "No changes"
+          git push
