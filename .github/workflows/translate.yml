@@ -1,4 +1,4 @@
-name: DeepL Smart Translation
+name: LibreTranslate Translation
 
 on:
   push:
@@ -8,41 +8,39 @@ on:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 60
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 3
       matrix:
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install beautifulsoup4 deepl
+          pip install beautifulsoup4 requests
 
-      - name: Debug - list all files
+      - name: Start LibreTranslate server
         run: |
-          echo "=== Repository root contents ==="
-          ls -la
-          echo "=== All HTML files (recursive) ==="
-          find . -name "*.html" -type f
+          docker run -d --name libretranslate \
+            -p 5000:5000 \
+            libretranslate/libretranslate:latest
 
-      - name: Run DeepL translation
+      - name: Run translation
         env:
           TARGET_LANG: ${{ matrix.lang }}
-          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
-        run: python translate_deepl.py
+        run: python translate_libre.py
 
       - name: Commit and push
         run: |
@@ -53,6 +51,7 @@ jobs:
             git commit -m "translate(${{ matrix.lang }}): update" || echo "No changes"
             for i in 1 2 3 4 5; do
               git push && break
+              echo "Retry $i..."
               git pull --rebase
               sleep 5
             done
