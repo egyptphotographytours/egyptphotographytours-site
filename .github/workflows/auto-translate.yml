@@ -2,7 +2,7 @@ name: Smart Meta NLLB Auto-Translation
 
 on:
   push:
-    branches: [ main ] # Note: If your default branch is named 'master', change 'main' to 'master'
+    branches: [ main ] 
 
 jobs:
   translate:
@@ -10,22 +10,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # This tells GitHub to run 24 separate machines at once, one for each language
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
     
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Needed so the script can see what files you changed
+          fetch-depth: 2 
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Python (Updated to v5)
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Cache AI Model (Makes it fast after the first time)
-        uses: actions/cache@v3
+      - name: Cache AI Model (Updated to v4)
+        uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
           key: hf-nllb-600m-${{ runner.os }}
@@ -33,7 +32,6 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          # Installs the lightweight CPU version of PyTorch and the AI library
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install transformers beautifulsoup4
 
@@ -46,7 +44,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # Only commits the new language folders
           git add ./${{ matrix.lang }}/
           git commit -m "chore: auto-translate to ${{ matrix.lang }}" || echo "No changes to commit"
           git push
