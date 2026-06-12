@@ -2,21 +2,23 @@ name: Smart Meta NLLB Auto-Translation
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
 
 jobs:
   translate:
     runs-on: ubuntu-latest
+    timeout-minutes: 60              # ← prevent runaway jobs
     strategy:
       fail-fast: false
+      max-parallel: 4               # ← limit concurrent jobs to avoid OOM
       matrix:
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
-    
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2 
+          fetch-depth: 2
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,6 +30,8 @@ jobs:
         with:
           path: ~/.cache/huggingface
           key: hf-nllb-600m-${{ runner.os }}
+          restore-keys: |
+            hf-nllb-600m-
 
       - name: Install Dependencies
         run: |
@@ -40,17 +44,23 @@ jobs:
           TARGET_LANG: ${{ matrix.lang }}
         run: python translate_nllb.py
 
-      - name: Commit and Push Translations (With Retry Logic)
+      - name: Commit and Push Translations
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add ./${{ matrix.lang }}/
-          git commit -m "chore: auto-translate to ${{ matrix.lang }}" || echo "No changes to commit"
           
-          # 🛡️ RETRY LOOP: Prevents "Exit Code 1" crash when 24 languages push at the exact same second
-          for i in {1..5}; do
-            git push && break
-            echo "⚠️ Push failed (likely a race condition). Pulling rebase and retrying in 5 seconds..."
-            git pull --rebase
-            sleep 5
-          done
+          # Only commit if the language folder exists and has files
+          if [ -d "./${{ matrix.lang }}" ] && [ -n "$(ls -A ./${{ matrix.lang }})" ]; then
+            git add "./${{ matrix.lang }}/"
+            git commit -m "chore: auto-translate to ${{ matrix.lang }}" || echo "No changes to commit"
+            
+            # Retry push with rebase to avoid race condition
+            for i in {1..5}; do
+              git push && break
+              echo "⚠️ Push failed, pulling rebase and retrying in 5 seconds..."
+              git pull --rebase
+              sleep 5
+            done
+          else
+            echo "No files to commit for ${{ matrix.lang }}"
+          fi
