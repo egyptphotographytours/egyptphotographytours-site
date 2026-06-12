@@ -8,10 +8,10 @@ on:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     strategy:
       fail-fast: false
-      max-parallel: 2               # Prevent server overload
+      max-parallel: 1                # Use 1 for stability; increase later if needed
       matrix:
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
 
@@ -31,30 +31,22 @@ jobs:
           pip install --upgrade pip
           pip install beautifulsoup4 requests
 
-      - name: Start LibreTranslate server (with health check)
+      - name: Start LibreTranslate server (with timeout and logs)
         run: |
-          docker run -d --name libretranslate \
-            -p 5000:5000 \
-            libretranslate/libretranslate:latest
+          docker run -d --name libretranslate -p 5000:5000 libretranslate/libretranslate:latest
 
-          echo "Waiting for LibreTranslate to be ready..."
-          for i in {1..90}; do
-            if curl -s -f http://localhost:5000/languages > /dev/null 2>&1; then
-              echo "✅ Server ready after $i seconds"
-              break
+          echo "⏳ Waiting up to 5 minutes for LibreTranslate to become ready..."
+          for i in {1..60}; do
+            if curl -s -f http://localhost:5000/languages >/dev/null 2>&1; then
+              echo "✅ LibreTranslate server is ready after $((i*5)) seconds"
+              exit 0
             fi
-            sleep 2
+            sleep 5
           done
 
-          # Quick test translation
-          TEST_RESULT=$(curl -s -X POST http://localhost:5000/translate \
-            -H "Content-Type: application/json" \
-            -d '{"q":"Hello","source":"en","target":"es"}' | jq -r '.translatedText')
-          if [ "$TEST_RESULT" = "Hola" ]; then
-            echo "✅ Test translation successful"
-          else
-            echo "⚠️ Test translation returned: $TEST_RESULT"
-          fi
+          echo "❌ Server failed to start within 5 minutes. Showing Docker logs:"
+          docker logs libretranslate
+          exit 1
 
       - name: Run translation
         env:
