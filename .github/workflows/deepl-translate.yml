@@ -3,7 +3,7 @@ name: DeepL Smart Translation
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # manual trigger
+  workflow_dispatch:
 
 jobs:
   translate:
@@ -11,7 +11,7 @@ jobs:
     timeout-minutes: 25
     strategy:
       fail-fast: false
-      max-parallel: 4          # Conservative to avoid rate limits
+      max-parallel: 4
       matrix:
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
 
@@ -30,6 +30,13 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install beautifulsoup4 deepl
+
+      - name: Debug - list all files
+        run: |
+          echo "=== Repository root contents ==="
+          ls -la
+          echo "=== All HTML files (recursive) ==="
+          find . -name "*.html" -type f
 
       - name: Run DeepL translation
         env:
