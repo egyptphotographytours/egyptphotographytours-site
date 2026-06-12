@@ -128,46 +128,34 @@ def main():
 
     os.makedirs(out_folder, exist_ok=True)
 
-    # --- NEW: Explicitly collect all HTML files, ignoring only language folders and hidden dirs ---
+    # Collect all HTML files from root and subdirectories (skip language folders)
     ignore_dirs = set(LANG_MAP.keys()) | {'.git', '.github', '__pycache__', 'node_modules', 'zh', 'ms', 'la'}
     source_files = []
     
-    # First, check root directory directly
+    # Root files
     for file in os.listdir('.'):
         if file.endswith('.html') and os.path.isfile(file):
             source_files.append(file)
     
-    # Then walk subdirectories, skipping ignored ones
+    # Subdirectories
     for root, dirs, files in os.walk('.'):
-        # Skip the root because we already handled it (but if root has subdirs, walk will go into them)
         if root == '.':
-            # Filter dirs to avoid descending into ignored folders
             dirs[:] = [d for d in dirs if d not in ignore_dirs]
             continue
-        # For subdirectories, add their HTML files
         for file in files:
             if file.endswith('.html'):
                 full_path = os.path.join(root, file)
                 source_files.append(full_path)
     
-    # Also include files from root that might have been missed (just in case)
-    print(f"🔍 Found {len(source_files)} HTML files total")
-    for f in source_files[:10]:  # show first 10
-        print(f"   - {f}")
-    
+    print(f"🔍 Found {len(source_files)} HTML files")
     if len(source_files) == 0:
-        print("❌ No source HTML files found. Check your repository structure.")
-        # Print debug: show all files in root
-        print("📂 Files in root directory:")
-        for item in os.listdir('.'):
-            print(f"   {item}")
+        print("❌ No source HTML files found. Check debug output above.")
         return
 
     translated = 0
     skipped = 0
 
     for src in source_files:
-        # Normalize path (remove leading './')
         rel = src if not src.startswith('./') else src[2:]
         out_path = os.path.join(out_folder, rel)
 
