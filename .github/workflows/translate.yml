@@ -1,4 +1,4 @@
-name: LibreTranslate Translation
+name: LibreTranslate Smart Translation
 
 on:
   push:
@@ -8,10 +8,10 @@ on:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     strategy:
       fail-fast: false
-      max-parallel: 3
+      max-parallel: 2               # Prevent server overload
       matrix:
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
 
@@ -31,11 +31,30 @@ jobs:
           pip install --upgrade pip
           pip install beautifulsoup4 requests
 
-      - name: Start LibreTranslate server
+      - name: Start LibreTranslate server (with health check)
         run: |
           docker run -d --name libretranslate \
             -p 5000:5000 \
             libretranslate/libretranslate:latest
+
+          echo "Waiting for LibreTranslate to be ready..."
+          for i in {1..90}; do
+            if curl -s -f http://localhost:5000/languages > /dev/null 2>&1; then
+              echo "✅ Server ready after $i seconds"
+              break
+            fi
+            sleep 2
+          done
+
+          # Quick test translation
+          TEST_RESULT=$(curl -s -X POST http://localhost:5000/translate \
+            -H "Content-Type: application/json" \
+            -d '{"q":"Hello","source":"en","target":"es"}' | jq -r '.translatedText')
+          if [ "$TEST_RESULT" = "Hola" ]; then
+            echo "✅ Test translation successful"
+          else
+            echo "⚠️ Test translation returned: $TEST_RESULT"
+          fi
 
       - name: Run translation
         env:
