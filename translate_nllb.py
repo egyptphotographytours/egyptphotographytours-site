@@ -7,7 +7,7 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 # --- CONFIGURATION ---
 DOMAIN = "https://www.egyptphotographytours.com"
 
-# The 24 languages we are targeting (ISO Code: Meta NLLB Code)
+# The 24 languages we are targeting
 LANGUAGES = {
     'es': 'spa_Latn', 'fr': 'fra_Latn', 'de': 'deu_Latn', 'it': 'ita_Latn',
     'pt': 'por_Latn', 'ru': 'rus_Cyrl', 'ja': 'jpn_Jpan', 'zh-CN': 'zho_Hans',
@@ -21,14 +21,13 @@ TARGET_LANG = os.getenv('TARGET_LANG')
 TARGET_NLLB_CODE = LANGUAGES[TARGET_LANG]
 
 print(f"🧠 Loading Meta NLLB AI Model for {TARGET_LANG}...")
-# We use the 600M distilled model: it's fast, free, and fits perfectly in GitHub's free servers
 MODEL_NAME = "facebook/nllb-200-distilled-600M"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
 
 def translate_text(text):
     """Translates a single piece of text using the AI."""
-    if not text or not text.strip(): return text
+    if not text or len(text.strip()) <= 2: return text # Skip tiny strings like punctuation
     try:
         inputs = tokenizer(text, return_tensors="pt")
         translated_tokens = model.generate(
@@ -38,7 +37,7 @@ def translate_text(text):
         )
         return tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
     except Exception as e:
-        print(f"Error translating: {e}")
+        print(f"⚠️ Error translating '{text[:30]}...': {e}")
         return text
 
 def get_changed_files():
@@ -47,16 +46,14 @@ def get_changed_files():
         result = subprocess.run(['git', 'diff', '--name-only', 'HEAD~1', 'HEAD'], capture_output=True, text=True, check=True)
         return result.stdout.strip().split('\n')
     except:
-        # If it's the very first commit, it forces a full translation of everything
         return ['FORCE_FULL_RUN'] 
 
 def main():
     changed_files = get_changed_files()
     
-    # 1. Find all your original English HTML files (ignoring the translated folders)
+    # 1. Find all your original English HTML files
     source_files = []
     for root, dirs, files in os.walk('.'):
-        # Skip hidden folders, cache, and the language folders we create
         dirs[:] = [d for d in dirs if not d.startswith('.') and d not in LANGUAGES and d != '__pycache__']
         for file in files:
             if file.endswith('.html'):
@@ -66,12 +63,9 @@ def main():
     
     translated_count = 0
     for src_path in source_files:
-        # Determine where the translated file should go (e.g., './about.html' -> './es/about.html')
         out_path = os.path.join(f'./{TARGET_LANG}', src_path)
         
-        # THE SMART LOGIC: 
-        # Translate if the translated file DOES NOT EXIST yet (first run or new language) 
-        # OR if the source file was CHANGED in your last commit.
+        # Translate if the file doesn't exist, was changed, or is a full run
         needs_translation = (not os.path.exists(out_path)) or (src_path in changed_files) or ('FORCE_FULL_RUN' in changed_files)
         
         if needs_translation:
@@ -91,11 +85,20 @@ def main():
             if meta_desc and meta_desc.get('content'):
                 meta_desc['content'] = translate_text(meta_desc['content'])
                 
-            # Translate body text safely (preserves your links and bold tags)
-            for element in soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'a', 'span', 'td', 'th', 'label', 'button']):
-                if element.string and element.string.strip():
-                    element.string.replace_with(translate_text(element.string.strip()))
+            # 🌟 THE MAGIC BULLET: Find EVERY text node in the body!
+            # This perfectly translates text inside <a>, <b>, <span>, etc. without breaking HTML!
+            if soup.body:
+                for text_node in soup.body.find_all(text=True):
+                    parent = text_node.parent
+                    # Ignore code, scripts, and styles
+                    if parent and parent.name in ['script', 'style', 'code', 'pre']:
+                        continue
                     
+                    text = text_node.strip()
+                    if text:
+                        translated = translate_text(text)
+                        text_node.replace_with(translated)
+                        
             # Remove old hreflang tags to prevent duplicates
             for old_tag in soup.find_all('link', rel='alternate'):
                 old_tag.decompose()
@@ -103,7 +106,7 @@ def main():
             # Inject perfect SEO Hreflang tags for all 24 languages
             for lang in LANGUAGES:
                 href_path = src_path.replace('./', '').replace('index.html', '')
-                if lang == 'en': # Assuming English is your default root language
+                if lang == 'en': 
                     href = f"{DOMAIN}/{href_path}"
                 else:
                     href = f"{DOMAIN}/{lang}/{href_path}"
