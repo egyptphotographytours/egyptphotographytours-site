@@ -1,0 +1,18 @@
+name: Cleanup nested folders
+on: workflow_dispatch
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Remove nested junk
+        run: |
+          for lang in es fr de it pt ru ja "zh-CN" ko ar hi nl sv pl tr vi th id cs ro tl no da fi; do
+            find "$lang" -type d \( -name "es" -o -name "fr" -o -name "de" -o -name "it" -o -name "pt" -o -name "ru" -o -name "ja" -o -name "zh-CN" -o -name "ko" -o -name "ar" -o -name "hi" -o -name "nl" -o -name "sv" -o -name "pl" -o -name "tr" -o -name "vi" -o -name "th" -o -name "id" -o -name "cs" -o -name "ro" -o -name "tl" -o -name "no" -o -name "da" -o -name "fi" \) -exec rm -rf {} + 2>/dev/null || true
+          done
+          rm -rf zh ms la 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "bot@users.noreply.github.com"
+          git add .
+          git commit -m "chore: remove nested translation junk" || echo "No changes"
+          git push
