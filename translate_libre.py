@@ -15,55 +15,40 @@ TARGET_LANGS = ['es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'zh-CN', 'ko', 'ar',
                 'hi', 'nl', 'sv', 'pl', 'tr', 'vi', 'th', 'id', 'cs', 'ro', 'tl', 'no', 'da', 'fi']
 
 # ----------------------------------------------
-# Asset path fixing (prevents broken images/CSS)
+# Asset path fixing – ensures images, CSS, icons work in subfolders
 # ----------------------------------------------
-def fix_asset_paths(soup, lang_folder):
-    """
-    Convert relative asset paths (images, CSS, JS, etc.) to absolute paths
-    so they work correctly from language subfolders (e.g., /es/).
-    Leaves external URLs and absolute paths (starting with /) untouched.
-    """
-    # Helper to rewrite a URL if it's relative (not starting with / or http:// or https://)
+def fix_asset_paths(soup):
+    """Convert relative asset paths to absolute paths (starting with /)."""
     def rewrite_url(url):
         if not url:
             return url
-        # Skip absolute URLs (starts with /, http://, https://, //)
         if url.startswith(('/','http://','https://','//','data:')):
             return url
-        # Remove leading './' if present
         if url.startswith('./'):
             url = url[2:]
-        # Make it absolute from root
         return '/' + url
 
-    # Rewrite <img src="...">
     for tag in soup.find_all(['img', 'script', 'source', 'iframe', 'video', 'audio', 'track', 'embed']):
         if tag.has_attr('src'):
             tag['src'] = rewrite_url(tag['src'])
-    # Rewrite <link href="..."> for CSS, preconnect, etc.
     for tag in soup.find_all('link', href=True):
         tag['href'] = rewrite_url(tag['href'])
-    # Rewrite <a href="..."> for downloadable files? Not for internal pages (keep relative).
-    # But if it's a file link (.pdf, .jpg, etc.), make absolute
     for tag in soup.find_all('a', href=True):
         href = tag['href']
         if re.search(r'\.(pdf|zip|doc|xls|jpg|png|gif|mp4|webm)(\?|$)', href, re.I):
             tag['href'] = rewrite_url(href)
-    # Rewrite <div style="background: url(...)"> - simplest: find all style attributes
     for tag in soup.find_all(style=True):
         style = tag['style']
-        # replace url(relative) with url(/relative)
         new_style = re.sub(r'url\([\'"]?([^/][^:\'"]*)[\'"]?\)', lambda m: f"url(/{m.group(1)})", style)
         if new_style != style:
             tag['style'] = new_style
-    # Rewrite <meta property="og:image" content="...">
     for meta in soup.find_all('meta', attrs={'property': 'og:image'}):
         if meta.has_attr('content'):
             meta['content'] = rewrite_url(meta['content'])
     return soup
 
 # ----------------------------------------------
-# Git commit with push and retry
+# Git commit with pull --rebase and retry
 # ----------------------------------------------
 def git_commit_and_push(target_lang, file_paths, max_retries=5):
     if not file_paths:
@@ -72,10 +57,8 @@ def git_commit_and_push(target_lang, file_paths, max_retries=5):
         try:
             subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=False)
             subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=False)
-
             for f in file_paths:
                 subprocess.run(["git", "add", f], check=False)
-
             subprocess.run(["git", "commit", "-m", f"translate({target_lang}): batch ({len(file_paths)} files)"], check=False, capture_output=True)
             subprocess.run(["git", "pull", "--rebase", "--autostash"], check=False, capture_output=True)
             push_result = subprocess.run(["git", "push"], capture_output=True, text=True)
@@ -121,7 +104,7 @@ def wait_for_server():
     return False
 
 # ----------------------------------------------
-# Translation function (with retries)
+# Translation function with retries
 # ----------------------------------------------
 def translate_text(text, target_lang, retries=3):
     if not text or len(text.strip()) < 3:
@@ -138,9 +121,6 @@ def translate_text(text, target_lang, retries=3):
         time.sleep(5)
     return text
 
-# ----------------------------------------------
-# Translate HTML content (title, meta, body)
-# ----------------------------------------------
 def translate_soup(soup, target_lang):
     if soup.title and soup.title.string:
         soup.title.string = translate_text(soup.title.string.strip(), target_lang)
@@ -153,9 +133,6 @@ def translate_soup(soup, target_lang):
                 elem.string = translate_text(elem.string.strip(), target_lang)
     return soup
 
-# ----------------------------------------------
-# Add hreflang links (SEO)
-# ----------------------------------------------
 def add_hreflang_tags(soup, rel_path):
     for old in soup.find_all('link', rel='alternate'):
         old.decompose()
@@ -169,9 +146,6 @@ def add_hreflang_tags(soup, rel_path):
         soup.head.append(default_tag)
     return soup
 
-# ----------------------------------------------
-# Main
-# ----------------------------------------------
 def main():
     target = os.getenv('TARGET_LANG')
     if not target or target not in TARGET_LANGS:
@@ -223,21 +197,13 @@ def main():
         try:
             with open(src, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f.read(), 'html.parser')
-
-            # 1. Translate text content
             soup = translate_soup(soup, target)
-
-            # 2. Fix asset paths (images, CSS, JS, icons)
-            soup = fix_asset_paths(soup, target)
-
-            # 3. Add hreflang tags
+            soup = fix_asset_paths(soup)                     # ← fixes images/icons/CSS
             href_path = rel.replace('index.html', '')
             soup = add_hreflang_tags(soup, href_path)
-
             os.makedirs(os.path.dirname(out_path), exist_ok=True)
             with open(out_path, 'w', encoding='utf-8') as f:
                 f.write(str(soup))
-
             translated += 1
             batch.append(out_path)
 
