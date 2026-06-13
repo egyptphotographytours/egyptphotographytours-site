@@ -1,4 +1,4 @@
-name: LibreTranslate Smart Translation (Resilient)
+name: LibreTranslate Smart Translation (Final)
 
 on:
   push:
@@ -8,10 +8,13 @@ on:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 480               # Max 8 hours (GitHub hard limit is 6h, but we commit frequently)
+    timeout-minutes: 480
+    # Force Node.js 24 to eliminate deprecation warning (optional but safe)
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     strategy:
       fail-fast: false
-      max-parallel: 1                  # One language at a time to avoid resource clashes
+      max-parallel: 1
       matrix:
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
 
@@ -20,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-          persist-credentials: true    # So git push works
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -32,7 +35,7 @@ jobs:
           pip install --upgrade pip
           pip install beautifulsoup4 requests
 
-      - name: Start LibreTranslate server (with memory limit)
+      - name: Start LibreTranslate server
         run: |
           docker run -d --name libretranslate \
             -p 5000:5000 \
@@ -42,7 +45,7 @@ jobs:
           echo "⏳ Waiting up to 5 minutes for LibreTranslate to be ready..."
           for i in {1..60}; do
             if curl -s -f http://localhost:5000/languages >/dev/null 2>&1; then
-              echo "✅ LibreTranslate server ready after $((i*5)) seconds"
+              echo "✅ Server ready after $((i*5)) seconds"
               exit 0
             fi
             sleep 5
@@ -52,16 +55,7 @@ jobs:
           docker logs libretranslate
           exit 1
 
-      - name: Run translation (with continuous commits)
+      - name: Run translation (with batch commits)
         env:
           TARGET_LANG: ${{ matrix.lang }}
         run: python translate_libre.py
-
-      - name: Final push (ensures everything is uploaded)
-        if: always()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "./${{ matrix.lang }}/" 2>/dev/null || true
-          git commit -m "translate(${{ matrix.lang }}): final sync" || echo "No changes"
-          git push
