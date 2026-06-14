@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- No CSP meta tag -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        input, textarea, button { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #ffd700; color: #1a202c; font-weight: bold; cursor: pointer; }
+        .cf-turnstile { margin: 15px 0; }
+        #form-status { margin-top: 15px; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="subject" placeholder="Subject">
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADksi_3_nH-4QjMP" data-theme="light"></div>
+        <button type="submit">Send Message</button>
+        <div id="form-status"></div>
+    </form>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const statusDiv = document.getElementById('form-status');
+        const WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            statusDiv.innerHTML = 'Sending...';
+            statusDiv.style.color = '#666';
+
+            const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+            if (!turnstileToken) {
+                statusDiv.innerHTML = 'Please complete the security check.';
+                statusDiv.style.color = '#c62828';
+                return;
+            }
+
+            const formData = new FormData(form);
+            const payload = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                turnstileToken: turnstileToken
+            };
+
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (response.ok && result.success) {
+                    statusDiv.innerHTML = '✅ Message sent successfully!';
+                    statusDiv.style.color = '#2e7d32';
+                    form.reset();
+                    turnstile.reset();
+                } else {
+                    statusDiv.innerHTML = result.error || 'Something went wrong. Please try again.';
+                    statusDiv.style.color = '#c62828';
+                }
+            } catch (err) {
+                statusDiv.innerHTML = 'Network error. Please check your connection.';
+                statusDiv.style.color = '#c62828';
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+</html>
