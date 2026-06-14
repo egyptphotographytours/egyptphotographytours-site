@@ -1,0 +1,76 @@
+name: Fix Language Switcher & Icons
+
+on:
+  workflow_dispatch:   # manual trigger only
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4
+
+      - name: Run fix script
+        run: |
+          cat > fix_links.py << 'EOF'
+          import os
+          import re
+          from bs4 import BeautifulSoup
+
+          def fix_language_switcher_and_icons(lang_folder):
+              for root, dirs, files in os.walk(lang_folder):
+                  for file in files:
+                      if not file.endswith('.html'):
+                          continue
+                      path = os.path.join(root, file)
+                      with open(path, 'r', encoding='utf-8') as f:
+                          content = f.read()
+                      soup = BeautifulSoup(content, 'html.parser')
+                      changed = False
+
+                      for a in soup.find_all('a', href=True):
+                          href = a['href']
+                          if re.match(r'^[a-z]{2}(-([A-Z]{2}))?(/|$)', href):
+                              if not href.startswith('/'):
+                                  a['href'] = '/' + href
+                                  changed = True
+
+                      for link in soup.find_all('link', href=True):
+                          if 'font' in str(link).lower() or '.woff' in link['href'] or '.ttf' in link['href']:
+                              if not link['href'].startswith(('http://','https://','//','/')):
+                                  link['href'] = '/' + link['href']
+                                  changed = True
+
+                      for style in soup.find_all('style'):
+                          if style.string:
+                              new_css = re.sub(r'url\([\'"]?\.\.?/([^\'"]+)[\'"]?\)', r'url(/\1)', style.string)
+                              new_css = re.sub(r'url\([\'"]?([^/\'")][^\'"]*)[\'"]?\)', r'url(/\1)', new_css)
+                              if new_css != style.string:
+                                  style.string = new_css
+                                  changed = True
+
+                      if changed:
+                          with open(path, 'w', encoding='utf-8') as f:
+                              f.write(str(soup))
+                          print(f"Fixed: {path}")
+
+          for lang in ['es','fr','de','it','pt','ru','ja','zh-CN','ko','ar','hi','nl','sv','pl','tr','vi','th','id','cs','ro','tl','no','da','fi']:
+              if os.path.exists(lang):
+                  fix_language_switcher_and_icons(lang)
+          EOF
+          python fix_links.py
+
+      - name: Commit and push fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "fix: correct language switcher and icon paths" || echo "No changes"
+          git push
