@@ -563,7 +563,8 @@
     <header class="header">
         <div class="container content">
             <div class="logo-section">
-                <img src="images/egypt-photography-tours-logo.jpg"
+                <!-- FIXED: logo src now absolute from root -->
+                <img src="/images/egypt-photography-tours-logo.jpg"
                      alt="Egypt Photography Tours Logo - Professional tour guide services for Pyramids and ancient sites"
                      class="logo-img"
                      loading="eager"
@@ -598,51 +599,52 @@
                         </svg>
                     </div>
                     <div class="language-dropdown">
-                        <a href="blog-article.html" class="language-item active">
+                        <!-- FIXED: all language switcher links now start with / -->
+                        <a href="/blog-article.html" class="language-item active">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="language-text">English</span>
                         </a>
-                        <a href="ru/blog-article.html" class="language-item">
+                        <a href="/ru/blog-article.html" class="language-item">
                             <span class="flag-icon">🇷🇺</span>
                             <span class="language-text">Русский</span>
                         </a>
-                        <a href="ar/blog-article.html" class="language-item">
+                        <a href="/ar/blog-article.html" class="language-item">
                             <span class="flag-icon">🇪🇬</span>
                             <span class="language-text">العربية</span>
                         </a>
-                        <a href="fr/blog-article.html" class="language-item">
+                        <a href="/fr/blog-article.html" class="language-item">
                             <span class="flag-icon">🇫🇷</span>
                             <span class="language-text">Français</span>
                         </a>
-                        <a href="de/blog-article.html" class="language-item">
+                        <a href="/de/blog-article.html" class="language-item">
                             <span class="flag-icon">🇩🇪</span>
                             <span class="language-text">Deutsch</span>
                         </a>
-                        <a href="es/blog-article.html" class="language-item">
+                        <a href="/es/blog-article.html" class="language-item">
                             <span class="flag-icon">🇪🇸</span>
                             <span class="language-text">Español</span>
                         </a>
-                        <a href="it/blog-article.html" class="language-item">
+                        <a href="/it/blog-article.html" class="language-item">
                             <span class="flag-icon">🇮🇹</span>
                             <span class="language-text">Italiano</span>
                         </a>
-                        <a href="zh/blog-article.html" class="language-item">
+                        <a href="/zh/blog-article.html" class="language-item">
                             <span class="flag-icon">🇨🇳</span>
                             <span class="language-text">中文</span>
                         </a>
-                        <a href="ko/blog-article.html" class="language-item">
+                        <a href="/ko/blog-article.html" class="language-item">
                             <span class="flag-icon">🇰🇷</span>
                             <span class="language-text">한국어</span>
                         </a>
-                        <a href="pt/blog-article.html" class="language-item">
+                        <a href="/pt/blog-article.html" class="language-item">
                             <span class="flag-icon">🇵🇹</span>
                             <span class="language-text">Português</span>
                         </a>
-                        <a href="id/blog-article.html" class="language-item">
+                        <a href="/id/blog-article.html" class="language-item">
                             <span class="flag-icon">🇮🇩</span>
                             <span class="language-text">Bahasa</span>
                         </a>
-                        <a href="ja/blog-article.html" class="language-item">
+                        <a href="/ja/blog-article.html" class="language-item">
                             <span class="flag-icon">🇯🇵</span>
                             <span class="language-text">日本語</span>
                         </a>
@@ -653,7 +655,7 @@
     </nav>
 
     <main class="main">
-        <section class="article-hero" style="background-image: url('images/blog-tour-guide-egypt.jpg');">
+        <section class="article-hero" style="background-image: url('/images/blog-tour-guide-egypt.jpg');">
             <div class="article-hero-overlay"></div>
             <div class="article-hero-content">
                 <h1 class="article-title">Tour Guide or Solo? Exploring Egypt the Best Way</h1>
@@ -1006,7 +1008,7 @@
         // ✅ PRELOAD CRITICAL IMAGES
         function preloadImages() {
             const criticalImages = [
-                'images/blog-tour-guide-egypt.jpg'
+                '/images/blog-tour-guide-egypt.jpg'
             ];
             
             criticalImages.forEach(src => {
@@ -1029,5 +1031,4 @@
         });
     </script>
 </body>
-
 </html>
