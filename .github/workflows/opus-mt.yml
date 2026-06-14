@@ -1,0 +1,48 @@
+name: OPUS-MT Smart Translation
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Cache Hugging Face models
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: opus-mt-${{ matrix.lang }}-${{ runner.os }}
+          restore-keys: |
+            opus-mt-${{ runner.os }}
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install beautifulsoup4 transformers torch sentencepiece
+
+      - name: Run OPUS-MT translation
+        env:
+          TARGET_LANG: ${{ matrix.lang }}
+        run: python translate.py
