@@ -271,14 +271,16 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .mobile-nav-contact i{color:var(--c-gold);width:16px}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
 .nav-overlay.is-open{display:block}
-/* ═══ HERO SLIDER — CLEAR JPG, NO SHADE, BUTTONS AT BOTTOM ═══ */
+
+/* ═══ HERO SLIDER — CLEAR JPG, NO SHADE, TEXT DIRECTLY ON IMAGE, BUTTONS AT BOTTOM ═══ */
 .hero{position:relative;height:70vh;min-height:400px;max-height:720px;overflow:hidden;touch-action:pan-y}
 @media(min-width:768px){.hero{height:84vh;max-height:820px}}
 @media(min-width:1200px){.hero{height:90vh;max-height:880px}}
 .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease-in-out;z-index:1}
 .hero-slide.is-active{opacity:1;z-index:2}
 .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
-/* NO OVERLAY — images show fully clear */
+
+/* Content positioned at the bottom, directly on the image */
 .hero-body{
   position:absolute;
   inset:0;
@@ -288,29 +290,30 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
   align-items:center;
   justify-content:flex-end; /* Pushes content to the bottom */
   text-align:center;
-  padding:20px 16px 100px;
+  padding:20px 16px 100px; /* Space for the dots at the bottom */
 }
 @media(min-width:768px){
   .hero-body{padding-bottom:120px;}
 }
+
+/* Transparent card wrapper - NO BLURRY SHADE */
 .hero-card{
-  background:rgba(8,14,26,0.4);
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
-  border-radius:20px;
-  padding:24px 20px;
+  background:transparent;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  border:none;
+  box-shadow:none;
+  padding:0;
   width:100%;
-  max-width:680px;
-  border:1px solid rgba(255,255,255,0.2);
-  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  max-width:800px;
 }
-@media(min-width:768px){.hero-card{padding:32px 40px}}
+
 .hero-badge{
   display:inline-flex;
   align-items:center;
   gap:6px;
-  background:rgba(255,215,0,.22);
-  border:1px solid rgba(255,215,0,.6);
+  background:rgba(0, 0, 0, 0.55); /* Dark semi-transparent for readability */
+  border:1px solid rgba(255, 215, 0, 0.6);
   border-radius:30px;
   padding:6px 16px;
   font-size:11px;
@@ -319,32 +322,51 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
   letter-spacing:1px;
   color:var(--c-gold);
   margin-bottom:16px;
+  text-shadow:0 1px 3px rgba(0,0,0,0.8);
 }
 /* Special white badge for Photoshoots slide */
 .hero-badge-light {
   background: #ffffff !important;
   color: #000000 !important;
   border-color: #ffffff !important;
+  text-shadow: none !important;
 }
+
 .hero-title{
-  font-size:clamp(22px,5vw,52px);
+  font-size:clamp(24px,5vw,56px);
   font-weight:800;
   line-height:1.1;
   margin-bottom:12px;
-  color:var(--c-white);
-  text-shadow:0 2px 15px rgba(0,0,0,0.8), 0 0 5px rgba(0,0,0,0.9);
+  color:#ffffff;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.9);
 }
-.hero-title em{font-style:normal;color:var(--c-gold)}
+.hero-title em{
+  font-style:normal;
+  color:var(--c-gold);
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.85);
+}
+
 .hero-sub{
-  font-size:clamp(13px,2vw,18px);
-  color:rgba(255,255,255,.95);
-  font-weight:400;
+  font-size:clamp(14px,2vw,18px);
+  color:rgba(255,255,255,0.95);
+  font-weight:500;
   line-height:1.5;
   margin-bottom:24px;
-  text-shadow:0 2px 10px rgba(0,0,0,0.8);
+  max-width:680px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
-.hero-btns{display:flex;flex-direction:column;gap:10px;width:100%}
-@media(min-width:460px){.hero-btns{flex-direction:row;justify-content:center}}
+
+.hero-btns{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  width:100%;
+  max-width:460px;
+}
+@media(min-width:460px){
+  .hero-btns{flex-direction:row;justify-content:center}
+}
+
 /* Hero dots — 44px tap targets */
 .hero-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:4;display:flex;gap:0;align-items:center}
 .hero-dot{width:44px;height:44px;border-radius:0;border:none;background:transparent;cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center}
@@ -355,6 +377,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .hero-arrow.prev{left:12px}
 .hero-arrow.next{right:12px}
 @media(min-width:768px){.hero-arrow{width:52px;height:52px;font-size:18px}.hero-arrow.prev{left:24px}.hero-arrow.next{right:24px}}
+
 /* STATS BAR */
 .stats-bar{background:var(--c-dark);border-bottom:2px solid rgba(255,215,0,.25)}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.09)}
@@ -902,7 +925,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </nav>
 <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
-<!-- ═══════════════════ HERO SLIDER — CLEAR JPG, BUTTONS AT BOTTOM ═══════════════════ -->
+<!-- ═══════════════════ HERO SLIDER — CLEAR JPG, NO OVERLAY, BUTTONS AT BOTTOM ═══════════════════ -->
 <section id="hero" class="hero" aria-label="Egypt Photography Tours – Featured tours and experiences">
 <div class="hero-slide is-active" role="group" aria-label="Slide 1 of 5: Egypt's Most Unforgettable Tours">
 <img src="https://www.egyptphotographytours.com/images/hero-image1.jpg" alt="Private tour at the Giza Pyramids with professional photographer and Egyptologist guide" loading="eager" width="1920" height="1080" fetchpriority="high" decoding="async">
@@ -1055,7 +1078,8 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </article>
 <article class="tc">
 <div class="tc-img-w">
-<img src="images/cairo-giza-2day.jpg" alt="2-day Cairo and Giza historical tour – Grand Egyptian Museum, Islamic Cairo, Giza Pyramids with expert guide" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
+<!-- ✅ FIXED PATH: Using absolute URL to ensure it always loads correctly -->
+<img src="https://www.egyptphotographytours.com/images/cairo-giza-2day.jpg" alt="2-day Cairo and Giza historical tour – Grand Egyptian Museum, Islamic Cairo, Giza Pyramids with expert guide" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
 <span class="tc-badge badge-best">Best Value</span>
 </div>
 <div class="tc-body">
@@ -1115,7 +1139,8 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </div>
 <div class="dest-grid">
 <a href="/tours?city=cairo" class="dest" aria-label="Cairo tours – 8 tours available, including the Grand Egyptian Museum and Islamic Cairo">
-<img src="images/cairo-giza-2day.jpg" alt="Cairo private and group tours – Grand Egyptian Museum, Islamic Cairo mosques and bazaars" loading="lazy" width="300" height="400" decoding="async">
+<!-- ✅ FIXED PATH: Using absolute URL to ensure it always loads correctly -->
+<img src="https://www.egyptphotographytours.com/images/cairo-giza-2day.jpg" alt="Cairo private and group tours – Grand Egyptian Museum, Islamic Cairo mosques and bazaars" loading="lazy" width="300" height="400" decoding="async">
 <div class="dest-label"><span class="dest-name">Cairo</span><span class="dest-cnt">8 tours available</span></div>
 </a>
 <a href="/tour-pyramids-private" class="dest" aria-label="Giza Pyramids tours – 6 tours including photoshoots">
@@ -1830,7 +1855,7 @@ window._fbLoaded=true;
 /* Copyright year */
 var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
 
-/* ═══ CLOUDFLARE WORKER FORM SUBMISSION ═══ */
+/* ═══ CLOUDFLARE WORKER FORM SUBMISSION — FIXED N/A BUG ═══ */
 const cfForm = document.getElementById('contactForm');
 const cfStatus = document.getElementById('form-status');
 const WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
@@ -1849,12 +1874,15 @@ if (cfForm) {
         }
         
         const formData = new FormData(cfForm);
+        
+        // ✅ FIXED: Using the correct 'name' attributes from the HTML form instead of 'id'
+        // This prevents the 'N/A' fallback from triggering incorrectly.
         const payload = {
-            name: formData.get('f-name') || formData.get('name'),
-            email: formData.get('f-email') || formData.get('email'),
-            phone: formData.get('f-whatsapp') || formData.get('phone'),
+            name: formData.get('name') || '',
+            email: formData.get('email') || '',
+            phone: formData.get('phone') || '',
             subject: 'Custom Egypt Tour Request',
-            message: `Group Size: ${formData.get('f-group') || 'N/A'}\nTour Type: ${formData.get('f-type') || 'N/A'}\nDuration: ${formData.get('f-duration') || 'N/A'}\nDestinations: ${formData.get('f-destinations') || 'N/A'}\nDates: ${formData.get('f-dates') || 'N/A'}\n\nMessage: ${formData.get('f-message') || formData.get('message')}`,
+            message: `Group Size: ${formData.get('group_size') || 'Not specified'}\nTour Type: ${formData.get('tour_type') || 'Not specified'}\nDuration: ${formData.get('duration') || 'Not specified'}\nDestinations: ${formData.get('destinations') || 'Not specified'}\nDates: ${formData.get('dates') || 'Not specified'}\n\nMessage: ${formData.get('message') || ''}`,
             turnstileToken: turnstileToken
         };
         
