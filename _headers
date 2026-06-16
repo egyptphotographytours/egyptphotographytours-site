@@ -6,20 +6,62 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer-when-downgrade
 
-  Content-Security-Policy: default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; 
-                           script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.jscache.com https://widget.tripadvisor.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://kit.fontawesome.com https://challenges.cloudflare.com https://static.cloudflareinsights.com; 
-                           style-src 'self' https: 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://kit-free.fontawesome.com; 
-                           img-src 'self' https: data: blob:; 
-                           font-src 'self' https: data: https://fonts.gstatic.com https://cdnjs.cloudflare.com https://kit-free.fontawesome.com; 
-                           frame-src 'self' https://www.google.com https://www.facebook.com https://www.tripadvisor.com https://www.youtube.com https://challenges.cloudflare.com; 
-                           connect-src 'self' https://www.google.com https://www.gstatic.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://www.tripadvisor.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://contact-worker.hussam01112.workers.dev; 
-                           upgrade-insecure-requests; 
-                           base-uri 'self'; 
+  Content-Security-Policy: default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';
+                           script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           https://www.google.com https://www.gstatic.com
+                           https://www.googletagmanager.com
+                           https://connect.facebook.net
+                           https://staticxx.facebook.com
+                           https://www.facebook.com
+                           https://www.jscache.com
+                           https://widget.tripadvisor.com
+                           https://www.youtube.com
+                           https://maps.googleapis.com
+                           https://cdnjs.cloudflare.com
+                           https://kit.fontawesome.com
+                           https://challenges.cloudflare.com
+                           https://static.cloudflareinsights.com;
+                           style-src 'self' https: 'unsafe-inline'
+                           https://fonts.googleapis.com
+                           https://cdnjs.cloudflare.com
+                           https://kit-free.fontawesome.com;
+                           img-src 'self' https: data: blob:;
+                           font-src 'self' https: data:
+                           https://fonts.gstatic.com
+                           https://cdnjs.cloudflare.com
+                           https://kit-free.fontawesome.com;
+                           frame-src 'self'
+                           https://www.google.com
+                           https://www.facebook.com
+                           https://www.tripadvisor.com
+                           https://www.youtube.com
+                           https://challenges.cloudflare.com;
+                           connect-src 'self'
+                           https://www.google.com
+                           https://www.gstatic.com
+                           https://www.google-analytics.com
+                           https://analytics.google.com
+                           https://www.googletagmanager.com
+                           https://www.facebook.com
+                           https://graph.facebook.com
+                           https://connect.facebook.net
+                           https://www.tripadvisor.com
+                           https://challenges.cloudflare.com
+                           https://static.cloudflareinsights.com
+                           https://cloudflareinsights.com
+                           https://contact-worker.hussam01112.workers.dev;
+                           upgrade-insecure-requests;
+                           base-uri 'self';
                            form-action 'self' https://wa.me;
 
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Robots-Tag: index, follow
-  Cache-Control: no-cache
+
+  # NO CACHE (FOR ACTIVE DEVELOPMENT)
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
   Permissions-Policy: geolocation=(self), payment=(self)
 
   # Open Graph + Twitter card default headers
@@ -28,10 +70,12 @@
   og:type: website
   og:url: https://www.egyptphotographytours.com
   og:image: https://www.egyptphotographytours.com/images/og-image.jpg
+
   twitter:card: summary_large_image
   twitter:title: Egypt Photography Tours
   twitter:description: Private guided photography tours in Cairo, Giza, Alexandria, and all Egypt.
   twitter:image: https://www.egyptphotographytours.com/images/og-image.jpg
+
 # ======================================================
 # RSS FEED
 # ======================================================
@@ -40,81 +84,7 @@
   X-Robots-Tag: index, follow
 
 # ======================================================
-# STATIC ASSETS (CACHE + INDEX)
-# ======================================================
-/images/*
-  Cache-Control: public, max-age=31536000, immutable
-  X-Robots-Tag: index, follow
-
-/videos/*
-  Cache-Control: public, max-age=31536000, immutable
-  X-Robots-Tag: index, follow
-
-/css/*
-  Cache-Control: public, max-age=31536000, immutable
-  X-Robots-Tag: index, follow
-
-/js/*
-  Cache-Control: public, max-age=31536000, immutable
-  X-Robots-Tag: index, follow
-
-/fonts/*
-  Cache-Control: public, max-age=31536000, immutable
-  X-Robots-Tag: index, follow
-
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
-  X-Robots-Tag: index, follow
-
-/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
-  X-Robots-Tag: index, follow
-
-/*.png
-  Cache-Control: public, max-age=31536000, immutable
-  X-Robots-Tag: index, follow
-
-/*.webp
-  Cache-Control: public, max-age=31536000, immutable
-  X-Robots-Tag: index, follow
-
-# ======================================================
-# MULTILINGUAL PAGES
-# ======================================================
-/ar/*
-  Cache-Control: max-age=3600
-  X-Robots-Tag: index, follow
-
-/es/*
-  Cache-Control: max-age=3600
-  X-Robots-Tag: index, follow
-
-/fr/*
-  Cache-Control: max-age=3600
-  X-Robots-Tag: index, follow
-
-/it/*
-  Cache-Control: max-age=3600
-  X-Robots-Tag: index, follow
-
-/de/*
-  Cache-Control: max-age=3600
-  X-Robots-Tag: index, follow
-
-/pt/*
-  Cache-Control: max-age=3600
-  X-Robots-Tag: index, follow
-
-/kr/*
-  Cache-Control: max-age=3600
-  X-Robots-Tag: index, follow
-
-/cn/*
-  Cache-Control: max-age=3600
-  X-Robots-Tag: index, follow
-
-# ======================================================
-# BLOCK ADMIN / PRIVATE FOLDERS
+# ADMIN / PRIVATE FOLDERS
 # ======================================================
 /admin/*
   X-Robots-Tag: noindex, nofollow
