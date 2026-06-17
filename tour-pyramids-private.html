@@ -117,7 +117,7 @@ OPEN GRAPH & TWITTER
 <meta name="geo.country" content="EG">
 
 <!-- ═══════════════════════════════════════════════════════
-CRITICAL CSS — MATCHES INDEX PAGE DESIGN SYSTEM
+CRITICAL CSS — MATCHES INDEX PAGE DESIGN SYSTEM & MOBILE OPTIMIZED
 ═══════════════════════════════════════════════════════ -->
 <style>
 :root{--c-dark:#1a202c;--c-gold:#FFD700;--c-gold-d:#E6C200;--c-white:#fff;--c-bg:#f7f8fa;--c-text:#2d3748;--c-muted:#5A6475;--c-price:#6B5000;--c-border:#e2e8f0;--radius-sm:8px;--radius:14px;--shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow:0 4px 20px rgba(0,0,0,.11);--shadow-lg:0 12px 40px rgba(0,0,0,.16);--nav-height:56px;--header-height:60px;--transition:.28s cubic-bezier(.4,0,.2,1)}
@@ -249,7 +249,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .trust-item:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .trust-item i{color:var(--c-gold);margin-right:6px;font-size:16px;display:block;margin-bottom:6px}
 
-/* ✅ EXPERIENCE GRID (Used for Equipment & Features) */
+/* ✅ EXPERIENCE GRID */
 .exp-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
 @media(min-width:640px){.exp-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.exp-grid{grid-template-columns:repeat(3,1fr)}}
@@ -282,6 +282,35 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .paypal-buy-button{width:100%;padding:16px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:16px;cursor:pointer;margin-top:16px;transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px}
 .paypal-buy-button:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
 .paypal-buy-button:disabled{background:#cbd5e0;cursor:not-allowed;transform:none}
+/* ✅ MOBILE RESPONSIVE FORM ROWS */
+.form-row-2{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:768px){.form-row-2{grid-template-columns:1fr 1fr}}
+
+/* ✅ TOUR CARDS (For Other Tours Section) */
+.tours-grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:36px}
+@media(min-width:580px){.tours-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.tours-grid{grid-template-columns:repeat(3,1fr)}}
+.tc{background:var(--c-white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform var(--transition),box-shadow var(--transition)}
+.tc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.tc-img-w{position:relative;overflow:hidden;height:210px;flex-shrink:0}
+.tc-img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;display:block}
+.tc:hover .tc-img{transform:scale(1.07)}
+.tc-badge{position:absolute;top:12px;left:12px;font-size:10px;font-weight:800;padding:4px 11px;border-radius:12px;text-transform:uppercase;letter-spacing:.5px}
+.badge-hot{background:#ef4444;color:#fff}
+.badge-best{background:var(--c-gold);color:var(--c-dark)}
+.badge-new{background:#10b981;color:#fff}
+.badge-luxury{background:#7c3aed;color:#fff}
+.badge-photo{background:#0ea5e9;color:#fff}
+.tc-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.tc-title{font-size:16px;font-weight:700;color:var(--c-dark);margin-bottom:8px;line-height:1.35}
+.tc-title a{color:inherit;transition:color var(--transition)}
+.tc-title a:hover{color:var(--c-price)}
+.tc-desc{font-size:13px;color:var(--c-muted);line-height:1.65;flex:1;margin-bottom:14px}
+.tc-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tc-meta span{font-size:11px;color:var(--c-muted);font-weight:500}
+.tc-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--c-border)}
+.tc-price{font-size:19px;font-weight:800;color:var(--c-price);line-height:1}
+.tc-price small{font-size:11px;font-weight:400;color:var(--c-muted);display:block;margin-top:1px}
 
 /* ✅ FAQ */
 .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
@@ -338,8 +367,6 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 
 <!-- ═══════════════════════════════════════════════════════
 STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
-✅ FIXED: Added 'review' objects to Product to guarantee 5-star rich snippets in Google!
-✅ FIXED: Unified logo to .webp and absolute paths.
 ═══════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
@@ -696,7 +723,8 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
     <input type="hidden" name="cancel_return" value="https://www.egyptphotographytours.com/tour-pyramids-private/">
     <input type="hidden" name="no_shipping" value="1">
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <!-- ✅ MOBILE OPTIMIZED FORM ROWS -->
+    <div class="form-row-2">
       <div>
         <label class="form-label">👥 Number of Travelers</label>
         <select class="form-select" name="quantity" id="travelerCount" required>
@@ -714,7 +742,7 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
       </div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <div class="form-row-2">
       <div>
         <label class="form-label">⏰ Preferred Time</label>
         <select class="form-select" name="tour_time" required>
@@ -795,8 +823,74 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
 </div>
 </section>
 
+<!-- ✅ OTHER TOURS SECTION (NEWLY ADDED) -->
+<section class="section section-alt" aria-labelledby="other-tours-h2">
+<div class="wrap">
+<div class="text-c">
+<div class="eyebrow">Keep Exploring</div>
+<h2 id="other-tours-h2">Other Popular Egypt Tours</h2>
+<p class="sec-sub">Extend your adventure with our other highly-rated historical and cultural packages</p>
+</div>
+<div class="tours-grid mt-40">
+<!-- Tour 1: Cairo Giza 2 Day -->
+<article class="tc">
+<div class="tc-img-w">
+<img src="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp" alt="2-Day Cairo & Giza Historical Tour Package with Certified Egyptologist Guide" title="2-Day Cairo & Giza Historical Tour" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
+<span class="tc-badge badge-best">Best Value</span>
+</div>
+<div class="tc-body">
+<h3 class="tc-title"><a href="/tour-cairo-giza-2day">2-Day Cairo &amp; Giza Historical Tour</a></h3>
+<p class="tc-desc">Grand Egyptian Museum, Saladin Citadel, Khan El Khalili, Islamic Cairo, Coptic Quarter, Giza Pyramids and the Great Sphinx – Cairo and Giza's greatest highlights in two immersive days.</p>
+<div class="tc-meta"><span>⏱ 2 days</span><span>👥 Private/Group</span><span>📸 100+ Photos</span></div>
+<div class="tc-foot">
+<div class="tc-price">From $350<small>USD / group</small></div>
+<a href="/tour-cairo-giza-2day" class="btn btn-dark btn-sm" aria-label="Book the 2-day Cairo and Giza historical tour">View Tour</a>
+</div>
+</div>
+</article>
+
+<!-- Tour 2: Alexandria -->
+<article class="tc">
+<div class="tc-img-w">
+<img src="https://www.egyptphotographytours.com/images/alexandria-tour.webp" alt="Alexandria Day Trip from Cairo – Mediterranean Coast & Historical Sites" title="Alexandria Day Trip from Cairo" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
+<span class="tc-badge badge-photo">Day Trip</span>
+</div>
+<div class="tc-body">
+<h3 class="tc-title"><a href="/tour-alexandria">Alexandria Day Trip from Cairo</a></h3>
+<p class="tc-desc">Bibliotheca Alexandrina, Qaitbay Citadel, Catacombs of Kom El Shoqafa, Pompey's Pillar and the iconic Mediterranean Corniche – a world-class coastal cultural day tour.</p>
+<div class="tc-meta"><span>⏱ Full day</span><span>👤 Private</span><span>🚗 Transfer Inc.</span></div>
+<div class="tc-foot">
+<div class="tc-price">From $320<small>USD / group</small></div>
+<a href="/tour-alexandria" class="btn btn-dark btn-sm" aria-label="Book the Alexandria day trip from Cairo">View Tour</a>
+</div>
+</div>
+</article>
+
+<!-- Tour 3: 7 Day Discovery -->
+<article class="tc">
+<div class="tc-img-w">
+<img src="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp" alt="7-Day All-Inclusive Egypt Discovery Tour – Cairo, Luxor & Aswan Package" title="7-Day All-Inclusive Egypt Discovery Tour" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
+<span class="tc-badge badge-luxury">Best of Egypt</span>
+</div>
+<div class="tc-body">
+<h3 class="tc-title"><a href="/tour-egypt-discovery-7day">7-Day Egypt Discovery – All-Inclusive</a></h3>
+<p class="tc-desc">Cairo · Giza Pyramids · Alexandria · Luxor (Valley of Kings, Karnak Temple) · Aswan (Abu Simbel, Philae Temple, Nile cruise). Seven phenomenal days with professional photography.</p>
+<div class="tc-meta"><span>⏱ 7 days</span><span>👤 Private</span><span>🏨 Hotels Inc.</span></div>
+<div class="tc-foot">
+<div class="tc-price">From $2,000<small>USD / group</small></div>
+<a href="/tour-egypt-discovery-7day" class="btn btn-dark btn-sm" aria-label="Book the 7-day all-inclusive Egypt discovery package">View Tour</a>
+</div>
+</div>
+</article>
+</div>
+<div class="text-c mt-40">
+<a href="/tours" class="btn btn-dark btn-lg" aria-label="View all Egypt tour packages">View All 15+ Egypt Tours</a>
+</div>
+</div>
+</section>
+
 <!-- ✅ FAQ SECTION -->
-<section class="section section-alt" aria-labelledby="faq-h2">
+<section class="section" aria-labelledby="faq-h2">
 <div class="wrap">
 <div class="text-c">
 <div class="eyebrow">Got Questions?</div>
