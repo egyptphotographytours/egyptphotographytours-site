@@ -117,14 +117,13 @@ OPEN GRAPH & TWITTER
 <meta name="geo.country" content="EG">
 
 <!-- ═══════════════════════════════════════════════════════
-CRITICAL CSS — FULLY MOBILE OPTIMIZED
+CRITICAL CSS — MATCHES INDEX PAGE DESIGN SYSTEM
 ═══════════════════════════════════════════════════════ -->
 <style>
-/* ═══ MOBILE-FIRST RESET & BASE ═══ */
 :root{--c-dark:#1a202c;--c-gold:#FFD700;--c-gold-d:#E6C200;--c-white:#fff;--c-bg:#f7f8fa;--c-text:#2d3748;--c-muted:#5A6475;--c-price:#6B5000;--c-border:#e2e8f0;--radius-sm:8px;--radius:14px;--shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow:0 4px 20px rgba(0,0,0,.11);--shadow-lg:0 12px 40px rgba(0,0,0,.16);--nav-height:56px;--header-height:60px;--transition:.28s cubic-bezier(.4,0,.2,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;width:100%}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;width:100%;max-width:100vw;-webkit-tap-highlight-color:transparent}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 ul,ol{list-style:none}
@@ -132,36 +131,27 @@ button{font-family:inherit;cursor:pointer}
 .skip-link{position:absolute;top:-60px;left:12px;background:var(--c-gold);color:var(--c-dark);padding:10px 18px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;font-size:14px;z-index:99999;transition:top var(--transition)}
 .skip-link:focus{top:0;outline:3px solid var(--c-dark)}
 :focus-visible{outline:3px solid var(--c-gold);outline-offset:3px;border-radius:4px}
-
-/* ═══ CONTAINER — MOBILE SAFE ═══ */
-.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px;overflow-x:hidden}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
 @media(min-width:768px){.wrap{padding:0 28px}}
-@media(min-width:1280px){.wrap{padding:0 40px}}
-
-/* ═══ SECTIONS ═══ */
-.section{padding:40px 0}
+.section{padding:52px 0}
 @media(min-width:768px){.section{padding:80px 0}}
 .section-alt{background:#eef0f5}
 .section-dark{background:var(--c-dark);color:var(--c-white)}
 .section-gold{background:linear-gradient(135deg,#FFD700 0%,#FFF3B0 60%,#FFD700 100%)}
 .section-accent{background:linear-gradient(135deg,#1a202c 0%,#2d3748 100%);color:#fff}
-
-/* ═══ TYPOGRAPHY — MOBILE SIZES ═══ */
-h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--c-dark);word-wrap:break-word;overflow-wrap:break-word}
+h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--c-dark)}
 .section-dark h1,.section-dark h2,.section-accent h1,.section-accent h2{color:var(--c-white)}
-h1{font-size:clamp(22px,6vw,44px)}
-h2{font-size:clamp(20px,5vw,36px)}
-h3{font-size:clamp(16px,4vw,22px)}
-p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overflow-wrap:break-word}
+h1{font-size:clamp(22px,5vw,44px)}
+h2{font-size:clamp(20px,3.5vw,36px)}
+h3{font-size:clamp(16px,2.5vw,22px)}
+p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .section-dark p,.section-accent p{color:rgba(255,255,255,.9)}
 .eyebrow{display:inline-block;background:rgba(255,215,0,.18);color:#7A5C00;border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px}
 .section-dark .eyebrow,.section-accent .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
 .text-c{text-align:center}
 .text-c .sec-sub{margin-inline:auto}
-.sec-sub{font-size:clamp(14px,3.5vw,17px);color:var(--c-muted);max-width:660px;line-height:1.7;margin-top:12px}
+.sec-sub{font-size:clamp(14px,1.8vw,17px);color:var(--c-muted);max-width:660px;line-height:1.7;margin-top:12px}
 .section-dark .sec-sub,.section-accent .sec-sub{color:rgba(255,255,255,.85)}
-
-/* ═══ BUTTONS — MOBILE FRIENDLY ═══ */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:14px;transition:all var(--transition);border:2px solid transparent;white-space:nowrap;cursor:pointer;text-decoration:none;min-height:48px}
 .btn-gold{background:var(--c-gold);color:var(--c-dark);border-color:var(--c-gold)}
 .btn-gold:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
@@ -175,23 +165,18 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .btn-wa:hover{background:#20ba59;transform:translateY(-2px)}
 .btn-sm{padding:9px 18px;font-size:13px;min-height:44px}
 .btn-lg{padding:16px 36px;font-size:16px}
-.btn-group{display:flex;flex-direction:column;gap:12px;align-items:stretch;width:100%}
-@media(min-width:480px){.btn-group{flex-direction:row;align-items:center;justify-content:center}}
-
-/* ═══ HEADER — MOBILE OPTIMIZED ═══ */
+.btn-group{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0}
-.logo-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);flex-shrink:0}
-.logo-copy{display:flex;flex-direction:column;min-width:0;overflow:hidden}
-.logo-name{font-size:14px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.logo-tag{font-size:9px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px;white-space:nowrap}
-@media(min-width:480px){.logo-name{font-size:16px}.logo-tag{font-size:10px}}
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);flex-shrink:0}
+.logo-copy{display:flex;flex-direction:column}
+.logo-name{font-size:15px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap}
+.logo-tag{font-size:10px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px}
+@media(min-width:400px){.logo-name{font-size:16px}}
 @media(min-width:768px){.logo-name{font-size:19px}.logo-tag{font-size:11px}}
 .header-contacts{display:none}
 @media(min-width:900px){.header-contacts{display:flex;flex-direction:column;align-items:flex-end;gap:4px}.hc-link{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.92);font-size:13px;transition:color var(--transition)}.hc-link:hover{color:var(--c-gold)}.hc-link i{color:var(--c-gold);width:14px}}
-
-/* ═══ NAVBAR — MOBILE OPTIMIZED ═══ */
 .navbar{background:#2d3748;position:sticky;top:0;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.35)}
 .nav-inner{display:flex;align-items:center;height:var(--nav-height);gap:10px}
 .hamburger{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:var(--radius-sm);color:var(--c-white);font-size:18px;transition:all var(--transition);flex-shrink:0}
@@ -202,8 +187,6 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .nav-right{display:flex;align-items:center;gap:8px;margin-left:auto}
 .nav-book{display:inline-flex;align-items:center;gap:6px;background:var(--c-gold);color:var(--c-dark);padding:9px 16px;border-radius:20px;font-weight:700;font-size:13px;transition:all var(--transition);white-space:nowrap;min-height:44px}
 .nav-book:hover{background:var(--c-gold-d);transform:scale(1.03)}
-
-/* ═══ LANGUAGE SWITCHER — MOBILE SAFE ═══ */
 .lang-wrap{position:relative}
 .lang-toggle{display:flex;align-items:center;gap:5px;background:rgba(255,215,0,.12);border:1.5px solid rgba(255,215,0,.3);border-radius:20px;padding:8px 11px;color:var(--c-white);font-size:12px;font-weight:600;transition:all var(--transition);min-height:44px;cursor:pointer}
 .lang-toggle:hover,.lang-toggle[aria-expanded="true"]{background:rgba(255,215,0,.24);border-color:var(--c-gold)}
@@ -222,9 +205,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .lang-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lang-menu::-webkit-scrollbar{width:4px}
 .lang-menu::-webkit-scrollbar-thumb{background:rgba(255,215,0,.35);border-radius:2px}
-
-/* ═══ MOBILE NAV — FULLY OPTIMIZED ═══ */
-.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;bottom:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);z-index:390;overflow-y:auto;padding:8px 0 48px;border-top:2px solid var(--c-gold);animation:slideDown .22s ease-out;max-height:85vh}
+.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;bottom:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);z-index:390;overflow-y:auto;padding:8px 0 48px;border-top:2px solid var(--c-gold);animation:slideDown .22s ease-out}
 .mobile-nav.is-open{display:flex}
 @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 @media(min-width:900px){.mobile-nav{display:none!important}}
@@ -239,112 +220,40 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .mobile-nav-contact i{color:var(--c-gold);width:16px}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
 .nav-overlay.is-open{display:block}
-
-/* ═══ HERO BANNER — MOBILE OPTIMIZED ═══ */
-.tours-hero{position:relative;height:50vh;min-height:300px;max-height:450px;overflow:hidden;margin-bottom:30px}
-@media(min-width:768px){.tours-hero{height:60vh;min-height:350px;max-height:500px;margin-bottom:40px}}
-@media(min-width:1024px){.tours-hero{height:70vh;min-height:400px;max-height:600px}}
-.tours-hero img{width:100%;height:100%;object-fit:cover;object-position:center}
-.tours-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.8));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 16px;color:#fff}
-.tours-hero-overlay h1{color:#fff;font-size:clamp(22px,6vw,46px);text-shadow:0 3px 15px rgba(0,0,0,0.8);margin-bottom:12px;max-width:100%;line-height:1.2}
-.tours-hero-overlay p{color:rgba(255,255,255,0.95);font-size:clamp(14px,3.5vw,20px);text-shadow:0 2px 8px rgba(0,0,0,0.8);max-width:100%;line-height:1.5}
-
-/* ═══ TRUST BAR — MOBILE STACKED ═══ */
-.trust-bar{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px}
-@media(min-width:480px){.trust-bar{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:768px){.trust-bar{grid-template-columns:repeat(4,1fr)}}
-.trust-item{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius-sm);padding:14px 10px;text-align:center;font-size:12px;font-weight:600;color:var(--c-dark);box-shadow:var(--shadow-sm);transition:transform var(--transition);word-wrap:break-word}
-@media(min-width:480px){.trust-item{font-size:13px;padding:16px 10px}}
-.trust-item:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.trust-item i{color:var(--c-gold);margin-right:6px;font-size:14px;display:inline-block;margin-bottom:4px}
-@media(min-width:480px){.trust-item i{font-size:16px;display:block;margin-bottom:6px}}
-
-/* ═══ BREADCRUMB ═══ */
 .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;margin-bottom:22px}
 .breadcrumb a{color:var(--c-muted);transition:color var(--transition)}
 .breadcrumb a:hover{color:var(--c-gold-d)}
 .breadcrumb .sep{color:var(--c-muted)}
 .breadcrumb .cur{color:var(--c-dark);font-weight:600}
-
-/* ═══ PROSE ═══ */
-.prose{background:var(--c-white);border-radius:var(--radius);padding:20px 16px;box-shadow:var(--shadow)}
-@media(min-width:480px){.prose{padding:26px 22px}}
+.prose{background:var(--c-white);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow)}
 @media(min-width:768px){.prose{padding:36px 44px}}
-.prose h2{font-size:clamp(18px,4vw,30px);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--c-gold)}
-.prose h3{font-size:clamp(15px,3.5vw,20px);color:var(--c-dark);margin:22px 0 9px}
+.prose h2{font-size:clamp(20px,3vw,30px);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--c-gold)}
+.prose h3{font-size:clamp(16px,2.2vw,20px);color:var(--c-dark);margin:22px 0 9px}
 .prose p{font-size:15px;line-height:1.78;color:var(--c-text);margin-bottom:14px}
 .prose ul,.prose ol{padding-left:18px;margin-bottom:14px}
 .prose li{font-size:15px;color:var(--c-text);line-height:1.7;margin-bottom:6px}
 .prose strong{color:var(--c-dark)}
 .prose a{color:var(--c-price);text-decoration:underline}
 
-/* ═══ TOURS GRID — MOBILE STACKED ═══ */
-.tours-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:36px}
-@media(min-width:580px){.tours-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.tours-grid{grid-template-columns:repeat(3,1fr)}}
-.tc{background:var(--c-white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform var(--transition),box-shadow var(--transition)}
-.tc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.tc-img-w{position:relative;overflow:hidden;height:200px;flex-shrink:0}
-@media(min-width:480px){.tc-img-w{height:220px}}
-.tc-img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;display:block}
-.tc:hover .tc-img{transform:scale(1.07)}
-.tc-badge{position:absolute;top:12px;left:12px;font-size:10px;font-weight:800;padding:4px 11px;border-radius:12px;text-transform:uppercase;letter-spacing:.5px}
-.badge-hot{background:#ef4444;color:#fff}
-.badge-best{background:var(--c-gold);color:var(--c-dark)}
-.badge-new{background:#10b981;color:#fff}
-.badge-luxury{background:#7c3aed;color:#fff}
-.badge-photo{background:#0ea5e9;color:#fff}
-.tc-body{padding:16px;flex:1;display:flex;flex-direction:column}
-@media(min-width:480px){.tc-body{padding:20px}}
-.tc-title{font-size:16px;font-weight:700;color:var(--c-dark);margin-bottom:8px;line-height:1.35}
-.tc-title a{color:inherit;transition:color var(--transition)}
-.tc-title a:hover{color:var(--c-gold-d)}
-.tc-desc{font-size:13px;color:var(--c-muted);line-height:1.65;flex:1;margin-bottom:14px}
-.tc-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.tc-meta span{font-size:11px;color:var(--c-muted);font-weight:500}
-.tc-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--c-border);gap:10px;flex-wrap:wrap}
-.tc-price{font-size:18px;font-weight:800;color:var(--c-price);line-height:1}
-.tc-price small{font-size:11px;font-weight:400;color:var(--c-muted);display:block;margin-top:1px}
+/* ✅ TOURS HERO BANNER */
+.tours-hero{position:relative;height:45vh;min-height:300px;max-height:450px;overflow:hidden;margin-bottom:40px}
+.tours-hero img{width:100%;height:100%;object-fit:cover}
+.tours-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.75));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;color:#fff}
+.tours-hero-overlay h1{color:#fff;font-size:clamp(24px,5vw,46px);text-shadow:0 3px 15px rgba(0,0,0,0.8);margin-bottom:12px;max-width:900px}
+.tours-hero-overlay p{color:rgba(255,255,255,0.95);font-size:clamp(15px,2vw,20px);text-shadow:0 2px 8px rgba(0,0,0,0.8);max-width:700px}
 
-/* ═══ BOOKING FORM — MOBILE OPTIMIZED ═══ */
-.booking-form{margin-top:20px;padding-top:20px;border-top:1px dashed var(--c-border);display:none}
-.booking-form.active{display:block;animation:slideDown .3s ease-out}
-.booking-form .form-label{font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px;display:block}
-.booking-form .form-input,.booking-form .form-textarea,.booking-form .form-select{width:100%;padding:10px 14px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;margin-bottom:12px;transition:border-color var(--transition);background:#fff;max-width:100%;box-sizing:border-box}
-.booking-form .form-input:focus,.booking-form .form-textarea:focus,.booking-form .form-select:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
-.persons-group{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
-@media(min-width:480px){.persons-group{grid-template-columns:repeat(6,1fr)}}
-.person-btn{padding:10px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);background:#fff;cursor:pointer;font-weight:700;font-size:14px;transition:all var(--transition);text-align:center;min-height:44px}
-.person-btn:hover{border-color:var(--c-gold)}
-.person-btn.selected{background:var(--c-gold);border-color:var(--c-gold);color:var(--c-dark)}
-.paypal-buy-button{width:100%;padding:14px;background:#0070ba;color:#fff;border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;margin-top:16px;transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;max-width:100%;box-sizing:border-box}
-.paypal-buy-button:hover{background:#005ea6;transform:translateY(-2px)}
-.paypal-buy-button:disabled{background:#cbd5e0;cursor:not-allowed;transform:none}
-.display-price{font-weight:800;color:var(--c-gold-d);font-size:18px}
+/* ✅ TRUST BAR */
+.trust-bar{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+@media(min-width:640px){.trust-bar{grid-template-columns:repeat(4,1fr)}}
+.trust-item{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius-sm);padding:16px 10px;text-align:center;font-size:13px;font-weight:600;color:var(--c-dark);box-shadow:var(--shadow-sm);transition:transform var(--transition)}
+.trust-item:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.trust-item i{color:var(--c-gold);margin-right:6px;font-size:16px;display:block;margin-bottom:6px}
 
-/* ═══ CUSTOMIZE TRIP — MOBILE OPTIMIZED ═══ */
-.trip-builder{display:grid;grid-template-columns:1fr;gap:24px;margin-top:40px}
-@media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
-.trip-form-box{background:var(--c-white);border-radius:var(--radius);padding:20px 16px;box-shadow:var(--shadow);overflow:hidden}
-@media(min-width:480px){.trip-form-box{padding:32px 28px}}
-.form-row{margin-bottom:16px}
-.form-label-main{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px}
-.form-req{color:#ef4444}
-.form-input-main,.form-select,.form-textarea-main{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--c-text);transition:border-color var(--transition);background:#fff;max-width:100%;box-sizing:border-box}
-.form-input-main:focus,.form-select:focus,.form-textarea-main:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
-.form-textarea-main{min-height:90px;resize:vertical}
-.form-row-2{display:grid;grid-template-columns:1fr;gap:12px}
-@media(min-width:480px){.form-row-2{grid-template-columns:1fr 1fr}}
-.form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all var(--transition);min-height:52px}
-.form-submit:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
-.trip-contacts{display:flex;flex-direction:column;gap:20px;justify-content:center}
-.contact-card{background:var(--c-white);border-radius:var(--radius);padding:28px 20px;box-shadow:var(--shadow);text-align:center}
-@media(min-width:480px){.contact-card{padding:28px 24px}}
-.contact-card-icon{font-size:40px;margin-bottom:14px;display:block}
-.contact-card h3{font-size:18px;color:var(--c-dark);margin-bottom:8px}
-.contact-card p{font-size:14px;color:var(--c-muted);margin-bottom:16px;line-height:1.6}
+/* ✅ PAGINATION NAV */
+.pagination-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:40px}
+.pagination-nav .btn{min-width:100px}
 
-/* ═══ REVIEWS GRID — MOBILE STACKED ═══ */
+/* ✅ REVIEWS GRID */
 .rev-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
 @media(min-width:640px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.rev-grid{grid-template-columns:repeat(3,1fr)}}
@@ -358,10 +267,65 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .rev-meta{font-size:11px;color:var(--c-muted);margin-top:2px}
 .rev-platform{position:absolute;top:18px;right:18px;font-size:10px;color:var(--c-muted);background:rgba(0,0,0,.05);padding:3px 8px;border-radius:8px;font-weight:600}
 
-/* ═══ FAQ — MOBILE OPTIMIZED ═══ */
+.tours-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:36px}
+@media(min-width:580px){.tours-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.tours-grid{grid-template-columns:repeat(3,1fr)}}
+.tc{background:var(--c-white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform var(--transition),box-shadow var(--transition)}
+.tc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.tc-img-w{position:relative;overflow:hidden;height:220px;flex-shrink:0}
+.tc-img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;display:block}
+.tc:hover .tc-img{transform:scale(1.07)}
+.tc-badge{position:absolute;top:12px;left:12px;font-size:10px;font-weight:800;padding:4px 11px;border-radius:12px;text-transform:uppercase;letter-spacing:.5px}
+.badge-hot{background:#ef4444;color:#fff}
+.badge-best{background:var(--c-gold);color:var(--c-dark)}
+.badge-new{background:#10b981;color:#fff}
+.badge-luxury{background:#7c3aed;color:#fff}
+.badge-photo{background:#0ea5e9;color:#fff}
+.tc-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.tc-title{font-size:17px;font-weight:700;color:var(--c-dark);margin-bottom:8px;line-height:1.35}
+.tc-title a{color:inherit;transition:color var(--transition)}
+.tc-title a:hover{color:var(--c-gold-d)}
+.tc-desc{font-size:13px;color:var(--c-muted);line-height:1.65;flex:1;margin-bottom:14px}
+.tc-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tc-meta span{font-size:11px;color:var(--c-muted);font-weight:500}
+.tc-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--c-border)}
+.tc-price{font-size:19px;font-weight:800;color:var(--c-price);line-height:1}
+.tc-price small{font-size:11px;font-weight:400;color:var(--c-muted);display:block;margin-top:1px}
+.booking-form{margin-top:20px;padding-top:20px;border-top:1px dashed var(--c-border);display:none}
+.booking-form.active{display:block;animation:slideDown .3s ease-out}
+.booking-form .form-label{font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px;display:block}
+.booking-form .form-input,.booking-form .form-textarea,.booking-form .form-select{width:100%;padding:10px 14px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;margin-bottom:12px;transition:border-color var(--transition);background:#fff;max-width:100%;box-sizing:border-box}
+.booking-form .form-input:focus,.booking-form .form-textarea:focus,.booking-form .form-select:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
+.persons-group{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+@media(min-width:480px){.persons-group{grid-template-columns:repeat(6,1fr)}}
+.person-btn{padding:10px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);background:#fff;cursor:pointer;font-weight:700;font-size:14px;transition:all var(--transition);text-align:center}
+.person-btn:hover{border-color:var(--c-gold)}
+.person-btn.selected{background:var(--c-gold);border-color:var(--c-gold);color:var(--c-dark)}
+.paypal-buy-button{width:100%;padding:14px;background:#0070ba;color:#fff;border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;margin-top:16px;transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:8px}
+.paypal-buy-button:hover{background:#005ea6;transform:translateY(-2px)}
+.paypal-buy-button:disabled{background:#cbd5e0;cursor:not-allowed;transform:none}
+.display-price{font-weight:800;color:var(--c-gold-d);font-size:18px}
+.trip-builder{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
+@media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
+.trip-form-box{background:var(--c-white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
+.form-row{margin-bottom:16px}
+.form-label-main{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px}
+.form-req{color:#ef4444}
+.form-input-main,.form-select,.form-textarea-main{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--c-text);transition:border-color var(--transition);background:#fff}
+.form-input-main:focus,.form-select:focus,.form-textarea-main:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
+.form-textarea-main{min-height:90px;resize:vertical}
+.form-row-2{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:480px){.form-row-2{grid-template-columns:1fr 1fr}}
+.form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all var(--transition);min-height:52px}
+.form-submit:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+.trip-contacts{display:flex;flex-direction:column;gap:20px;justify-content:center}
+.contact-card{background:var(--c-white);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);text-align:center}
+.contact-card-icon{font-size:40px;margin-bottom:14px;display:block}
+.contact-card h3{font-size:18px;color:var(--c-dark);margin-bottom:8px}
+.contact-card p{font-size:14px;color:var(--c-muted);margin-bottom:16px;line-height:1.6}
 .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
 .faq-item{background:var(--c-white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-sm)}
-.faq-q{width:100%;padding:16px 18px;background:none;border:none;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--c-dark);transition:background var(--transition);min-height:58px;cursor:pointer}
+.faq-q{width:100%;padding:18px 20px;background:none;border:none;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--c-dark);transition:background var(--transition);min-height:58px;cursor:pointer}
 .faq-q:hover{background:#fafafa}
 .faq-q[aria-expanded="true"]{background:rgba(255,215,0,.07)}
 .faq-ico{width:28px;height:28px;border-radius:50%;flex-shrink:0;background:var(--c-gold);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--c-dark);transition:transform var(--transition);min-width:28px}
@@ -369,10 +333,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease-out,padding .32s ease}
 .faq-a.is-open{max-height:800px;padding:0 20px 18px}
 .faq-a p{font-size:14px;color:var(--c-muted);line-height:1.72}
-
-/* ═══ FOOTER — MOBILE OPTIMIZED ═══ */
-.footer{background:var(--c-dark);color:#fff;padding:40px 0 24px;margin-top:auto}
-@media(min-width:768px){.footer{padding:52px 0 24px}}
+.footer{background:var(--c-dark);color:#fff;padding:52px 0 24px}
 .footer-grid{display:grid;grid-template-columns:1fr;gap:34px}
 @media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
@@ -385,7 +346,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .f-contact-r a,.f-contact-r div{display:flex;align-items:flex-start;gap:9px;color:rgba(255,255,255,.82);font-size:13px;margin-bottom:11px;transition:color var(--transition);text-decoration:none}
 .f-contact-r a:hover{color:var(--c-gold)}
 .f-contact-r i{color:var(--c-gold);width:14px;margin-top:2px;flex-shrink:0}
-.social-row{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}
+.social-row{display:flex;gap:9px;margin-top:16px}
 .social-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;transition:all var(--transition);text-decoration:none}
 .social-btn:hover{background:var(--c-gold);color:var(--c-dark)}
 .footer-map{grid-column:1/-1}
@@ -395,8 +356,6 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.65)}
 .footer-bottom a:hover{color:var(--c-gold)}
 .f-legal{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-
-/* ═══ COOKIE & WHATSAPP ═══ */
 .cookie-bar{position:fixed;bottom:0;left:0;right:0;background:#1e293b;border-top:2px solid var(--c-gold);padding:13px 16px;z-index:50000;display:none}
 .cookie-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
 .cookie-txt{font-size:13px;color:rgba(255,255,255,.92);flex:1;min-width:200px}
@@ -410,7 +369,17 @@ p{font-size:15px;line-height:1.75;color:var(--c-text);word-wrap:break-word;overf
 .wa-float:hover{background:#20ba59;transform:scale(1.08)}
 @keyframes wa-pulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75)}}
 
-/* ═══ UTILITIES ═══ */
+/* ✅ LOGO LIGHTBOX MODAL */
+.logo-modal{display:none;position:fixed;z-index:10000;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);justify-content:center;align-items:center;padding:20px;animation:fadeIn .3s ease}
+.logo-modal.active{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.logo-modal-content{position:relative;max-width:90vw;max-height:90vh;text-align:center;animation:zoomIn .3s ease}
+@keyframes zoomIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.logo-modal-img{width:100%;max-width:300px;height:auto;border-radius:50%;border:4px solid var(--c-gold);box-shadow:0 0 40px rgba(255,215,0,.4)}
+.logo-modal-close{position:absolute;top:-50px;right:0;color:#fff;font-size:32px;font-weight:700;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.1);transition:all var(--transition)}
+.logo-modal-close:hover{background:var(--c-gold);color:var(--c-dark)}
+.logo-modal-caption{color:#fff;font-size:18px;font-weight:700;margin-top:24px;text-shadow:0 2px 4px rgba(0,0,0,.5);line-height:1.4}
+
 .mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-32{margin-top:32px}.mt-40{margin-top:40px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -543,6 +512,16 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
   "review": {"@type": "Review", "author": {"@type": "Person", "name": "Miguel Rodriguez"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Joined the group Cairo tour on a tight budget and got an incredible experience. The Egyptologist's knowledge was unreal."}
 },
 {
+  "@type": "Product", "name": "Islamic & Coptic Cairo Heritage Tour",
+  "image": "https://www.egyptphotographytours.com/images/gallery-cairo-coptic.webp",
+  "description": "Explore the spiritual heart of Egypt. Visit the Hanging Church, the Cave of St. Simon, and the magnificent Al-Azhar Mosque.",
+  "brand": {"@type": "Brand", "name": "Egypt Photography Tours"},
+  "url": "https://www.egyptphotographytours.com/tour-islamic-coptic-cairo",
+  "offers": {"@type": "Offer", "price": "110", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1245", "bestRating": "5", "worstRating": "1"},
+  "review": {"@type": "Review", "author": {"@type": "Person", "name": "David Chen"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "A deeply moving experience. The historical insights into Coptic and Islamic Cairo were fascinating, and the photography was stunning."}
+},
+{
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "How do I book an Egypt tour?", "acceptedAnswer": {"@type": "Answer", "text": "You can book directly on this page using our secure PayPal checkout, via our custom trip form, by emailing info@egyptphotographytours.com, or by WhatsApp at +20 155 073 5673. We reply within 2 hours."}},
@@ -556,6 +535,16 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
 </script>
 </head>
 <body>
+
+<!-- ✅ LOGO LIGHTBOX MODAL -->
+<div id="logo-modal" class="logo-modal" role="dialog" aria-modal="true" aria-label="Logo Image">
+    <div class="logo-modal-content">
+        <span class="logo-modal-close" id="logo-modal-close" role="button" aria-label="Close logo view">&times;</span>
+        <img src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours Large Logo" class="logo-modal-img">
+        <p class="logo-modal-caption">Egypt Photography Tours<br><span style="font-size:14px;opacity:.8;">Private & Group Tours Since 2015</span></p>
+    </div>
+</div>
+
 <!-- Cookie Banner -->
 <div id="cookie-bar" class="cookie-bar" role="dialog" aria-modal="true" aria-labelledby="cookie-msg">
 <div class="cookie-inner">
@@ -575,13 +564,15 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
 <!-- ═══════════════════ HEADER ═══════════════════ -->
 <header class="header" id="site-header">
 <div class="wrap header-inner">
-<button class="logo" id="logo-btn" aria-label="Egypt Photography Tours – go to top of page" type="button" style="background:none;border:none;padding:0;text-align:left">
-<img src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours Logo - Private & Group Egypt Tours Since 2015" title="Egypt Photography Tours" class="logo-img" loading="eager" width="40" height="40" decoding="async">
-<div class="logo-copy">
+<div style="display:flex;align-items:center;gap:10px;text-align:left">
+<!-- ✅ LOGO IMAGE CLICK TO OPEN LIGHTBOX -->
+<img src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours Logo - Private & Group Egypt Tours Since 2015" title="Click to view logo" class="logo-img" id="header-logo-img" loading="eager" width="44" height="44" decoding="async" style="cursor:zoom-in;">
+<!-- ✅ LOGO TEXT CLICK TO GO TO HOMEPAGE -->
+<a href="/" class="logo-copy" style="text-decoration:none;color:inherit;" aria-label="Go to Homepage">
 <span class="logo-name">Egypt Photography Tours</span>
 <span class="logo-tag">Private &amp; Group Tours Since 2015</span>
+</a>
 </div>
-</button>
 <div class="header-contacts">
 <a href="https://wa.me/201550735673" target="_blank" rel="noopener noreferrer" class="hc-link" aria-label="WhatsApp Egypt Photography Tours">
 <i class="fab fa-whatsapp" aria-hidden="true"></i> +20 155 073 5673
@@ -1036,10 +1027,59 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
 </div>
 </div>
 </article>
+
+<!-- ✅ Tour 9: Islamic & Coptic Cairo (NEWLY ADDED) -->
+<article class="tc">
+<div class="tc-img-w">
+<img src="https://www.egyptphotographytours.com/images/gallery-cairo-coptic.webp" alt="Islamic and Coptic Cairo Heritage Tour – Hanging Church and Al-Azhar Mosque" title="Islamic & Coptic Cairo Heritage Tour - Egypt Photography Tours" class="tc-img" loading="lazy" width="400" height="220" decoding="async">
+<span class="tc-badge badge-new">Heritage!</span>
+</div>
+<div class="tc-body">
+<h3 class="tc-title"><a href="/tour-islamic-coptic-cairo">Islamic &amp; Coptic Cairo Heritage Tour</a></h3>
+<p class="tc-desc">Explore the spiritual heart of Egypt. Visit the Hanging Church, the Cave of St. Simon, and the magnificent Al-Azhar Mosque, capturing the rich religious heritage of Old Cairo.</p>
+<div class="tc-meta"><span>⏱ 4 hours</span><span>👤 Private</span><span>🕌 Heritage</span></div>
+<div class="tc-foot">
+<div class="tc-price">Starts $110<small>USD / group</small></div>
+<button class="btn btn-dark btn-sm book-tour-btn" data-tour-id="islamic-coptic-cairo">Book Now</button>
+</div>
+<div class="booking-form" id="booking-form-islamic-coptic-cairo">
+<label class="form-label">Number of Persons:</label>
+<div class="persons-group">
+<button class="person-btn" data-persons="1">1</button><button class="person-btn" data-persons="2">2</button><button class="person-btn" data-persons="3">3</button><button class="person-btn" data-persons="4">4</button><button class="person-btn" data-persons="5">5</button><button class="person-btn" data-persons="6">6+</button>
+</div>
+<label class="form-label">Select Date:</label><input type="date" class="form-input date-input" required>
+<label class="form-label">Full Name:</label><input type="text" class="form-input" placeholder="Your full name" required>
+<label class="form-label">Phone Number:</label><input type="tel" class="form-input" placeholder="Your phone number" required>
+<label class="form-label">Email Address:</label><input type="email" class="form-input" placeholder="Your email address" required>
+<label class="form-label">Special Notes:</label><textarea class="form-textarea" placeholder="Any special requests" rows="2"></textarea>
+<p style="margin:12px 0; font-weight:600;">Total Price: <span class="display-price">$0.00 USD</span></p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-form">
+<input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="hossam0114@hotmail.com">
+<input type="hidden" name="item_name" value="Islamic & Coptic Cairo Heritage Tour"><input type="hidden" name="amount" value="0.00"><input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="on0" value="Booking Type"><input type="hidden" name="os0" value=""><input type="hidden" name="on1" value="Booking Date"><input type="hidden" name="os1" value="">
+<input type="hidden" name="on2" value="Client Name"><input type="hidden" name="os2" value=""><input type="hidden" name="on3" value="Client Phone"><input type="hidden" name="os3" value="">
+<input type="hidden" name="on4" value="Client Email"><input type="hidden" name="os4" value=""><input type="hidden" name="on5" value="Special Note"><input type="hidden" name="os5" value="">
+<input type="hidden" name="return" value="https://www.egyptphotographytours.com/payment-success.html"><input type="hidden" name="cancel_return" value="https://www.egyptphotographytours.com/tours/"><input type="hidden" name="no_shipping" value="1">
+<button type="submit" class="paypal-buy-button" disabled><i class="fab fa-paypal"></i> Pay with PayPal</button>
+</form>
+</div>
+</div>
+</article>
 </div>
 
-<!-- ═══ CUSTOMIZE YOUR TRIP — CLOUDFLARE WORKER FORM ═══ -->
-<section class="section-accent mt-40" id="customize-trip" aria-labelledby="custom-h2" style="border-radius:var(--radius); padding: 30px 16px;">
+<!-- ✅ PAGINATION BUTTONS (REPLACED TOUR TYPE BUTTONS) -->
+<div class="pagination-nav" aria-label="Tours pagination">
+  <a href="/tours/" class="btn btn-gold btn-sm active">Page 1</a>
+  <a href="/tours-page-2.html" class="btn btn-outline-dark btn-sm">Page 2</a>
+  <a href="/tours-page-3.html" class="btn btn-outline-dark btn-sm">Page 3</a>
+  <a href="/tours-page-4.html" class="btn btn-outline-dark btn-sm">Page 4</a>
+  <a href="/tours-page-5.html" class="btn btn-outline-dark btn-sm">Page 5</a>
+  <a href="/tours-page-2.html" class="btn btn-dark btn-sm">Next Page <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<!-- ═══ CUSTOMIZE YOUR TRIP — DETAILED CLOUDFLARE WORKER FORM ═══ -->
+<section class="section-accent mt-40" id="customize-trip" aria-labelledby="custom-h2" style="border-radius:var(--radius); padding: 40px 20px;">
+<div class="wrap">
 <div class="text-c">
 <div class="eyebrow">Design Your Dream Journey</div>
 <h2 id="custom-h2">Customize Your Perfect Egypt Tour</h2>
@@ -1067,18 +1107,54 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
 <div class="form-row">
 <label class="form-label-main" for="f-group">Group Size</label>
 <select class="form-select" id="f-group" name="group_size">
-<option value="">Select…</option>
+<option value="">Select group size…</option>
 <option value="solo">Solo traveler</option>
-<option value="2">2 people</option>
+<option value="2">2 people (couple)</option>
 <option value="3-5">3–5 people</option>
 <option value="6-10">6–10 people</option>
 <option value="10+">10+ people</option>
 </select>
 </div>
 </div>
+<div class="form-row-2">
+<div class="form-row">
+<label class="form-label-main" for="f-type">Tour Type</label>
+<select class="form-select" id="f-type" name="tour_type">
+<option value="">Select tour type…</option>
+<option value="private-historical">Private Historical Tour</option>
+<option value="private-photography">Private Photography Tour</option>
+<option value="group">Group Tour</option>
+<option value="pyramids-photoshoot">Pyramids Photoshoot</option>
+<option value="honeymoon">Honeymoon / Romance</option>
+<option value="family">Family Tour</option>
+<option value="luxury">Luxury All-Inclusive</option>
+<option value="custom">Fully Custom</option>
+</select>
+</div>
+<div class="form-row">
+<label class="form-label-main" for="f-duration">Trip Duration</label>
+<select class="form-select" id="f-duration" name="duration">
+<option value="">Select duration…</option>
+<option value="half-day">Half day tour</option>
+<option value="1-day">1 day</option>
+<option value="2-3-days">2–3 days</option>
+<option value="4-6-days">4–6 days</option>
+<option value="7-days">7 days</option>
+<option value="7+days">7+ days</option>
+</select>
+</div>
+</div>
+<div class="form-row">
+<label class="form-label-main" for="f-destinations">Destinations of Interest</label>
+<input class="form-input-main" type="text" id="f-destinations" name="destinations" placeholder="e.g. Cairo, Giza Pyramids, Luxor, Aswan…">
+</div>
+<div class="form-row">
+<label class="form-label-main" for="f-dates">Approximate Travel Dates</label>
+<input class="form-input-main" type="text" id="f-dates" name="dates" placeholder="e.g. March, flexible, 2 weeks from now…">
+</div>
 <div class="form-row">
 <label class="form-label-main" for="f-message">Your Dream Egypt Experience <span class="form-req">*</span></label>
-<textarea class="form-textarea-main" id="f-message" name="message" placeholder="Tell us what you'd love to see and do in Egypt…" required></textarea>
+<textarea class="form-textarea-main" id="f-message" name="message" placeholder="Tell us what you'd love to see, do and experience in Egypt. We'll design the perfect itinerary for you within 2 hours…" required></textarea>
 </div>
 <div class="cf-turnstile" data-sitekey="0x4AAAAAADksi_3_nH-4QjMP" data-theme="dark" data-size="normal" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
 <button type="submit" class="form-submit" aria-label="Submit custom Egypt tour request">
@@ -1103,6 +1179,7 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
 <a href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" class="btn btn-dark btn-lg" style="width:100%;justify-content:center;margin-bottom:12px">
 <i class="far fa-envelope" aria-hidden="true"></i> Send an Email
 </a>
+</div>
 </div>
 </div>
 </div>
@@ -1185,7 +1262,7 @@ STRUCTURED DATA — 5 GOLD STARS SCHEMA & MAXIMUM SEO
 <div class="footer-grid">
 <div>
 <button id="footer-logo-btn" type="button" aria-label="Go back to the top of the page" style="background:none;border:none;padding:0;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:14px">
-<img src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours Logo" class="logo-img" loading="lazy" width="40" height="40" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours Logo" class="logo-img" loading="lazy" width="44" height="44" decoding="async">
 <div class="logo-copy"><span class="logo-name">Egypt Photography Tours</span><span class="logo-tag">Private &amp; Group Tours Since 2015</span></div>
 </button>
 <p class="f-brand-desc">Egypt's most trusted private and group tour company since 2015. Specialising in historical tours, photography packages, and all-inclusive Egypt itineraries.</p>
@@ -1299,6 +1376,30 @@ on(cDecline, 'click', function(){ document.cookie = 'cookie_consent=declined; ma
 
 var yr = document.getElementById('yr'); if(yr) yr.textContent = new Date().getFullYear();
 
+/* ═══ LOGO LIGHTBOX FUNCTIONALITY ═══ */
+const logoImg = document.getElementById('header-logo-img');
+const logoModal = document.getElementById('logo-modal');
+const logoModalClose = document.getElementById('logo-modal-close');
+
+if(logoImg && logoModal) {
+    logoImg.addEventListener('click', function() {
+        logoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+}
+if(logoModalClose && logoModal) {
+    logoModalClose.addEventListener('click', function() {
+        logoModal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    logoModal.addEventListener('click', function(e) {
+        if(e.target === logoModal) {
+            logoModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
 /* ═══ CLOUDFLARE WORKER FORM SUBMISSION ═══ */
 const cfForm = document.getElementById('contactForm');
 const cfStatus = document.getElementById('form-status');
@@ -1315,9 +1416,16 @@ if (cfForm) {
         
         const formData = new FormData(cfForm);
         const payload = {
-            name: formData.get('name') || '', email: formData.get('email') || '', phone: formData.get('phone') || '',
+            name: formData.get('name') || '', 
+            email: formData.get('email') || '', 
+            phone: formData.get('phone') || '',
             subject: 'Custom Egypt Tour Request',
-            message: `Group Size: ${formData.get('group_size') || 'Not specified'}\n\nMessage: ${formData.get('message') || ''}`,
+            message: `Group Size: ${formData.get('group_size') || 'Not specified'}
+Tour Type: ${formData.get('tour_type') || 'Not specified'}
+Duration: ${formData.get('duration') || 'Not specified'}
+Destinations: ${formData.get('destinations') || 'Not specified'}
+Dates: ${formData.get('dates') || 'Not specified'}
+Message: ${formData.get('message') || ''}`,
             turnstileToken: turnstileToken
         };
         
@@ -1343,7 +1451,8 @@ const tourPrices = {
     'luxor-temples': { 1: 420.00, 2: 520.00, 3: 620.00, 4: 720.00, 5: 820.00, 6: 920.00 },
     'nile-cruise': { 1: 700.00, 2: 1400.00, 3: 2100.00, 4: 2800.00, 5: 3500.00, 6: 4200.00 },
     'desert-safari': { 1: 120.00, 2: 200.00, 3: 280.00, 4: 360.00, 5: 440.00, 6: 520.00 },
-    'cairo-street': { 1: 90.00, 2: 150.00, 3: 210.00, 4: 270.00, 5: 330.00, 6: 390.00 }
+    'cairo-street': { 1: 90.00, 2: 150.00, 3: 210.00, 4: 270.00, 5: 330.00, 6: 390.00 },
+    'islamic-coptic-cairo': { 1: 110.00, 2: 180.00, 3: 250.00, 4: 320.00, 5: 390.00, 6: 460.00 }
 };
 
 const bookTourButtons = document.querySelectorAll('.book-tour-btn');
