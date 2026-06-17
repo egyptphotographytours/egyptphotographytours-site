@@ -68,7 +68,6 @@ TECHNICAL SEO
 <link rel="icon" type="image/png" href="https://www.egyptphotographytours.com/images/favicon-16x16.png" sizes="16x16">
 <link rel="icon" type="image/svg+xml" href="https://www.egyptphotographytours.com/images/favicon.svg">
 <link rel="shortcut icon" href="https://www.egyptphotographytours.com/images/favicon.ico">
-<!-- Note: Apple Touch Icons require PNG/JPEG for iOS compatibility. Path updated to absolute. -->
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.egyptphotographytours.com/images/apple-touch-icon.jpg">
 <link rel="manifest" href="https://www.egyptphotographytours.com/site.webmanifest" crossorigin="anonymous">
 <meta name="msapplication-TileColor" content="#FFD700">
@@ -298,7 +297,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .mobile-nav-contact i{color:var(--c-gold);width:16px}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
 .nav-overlay.is-open{display:block}
-/* ═══ HERO SLIDER — CLEAR JPG, NO SHADE, TEXT DIRECTLY ON IMAGE, BUTTONS AT BOTTOM ═══ */
+/* ═══ HERO SLIDER — CLEAR WEBP, NO SHADE, TEXT DIRECTLY ON IMAGE, BUTTONS AT BOTTOM ═══ */
 .hero{position:relative;height:70vh;min-height:400px;max-height:720px;overflow:hidden;touch-action:pan-y}
 @media(min-width:768px){.hero{height:84vh;max-height:820px}}
 @media(min-width:1200px){.hero{height:90vh;max-height:880px}}
@@ -594,6 +593,19 @@ max-width:460px;
 .wa-float{position:fixed;bottom:24px;right:16px;z-index:1000;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.5);animation:wa-pulse 2.8s infinite;transition:all var(--transition)}
 .wa-float:hover{background:#20ba59;transform:scale(1.08)}
 @keyframes wa-pulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75)}}
+
+/* ═══ MOBILE TOUCH PERFORMANCE & LOGO MODAL ═══ */
+button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-decline,.c-accept,.social-btn,.tc,.dest,.type-card,.exp-c,.pkg,.tv-c,.why-c,.rev-c,.faq-item{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.logo-modal{display:none;position:fixed;z-index:10000;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);justify-content:center;align-items:center;padding:20px;animation:fadeIn .3s ease}
+.logo-modal.active{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.logo-modal-content{position:relative;max-width:90vw;max-height:90vh;text-align:center;animation:zoomIn .3s ease}
+@keyframes zoomIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.logo-modal-img{width:100%;max-width:300px;height:auto;border-radius:50%;border:4px solid var(--c-gold);box-shadow:0 0 40px rgba(255,215,0,.4)}
+.logo-modal-close{position:absolute;top:-50px;right:0;color:#fff;font-size:32px;font-weight:700;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.1);transition:all var(--transition)}
+.logo-modal-close:hover{background:var(--c-gold);color:var(--c-dark)}
+.logo-modal-caption{color:#fff;font-size:18px;font-weight:700;margin-top:24px;text-shadow:0 2px 4px rgba(0,0,0,.5);line-height:1.4}
+
 /* UTILITIES */
 .mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-32{margin-top:32px}.mt-40{margin-top:40px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -810,6 +822,15 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </script>
 </head>
 <body>
+<!-- ═══ LOGO MODAL (Lightbox) ═══ -->
+<div id="logo-modal" class="logo-modal" role="dialog" aria-modal="true" aria-label="Large Logo View">
+    <div class="logo-modal-content">
+        <span class="logo-modal-close" id="logo-modal-close" role="button" aria-label="Close logo view">&times;</span>
+        <img src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours Large Logo" class="logo-modal-img">
+        <p class="logo-modal-caption">Egypt Photography Tours<br><span style="font-size:14px;opacity:.8;">Private & Group Tours Since 2015</span></p>
+    </div>
+</div>
+
 <!-- Cookie Banner -->
 <div id="cookie-bar" class="cookie-bar" role="dialog" aria-modal="true" aria-labelledby="cookie-msg">
 <div class="cookie-inner">
@@ -831,7 +852,8 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 <header class="header" id="site-header">
 <div class="wrap header-inner">
 <button class="logo" id="logo-btn" aria-label="Egypt Photography Tours – go to top of page" type="button" style="background:none;border:none;padding:0;text-align:left">
-<img src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours Logo - Private & Group Egypt Tours Since 2015" title="Egypt Photography Tours - Expert Egyptologist Guides & Professional Photoshoots" class="logo-img" loading="eager" width="44" height="44" decoding="async">
+<!-- ✅ UPDATED: Added ID, Title, and Cursor Zoom for Modal -->
+<img id="header-logo-img" src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours – Private, Group & Photography Tours Since 2015" title="Click to view large logo" class="logo-img" loading="eager" width="44" height="44" decoding="async" style="cursor: zoom-in;">
 <div class="logo-copy">
 <span class="logo-name">Egypt Photography Tours</span>
 <span class="logo-tag">Private &amp; Group Tours Since 2015</span>
@@ -854,7 +876,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 <i class="fas fa-bars" id="ham-icon" aria-hidden="true"></i>
 </button>
 <!-- 8-item nav as requested -->
-<ul class="nav-links-desk">
+<ul class="nav-links-desk" role="list">
 <li><a href="/" class="active" aria-current="page">Home</a></li>
 <li><a href="/about">About Us</a></li>
 <li><a href="/tours">Our Tours</a></li>
@@ -938,7 +960,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 <!-- ═══════════════════ HERO SLIDER — CLEAR WEBP, NO OVERLAY, BUTTONS AT BOTTOM ═══════════════════ -->
 <section id="hero" class="hero" aria-label="Egypt Photography Tours – Featured tours and experiences">
 <div class="hero-slide is-active" role="group" aria-label="Slide 1 of 5: Egypt's Most Unforgettable Tours">
-<img src="https://www.egyptphotographytours.com/images/hero-image1.webp" alt="Private Egypt tour at the Giza Pyramids with professional photographer and certified Egyptologist guide" title="Private Giza Pyramids Tour with Professional Photography - Egypt Photography Tours" loading="eager" width="1920" height="1080" fetchpriority="high" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/hero-image1.webp" alt="Private tour at the Giza Pyramids with professional photographer and Egyptologist guide" loading="eager" width="1920" height="1080" fetchpriority="high" decoding="async">
 <div class="hero-body">
 <div class="hero-card">
 <div class="hero-badge"><i class="fas fa-award" aria-hidden="true"></i> Egypt's #1 Rated Tour Company Since 2015</div>
@@ -952,9 +974,10 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </div>
 </div>
 <div class="hero-slide" role="group" aria-label="Slide 2 of 5: Professional Pyramids Photoshoots">
-<img src="https://www.egyptphotographytours.com/images/hero-image2.webp" alt="Professional Pyramids photoshoot for couples and families at the Giza Pyramids, Egypt" title="Professional Pyramids Photoshoot at Giza - Couples & Family Egypt Tours" loading="lazy" width="1920" height="1080" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/hero-image2.webp" alt="Couples professional photoshoot at the Pyramids of Giza – Egypt Photography Tours" loading="lazy" width="1920" height="1080" decoding="async">
 <div class="hero-body">
 <div class="hero-card">
+<!-- ✅ White background, black text/icon as requested -->
 <div class="hero-badge hero-badge-light">📸 Professional Pyramids Photoshoots</div>
 <p class="hero-title">Stunning <em>Pyramids Photoshoots</em> for Couples, Families &amp; Solo Travelers</p>
 <p class="hero-sub">Stand before the last Wonder of the Ancient World. Your personal professional photographer captures magic. 150–300 edited images in 48 hours.</p>
@@ -966,7 +989,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </div>
 </div>
 <div class="hero-slide" role="group" aria-label="Slide 3 of 5: Historic Cairo Private and Group Tours">
-<img src="https://www.egyptphotographytours.com/images/hero-image3.webp" alt="Historic Cairo private tour including Grand Egyptian Museum, Islamic Cairo, and Saladin Citadel" title="Historic Cairo Private Tour - Grand Egyptian Museum & Islamic Cairo" loading="lazy" width="1920" height="1080" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/hero-image3.webp" alt="Cairo historical tour – Grand Egyptian Museum, Islamic Cairo and Saladin Citadel" loading="lazy" width="1920" height="1080" decoding="async">
 <div class="hero-body">
 <div class="hero-card">
 <div class="hero-badge">🏛️ Certified Egyptologist Guides</div>
@@ -980,7 +1003,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </div>
 </div>
 <div class="hero-slide" role="group" aria-label="Slide 4 of 5: All-Inclusive 7-Day Egypt Discovery">
-<img src="https://www.egyptphotographytours.com/images/hero-image4.webp" alt="7-day all-inclusive Egypt tour package covering Cairo, Luxor Valley of the Kings, and Aswan Abu Simbel" title="7-Day All-Inclusive Egypt Tour Package - Cairo, Luxor & Aswan" loading="lazy" width="1920" height="1080" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/hero-image4.webp" alt="7-day all-inclusive Egypt tour – Cairo, Luxor Valley of Kings, Aswan Abu Simbel" loading="lazy" width="1920" height="1080" decoding="async">
 <div class="hero-body">
 <div class="hero-card">
 <div class="hero-badge">✈️ All-Inclusive Packages</div>
@@ -994,7 +1017,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </div>
 </div>
 <div class="hero-slide" role="group" aria-label="Slide 5 of 5: Egypt Honeymoon and Romance Tours">
-<img src="https://www.egyptphotographytours.com/images/hero-image5.webp" alt="Romantic Egypt honeymoon tour with sunset Nile cruise and private Pyramids photoshoot" title="Egypt Honeymoon & Romance Tours - Private Photoshoots & Nile Cruises" loading="lazy" width="1920" height="1080" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/hero-image5.webp" alt="Egypt honeymoon tour – romantic Pyramids photoshoot and sunset Nile cruise" loading="lazy" width="1920" height="1080" decoding="async">
 <div class="hero-body">
 <div class="hero-card">
 <div class="hero-badge">💍 Honeymoon &amp; Romance Specialists</div>
@@ -1069,7 +1092,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 <div class="tours-grid">
 <article class="tc">
 <div class="tc-img-w">
-<img src="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp" alt="Professional Pyramids photoshoot and private tour at Giza with certified Egyptologist and photographer" title="Pyramids Photoshoot & Private Tour Giza - Egypt Photography Tours" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp" alt="Professional Pyramids photoshoot and private tour at Giza – certified Egyptologist and photographer" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
 <span class="tc-badge badge-hot">Most Popular</span>
 </div>
 <div class="tc-body">
@@ -1084,7 +1107,8 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </article>
 <article class="tc">
 <div class="tc-img-w">
-<img src="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp" alt="2-day Cairo and Giza historical tour featuring Grand Egyptian Museum, Islamic Cairo, and Giza Pyramids" title="2-Day Cairo & Giza Historical Tour Package - Expert Egyptologist Guide" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
+<!-- ✅ FIXED PATH: Using absolute URL to ensure it always loads correctly -->
+<img src="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp" alt="2-day Cairo and Giza historical tour – Grand Egyptian Museum, Islamic Cairo, Giza Pyramids with expert guide" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
 <span class="tc-badge badge-best">Best Value</span>
 </div>
 <div class="tc-body">
@@ -1099,7 +1123,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </article>
 <article class="tc">
 <div class="tc-img-w">
-<img src="https://www.egyptphotographytours.com/images/alexandria-tour.webp" alt="Alexandria day trip from Cairo visiting Qaitbay Citadel, Bibliotheca Alexandrina, and Mediterranean coast" title="Alexandria Day Trip from Cairo - Mediterranean Coast & Historical Sites" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/alexandria-tour.webp" alt="Alexandria day trip from Cairo – Qaitbay Citadel, Bibliotheca Alexandrina, Catacombs and Mediterranean coast" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
 <span class="tc-badge badge-photo">Day Trip</span>
 </div>
 <div class="tc-body">
@@ -1114,7 +1138,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </article>
 <article class="tc">
 <div class="tc-img-w">
-<img src="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp" alt="7-day all-inclusive Egypt discovery tour covering Cairo, Giza, Alexandria, Luxor, and Aswan" title="7-Day All-Inclusive Egypt Discovery Tour - Best of Egypt Package" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp" alt="7-day all-inclusive Egypt tour – Cairo, Giza, Alexandria, Luxor Valley of Kings, Aswan Abu Simbel" class="tc-img" loading="lazy" width="400" height="210" decoding="async">
 <span class="tc-badge badge-luxury">Best of Egypt</span>
 </div>
 <div class="tc-body">
@@ -1143,27 +1167,28 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </div>
 <div class="dest-grid">
 <a href="/tours?city=cairo" class="dest" aria-label="Cairo tours – 8 tours available, including the Grand Egyptian Museum and Islamic Cairo">
-<img src="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp" alt="Cairo private and group tours featuring Grand Egyptian Museum, Islamic Cairo mosques and bazaars" title="Cairo Egypt Tours - Grand Egyptian Museum & Islamic Cairo" loading="lazy" width="300" height="400" decoding="async">
+<!-- ✅ FIXED PATH: Using absolute URL to ensure it always loads correctly -->
+<img src="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp" alt="Cairo private and group tours – Grand Egyptian Museum, Islamic Cairo mosques and bazaars" loading="lazy" width="300" height="400" decoding="async">
 <div class="dest-label"><span class="dest-name">Cairo</span><span class="dest-cnt">8 tours available</span></div>
 </a>
 <a href="/tour-pyramids-private" class="dest" aria-label="Giza Pyramids tours – 6 tours including photoshoots">
-<img src="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp" alt="Giza Pyramids private tours and professional photoshoots for couples, families and solo travelers" title="Giza Pyramids Tours & Photoshoots - Private Egypt Tours" loading="lazy" width="300" height="400" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp" alt="Giza Pyramids private tours and professional photoshoots – couples, families and solo travelers" loading="lazy" width="300" height="400" decoding="async">
 <div class="dest-label"><span class="dest-name">Giza Pyramids</span><span class="dest-cnt">6 tours available</span></div>
 </a>
 <a href="/tours?city=luxor" class="dest" aria-label="Luxor tours – 5 tours including Valley of the Kings and Karnak Temple">
-<img src="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp" alt="Luxor historical tours covering Valley of the Kings, Karnak Temple and Hatshepsut Temple" title="Luxor Historical Tours - Valley of the Kings & Karnak Temple" loading="lazy" width="300" height="400" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp" alt="Luxor historical tours – Valley of the Kings, Karnak Temple and Hatshepsut Temple" loading="lazy" width="300" height="400" decoding="async">
 <div class="dest-label"><span class="dest-name">Luxor</span><span class="dest-cnt">5 tours available</span></div>
 </a>
 <a href="/tours?city=aswan" class="dest" aria-label="Aswan tours – 4 tours including Abu Simbel and Philae Temple">
-<img src="https://www.egyptphotographytours.com/images/hero-image4.webp" alt="Aswan tours including Abu Simbel Temples, Philae Temple, Nile cruise and Nubian village" title="Aswan Egypt Tours - Abu Simbel, Philae Temple & Nile Cruise" loading="lazy" width="300" height="400" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/hero-image4.webp" alt="Aswan tours – Abu Simbel Temples, Philae Temple, Nile cruise and Nubian village" loading="lazy" width="300" height="400" decoding="async">
 <div class="dest-label"><span class="dest-name">Aswan</span><span class="dest-cnt">4 tours available</span></div>
 </a>
 <a href="/tour-alexandria" class="dest" aria-label="Alexandria tours – 3 tours including Qaitbay Citadel and Mediterranean coast">
-<img src="https://www.egyptphotographytours.com/images/alexandria-tour.webp" alt="Alexandria day tours featuring Qaitbay Citadel, Library, Catacombs and Mediterranean coast" title="Alexandria Day Tours Egypt - Qaitbay Citadel & Mediterranean Coast" loading="lazy" width="300" height="400" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/alexandria-tour.webp" alt="Alexandria day tours – Qaitbay Citadel, Library, Catacombs and Mediterranean coast" loading="lazy" width="300" height="400" decoding="async">
 <div class="dest-label"><span class="dest-name">Alexandria</span><span class="dest-cnt">3 tours available</span></div>
 </a>
 <a href="/tours?type=nile-cruise" class="dest" aria-label="Nile cruise tours – 3 packages from Luxor to Aswan">
-<img src="https://www.egyptphotographytours.com/images/hero-image5.webp" alt="Nile cruise tours from Luxor to Aswan featuring luxury and standard felucca packages" title="Nile Cruise Tours Egypt - Luxor to Aswan Packages" loading="lazy" width="300" height="400" decoding="async">
+<img src="https://www.egyptphotographytours.com/images/hero-image5.webp" alt="Nile cruise tours from Luxor to Aswan – luxury and standard felucca packages" loading="lazy" width="300" height="400" decoding="async">
 <div class="dest-label"><span class="dest-name">Nile Cruise</span><span class="dest-cnt">3 packages</span></div>
 </a>
 </div>
@@ -1177,68 +1202,68 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 <h2 id="types-h2">All Egypt Tour Types – We Offer Everything</h2>
 <p class="sec-sub">Whatever your passion – history, photography, culture, adventure or romance – we have a perfectly crafted Egypt experience for you</p>
 </div>
-<div class="types-grid">
-<a href="/tour-pyramids-private" class="type-card" aria-label="Private Egypt tours – fully exclusive with dedicated guide">
+<div class="types-grid" role="list">
+<a href="/tour-pyramids-private" class="type-card" role="listitem" aria-label="Private Egypt tours – fully exclusive with dedicated guide">
 <span class="type-icon" aria-hidden="true">👑</span>
 <div class="type-info"><div class="type-title">Private Egypt Tours</div><div class="type-desc">Fully exclusive with your dedicated guide – your schedule, your pace</div></div>
 </a>
-<a href="/tours?type=group" class="type-card" aria-label="Group Egypt tours – from $79 per person">
+<a href="/tours?type=group" class="type-card" role="listitem" aria-label="Group Egypt tours – from $79 per person">
 <span class="type-icon" aria-hidden="true">👥</span>
 <div class="type-info"><div class="type-title">Group Tours Egypt</div><div class="type-desc">Small groups (max 8), certified Egyptologist, from $79/person</div></div>
 </a>
-<a href="/tour-pyramids-private" class="type-card" aria-label="Egypt photography tours and Pyramids photoshoots">
+<a href="/tour-pyramids-private" class="type-card" role="listitem" aria-label="Egypt photography tours and Pyramids photoshoots">
 <span class="type-icon" aria-hidden="true">📸</span>
 <div class="type-info"><div class="type-title">Photography Tours</div><div class="type-desc">Professional photographer, cinematic portraits, 150–300 edited images</div></div>
 </a>
-<a href="/tour-cairo-giza-2day" class="type-card" aria-label="Historical tours of Egypt – pyramids, temples and ancient monuments">
+<a href="/tour-cairo-giza-2day" class="type-card" role="listitem" aria-label="Historical tours of Egypt – pyramids, temples and ancient monuments">
 <span class="type-icon" aria-hidden="true">🏛️</span>
 <div class="type-info"><div class="type-title">Historical Tours</div><div class="type-desc">Pyramids, Valley of Kings, Karnak, Philae, Islamic Cairo &amp; more</div></div>
 </a>
-<a href="/tours?type=cultural" class="type-card" aria-label="Cultural tours of Egypt – authentic local experiences">
+<a href="/tours?type=cultural" class="type-card" role="listitem" aria-label="Cultural tours of Egypt – authentic local experiences">
 <span class="type-icon" aria-hidden="true">🎭</span>
 <div class="type-info"><div class="type-title">Cultural Tours</div><div class="type-desc">Nubian villages, Khan El Khalili, local cuisine and traditions</div></div>
 </a>
-<a href="/tours?type=honeymoon" class="type-card" aria-label="Egypt honeymoon and couples romance tours">
+<a href="/tours?type=honeymoon" class="type-card" role="listitem" aria-label="Egypt honeymoon and couples romance tours">
 <span class="type-icon" aria-hidden="true">💍</span>
 <div class="type-info"><div class="type-title">Honeymoon &amp; Romance</div><div class="type-desc">Sunset Nile cruises, proposal photoshoots, private temple dinners</div></div>
 </a>
-<a href="/tours?type=family" class="type-card" aria-label="Family tours of Egypt – kid-friendly with camel rides">
+<a href="/tours?type=family" class="type-card" role="listitem" aria-label="Family tours of Egypt – kid-friendly with camel rides">
 <span class="type-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
 <div class="type-info"><div class="type-title">Family Tours</div><div class="type-desc">Kid-friendly pacing, mummy workshops, camel rides, family portraits</div></div>
 </a>
-<a href="/tours?type=luxury" class="type-card" aria-label="Luxury all-inclusive Egypt tours with 5-star hotels">
+<a href="/tours?type=luxury" class="type-card" role="listitem" aria-label="Luxury all-inclusive Egypt tours with 5-star hotels">
 <span class="type-icon" aria-hidden="true">✨</span>
 <div class="type-info"><div class="type-title">Luxury Packages</div><div class="type-desc">5-star hotels, VIP access, private AC transport, exclusive experiences</div></div>
 </a>
-<a href="/tours?type=budget" class="type-card" aria-label="Budget Egypt tours from $79 per person">
+<a href="/tours?type=budget" class="type-card" role="listitem" aria-label="Budget Egypt tours from $79 per person">
 <span class="type-icon" aria-hidden="true">🎒</span>
 <div class="type-info"><div class="type-title">Budget &amp; Backpacker</div><div class="type-desc">Affordable group tours, every landmark, from $79/person</div></div>
 </a>
-<a href="/tours?type=content-creator" class="type-card" aria-label="Content creator tours for Instagram TikTok and YouTube">
+<a href="/tours?type=content-creator" class="type-card" role="listitem" aria-label="Content creator tours for Instagram TikTok and YouTube">
 <span class="type-icon" aria-hidden="true">📱</span>
 <div class="type-info"><div class="type-title">Content Creator Tours</div><div class="type-desc">Instagram &amp; TikTok-optimised angles, reel-ready shots, exclusive access</div></div>
 </a>
-<a href="/tours?type=day-trip" class="type-card" aria-label="Egypt day trips from Cairo to Alexandria Luxor and Aswan">
+<a href="/tours?type=day-trip" class="type-card" role="listitem" aria-label="Egypt day trips from Cairo to Alexandria Luxor and Aswan">
 <span class="type-icon" aria-hidden="true">🚌</span>
 <div class="type-info"><div class="type-title">Day Trips from Cairo</div><div class="type-desc">Alexandria, Luxor, Aswan day trips – no overnight stay required</div></div>
 </a>
-<a href="/tours?type=nile-cruise" class="type-card" aria-label="Nile cruise tours from Luxor to Aswan">
+<a href="/tours?type=nile-cruise" class="type-card" role="listitem" aria-label="Nile cruise tours from Luxor to Aswan">
 <span class="type-icon" aria-hidden="true">⛵</span>
 <div class="type-info"><div class="type-title">Nile Cruise &amp; Felucca</div><div class="type-desc">Luxor to Aswan cruises, sunset felucca sailing, private Nile experiences</div></div>
 </a>
-<a href="/tours?type=sunrise" class="type-card" aria-label="Sunrise tours at the Pyramids of Giza for golden hour photography">
+<a href="/tours?type=sunrise" class="type-card" role="listitem" aria-label="Sunrise tours at the Pyramids of Giza for golden hour photography">
 <span class="type-icon" aria-hidden="true">🌅</span>
 <div class="type-info"><div class="type-title">Sunrise Pyramid Tours</div><div class="type-desc">Golden-hour photography, empty site, dramatic Sahara light</div></div>
 </a>
-<a href="/tours?type=solo-female" class="type-card" aria-label="Solo female traveler Egypt tours – safe and empowering">
+<a href="/tours?type=solo-female" class="type-card" role="listitem" aria-label="Solo female traveler Egypt tours – safe and empowering">
 <span class="type-icon" aria-hidden="true">👩</span>
 <div class="type-info"><div class="type-title">Solo Female Travel</div><div class="type-desc">Safe, empowering, female-friendly guides and secure transport</div></div>
 </a>
-<a href="/tours?type=corporate" class="type-card" aria-label="Corporate group tours and incentive travel in Egypt">
+<a href="/tours?type=corporate" class="type-card" role="listitem" aria-label="Corporate group tours and incentive travel in Egypt">
 <span class="type-icon" aria-hidden="true">🏢</span>
 <div class="type-info"><div class="type-title">Corporate &amp; Groups</div><div class="type-desc">Team-building, incentive travel, VIP corporate photography</div></div>
 </a>
-<a href="#customize-trip" class="type-card" aria-label="Create a fully custom Egypt tour itinerary">
+<a href="#customize-trip" class="type-card" role="listitem" aria-label="Create a fully custom Egypt tour itinerary">
 <span class="type-icon" aria-hidden="true">🗺️</span>
 <div class="type-info"><div class="type-title">Custom Itinerary</div><div class="type-desc">You choose everything – dates, destinations, pace, activities</div></div>
 </a>
@@ -1532,6 +1557,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 <h2 id="rev-h2">What Travelers Around the World Say</h2>
 <p class="sec-sub">Travelers from over 80 countries have trusted us with their Egypt experience – here is what they say</p>
 </div>
+<!-- ✅ Removed .rw-grid (Facebook, TripAdvisor, Google Maps widgets) as requested -->
 <div class="rev-grid mt-40">
 <div class="rev-c">
 <div class="rev-mark" aria-hidden="true">"</div>
@@ -1739,6 +1765,7 @@ title="Egypt Photography Tours location map – Near the Giza Pyramids, Egypt">
 </div>
 </div>
 </footer>
+
 <!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
 <script>
 (function () {
@@ -1746,10 +1773,12 @@ title="Egypt Photography Tours location map – Near the Giza Pyramids, Egypt">
 var $ = function (s) { return document.querySelector(s); };
 var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
 var on = function (el, ev, fn, opt) { if (el) el.addEventListener(ev, fn, opt || false); };
+
 /* Logo: scroll to top */
 function scrollToTop(e) { e.preventDefault(); var h = document.getElementById('hero') || document.body; h.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', '#hero'); }
 on($('#logo-btn'), 'click', scrollToTop);
 on($('#footer-logo-btn'), 'click', scrollToTop);
+
 /* Smooth scroll for anchor links */
 $$('a[href^="#"]').forEach(function(a) {
 on(a, 'click', function(e) {
@@ -1758,6 +1787,7 @@ var target = document.getElementById(id);
 if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 });
 });
+
 /* Mobile Nav */
 var hamburger = $('#hamburger'), hamIcon = $('#ham-icon'), mobileNav = $('#mobile-nav'), navOverlay = $('#nav-overlay'), siteHeader = $('#site-header'), navbar = $('#navbar'), isMenuOpen = false;
 function getTop() { return Math.round((siteHeader ? siteHeader.getBoundingClientRect().height : 60) + (navbar ? navbar.getBoundingClientRect().height : 56)); }
@@ -1766,6 +1796,7 @@ function closeMenu() { isMenuOpen=false; mobileNav.classList.remove('is-open'); 
 on(hamburger, 'click', function() { isMenuOpen ? closeMenu() : openMenu(); });
 on(navOverlay, 'click', closeMenu);
 $$('#mobile-nav a').forEach(function(l) { on(l, 'click', closeMenu); });
+
 /* Language Switcher */
 var langWrap=$('#lang-wrap'), langToggle=$('#lang-toggle'), langMenu=$('#lang-menu'), isLangOpen=false;
 function openLang() { isLangOpen=true; langWrap.setAttribute('data-open','true'); langToggle.setAttribute('aria-expanded','true'); langMenu.setAttribute('aria-hidden','false'); langMenu.style.display='block'; }
@@ -1776,8 +1807,50 @@ $$('.lang-item').forEach(function(item) {
 on(item, 'click', function(e) { e.preventDefault(); var h=item.getAttribute('href'); if(h&&h!==window.location.pathname) window.location.href=h; });
 on(item, 'keydown', function(e) { if(e.key==='Enter'||e.key===' '){e.preventDefault();item.click();} });
 });
+
+/* ═══ LOGO MODAL FUNCTIONALITY ═══ */
+const headerLogoImg = document.getElementById('header-logo-img');
+const logoModal = document.getElementById('logo-modal');
+const logoModalClose = document.getElementById('logo-modal-close');
+
+function openLogoModal(e) {
+    if(e) e.stopPropagation(); // Prevents triggering the parent button's scroll-to-top
+    if(logoModal) {
+        logoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeLogoModal() {
+    if(logoModal) {
+        logoModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+if(headerLogoImg) {
+    headerLogoImg.addEventListener('click', openLogoModal);
+}
+
+if(logoModalClose) {
+    logoModalClose.addEventListener('click', closeLogoModal);
+}
+
+if(logoModal) {
+    logoModal.addEventListener('click', function(e) {
+        if(e.target === logoModal) closeLogoModal(); // Close if clicking outside the image
+    });
+}
+
 /* Escape key */
-on(document, 'keydown', function(e) { if(e.key==='Escape'){if(isMenuOpen)closeMenu();if(isLangOpen)closeLang();} });
+on(document, 'keydown', function(e) { 
+    if(e.key==='Escape'){
+        if(isMenuOpen)closeMenu();
+        if(isLangOpen)closeLang();
+        if(logoModal && logoModal.classList.contains('active')) closeLogoModal();
+    } 
+});
+
 /* Hero Slider — 6 SECOND AUTO-ADVANCE */
 var slides=$$('.hero-slide'), dots=$$('.hero-dot'), prevBtn=$('#hero-prev'), nextBtn=$('#hero-next'), cur=0, timer;
 function goTo(i) {
@@ -1802,6 +1875,7 @@ on(heroEl,'mouseleave',start);
 on(heroEl,'focusin',function(){clearInterval(timer);});
 on(heroEl,'focusout',start);
 if(slides.length)start();
+
 /* FAQ Accordion */
 $$('.faq-q').forEach(function(btn){
 on(btn,'click',function(){
@@ -1810,6 +1884,7 @@ $$('.faq-q').forEach(function(b){b.setAttribute('aria-expanded','false');var a=d
 if(!open){this.setAttribute('aria-expanded','true');var ans=document.getElementById(this.getAttribute('aria-controls'));if(ans)ans.classList.add('is-open');}
 });
 });
+
 /* Cookie Consent */
 var cookieBar=$('#cookie-bar'), cAccept=$('#c-accept'), cDecline=$('#c-decline');
 var existing=document.cookie.split('; ').find(function(r){return r.startsWith('cookie_consent=');});
@@ -1817,6 +1892,7 @@ if(!existing&&cookieBar)cookieBar.style.display='block';
 on(cAccept,'click',function(){document.cookie='cookie_consent=accepted; max-age=31536000; path=/; SameSite=Lax';if(cookieBar)cookieBar.style.display='none';loadAnalytics();loadFacebookSDK();});
 on(cDecline,'click',function(){document.cookie='cookie_consent=declined; max-age=31536000; path=/; SameSite=Lax';if(cookieBar)cookieBar.style.display='none';});
 if(existing&&existing.indexOf('accepted')!==-1){loadAnalytics();loadFacebookSDK();}
+
 /* Google Analytics */
 function loadAnalytics(){
 if(window._gtagLoaded)return;
@@ -1826,6 +1902,7 @@ gtag('js',new Date());gtag('config','G-FVNPEMCG8F',{anonymize_ip:true});
 var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F';document.head.appendChild(s);
 window._gtagLoaded=true;
 }
+
 /* Facebook SDK */
 function loadFacebookSDK(){
 if(window._fbLoaded)return;
@@ -1833,8 +1910,10 @@ var fbRoot=document.createElement('div');fbRoot.id='fb-root';document.body.prepe
 var s=document.createElement('script');s.async=true;s.defer=true;s.crossOrigin='anonymous';s.src='https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=1581238396326492';document.body.appendChild(s);
 window._fbLoaded=true;
 }
+
 /* Copyright year */
 var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
+
 /* ═══ CLOUDFLARE WORKER FORM SUBMISSION — FIXED N/A BUG ═══ */
 const cfForm = document.getElementById('contactForm');
 const cfStatus = document.getElementById('form-status');
