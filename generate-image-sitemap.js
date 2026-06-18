@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
+import fs from 'fs';
+import path from 'path';
+import { globSync } from 'glob';
 
 const DOMAIN = 'https://www.egyptphotographytours.com';
 const OUTPUT_FILE = './image-sitemap.xml';
@@ -35,18 +35,15 @@ function escapeXml(str) {
 function normalizePageUrl(file) {
   let url = '/' + file.replace(/\\/g, '/');
 
-  // Homepage
   if (url === '/index.html') {
     return '/';
   }
 
-  // Remove /index.html from folders
   if (url.endsWith('/index.html')) {
     url = url.replace('/index.html', '');
     return url || '/';
   }
 
-  // Remove .html extension
   if (url.endsWith('.html')) {
     url = url.replace('.html', '');
   }
@@ -55,7 +52,7 @@ function normalizePageUrl(file) {
 }
 
 // ===============================
-// Generate better SEO titles
+// Generate SEO metadata
 // ===============================
 function getMeta(filename) {
   const cleanName = filename
@@ -78,7 +75,7 @@ function getMeta(filename) {
 // Scan HTML files for image usage
 // ===============================
 function scanHTMLForImages() {
-  const htmlFiles = glob.sync('**/*.html', {
+  const htmlFiles = globSync('**/*.html', {
     ignore: [
       'node_modules/**',
       '.github/**',
@@ -103,7 +100,6 @@ function scanHTMLForImages() {
 
       let src = srcMatch[1].split('?')[0];
 
-      // Ignore external URLs
       if (
         src.startsWith('http://') ||
         src.startsWith('https://') ||
@@ -112,10 +108,8 @@ function scanHTMLForImages() {
         return;
       }
 
-      // Normalize path
       src = src.replace(/^\.?\//, '').replace(/\\/g, '/');
 
-      // Image extension check
       if (!/\.(jpg|jpeg|png|webp|gif)$/i.test(src)) {
         return;
       }
@@ -137,7 +131,7 @@ function scanHTMLForImages() {
 // Get all local image files
 // ===============================
 function getAllImages() {
-  return glob.sync('images/**/*.{jpg,jpeg,png,webp,gif}', {
+  return globSync('images/**/*.{jpg,jpeg,png,webp,gif}', {
     ignore: ['node_modules/**']
   })
     .map(imgPath => ({
@@ -170,7 +164,6 @@ function generate() {
   images.forEach(({ path: imgPath, filename }) => {
     const pages = imageMap[imgPath];
 
-    // Skip orphan images not used on pages
     if (!pages || pages.length === 0) {
       return;
     }
@@ -197,12 +190,9 @@ function generate() {
 
   fs.writeFileSync(OUTPUT_FILE, xml);
 
-  console.log(`✅ Image sitemap generated successfully`);
+  console.log('✅ Image sitemap generated successfully');
   console.log(`📄 URLs: ${totalUrls}`);
   console.log(`🖼️ Images: ${totalImages}`);
 }
 
-// ===============================
-// Run
-// ===============================
 generate();
