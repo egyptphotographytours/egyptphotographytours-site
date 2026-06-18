@@ -8,7 +8,8 @@
 
   Content-Security-Policy: default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';
                            script-src 'self' 'unsafe-inline' 'unsafe-eval'
-                           https://www.google.com https://www.gstatic.com
+                           https://www.google.com
+                           https://www.gstatic.com
                            https://www.googletagmanager.com
                            https://connect.facebook.net
                            https://staticxx.facebook.com
@@ -21,21 +22,26 @@
                            https://kit.fontawesome.com
                            https://challenges.cloudflare.com
                            https://static.cloudflareinsights.com;
+
                            style-src 'self' https: 'unsafe-inline'
                            https://fonts.googleapis.com
                            https://cdnjs.cloudflare.com
                            https://kit-free.fontawesome.com;
+
                            img-src 'self' https: data: blob:;
+
                            font-src 'self' https: data:
                            https://fonts.gstatic.com
                            https://cdnjs.cloudflare.com
                            https://kit-free.fontawesome.com;
+
                            frame-src 'self'
                            https://www.google.com
                            https://www.facebook.com
                            https://www.tripadvisor.com
                            https://www.youtube.com
                            https://challenges.cloudflare.com;
+
                            connect-src 'self'
                            https://www.google.com
                            https://www.gstatic.com
@@ -50,6 +56,7 @@
                            https://static.cloudflareinsights.com
                            https://cloudflareinsights.com
                            https://contact-worker.hussam01112.workers.dev;
+
                            upgrade-insecure-requests;
                            base-uri 'self';
                            form-action 'self' https://wa.me;
@@ -57,14 +64,14 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Robots-Tag: index, follow
 
-  # NO CACHE (FOR ACTIVE DEVELOPMENT)
+  # HTML - ALWAYS CHECK FOR UPDATES
   Cache-Control: no-cache, no-store, must-revalidate
   Pragma: no-cache
   Expires: 0
 
   Permissions-Policy: geolocation=(self), payment=(self)
 
-  # Open Graph + Twitter card default headers
+  # Open Graph + Twitter
   og:title: Egypt Photography Tours
   og:description: Private guided photography tours in Cairo, Giza, Alexandria, and all Egypt.
   og:type: website
@@ -76,18 +83,40 @@
   twitter:description: Private guided photography tours in Cairo, Giza, Alexandria, and all Egypt.
   twitter:image: https://www.egyptphotographytours.com/images/og-image.jpg
 
+
+# ======================================================
+# STATIC FILE CACHE (FAST LOADING)
+# ======================================================
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Robots-Tag: index, follow
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+
 # ======================================================
 # RSS FEED
 # ======================================================
 /feed.xml
   Content-Type: application/rss+xml
   X-Robots-Tag: index, follow
-
-# ======================================================
-# ADMIN / PRIVATE FOLDERS
-# ======================================================
-/admin/*
-  X-Robots-Tag: noindex, nofollow
-
-/private/*
-  X-Robots-Tag: noindex, nofollow
