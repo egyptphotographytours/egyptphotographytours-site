@@ -6,36 +6,43 @@ on:
       - 'images/**'
       - '*.html'
       - 'generate-image-sitemap.js'
+      - 'package.json'
+      - 'package-lock.json'
     branches:
       - main
       - master
+
   workflow_dispatch:
 
 jobs:
   generate-sitemap:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
-    
+
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
+
       - name: Install dependencies
-        run: |
-          npm init -y
-          npm install glob
+        run: npm install
+
 
       - name: Generate image-sitemap.xml
         run: node generate-image-sitemap.js
+
 
       - name: Verify sitemap was created
         run: |
@@ -47,11 +54,14 @@ jobs:
             exit 1
           fi
 
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add image-sitemap.xml
+
           if ! git diff --staged --quiet; then
             git commit -m "🤖 Auto-generate image-sitemap.xml [skip ci]"
             git push
