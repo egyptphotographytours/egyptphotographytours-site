@@ -18,14 +18,14 @@ from bs4 import BeautifulSoup
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 
-# Force real‑time output so GitHub logs show progress
+# Force real-time output so GitHub logs show progress
 sys.stdout.reconfigure(line_buffering=True)
 
 # ----------------------------------------------------------------------
 # CONFIGURATION – EDIT THESE TO MATCH YOUR SITE
 # ----------------------------------------------------------------------
 DOMAIN = "https://www.egyptphotographytours.com"   # Your site's full domain (no trailing slash)
-SOURCE_LANG = "en"                                 # Your original language (ISO 639‑1)
+SOURCE_LANG = "en"                                 # Your original language (ISO 639-1)
 
 # All target language folders (must match folder names you want)
 TARGET_LANGS = [
@@ -34,7 +34,7 @@ TARGET_LANGS = [
     'tl', 'no', 'da', 'fi'
 ]
 
-# Map folder names to OPUS‑MT 2‑letter codes (if different)
+# Map folder names to OPUS-MT 2-letter codes (if different)
 OPUS_LANG_MAP = {
     'zh-CN': 'zh',
     'tl': 'tl',
@@ -71,6 +71,20 @@ def restore_placeholders(text, placeholders):
     for key, val in placeholders.items():
         text = text.replace(key, val)
     return text
+
+def translate_text(text, model, tokenizer):
+    """Translate a single string using the loaded model."""
+    if not text or len(text.strip()) < 3:
+        return text
+    try:
+        inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=512)
+        with torch.no_grad():
+            translated_ids = model.generate(**inputs, max_length=512)
+        translated = tokenizer.batch_decode(translated_ids, skip_special_tokens=True)[0]
+        return translated if translated.strip() else text
+    except Exception as e:
+        print(f"    Translation error: {e}")
+        return text
 
 def translate_protected_text(text, model, tokenizer):
     """Translate only the non-protected parts of the text."""
@@ -199,7 +213,11 @@ def git_commit_and_push(target_lang, file_paths, max_retries=5):
             subprocess.run(["git", "commit", "-m", f"translate({target_lang}): batch ({len(file_paths)} files)"],
                            check=False, capture_output=True)
             subprocess.run(["git", "pull", "--rebase", "--autostash"], check=False, capture_output=True)
-            push_result = subprocess.run(["git", "push"], capture_output=True, text=True)
+            
+            # FIX FOR DETACHED HEAD ERROR:
+            branch_name = os.getenv('GITHUB_REF_NAME', 'main')
+            push_result = subprocess.run(["git", "push", "origin", f"HEAD:{branch_name}"], capture_output=True, text=True)
+            
             if push_result.returncode == 0:
                 print(f"    ✅ Committed & pushed {len(file_paths)} files for {target_lang}")
                 return
@@ -232,19 +250,6 @@ def load_model(source_lang, target_lang):
     model.eval()
     torch.set_num_threads(2)
     return model, tokenizer
-
-def translate_text(text, model, tokenizer):
-    if not text or len(text.strip()) < 3:
-        return text
-    try:
-        inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=512)
-        with torch.no_grad():
-            translated_ids = model.generate(**inputs, max_length=512)
-        translated = tokenizer.batch_decode(translated_ids, skip_special_tokens=True)[0]
-        return translated if translated.strip() else text
-    except Exception as e:
-        print(f"    Translation error: {e}")
-        return text
 
 # ----------------------------------------------------------------------
 # HTML TRANSLATION ROUTINES
