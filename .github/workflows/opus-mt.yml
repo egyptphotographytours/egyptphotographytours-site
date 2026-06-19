@@ -23,7 +23,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          ref: ${{ github.ref }}       # Forces branch checkout instead of detached HEAD
+          fetch-depth: 0               # Fetches full history to prevent rebase conflicts
           persist-credentials: true
 
       - name: Setup Python
