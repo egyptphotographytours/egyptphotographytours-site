@@ -5,12 +5,14 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Grant write permissions so the bot can push commits
+permissions:
+  contents: write
+
 jobs:
   translate:
     runs-on: ubuntu-latest
     timeout-minutes: 360
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     strategy:
       fail-fast: false
       max-parallel: 1
