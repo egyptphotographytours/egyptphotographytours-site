@@ -3,6 +3,7 @@
 OPUS-MT Smart Translator
 - Translates only text nodes (never breaks HTML/Schema)
 - Protects URLs, emails, and code from being translated
+- FIX: Ignores HTML Comments (<!-- -->) and <head> dev notes
 - Fixes all asset paths and internal links for subfolder usage
 - Incremental: only changed files are retranslated
 - Batched commits every 5 files (no lost work on cancellation)
@@ -14,7 +15,8 @@ import sys
 import time
 import subprocess
 import re
-from bs4 import BeautifulSoup
+# FIX: Import Comment to filter out HTML comments
+from bs4 import BeautifulSoup, Comment 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 
@@ -294,19 +296,25 @@ def translate_text_nodes(soup, model, tokenizer):
     ignore_tags = {'script', 'style', 'code', 'pre', 'kbd', 'samp', 'var', 'time', 'svg', 'math'}
     
     for text_node in soup.find_all(string=True):
+        
+        # 🛑 FIX 1: COMPLETELY IGNORE HTML COMMENTS (<!-- ... -->)
+        if isinstance(text_node, Comment):
+            continue
+            
         parent = text_node.parent
         if parent.name in ignore_tags:
             continue
             
-        # Skip if parent or any ancestor has translate="no" or class="notranslate"
-        skip = False
-        current = parent
-        while current and current.name:
-            if current.get('translate') == 'no' or 'notranslate' in current.get('class', []):
-                skip = True
+        # 🛑 FIX 2: IGNORE EVERYTHING INSIDE <head> (Prevents dev notes from being translated)
+        # <title> and <meta> are already handled safely above.
+        current_parent = parent
+        in_head = False
+        while current_parent and current_parent.name:
+            if current_parent.name == 'head':
+                in_head = True
                 break
-            current = current.parent
-        if skip:
+            current_parent = current_parent.parent
+        if in_head:
             continue
             
         original = str(text_node)
