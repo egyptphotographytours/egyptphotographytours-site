@@ -48,4 +48,5 @@ jobs:
       - name: Run OPUS-MT translation
         env:
           TARGET_LANG: ${{ matrix.lang }}
+          MIN_PAGES_THRESHOLD: 50  # <--- ADDED: Passes the 50 pages threshold to your Python script
         run: python translate.py
