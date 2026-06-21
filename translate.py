@@ -6,7 +6,7 @@ OPUS-MT Smart Translator
 - FIX: Ignores HTML Comments (<!-- -->) and <head> dev notes
 - Fixes all asset paths and internal links for subfolder usage
 - Incremental: only changed files are retranslated
-- Batched commits every 5 files (no lost work on cancellation)
+- Batched commits every 50 files (no lost work on cancellation)
 - SEO: hreflang, canonical, og:url, lang attributes
 """
 
@@ -399,7 +399,10 @@ def main():
     translated = 0
     skipped = 0
     batch = []
-    BATCH_SIZE = 5
+    
+    # ✅ UPDATED: Read batch size from GitHub Actions environment variable (Default: 50)
+    BATCH_SIZE = int(os.environ.get('MIN_PAGES_THRESHOLD', 50))
+    print(f"📦 Commit batch size set to: {BATCH_SIZE} pages")
 
     for src in source_files:
         rel = src[2:] if src.startswith('./') else src
@@ -442,12 +445,14 @@ def main():
             translated += 1
             batch.append(out_path)
 
+            # ✅ UPDATED: Commits to GitHub only after reaching the 50 pages threshold
             if len(batch) >= BATCH_SIZE:
                 git_commit_and_push(target, batch)
                 batch = []
         except Exception as e:
             print(f"  ❌ Error processing {rel}: {e}")
 
+    # Push any remaining files that didn't complete a full batch of 50
     if batch:
         git_commit_and_push(target, batch)
 
