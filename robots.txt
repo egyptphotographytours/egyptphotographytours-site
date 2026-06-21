@@ -1,14 +1,14 @@
-# Allow all bots to crawl everything
+# Egypt Photography Tours Robots.txt
+
+# Allows all search engines and AI crawlers
+
 User-agent: *
-Disallow:
+Allow: /
 
-# Explicitly allow images and videos
-Allow: /images/
-Allow: /videos/
+# Main Sitemap
 
-# Sitemap (combined sitemap for all languages)
 Sitemap: https://www.egyptphotographytours.com/sitemap.xml
 
-# Optional: block admin or private folders
-# Disallow: /admin/
-# Disallow: /private/
+# Image Sitemap (only keep if it actually exists)
+
+Sitemap: https://www.egyptphotographytours.com/image-sitemap.xml
