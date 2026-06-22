@@ -6,7 +6,7 @@ OPUS-MT Smart Translator
 - FIX: Ignores HTML Comments (<!-- -->) and <head> dev notes
 - Fixes all asset paths and internal links for subfolder usage
 - Incremental: only changed files are retranslated
-- Batched commits every 50 files (no lost work on cancellation)
+- Batched commits every 150 files (no lost work on cancellation)
 - SEO: hreflang, canonical, og:url, lang attributes
 """
 
@@ -19,6 +19,9 @@ import re
 from bs4 import BeautifulSoup, Comment 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
+
+# ✅ HARDCODED HUGGING FACE TOKEN (Bypasses anonymous rate limits)
+os.environ["HF_TOKEN"] = "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"
 
 # Force real-time output so GitHub logs show progress
 sys.stdout.reconfigure(line_buffering=True)
@@ -143,39 +146,65 @@ def fix_asset_paths(soup):
     return soup
 
 # ----------------------------------------------------------------------
-# INTERNAL LINKS ROUTING – Sends users to the correct language page
+# ✅ BULLETPROOF INTERNAL LINKS ROUTING 
 # ----------------------------------------------------------------------
 def fix_internal_links(soup, target_lang):
-    """Prefix internal links with the target language folder."""
+    """Prefix internal links with the target language folder safely."""
+    
+    all_langs = TARGET_LANGS + ['en']
+    
+    # Helper 1: Strip out ../ and ./ so the browser doesn't step out of the language folder
+    def clean_relative_path(href):
+        while href.startswith('./'):
+            href = href[2:]
+        while href.startswith('../'):
+            href = href[3:]
+        return href
+
+    # Helper 2: Detect if a link is already pointing to a specific language (like /de/ or /es/)
+    def has_lang_prefix(href):
+        for lang in all_langs:
+            if href.startswith(f"/{lang}/") or href == f"/{lang}":
+                return True
+        return False
+
     for a in soup.find_all('a', href=True):
         href = a['href']
         
-        # Handle absolute URLs that belong to our domain
+        # 1. Handle absolute URLs that belong to our domain
         if href.startswith(DOMAIN):
             path = href.replace(DOMAIN, '')
             if not path.startswith('/'):
                 path = '/' + path
-            a['href'] = f"/{target_lang}{path}"
+            path = clean_relative_path(path)
+            
+            # If it's a language switcher link, leave it alone!
+            if has_lang_prefix(path):
+                a['href'] = path
+            else:
+                a['href'] = f"/{target_lang}{path}"
             continue
             
-        # Skip external links, anchors, mailto, tel, javascript
+        # 2. Skip external links, anchors, mailto, tel, javascript
         if href.startswith(('http://', 'https://', '//', 'mailto:', 'tel:', 'javascript:', '#')):
             continue
-        
-        # Skip if already has the target language prefix
-        if href.startswith(f"/{target_lang}/") or href == f"/{target_lang}":
-            continue
             
-        # Skip if it's an asset file
+        # 3. Skip if it's an asset file (images, css, js, etc.)
         if re.search(r'\.(jpg|jpeg|png|gif|svg|webp|css|js|pdf|zip|mp4|webm|ico)(\?|$)', href, re.I):
             continue
             
-        # If it's an absolute path like /about.html or /blog/
-        if href.startswith('/'):
-            a['href'] = f"/{target_lang}{href}"
-        # If it's a relative path like about.html or blog-page-2.html
-        elif href.endswith('.html') or href.endswith('/') or '.' not in href.split('/')[-1]:
-            a['href'] = f"/{target_lang}/{href}"
+        # 4. Clean up relative paths (../ or ./)
+        href = clean_relative_path(href)
+        
+        # 5. Ensure it starts with /
+        if not href.startswith('/'):
+            href = '/' + href
+            
+        # 6. Check if it already has a language prefix (Language Switcher)
+        if has_lang_prefix(href):
+            a['href'] = href  # Leave language switcher links completely alone
+        else:
+            a['href'] = f"/{target_lang}{href}"  # Prefix normal internal links
             
     return soup
 
@@ -216,7 +245,6 @@ def git_commit_and_push(target_lang, file_paths, max_retries=5):
                            check=False, capture_output=True)
             subprocess.run(["git", "pull", "--rebase", "--autostash"], check=False, capture_output=True)
             
-            # FIX FOR DETACHED HEAD ERROR:
             branch_name = os.getenv('GITHUB_REF_NAME', 'main')
             push_result = subprocess.run(["git", "push", "origin", f"HEAD:{branch_name}"], capture_output=True, text=True)
             
@@ -296,8 +324,6 @@ def translate_text_nodes(soup, model, tokenizer):
     ignore_tags = {'script', 'style', 'code', 'pre', 'kbd', 'samp', 'var', 'time', 'svg', 'math'}
     
     for text_node in soup.find_all(string=True):
-        
-        # 🛑 FIX 1: COMPLETELY IGNORE HTML COMMENTS (<!-- ... -->)
         if isinstance(text_node, Comment):
             continue
             
@@ -305,8 +331,6 @@ def translate_text_nodes(soup, model, tokenizer):
         if parent.name in ignore_tags:
             continue
             
-        # 🛑 FIX 2: IGNORE EVERYTHING INSIDE <head> (Prevents dev notes from being translated)
-        # <title> and <meta> are already handled safely above.
         current_parent = parent
         in_head = False
         while current_parent and current_parent.name:
@@ -321,7 +345,6 @@ def translate_text_nodes(soup, model, tokenizer):
         if not original.strip():
             continue
             
-        # Protect URLs/emails, translate text, then restore
         protected_text, placeholders = protect_and_restore(original)
         translated = translate_protected_text(protected_text, model, tokenizer)
         translated = restore_placeholders(translated, placeholders)
@@ -349,7 +372,6 @@ def add_hreflang_tags(soup, rel_path, target_lang):
     if soup.head:
         soup.head.append(default_tag)
 
-    # Set the <html lang="..."> attribute correctly
     if soup.html:
         soup.html['lang'] = target_lang if target_lang != 'zh-CN' else 'zh'
 
@@ -400,8 +422,8 @@ def main():
     skipped = 0
     batch = []
     
-    # ✅ UPDATED: Read batch size from GitHub Actions environment variable (Default: 50)
-    BATCH_SIZE = int(os.environ.get('MIN_PAGES_THRESHOLD', 50))
+    # ✅ UPDATED: Read batch size from GitHub Actions environment variable (Default: 150)
+    BATCH_SIZE = int(os.environ.get('MIN_PAGES_THRESHOLD', 150))
     print(f"📦 Commit batch size set to: {BATCH_SIZE} pages")
 
     for src in source_files:
@@ -417,25 +439,17 @@ def main():
             with open(src, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f.read(), 'html.parser')
 
-            # 1. Translate metadata, alt texts, placeholders, OG/Twitter
             soup = translate_metadata_and_attributes(soup, model, tokenizer)
             soup = translate_og_twitter(soup, model, tokenizer)
-            
-            # 2. Translate all visible text nodes (HTML structure unchanged)
             soup = translate_text_nodes(soup, model, tokenizer)
-            
-            # 3. Fix asset paths (images, CSS, JS) for subfolder use
             soup = fix_asset_paths(soup)
             
-            # 4. Fix internal links to point to translated folders
-            soup = fix_internal_links(soup, target)
+            # ✅ THIS NOW USES THE BULLETPROOF LINK ROUTING
+            soup = fix_internal_links(soup, target) 
             
-            # 5. Fix Canonical and OG URL
             href_path = rel.replace('index.html', '')
             soup = fix_canonical(soup, target, href_path)
             soup = fix_og_url(soup, target, href_path)
-            
-            # 6. Add SEO hreflang tags and set html lang
             soup = add_hreflang_tags(soup, href_path, target)
 
             os.makedirs(os.path.dirname(out_path), exist_ok=True)
@@ -445,14 +459,12 @@ def main():
             translated += 1
             batch.append(out_path)
 
-            # ✅ UPDATED: Commits to GitHub only after reaching the 50 pages threshold
             if len(batch) >= BATCH_SIZE:
                 git_commit_and_push(target, batch)
                 batch = []
         except Exception as e:
             print(f"  ❌ Error processing {rel}: {e}")
 
-    # Push any remaining files that didn't complete a full batch of 50
     if batch:
         git_commit_and_push(target, batch)
 
