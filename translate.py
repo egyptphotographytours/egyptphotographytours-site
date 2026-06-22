@@ -15,13 +15,9 @@ import sys
 import time
 import subprocess
 import re
-# FIX: Import Comment to filter out HTML comments
 from bs4 import BeautifulSoup, Comment 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
-
-# ✅ HARDCODED HUGGING FACE TOKEN (Bypasses anonymous rate limits)
-os.environ["HF_TOKEN"] = "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"
 
 # Force real-time output so GitHub logs show progress
 sys.stdout.reconfigure(line_buffering=True)
@@ -62,12 +58,9 @@ def protect_and_restore(text):
         counter[0] += 1
         return key
         
-    # Protect URLs
     text = re.sub(r'https?://[^\s<>"\']+', replacer, text)
     text = re.sub(r'www\.[^\s<>"\']+', replacer, text)
-    # Protect emails
     text = re.sub(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', replacer, text)
-    # Protect phone numbers (e.g., +20 155 073 5673)
     text = re.sub(r'\+\d[\d\s\-\(\)]{8,}\d', replacer, text)
     
     return text, placeholders
@@ -97,7 +90,7 @@ def translate_protected_text(text, model, tokenizer):
     translated_parts = []
     for part in parts:
         if re.match(r'^__PROTECTED_\d+__$', part):
-            translated_parts.append(part) # Keep placeholder as is
+            translated_parts.append(part)
         else:
             if part.strip():
                 translated_parts.append(translate_text(part, model, tokenizer))
