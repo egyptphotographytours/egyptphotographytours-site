@@ -11,10 +11,13 @@ permissions:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    # Keep it just under the 6h hard limit
+    timeout-minutes: 350 
     strategy:
       fail-fast: false
-      max-parallel: 1
+      # ✅ FIX 1: Run 5 languages at the same time! 
+      # This cuts the 6-hour time down to ~1.5 hours and prevents timeouts.
+      max-parallel: 5 
       matrix:
         lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
 
@@ -48,8 +51,9 @@ jobs:
       - name: Run OPUS-MT translation
         env:
           TARGET_LANG: ${{ matrix.lang }}
-          # ✅ UPDATED: Passes the 150 pages threshold to your Python script
-          MIN_PAGES_THRESHOLD: 150
+          # ✅ FIX 2: Save progress every 20 files instead of 150. 
+          # If it crashes, you only lose 19 files instead of 149!
+          MIN_PAGES_THRESHOLD: 20 
           # ✅ SECURE: Pulls the token from GitHub Secrets instead of hardcoding it
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python translate.py
