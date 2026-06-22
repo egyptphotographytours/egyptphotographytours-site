@@ -6,7 +6,7 @@ OPUS-MT Smart Translator
 - FIX: Ignores HTML Comments (<!-- -->) and <head> dev notes
 - Fixes all asset paths and internal links for subfolder usage
 - Incremental: only changed files are retranslated
-- Batched commits every 150 files (no lost work on cancellation)
+- Batched commits every 20 files (no lost work on cancellation)
 - SEO: hreflang, canonical, og:url, lang attributes
 """
 
@@ -268,8 +268,8 @@ def get_changed_files():
 def load_model(source_lang, target_lang):
     model_name = f"Helsinki-NLP/opus-mt-{source_lang}-{target_lang}"
     print(f"    Loading {model_name} ...")
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, token=os.environ.get("HF_TOKEN"))
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, token=os.environ.get("HF_TOKEN"))
     model.eval()
     torch.set_num_threads(2)
     return model, tokenizer
@@ -415,8 +415,8 @@ def main():
     skipped = 0
     batch = []
     
-    # ✅ UPDATED: Read batch size from GitHub Actions environment variable (Default: 150)
-    BATCH_SIZE = int(os.environ.get('MIN_PAGES_THRESHOLD', 150))
+    # ✅ UPDATED: Read batch size from GitHub Actions environment variable (Default: 20)
+    BATCH_SIZE = int(os.environ.get('MIN_PAGES_THRESHOLD', 20))
     print(f"📦 Commit batch size set to: {BATCH_SIZE} pages")
 
     for src in source_files:
