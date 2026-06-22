@@ -48,6 +48,8 @@ jobs:
       - name: Run OPUS-MT translation
         env:
           TARGET_LANG: ${{ matrix.lang }}
-          MIN_PAGES_THRESHOLD: 150  # <--- UPDATED: Passes the 150 pages threshold
-          HF_TOKEN: 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 # <--- HARDCODED TOKEN
+          # ✅ UPDATED: Passes the 150 pages threshold to your Python script
+          MIN_PAGES_THRESHOLD: 150
+          # ✅ SECURE: Pulls the token from GitHub Secrets instead of hardcoding it
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python translate.py
