@@ -5,7 +5,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# Grant write permissions so the bot can push commits
 permissions:
   contents: write
 
@@ -23,8 +22,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}       # Forces branch checkout instead of detached HEAD
-          fetch-depth: 0               # Fetches full history to prevent rebase conflicts
+          ref: ${{ github.ref }}
+          fetch-depth: 0
           persist-credentials: true
 
       - name: Setup Python
@@ -43,10 +42,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install beautifulsoup4 transformers torch sentencepiece
+          # ✅ Added 'sacremoses' to fix the tokenization warning in the logs
+          pip install beautifulsoup4 transformers torch sentencepiece sacremoses
 
       - name: Run OPUS-MT translation
         env:
           TARGET_LANG: ${{ matrix.lang }}
-          MIN_PAGES_THRESHOLD: 50  # <--- ADDED: Passes the 50 pages threshold to your Python script
+          MIN_PAGES_THRESHOLD: 150  # <--- UPDATED: Passes the 150 pages threshold
+          HF_TOKEN: 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 # <--- HARDCODED TOKEN
         run: python translate.py
