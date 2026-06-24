@@ -42,7 +42,8 @@ LANG_NAMES = {
 }
 
 # Initialize Gemini
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+# ✅ NEW (Forces v1 API endpoint where gemini-1.5-flash lives)
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"), api_version='v1')
 # ✅ STABLE MODEL NAME
 model = genai.GenerativeModel('gemini-1.5-flash')
 
