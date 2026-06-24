@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          # ✅ UPGRADED to ensure the SDK recognizes the latest model names
+          # ✅ CRITICAL: --upgrade ensures the SDK recognizes the stable v1 API and prevents the 404 error
           pip install --upgrade beautifulsoup4 google-generativeai
 
       - name: Run Google Gemini translation
