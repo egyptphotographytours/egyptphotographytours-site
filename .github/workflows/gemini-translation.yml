@@ -1,0 +1,49 @@
+name: Google Gemini Premium Translation
+
+on:
+  # Run manually from the GitHub Actions tab to control API quota
+  workflow_dispatch: 
+  # Or run automatically on push (Uncomment if you want it to run automatically)
+  # push:
+  #   branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360 
+    strategy:
+      fail-fast: false
+      # ⚠️ IMPORTANT: Keep max-parallel at 2. 
+      # Google's free tier allows 1500 requests per minute. Running too many languages 
+      # at the exact same second might trigger a temporary 429 Rate Limit.
+      max-parallel: 2 
+      matrix:
+        lang: [es, fr, de, it, pt, ru, ja, zh-CN, ko, ar, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install beautifulsoup4 google-generativeai
+
+      - name: Run Google Gemini translation
+        env:
+          TARGET_LANG: ${{ matrix.lang }}
+          # Pulls your free API key securely from GitHub Secrets
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} 
+        run: python translate_gemini.py
