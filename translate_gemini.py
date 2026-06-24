@@ -2,7 +2,7 @@
 """
 Google Gemini Premium Translator
 - Uses Google's AI for luxury travel copywriting
-- Batches text into JSON to save API quota
+- Batches text into JSON to save API quota (1 page = 1 API call)
 - 100% safe for HTML (extracts text, translates, and re-injects)
 - Fixes asset paths, internal links, and SEO tags
 - Deploys to GitHub every 20 pages
@@ -43,13 +43,14 @@ LANG_NAMES = {
 
 # Initialize Gemini
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-# ✅ STABLE MODEL NAME (Fully supported on the v1 API)
+# ✅ STABLE MODEL NAME
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 # ----------------------------------------------------------------------
 # GEMINI TRANSLATION ENGINE (With 60s Rate Limit Protection)
 # ----------------------------------------------------------------------
 def translate_batch_with_gemini(texts, target_lang_code):
+    """Sends a batch of text to Gemini and returns translated text."""
     if not texts: return []
     
     lang_name = LANG_NAMES.get(target_lang_code, target_lang_code)
@@ -90,9 +91,11 @@ JSON Array:
 # HTML PARSING & EXTRACTION
 # ----------------------------------------------------------------------
 def extract_and_translate_page(soup, target_lang):
+    """Extracts all translatable text, sends to Gemini, and re-injects."""
     texts_to_translate = []
     elements_map = [] 
     
+    # 1. Meta Tags & OG
     if soup.title and soup.title.string:
         texts_to_translate.append(soup.title.string.strip())
         elements_map.append(('title', soup.title))
@@ -108,17 +111,20 @@ def extract_and_translate_page(soup, target_lang):
             texts_to_translate.append(tag['content'].strip())
             elements_map.append((f'meta_{prop}', tag))
 
+    # 2. Image Alts
     for img in soup.find_all('img', alt=True):
         if img['alt'].strip() and not img['alt'].startswith('http'):
             texts_to_translate.append(img['alt'].strip())
             elements_map.append(('img_alt', img))
 
+    # 3. Body Text Nodes
     ignore_tags = {'script', 'style', 'code', 'pre', 'svg', 'math'}
     for text_node in soup.find_all(string=True):
         if isinstance(text_node, Comment): continue
         parent = text_node.parent
         if parent.name in ignore_tags: continue
         
+        # Skip <head>
         in_head = False
         curr = parent
         while curr and curr.name:
@@ -134,6 +140,7 @@ def extract_and_translate_page(soup, target_lang):
     print(f"    🧠 Sending {len(texts_to_translate)} strings to Gemini...")
     translated_texts = translate_batch_with_gemini(texts_to_translate, target_lang)
     
+    # Re-inject safely
     if len(translated_texts) == len(elements_map):
         for i, (elem_type, elem) in enumerate(elements_map):
             new_text = translated_texts[i]
@@ -186,8 +193,8 @@ def fix_internal_links(soup, target_lang):
         if re.search(r'\.(jpg|jpeg|png|gif|svg|webp|css|js|pdf|zip|mp4|webm|ico)(\?|$)', href, re.I): continue
         href = clean_relative_path(href)
         if not href.startswith('/'): href = '/' + href
-        if has_lang_prefix(href): a['href'] = href
-        else: a['href'] = f"/{target_lang}{href}"
+        if has_lang_prefix(href): a['href'] = href # Leaves language switcher alone
+        else: a['href'] = f"/{target_lang}{href}" # Prefixes normal links
     return soup
 
 # ----------------------------------------------------------------------
@@ -285,7 +292,10 @@ def main():
             with open(src, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f.read(), 'html.parser')
 
+            # 1. AI Translation
             soup = extract_and_translate_page(soup, target)
+            
+            # 2. Fix Routing & SEO
             soup = fix_asset_paths(soup)
             soup = fix_internal_links(soup, target)
             href_path = rel.replace('index.html', '')
