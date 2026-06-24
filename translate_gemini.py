@@ -43,7 +43,8 @@ LANG_NAMES = {
 # Initialize Gemini
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 # ✅ Using the latest stable model for translation
-model = genai.GenerativeModel('gemini-1.5-flash-latest')
+# ✅ NEW (The newest, fastest, and fully supported free-tier model)
+model = genai.GenerativeModel('gemini-2.0-flash')
 
 # ----------------------------------------------------------------------
 # GEMINI TRANSLATION ENGINE (Batched JSON for Quota Efficiency)
