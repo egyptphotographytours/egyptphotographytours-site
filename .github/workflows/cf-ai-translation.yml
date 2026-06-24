@@ -1,0 +1,43 @@
+name: Cloudflare AI Translation
+
+on:
+  # Manual trigger to control API usage
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360 
+    strategy:
+      fail-fast: false
+      max-parallel: 1 # Run one language at a time to prevent API flooding
+      matrix:
+        lang: [ar, es, fr, de, it, pt, ru, ja, zh-CN, ko, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install beautifulsoup4 requests
+
+      - name: Run Cloudflare AI translation
+        env:
+          TARGET_LANG: ${{ matrix.lang }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python translate_cf_ai.py
