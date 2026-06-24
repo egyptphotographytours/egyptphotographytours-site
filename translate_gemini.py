@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Google Gemini Premium Translator (Smartest Free Tier)
-- Translates with a luxury travel copywriting tone
+Google Gemini Premium Translator
+- Uses Google's AI for luxury travel copywriting
 - Batches text into JSON to save API quota (1 page = 1 API call)
 - 100% safe for HTML (extracts text, translates, and re-injects)
 - Fixes asset paths, internal links, and SEO tags
 - Deploys to GitHub every 20 pages
+- Pauses 60s if it hits Google's rate limit
 """
 
 import os
@@ -42,12 +43,11 @@ LANG_NAMES = {
 
 # Initialize Gemini
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-# ✅ Using the latest stable model for translation
-# ✅ NEW (The newest, fastest, and fully supported free-tier model)
-model = genai.GenerativeModel('gemini-2.0-flash')
+# ✅ STABLE MODEL NAME
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 # ----------------------------------------------------------------------
-# GEMINI TRANSLATION ENGINE (Batched JSON for Quota Efficiency)
+# GEMINI TRANSLATION ENGINE (With 60s Rate Limit Protection)
 # ----------------------------------------------------------------------
 def translate_batch_with_gemini(texts, target_lang_code):
     """Sends a batch of text to Gemini and returns translated text."""
@@ -61,26 +61,30 @@ Translate the following JSON array of strings into {lang_name}.
 CRITICAL RULES:
 1. Tone: Persuasive, welcoming, professional, and luxurious. Make tourists want to book!
 2. Do NOT translate HTML tags, URLs, email addresses, phone numbers, or brand names (e.g., "Egypt Photography Tours", "WhatsApp").
-3. Return ONLY a valid JSON object with a single key "translations" containing the array of translated strings. No markdown, no explanations, no code blocks.
+3. Return ONLY a valid JSON array of the translated strings. No markdown, no explanations, no code blocks.
 
 JSON Array:
 {json.dumps(texts, ensure_ascii=False)}
 """
     
-    for attempt in range(3): # Retry logic for rate limits
+    # ✅ 5 RETRIES WITH 60 SECOND PAUSE TO RESPECT GOOGLE'S SPEED LIMIT
+    for attempt in range(5): 
         try:
-            response = model.generate_content(
-                prompt,
-                generation_config={"response_mime_type": "application/json"} # Forces valid JSON
-            )
+            response = model.generate_content(prompt)
             raw_text = response.text.strip()
-            result = json.loads(raw_text)
-            return result.get("translations", texts)
+            
+            # Clean up any accidental markdown formatting from the AI
+            raw_text = re.sub(r'^```json\s*', '', raw_text, flags=re.MULTILINE)
+            raw_text = re.sub(r'\s*```$', '', raw_text, flags=re.MULTILINE)
+            
+            translated_list = json.loads(raw_text)
+            return translated_list
         except Exception as e:
             print(f"    ⚠️ Gemini API Error (Attempt {attempt+1}): {e}")
-            time.sleep(5) # Wait before retrying
+            print(f"    ⏳ Pausing for 60 seconds to let the API quota reset...")
+            time.sleep(60) 
             
-    print(f"    ❌ Failed to translate batch after 3 attempts. Returning original text.")
+    print(f"    ❌ Failed to translate batch after 5 attempts. Returning original text.")
     return texts
 
 # ----------------------------------------------------------------------
@@ -120,6 +124,7 @@ def extract_and_translate_page(soup, target_lang):
         parent = text_node.parent
         if parent.name in ignore_tags: continue
         
+        # Skip <head>
         in_head = False
         curr = parent
         while curr and curr.name:
@@ -135,6 +140,7 @@ def extract_and_translate_page(soup, target_lang):
     print(f"    🧠 Sending {len(texts_to_translate)} strings to Gemini...")
     translated_texts = translate_batch_with_gemini(texts_to_translate, target_lang)
     
+    # Re-inject safely
     if len(translated_texts) == len(elements_map):
         for i, (elem_type, elem) in enumerate(elements_map):
             new_text = translated_texts[i]
@@ -286,7 +292,10 @@ def main():
             with open(src, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f.read(), 'html.parser')
 
+            # 1. AI Translation
             soup = extract_and_translate_page(soup, target)
+            
+            # 2. Fix Routing & SEO
             soup = fix_asset_paths(soup)
             soup = fix_internal_links(soup, target)
             href_path = rel.replace('index.html', '')
