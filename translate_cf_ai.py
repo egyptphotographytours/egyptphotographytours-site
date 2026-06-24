@@ -5,7 +5,7 @@ Cloudflare Workers AI Premium Translator
 - 100% safe for HTML (extracts text, translates, and re-injects)
 - Bulletproof link & asset routing
 - Deploys to GitHub every 20 pages
-- Gracefully handles Cloudflare's daily Neuron limits
+- Gracefully handles Cloudflare's daily Neuron limits AND unsupported languages
 """
 
 import os
@@ -31,13 +31,13 @@ TARGET_LANGS = [
     'tl', 'no', 'da', 'fi'
 ]
 
-# Cloudflare M2M-100 uses 3-letter ISO codes
+# ✅ FIXED: Cloudflare M2M-100 uses 2-letter ISO codes, NOT 3-letter codes
 CF_LANG_MAP = {
-    'ar': 'ara', 'es': 'spa', 'fr': 'fra', 'de': 'deu', 'it': 'ita', 
-    'pt': 'por', 'ru': 'rus', 'ja': 'jpn', 'zh-CN': 'zho', 'ko': 'kor', 
-    'hi': 'hin', 'nl': 'nld', 'sv': 'swe', 'pl': 'pol', 'tr': 'tur', 
-    'vi': 'vie', 'th': 'tha', 'id': 'ind', 'cs': 'ces', 'ro': 'ron', 
-    'tl': 'tgl', 'no': 'nob', 'da': 'dan', 'fi': 'fin'
+    'ar': 'ar', 'es': 'es', 'fr': 'fr', 'de': 'de', 'it': 'it', 
+    'pt': 'pt', 'ru': 'ru', 'ja': 'ja', 'zh-CN': 'zh', 'ko': 'ko', 
+    'hi': 'hi', 'nl': 'nl', 'sv': 'sv', 'pl': 'pl', 'tr': 'tr', 
+    'vi': 'vi', 'th': 'th', 'id': 'id', 'cs': 'cs', 'ro': 'ro', 
+    'tl': 'tl', 'no': 'no', 'da': 'da', 'fi': 'fi'
 }
 
 # Cloudflare API Setup
@@ -57,7 +57,7 @@ def translate_with_cf(text, target_lang_code):
 
     payload = {
         "text": text,
-        "source_lang": "eng",
+        "source_lang": "en",  # ✅ FIXED: Changed from "eng" to "en"
         "target_lang": target_lang
     }
     
@@ -69,9 +69,14 @@ def translate_with_cf(text, target_lang_code):
                 result = response.json()
                 return result.get("result", {}).get("translated_text", text)
             
+            # ✅ NEW: Gracefully handle unsupported languages
+            elif "not a supported language" in response.text.lower() or "not supported" in response.text.lower():
+                print(f"    ⚠️ Cloudflare M2M-100 does not support '{target_lang_code}'. Leaving text in English.")
+                return "CF_UNSUPPORTED"
+                
             elif response.status_code == 429 or "quota" in response.text.lower():
                 print(f"    🛑 Cloudflare Neuron limit reached for today. Stopping safely.")
-                return "CF_LIMIT_REACHED" # Signal to stop the whole page processing
+                return "CF_LIMIT_REACHED"
                 
             else:
                 print(f"    ⚠️ CF API Error {response.status_code}: {response.text[:100]}")
@@ -104,19 +109,19 @@ def extract_and_translate_page(soup, target_lang):
         if img['alt'].strip() and not img['alt'].startswith('http'):
             elements_to_translate.append(('alt', img, img['alt'].strip()))
 
-    # 3. Body Text Nodes (Paragraphs, Headings, List Items, Links)
+    # 3. Body Text Nodes
     target_tags = {'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'span', 'a', 'td', 'th', 'label', 'button'}
     for tag in soup.find_all(target_tags):
-        # Get direct text, ignoring nested HTML tags
         direct_text = tag.find(string=True, recursive=False)
         if direct_text and isinstance(direct_text, str) and len(direct_text.strip()) > 2:
-            # Skip if it's inside a script/style or head
             if tag.find_parent(['script', 'style', 'head']): continue
             elements_to_translate.append(('text', tag, direct_text.strip()))
 
     print(f"    🧠 Sending {len(elements_to_translate)} strings to Cloudflare AI...")
     
     limit_reached = False
+    unsupported_lang = False
+    
     for i, (elem_type, elem, original_text) in enumerate(elements_to_translate):
         if limit_reached: break
         
@@ -125,13 +130,15 @@ def extract_and_translate_page(soup, target_lang):
         if translated == "CF_LIMIT_REACHED":
             limit_reached = True
             break
+        elif translated == "CF_UNSUPPORTED":
+            unsupported_lang = True
+            continue # Skip this element, leave it in English
             
         # Re-inject safely
         if elem_type == 'title': elem.string = translated
         elif elem_type == 'meta': elem['content'] = translated
         elif elem_type == 'alt': elem['alt'] = translated
         elif elem_type == 'text': 
-            # Replace the specific text node inside the tag
             for child in elem.children:
                 if isinstance(child, str) and child.strip() == original_text:
                     child.replace_with(translated)
@@ -139,6 +146,8 @@ def extract_and_translate_page(soup, target_lang):
                     
     if limit_reached:
         print(f"    ⏸️ Pausing translation for {target_lang} due to daily API limits. Progress saved.")
+    elif unsupported_lang:
+        print(f"    ⚠️ Some text was left in English because Cloudflare doesn't support {target_lang} for this model.")
         
     return soup, limit_reached
 
