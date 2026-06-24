@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Google Gemini 1.5 Flash Premium Translator
-- Uses Google's state-of-the-art AI for luxury travel copywriting
-- Batches text into JSON arrays to save API quota (1 page = 1 API call)
+Google Gemini Premium Translator (Smartest Free Tier)
+- Translates with a luxury travel copywriting tone
+- Batches text into JSON to save API quota (1 page = 1 API call)
 - 100% safe for HTML (extracts text, translates, and re-injects)
 - Fixes asset paths, internal links, and SEO tags
+- Deploys to GitHub every 20 pages
 """
 
 import os
@@ -23,23 +24,26 @@ sys.stdout.reconfigure(line_buffering=True)
 # ----------------------------------------------------------------------
 DOMAIN = "https://www.egyptphotographytours.com"
 SOURCE_LANG = "en"
+
+# ✅ ARABIC IS FIRST
 TARGET_LANGS = [
-    'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'zh-CN', 'ko', 'ar',
+    'ar', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'zh-CN', 'ko',
     'hi', 'nl', 'sv', 'pl', 'tr', 'vi', 'th', 'id', 'cs', 'ro',
     'tl', 'no', 'da', 'fi'
 ]
 
 LANG_NAMES = {
-    'es': 'Spanish', 'fr': 'French', 'de': 'German', 'it': 'Italian', 
+    'ar': 'Arabic', 'es': 'Spanish', 'fr': 'French', 'de': 'German', 'it': 'Italian', 
     'pt': 'Portuguese', 'ru': 'Russian', 'ja': 'Japanese', 'zh-CN': 'Simplified Chinese', 
-    'ko': 'Korean', 'ar': 'Arabic', 'hi': 'Hindi', 'nl': 'Dutch', 'sv': 'Swedish', 
+    'ko': 'Korean', 'hi': 'Hindi', 'nl': 'Dutch', 'sv': 'Swedish', 
     'pl': 'Polish', 'tr': 'Turkish', 'vi': 'Vietnamese', 'th': 'Thai', 'id': 'Indonesian', 
     'cs': 'Czech', 'ro': 'Romanian', 'tl': 'Tagalog', 'no': 'Norwegian', 'da': 'Danish', 'fi': 'Finnish'
 }
 
 # Initialize Gemini
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-flash')
+# ✅ Using the latest stable model for translation
+model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
 # ----------------------------------------------------------------------
 # GEMINI TRANSLATION ENGINE (Batched JSON for Quota Efficiency)
@@ -56,7 +60,7 @@ Translate the following JSON array of strings into {lang_name}.
 CRITICAL RULES:
 1. Tone: Persuasive, welcoming, professional, and luxurious. Make tourists want to book!
 2. Do NOT translate HTML tags, URLs, email addresses, phone numbers, or brand names (e.g., "Egypt Photography Tours", "WhatsApp").
-3. Return ONLY a valid JSON array of the translated strings. No markdown, no explanations, no code blocks.
+3. Return ONLY a valid JSON object with a single key "translations" containing the array of translated strings. No markdown, no explanations, no code blocks.
 
 JSON Array:
 {json.dumps(texts, ensure_ascii=False)}
@@ -64,15 +68,13 @@ JSON Array:
     
     for attempt in range(3): # Retry logic for rate limits
         try:
-            response = model.generate_content(prompt)
+            response = model.generate_content(
+                prompt,
+                generation_config={"response_mime_type": "application/json"} # Forces valid JSON
+            )
             raw_text = response.text.strip()
-            
-            # Clean up any accidental markdown formatting from the AI
-            raw_text = re.sub(r'^```json\s*', '', raw_text, flags=re.MULTILINE)
-            raw_text = re.sub(r'\s*```$', '', raw_text, flags=re.MULTILINE)
-            
-            translated_list = json.loads(raw_text)
-            return translated_list
+            result = json.loads(raw_text)
+            return result.get("translations", texts)
         except Exception as e:
             print(f"    ⚠️ Gemini API Error (Attempt {attempt+1}): {e}")
             time.sleep(5) # Wait before retrying
@@ -86,7 +88,7 @@ JSON Array:
 def extract_and_translate_page(soup, target_lang):
     """Extracts all translatable text, sends to Gemini, and re-injects."""
     texts_to_translate = []
-    elements_map = [] # Keeps track of where each text came from
+    elements_map = [] 
     
     # 1. Meta Tags & OG
     if soup.title and soup.title.string:
@@ -117,7 +119,6 @@ def extract_and_translate_page(soup, target_lang):
         parent = text_node.parent
         if parent.name in ignore_tags: continue
         
-        # Skip <head>
         in_head = False
         curr = parent
         while curr and curr.name:
@@ -130,11 +131,9 @@ def extract_and_translate_page(soup, target_lang):
             texts_to_translate.append(original)
             elements_map.append(('text_node', text_node))
 
-    # Send to Gemini in ONE single API call per page
     print(f"    🧠 Sending {len(texts_to_translate)} strings to Gemini...")
     translated_texts = translate_batch_with_gemini(texts_to_translate, target_lang)
     
-    # Re-inject safely
     if len(translated_texts) == len(elements_map):
         for i, (elem_type, elem) in enumerate(elements_map):
             new_text = translated_texts[i]
@@ -187,8 +186,8 @@ def fix_internal_links(soup, target_lang):
         if re.search(r'\.(jpg|jpeg|png|gif|svg|webp|css|js|pdf|zip|mp4|webm|ico)(\?|$)', href, re.I): continue
         href = clean_relative_path(href)
         if not href.startswith('/'): href = '/' + href
-        if has_lang_prefix(href): a['href'] = href
-        else: a['href'] = f"/{target_lang}{href}"
+        if has_lang_prefix(href): a['href'] = href # Leaves language switcher alone
+        else: a['href'] = f"/{target_lang}{href}" # Prefixes normal links
     return soup
 
 # ----------------------------------------------------------------------
@@ -205,7 +204,6 @@ def fix_seo_tags(soup, target_lang, rel_path):
     og_url = soup.find('meta', attrs={'property': 'og:url'})
     if og_url: og_url['content'] = get_canonical_url(target_lang, rel_path)
     
-    # Hreflang
     for old in soup.find_all('link', rel='alternate'): old.decompose()
     for lang in TARGET_LANGS + ['en']:
         href = get_canonical_url(lang, rel_path)
@@ -248,7 +246,7 @@ def main():
         print(f"❌ Invalid target language: {target}")
         return
 
-    print(f"🚀 Translating to {target} using Google Gemini 1.5 Flash (Premium Copywriting)")
+    print(f"🚀 Translating to {target} using Google Gemini (Premium Copywriting)")
 
     changed = get_changed_files()
     out_dir = f"./{target}"
@@ -268,11 +266,16 @@ def main():
     translated = 0
     skipped = 0
     batch = []
-    BATCH_SIZE = 20 # Save to GitHub every 20 pages
+    
+    # ✅ DEPLOY EVERY 20 PAGES
+    BATCH_SIZE = int(os.environ.get('MIN_PAGES_THRESHOLD', 20))
+    print(f"📦 Commit batch size set to: {BATCH_SIZE} pages")
 
     for src in source_files:
         rel = src[2:] if src.startswith('./') else src
         out_path = os.path.join(out_dir, rel)
+        
+        # ✅ SKIP IF ALREADY TRANSLATED AND UNCHANGED
         if os.path.exists(out_path) and rel not in changed and 'FORCE_FULL_RUN' not in changed:
             skipped += 1
             continue
@@ -282,10 +285,7 @@ def main():
             with open(src, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f.read(), 'html.parser')
 
-            # 1. AI Translation
             soup = extract_and_translate_page(soup, target)
-            
-            # 2. Fix Routing & SEO
             soup = fix_asset_paths(soup)
             soup = fix_internal_links(soup, target)
             href_path = rel.replace('index.html', '')
@@ -297,6 +297,8 @@ def main():
 
             translated += 1
             batch.append(out_path)
+            
+            # ✅ PUSH TO GITHUB EVERY 20 PAGES
             if len(batch) >= BATCH_SIZE:
                 git_commit_and_push(target, batch)
                 batch = []
