@@ -1,0 +1,42 @@
+name: Google Translate Automation
+
+on:
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360 
+    strategy:
+      fail-fast: false
+      max-parallel: 1 
+      matrix:
+        # ✅ ARABIC FIRST
+        lang: [ar, es, fr, de, it, pt, ru, ja, zh-CN, ko, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          # ✅ The magic library that connects to Google Translate for free
+          pip install beautifulsoup4 deep-translator
+
+      - name: Run Google Translate
+        env:
+          TARGET_LANG: ${{ matrix.lang }}
+        run: python translate_google.py
