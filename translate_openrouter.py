@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OpenRouter AI Premium Translator (Llama 3.1 8B)
+OpenRouter AI Premium Translator (Google Gemma 2 9B)
 - Uses OpenRouter's free tier for high-quality, persuasive translations
 - Batches text into a single JSON array per page (1 page = 1 API request)
 - 100% safe for HTML (extracts text, translates, and re-injects)
@@ -47,12 +47,12 @@ OR_URL = "https://openrouter.ai/api/v1/chat/completions"
 OR_HEADERS = {
     "Authorization": f"Bearer {OR_API_KEY}",
     "Content-Type": "application/json",
-    "HTTP-Referer": DOMAIN, # Optional, identifies your site
+    "HTTP-Referer": DOMAIN, 
     "X-Title": "Egypt Photography Tours Translation"
 }
 
-# ✅ Using Meta Llama 3.1 8B (Free, incredibly smart, great at languages)
-OR_MODEL = "meta-llama/llama-3.1-8b-instruct:free"
+# ✅ UPDATED: Using Google Gemma 2 9B (Free, incredibly smart, great at languages)
+OR_MODEL = "google/gemma-2-9b-it:free"
 
 # ----------------------------------------------------------------------
 # OPENROUTER TRANSLATION ENGINE
@@ -159,7 +159,7 @@ def extract_and_translate_page(soup, target_lang):
             texts_to_translate.append(original)
             elements_map.append(('text_node', text_node))
 
-    print(f"    🧠 Sending {len(texts_to_translate)} strings to OpenRouter (Llama 3)...")
+    print(f"    🧠 Sending {len(texts_to_translate)} strings to OpenRouter (Gemma 2)...")
     translated_texts = translate_batch_with_openrouter(texts_to_translate, target_lang)
     
     # Re-inject safely
@@ -276,7 +276,7 @@ def main():
         print(f"❌ Invalid target language: {target}")
         return
 
-    print(f"🚀 Translating to {target} using OpenRouter (Llama 3.1 8B)")
+    print(f"🚀 Translating to {target} using OpenRouter (Gemma 2 9B)")
 
     changed = get_changed_files()
     out_dir = f"./{target}"
