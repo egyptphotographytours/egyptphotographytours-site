@@ -14,7 +14,6 @@ jobs:
       fail-fast: false
       max-parallel: 1 
       matrix:
-        # ✅ ARABIC FIRST
         lang: [ar, es, fr, de, it, pt, ru, ja, zh-CN, ko, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
 
     steps:
@@ -33,12 +32,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          # ✅ CRITICAL: Added 'huggingface_hub' to use the official SDK and bypass DNS errors
-          pip install beautifulsoup4 huggingface_hub
+          # ✅ Only needs beautifulsoup4 and requests (no huggingface_hub SDK conflicts)
+          pip install beautifulsoup4 requests
 
       - name: Run HF NLLB-200 translation
         env:
           TARGET_LANG: ${{ matrix.lang }}
-          # Uses your existing Hugging Face token
           HF_TOKEN: ${{ secrets.HF_TOKEN }} 
         run: python translate_hf_nllb.py
