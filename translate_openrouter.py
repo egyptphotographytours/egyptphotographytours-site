@@ -51,8 +51,8 @@ OR_HEADERS = {
     "X-Title": "Egypt Photography Tours Translation"
 }
 
-# ✅ UPDATED: Using Google Gemma 2 9B (Free, incredibly smart, great at languages)
-OR_MODEL = "google/gemma-2-9b-it:free"
+# ✅ NEW (Currently free, and arguably the best free model for Arabic/Multilingual translation)
+OR_MODEL = "qwen/qwen-2.5-7b-instruct:free"
 
 # ----------------------------------------------------------------------
 # OPENROUTER TRANSLATION ENGINE
