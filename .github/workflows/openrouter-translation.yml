@@ -1,0 +1,45 @@
+name: OpenRouter AI Translation
+
+on:
+  # Run manually from the GitHub Actions tab
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360 
+    strategy:
+      fail-fast: false
+      # ✅ ONE BY ONE: Prevents OpenRouter rate limits
+      max-parallel: 1 
+      matrix:
+        # ✅ ARABIC FIRST
+        lang: [ar, es, fr, de, it, pt, ru, ja, zh-CN, ko, hi, nl, sv, pl, tr, vi, th, id, cs, ro, tl, no, da, fi]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install beautifulsoup4 requests
+
+      - name: Run OpenRouter translation
+        env:
+          TARGET_LANG: ${{ matrix.lang }}
+          # Pulls your free API key securely from GitHub Secrets
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }} 
+        run: python translate_openrouter.py
