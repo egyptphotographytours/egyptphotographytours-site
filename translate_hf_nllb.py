@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Hugging Face NLLB-200 Premium Translator (Correct SDK Edition)
-- Uses the official huggingface_hub SDK `.translation()` method
+Hugging Face NLLB-200 Premium Translator (Bulletproof Edition)
+- Uses raw requests with smart retry logic to bypass DNS/network glitches
 - Uses Meta's state-of-the-art NLLB-200 model (200 languages)
 - 100% safe for HTML (extracts text, translates, and re-injects)
 - Bulletproof link & asset routing
@@ -13,8 +13,11 @@ import sys
 import time
 import subprocess
 import re
+import json
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup, Comment
-from huggingface_hub import InferenceClient
 
 sys.stdout.reconfigure(line_buffering=True)
 
@@ -24,14 +27,12 @@ sys.stdout.reconfigure(line_buffering=True)
 DOMAIN = "https://www.egyptphotographytours.com"
 SOURCE_LANG = "en"
 
-# ✅ ARABIC IS FIRST
 TARGET_LANGS = [
     'ar', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'zh-CN', 'ko',
     'hi', 'nl', 'sv', 'pl', 'tr', 'vi', 'th', 'id', 'cs', 'ro',
     'tl', 'no', 'da', 'fi'
 ]
 
-# NLLB-200 specific language codes
 NLLB_LANG_MAP = {
     'ar': 'arb_Arab', 'es': 'spa_Latn', 'fr': 'fra_Latn', 'de': 'deu_Latn', 
     'it': 'ita_Latn', 'pt': 'por_Latn', 'ru': 'rus_Cyrl', 'ja': 'jpn_Jpan', 
@@ -41,60 +42,67 @@ NLLB_LANG_MAP = {
     'tl': 'tgl_Latn', 'no': 'nob_Latn', 'da': 'dan_Latn', 'fi': 'fin_Latn'
 }
 
-# ✅ OFFICIAL SDK CLIENT
+# ✅ BULLETPROOF HTTP SESSION (Auto-retries on DNS failures, timeouts, and 5xx errors)
 HF_TOKEN = os.environ.get("HF_TOKEN")
-client = InferenceClient(token=HF_TOKEN)
-MODEL_NAME = "facebook/nllb-200-distilled-600M"
+API_URL = "https://api-inference.huggingface.co/models/facebook/nllb-200-distilled-600M"
+
+session = requests.Session()
+retry_strategy = Retry(
+    total=5,                          # Retry up to 5 times
+    backoff_factor=3,                 # Wait 3s, 6s, 12s, 24s, 48s between retries
+    status_forcelist=[500, 502, 503, 504],  # Retry on server errors
+    allowed_methods=["POST"],         # Allow retries on POST requests
+    raise_on_status=False
+)
+adapter = HTTPAdapter(max_retries=retry_strategy)
+session.mount("https://", adapter)
+session.mount("http://", adapter)
+session.headers.update({"Authorization": f"Bearer {HF_TOKEN}"})
 
 # ----------------------------------------------------------------------
-# HUGGING FACE NLLB TRANSLATION ENGINE (CORRECT SDK METHOD)
+# HUGGING FACE NLLB TRANSLATION ENGINE
 # ----------------------------------------------------------------------
 def translate_batch_with_nllb(texts, target_lang_code):
-    """Sends text to HF NLLB-200 using the official SDK .translation() method."""
     if not texts: return []
     
     target_lang = NLLB_LANG_MAP.get(target_lang_code)
     if not target_lang: return texts
 
-    translated_texts = []
+    payload = {
+        "inputs": texts,
+        "parameters": {
+            "src_lang": "eng_Latn",
+            "tgt_lang": target_lang
+        }
+    }
     
-    # Process one by one to ensure 100% stability with the SDK
-    for text in texts:
-        if not text.strip():
-            translated_texts.append(text)
-            continue
+    for attempt in range(3):
+        try:
+            # ✅ The session auto-retries on DNS failures and server errors
+            response = session.post(API_URL, json=payload, timeout=90)
             
-        for attempt in range(3):
-            try:
-                # ✅ Uses the dedicated SDK translation method
-                result = client.translation(
-                    text=text,
-                    model=MODEL_NAME,
-                    src_lang="eng_Latn",
-                    tgt_lang=target_lang
-                )
+            if response.status_code == 200:
+                result = response.json()
+                return [item.get("translation_text", orig) for item, orig in zip(result, texts)]
                 
-                # The SDK might return a string or a dictionary depending on the model version
-                if isinstance(result, str):
-                    translated_texts.append(result)
-                elif isinstance(result, dict) and "translation_text" in result:
-                    translated_texts.append(result["translation_text"])
-                elif isinstance(result, list) and len(result) > 0:
-                    translated_texts.append(result[0].get("translation_text", text))
-                else:
-                    translated_texts.append(str(result))
-                    
-                break # Success, move to next text
+            elif response.status_code == 503:
+                # Model is still loading on HF servers
+                wait_time = response.json().get("estimated_time", 20)
+                print(f"    ⏳ Model loading on HF servers. Waiting {int(wait_time)}s...")
+                time.sleep(wait_time)
+            else:
+                print(f"    ⚠️ HF API Error {response.status_code}: {response.text[:100]}")
+                time.sleep(10)
                 
-            except Exception as e:
-                print(f"    ⚠️ HF SDK Error (Attempt {attempt+1}): {e}")
-                time.sleep(5)
-        else:
-            # If all 3 attempts fail, keep original text
-            print(f"    ❌ Failed to translate text after 3 attempts. Keeping original.")
-            translated_texts.append(text)
+        except requests.exceptions.ConnectionError:
+            print(f"    🌐 DNS/Connection error. The session will auto-retry...")
+            time.sleep(15)
+        except Exception as e:
+            print(f"    ⚠️ Network Error: {e}")
+            time.sleep(15)
             
-    return translated_texts
+    print(f"    ❌ Failed to translate batch after 3 attempts. Returning original text.")
+    return texts
 
 # ----------------------------------------------------------------------
 # HTML PARSING & EXTRACTION
@@ -143,10 +151,15 @@ def extract_and_translate_page(soup, target_lang):
 
     print(f"    🧠 Sending {len(texts_to_translate)} strings to Meta NLLB-200...")
     
-    # Translate all extracted texts
-    translated_texts = translate_batch_with_nllb(texts_to_translate, target_lang)
+    # Send in chunks of 15 to avoid API payload size limits
+    translated_texts = []
+    chunk_size = 15
+    for i in range(0, len(texts_to_translate), chunk_size):
+        chunk = texts_to_translate[i:i + chunk_size]
+        print(f"    ⏳ Chunk {i // chunk_size + 1}/{(len(texts_to_translate) + chunk_size - 1) // chunk_size}...")
+        translated_chunk = translate_batch_with_nllb(chunk, target_lang)
+        translated_texts.extend(translated_chunk)
     
-    # Re-inject safely
     if len(translated_texts) == len(elements_map):
         for i, (elem_type, elem) in enumerate(elements_map):
             new_text = translated_texts[i]
@@ -280,16 +293,12 @@ def main():
     translated = 0
     skipped = 0
     batch = []
-    
-    # ✅ DEPLOY EVERY 20 PAGES
     BATCH_SIZE = 20
-    print(f"📦 Commit batch size set to: {BATCH_SIZE} pages")
 
     for src in source_files:
         rel = src[2:] if src.startswith('./') else src
         out_path = os.path.join(out_dir, rel)
         
-        # ✅ SKIP IF ALREADY TRANSLATED AND UNCHANGED
         if os.path.exists(out_path) and rel not in changed and 'FORCE_FULL_RUN' not in changed:
             skipped += 1
             continue
