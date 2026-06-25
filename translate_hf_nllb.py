@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Hugging Face NLLB-200 Premium Translator (SDK Edition)
-- Uses the official huggingface_hub SDK to bypass DNS/routing glitches
+Hugging Face NLLB-200 Premium Translator (Correct SDK Edition)
+- Uses the official huggingface_hub SDK `.translation()` method
 - Uses Meta's state-of-the-art NLLB-200 model (200 languages)
 - 100% safe for HTML (extracts text, translates, and re-injects)
 - Bulletproof link & asset routing
@@ -13,7 +13,6 @@ import sys
 import time
 import subprocess
 import re
-import json
 from bs4 import BeautifulSoup, Comment
 from huggingface_hub import InferenceClient
 
@@ -42,44 +41,60 @@ NLLB_LANG_MAP = {
     'tl': 'tgl_Latn', 'no': 'nob_Latn', 'da': 'dan_Latn', 'fi': 'fin_Latn'
 }
 
-# ✅ OFFICIAL SDK CLIENT (Bypasses raw DNS issues)
+# ✅ OFFICIAL SDK CLIENT
 HF_TOKEN = os.environ.get("HF_TOKEN")
 client = InferenceClient(token=HF_TOKEN)
 MODEL_NAME = "facebook/nllb-200-distilled-600M"
 
 # ----------------------------------------------------------------------
-# HUGGING FACE NLLB TRANSLATION ENGINE (SDK BATCHING)
+# HUGGING FACE NLLB TRANSLATION ENGINE (CORRECT SDK METHOD)
 # ----------------------------------------------------------------------
 def translate_batch_with_nllb(texts, target_lang_code):
-    """Sends a batch of text to HF NLLB-200 using the official SDK."""
+    """Sends text to HF NLLB-200 using the official SDK .translation() method."""
     if not texts: return []
     
     target_lang = NLLB_LANG_MAP.get(target_lang_code)
     if not target_lang: return texts
 
-    payload = {
-        "inputs": texts,
-        "parameters": {
-            "src_lang": "eng_Latn",
-            "tgt_lang": target_lang
-        }
-    }
+    translated_texts = []
     
-    for attempt in range(3):
-        try:
-            # ✅ Uses SDK smart routing instead of hardcoded URLs
-            response = client.post(json=payload, model=MODEL_NAME)
+    # Process one by one to ensure 100% stability with the SDK
+    for text in texts:
+        if not text.strip():
+            translated_texts.append(text)
+            continue
             
-            # The SDK returns bytes, so we decode and parse it
-            result = json.loads(response.decode('utf-8'))
-            return [item.get("translation_text", orig) for item, orig in zip(result, texts)]
+        for attempt in range(3):
+            try:
+                # ✅ Uses the dedicated SDK translation method
+                result = client.translation(
+                    text=text,
+                    model=MODEL_NAME,
+                    src_lang="eng_Latn",
+                    tgt_lang=target_lang
+                )
                 
-        except Exception as e:
-            print(f"    ⚠️ HF SDK Error (Attempt {attempt+1}): {e}")
-            time.sleep(10)
+                # The SDK might return a string or a dictionary depending on the model version
+                if isinstance(result, str):
+                    translated_texts.append(result)
+                elif isinstance(result, dict) and "translation_text" in result:
+                    translated_texts.append(result["translation_text"])
+                elif isinstance(result, list) and len(result) > 0:
+                    translated_texts.append(result[0].get("translation_text", text))
+                else:
+                    translated_texts.append(str(result))
+                    
+                break # Success, move to next text
+                
+            except Exception as e:
+                print(f"    ⚠️ HF SDK Error (Attempt {attempt+1}): {e}")
+                time.sleep(5)
+        else:
+            # If all 3 attempts fail, keep original text
+            print(f"    ❌ Failed to translate text after 3 attempts. Keeping original.")
+            translated_texts.append(text)
             
-    print(f"    ❌ Failed to translate batch after 3 attempts. Returning original text.")
-    return texts
+    return translated_texts
 
 # ----------------------------------------------------------------------
 # HTML PARSING & EXTRACTION
@@ -128,14 +143,10 @@ def extract_and_translate_page(soup, target_lang):
 
     print(f"    🧠 Sending {len(texts_to_translate)} strings to Meta NLLB-200...")
     
-    # Send in chunks of 20 to avoid API payload limits
-    translated_texts = []
-    chunk_size = 20
-    for i in range(0, len(texts_to_translate), chunk_size):
-        chunk = texts_to_translate[i:i + chunk_size]
-        translated_chunk = translate_batch_with_nllb(chunk, target_lang)
-        translated_texts.extend(translated_chunk)
+    # Translate all extracted texts
+    translated_texts = translate_batch_with_nllb(texts_to_translate, target_lang)
     
+    # Re-inject safely
     if len(translated_texts) == len(elements_map):
         for i, (elem_type, elem) in enumerate(elements_map):
             new_text = translated_texts[i]
