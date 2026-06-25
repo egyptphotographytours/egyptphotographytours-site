@@ -33,11 +33,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install beautifulsoup4 requests
+          # ✅ CRITICAL: Added 'huggingface_hub' to use the official SDK and bypass DNS errors
+          pip install beautifulsoup4 huggingface_hub
 
       - name: Run HF NLLB-200 translation
         env:
           TARGET_LANG: ${{ matrix.lang }}
-          # ✅ Uses the EXACT SAME Hugging Face token you already created!
+          # Uses your existing Hugging Face token
           HF_TOKEN: ${{ secrets.HF_TOKEN }} 
         run: python translate_hf_nllb.py
