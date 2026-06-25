@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Hugging Face NLLB-200 Premium Translator (Bulletproof Edition)
-- Uses raw requests with smart retry logic to bypass DNS/network glitches
+Hugging Face NLLB-200 Premium Translator (cURL Edition)
+- Uses native 'curl' to completely bypass Python's DNS resolution bugs
 - Uses Meta's state-of-the-art NLLB-200 model (200 languages)
 - 100% safe for HTML (extracts text, translates, and re-injects)
 - Bulletproof link & asset routing
@@ -14,9 +14,6 @@ import time
 import subprocess
 import re
 import json
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup, Comment
 
 sys.stdout.reconfigure(line_buffering=True)
@@ -42,27 +39,14 @@ NLLB_LANG_MAP = {
     'tl': 'tgl_Latn', 'no': 'nob_Latn', 'da': 'dan_Latn', 'fi': 'fin_Latn'
 }
 
-# ✅ BULLETPROOF HTTP SESSION (Auto-retries on DNS failures, timeouts, and 5xx errors)
 HF_TOKEN = os.environ.get("HF_TOKEN")
 API_URL = "https://api-inference.huggingface.co/models/facebook/nllb-200-distilled-600M"
 
-session = requests.Session()
-retry_strategy = Retry(
-    total=5,                          # Retry up to 5 times
-    backoff_factor=3,                 # Wait 3s, 6s, 12s, 24s, 48s between retries
-    status_forcelist=[500, 502, 503, 504],  # Retry on server errors
-    allowed_methods=["POST"],         # Allow retries on POST requests
-    raise_on_status=False
-)
-adapter = HTTPAdapter(max_retries=retry_strategy)
-session.mount("https://", adapter)
-session.mount("http://", adapter)
-session.headers.update({"Authorization": f"Bearer {HF_TOKEN}"})
-
 # ----------------------------------------------------------------------
-# HUGGING FACE NLLB TRANSLATION ENGINE
+# HUGGING FACE NLLB TRANSLATION ENGINE (USING NATIVE CURL)
 # ----------------------------------------------------------------------
 def translate_batch_with_nllb(texts, target_lang_code):
+    """Sends a batch of text to HF NLLB-200 using native curl to bypass Python DNS bugs."""
     if not texts: return []
     
     target_lang = NLLB_LANG_MAP.get(target_lang_code)
@@ -76,33 +60,60 @@ def translate_batch_with_nllb(texts, target_lang_code):
         }
     }
     
-    for attempt in range(3):
-        try:
-            # ✅ The session auto-retries on DNS failures and server errors
-            response = session.post(API_URL, json=payload, timeout=90)
+    payload_json = json.dumps(payload, ensure_ascii=False)
+    
+    # ✅ Use curl to bypass Python's DNS resolution bugs
+    cmd = [
+        "curl", "-s", "-w", "\n%{http_code}", "-X", "POST",
+        "-H", f"Authorization: Bearer {HF_TOKEN}",
+        "-H", "Content-Type: application/json",
+        "-d", payload_json,
+        API_URL,
+        "--max-time", "120",
+        "--retry", "5",          # Curl will retry 5 times internally on DNS/Network errors
+        "--retry-delay", "5",    # Wait 5 seconds between retries
+        "--retry-all-errors"     # Retry on all errors (including DNS)
+    ]
+    
+    try:
+        # Run curl. It handles all network retries natively.
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        output = result.stdout.strip()
+        
+        # The last line is the HTTP status code (because of -w "\n%{http_code}")
+        lines = output.rsplit('\n', 1)
+        body = lines[0]
+        status_code = int(lines[1]) if len(lines) > 1 else 0
+        
+        if status_code == 200:
+            response_data = json.loads(body)
+            return [item.get("translation_text", orig) for item, orig in zip(response_data, texts)]
             
-            if response.status_code == 200:
-                result = response.json()
-                return [item.get("translation_text", orig) for item, orig in zip(result, texts)]
-                
-            elif response.status_code == 503:
-                # Model is still loading on HF servers
-                wait_time = response.json().get("estimated_time", 20)
-                print(f"    ⏳ Model loading on HF servers. Waiting {int(wait_time)}s...")
-                time.sleep(wait_time)
+        elif status_code == 503:
+            print(f"    ⏳ Model loading on HF servers. Waiting 20s and trying one last time...")
+            time.sleep(20)
+            # One final retry for 503
+            result2 = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+            output2 = result2.stdout.strip()
+            lines2 = output2.rsplit('\n', 1)
+            body2 = lines2[0]
+            status2 = int(lines2[1]) if len(lines2) > 1 else 0
+            if status2 == 200:
+                response_data = json.loads(body2)
+                return [item.get("translation_text", orig) for item, orig in zip(response_data, texts)]
             else:
-                print(f"    ⚠️ HF API Error {response.status_code}: {response.text[:100]}")
-                time.sleep(10)
-                
-        except requests.exceptions.ConnectionError:
-            print(f"    🌐 DNS/Connection error. The session will auto-retry...")
-            time.sleep(15)
-        except Exception as e:
-            print(f"    ⚠️ Network Error: {e}")
-            time.sleep(15)
+                print(f"    ⚠️ Model still loading. Leaving this chunk in English.")
+                return texts
+        else:
+            print(f"    ⚠️ HF API Error {status_code}: {body[:100]}")
+            return texts
             
-    print(f"    ❌ Failed to translate batch after 3 attempts. Returning original text.")
-    return texts
+    except subprocess.TimeoutExpired:
+        print(f"    ⏱️ Curl timed out after 5 minutes. Leaving this chunk in English.")
+        return texts
+    except Exception as e:
+        print(f"    ⚠️ Unexpected error: {e}")
+        return texts
 
 # ----------------------------------------------------------------------
 # HTML PARSING & EXTRACTION
@@ -154,9 +165,13 @@ def extract_and_translate_page(soup, target_lang):
     # Send in chunks of 15 to avoid API payload size limits
     translated_texts = []
     chunk_size = 15
+    total_chunks = (len(texts_to_translate) + chunk_size - 1) // chunk_size
+    
     for i in range(0, len(texts_to_translate), chunk_size):
         chunk = texts_to_translate[i:i + chunk_size]
-        print(f"    ⏳ Chunk {i // chunk_size + 1}/{(len(texts_to_translate) + chunk_size - 1) // chunk_size}...")
+        chunk_num = (i // chunk_size) + 1
+        print(f"    ⏳ Chunk {chunk_num}/{total_chunks}...")
+        
         translated_chunk = translate_batch_with_nllb(chunk, target_lang)
         translated_texts.extend(translated_chunk)
     
