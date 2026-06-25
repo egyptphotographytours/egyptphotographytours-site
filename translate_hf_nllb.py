@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Hugging Face NLLB-200 Premium Translator
+Hugging Face NLLB-200 Premium Translator (SDK Edition)
+- Uses the official huggingface_hub SDK to bypass DNS/routing glitches
 - Uses Meta's state-of-the-art NLLB-200 model (200 languages)
-- Calls HF Inference API directly (No heavy downloads, no timeouts)
 - 100% safe for HTML (extracts text, translates, and re-injects)
 - Bulletproof link & asset routing
 - Deploys to GitHub every 20 pages
@@ -14,8 +14,8 @@ import time
 import subprocess
 import re
 import json
-import requests
 from bs4 import BeautifulSoup, Comment
+from huggingface_hub import InferenceClient
 
 sys.stdout.reconfigure(line_buffering=True)
 
@@ -42,16 +42,16 @@ NLLB_LANG_MAP = {
     'tl': 'tgl_Latn', 'no': 'nob_Latn', 'da': 'dan_Latn', 'fi': 'fin_Latn'
 }
 
-# Hugging Face API Setup (Uses your existing HF_TOKEN)
+# ✅ OFFICIAL SDK CLIENT (Bypasses raw DNS issues)
 HF_TOKEN = os.environ.get("HF_TOKEN")
-API_URL = "https://api-inference.huggingface.co/models/facebook/nllb-200-distilled-600M"
-HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"}
+client = InferenceClient(token=HF_TOKEN)
+MODEL_NAME = "facebook/nllb-200-distilled-600M"
 
 # ----------------------------------------------------------------------
-# HUGGING FACE NLLB TRANSLATION ENGINE
+# HUGGING FACE NLLB TRANSLATION ENGINE (SDK BATCHING)
 # ----------------------------------------------------------------------
 def translate_batch_with_nllb(texts, target_lang_code):
-    """Sends a batch of text to HF NLLB-200 and returns translated text."""
+    """Sends a batch of text to HF NLLB-200 using the official SDK."""
     if not texts: return []
     
     target_lang = NLLB_LANG_MAP.get(target_lang_code)
@@ -67,24 +67,16 @@ def translate_batch_with_nllb(texts, target_lang_code):
     
     for attempt in range(3):
         try:
-            response = requests.post(API_URL, headers=HEADERS, json=payload, timeout=60)
+            # ✅ Uses SDK smart routing instead of hardcoded URLs
+            response = client.post(json=payload, model=MODEL_NAME)
             
-            if response.status_code == 200:
-                result = response.json()
-                # HF returns a list of dicts: [{"translation_text": "..."}, ...]
-                return [item.get("translation_text", orig) for item, orig in zip(result, texts)]
-                
-            elif response.status_code == 503:
-                # Model is loading on HF servers, wait and retry
-                print(f"    ⏳ Model is waking up on HF servers. Waiting 20s...")
-                time.sleep(20)
-            else:
-                print(f"    ⚠️ HF API Error {response.status_code}: {response.text[:100]}")
-                time.sleep(5)
+            # The SDK returns bytes, so we decode and parse it
+            result = json.loads(response.decode('utf-8'))
+            return [item.get("translation_text", orig) for item, orig in zip(result, texts)]
                 
         except Exception as e:
-            print(f"    ⚠️ Network Error: {e}")
-            time.sleep(5)
+            print(f"    ⚠️ HF SDK Error (Attempt {attempt+1}): {e}")
+            time.sleep(10)
             
     print(f"    ❌ Failed to translate batch after 3 attempts. Returning original text.")
     return texts
@@ -96,7 +88,6 @@ def extract_and_translate_page(soup, target_lang):
     texts_to_translate = []
     elements_map = [] 
     
-    # 1. Meta Tags & OG
     if soup.title and soup.title.string:
         texts_to_translate.append(soup.title.string.strip())
         elements_map.append(('title', soup.title))
@@ -112,13 +103,11 @@ def extract_and_translate_page(soup, target_lang):
             texts_to_translate.append(tag['content'].strip())
             elements_map.append((f'meta_{prop}', tag))
 
-    # 2. Image Alts
     for img in soup.find_all('img', alt=True):
         if img['alt'].strip() and not img['alt'].startswith('http'):
             texts_to_translate.append(img['alt'].strip())
             elements_map.append(('img_alt', img))
 
-    # 3. Body Text Nodes
     ignore_tags = {'script', 'style', 'code', 'pre', 'svg', 'math'}
     for text_node in soup.find_all(string=True):
         if isinstance(text_node, Comment): continue
@@ -147,7 +136,6 @@ def extract_and_translate_page(soup, target_lang):
         translated_chunk = translate_batch_with_nllb(chunk, target_lang)
         translated_texts.extend(translated_chunk)
     
-    # Re-inject safely
     if len(translated_texts) == len(elements_map):
         for i, (elem_type, elem) in enumerate(elements_map):
             new_text = translated_texts[i]
@@ -156,7 +144,7 @@ def extract_and_translate_page(soup, target_lang):
             elif elem_type == 'img_alt': elem['alt'] = new_text
             elif elem_type == 'text_node': elem.replace_with(new_text)
     else:
-        print(f"    ❌ AI returned mismatched array length. Skipping injection to prevent HTML breakage.")
+        print(f"    ❌ AI returned mismatched array length. Skipping injection.")
         
     return soup
 
@@ -300,10 +288,7 @@ def main():
             with open(src, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f.read(), 'html.parser')
 
-            # 1. AI Translation
             soup = extract_and_translate_page(soup, target)
-            
-            # 2. Fix Routing & SEO
             soup = fix_asset_paths(soup)
             soup = fix_internal_links(soup, target)
             href_path = rel.replace('index.html', '')
@@ -316,7 +301,6 @@ def main():
             translated += 1
             batch.append(out_path)
             
-            # ✅ PUSH TO GITHUB EVERY 20 PAGES
             if len(batch) >= BATCH_SIZE:
                 git_commit_and_push(target, batch)
                 batch = []
