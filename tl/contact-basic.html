@@ -1,0 +1,78 @@
+html
+<html lang="tl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Makipag-ugnayan sa Amin</title>
+<!-- No CSP meta tag -->
+<script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+<style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        input, textarea, button { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #ffd700; color: #1a202c; font-weight: bold; cursor: pointer; }
+        .cf-turnstile { margin: 15px 0; }
+        #form-status { margin-top: 15px; font-weight: bold; text-align: center; }
+    </style>
+<link href="https://www.egyptphotographytours.com/ar/contact-basic.html" hreflang="ar" rel="alternate"/><link href="https://www.egyptphotographytours.com/es/contact-basic.html" hreflang="es" rel="alternate"/><link href="https://www.egyptphotographytours.com/fr/contact-basic.html" hreflang="fr" rel="alternate"/><link href="https://www.egyptphotographytours.com/de/contact-basic.html" hreflang="de" rel="alternate"/><link href="https://www.egyptphotographytours.com/it/contact-basic.html" hreflang="it" rel="alternate"/><link href="https://www.egyptphotographytours.com/pt/contact-basic.html" hreflang="pt" rel="alternate"/><link href="https://www.egyptphotographytours.com/ru/contact-basic.html" hreflang="ru" rel="alternate"/><link href="https://www.egyptphotographytours.com/ja/contact-basic.html" hreflang="ja" rel="alternate"/><link href="https://www.egyptphotographytours.com/zh-CN/contact-basic.html" hreflang="zh-CN" rel="alternate"/><link href="https://www.egyptphotographytours.com/ko/contact-basic.html" hreflang="ko" rel="alternate"/><link href="https://www.egyptphotographytours.com/hi/contact-basic.html" hreflang="hi" rel="alternate"/><link href="https://www.egyptphotographytours.com/nl/contact-basic.html" hreflang="nl" rel="alternate"/><link href="https://www.egyptphotographytours.com/sv/contact-basic.html" hreflang="sv" rel="alternate"/><link href="https://www.egyptphotographytours.com/pl/contact-basic.html" hreflang="pl" rel="alternate"/><link href="https://www.egyptphotographytours.com/tr/contact-basic.html" hreflang="tr" rel="alternate"/><link href="https://www.egyptphotographytours.com/vi/contact-basic.html" hreflang="vi" rel="alternate"/><link href="https://www.egyptphotographytours.com/th/contact-basic.html" hreflang="th" rel="alternate"/><link href="https://www.egyptphotographytours.com/id/contact-basic.html" hreflang="id" rel="alternate"/><link href="https://www.egyptphotographytours.com/cs/contact-basic.html" hreflang="cs" rel="alternate"/><link href="https://www.egyptphotographytours.com/ro/contact-basic.html" hreflang="ro" rel="alternate"/><link href="https://www.egyptphotographytours.com/tl/contact-basic.html" hreflang="tl" rel="alternate"/><link href="https://www.egyptphotographytours.com/no/contact-basic.html" hreflang="no" rel="alternate"/><link href="https://www.egyptphotographytours.com/da/contact-basic.html" hreflang="da" rel="alternate"/><link href="https://www.egyptphotographytours.com/fi/contact-basic.html" hreflang="fi" rel="alternate"/><link href="https://www.egyptphotographytours.com/contact-basic.html" hreflang="en" rel="alternate"/><link href="https://www.egyptphotographytours.com/contact-basic.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<h1>Makipag-ugnayan sa Amin</h1>
+<form id="contactForm">
+<input name="name" placeholder="Full Name" required="" type="text"/>
+<input name="email" placeholder="Email Address" required="" type="email"/>
+<input name="subject" placeholder="Subject" type="text"/>
+<textarea name="message" placeholder="Your Message" required="" rows="5"></textarea>
+<div class="cf-turnstile" data-sitekey="0x4AAAAAADksi_3_nH-4QjMP" data-theme="light"></div>
+<button type="submit">Magpadala ng Mensahe</button>
+<div id="form-status"></div>
+</form>
+<script>
+        const form = document.getElementById('contactForm');
+        const statusDiv = document.getElementById('form-status');
+        const WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            statusDiv.innerHTML = 'Sending...';
+            statusDiv.style.color = '#666';
+
+            const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+            if (!turnstileToken) {
+                statusDiv.innerHTML = 'Please complete the security check.';
+                statusDiv.style.color = '#c62828';
+                return;
+            }
+
+            const formData = new FormData(form);
+            const payload = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                turnstileToken: turnstileToken
+            };
+
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (response.ok && result.success) {
+                    statusDiv.innerHTML = '✅ Message sent successfully!';
+                    statusDiv.style.color = '#2e7d32';
+                    form.reset();
+                    turnstile.reset();
+                } else {
+                    statusDiv.innerHTML = result.error || 'Something went wrong. Please try again.';
+                    statusDiv.style.color = '#c62828';
+                }
+            } catch (err) {
+                statusDiv.innerHTML = 'Network error. Please check your connection.';
+                statusDiv.style.color = '#c62828';
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+</html>
