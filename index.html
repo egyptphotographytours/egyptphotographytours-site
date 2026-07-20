@@ -102,7 +102,7 @@ PRIMARY SEO META — MAXIMUM KEYWORD COVERAGE
 <meta name="classification" content="Travel, Tourism, Egypt, Africa, Middle East">
 <link rel="canonical" href="https://www.egyptphotographytours.com">
 <!-- ═══════════════════════════════════════════════════════
-HREFLANG — 25 LANGUAGES
+HREFLANG — 25 LANGUAGES (No trailing slashes)
 ═══════════════════════════════════════════════════════ -->
 <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com">
 <link rel="alternate" hreflang="es" href="https://www.egyptphotographytours.com/es">
@@ -888,7 +888,7 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 <i class="fas fa-magic" aria-hidden="true"></i>
 <span>Customize Trip</span>
 </a>
-<!-- Language Switcher — 25 languages -->
+<!-- Language Switcher — 25 languages (Uses data-lang for dynamic trailing-slash-free routing) -->
 <div class="lang-wrap" id="lang-wrap" data-open="false">
 <button class="lang-toggle" id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Select language – currently English" type="button">
 <span aria-hidden="true">🇺🇸</span><span>EN</span>
@@ -896,31 +896,31 @@ COMPREHENSIVE STRUCTURED DATA — MAXIMUM RICH SNIPPETS
 </button>
 <div class="lang-menu" id="lang-menu" role="menu" aria-hidden="true">
 <div class="lang-menu-head">Select Language</div>
-<a href="/"       class="lang-item is-active" role="menuitem"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-name">English</span></a>
-<a href="/es"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇪🇸</span><span class="lang-name">Español</span></a>
-<a href="/fr"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇫🇷</span><span class="lang-name">Français</span></a>
-<a href="/de"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇩🇪</span><span class="lang-name">Deutsch</span></a>
-<a href="/it"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇮🇹</span><span class="lang-name">Italiano</span></a>
-<a href="/pt"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇵🇹</span><span class="lang-name">Português</span></a>
-<a href="/ru"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇷🇺</span><span class="lang-name">Русский</span></a>
-<a href="/ja"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇯🇵</span><span class="lang-name">日本語</span></a>
-<a href="/zh-CN" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇨🇳</span><span class="lang-name">中文 (简体)</span></a>
-<a href="/ko"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇰🇷</span><span class="lang-name">한국어</span></a>
-<a href="/ar"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇸🇦</span><span class="lang-name">العربية</span></a>
-<a href="/hi"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇮🇳</span><span class="lang-name">हिन्दी</span></a>
-<a href="/nl"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇳🇱</span><span class="lang-name">Nederlands</span></a>
-<a href="/sv"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇸🇪</span><span class="lang-name">Svenska</span></a>
-<a href="/pl"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇵🇱</span><span class="lang-name">Polski</span></a>
-<a href="/tr"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇹🇷</span><span class="lang-name">Türkçe</span></a>
-<a href="/vi"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a>
-<a href="/th"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇹🇭</span><span class="lang-name">ไทย</span></a>
-<a href="/id"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇮🇩</span><span class="lang-name">Bahasa Indonesia</span></a>
-<a href="/cs"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇨🇿</span><span class="lang-name">Čeština</span></a>
-<a href="/ro"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇷🇴</span><span class="lang-name">Română</span></a>
-<a href="/tl"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇵🇭</span><span class="lang-name">Filipino</span></a>
-<a href="/no"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇳🇴</span><span class="lang-name">Norsk</span></a>
-<a href="/da"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇩🇰</span><span class="lang-name">Dansk</span></a>
-<a href="/fi"    class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇫🇮</span><span class="lang-name">Suomi</span></a>
+<a href="#" data-lang="" class="lang-item is-active" role="menuitem"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-name">English</span></a>
+<a href="#" data-lang="es" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇪🇸</span><span class="lang-name">Español</span></a>
+<a href="#" data-lang="fr" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇫🇷</span><span class="lang-name">Français</span></a>
+<a href="#" data-lang="de" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇩🇪</span><span class="lang-name">Deutsch</span></a>
+<a href="#" data-lang="it" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇮🇹</span><span class="lang-name">Italiano</span></a>
+<a href="#" data-lang="pt" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇵🇹</span><span class="lang-name">Português</span></a>
+<a href="#" data-lang="ru" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇷🇺</span><span class="lang-name">Русский</span></a>
+<a href="#" data-lang="ja" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇯🇵</span><span class="lang-name">日本語</span></a>
+<a href="#" data-lang="zh-CN" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇨🇳</span><span class="lang-name">中文 (简体)</span></a>
+<a href="#" data-lang="ko" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇰🇷</span><span class="lang-name">한국어</span></a>
+<a href="#" data-lang="ar" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇸🇦</span><span class="lang-name">العربية</span></a>
+<a href="#" data-lang="hi" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇮🇳</span><span class="lang-name">हिन्दी</span></a>
+<a href="#" data-lang="nl" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇳🇱</span><span class="lang-name">Nederlands</span></a>
+<a href="#" data-lang="sv" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇸🇪</span><span class="lang-name">Svenska</span></a>
+<a href="#" data-lang="pl" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇵🇱</span><span class="lang-name">Polski</span></a>
+<a href="#" data-lang="tr" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇹🇷</span><span class="lang-name">Türkçe</span></a>
+<a href="#" data-lang="vi" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a>
+<a href="#" data-lang="th" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇹🇭</span><span class="lang-name">ไทย</span></a>
+<a href="#" data-lang="id" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇮🇩</span><span class="lang-name">Bahasa Indonesia</span></a>
+<a href="#" data-lang="cs" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇨🇿</span><span class="lang-name">Čeština</span></a>
+<a href="#" data-lang="ro" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇷🇴</span><span class="lang-name">Română</span></a>
+<a href="#" data-lang="tl" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇵🇭</span><span class="lang-name">Filipino</span></a>
+<a href="#" data-lang="no" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇳🇴</span><span class="lang-name">Norsk</span></a>
+<a href="#" data-lang="da" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇩🇰</span><span class="lang-name">Dansk</span></a>
+<a href="#" data-lang="fi" class="lang-item" role="menuitem"><span class="lang-flag" aria-hidden="true">🇫🇮</span><span class="lang-name">Suomi</span></a>
 </div>
 </div>
 </div>
@@ -1789,16 +1789,45 @@ function closeMenu() { isMenuOpen=false; mobileNav.classList.remove('is-open'); 
 on(hamburger, 'click', function() { isMenuOpen ? closeMenu() : openMenu(); });
 on(navOverlay, 'click', closeMenu);
 $$('#mobile-nav a').forEach(function(l) { on(l, 'click', closeMenu); });
-/* Language Switcher */
+/* Language Switcher — Dynamically preserves current page path WITHOUT trailing slash */
 var langWrap=$('#lang-wrap'), langToggle=$('#lang-toggle'), langMenu=$('#lang-menu'), isLangOpen=false;
 function openLang() { isLangOpen=true; langWrap.setAttribute('data-open','true'); langToggle.setAttribute('aria-expanded','true'); langMenu.setAttribute('aria-hidden','false'); langMenu.style.display='block'; }
 function closeLang() { isLangOpen=false; langWrap.setAttribute('data-open','false'); langToggle.setAttribute('aria-expanded','false'); langMenu.setAttribute('aria-hidden','true'); langMenu.style.display='none'; }
 on(langToggle, 'click', function(e) { e.stopPropagation(); isLangOpen ? closeLang() : openLang(); });
 on(document, 'click', function(e) { if (isLangOpen && langWrap && !langWrap.contains(e.target)) closeLang(); });
+
 $$('.lang-item').forEach(function(item) {
-on(item, 'click', function(e) { e.preventDefault(); var h=item.getAttribute('href'); if(h&&h!==window.location.pathname) window.location.href=h; });
-on(item, 'keydown', function(e) { if(e.key==='Enter'||e.key===' '){e.preventDefault();item.click();} });
+    on(item, 'click', function(e) {
+        e.preventDefault();
+        var lang = item.getAttribute('data-lang');
+        var currentPath = window.location.pathname;
+        
+        // Remove trailing slash if it exists and length > 1
+        if (currentPath.length > 1 && currentPath.endsWith('/')) {
+            currentPath = currentPath.slice(0, -1);
+        }
+        
+        // Construct new path without trailing slash
+        var newPath = lang ? (currentPath === '/' ? '/' + lang : '/' + lang + currentPath) : currentPath;
+        
+        // Clean up any accidental double slashes
+        newPath = newPath.replace(/\/+/g, '/');
+        
+        // Ensure root is just '/'
+        if (newPath === '') newPath = '/';
+        
+        if (newPath !== window.location.pathname) {
+            window.location.href = newPath;
+        }
+    });
+    on(item, 'keydown', function(e) { 
+        if(e.key==='Enter'||e.key===' '){
+            e.preventDefault();
+            item.click();
+        } 
+    });
 });
+
 /* ═══ LOGO MODAL FUNCTIONALITY ═══ */
 const headerLogoImg = document.getElementById('header-logo-img');
 const logoModal = document.getElementById('logo-modal');
