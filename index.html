@@ -1797,35 +1797,33 @@ on(langToggle, 'click', function(e) { e.stopPropagation(); isLangOpen ? closeLan
 on(document, 'click', function(e) { if (isLangOpen && langWrap && !langWrap.contains(e.target)) closeLang(); });
 
 $$('.lang-item').forEach(function(item) {
-    on(item, 'click', function(e) {
-        e.preventDefault();
-        var lang = item.getAttribute('data-lang');
-        var currentPath = window.location.pathname;
-        
-        // Remove trailing slash if it exists and length > 1
-        if (currentPath.length > 1 && currentPath.endsWith('/')) {
-            currentPath = currentPath.slice(0, -1);
-        }
-        
-        // Construct new path without trailing slash
-        var newPath = lang ? (currentPath === '/' ? '/' + lang : '/' + lang + currentPath) : currentPath;
-        
-        // Clean up any accidental double slashes
-        newPath = newPath.replace(/\/+/g, '/');
-        
-        // Ensure root is just '/'
-        if (newPath === '') newPath = '/';
-        
-        if (newPath !== window.location.pathname) {
-            window.location.href = newPath;
-        }
-    });
-    on(item, 'keydown', function(e) { 
-        if(e.key==='Enter'||e.key===' '){
-            e.preventDefault();
-            item.click();
-        } 
-    });
+  on(item, 'click', function(e) { 
+    e.preventDefault(); 
+    var lang = item.getAttribute('data-lang') || '';
+    var currentPath = window.location.pathname;
+    
+    // Remove trailing slash if it exists and path is not just "/"
+    if (currentPath.length > 1 && currentPath.endsWith('/')) {
+      currentPath = currentPath.slice(0, -1);
+    }
+    
+    // Construct new path
+    var newPath = lang ? (currentPath === '/' ? '/' + lang : '/' + lang + currentPath) : currentPath;
+    
+    // Clean up any accidental double slashes
+    newPath = newPath.replace(/\/+/g, '/');
+    if (newPath === '') newPath = '/';
+    
+    if (newPath !== window.location.pathname) {
+      window.location.href = newPath;
+    }
+  });
+  on(item, 'keydown', function(e) { 
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      item.click();
+    } 
+  });
 });
 
 /* ═══ LOGO MODAL FUNCTIONALITY ═══ */
