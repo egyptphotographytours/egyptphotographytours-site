@@ -54,6 +54,15 @@ jobs:
               clean_url="${page%.html}"
             fi
 
+            # FIX 1: Replace spaces with %20 to ensure valid URLs
+            clean_url="${clean_url// /%20}"
+
+            # FIX 2: Skip any URLs that contain double-language paths (e.g., /fr/de/)
+            if echo "$clean_url" | grep -qiE '/[a-z]{2}/[a-z]{2}/'; then
+              echo "⚠️ Skipped invalid double-language path: $SITE/$clean_url"
+              continue
+            fi
+
             # Convert HTML file path to public URL
             if [ -z "$clean_url" ]; then
               loc="$SITE/"
@@ -92,7 +101,7 @@ jobs:
           git add sitemap.xml
 
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update sitemap [skip ci]"
+            git commit -m "chore: update sitemap with space & double-lang fixes [skip ci]"
             git push
           else
             echo "No changes to commit"
