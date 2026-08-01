@@ -3,7 +3,7 @@
 Smart Incremental Translation & SEO Pipeline
 =============================================
 - Translates ONLY new or changed English files (incremental)
-- DOM Firewall: Never translates <script>, <style>, JSON-LD
+- DOM Firewall: Never translates <script>, <style>, JSON-LD, DOCTYPE
 - Smart Dynamic Menu: Rebuilds language dropdown so users can switch back to English
 - 15-second timeout kill-switch to prevent Google Translate from hanging
 - BATCH PUSH: Commits and pushes every 5 files to prevent timeout data loss
@@ -17,7 +17,7 @@ import sys
 import time
 import subprocess
 import concurrent.futures
-from bs4 import BeautifulSoup, Comment, NavigableString
+from bs4 import BeautifulSoup, Comment, NavigableString, Doctype, Declaration, ProcessingInstruction
 from deep_translator import GoogleTranslator
 from datetime import datetime
 
@@ -122,13 +122,22 @@ def get_all_english_files():
 # DOM FIREWALL: SAFE TRANSLATION
 # ==========================================
 def is_translatable(text_node):
-    if isinstance(text_node, Comment): return False
+    # 🚨 CRITICAL FIX: Ignore DOCTYPE, Comments, and XML Declarations
+    if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)):
+        return False
+        
+    # Ignore text outside the HTML structure (e.g., before <html>)
+    if not hasattr(text_node, 'parent') or not text_node.parent or not hasattr(text_node.parent, 'name'):
+        return False
+        
     curr = text_node.parent
     while curr:
+        if not hasattr(curr, 'name'): 
+            break
         if curr.name in IGNORE_TAGS: return False
+        if curr.name == 'head': return False
         if curr.get('translate') == 'no': return False
         if 'notranslate' in curr.get('class', []): return False
-        if curr.name == 'head': return False
         curr = curr.parent
     return True
 
@@ -202,11 +211,19 @@ def extract_and_translate(soup, target_lang):
     for img in soup.find_all('img', alt=True):
         if img['alt'].strip() and not img['alt'].startswith('http'):
             texts.append(img['alt'].strip()); nodes.append(('alt', img))
+            
     for text_node in soup.find_all(string=True):
+        # 🚨 CRITICAL FIX: Skip DOCTYPE and non-tag parents
+        if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)):
+            continue
+        if not text_node.parent or not hasattr(text_node.parent, 'name'):
+            continue
+            
         if is_translatable(text_node):
             original = str(text_node).strip()
             if len(original) > 2 and not original.isspace():
                 texts.append(original); nodes.append(('text', text_node))
+                
     if not texts: return soup
 
     print(f"      🧠 Translating {len(texts)} strings...", flush=True)
