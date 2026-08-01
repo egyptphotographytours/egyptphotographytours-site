@@ -1,6 +1,6 @@
-HTML
-<html lang="pl">
-<head>
+<html lang="pl"><body>HTML
+
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
 <!-- ═══════════════════════════════════════════════════════
@@ -54,32 +54,6 @@ PRIMARY SEO META — MAXIMUM RANKING POWER (GALLERY)
 <!-- ═══════════════════════════════════════════════════════
 HREFLANG — 25 LANGUAGES
 ═══════════════════════════════════════════════════════ -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ═══════════════════════════════════════════════════════
 OPEN GRAPH & TWITTER
 ═══════════════════════════════════════════════════════ -->
@@ -107,201 +81,15 @@ OPEN GRAPH & TWITTER
 <!-- ═══════════════════════════════════════════════════════
 CRITICAL CSS — UNIFIED DESIGN SYSTEM + GALLERY THEME
 ═══════════════════════════════════════════════════════ -->
-<style>
-:root{--c-dark:#1a202c;--c-gold:#FFD700;--c-gold-d:#E6C200;--c-white:#fff;--c-bg:#f7f8fa;--c-text:#2d3748;--c-muted:#5A6475;--c-price:#6B5000;--c-border:#e2e8f0;--c-nile:#1E6FD9;--c-warn:#C53030;--radius-sm:8px;--radius:14px;--shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow:0 4px 20px rgba(0,0,0,.11);--shadow-lg:0 12px 40px rgba(0,0,0,.16);--nav-height:56px;--header-height:60px;--transition:.28s cubic-bezier(.4,0,.2,1)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit;text-decoration:none}
-ul,ol{list-style:none}
-button{font-family:inherit;cursor:pointer}
-.skip-link{position:absolute;top:-60px;left:12px;background:var(--c-gold);color:var(--c-dark);padding:10px 18px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;font-size:14px;z-index:99999;transition:top var(--transition)}
-.skip-link:focus{top:0;outline:3px solid var(--c-dark)}
-:focus-visible{outline:3px solid var(--c-gold);outline-offset:3px;border-radius:4px}
-.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
-@media(min-width:768px){.wrap{padding:0 28px}}
-.section{padding:52px 0}
-@media(min-width:768px){.section{padding:80px 0}}
-.section-alt{background:#eef0f5}
-.section-dark{background:var(--c-dark);color:var(--c-white)}
-.section-gold{background:linear-gradient(135deg,#FFD700 0%,#FFF3B0 60%,#FFD700 100%)}
-h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--c-dark)}
-.section-dark h1,.section-dark h2,.section-accent h1,.section-accent h2{color:var(--c-white)}
-h1{font-size:clamp(22px,5vw,44px)}
-h2{font-size:clamp(20px,3.5vw,36px)}
-h3{font-size:clamp(16px,2.5vw,22px)}
-p{font-size:15px;line-height:1.75;color:var(--c-text)}
-.section-dark p{color:rgba(255,255,255,.9)}
-.eyebrow{display:inline-block;background:rgba(255,215,0,.18);color:#7A5C00;border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px}
-.section-dark .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
-.text-c{text-align:center}
-.sec-sub{font-size:clamp(14px,1.8vw,17px);color:var(--c-muted);max-width:660px;line-height:1.7;margin-top:12px}
-.section-dark .sec-sub{color:rgba(255,255,255,.85)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:14px;transition:all var(--transition);border:2px solid transparent;white-space:nowrap;cursor:pointer;text-decoration:none;min-height:48px}
-.btn-gold{background:var(--c-gold);color:var(--c-dark);border-color:var(--c-gold)}
-.btn-gold:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
-.btn-dark{background:var(--c-dark);color:var(--c-white)}
-.btn-dark:hover{background:#0f141c;transform:translateY(-2px)}
-.btn-outline-dark{background:transparent;color:var(--c-dark);border-color:var(--c-dark)}
-.btn-outline-dark:hover{background:var(--c-dark);color:var(--c-white)}
-.btn-sm{padding:9px 18px;font-size:13px;min-height:44px}
-.btn-lg{padding:16px 36px;font-size:16px}
-.btn-group{display:flex;flex-wrap:wrap;gap:14px}
-/* HEADER & NAV (Identical to Index) */
-.header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0}
-.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);flex-shrink:0;cursor:zoom-in}
-.logo-copy{display:flex;flex-direction:column}
-.logo-name{font-size:15px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap}
-.logo-tag{font-size:10px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px}
-@media(min-width:768px){.logo-name{font-size:19px}.logo-tag{font-size:11px}}
-.navbar{background:#2d3748;position:sticky;top:0;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.35)}
-.nav-inner{display:flex;align-items:center;height:var(--nav-height);gap:10px}
-.hamburger{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:var(--radius-sm);color:var(--c-white);font-size:18px;flex-shrink:0}
-@media(min-width:900px){.hamburger{display:none}}
-.nav-links-desk{display:none;list-style:none;align-items:center;gap:2px;flex:1}
-@media(min-width:900px){.nav-links-desk{display:flex}.nav-links-desk li a{display:flex;align-items:center;padding:8px 11px;min-height:44px;color:rgba(255,255,255,.92);font-size:13px;font-weight:500;border-radius:var(--radius-sm);transition:all var(--transition)}.nav-links-desk li a:hover{color:var(--c-gold);background:rgba(255,215,0,.1)}.nav-links-desk li a.active{color:var(--c-gold);background:rgba(255,215,0,.08)}}
-.nav-right{display:flex;align-items:center;gap:8px;margin-left:auto}
-.nav-book{display:inline-flex;align-items:center;gap:6px;background:var(--c-gold);color:var(--c-dark);padding:9px 16px;border-radius:20px;font-weight:700;font-size:13px;white-space:nowrap;min-height:44px}
-.lang-wrap{position:relative}
-.lang-toggle{display:flex;align-items:center;gap:5px;background:rgba(255,215,0,.12);border:1.5px solid rgba(255,215,0,.3);border-radius:20px;padding:8px 11px;color:var(--c-white);font-size:12px;font-weight:600;min-height:44px}
-.lang-chevron{font-size:9px;transition:transform var(--transition);flex-shrink:0}
-.lang-wrap[data-open="true"] .lang-chevron{transform:rotate(180deg)}
-.lang-menu{display:none;position:fixed;top:calc(var(--header-height) + var(--nav-height) + 4px);left:50%;transform:translateX(-50%);width:min(300px,92vw);max-height:68vh;overflow-y:auto;background:#1e293b;border-radius:var(--radius);border:1px solid rgba(255,215,0,.25);box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:9999}
-.lang-wrap[data-open="true"] .lang-menu{display:block}
-@media(min-width:900px){.lang-menu{position:absolute;top:calc(100% + 8px);left:auto;right:0;transform:none;width:240px;max-height:440px}}
-.lang-menu-head{padding:12px 16px 8px;font-size:10px;font-weight:700;color:var(--c-gold);text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;background:#1e293b;z-index:1}
-.lang-item{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:48px;color:rgba(255,255,255,.92);font-size:14px;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer}
-.lang-item:hover{background:rgba(255,215,0,.1);color:var(--c-gold)}
-.lang-item.is-active{background:rgba(255,215,0,.16);color:var(--c-gold);font-weight:700}
-.lang-item.is-active::after{content:'✓';margin-left:auto;font-weight:700}
-.lang-flag{font-size:19px;min-width:26px;text-align:center}
-.lang-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;bottom:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);z-index:390;overflow-y:auto;padding:8px 0 48px;border-top:2px solid var(--c-gold)}
-.mobile-nav.is-open{display:flex}
-@media(min-width:900px){.mobile-nav{display:none!important}}
-.mobile-nav-link{display:flex;align-items:center;gap:12px;padding:16px 24px;min-height:56px;color:rgba(255,255,255,.92);font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07)}
-.mobile-nav-link.active{color:var(--c-gold);background:rgba(255,215,0,.07)}
-.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
-.nav-overlay.is-open{display:block}
-/* GALLERY HERO */
-.gallery-hero{background:linear-gradient(135deg, var(--c-dark) 0%, #2d3748 100%);color:#fff;padding:60px 0 40px;text-align:center}
-.gallery-hero h1{color:#fff;margin-bottom:16px}
-.gallery-hero p{color:rgba(255,255,255,.85);max-width:700px;margin:0 auto}
-/* BREADCRUMB */
-.meta-bar{background:var(--c-white);border-bottom:1px solid var(--c-border);padding:14px 0}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:var(--c-muted)}
-.breadcrumb a{color:var(--c-muted);transition:color var(--transition)}
-.breadcrumb a:hover{color:var(--c-price)}
-.breadcrumb span[aria-hidden]{color:var(--c-border)}
-/* GALLERY FILTERS */
-.gallery-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px}
-.filter-btn{padding:10px 22px;border-radius:30px;font-size:13px;font-weight:600;background:var(--c-white);color:var(--c-text);border:1.5px solid var(--c-border);cursor:pointer;transition:all var(--transition);min-height:44px}
-.filter-btn:hover{border-color:var(--c-gold);color:var(--c-price)}
-.filter-btn.active{background:var(--c-gold);color:var(--c-dark);border-color:var(--c-gold)}
-/* GALLERY GRID */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:16px}
-@media(min-width:768px){.gallery-grid{grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:20px}}
-.gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow-sm);background:var(--c-dark);aspect-ratio:1/1;cursor:zoom-in;transition:transform var(--transition), box-shadow var(--transition)}
-.gallery-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease, opacity .3s ease}
-.gallery-item:hover img{transform:scale(1.08)}
-.gallery-item .item-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);opacity:0;transition:opacity var(--transition);display:flex;align-items:flex-end;padding:20px}
-.gallery-item:hover .item-overlay{opacity:1}
-.item-overlay span{color:#fff;font-size:13px;font-weight:600;text-shadow:0 2px 4px rgba(0,0,0,.5)}
-/* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.95);backdrop-filter:blur(10px);justify-content:center;align-items:center;padding:20px}
-.lightbox.active{display:flex}
-.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:var(--radius-sm);box-shadow:0 0 60px rgba(255,215,0,.2)}
-.lightbox-close{position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
-.lightbox-close:hover{background:var(--c-gold);color:var(--c-dark)}
-/* SEO CONTENT BLOCKS */
-.seo-block{background:var(--c-white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-sm);margin-top:60px}
-.seo-block h2{font-size:24px;margin-bottom:16px;padding-bottom:12px;border-bottom:3px solid var(--c-gold)}
-.seo-block h3{font-size:18px;margin:20px 0 10px;color:var(--c-price)}
-.seo-block p{margin-bottom:14px;font-size:15px;line-height:1.8}
-.seo-block a{color:var(--c-nile);text-decoration:underline;font-weight:600}
-.seo-block a:hover{color:var(--c-price)}
-/* FORM & FOOTER (Identical to Index) */
-.trip-builder{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
-@media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
-.trip-form-box{background:var(--c-white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
-.form-row{margin-bottom:16px}
-.form-label{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px}
-.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--c-text);background:#fff}
-.form-textarea{min-height:90px;resize:vertical}
-.form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;min-height:52px}
-.footer{background:var(--c-dark);color:#fff;padding:52px 0 24px;margin-top:auto}
-.footer-grid{display:grid;grid-template-columns:1fr;gap:34px}
-@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
-.f-h{color:var(--c-gold);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;margin-bottom:14px}
-.f-links a{color:rgba(255,255,255,.82);font-size:13px;display:flex;align-items:center;gap:7px;min-height:40px}
-.f-links a:hover{color:var(--c-gold)}
-.social-row{display:flex;gap:9px;margin-top:16px}
-.social-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;text-decoration:none}
-.social-btn:hover{background:var(--c-gold);color:var(--c-dark)}
-.footer-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);text-align:center}
-.footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.65)}
-.f-legal{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}
-.wa-float{position:fixed;bottom:24px;right:16px;z-index:1000;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.5);animation:wa-pulse 2.8s infinite}
-@keyframes wa-pulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75)}}
-.cookie-bar{position:fixed;bottom:0;left:0;right:0;background:#1e293b;border-top:2px solid var(--c-gold);padding:13px 16px;z-index:50000;display:none}
-.cookie-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
-.cookie-txt{font-size:13px;color:rgba(255,255,255,.92);flex:1}
-.cookie-btns{display:flex;gap:8px}
-.c-decline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;border-radius:6px;font-size:13px;cursor:pointer;min-height:44px}
-.c-accept{background:var(--c-gold);color:var(--c-dark);border:none;padding:10px 18px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;min-height:44px}
-.logo-modal{display:none;position:fixed;z-index:10000;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);justify-content:center;align-items:center;padding:20px}
-.logo-modal.active{display:flex}
-.logo-modal-img{width:100%;max-width:300px;border-radius:50%;border:4px solid var(--c-gold)}
-.logo-modal-close{position:absolute;top:20px;right:20px;color:#fff;font-size:32px;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.1)}
-</style>
+
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
 <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
-<script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+
 <!-- ═══════════════════════════════════════════════════════
 STRUCTURED DATA — IMAGE GALLERY & COLLECTION PAGE
 ═══════════════════════════════════════════════════════ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "CollectionPage",
-      "@id": "https://www.egyptphotographytours.com/gallery#webpage",
-      "url": "https://www.egyptphotographytours.com/gallery",
-      "name": "Egypt Photography Gallery | Pyramids, Luxor, Aswan & Professional Photoshoots",
-      "description": "Explore 60+ stunning Egypt photography images. Professional Pyramids photoshoots, Luxor temples, Aswan Nile & Cairo portraits by expert Egyptologist guides.",
-      "isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
-      "primaryImageOfPage": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/gallery-og-image.webp"}
-    },
-    {
-      "@type": "ImageGallery",
-      "name": "Egypt Travel Photography Portfolio",
-      "description": "Professional photography portfolio featuring the Pyramids of Giza, Luxor temples, Aswan Nile cruises, and cultural portraits.",
-      "url": "https://www.egyptphotographytours.com/gallery",
-      "image": [
-        "https://www.egyptphotographytours.com/images/gallery-pyramids-sunset-01.webp",
-        "https://www.egyptphotographytours.com/images/gallery-luxor-karnak-01.webp",
-        "https://www.egyptphotographytours.com/images/gallery-aswan-nile-01.webp",
-        "https://www.egyptphotographytours.com/images/gallery-cairo-islamic-01.webp"
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Photography Gallery", "item": "https://www.egyptphotographytours.com/gallery"}
-      ]
-    }
-  ]
-}
-</script>
-<link href="https://www.egyptphotographytours.com/ar/gallery.html" hreflang="ar" rel="alternate"/><link href="https://www.egyptphotographytours.com/es/gallery.html" hreflang="es" rel="alternate"/><link href="https://www.egyptphotographytours.com/fr/gallery.html" hreflang="fr" rel="alternate"/><link href="https://www.egyptphotographytours.com/de/gallery.html" hreflang="de" rel="alternate"/><link href="https://www.egyptphotographytours.com/it/gallery.html" hreflang="it" rel="alternate"/><link href="https://www.egyptphotographytours.com/pt/gallery.html" hreflang="pt" rel="alternate"/><link href="https://www.egyptphotographytours.com/ru/gallery.html" hreflang="ru" rel="alternate"/><link href="https://www.egyptphotographytours.com/ja/gallery.html" hreflang="ja" rel="alternate"/><link href="https://www.egyptphotographytours.com/zh-CN/gallery.html" hreflang="zh-CN" rel="alternate"/><link href="https://www.egyptphotographytours.com/ko/gallery.html" hreflang="ko" rel="alternate"/><link href="https://www.egyptphotographytours.com/hi/gallery.html" hreflang="hi" rel="alternate"/><link href="https://www.egyptphotographytours.com/nl/gallery.html" hreflang="nl" rel="alternate"/><link href="https://www.egyptphotographytours.com/sv/gallery.html" hreflang="sv" rel="alternate"/><link href="https://www.egyptphotographytours.com/pl/gallery.html" hreflang="pl" rel="alternate"/><link href="https://www.egyptphotographytours.com/tr/gallery.html" hreflang="tr" rel="alternate"/><link href="https://www.egyptphotographytours.com/vi/gallery.html" hreflang="vi" rel="alternate"/><link href="https://www.egyptphotographytours.com/th/gallery.html" hreflang="th" rel="alternate"/><link href="https://www.egyptphotographytours.com/id/gallery.html" hreflang="id" rel="alternate"/><link href="https://www.egyptphotographytours.com/cs/gallery.html" hreflang="cs" rel="alternate"/><link href="https://www.egyptphotographytours.com/ro/gallery.html" hreflang="ro" rel="alternate"/><link href="https://www.egyptphotographytours.com/tl/gallery.html" hreflang="tl" rel="alternate"/><link href="https://www.egyptphotographytours.com/no/gallery.html" hreflang="no" rel="alternate"/><link href="https://www.egyptphotographytours.com/da/gallery.html" hreflang="da" rel="alternate"/><link href="https://www.egyptphotographytours.com/fi/gallery.html" hreflang="fi" rel="alternate"/><link href="https://www.egyptphotographytours.com/gallery.html" hreflang="en" rel="alternate"/><link href="https://www.egyptphotographytours.com/gallery.html" hreflang="x-default" rel="alternate"/></head>
-<body>
+
+<link href="https://www.egyptphotographytours.com/ar/gallery.html" hreflang="ar" rel="alternate"/><link href="https://www.egyptphotographytours.com/es/gallery.html" hreflang="es" rel="alternate"/><link href="https://www.egyptphotographytours.com/fr/gallery.html" hreflang="fr" rel="alternate"/><link href="https://www.egyptphotographytours.com/de/gallery.html" hreflang="de" rel="alternate"/><link href="https://www.egyptphotographytours.com/it/gallery.html" hreflang="it" rel="alternate"/><link href="https://www.egyptphotographytours.com/pt/gallery.html" hreflang="pt" rel="alternate"/><link href="https://www.egyptphotographytours.com/ru/gallery.html" hreflang="ru" rel="alternate"/><link href="https://www.egyptphotographytours.com/ja/gallery.html" hreflang="ja" rel="alternate"/><link href="https://www.egyptphotographytours.com/zh-CN/gallery.html" hreflang="zh-CN" rel="alternate"/><link href="https://www.egyptphotographytours.com/ko/gallery.html" hreflang="ko" rel="alternate"/><link href="https://www.egyptphotographytours.com/hi/gallery.html" hreflang="hi" rel="alternate"/><link href="https://www.egyptphotographytours.com/nl/gallery.html" hreflang="nl" rel="alternate"/><link href="https://www.egyptphotographytours.com/sv/gallery.html" hreflang="sv" rel="alternate"/><link href="https://www.egyptphotographytours.com/pl/gallery.html" hreflang="pl" rel="alternate"/><link href="https://www.egyptphotographytours.com/tr/gallery.html" hreflang="tr" rel="alternate"/><link href="https://www.egyptphotographytours.com/vi/gallery.html" hreflang="vi" rel="alternate"/><link href="https://www.egyptphotographytours.com/th/gallery.html" hreflang="th" rel="alternate"/><link href="https://www.egyptphotographytours.com/id/gallery.html" hreflang="id" rel="alternate"/><link href="https://www.egyptphotographytours.com/cs/gallery.html" hreflang="cs" rel="alternate"/><link href="https://www.egyptphotographytours.com/ro/gallery.html" hreflang="ro" rel="alternate"/><link href="https://www.egyptphotographytours.com/tl/gallery.html" hreflang="tl" rel="alternate"/><link href="https://www.egyptphotographytours.com/no/gallery.html" hreflang="no" rel="alternate"/><link href="https://www.egyptphotographytours.com/da/gallery.html" hreflang="da" rel="alternate"/><link href="https://www.egyptphotographytours.com/fi/gallery.html" hreflang="fi" rel="alternate"/><link href="https://www.egyptphotographytours.com/gallery.html" hreflang="en" rel="alternate"/><link href="https://www.egyptphotographytours.com/gallery.html" hreflang="x-default" rel="alternate"/>
 <!-- Logo Modal -->
 <div aria-modal="true" class="logo-modal" id="logo-modal" role="dialog">
 <div style="position:relative;text-align:center">
@@ -352,32 +140,32 @@ STRUCTURED DATA — IMAGE GALLERY & COLLECTION PAGE
 <button aria-expanded="false" aria-haspopup="true" class="lang-toggle" id="lang-toggle" type="button"><span>🇺🇸</span><span>EN</span><i class="fas fa-chevron-down lang-chevron"></i></button>
 <div aria-hidden="true" class="lang-menu" id="lang-menu" role="menu">
 <div class="lang-menu-head">Wybierz Język</div>
-<a class="lang-item is-active" href="/pl/gallery" role="menuitem"><span class="lang-flag">🇺🇸</span><span class="lang-name">angielski</span></a>
-<a class="lang-item" href="/es/gallery" role="menuitem"><span class="lang-flag">🇪🇸</span><span class="lang-name">hiszpański</span></a>
-<a class="lang-item" href="/fr/gallery" role="menuitem"><span class="lang-flag">🇫🇷</span><span class="lang-name">francuski</span></a>
-<a class="lang-item" href="/de/gallery" role="menuitem"><span class="lang-flag">🇩🇪</span><span class="lang-name">niemiecki</span></a>
-<a class="lang-item" href="/it/gallery" role="menuitem"><span class="lang-flag">🇮🇹</span><span class="lang-name">włoski</span></a>
-<a class="lang-item" href="/pt/gallery" role="menuitem"><span class="lang-flag">🇵🇹</span><span class="lang-name">portugalski</span></a>
-<a class="lang-item" href="/ru/gallery" role="menuitem"><span class="lang-flag">🇷🇺</span><span class="lang-name">Rosyjski</span></a>
-<a class="lang-item" href="/ja/gallery" role="menuitem"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></a>
-<a class="lang-item" href="/zh-CN/gallery" role="menuitem"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文 (简体)</span></a>
-<a class="lang-item" href="/ko/gallery" role="menuitem"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span></a>
-<a class="lang-item" href="/ar/gallery" role="menuitem"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span></a>
-<a class="lang-item" href="/hi/gallery" role="menuitem"><span class="lang-flag">🇮🇳</span><span class="lang-name">हिन्दी</span></a>
-<a class="lang-item" href="/nl/gallery" role="menuitem"><span class="lang-flag">🇳🇱</span><span class="lang-name">Holandia</span></a>
-<a class="lang-item" href="/sv/gallery" role="menuitem"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span></a>
-<a class="lang-item" href="/pl/gallery" role="menuitem"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span></a>
-<a class="lang-item" href="/tr/gallery" role="menuitem"><span class="lang-flag">🇹🇷</span><span class="lang-name">turecki</span></a>
-<a class="lang-item" href="/vi/gallery" role="menuitem"><span class="lang-flag">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a>
-<a class="lang-item" href="/th/gallery" role="menuitem"><span class="lang-flag">🇹🇭</span><span class="lang-name">ไทย</span></a>
-<a class="lang-item" href="/id/gallery" role="menuitem"><span class="lang-flag">🇮🇩</span><span class="lang-name">Bahasa Indonezja</span></a>
-<a class="lang-item" href="/cs/gallery" role="menuitem"><span class="lang-flag">🇨🇿</span><span class="lang-name">Cesztina</span></a>
-<a class="lang-item" href="/ro/gallery" role="menuitem"><span class="lang-flag">🇷🇴</span><span class="lang-name">Romański</span></a>
-<a class="lang-item" href="/tl/gallery" role="menuitem"><span class="lang-flag">🇵🇭</span><span class="lang-name">Filipiński</span></a>
-<a class="lang-item" href="/no/gallery" role="menuitem"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span></a>
-<a class="lang-item" href="/da/gallery" role="menuitem"><span class="lang-flag">🇩🇰</span><span class="lang-name">Dansk</span></a>
-<a class="lang-item" href="/fi/gallery" role="menuitem"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span></a>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html><body><a class="lang-item" href="/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇺🇸</span><span class="lang-name">English</span></a></body></html><html><body><a class="lang-item" href="/ar/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span></a></body></html><html><body><a class="lang-item" href="/es/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇪🇸</span><span class="lang-name">Español</span></a></body></html><html><body><a class="lang-item" href="/fr/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇫🇷</span><span class="lang-name">Français</span></a></body></html><html><body><a class="lang-item" href="/de/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span></a></body></html><html><body><a class="lang-item" href="/it/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span></a></body></html><html><body><a class="lang-item" href="/pt/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇵🇹</span><span class="lang-name">Português</span></a></body></html><html><body><a class="lang-item" href="/ru/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span></a></body></html><html><body><a class="lang-item" href="/ja/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></a></body></html><html><body><a class="lang-item" href="/zh-CN/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇨🇳</span><span class="lang-name">中文 (简体)</span></a></body></html><html><body><a class="lang-item" href="/ko/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span></a></body></html><html><body><a class="lang-item" href="/hi/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇮🇳</span><span class="lang-name">हिन्दी</span></a></body></html><html><body><a class="lang-item" href="/nl/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span></a></body></html><html><body><a class="lang-item" href="/sv/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span></a></body></html><html><body><a class="lang-item is-active" href="/pl/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span></a></body></html><html><body><a class="lang-item" href="/tr/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇹🇷</span><span class="lang-name">Türkçe</span></a></body></html><html><body><a class="lang-item" href="/vi/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a></body></html><html><body><a class="lang-item" href="/th/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇹🇭</span><span class="lang-name">ไทย</span></a></body></html><html><body><a class="lang-item" href="/id/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇮🇩</span><span class="lang-name">Bahasa Indonesia</span></a></body></html><html><body><a class="lang-item" href="/cs/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇨🇿</span><span class="lang-name">Čeština</span></a></body></html><html><body><a class="lang-item" href="/ro/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇷🇴</span><span class="lang-name">Română</span></a></body></html><html><body><a class="lang-item" href="/tl/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇵🇭</span><span class="lang-name">Filipino</span></a></body></html><html><body><a class="lang-item" href="/no/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span></a></body></html><html><body><a class="lang-item" href="/da/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇩🇰</span><span class="lang-name">Dansk</span></a></body></html><html><body><a class="lang-item" href="/fi/gallery.html" role="menuitem"><span aria-hidden="true" class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span></a></body></html></div>
 </div>
 </div>
 </div>
@@ -608,7 +396,193 @@ STRUCTURED DATA — IMAGE GALLERY & COLLECTION PAGE
 <img alt="" id="lightbox-img" src=""/>
 </div>
 <!-- JAVASCRIPT -->
-<script>
+
+<html><head><style>
+:root{--c-dark:#1a202c;--c-gold:#FFD700;--c-gold-d:#E6C200;--c-white:#fff;--c-bg:#f7f8fa;--c-text:#2d3748;--c-muted:#5A6475;--c-price:#6B5000;--c-border:#e2e8f0;--c-nile:#1E6FD9;--c-warn:#C53030;--radius-sm:8px;--radius:14px;--shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow:0 4px 20px rgba(0,0,0,.11);--shadow-lg:0 12px 40px rgba(0,0,0,.16);--nav-height:56px;--header-height:60px;--transition:.28s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer}
+.skip-link{position:absolute;top:-60px;left:12px;background:var(--c-gold);color:var(--c-dark);padding:10px 18px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;font-size:14px;z-index:99999;transition:top var(--transition)}
+.skip-link:focus{top:0;outline:3px solid var(--c-dark)}
+:focus-visible{outline:3px solid var(--c-gold);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 28px}}
+.section{padding:52px 0}
+@media(min-width:768px){.section{padding:80px 0}}
+.section-alt{background:#eef0f5}
+.section-dark{background:var(--c-dark);color:var(--c-white)}
+.section-gold{background:linear-gradient(135deg,#FFD700 0%,#FFF3B0 60%,#FFD700 100%)}
+h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--c-dark)}
+.section-dark h1,.section-dark h2,.section-accent h1,.section-accent h2{color:var(--c-white)}
+h1{font-size:clamp(22px,5vw,44px)}
+h2{font-size:clamp(20px,3.5vw,36px)}
+h3{font-size:clamp(16px,2.5vw,22px)}
+p{font-size:15px;line-height:1.75;color:var(--c-text)}
+.section-dark p{color:rgba(255,255,255,.9)}
+.eyebrow{display:inline-block;background:rgba(255,215,0,.18);color:#7A5C00;border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px}
+.section-dark .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
+.text-c{text-align:center}
+.sec-sub{font-size:clamp(14px,1.8vw,17px);color:var(--c-muted);max-width:660px;line-height:1.7;margin-top:12px}
+.section-dark .sec-sub{color:rgba(255,255,255,.85)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:14px;transition:all var(--transition);border:2px solid transparent;white-space:nowrap;cursor:pointer;text-decoration:none;min-height:48px}
+.btn-gold{background:var(--c-gold);color:var(--c-dark);border-color:var(--c-gold)}
+.btn-gold:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+.btn-dark{background:var(--c-dark);color:var(--c-white)}
+.btn-dark:hover{background:#0f141c;transform:translateY(-2px)}
+.btn-outline-dark{background:transparent;color:var(--c-dark);border-color:var(--c-dark)}
+.btn-outline-dark:hover{background:var(--c-dark);color:var(--c-white)}
+.btn-sm{padding:9px 18px;font-size:13px;min-height:44px}
+.btn-lg{padding:16px 36px;font-size:16px}
+.btn-group{display:flex;flex-wrap:wrap;gap:14px}
+/* HEADER & NAV (Identical to Index) */
+.header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0}
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);flex-shrink:0;cursor:zoom-in}
+.logo-copy{display:flex;flex-direction:column}
+.logo-name{font-size:15px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap}
+.logo-tag{font-size:10px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px}
+@media(min-width:768px){.logo-name{font-size:19px}.logo-tag{font-size:11px}}
+.navbar{background:#2d3748;position:sticky;top:0;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.35)}
+.nav-inner{display:flex;align-items:center;height:var(--nav-height);gap:10px}
+.hamburger{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:var(--radius-sm);color:var(--c-white);font-size:18px;flex-shrink:0}
+@media(min-width:900px){.hamburger{display:none}}
+.nav-links-desk{display:none;list-style:none;align-items:center;gap:2px;flex:1}
+@media(min-width:900px){.nav-links-desk{display:flex}.nav-links-desk li a{display:flex;align-items:center;padding:8px 11px;min-height:44px;color:rgba(255,255,255,.92);font-size:13px;font-weight:500;border-radius:var(--radius-sm);transition:all var(--transition)}.nav-links-desk li a:hover{color:var(--c-gold);background:rgba(255,215,0,.1)}.nav-links-desk li a.active{color:var(--c-gold);background:rgba(255,215,0,.08)}}
+.nav-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+.nav-book{display:inline-flex;align-items:center;gap:6px;background:var(--c-gold);color:var(--c-dark);padding:9px 16px;border-radius:20px;font-weight:700;font-size:13px;white-space:nowrap;min-height:44px}
+.lang-wrap{position:relative}
+.lang-toggle{display:flex;align-items:center;gap:5px;background:rgba(255,215,0,.12);border:1.5px solid rgba(255,215,0,.3);border-radius:20px;padding:8px 11px;color:var(--c-white);font-size:12px;font-weight:600;min-height:44px}
+.lang-chevron{font-size:9px;transition:transform var(--transition);flex-shrink:0}
+.lang-wrap[data-open="true"] .lang-chevron{transform:rotate(180deg)}
+.lang-menu{display:none;position:fixed;top:calc(var(--header-height) + var(--nav-height) + 4px);left:50%;transform:translateX(-50%);width:min(300px,92vw);max-height:68vh;overflow-y:auto;background:#1e293b;border-radius:var(--radius);border:1px solid rgba(255,215,0,.25);box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:9999}
+.lang-wrap[data-open="true"] .lang-menu{display:block}
+@media(min-width:900px){.lang-menu{position:absolute;top:calc(100% + 8px);left:auto;right:0;transform:none;width:240px;max-height:440px}}
+.lang-menu-head{padding:12px 16px 8px;font-size:10px;font-weight:700;color:var(--c-gold);text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;background:#1e293b;z-index:1}
+.lang-item{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:48px;color:rgba(255,255,255,.92);font-size:14px;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer}
+.lang-item:hover{background:rgba(255,215,0,.1);color:var(--c-gold)}
+.lang-item.is-active{background:rgba(255,215,0,.16);color:var(--c-gold);font-weight:700}
+.lang-item.is-active::after{content:'✓';margin-left:auto;font-weight:700}
+.lang-flag{font-size:19px;min-width:26px;text-align:center}
+.lang-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;bottom:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);z-index:390;overflow-y:auto;padding:8px 0 48px;border-top:2px solid var(--c-gold)}
+.mobile-nav.is-open{display:flex}
+@media(min-width:900px){.mobile-nav{display:none!important}}
+.mobile-nav-link{display:flex;align-items:center;gap:12px;padding:16px 24px;min-height:56px;color:rgba(255,255,255,.92);font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07)}
+.mobile-nav-link.active{color:var(--c-gold);background:rgba(255,215,0,.07)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
+.nav-overlay.is-open{display:block}
+/* GALLERY HERO */
+.gallery-hero{background:linear-gradient(135deg, var(--c-dark) 0%, #2d3748 100%);color:#fff;padding:60px 0 40px;text-align:center}
+.gallery-hero h1{color:#fff;margin-bottom:16px}
+.gallery-hero p{color:rgba(255,255,255,.85);max-width:700px;margin:0 auto}
+/* BREADCRUMB */
+.meta-bar{background:var(--c-white);border-bottom:1px solid var(--c-border);padding:14px 0}
+.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:var(--c-muted)}
+.breadcrumb a{color:var(--c-muted);transition:color var(--transition)}
+.breadcrumb a:hover{color:var(--c-price)}
+.breadcrumb span[aria-hidden]{color:var(--c-border)}
+/* GALLERY FILTERS */
+.gallery-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px}
+.filter-btn{padding:10px 22px;border-radius:30px;font-size:13px;font-weight:600;background:var(--c-white);color:var(--c-text);border:1.5px solid var(--c-border);cursor:pointer;transition:all var(--transition);min-height:44px}
+.filter-btn:hover{border-color:var(--c-gold);color:var(--c-price)}
+.filter-btn.active{background:var(--c-gold);color:var(--c-dark);border-color:var(--c-gold)}
+/* GALLERY GRID */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:16px}
+@media(min-width:768px){.gallery-grid{grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:20px}}
+.gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow-sm);background:var(--c-dark);aspect-ratio:1/1;cursor:zoom-in;transition:transform var(--transition), box-shadow var(--transition)}
+.gallery-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease, opacity .3s ease}
+.gallery-item:hover img{transform:scale(1.08)}
+.gallery-item .item-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);opacity:0;transition:opacity var(--transition);display:flex;align-items:flex-end;padding:20px}
+.gallery-item:hover .item-overlay{opacity:1}
+.item-overlay span{color:#fff;font-size:13px;font-weight:600;text-shadow:0 2px 4px rgba(0,0,0,.5)}
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.95);backdrop-filter:blur(10px);justify-content:center;align-items:center;padding:20px}
+.lightbox.active{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:var(--radius-sm);box-shadow:0 0 60px rgba(255,215,0,.2)}
+.lightbox-close{position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+.lightbox-close:hover{background:var(--c-gold);color:var(--c-dark)}
+/* SEO CONTENT BLOCKS */
+.seo-block{background:var(--c-white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-sm);margin-top:60px}
+.seo-block h2{font-size:24px;margin-bottom:16px;padding-bottom:12px;border-bottom:3px solid var(--c-gold)}
+.seo-block h3{font-size:18px;margin:20px 0 10px;color:var(--c-price)}
+.seo-block p{margin-bottom:14px;font-size:15px;line-height:1.8}
+.seo-block a{color:var(--c-nile);text-decoration:underline;font-weight:600}
+.seo-block a:hover{color:var(--c-price)}
+/* FORM & FOOTER (Identical to Index) */
+.trip-builder{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
+@media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
+.trip-form-box{background:var(--c-white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
+.form-row{margin-bottom:16px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--c-text);background:#fff}
+.form-textarea{min-height:90px;resize:vertical}
+.form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;min-height:52px}
+.footer{background:var(--c-dark);color:#fff;padding:52px 0 24px;margin-top:auto}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+.f-h{color:var(--c-gold);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;margin-bottom:14px}
+.f-links a{color:rgba(255,255,255,.82);font-size:13px;display:flex;align-items:center;gap:7px;min-height:40px}
+.f-links a:hover{color:var(--c-gold)}
+.social-row{display:flex;gap:9px;margin-top:16px}
+.social-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;text-decoration:none}
+.social-btn:hover{background:var(--c-gold);color:var(--c-dark)}
+.footer-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+.footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.65)}
+.f-legal{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.wa-float{position:fixed;bottom:24px;right:16px;z-index:1000;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.5);animation:wa-pulse 2.8s infinite}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75)}}
+.cookie-bar{position:fixed;bottom:0;left:0;right:0;background:#1e293b;border-top:2px solid var(--c-gold);padding:13px 16px;z-index:50000;display:none}
+.cookie-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.cookie-txt{font-size:13px;color:rgba(255,255,255,.92);flex:1}
+.cookie-btns{display:flex;gap:8px}
+.c-decline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;border-radius:6px;font-size:13px;cursor:pointer;min-height:44px}
+.c-accept{background:var(--c-gold);color:var(--c-dark);border:none;padding:10px 18px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;min-height:44px}
+.logo-modal{display:none;position:fixed;z-index:10000;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);justify-content:center;align-items:center;padding:20px}
+.logo-modal.active{display:flex}
+.logo-modal-img{width:100%;max-width:300px;border-radius:50%;border:4px solid var(--c-gold)}
+.logo-modal-close{position:absolute;top:20px;right:20px;color:#fff;font-size:32px;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.1)}
+</style></head></html><html><head><script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script></head></html><html><head><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.egyptphotographytours.com/gallery#webpage",
+      "url": "https://www.egyptphotographytours.com/gallery",
+      "name": "Egypt Photography Gallery | Pyramids, Luxor, Aswan & Professional Photoshoots",
+      "description": "Explore 60+ stunning Egypt photography images. Professional Pyramids photoshoots, Luxor temples, Aswan Nile & Cairo portraits by expert Egyptologist guides.",
+      "isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
+      "primaryImageOfPage": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/gallery-og-image.webp"}
+    },
+    {
+      "@type": "ImageGallery",
+      "name": "Egypt Travel Photography Portfolio",
+      "description": "Professional photography portfolio featuring the Pyramids of Giza, Luxor temples, Aswan Nile cruises, and cultural portraits.",
+      "url": "https://www.egyptphotographytours.com/gallery",
+      "image": [
+        "https://www.egyptphotographytours.com/images/gallery-pyramids-sunset-01.webp",
+        "https://www.egyptphotographytours.com/images/gallery-luxor-karnak-01.webp",
+        "https://www.egyptphotographytours.com/images/gallery-aswan-nile-01.webp",
+        "https://www.egyptphotographytours.com/images/gallery-cairo-islamic-01.webp"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Photography Gallery", "item": "https://www.egyptphotographytours.com/gallery"}
+      ]
+    }
+  ]
+}
+</script></head></html><html><head><script>
 (function () {
 'use strict';
 var $ = function (s) { return document.querySelector(s); };
@@ -729,6 +703,4 @@ cfStatus.style.color = '#ff6b6b';
 });
 }
 })();
-</script>
-</body>
-</html>
+</script></head></html></body></html>
