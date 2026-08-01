@@ -9,7 +9,7 @@ on:
       - '!sitemap.xml'
       - '!scripts/**'
       - '!.github/**'
-  workflow_dispatch: # Allows you to click "Run Workflow" manually from the Actions tab
+  workflow_dispatch: 
 
 permissions:
   contents: write
@@ -21,8 +21,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # fetch-depth: 2 is REQUIRED so the Python script can run `git diff HEAD~1 HEAD` 
-          # to detect which English files you just changed for incremental translation.
           fetch-depth: 2 
 
       - name: Setup Python
@@ -33,22 +31,22 @@ jobs:
       - name: Install dependencies
         run: pip install beautifulsoup4 deep-translator lxml
 
-      - name: Run Smart Incremental Translation & SEO Script
-        env:
-          # PYTHONUNBUFFERED: 1 forces Python to print logs instantly.
-          # This prevents the "stuck at 5 minutes" illusion in the GitHub UI.
-          PYTHONUNBUFFERED: 1  
-        run: python scripts/smart_pipeline.py
-
-      - name: Commit and Push
+      - name: Configure Git for Pushing
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+
+      - name: Run Smart Incremental Translation & SEO Script
+        env:
+          PYTHONUNBUFFERED: 1  
+        run: python scripts/smart_pipeline.py
+
+      - name: Final Commit and Push (Catch-all)
+        run: |
           git add .
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "✅ No leftover changes to commit. All batches were pushed successfully!"
           else
-            # [skip ci] prevents this commit from triggering the workflow again (infinite loop protection)
-            git commit -m "🤖 Incremental translation, menu fix & SEO [skip ci]"
+            git commit -m "🤖 Final SEO, Sitemap & leftover translations [skip ci]"
             git push
           fi
