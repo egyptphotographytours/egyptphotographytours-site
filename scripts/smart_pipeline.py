@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Smart Incremental Translation & SEO Pipeline
-=============================================
+Ultimate Smart Incremental Translation & SEO Pipeline
+=====================================================
 - Translates ONLY new or changed English files (incremental)
-- DOM Firewall: Never translates <script>, <style>, JSON-LD, DOCTYPE
-- Smart Dynamic Menu: Rebuilds language dropdown so users can switch back to English
+- DOM Firewall: Protects DOCTYPE, <script>, <style>, JSON-LD from translation
+- Smart Dynamic Menu: Rebuilds language dropdown to prevent 404s
 - 15-second timeout kill-switch to prevent Google Translate from hanging
-- BATCH PUSH: Commits and pushes every 5 files to prevent timeout data loss
-- Injects perfect canonical + hreflang tags based on what actually exists
+- BATCH PUSH: Commits and pushes every 30 files to prevent timeout data loss
+- GSC Indexing: Injects perfect canonical + hreflang tags based on actual files
 - Generates flawless international sitemap.xml with xhtml:link tags
 """
 
@@ -21,14 +21,13 @@ from bs4 import BeautifulSoup, Comment, NavigableString, Doctype, Declaration, P
 from deep_translator import GoogleTranslator
 from datetime import datetime
 
-# Force real-time log output in GitHub Actions
 sys.stdout.reconfigure(line_buffering=True)
 
 # ==========================================
 # CONFIGURATION
 # ==========================================
 DOMAIN = "https://www.egyptphotographytours.com"
-BATCH_SIZE = 5 # Push to GitHub after every 5 translated files
+BATCH_SIZE = 30 # ✅ Push to GitHub after every 30 translated files
 
 TARGET_LANGS = [
     'ar', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'zh-CN', 'ko',
@@ -66,16 +65,13 @@ LANG_META = {
 # GIT BATCH PUSH (SAVES PROGRESS)
 # ==========================================
 def batch_commit_and_push(count):
-    """Commits and pushes the current batch of files to GitHub to prevent data loss on timeout."""
     print(f"   📦 Pushing batch of {count} files to GitHub...", flush=True)
     try:
         subprocess.run(['git', 'add', '.'], check=True, capture_output=True)
-        
-        # Check if there are actually changes to commit
         status = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
         if status.stdout.strip():
             subprocess.run(['git', 'commit', '-m', f'🤖 Batch translation ({count} files) [skip ci]'], check=True, capture_output=True)
-            subprocess.run(['git', 'pull', '--rebase', '--autostash'], capture_output=True) # Safety pull
+            subprocess.run(['git', 'pull', '--rebase', '--autostash'], capture_output=True)
             subprocess.run(['git', 'push'], check=True, capture_output=True)
             print(f"   ✅ Successfully pushed {count} files.", flush=True)
         else:
@@ -122,18 +118,13 @@ def get_all_english_files():
 # DOM FIREWALL: SAFE TRANSLATION
 # ==========================================
 def is_translatable(text_node):
-    # 🚨 CRITICAL FIX: Ignore DOCTYPE, Comments, and XML Declarations
     if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)):
         return False
-        
-    # Ignore text outside the HTML structure (e.g., before <html>)
     if not hasattr(text_node, 'parent') or not text_node.parent or not hasattr(text_node.parent, 'name'):
         return False
-        
     curr = text_node.parent
     while curr:
-        if not hasattr(curr, 'name'): 
-            break
+        if not hasattr(curr, 'name'): break
         if curr.name in IGNORE_TAGS: return False
         if curr.name == 'head': return False
         if curr.get('translate') == 'no': return False
@@ -213,12 +204,8 @@ def extract_and_translate(soup, target_lang):
             texts.append(img['alt'].strip()); nodes.append(('alt', img))
             
     for text_node in soup.find_all(string=True):
-        # 🚨 CRITICAL FIX: Skip DOCTYPE and non-tag parents
-        if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)):
-            continue
-        if not text_node.parent or not hasattr(text_node.parent, 'name'):
-            continue
-            
+        if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)): continue
+        if not text_node.parent or not hasattr(text_node.parent, 'name'): continue
         if is_translatable(text_node):
             original = str(text_node).strip()
             if len(original) > 2 and not original.isspace():
@@ -271,7 +258,7 @@ def inject_dynamic_lang_menu(soup, target_lang, base_path):
     return soup
 
 # ==========================================
-# GLOBAL SEO & SITEMAP
+# GLOBAL SEO & SITEMAP (GSC INDEXING GUARANTEE)
 # ==========================================
 def inject_global_seo_and_sitemap():
     print("\n🔗 Step 3: Injecting SEO Tags & Generating Sitemap...", flush=True)
@@ -301,7 +288,6 @@ def inject_global_seo_and_sitemap():
             head = soup.find('head')
             if not head: continue
             
-            # Pre-calculate URLs to avoid f-string syntax errors
             canon_url = get_absolute_url(lang_code, base)
             head.append(BeautifulSoup(f'<link rel="canonical" href="{canon_url}" />', 'lxml'))
             
@@ -365,7 +351,6 @@ def main():
             trans_path = os.path.join(lang, rel_path)
             if not os.path.exists(trans_path) or needs_translation:
                 
-                # Pre-calculate action string to avoid f-string syntax errors
                 action = 'NEW' if not os.path.exists(trans_path) else 'UPDATED'
                 print(f"   🔄 [{action}] {rel_path} → {lang}", flush=True)
                 
@@ -380,12 +365,11 @@ def main():
                 
                 files_generated_since_push += 1
                 
-                # ✅ PUSH EVERY 5 FILES
+                # ✅ PUSH EVERY 30 FILES
                 if files_generated_since_push >= BATCH_SIZE:
                     batch_commit_and_push(files_generated_since_push)
                     files_generated_since_push = 0
 
-    # Push any remaining files that didn't hit the batch threshold
     if files_generated_since_push > 0:
         batch_commit_and_push(files_generated_since_push)
 
