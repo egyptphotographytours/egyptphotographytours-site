@@ -1,4 +1,4 @@
-name: Smart SEO Patch & Translation Pipeline
+name: Smart Incremental Translation Pipeline
 
 on:
   push:
@@ -14,13 +14,13 @@ permissions:
   contents: write
 
 jobs:
-  patch-and-translate:
+  translate-and-seo:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2 # Required to detect changed files in the latest push
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: pip install beautifulsoup4 deep-translator lxml
 
-      - name: Run Smart Patch, Translate & SEO Script
+      - name: Run Smart Incremental Translation & SEO Script
         run: python scripts/smart_pipeline.py
 
       - name: Commit and Push
@@ -41,6 +41,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🤖 Patch broken translations, fix language switcher & SEO [skip ci]"
+            git commit -m "🤖 Incremental translation, menu fix & SEO [skip ci]"
             git push
           fi
