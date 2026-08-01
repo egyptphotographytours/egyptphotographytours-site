@@ -95,7 +95,8 @@ def get_relative_url(lang_code, base_path):
         return f"/{lang_code}/{clean}" if clean else f"/{lang_code}/"
 
 def get_absolute_url(lang_code, base_path):
-    return f"{DOMAIN}{get_relative_url(lang_code, base_path)}"
+    rel_url = get_relative_url(lang_code, base_path)
+    return f"{DOMAIN}{rel_url}"
 
 # ==========================================
 # GIT CHANGE DETECTION (INCREMENTAL)
@@ -228,7 +229,8 @@ def fix_internal_links(soup, target_lang):
         if href.startswith('/'):
             a['href'] = f"/{target_lang}{href}" if href != '/' else f"/{target_lang}/"
         else:
-            a['href'] = f"/{target_lang}/{href.replace('.html', '')}"
+            clean_href = href.replace('.html', '')
+            a['href'] = f"/{target_lang}/{clean_href}"
     return soup
 
 def inject_dynamic_lang_menu(soup, target_lang, base_path):
@@ -238,14 +240,17 @@ def inject_dynamic_lang_menu(soup, target_lang, base_path):
     
     en_url = get_relative_url('en', base_path)
     en_active = "is-active" if target_lang == 'en' else ""
-    lang_menu.append(BeautifulSoup(f'<a href="{en_url}" class="lang-item {en_active}" role="menuitem"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-name">English</span></a>', 'lxml'))
+    en_html = f'<a href="{en_url}" class="lang-item {en_active}" role="menuitem"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-name">English</span></a>'
+    lang_menu.append(BeautifulSoup(en_html, 'lxml'))
     
     for lang in TARGET_LANGS:
         if os.path.exists(os.path.join(lang, base_path)):
             lang_url = get_relative_url(lang, base_path)
             is_active = "is-active" if target_lang == lang else ""
-            flag, name = LANG_META[lang]['flag'], LANG_META[lang]['name']
-            lang_menu.append(BeautifulSoup(f'<a href="{lang_url}" class="lang-item {is_active}" role="menuitem"><span class="lang-flag" aria-hidden="true">{flag}</span><span class="lang-name">{name}</span></a>', 'lxml'))
+            flag = LANG_META[lang]['flag']
+            name = LANG_META[lang]['name']
+            link_html = f'<a href="{lang_url}" class="lang-item {is_active}" role="menuitem"><span class="lang-flag" aria-hidden="true">{flag}</span><span class="lang-name">{name}</span></a>'
+            lang_menu.append(BeautifulSoup(link_html, 'lxml'))
     return soup
 
 # ==========================================
@@ -261,41 +266,61 @@ def inject_global_seo_and_sitemap():
                 rel = os.path.relpath(os.path.join(root, f), '.')
                 base, lang_code = rel, 'en'
                 for lang in TARGET_LANGS:
-                    if rel.startswith(f"{lang}/"): base, lang_code = rel[len(f"{lang}/"):], lang; break
+                    if rel.startswith(f"{lang}/"): 
+                        base = rel[len(f"{lang}/"):]
+                        lang_code = lang
+                        break
                 if base not in page_map: page_map[base] = {}
                 page_map[base][lang_code] = rel
 
     for base, langs in page_map.items():
         for lang_code, rel_path in langs.items():
             if not os.path.exists(rel_path): continue
-            with open(rel_path, 'r', encoding='utf-8') as f: soup = BeautifulSoup(f, 'lxml')
+            with open(rel_path, 'r', encoding='utf-8') as f: 
+                soup = BeautifulSoup(f, 'lxml')
+                
             for old in soup.find_all('link', rel='alternate'): old.decompose()
             for old in soup.find_all('link', rel='canonical'): old.decompose()
             head = soup.find('head')
             if not head: continue
             
-            head.append(BeautifulSoup(f'<link rel="canonical" href="{get_absolute_url(lang_code, base)}" />', 'lxml'))
+            # Pre-calculate URLs to avoid f-string syntax errors
+            canon_url = get_absolute_url(lang_code, base)
+            head.append(BeautifulSoup(f'<link rel="canonical" href="{canon_url}" />', 'lxml'))
+            
             for sib_lang, sib_rel in langs.items():
                 hl = 'zh' if sib_lang == 'zh-CN' else sib_lang
-                head.append(BeautifulSoup(f'<link rel="alternate" hreflang="{hl}" href="{get_absolute_url(sib_lang, base)}" />', 'lxml'))
-            head.append(BeautifulSoup(f'<link rel="alternate" hreflang="x-default" href="{get_absolute_url('en', base)}" />', 'lxml'))
+                sib_url = get_absolute_url(sib_lang, base)
+                head.append(BeautifulSoup(f'<link rel="alternate" hreflang="{hl}" href="{sib_url}" />', 'lxml'))
+                
+            en_url = get_absolute_url('en', base)
+            head.append(BeautifulSoup(f'<link rel="alternate" hreflang="x-default" href="{en_url}" />', 'lxml'))
             
             soup = inject_dynamic_lang_menu(soup, lang_code, base)
-            with open(rel_path, 'w', encoding='utf-8') as f: f.write(str(soup))
+            with open(rel_path, 'w', encoding='utf-8') as f: 
+                f.write(str(soup))
 
     today = datetime.now().strftime('%Y-%m-%d')
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    
     for base, langs in page_map.items():
         for lang_code, rel_path in langs.items():
             if '404.html' in rel_path or 'sitemap.html' in rel_path: continue
+            
             url = get_absolute_url(lang_code, base).replace(' ', '%20')
             xml.append(f'  <url>\n    <loc>{url}</loc>\n    <lastmod>{today}</lastmod>')
+            
             for sib_lang, sib_rel in langs.items():
                 hl = 'zh' if sib_lang == 'zh-CN' else sib_lang
-                xml.append(f'    <xhtml:link rel="alternate" hreflang="{hl}" href="{get_absolute_url(sib_lang, base).replace(" ", "%20")}" />')
-            xml.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{get_absolute_url("en", base).replace(" ", "%20")}" />\n  </url>')
+                sib_url = get_absolute_url(sib_lang, base).replace(' ', '%20')
+                xml.append(f'    <xhtml:link rel="alternate" hreflang="{hl}" href="{sib_url}" />')
+                
+            en_url = get_absolute_url('en', base).replace(' ', '%20')
+            xml.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{en_url}" />\n  </url>')
+            
     xml.append('</urlset>')
-    with open('sitemap.xml', 'w', encoding='utf-8') as f: f.write('\n'.join(xml))
+    with open('sitemap.xml', 'w', encoding='utf-8') as f: 
+        f.write('\n'.join(xml))
     print("   ✅ sitemap.xml generated.", flush=True)
 
 # ==========================================
@@ -316,19 +341,25 @@ def main():
         rel_path = os.path.relpath(en_path, '.')
         needs_translation = rel_path in modified_files
 
-        with open(en_path, 'r', encoding='utf-8') as f: en_soup = BeautifulSoup(f, 'lxml')
+        with open(en_path, 'r', encoding='utf-8') as f: 
+            en_soup = BeautifulSoup(f, 'lxml')
 
         for lang in TARGET_LANGS:
             trans_path = os.path.join(lang, rel_path)
             if not os.path.exists(trans_path) or needs_translation:
-                print(f"   🔄 [{('NEW' if not os.path.exists(trans_path) else 'UPDATED')}] {rel_path} → {lang}", flush=True)
+                
+                # Pre-calculate action string to avoid f-string syntax errors
+                action = 'NEW' if not os.path.exists(trans_path) else 'UPDATED'
+                print(f"   🔄 [{action}] {rel_path} → {lang}", flush=True)
+                
                 lang_soup = BeautifulSoup(str(en_soup), 'lxml')
                 lang_soup = extract_and_translate(lang_soup, lang)
                 lang_soup.html['lang'] = 'zh' if lang == 'zh-CN' else lang
                 lang_soup = fix_internal_links(lang_soup, lang)
                 
                 os.makedirs(os.path.dirname(trans_path), exist_ok=True)
-                with open(trans_path, 'w', encoding='utf-8') as f: f.write(str(lang_soup))
+                with open(trans_path, 'w', encoding='utf-8') as f: 
+                    f.write(str(lang_soup))
                 
                 files_generated_since_push += 1
                 
