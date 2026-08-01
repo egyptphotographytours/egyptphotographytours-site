@@ -1,4 +1,4 @@
-name: Smart Incremental Translation Pipeline
+name: Smart Incremental Translation & SEO Pipeline
 
 on:
   push:
@@ -8,7 +8,8 @@ on:
       - '**/*.html'
       - '!sitemap.xml'
       - '!scripts/**'
-  workflow_dispatch: # Allows manual trigger
+      - '!.github/**'
+  workflow_dispatch: # Allows you to click "Run Workflow" manually from the Actions tab
 
 permissions:
   contents: write
@@ -20,7 +21,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Required to detect changed files in the latest push
+          # fetch-depth: 2 is REQUIRED so the Python script can run `git diff HEAD~1 HEAD` 
+          # to detect which English files you just changed for incremental translation.
+          fetch-depth: 2 
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -31,6 +34,10 @@ jobs:
         run: pip install beautifulsoup4 deep-translator lxml
 
       - name: Run Smart Incremental Translation & SEO Script
+        env:
+          # PYTHONUNBUFFERED: 1 forces Python to print logs instantly.
+          # This prevents the "stuck at 5 minutes" illusion in the GitHub UI.
+          PYTHONUNBUFFERED: 1  
         run: python scripts/smart_pipeline.py
 
       - name: Commit and Push
@@ -41,6 +48,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
+            # [skip ci] prevents this commit from triggering the workflow again (infinite loop protection)
             git commit -m "🤖 Incremental translation, menu fix & SEO [skip ci]"
             git push
           fi
