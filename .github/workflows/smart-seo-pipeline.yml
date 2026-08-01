@@ -17,11 +17,12 @@ permissions:
 jobs:
   translate-and-seo:
     runs-on: ubuntu-latest
+    timeout-minutes: 360 # Allow up to 6 hours for massive translation jobs
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2 
+          fetch-depth: 2 # Required for incremental git diff detection
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -38,10 +39,10 @@ jobs:
 
       - name: Run Smart Incremental Translation & SEO Script
         env:
-          PYTHONUNBUFFERED: 1  
+          PYTHONUNBUFFERED: 1  # Forces real-time logs in GitHub UI
         run: python scripts/smart_pipeline.py
 
-      - name: Final Commit and Push (Catch-all)
+      - name: Final Commit and Push (Catch-all for Sitemap & SEO tags)
         run: |
           git add .
           if git diff --staged --quiet; then
