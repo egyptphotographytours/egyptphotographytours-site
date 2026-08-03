@@ -1,379 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- CRITICAL: Charset first for proper parsing -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
-<!-- Security & Performance Headers -->
-<meta content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://widget.trustpilot.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https:; frame-src https://www.google.com;" http-equiv="Content-Security-Policy"/>
+<!-- ═══════════════════════════════════════════════════════
+CSP — FULLY FIXED & SECURE
+═══════════════════════════════════════════════════════ -->
+<meta content="
+default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';
+script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com;
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+img-src 'self' https: blob: data:;
+font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com;
+connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev;
+upgrade-insecure-requests;
+base-uri 'self';
+form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
-<!-- Comprehensive Favicon Setup - Standardized root-relative paths -->
-<link href="/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="/images/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="/images/favicon.ico" rel="shortcut icon"/>
-<link href="/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/site.webmanifest" rel="manifest"/>
+
+<link href="https://www.egyptphotographytours.com/sitemap.xml" rel="sitemap" title="Main Sitemap" type="application/xml"/>
+<link href="https://www.egyptphotographytours.com/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://www.egyptphotographytours.com/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://www.egyptphotographytours.com/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://www.egyptphotographytours.com/images/favicon.ico" rel="shortcut icon"/>
+<link href="https://www.egyptphotographytours.com/images/apple-touch-icon.jpg" rel="apple-touch-icon" sizes="180x180"/>
+<link crossorigin="anonymous" href="https://www.egyptphotographytours.com/site.webmanifest" rel="manifest"/>
 <meta content="#FFD700" name="msapplication-TileColor"/>
-<meta content="/browserconfig.xml" name="msapplication-config"/>
 <meta content="#FFD700" name="theme-color"/>
-<!-- Preconnect to critical third-party domains -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
+
+<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://widget.trustpilot.com" rel="preconnect"/>
-<link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-<!-- SEO-optimized title with primary keyword first -->
-<title>Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics &amp; Emergency Protocols | Book Egypt Photography Tours</title>
-<!-- SEO-optimized meta description with strong CTA -->
-<meta content="Egypt heat illness prevention guide 2026: Recognizing symptoms, hydration tactics &amp; emergency protocols for safe photography tours. Expert heat safety tips for travelers. Book Private Pyramids, Cairo &amp; Giza, or 7-Day Adventure tours with heat-conscious extensions." name="description"/>
-<!-- SEO-optimized keywords with commercial intent -->
-<meta content="Egypt heat illness prevention, Egypt heat symptoms, Egypt hydration tactics, Egypt emergency protocols, Egypt heat safety, Egypt medical tourism, book Egypt photography tour, Egypt Photography Tours heat guide, travel health Egypt, safe travel Egypt" name="keywords"/>
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+<link crossorigin="" href="https://challenges.cloudflare.com" rel="preconnect"/>
+<link as="style" crossorigin="" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;600;700&display=swap" rel="preload"/>
+<link crossorigin="" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;600;700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/></noscript>
+
+<title>Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics & Emergency Protocols | Egypt Photography Tours</title>
+<meta content="Egypt heat illness prevention guide 2026: Recognizing symptoms, hydration tactics & emergency protocols for safe photography tours. Expert heat safety tips for travelers." name="description"/>
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="Hossam, Egypt Photography Tours" name="author"/>
+<meta content="Egypt Photography Tours" name="copyright"/>
+<meta content="en" name="language"/>
 
-<!-- Language Alternates - ALL 20 LANGUAGES for international SEO -->
+<link rel="canonical" href="https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html"/>
+<link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html"/>
+<link rel="alternate" hreflang="x-default" href="https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html"/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Open Graph tags with strong conversion focus -->
-<meta content="Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics &amp; Emergency Protocols | Book Tours" property="og:title"/>
-<meta content="Egypt heat illness prevention guide 2026: Recognizing symptoms, hydration tactics &amp; emergency protocols for safe photography tours. Expert heat safety tips for travelers. Book Private Pyramids or 7-Day Adventure with heat-conscious extensions." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="Egypt Photography Tours" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html" property="og:url"/>
+<meta content="Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics & Emergency Protocols" property="og:title"/>
+<meta content="Egypt heat illness prevention guide 2026: Recognizing symptoms, hydration tactics & emergency protocols for safe photography tours. Expert heat safety tips for travelers." property="og:description"/>
 <meta content="https://www.egyptphotographytours.com/images/heat-illness-prevention-guide-2026.jpg" property="og:image"/>
+<meta content="image/webp" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="Egypt heat illness prevention guide - recognizing symptoms, hydration tactics &amp; emergency protocols for photographers and health-conscious travelers" property="og:image:alt"/>
-<meta content="https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html" property="og:url"/>
-<meta content="product" property="og:type"/>
-<meta content="Egypt Photography Tours" property="og:site_name"/>
-<meta content="Egypt Photography Tours" property="product:brand"/>
-<meta content="in stock" property="product:availability"/>
-<meta content="new" property="product:condition"/>
+<meta content="Egypt heat illness prevention guide - recognizing symptoms, hydration tactics & emergency protocols for photographers and health-conscious travelers" property="og:image:alt"/>
 <meta content="2026-01-28T00:00:00+02:00" property="article:published_time"/>
 <meta content="2026-02-03T15:10:00+02:00" property="article:modified_time"/>
-<!-- Twitter tags with conversion focus -->
+<meta content="https://www.egyptphotographytours.com/about" property="article:author"/>
+<meta content="Heat Illness Prevention & Tour Booking Guidance" property="article:section"/>
+
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@EgyptPhotoTours" name="twitter:site"/>
-<meta content="@HossamPhotoEG" name="twitter:creator"/>
-<meta content="Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics &amp; Emergency Protocols" name="twitter:title"/>
-<meta content="Egypt heat illness prevention guide 2026: Recognizing symptoms, hydration tactics &amp; emergency protocols for safe photography tours. Expert heat safety tips for travelers. Book tours with heat-conscious extensions today." name="twitter:description"/>
+<meta content="Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics & Emergency Protocols" name="twitter:title"/>
+<meta content="Egypt heat illness prevention guide 2026: Recognizing symptoms, hydration tactics & emergency protocols for safe photography tours." name="twitter:description"/>
 <meta content="https://www.egyptphotographytours.com/images/heat-illness-prevention-guide-2026.jpg" name="twitter:image"/>
-<!-- Geo Tags for local SEO -->
+
 <meta content="EG-C" name="geo.region"/>
 <meta content="Cairo, Egypt" name="geo.placename"/>
 <meta content="30.0444;31.2357" name="geo.position"/>
-<!-- ULTRA-COMPREHENSIVE STRUCTURED DATA SCHEMA FOR MAXIMUM SEO POWER -->
-<script type="application/ld+json">
+<meta content="30.0444, 31.2357" name="ICBM"/>
+<meta content="EG" name="geo.country"/>
+
+<script type="application/ld+json" translate="no" class="notranslate">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "name": "Egypt Photography Tours - Heat Illness Prevention Experts",
-          "url": "https://www.egyptphotographytours.com/",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.egyptphotographytours.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          },
-          "keywords": "Egypt heat illness prevention, Egypt heat symptoms, book Egypt photography tour"
-        },
-        {
-          "@type": "Organization",
-          "name": "Egypt Photography Tours",
-          "url": "https://www.egyptphotographytours.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.egyptphotographytours.com/images/logo.jpg",
-            "width": 600,
-            "height": 60
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+20-155-073-5673",
-            "contactType": "customer service",
-            "areaServed": ["EG", "US", "GB", "CA", "AU", "DE", "FR", "ES", "IT"],
-            "availableLanguage": ["en", "ar", "fr", "de", "es"]
-          },
-          "sameAs": [
-            "https://www.facebook.com/EgyptPhotographyTours",
-            "https://www.instagram.com/hossam_artistic/",
-            "https://www.tiktok.com/@egyptphotographytours",
-            "https://www.youtube.com/@Egyptphotographytours"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-            "addressLocality": "Giza",
-            "addressRegion": "Giza Governorate",
-            "postalCode": "12557",
-            "addressCountry": "EG"
-          },
-          "foundingDate": "2015",
-          "founder": {
-            "@type": "Person",
-            "name": "Hossam",
-            "jobTitle": "Professional Photographer & Egyptologist"
-          },
-          "description": "Egypt's premier photography tour company providing expert heat illness prevention guidance, symptom recognition protocols, hydration strategies, and emergency response techniques for travelers seeking safe photography experiences with sustainable tourism practices.",
-          "knowsAbout": ["Egypt Heat Illness Prevention", "Egypt Heat Symptoms", "Egypt Hydration Tactics", "Egypt Emergency Protocols", "Egypt Heat Safety", "Egypt Medical Tourism", "Travel Health Egypt", "Safe Travel Egypt"],
-          "serviceType": ["Photography Tours", "Heat Safety Guidance", "Health Protocol Coordination", "Eco-Tourism Support"],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150",
-            "bestRating": "5",
-            "worstRating": "1"
-          }
-        },
-        {
-          "@type": "Product",
-          "name": "Egypt Photography Tour with Heat-Safe Extension",
-          "image": [
-            "https://www.egyptphotographytours.com/images/heat-illness-prevention-guide-2026.jpg",
-            "https://www.egyptphotographytours.com/images/egypt-heat-safety-2026.jpg",
-            "https://www.egyptphotographytours.com/images/egypt-hydration-2026.jpg"
-          ],
-          "description": "Professional photography tours in Egypt with expert heat illness prevention guidance, symptom recognition protocols, hydration strategies, and emergency response techniques for stress-free heat-conscious photography experiences with sustainable tourism practices. Includes professional photography instruction, custom itineraries, and private transportation.",
-          "brand": {
-            "@type": "Brand",
-            "name": "Egypt Photography Tours"
-          },
-          "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "299",
-            "highPrice": "2499",
-            "priceCurrency": "USD",
-            "offerCount": "7",
-            "availability": "https://schema.org/InStock",
-            "url": "https://www.egyptphotographytours.com/tours",
-            "seller": {
-              "@type": "Organization",
-              "name": "Egypt Photography Tours"
-            }
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Person",
-                "name": "Rebecca M."
-              },
-              "reviewBody": "Egypt Photography Tours' heat illness prevention guidance transformed my Egypt photography experience! They provided comprehensive symptom recognition protocols, hydration strategies, and emergency response tips that kept me safe throughout my trip. Their heat safety expertise enabled me to capture Egypt's beauty without heat concerns. Their heat prevention expertise added profound peace of mind to my photography journey. <a href='https://www.egyptphotographytours.com/tours'>Book your experience here</a> for smart heat-conscious planning."
-            },
-            {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Person",
-                "name": "Thomas K."
-              },
-              "reviewBody": "The heat-safe extension from Egypt Photography Tours was the highlight of my Egypt photography journey. Their symptom recognition protocols enabled early intervention, their hydration guidance resulted in healthy days of photography, and their emergency response knowledge provided essential backup. The resulting photographs captured Egypt's beauty without heat concerns. <a href='https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html'>Book the 7-Day Adventure</a> for expert heat illness prevention guidance."
-            }
-          ],
-          "category": "Photography Tours",
-          "keywords": "Egypt heat illness prevention, Egypt heat symptoms, book Egypt photography tour"
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.egyptphotographytours.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Resources",
-              "item": "https://www.egyptphotographytours.com/resources.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Heat Illness Prevention Guide 2026",
-              "item": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html"
-            }
-          ]
-        },
-        {
-          "@type": "Article",
-          "headline": "Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics & Emergency Protocols",
-          "description": "Complete 2026 guide to Egypt heat illness prevention. Expert analysis of recognizing symptoms, hydration tactics & emergency protocols with booking integration for Egypt Photography Tours.",
-          "author": {
-            "@type": "Person",
-            "name": "Hossam",
-            "jobTitle": "Professional Photographer & Egyptologist",
-            "knowsAbout": ["Egypt Heat Illness Prevention", "Heat Photography", "Symptom Recognition", "Hydration Strategies", "Emergency Protocols Egypt", "Travel Health Egypt", "Safe Travel Egypt"],
-            "url": "https://www.egyptphotographytours.com/about/hossam"
-          },
-          "datePublished": "2026-01-28T00:00:00+02:00",
-          "dateModified": "2026-02-03T15:10:00+02:00",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Egypt Photography Tours",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://www.egyptphotographytours.com/images/logo.jpg",
-              "width": 600,
-              "height": 60
-            }
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html"
-          },
-          "image": [
-            {
-              "@type": "ImageObject",
-              "url": "https://www.egyptphotographytours.com/images/heat-illness-prevention-guide-2026.jpg",
-              "width": 1200,
-              "height": 630
-            },
-            {
-              "@type": "ImageObject", 
-              "url": "https://www.egyptphotographytours.com/images/egypt-heat-safety-2026.jpg",
-              "width": 800,
-              "height": 600
-            }
-          ],
-          "keywords": "Egypt heat illness prevention, Egypt heat symptoms, Egypt hydration tactics, Egypt emergency protocols, book Egypt photography tour",
-          "articleSection": "Heat Illness Prevention & Tour Booking Guidance",
-          "articleBody": "Comprehensive 2026 guide to Egypt heat illness prevention featuring expert analysis of recognizing symptoms, hydration tactics & emergency protocols, heat photography opportunities, historical context, sustainable tourism practices, and how booking with Egypt Photography Tours enhances heat-conscious experiences with local partnerships, photography expertise, and privileged access to safe heat experiences for stress-free extended cultural photography stays.",
-          "wordCount": "10600",
-          "timeRequired": "PT78M",
-          "inLanguage": "en-US",
-          "isAccessibleForFree": true,
-          "copyrightHolder": {
-            "@type": "Organization",
-            "name": "Egypt Photography Tours"
-          },
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".article-content p", ".article-content h2", ".article-content h3"]
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What are the early symptoms of heat illness in Egypt's climate in 2026?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Essential early symptoms to recognize: 1) Heat Cramps: Muscle pain or spasms during or after exercise • Health risk: Early warning sign of heat stress, 2) Heat Exhaustion: Heavy sweating, weakness, dizziness, nausea • Health risk: Can progress to heat stroke if untreated, 3) Heat Syncope: Fainting or dizziness upon standing • Health risk: Indicates circulatory strain from heat, 4) Heat Rash: Red clusters of small blisters on skin • Health risk: Indicates blocked sweat ducts, 5) Heat Edema: Swelling in legs and hands • Health risk: Indicates fluid retention from heat stress. When you <a href='https://www.egyptphotographytours.com/tours'>book with Egypt Photography Tours</a>, we provide comprehensive symptom recognition briefings and coordinate with local medical resources to ensure optimal health conditions during photography expeditions."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What hydration tactics work best for Egypt's desert climate?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Essential hydration strategies: 1) Water Intake: Drink 1 liter per hour during activity in hot conditions • Health benefit: Prevents dehydration and heat illness, 2) Electrolyte Balance: Use oral rehydration solutions or sports drinks • Health benefit: Replaces essential minerals lost through sweat, 3) Timing: Drink before feeling thirsty, especially during photography sessions • Health benefit: Prevents dehydration before symptoms appear, 4) Avoid Dehydrants: Limit caffeine and alcohol which increase fluid loss • Health benefit: Maintains optimal hydration levels, 5) Monitor Output: Check urine color (pale yellow indicates good hydration) • Health benefit: Provides real-time hydration status. Success depends on: proper preparation, understanding hydration needs, and working with experienced local guides. <a href='https://www.egyptphotographytours.com/tour-pyramids-private.html'>Book the Private Pyramids Photography Tour</a> for hydration guidance that enhances both safety and creative opportunities."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What emergency protocols should travelers follow for heat illness in Egypt?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Essential emergency protocols: 1) Immediate Cooling: Move to shade, remove excess clothing, apply cool water • Health benefit: Rapidly reduces body temperature, 2) Hydration: Provide small sips of water if conscious • Health benefit: Rehydrates without overwhelming system, 3) Medical Assistance: Call local emergency services (123 in Egypt) for severe symptoms • Health benefit: Ensures professional medical care when needed, 4) Rest: Allow body time to recover before resuming activities • Health benefit: Supports physiological recovery, 5) Prevention: Learn to recognize early symptoms to prevent progression • Health benefit: Stops heat illness before it becomes severe. Our <a href='https://www.egyptphotographytours.com/tour-cairo-giza-2day.html'>Cairo & Giza 2-Day Photo Tour</a> includes emergency protocol guidance with location-specific protocols and heat-conscious photography strategies."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How can photographers safely work in Egypt's extreme heat conditions?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Essential photography safety practices: 1) Timing: Schedule shoots during cooler morning/evening hours • Health benefit: Avoids peak heat exposure, 2) Shade Utilization: Use natural or artificial shade during midday • Health benefit: Reduces direct sun exposure, 3) Equipment Protection: Keep cameras in shaded bags when not in use • Health benefit: Prevents equipment damage from heat, 4) Buddy System: Work with partners to monitor each other for symptoms • Health benefit: Enables early intervention for heat illness, 5) Acclimatization: Allow 2-3 days to adjust to Egypt's climate before intense photography • Health benefit: Reduces risk of heat illness through physiological adaptation. All Egypt Photography Tours include heat safety guidance with location-specific protocols and heat-conscious photography planning. <a href='https://www.egyptphotographytours.com/tours'>Book your experience</a> for heat safety guidance optimized for photography travel conditions."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do photography tours enhance the heat-safe travel experience?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Tour-based heat safety advantages: 1) Local Knowledge: Expert guides know heat-safe photography locations and optimal timing while respecting health protocols, 2) Medical Access: Established relationships with clinics enable respectful health access to meaningful photography experiences, 3) Equipment Support: Specialized guidance for heat-conscious photography and cultural documentation in challenging environments, 4) Health Integration: Tourism models that ensure photography experiences benefit traveler health while honoring local heat practices. <a href='https://www.egyptphotographytours.com/tours'>Book your experience</a> for heat safety guidance that leverages local expertise for maximum creative opportunity and health respect."
-              }
-            }
-          ]
-        },
-        {
-          "@type": "TouristTrip",
-          "name": "Egypt Photography Tour with Heat-Safe Extension",
-          "description": "Professional-guided photography tour in Egypt with expert heat illness prevention guidance, symptom recognition protocols, hydration strategies, and emergency response techniques for stress-free heat-conscious photography experiences with sustainable tourism practices.",
-          "provider": {
-            "@type": "TravelAgency",
-            "name": "Egypt Photography Tours"
-          },
-          "itinerary": [
-            {
-              "@type": "Place",
-              "name": "Heat Safety Access & Protocols",
-              "description": "Expert coordination of heat-safe visiting times, photography-friendly scheduling, and special access protocols for safe heat experiences with comprehensive health briefings"
-            },
-            {
-              "@type": "Place",
-              "name": "Heat-Safe Photography Workshop",
-              "description": "Guidance on safe heat photography techniques, symptom documentation methods, hydration photography, and equipment protection for heat-conscious environments"
-            },
-            {
-              "@type": "Place",
-              "name": "Health Integration & Safe Practices",
-              "description": "Strategies for respectful engagement with heat safety protocols, health protocols, and sustainable tourism practices that benefit travelers while honoring heat practices"
-            }
-          ],
-          "duration": "P1D",
-          "offers": {
-            "@type": "Offer",
-            "url": "https://www.egyptphotographytours.com/tours",
-            "price": "299",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          }
-        }
+      "@type": "WebPage",
+      "@id": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html#webpage",
+      "url": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html",
+      "name": "Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics & Emergency Protocols",
+      "description": "Complete 2026 guide to Egypt heat illness prevention. Expert analysis of recognizing symptoms, hydration tactics & emergency protocols with booking integration for Egypt Photography Tours.",
+      "isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
+      "primaryImageOfPage": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/heat-illness-prevention-guide-2026.jpg", "width": "1200", "height": "630"},
+      "breadcrumb": {"@id": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html#breadcrumb"},
+      "inLanguage": "en-US",
+      "datePublished": "2026-01-28T00:00:00+02:00",
+      "dateModified": "2026-02-03T15:10:00+02:00"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.egyptphotographytours.com/resources"},
+        {"@type": "ListItem", "position": 3, "name": "Heat Illness Prevention Guide 2026", "item": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html#article",
+      "headline": "Egypt Heat Illness Prevention: Recognizing Symptoms, Hydration Tactics & Emergency Protocols",
+      "description": "Complete 2026 guide to Egypt heat illness prevention featuring expert analysis of recognizing symptoms, hydration tactics & emergency protocols, heat photography opportunities, historical context, sustainable tourism practices.",
+      "author": {"@type": "Person", "name": "Hossam", "jobTitle": "Professional Photographer & Egyptologist"},
+      "datePublished": "2026-01-28T00:00:00+02:00",
+      "dateModified": "2026-02-03T15:10:00+02:00",
+      "publisher": {"@type": "Organization", "name": "Egypt Photography Tours", "logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/logo.jpg"}},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html"},
+      "image": [
+        "https://www.egyptphotographytours.com/images/heat-illness-prevention-guide-2026.jpg",
+        "https://www.egyptphotographytours.com/images/egypt-heat-safety-2026.jpg"
+      ],
+      "articleSection": "Heat Illness Prevention & Tour Booking Guidance"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "What are the early symptoms of heat illness in Egypt's climate in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Essential early symptoms to recognize: 1) Heat Cramps: Muscle pain or spasms during or after exercise. 2) Heat Exhaustion: Heavy sweating, weakness, dizziness, nausea. 3) Heat Syncope: Fainting or dizziness upon standing. 4) Heat Rash: Red clusters of small blisters on skin. 5) Heat Edema: Swelling in legs and hands. When you book with Egypt Photography Tours, we provide comprehensive symptom recognition briefings."}},
+        {"@type": "Question", "name": "What hydration tactics work best for Egypt's desert climate?", "acceptedAnswer": {"@type": "Answer", "text": "Essential hydration strategies: 1) Water Intake: Drink 1 liter per hour during activity in hot conditions. 2) Electrolyte Balance: Use oral rehydration solutions or sports drinks. 3) Timing: Drink before feeling thirsty, especially during photography sessions. 4) Avoid Dehydrants: Limit caffeine and alcohol. 5) Monitor Output: Check urine color (pale yellow indicates good hydration)."}},
+        {"@type": "Question", "name": "What emergency protocols should travelers follow for heat illness in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "Essential emergency protocols: 1) Immediate Cooling: Move to shade, remove excess clothing, apply cool water. 2) Hydration: Provide small sips of water if conscious. 3) Medical Assistance: Call local emergency services (123 in Egypt) for severe symptoms. 4) Rest: Allow body time to recover before resuming activities. 5) Prevention: Learn to recognize early symptoms to prevent progression."}},
+        {"@type": "Question", "name": "How can photographers safely work in Egypt's extreme heat conditions?", "acceptedAnswer": {"@type": "Answer", "text": "Essential photography safety practices: 1) Timing: Schedule shoots during cooler morning/evening hours. 2) Shade Utilization: Use natural or artificial shade during midday. 3) Equipment Protection: Keep cameras in shaded bags when not in use. 4) Buddy System: Work with partners to monitor each other for symptoms. 5) Acclimatization: Allow 2-3 days to adjust to Egypt's climate before intense photography."}},
+        {"@type": "Question", "name": "How do photography tours enhance the heat-safe travel experience?", "acceptedAnswer": {"@type": "Answer", "text": "Tour-based heat safety advantages: 1) Local Knowledge: Expert guides know heat-safe photography locations and optimal timing. 2) Medical Access: Established relationships with clinics enable respectful health access. 3) Equipment Support: Specialized guidance for heat-conscious photography. 4) Health Integration: Tourism models that ensure photography experiences benefit traveler health."}}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.egyptphotographytours.com/#person-hossam",
+      "name": "Hossam",
+      "jobTitle": "Professional Photographer & Egyptologist",
+      "worksFor": {"@id": "https://www.egyptphotographytours.com/#organization"},
+      "knowsAbout": ["Egypt Heat Illness Prevention", "Heat Photography", "Symptom Recognition", "Hydration Strategies", "Emergency Protocols Egypt"],
+      "image": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp",
+      "url": "https://www.egyptphotographytours.com/about"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.egyptphotographytours.com/#organization",
+      "name": "Egypt Photography Tours",
+      "url": "https://www.egyptphotographytours.com/",
+      "logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": "200", "height": "200"},
+      "image": ["https://www.egyptphotographytours.com/images/heat-illness-prevention-guide-2026.jpg"],
+      "telephone": "+20-155-073-5673",
+      "email": "info@egyptphotographytours.com",
+      "foundingDate": "2015",
+      "address": {"@type": "PostalAddress", "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza", "addressLocality": "Giza", "addressRegion": "Giza Governorate", "postalCode": "12557", "addressCountry": "EG"},
+      "geo": {"@type": "GeoCoordinates", "latitude": "29.9792", "longitude": "31.1342"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "150", "bestRating": "5", "worstRating": "1"},
+      "sameAs": [
+        "https://www.facebook.com/egyptphotographytours",
+        "https://www.instagram.com/hossam_artistic/",
+        "https://www.tiktok.com/@egyptphotographytours",
+        "https://www.youtube.com/@Egyptphotographytours"
       ]
     }
-    </script>
-<!-- Fonts & Icons with SRI hashes for security -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
-<!-- Trustpilot widget script with async loading -->
-<script async="" defer="" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" type="text/javascript"></script>
+  ]
+}
+</script>
+
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+<script async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+
 <style>
-        /* BASE STYLES - ADAPTED FROM REFERENCE */
         :root {
             --primary-dark: #1a202c;
             --accent-light: #FFD700;
@@ -387,6 +181,14 @@
             --success-color: #10B981;
             --heat-color: #059669;
             --booking-color: #059669;
+            --c-gold: #FFD700;
+            --c-gold-d: #E2B700;
+            --c-muted: #5A6475;
+            --c-border: #e2e8f0;
+            --radius: 14px;
+            --radius-sm: 8px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.11);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -402,8 +204,6 @@
             font-size: 16px;
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-        
-        /* Skip to Content Link for Accessibility */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -419,8 +219,6 @@
         .skip-link:focus {
             top: 0;
         }
-
-        /* HEADER & NAV */
         .header {
             background-color: var(--primary-dark);
             color: white;
@@ -472,8 +270,6 @@
         }
         .contact-info:hover { color: var(--accent-light); }
         .contact-icon { font-size: 14px; width: 16px; text-align: center; }
-
-        /* NAVBAR */
         .navbar {
             background-color: #374151;
             color: white;
@@ -540,8 +336,6 @@
                 padding: 0;
             }
         }
-
-        /* LANGUAGE SWITCHER - FULL 20 LANGUAGES */
         .language-switcher { position: relative; display: inline-block; z-index: 1000; }
         .current-language {
             display: flex;
@@ -607,8 +401,6 @@
         }
         .flag-icon { font-size: 18px; min-width: 24px; }
         .language-text { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-        /* MOBILE MENU TOGGLE */
         .mobile-menu-toggle {
             display: block;
             background: none;
@@ -619,8 +411,6 @@
             padding: 8px;
         }
         @media (min-width: 768px) { .mobile-menu-toggle { display: none; } }
-
-        /* HERO SECTION */
         .hero-section {
             position: relative;
             background-image: url('/images/heat-illness-prevention-guide-2026.jpg');
@@ -664,8 +454,6 @@
             margin-right: auto;
         }
         @media (min-width: 768px) { .hero-subtitle { font-size: 22px; } }
-
-        /* MAIN CONTENT */
         .article-section { padding: 40px 0; }
         @media (min-width: 768px) { .article-section { padding: 80px 0; } }
         .article-container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
@@ -679,8 +467,6 @@
             flex-wrap: wrap;
         }
         @media (min-width: 768px) { .article-meta { font-size: 16px; } }
-        
-        /* Last Updated Badge */
         .last-updated {
             background: rgba(5, 150, 105, 0.1);
             color: var(--heat-color);
@@ -692,7 +478,6 @@
             align-items: center;
             gap: 4px;
         }
-        
         .article-content h2 {
             font-size: 32px;
             font-weight: 800;
@@ -751,8 +536,6 @@
             color: var(--primary-dark); 
             border-bottom-style: solid;
         }
-
-        /* HEAT SAFETY BADGES */
         .heat-badge {
             display: inline-flex;
             align-items: center;
@@ -765,28 +548,10 @@
             font-weight: 600;
             margin: 4px;
         }
-        
-        .symptoms {
-            background: rgba(5, 150, 105, 0.1);
-            color: var(--heat-color);
-        }
-        
-        .hydration {
-            background: rgba(14, 165, 233, 0.1);
-            color: #0EA5E9;
-        }
-        
-        .emergency {
-            background: rgba(220, 38, 38, 0.1);
-            color: #DC2626;
-        }
-        
-        .heat-photography {
-            background: rgba(245, 158, 11, 0.1);
-            color: #d97706;
-        }
-
-        /* BOOKING CTA STYLES */
+        .symptoms { background: rgba(5, 150, 105, 0.1); color: var(--heat-color); }
+        .hydration { background: rgba(14, 165, 233, 0.1); color: #0EA5E9; }
+        .emergency { background: rgba(220, 38, 38, 0.1); color: #DC2626; }
+        .heat-photography { background: rgba(245, 158, 11, 0.1); color: #d97706; }
         .booking-cta {
             display: inline-block;
             background: linear-gradient(135deg, var(--booking-color) 0%, #047857 100%);
@@ -810,11 +575,7 @@
             border-color: var(--accent-light);
             box-shadow: 0 15px 35px -5px rgba(5, 150, 105, 0.4);
         }
-        .booking-cta i {
-            margin-right: 8px;
-        }
-
-        /* REVIEW CARDS */
+        .booking-cta i { margin-right: 8px; }
         .review-card {
             background: white;
             border-radius: 12px;
@@ -823,7 +584,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             border-left: 4px solid var(--heat-color);
         }
-        
         .review-header {
             display: flex;
             align-items: center;
@@ -832,7 +592,6 @@
             padding-bottom: 12px;
             border-bottom: 1px solid #e5e7eb;
         }
-        
         .reviewer-avatar {
             width: 48px;
             height: 48px;
@@ -845,45 +604,18 @@
             font-weight: 600;
             font-size: 18px;
         }
-        
-        .reviewer-info h4 {
-            margin: 0;
-            font-size: 16px;
-            color: var(--primary-dark);
-        }
-        
-        .reviewer-info p {
-            margin: 4px 0 0;
-            font-size: 14px;
-            color: #6b7280;
-        }
-        
-        .review-rating {
-            display: flex;
-            gap: 2px;
-            color: #f59e0b;
-            font-size: 14px;
-        }
-        
-        .review-content p {
-            margin: 0;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        /* CULTURAL CONTEXT CARDS */
+        .reviewer-info h4 { margin: 0; font-size: 16px; color: var(--primary-dark); }
+        .reviewer-info p { margin: 4px 0 0; font-size: 14px; color: #6b7280; }
+        .review-rating { display: flex; gap: 2px; color: #f59e0b; font-size: 14px; }
+        .review-content p { margin: 0; font-size: 16px; line-height: 1.7; }
         .culture-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 25px;
             margin: 40px 0;
         }
-        @media (min-width: 768px) {
-            .culture-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (min-width: 1024px) {
-            .culture-grid { grid-template-columns: repeat(3, 1fr); }
-        }
+        @media (min-width: 768px) { .culture-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .culture-grid { grid-template-columns: repeat(3, 1fr); } }
         .culture-card {
             background: white;
             padding: 30px;
@@ -903,13 +635,7 @@
             display: block;
             text-align: center;
         }
-        .culture-card h4 {
-            color: var(--heat-color);
-            text-align: center;
-            margin-top: 0;
-        }
-
-        /* HEAT SAFETY HIGHLIGHT */
+        .culture-card h4 { color: var(--heat-color); text-align: center; margin-top: 0; }
         .heat-highlight {
             background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
             border-left: 6px solid var(--heat-color);
@@ -919,8 +645,6 @@
             text-align: center;
         }
         @media (min-width: 768px) { .heat-highlight { padding: 45px; } }
-
-        /* Table wrapper for mobile horizontal scroll */
         .table-wrapper {
             width: 100%;
             overflow-x: auto;
@@ -929,7 +653,6 @@
             border-radius: 10px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
-        
         .heat-table {
             width: 100%;
             border-collapse: collapse;
@@ -956,13 +679,7 @@
         @media (min-width: 768px) { .heat-table td { padding: 25px 20px; } }
         .heat-table tr:nth-child(even) { background-color: #f9fafb; }
         .heat-table tr:hover { background-color: #f3f4f6; }
-        .heat-table .badge {
-            font-weight: 600;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
+        .heat-table .badge { font-weight: 600; padding: 4px 8px; border-radius: 4px; font-size: 14px; }
         .service-category {
             background: white;
             border-radius: 15px;
@@ -976,7 +693,6 @@
         .category-hydration { border-color: var(--tour-color); }
         .category-emergency { border-color: var(--warning-color); }
         .category-photography { border-color: var(--success-color); }
-
         .tip-card {
             background: white;
             padding: 30px;
@@ -985,17 +701,13 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
             border-left: 4px solid var(--accent-light);
         }
-
-        /* QUICK REFERENCE GRID */
         .quick-reference {
             display: grid;
             grid-template-columns: 1fr;
             gap: 25px;
             margin: 50px 0;
         }
-        @media (min-width: 768px) {
-            .quick-reference { grid-template-columns: repeat(3, 1fr); }
-        }
+        @media (min-width: 768px) { .quick-reference { grid-template-columns: repeat(3, 1fr); } }
         .reference-item {
             background: white;
             padding: 30px;
@@ -1009,13 +721,7 @@
         .reference-symptoms { border-color: #059669; }
         .reference-hydration { border-color: #0EA5E9; }
         .reference-emergency { border-color: #DC2626; }
-        .reference-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        /* TRUST SECTION */
+        .reference-icon { font-size: 48px; margin-bottom: 20px; display: block; }
         .trust-section {
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             color: white;
@@ -1049,23 +755,9 @@
             transform: translateY(-10px);
             border-color: var(--accent-light);
         }
-        .trust-icon {
-            font-size: 52px;
-            margin-bottom: 25px;
-            display: block;
-        }
-        .trust-card h3 {
-            color: var(--accent-light);
-            font-size: 26px;
-            margin-bottom: 20px;
-        }
-        .trust-card p {
-            color: #e2e8f0;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        /* TOUR INTEGRATION SECTION - STRONG BOOKING FOCUS */
+        .trust-icon { font-size: 52px; margin-bottom: 25px; display: block; }
+        .trust-card h3 { color: var(--accent-light); font-size: 26px; margin-bottom: 20px; }
+        .trust-card p { color: #e2e8f0; font-size: 18px; line-height: 1.7; }
         .tour-integration {
             background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
             border-left: 6px solid var(--warning-color);
@@ -1087,12 +779,7 @@
             border-color: var(--booking-color);
             box-shadow: 0 10px 25px rgba(5, 150, 105, 0.15);
         }
-        .tour-recommendation h4 {
-            margin-top: 0;
-            color: var(--primary-dark);
-            font-size: 20px;
-            font-weight: 700;
-        }
+        .tour-recommendation h4 { margin-top: 0; color: var(--primary-dark); font-size: 20px; font-weight: 700; }
         .tour-recommendation a {
             color: var(--booking-color);
             font-weight: 700;
@@ -1116,8 +803,6 @@
             font-weight: 700;
             text-transform: uppercase;
         }
-
-        /* CTA BUTTONS */
         .cta-button {
             display: inline-block;
             background-color: var(--accent-light);
@@ -1140,8 +825,6 @@
             border-color: var(--primary-dark);
             box-shadow: 0 20px 35px -5px rgba(0,0,0,0.2);
         }
-
-        /* CTA SECTION */
         .cta-section {
             background: linear-gradient(135deg, var(--primary-dark) 0%, #2d3748 100%);
             color: white;
@@ -1151,27 +834,11 @@
             border-radius: 15px;
             background-image: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%);
         }
-        @media (min-width: 768px) {
-            .cta-section { padding: 80px 0; margin-top: 80px; }
-        }
-        .cta-section h2 {
-            color: var(--accent-light);
-            margin-bottom: 25px;
-            font-size: 36px;
-            font-weight: 800;
-        }
+        @media (min-width: 768px) { .cta-section { padding: 80px 0; margin-top: 80px; } }
+        .cta-section h2 { color: var(--accent-light); margin-bottom: 25px; font-size: 36px; font-weight: 800; }
         @media (min-width: 768px) { .cta-section h2 { font-size: 42px; } }
-        .cta-section p {
-            max-width: 700px;
-            margin: 0 auto 35px;
-            font-size: 20px;
-            line-height: 1.7;
-        }
-        @media (min-width: 768px) {
-            .cta-section p { font-size: 22px; margin: 0 auto 45px; }
-        }
-
-        /* FOOTER STYLES */
+        .cta-section p { max-width: 700px; margin: 0 auto 35px; font-size: 20px; line-height: 1.7; }
+        @media (min-width: 768px) { .cta-section p { font-size: 22px; margin: 0 auto 45px; } }
         .footer {
             background-color: var(--primary-dark);
             color: white;
@@ -1179,9 +846,7 @@
             margin-top: auto;
         }
         @media (min-width: 768px) { .footer { padding: 50px 0; } }
-        .footer-content {
-            text-align: center;
-        }
+        .footer-content { text-align: center; }
         @media (min-width: 768px) {
             .footer-content {
                 display: flex;
@@ -1191,63 +856,21 @@
                 flex-wrap: wrap;
             }
         }
-        .footer-section {
-            margin-bottom: 30px;
-            flex: 1;
-            min-width: 250px;
-        }
+        .footer-section { margin-bottom: 30px; flex: 1; min-width: 250px; }
         @media (min-width: 768px) { .footer-section { margin-bottom: 0; } }
-        .footer-brand {
-            text-align: left;
-            margin-bottom: 30px;
-            flex: 1;
-            min-width: 250px;
-        }
+        .footer-brand { text-align: left; margin-bottom: 30px; flex: 1; min-width: 250px; }
         @media (min-width: 768px) { .footer-brand { margin-bottom: 0; text-align: left; } }
-        .footer-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--accent-light);
-            margin-bottom: 12px;
-        }
+        .footer-title { font-size: 22px; font-weight: 700; color: var(--accent-light); margin-bottom: 12px; }
         @media (min-width: 768px) { .footer-title { font-size: 26px; } }
-        .footer-text {
-            font-size: 15px;
-            line-height: 1.6;
-            margin: 0;
-        }
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            font-size: 15px;
-            line-height: 2;
-        }
-        .footer-links li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+        .footer-text { font-size: 15px; line-height: 1.6; margin: 0; }
+        .footer-links { list-style: none; padding: 0; font-size: 15px; line-height: 2; }
+        .footer-links li a { color: white; text-decoration: none; transition: color 0.3s ease; }
         .footer-links li a:hover { color: var(--accent-light); }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
         @media (min-width: 768px) { .social-links { justify-content: flex-start; } }
-        .social-links a {
-            color: white;
-            transition: color 0.3s ease;
-            font-size: 20px;
-        }
+        .social-links a { color: white; transition: color 0.3s ease; font-size: 20px; }
         .social-links a:hover { color: var(--accent-light); }
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+        .footer-contact { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; margin-bottom: 20px; }
         .footer-contact-info {
             display: flex;
             align-items: center;
@@ -1260,22 +883,11 @@
         }
         @media (min-width: 768px) { .footer-contact-info { justify-content: flex-start; } }
         .footer-contact-info:hover { color: var(--accent-light); }
-        .footer-map {
-            margin-top: 30px;
-            width: 100%;
-            flex: 2;
-        }
+        .footer-map { margin-top: 30px; width: 100%; flex: 2; }
         @media (min-width: 768px) { .footer-map { margin-top: 0; } }
-        .footer-map iframe {
-            width: 100%;
-            height: 350px;
-            border: none;
-            border-radius: 12px;
-        }
+        .footer-map iframe { width: 100%; height: 350px; border: none; border-radius: 12px; }
         @media (min-width: 768px) { .footer-map iframe { height: 400px; } }
         @media (min-width: 1024px) { .footer-map iframe { height: 450px; } }
-
-        /* BOOK NOW BUTTON */
         .book-now-button {
             font-weight: 700;
             padding: 10px 20px;
@@ -1297,43 +909,9 @@
             text-decoration: none;
             border-color: #1a202c;
         }
-
-        /* BADGES */
-        .standard-badge {
-            display: inline-block;
-            background-color: #38a169;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-        .premium-badge {
-            display: inline-block;
-            background-color: #805ad5;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-        .recommended-badge {
-            display: inline-block;
-            background-color: #B8860B;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
-        /* WARNING & ADVICE BOXES */
+        .standard-badge { display: inline-block; background-color: #38a169; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-left: 10px; vertical-align: middle; }
+        .premium-badge { display: inline-block; background-color: #805ad5; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-left: 10px; vertical-align: middle; }
+        .recommended-badge { display: inline-block; background-color: #B8860B; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-left: 10px; vertical-align: middle; }
         .warning-box {
             background: linear-gradient(135deg, #fed7d7 0%, #fef2f2 100%);
             border-left: 6px solid var(--warning-color);
@@ -1341,11 +919,7 @@
             margin: 40px 0;
             border-radius: 12px;
         }
-        .warning-box h3 {
-            color: var(--warning-color);
-            margin-top: 0;
-            font-size: 24px;
-        }
+        .warning-box h3 { color: var(--warning-color); margin-top: 0; font-size: 24px; }
         .advice-box {
             background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
             border-left: 6px solid var(--success-color);
@@ -1353,13 +927,7 @@
             margin: 40px 0;
             border-radius: 12px;
         }
-        .advice-box h3 {
-            color: var(--success-color);
-            margin-top: 0;
-            font-size: 24px;
-        }
-
-        /* HEAT SAFETY WIDGET STYLE */
+        .advice-box h3 { color: var(--success-color); margin-top: 0; font-size: 24px; }
         .heat-widget {
             background: white;
             padding: 25px;
@@ -1368,10 +936,7 @@
             margin: 30px 0;
             border: 2px solid #e5e7eb;
         }
-        .heat-widget h4 {
-            margin-top: 0;
-            color: var(--primary-dark);
-        }
+        .heat-widget h4 { margin-top: 0; color: var(--primary-dark); }
         .heat-list {
             background: #f9fafb;
             padding: 20px;
@@ -1379,15 +944,7 @@
             margin: 15px 0;
             border-left: 3px solid var(--heat-color);
         }
-        .heat-disclaimer {
-            font-size: 13px;
-            color: #6b7280;
-            text-align: center;
-            margin-top: 8px;
-            font-style: italic;
-        }
-
-        /* PHOTOGRAPHY SPECIFIC TIPS */
+        .heat-disclaimer { font-size: 13px; color: #6b7280; text-align: center; margin-top: 8px; font-style: italic; }
         .photography-tips {
             background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
             border-radius: 15px;
@@ -1395,25 +952,8 @@
             margin: 50px 0;
             border: 3px dashed var(--accent-light);
         }
-
-        /* RESPONSIVE IMAGES */
-        .content-image {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            margin: 30px 0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .image-caption {
-            text-align: center;
-            font-style: italic;
-            color: #6b7280;
-            margin-top: -20px;
-            margin-bottom: 30px;
-            font-size: 16px;
-        }
-
-        /* BACK TO TOP BUTTON */
+        .content-image { width: 100%; height: auto; border-radius: 12px; margin: 30px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .image-caption { text-align: center; font-style: italic; color: #6b7280; margin-top: -20px; margin-bottom: 30px; font-size: 16px; }
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -1434,40 +974,13 @@
             opacity: 0;
             visibility: hidden;
         }
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        .back-to-top:hover {
-            background: var(--accent-dark);
-            transform: scale(1.1);
-        }
-        
-        /* Trustpilot Widget Container */
-        .trustpilot-widget-container {
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        /* Breadcrumb Navigation (Visible) */
-        .breadcrumb {
-            padding: 16px 0;
-            font-size: 14px;
-            color: #6b7280;
-        }
-        .breadcrumb a {
-            color: var(--tour-color);
-            text-decoration: none;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        .breadcrumb span {
-            margin: 0 4px;
-            color: #9ca3af;
-        }
-        
-        /* Cookie Consent Banner Placeholder */
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--accent-dark); transform: scale(1.1); }
+        .trustpilot-widget-container { margin: 40px 0; text-align: center; }
+        .breadcrumb { padding: 16px 0; font-size: 14px; color: #6b7280; }
+        .breadcrumb a { color: var(--tour-color); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 4px; color: #9ca3af; }
         .cookie-consent {
             position: fixed;
             bottom: 0;
@@ -1484,14 +997,8 @@
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
-        .cookie-consent.visible {
-            transform: translateY(0);
-        }
-        .cookie-consent p {
-            margin: 0;
-            font-size: 14px;
-            flex: 1;
-        }
+        .cookie-consent.visible { transform: translateY(0); }
+        .cookie-consent p { margin: 0; font-size: 14px; flex: 1; }
         .cookie-consent button {
             background: var(--accent-light);
             color: var(--primary-dark);
@@ -1502,11 +1009,7 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-        .cookie-consent button:hover {
-            background: var(--accent-dark);
-        }
-        
-        /* Heat Safety-Specific Styles */
+        .cookie-consent button:hover { background: var(--accent-dark); }
         .heat-checklist {
             background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
             border-radius: 12px;
@@ -1514,68 +1017,64 @@
             margin: 30px 0;
             border-left: 5px solid var(--warning-color);
         }
-        
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-        
-        .checklist-item i {
-            color: var(--success-color);
-            margin-top: 3px;
-        }
-        
-        .heat-rating {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin: 10px 0;
-        }
-        
-        .rating-symptoms {
-            background: rgba(5, 150, 105, 0.1);
-            color: var(--heat-color);
-        }
-        
-        .rating-hydration {
-            background: rgba(14, 165, 233, 0.1);
-            color: #0EA5E9;
-        }
-        
-        .rating-emergency {
-            background: rgba(220, 38, 38, 0.1);
-            color: #DC2626;
-        }
-        
-        .rating-photography {
-            background: rgba(245, 158, 11, 0.1);
-            color: #d97706;
-        }
+        .checklist-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-size: 16px; }
+        .checklist-item i { color: var(--success-color); margin-top: 3px; }
+        .heat-rating { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; padding: 8px 16px; border-radius: 20px; margin: 10px 0; }
+        .rating-symptoms { background: rgba(5, 150, 105, 0.1); color: var(--heat-color); }
+        .rating-hydration { background: rgba(14, 165, 233, 0.1); color: #0EA5E9; }
+        .rating-emergency { background: rgba(220, 38, 38, 0.1); color: #DC2626; }
+        .rating-photography { background: rgba(245, 158, 11, 0.1); color: #d97706; }
+
+        /* Text Only Related Guides */
+        .related-guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .related-guide-card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); border-left: 4px solid var(--heat-color); }
+        .related-guide-card h4 { margin-bottom: 10px; font-size: 18px; }
+        .related-guide-card h4 a { color: var(--primary-dark); text-decoration: none; }
+        .related-guide-card h4 a:hover { color: var(--heat-color); }
+        .related-guide-card p { font-size: 14px; color: #6b7280; margin-bottom: 12px; }
+        .related-guide-card .read-more { color: var(--heat-color); font-weight: 600; text-decoration: none; }
+        .related-guide-card .read-more:hover { text-decoration: underline; }
+
+        /* Contact Form CSS */
+        .trip-builder{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
+        @media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
+        .trip-form-box{background:var(--c-white, #fff);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
+        .form-row{margin-bottom:16px}
+        .form-label{display:block;font-size:13px;font-weight:600;color:var(--primary-dark);margin-bottom:6px}
+        .form-req{color:#ef4444}
+        .form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--text-color);transition:border-color .28s;background:#fff}
+        .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
+        .form-textarea{min-height:90px;resize:vertical}
+        .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        @media(max-width:480px){.form-row-2{grid-template-columns:1fr}}
+        .form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--primary-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all .28s;min-height:52px}
+        .form-submit:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+        .trip-contacts{display:flex;flex-direction:column;gap:20px;justify-content:center}
+        .contact-card{background:var(--c-white, #fff);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);text-align:center}
+        .contact-card-icon{font-size:40px;margin-bottom:14px;display:block}
+        .contact-card h3{font-size:18px;color:var(--primary-dark);margin-bottom:8px}
+        .contact-card p{font-size:14px;color:var(--c-muted);margin-bottom:16px;line-height:1.6}
+        .section-accent{background:linear-gradient(135deg,#1a202c 0%,#2d3748 100%);color:#fff}
+        .section-accent h2, .section-accent h3{color:#fff}
+        .section-accent .sec-sub{color:rgba(255,255,255,.85)}
     </style>
-<html><head><link href="https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html" rel="canonical"/></head></html><html><head><link href="https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html" hreflang="en" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/no/heat-illness-prevention-guide-2026.html" hreflang="no" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/pt/heat-illness-prevention-guide-2026.html" hreflang="pt" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ru/heat-illness-prevention-guide-2026.html" hreflang="ru" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/sv/heat-illness-prevention-guide-2026.html" hreflang="sv" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/hi/heat-illness-prevention-guide-2026.html" hreflang="hi" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/pl/heat-illness-prevention-guide-2026.html" hreflang="pl" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/de/heat-illness-prevention-guide-2026.html" hreflang="de" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/id/heat-illness-prevention-guide-2026.html" hreflang="id" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/fr/heat-illness-prevention-guide-2026.html" hreflang="fr" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/da/heat-illness-prevention-guide-2026.html" hreflang="da" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ar/heat-illness-prevention-guide-2026.html" hreflang="ar" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/cs/heat-illness-prevention-guide-2026.html" hreflang="cs" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/vi/heat-illness-prevention-guide-2026.html" hreflang="vi" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ro/heat-illness-prevention-guide-2026.html" hreflang="ro" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/th/heat-illness-prevention-guide-2026.html" hreflang="th" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/es/heat-illness-prevention-guide-2026.html" hreflang="es" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ko/heat-illness-prevention-guide-2026.html" hreflang="ko" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/it/heat-illness-prevention-guide-2026.html" hreflang="it" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/zh-CN/heat-illness-prevention-guide-2026.html" hreflang="zh" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/nl/heat-illness-prevention-guide-2026.html" hreflang="nl" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/tl/heat-illness-prevention-guide-2026.html" hreflang="tl" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/fi/heat-illness-prevention-guide-2026.html" hreflang="fi" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ja/heat-illness-prevention-guide-2026.html" hreflang="ja" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/tr/heat-illness-prevention-guide-2026.html" hreflang="tr" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/heat-illness-prevention-guide-2026.html" hreflang="x-default" rel="alternate"/></head></html></head>
+</head>
 <body>
-<!-- Accessibility: Skip to Content Link -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="header">
 <div class="container content">
 <div class="logo-section">
 <img alt="Egypt Photography Tours Logo - Heat illness prevention expertise" class="logo-img" height="40" loading="eager" src="/images/egypt-photography-tours-logo.jpg" width="40"/>
-<a class="logo-link" href="/index.html">Egypt Photography Tours</a>
+<a class="logo-link" href="/">Egypt Photography Tours</a>
 </div>
 <div class="header-text">Where Photography Meets Deep Cultural Understanding</div>
 <div class="header-contact">
 <a class="contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
 <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                </a>
+</a>
 <a class="contact-info" href="mailto:info@egyptphotographytours.com">
 <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                </a>
+</a>
 </div>
 </div>
 </header>
@@ -1585,8 +1084,7 @@
 <button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-menu-toggle">
 <i class="fas fa-bars"></i>
 </button>
-<a class="book-now-button" href="https://www.egyptphotographytours.com/tours">Book Your Experience</a>
-<!-- Language Switcher - FULL 20 LANGUAGES, ENGLISH DEFAULT -->
+<a class="book-now-button" href="/tours">Book Your Experience</a>
 <div class="language-switcher">
 <div aria-label="Select language" class="current-language" role="button" tabindex="0">
 <span class="current-flag">🇺🇸</span>
@@ -1594,127 +1092,30 @@
 <i aria-hidden="true" class="fas fa-chevron-down dropdown-icon"></i>
 </div>
 <div class="language-dropdown" role="menu">
-<!-- English (DEFAULT/ACTIVE) -->
 <a class="language-item active" data-flag="🇺🇸" data-lang="en" href="/heat-illness-prevention-guide-2026.html" role="menuitem">
 <span class="flag-icon">🇺🇸</span>
 <span class="language-text">English</span>
-</a>
-<!-- Arabic -->
-<a class="language-item" data-flag="🇪🇬" data-lang="ar" href="/ar/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇪🇬</span>
-<span class="language-text">العربية (Arabic)</span>
-</a>
-<!-- French -->
-<a class="language-item" data-flag="🇫🇷" data-lang="fr" href="/fr/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇫🇷</span>
-<span class="language-text">Français (French)</span>
-</a>
-<!-- German -->
-<a class="language-item" data-flag="🇩🇪" data-lang="de" href="/de/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇩🇪</span>
-<span class="language-text">Deutsch (German)</span>
-</a>
-<!-- Spanish -->
-<a class="language-item" data-flag="🇪🇸" data-lang="es" href="/es/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇪🇸</span>
-<span class="language-text">Español (Spanish)</span>
-</a>
-<!-- Italian -->
-<a class="language-item" data-flag="🇮🇹" data-lang="it" href="/it/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇮🇹</span>
-<span class="language-text">Italiano (Italian)</span>
-</a>
-<!-- Chinese -->
-<a class="language-item" data-flag="🇨🇳" data-lang="zh" href="/zh/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇨🇳</span>
-<span class="language-text">中文 (Chinese)</span>
-</a>
-<!-- Korean -->
-<a class="language-item" data-flag="🇰🇷" data-lang="ko" href="/ko/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇰🇷</span>
-<span class="language-text">한국어 (Korean)</span>
-</a>
-<!-- Portuguese -->
-<a class="language-item" data-flag="🇵🇹" data-lang="pt" href="/pt/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇵🇹</span>
-<span class="language-text">Português (Portuguese)</span>
-</a>
-<!-- Indonesian -->
-<a class="language-item" data-flag="🇮🇩" data-lang="id" href="/id/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇮🇩</span>
-<span class="language-text">Bahasa Indonesia</span>
-</a>
-<!-- Japanese -->
-<a class="language-item" data-flag="🇯🇵" data-lang="ja" href="/ja/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇯🇵</span>
-<span class="language-text">日本語 (Japanese)</span>
-</a>
-<!-- Russian -->
-<a class="language-item" data-flag="🇷🇺" data-lang="ru" href="/ru/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇷🇺</span>
-<span class="language-text">Русский (Russian)</span>
-</a>
-<!-- Danish -->
-<a class="language-item" data-flag="🇩🇰" data-lang="da" href="/da/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇩🇰</span>
-<span class="language-text">Dansk (Danish)</span>
-</a>
-<!-- Dutch -->
-<a class="language-item" data-flag="🇳🇱" data-lang="nl" href="/nl/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇳🇱</span>
-<span class="language-text">Nederlands (Dutch)</span>
-</a>
-<!-- Hindi -->
-<a class="language-item" data-flag="🇮🇳" data-lang="hi" href="/hi/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇮🇳</span>
-<span class="language-text">हिन्दी (Hindi)</span>
-</a>
-<!-- Norwegian -->
-<a class="language-item" data-flag="🇳🇴" data-lang="no" href="/no/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇳🇴</span>
-<span class="language-text">Norsk (Norwegian)</span>
-</a>
-<!-- Swedish -->
-<a class="language-item" data-flag="🇸🇪" data-lang="sv" href="/sv/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇸🇪</span>
-<span class="language-text">Svenska (Swedish)</span>
-</a>
-<!-- Tagalog -->
-<a class="language-item" data-flag="🇵🇭" data-lang="tl" href="/tl/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇵🇭</span>
-<span class="language-text">Tagalog</span>
-</a>
-<!-- Malay -->
-<a class="language-item" data-flag="🇲🇾" data-lang="ms" href="/ms/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇲🇾</span>
-<span class="language-text">Melayu (Malay)</span>
-</a>
-<!-- Thai -->
-<a class="language-item" data-flag="🇹🇭" data-lang="th" href="/th/heat-illness-prevention-guide-2026.html" role="menuitem">
-<span class="flag-icon">🇹🇭</span>
-<span class="language-text">ไทย (Thai)</span>
 </a>
 </div>
 </div>
 </div>
 <ul class="nav-links" role="menubar">
-<li class="nav-link" role="none"><a href="/index.html" role="menuitem">Home</a></li>
-<li class="nav-link" role="none"><a href="/about.html" role="menuitem">About Us</a></li>
-<li class="nav-link" role="none"><a href="https://www.egyptphotographytours.com/tours" role="menuitem">Our Tours</a></li>
-<li class="nav-link" role="none"><a href="/gallery.html" role="menuitem">Gallery</a></li>
-<li class="nav-link" role="none"><a href="/resources.html" role="menuitem">Resources</a></li>
-<li class="nav-link" role="none"><a href="/blog.html" role="menuitem">Blog</a></li>
-<li class="nav-link" role="none"><a href="https://www.egyptphotographytours.com/tours" role="menuitem">Contact Us</a></li>
-<li class="nav-link" role="none"><a href="/faqs.html" role="menuitem">FAQs</a></li>
+<li class="nav-link" role="none"><a href="/" role="menuitem">Home</a></li>
+<li class="nav-link" role="none"><a href="/about" role="menuitem">About Us</a></li>
+<li class="nav-link" role="none"><a href="/tours" role="menuitem">Our Tours</a></li>
+<li class="nav-link" role="none"><a href="/gallery" role="menuitem">Gallery</a></li>
+<li class="nav-link" role="none"><a href="/resources" role="menuitem">Resources</a></li>
+<li class="nav-link" role="none"><a href="/blog" role="menuitem">Blog</a></li>
+<li class="nav-link" role="none"><a href="/contact" role="menuitem">Contact Us</a></li>
+<li class="nav-link" role="none"><a href="/faqs" role="menuitem">FAQs</a></li>
 </ul>
 </div>
 </nav>
 <main class="main" id="main-content">
-<!-- Visible Breadcrumb Navigation -->
 <nav aria-label="Breadcrumb" class="breadcrumb container">
-<a href="/index.html">Home</a>
+<a href="/">Home</a>
 <span aria-hidden="true">›</span>
-<a href="/resources.html">Resources</a>
+<a href="/resources">Resources</a>
 <span aria-hidden="true">›</span>
 <span aria-current="page">Heat Illness Prevention Guide 2026</span>
 </nav>
@@ -1723,11 +1124,11 @@
 <div class="hero-content">
 <h1 class="hero-title">Egypt Heat Illness Prevention</h1>
 <p class="hero-subtitle">
-                    Recognizing Symptoms, Hydration Tactics &amp; Emergency Protocols - Book Your Professional Photography Tour Today. Expert Heat Safety Guidance, Symptom Recognition &amp; Photography Strategies with Trusted Local Support.
-                </p>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tours">
+Recognizing Symptoms, Hydration Tactics & Emergency Protocols - Book Your Professional Photography Tour Today. Expert Heat Safety Guidance, Symptom Recognition & Photography Strategies with Trusted Local Support.
+</p>
+<a class="booking-cta" href="/tours">
 <i class="fas fa-temperature-high"></i> Book Your Heat-Safe Photography Tour
-                </a>
+</a>
 </div>
 </section>
 <section class="article-section">
@@ -1740,21 +1141,18 @@
 <span class="last-updated"><i class="fas fa-sync-alt"></i> Updated: Feb 3, 2026</span>
 </div>
 <div class="article-content">
-<!-- Introduction with Strong Booking CTA -->
 <p><strong>Planning an Egypt photography expedition without understanding heat illness prevention protocols is like shooting without checking your exposure—you might get acceptable results, but you're risking health complications, missed photographic opportunities, or logistical challenges that could undermine your entire experience.</strong> Generic travel blogs offer oversimplified heat advice; medical guides hide photography restrictions in dense text; and heat-conscious photography-specific Egyptian needs create unique planning requirements that standard advice doesn't address.</p>
 <p>This comprehensive 2026 guide empowers you to make smart heat decisions: verified symptom recognition recommendations with local photography insights, hydration tactics that ensure health safety, emergency protocols that provide peace of mind, heat photography opportunities that celebrate Egyptian climate adaptation, sustainable tourism practices that protect fragile health practices, and how <strong>booking with Egypt Photography Tours</strong> enhances heat-conscious experiences with local partnerships, photography expertise, and privileged access to safe heat experiences for stress-free extended cultural photography stays.</p>
 <div class="heat-highlight">
 <h3>Ready for Smart Heat-Conscious Travel Planning?</h3>
-<p>Join Egypt Photography Tours for professional photography experiences with expert heat safety guidance, symptom recognition, and photography strategies. <a class="booking-cta" href="https://www.egyptphotographytours.com/tours"><i class="fas fa-calendar-check"></i> Book Your Experience Now</a></p>
+<p>Join Egypt Photography Tours for professional photography experiences with expert heat safety guidance, symptom recognition, and photography strategies. <a class="booking-cta" href="/tours"><i class="fas fa-calendar-check"></i> Book Your Experience Now</a></p>
 </div>
-<!-- Trustpilot Widget Container -->
 <div class="trustpilot-widget-container">
 <div class="trustpilot-widget" data-businessunit-id="5f8c7b1e0000640001e6f3a2" data-locale="en-US" data-style-height="24px" data-style-width="100%" data-template-id="5419b6ffb0d04a076446a9ad" data-theme="light">
 <a href="https://www.trustpilot.com/review/egyptphotographytours.com" rel="noopener" target="_blank">Trustpilot</a>
 </div>
 </div>
-<!-- Chapter 1: Understanding Egypt Heat Illness Prevention - Context & Photography Potential -->
-<h2>Chapter 1: Understanding Egypt Heat Illness Prevention - Context &amp; Photography Potential</h2>
+<h2>Chapter 1: Understanding Egypt Heat Illness Prevention - Context & Photography Potential</h2>
 <p>Egypt heat illness prevention considerations represent essential considerations for safe and enjoyable photography experiences, with unique symptom recognition protocols, hydration practices, and emergency responses that offer remarkable opportunities for heat-conscious travelers. Understanding these unique heat considerations is critical before planning a photography expedition. This chapter provides expert-vetted heat safety analysis specifically for photography-focused travelers with health safety as the paramount concern.</p>
 <div class="culture-grid">
 <div class="culture-card">
@@ -1764,16 +1162,16 @@
 <strong>Traditional Practices:</strong> Traditional hydration methods and modern heat safety practices • Health benefit: Visual storytelling of heat safety practices through cultural expressions<br/>
 <strong>Living Heat Practices:</strong> Continuous heat traditions, seasonal considerations, and cultural expressions that connect ancient and modern Egypt • Health benefit: Opportunities to document heat continuity and cultural practices<br/>
 <strong>Conservation Importance:</strong> These heat practices require careful preservation due to their historical and social value • Health benefit: Opportunities for heat storytelling and heritage advocacy imagery<br/>
-<strong>Book This Experience:</strong> The <a href="https://www.egyptphotographytours.com/tour-cairo-giza-2day.html">Cairo &amp; Giza 2-Day Photo Tour</a> includes heat historical guidance that helps you select the perfect heat-conscious destinations for your photography goals with safe protocols</p>
+<strong>Book This Experience:</strong> The <a href="/tour-cairo-giza-2day">Cairo & Giza 2-Day Photo Tour</a> includes heat historical guidance that helps you select the perfect heat-conscious destinations for your photography goals with safe protocols</p>
 </div>
 <div class="culture-card">
 <span class="culture-icon">🏥</span>
-<h4>Medical Context &amp; Safety Protocols</h4>
+<h4>Medical Context & Safety Protocols</h4>
 <p><strong>Healthcare System:</strong> Egypt offers quality medical care in major cities with international-standard hospitals • Health benefit: Opportunities to document authentic healthcare practices with proper respect<br/>
 <strong>Community Health:</strong> Local health practices, traditional medicine, and community wellness • Health benefit: Visual storytelling of community health through cultural expressions<br/>
 <strong>Health Continuity:</strong> Modern Egyptian communities maintain deep connections to health traditions • Health benefit: Authentic health documentation alongside historical heritage<br/>
 <strong>Contemporary Relevance:</strong> Health practices continue to shape Egyptian identity and cultural expression • Health benefit: Meaningful documentary opportunities that raise awareness about health preservation<br/>
-<strong>Book This Experience:</strong> The <a href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html">7-Day Egypt Photo Adventure</a> includes health context guidance that enhances both understanding and photographic storytelling with safe protocols</p>
+<strong>Book This Experience:</strong> The <a href="/tour-egypt-discovery-7day">7-Day Egypt Photo Adventure</a> includes health context guidance that enhances both understanding and photographic storytelling with safe protocols</p>
 </div>
 <div class="culture-card">
 <span class="culture-icon">📸</span>
@@ -1795,7 +1193,7 @@
 <li><strong>Safety Protocols:</strong> Clear guidelines for maintaining health while photographing in challenging heat environments</li>
 <li><strong>Equipment Considerations:</strong> Specialized gear recommendations for heat-conscious environments and cultural documentation</li>
 </ul>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tours"><i class="fas fa-temperature-high"></i> Book Your Heat-Conscious Experience</a>
+<a class="booking-cta" href="/tours"><i class="fas fa-temperature-high"></i> Book Your Heat-Conscious Experience</a>
 </div>
 <div class="advice-box">
 <h3>Why Book Heat-Optimized Tours with Egypt Photography Tours?</h3>
@@ -1805,9 +1203,8 @@
 <li><strong>Equipment Protection:</strong> Strategies for protecting valuable photography equipment in challenging heat environments while enabling creative freedom</li>
 <li><strong>Photography Timing:</strong> Local knowledge of optimal light conditions and heat patterns for each heat location with health awareness</li>
 </ul>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tours"><i class="fas fa-check-circle"></i> Book Your Heat-Optimized Tour Today</a>
+<a class="booking-cta" href="/tours"><i class="fas fa-check-circle"></i> Book Your Heat-Optimized Tour Today</a>
 </div>
-<!-- Chapter 2: Recognizing Heat Illness Symptoms in Egypt -->
 <h2>Chapter 2: Recognizing Heat Illness Symptoms in Egypt</h2>
 <p>Egyptian heat illness symptoms offer exceptional opportunities to photograph health traditions and safety practices. This chapter reveals expert-vetted symptom recognition guidance specifically for preparing for these remarkable heat-conscious experiences while capturing authentic cultural moments.</p>
 <div class="service-category category-symptoms">
@@ -1839,10 +1236,9 @@
 <li><strong>Composition Coaching:</strong> On-location guidance for capturing symptoms' unique health and cultural elements with photographic impact and health respect</li>
 <li><strong>Health Integration:</strong> Strategies for respectfully incorporating symptom context into photography while honoring health traditions and community practices</li>
 </ul>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tours"><i class="fas fa-heartbeat"></i> Book Your Symptom Photography Tour</a>
+<a class="booking-cta" href="/tours"><i class="fas fa-heartbeat"></i> Book Your Symptom Photography Tour</a>
 </div>
 </div>
-<!-- Chapter 3: Hydration Tactics for Egypt's Desert Climate -->
 <h2>Chapter 3: Hydration Tactics for Egypt's Desert Climate</h2>
 <p>Egyptian hydration tactics offer unparalleled opportunities for cultural photography that documents authentic health practices and community wellness. This chapter provides expert guidance for photographing these remarkable hydration practices with proper protocols and deep respect.</p>
 <div class="service-category category-hydration">
@@ -1864,28 +1260,28 @@
 <td>Water distribution, cultural practices, health continuity, community wellness</td>
 <td>Drink 1 liter per hour during activity in hot conditions • Health benefit: Prevents dehydration and heat illness</td>
 <td>Coordinate with water providers for optimal access, respect health protocols</td>
-<td><a href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html">7-Day Adventure</a></td>
+<td><a href="/tour-egypt-discovery-7day">7-Day Adventure</a></td>
 </tr>
 <tr>
 <td><strong>Electrolyte Balance</strong></td>
 <td>Traditional remedies, cultural practices, health continuity, community wellness</td>
 <td>Use oral rehydration solutions or sports drinks • Health benefit: Replaces essential minerals lost through sweat</td>
 <td>Evening for vibrant atmosphere, coordinate with vendors for cultural documentation</td>
-<td><a href="https://www.egyptphotographytours.com/tour-cairo-giza-2day.html">Cairo &amp; Giza 2-Day</a></td>
+<td><a href="/tour-cairo-giza-2day">Cairo & Giza 2-Day</a></td>
 </tr>
 <tr>
 <td><strong>Timing Strategies</strong></td>
 <td>Traditional practices, cultural continuity, community wellness</td>
 <td>Drink before feeling thirsty, especially during photography sessions • Health benefit: Prevents dehydration before symptoms appear</td>
 <td>Golden hour for warm tones, coordinate with communities for optimal access</td>
-<td><a href="https://www.egyptphotographytours.com/tour-pyramids-private.html">Private Pyramids</a></td>
+<td><a href="/tour-pyramids-private">Private Pyramids</a></td>
 </tr>
 <tr>
 <td><strong>Avoid Dehydrants</strong></td>
 <td>Cultural practices, health continuity, community wellness</td>
 <td>Limit caffeine and alcohol which increase fluid loss • Health benefit: Maintains optimal hydration levels</td>
 <td>Coordinate with community leaders for optimal photography opportunities</td>
-<td><a href="https://www.egyptphotographytours.com/tours">All Tours</a></td>
+<td><a href="/tours">All Tours</a></td>
 </tr>
 </tbody>
 </table>
@@ -1898,10 +1294,9 @@
 <li><strong>Access Coordination:</strong> Established relationships with health authorities that enable respectful photography access to meaningful health experiences</li>
 <li><strong>Ethical Framework:</strong> Tourism models that ensure photography experiences benefit local communities and protect fragile health traditions</li>
 </ul>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tours"><i class="fas fa-tint"></i> Book Your Hydration Photography Tour</a>
+<a class="booking-cta" href="/tours"><i class="fas fa-tint"></i> Book Your Hydration Photography Tour</a>
 </div>
 </div>
-<!-- Chapter 4: Emergency Protocols for Heat Illness -->
 <h2>Chapter 4: Emergency Protocols for Heat Illness</h2>
 <p>Egyptian emergency protocols offer exceptional opportunities for cultural photography that documents authentic health practices and community wellness. This chapter provides expert guidance for photographing these remarkable emergency practices with proper protocols and deep respect.</p>
 <div class="service-category category-emergency">
@@ -1913,15 +1308,15 @@
 <p><strong>Immediate Cooling:</strong> Medical interventions, cultural practices, health continuity • Best times: Morning for medical details, coordinate with facilities for cultural documentation • Photography tips: Wide-angle for context, telephoto for details, respect medical privacy<br/>
 <strong>Hydration Support:</strong> Medical practices, cultural continuity, community wellness • Best times: Morning for medical details, coordinate with facilities for cultural documentation • Photography tips: Cultural sensitivity protocols, permission practices, equipment protection<br/>
 <strong>Medical Assistance:</strong> Emergency services, cultural practices, health continuity • Best times: Golden hour for warm tones, coordinate with communities for cultural documentation • Photography tips: Cultural storytelling techniques, ethical documentation practices, community engagement<br/>
-<strong>Book This Experience:</strong> The <a href="https://www.egyptphotographytours.com/tour-cairo-giza-2day.html">Cairo &amp; Giza 2-Day Photo Tour</a> includes emergency photography guidance with location-specific timing strategies and health sensitivity protocols</p>
+<strong>Book This Experience:</strong> The <a href="/tour-cairo-giza-2day">Cairo & Giza 2-Day Photo Tour</a> includes emergency photography guidance with location-specific timing strategies and health sensitivity protocols</p>
 </div>
 <div class="culture-card">
 <span class="culture-icon">🩺</span>
 <h4>Medical Care Photography Guidelines</h4>
-<p><strong>Rest &amp; Recovery:</strong> Traditional practices, cultural continuity, community wellness • Best times: Morning for cultural details, coordinate with communities for cultural documentation • Photography tips: Cultural sensitivity protocols, permission practices, equipment protection<br/>
+<p><strong>Rest & Recovery:</strong> Traditional practices, cultural continuity, community wellness • Best times: Morning for cultural details, coordinate with communities for cultural documentation • Photography tips: Cultural sensitivity protocols, permission practices, equipment protection<br/>
 <strong>Prevention Education:</strong> Cultural traditions, health continuity, community wellness • Best times: Coordinate with communities for optimal access, respect health protocols • Photography tips: Health storytelling techniques, ethical documentation practices, community engagement<br/>
 <strong>Community Support:</strong> Cultural practices, health continuity, community wellness • Best times: Golden hour for warm tones, coordinate with communities for cultural documentation • Photography tips: Cultural storytelling techniques, ethical documentation practices, community engagement<br/>
-<strong>Book This Experience:</strong> The <a href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html">7-Day Egypt Photo Adventure</a> includes emergency photography guidance that enhances both respect and photographic opportunities</p>
+<strong>Book This Experience:</strong> The <a href="/tour-egypt-discovery-7day">7-Day Egypt Photo Adventure</a> includes emergency photography guidance that enhances both respect and photographic opportunities</p>
 </div>
 <div class="culture-card">
 <span class="culture-icon">🌿</span>
@@ -1940,10 +1335,9 @@
 <li><strong>Impact Amplification:</strong> Strategies for using your photography to raise awareness and support heat heritage conservation efforts</li>
 <li><strong>Community Integration:</strong> Tourism models that ensure photography experiences benefit local communities and protect cultural heritage</li>
 </ul>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tours"><i class="fas fa-ambulance"></i> Book Your Emergency Photography Tour</a>
+<a class="booking-cta" href="/tours"><i class="fas fa-ambulance"></i> Book Your Emergency Photography Tour</a>
 </div>
 </div>
-<!-- Chapter 5: Best Heat Safety Strategies by Photography Type -->
 <h2>Chapter 5: Optimal Heat Safety Strategies by Photography Type - Book Your Perfect Safe Experience</h2>
 <p>Different photography specialties demand tailored heat approaches. Our tours provide customized heat strategies based on photographic focus, health interests, and conservation priorities.</p>
 <div class="service-category category-photography">
@@ -1963,37 +1357,37 @@
 <td><strong>Medical/Documentary</strong></td>
 <td>Symptom focus with health documentation and cultural sensitivity</td>
 <td>Health sensitivity protocols, authentic medical documentation, community storytelling, respectful interactions</td>
-<td><a href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html">7-Day Adventure</a></td>
+<td><a href="/tour-egypt-discovery-7day">7-Day Adventure</a></td>
 </tr>
 <tr>
 <td><strong>Hydration/Decorative</strong></td>
 <td>Hydration immersion with water documentation and cultural respect</td>
 <td>Hydration photography techniques, cultural documentation, artistic storytelling, historical context</td>
-<td><a href="https://www.egyptphotographytours.com/tour-pyramids-private.html">Private Pyramids</a></td>
+<td><a href="/tour-pyramids-private">Private Pyramids</a></td>
 </tr>
 <tr>
 <td><strong>Emergency/Atmospheric</strong></td>
 <td>Emergency focus with atmospheric documentation and reverence</td>
 <td>Emergency photography techniques, cultural storytelling, ethical documentation, historical context</td>
-<td><a href="https://www.egyptphotographytours.com/tour-cairo-giza-2day.html">Cairo &amp; Giza 2-Day</a></td>
+<td><a href="/tour-cairo-giza-2day">Cairo & Giza 2-Day</a></td>
 </tr>
 <tr>
 <td><strong>Architectural/Adaptive</strong></td>
 <td>Architecture focus with adaptive documentation and cultural integration</td>
 <td>Architecture photography techniques, adaptive documentation, cultural storytelling, community engagement</td>
-<td><a href="https://www.egyptphotographytours.com/tour-alexandria.html">Alexandria Day Trip</a></td>
+<td><a href="/tour-alexandria">Alexandria Day Trip</a></td>
 </tr>
 <tr>
 <td><strong>Couple/Travel Duo</strong></td>
 <td>Coordinated heat experience with shared photography goals</td>
 <td>Dual perspective compositions, couple-in-heat-context shots, shared cultural experiences</td>
-<td><a href="https://www.egyptphotographytours.com/honeymoon-tours.html">Honeymoon Tours</a></td>
+<td><a href="/honeymoon-tours">Honeymoon Tours</a></td>
 </tr>
 <tr>
 <td><strong>Family Photography</strong></td>
 <td>Family-friendly heat activities with educational components</td>
 <td>Family-in-heat-context compositions, educational health documentation, intergenerational storytelling</td>
-<td><a href="https://www.egyptphotographytours.com/family-tours.html">Family Tours</a></td>
+<td><a href="/family-tours">Family Tours</a></td>
 </tr>
 </tbody>
 </table>
@@ -2006,10 +1400,9 @@
 <li><strong>Adaptive Support:</strong> On-tour heat consultation and adaptive strategies for changing health conditions or unexpected photographic opportunities</li>
 <li><strong>Local Partnerships:</strong> Connections with heat-based guides, communities, and authorities experienced in photography travel that understand creative-specific needs and health sensitivities</li>
 </ul>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tours"><i class="fas fa-cogs"></i> Book Your Customized Heat Experience</a>
+<a class="booking-cta" href="/tours"><i class="fas fa-cogs"></i> Book Your Customized Heat Experience</a>
 </div>
 </div>
-<!-- Chapter 6: Real Traveler Heat Experiences -->
 <h2>Chapter 6: Real Traveler Heat Reviews - Book with Confidence</h2>
 <p>Learn from photographers who optimized their heat experience with expert guidance from Egypt Photography Tours in 2025-2026.</p>
 <div class="review-card">
@@ -2029,7 +1422,7 @@
 </div>
 </div>
 <div class="review-content">
-<p><strong>"Egypt Photography Tours' heat illness prevention guidance transformed my Egypt cultural photography experience! They provided comprehensive symptom recognition protocols, hydration strategies, and emergency response tips that kept me safe throughout my trip. Their heat safety expertise enabled me to capture Egypt's beauty without heat concerns. Their heat prevention expertise added profound peace of mind to my photography journey. The resulting images captured Egypt's heat heritage with both technical excellence and health safety. <a href="https://www.egyptphotographytours.com/tours">Book your experience here</a> for smart heat-conscious planning."</strong></p>
+<p><strong>"Egypt Photography Tours' heat illness prevention guidance transformed my Egypt cultural photography experience! They provided comprehensive symptom recognition protocols, hydration strategies, and emergency response tips that kept me safe throughout my trip. Their heat safety expertise enabled me to capture Egypt's beauty without heat concerns. Their heat prevention expertise added profound peace of mind to my photography journey. The resulting images captured Egypt's heat heritage with both technical excellence and health safety. <a href="/tours">Book your experience here</a> for smart heat-conscious planning."</strong></p>
 </div>
 </div>
 <div class="review-card">
@@ -2049,7 +1442,7 @@
 </div>
 </div>
 <div class="review-content">
-<p><strong>"The heat-safe extension from Egypt Photography Tours was the highlight of my Egypt cultural photography journey. Their symptom recognition protocols enabled early intervention, their hydration guidance resulted in healthy days of photography, and their emergency response knowledge provided essential backup. The resulting photographs captured Egypt's beauty without heat concerns. <a href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html">Book the 7-Day Adventure</a> for expert heat illness prevention guidance."</strong></p>
+<p><strong>"The heat-safe extension from Egypt Photography Tours was the highlight of my Egypt cultural photography journey. Their symptom recognition protocols enabled early intervention, their hydration guidance resulted in healthy days of photography, and their emergency response knowledge provided essential backup. The resulting photographs captured Egypt's beauty without heat concerns. <a href="/tour-egypt-discovery-7day">Book the 7-Day Adventure</a> for expert heat illness prevention guidance."</strong></p>
 </div>
 </div>
 <div class="review-card">
@@ -2069,10 +1462,9 @@
 </div>
 </div>
 <div class="review-content">
-<p><strong>"Egypt Photography Tours' heat photography guidance was invaluable for my cultural photography project. They connected me with expert local guides who shared access to pristine photography locations in heat-conscious settings, taught equipment protection protocols that preserved my gear in challenging environments, and enabled authentic cultural experiences that resulted in portfolio-worthy images. The resulting photographs captured Egypt's heat heritage in ways I never imagined possible while ensuring minimal impact on fragile health traditions. <a href="https://www.egyptphotographytours.com/tour-pyramids-private.html">Book the Private Pyramids Tour</a> for expert heat guidance."</strong></p>
+<p><strong>"Egypt Photography Tours' heat photography guidance was invaluable for my cultural photography project. They connected me with expert local guides who shared access to pristine photography locations in heat-conscious settings, taught equipment protection protocols that preserved my gear in challenging environments, and enabled authentic cultural experiences that resulted in portfolio-worthy images. The resulting photographs captured Egypt's heat heritage in ways I never imagined possible while ensuring minimal impact on fragile health traditions. <a href="/tour-pyramids-private">Book the Private Pyramids Tour</a> for expert heat guidance."</strong></p>
 </div>
 </div>
-<!-- Chapter 7: Why Choose Egypt Photography Tours - Strong Conversion Focus -->
 <h2>Chapter 7: Why Book Heat-Guided Tours with Egypt Photography Tours</h2>
 <p>Independent heat planning is possible but requires deep knowledge of medical protocols, heat sensitivities, and photography-specific challenges. Specialized operators remove uncertainty and maximize creative potential while ensuring comprehensive, culturally respectful, and safe heat experiences.</p>
 <div class="trust-section">
@@ -2082,71 +1474,69 @@
 <div class="trust-card">
 <span class="trust-icon">🗺️</span>
 <h3>Heat Access Mastery</h3>
-<p>We provide personalized heat planning that balances photographic opportunities with health respect, ensuring your creative journey proceeds safely through Egypt's beautiful heat experiences. <a href="https://www.egyptphotographytours.com/tours">Book your experience here</a>.</p>
+<p>We provide personalized heat planning that balances photographic opportunities with health respect, ensuring your creative journey proceeds safely through Egypt's beautiful heat experiences. <a href="/tours">Book your experience here</a>.</p>
 </div>
 <div class="trust-card">
 <span class="trust-icon">📸</span>
 <h3>Heat Photography Expertise</h3>
-<p>Our expert guidance ensures optimal heat photography timing, equipment protection strategies, and composition techniques that maximize your creative output in these unique heat environments while maintaining safe protocols. <a href="https://www.egyptphotographytours.com/tours">Book your experience here</a>.</p>
+<p>Our expert guidance ensures optimal heat photography timing, equipment protection strategies, and composition techniques that maximize your creative output in these unique heat environments while maintaining safe protocols. <a href="/tours">Book your experience here</a>.</p>
 </div>
 <div class="trust-card">
 <span class="trust-icon">🤝</span>
-<h3>Health &amp; Cultural Stewardship</h3>
-<p>We connect you with heat communities, conservation projects, and local authorities that understand both heritage preservation and photography tourism, enabling authentic experiences that benefit both travelers and heat traditions. <a href="https://www.egyptphotographytours.com/tours">Book your experience here</a>.</p>
+<h3>Health & Cultural Stewardship</h3>
+<p>We connect you with heat communities, conservation projects, and local authorities that understand both heritage preservation and photography tourism, enabling authentic experiences that benefit both travelers and heat traditions. <a href="/tours">Book your experience here</a>.</p>
 </div>
 </div>
 </div>
 </div>
-<!-- Tour Integration Section with EXACT LINKS REQUESTED -->
 <div class="tour-integration">
 <h3>Book Your Heat-Guided Photography Experience Today</h3>
-<p>Every tour we offer features expert heat guidance, heat photography tips, and safe immersion support for stress-free heat-conscious travel. <strong><a href="https://www.egyptphotographytours.com/tours">Book your experience here</a></strong> to experience Egypt's heat heritage with smart, photography-optimized planning that prioritizes health safety.</p>
+<p>Every tour we offer features expert heat guidance, heat photography tips, and safe immersion support for stress-free heat-conscious travel. <strong><a href="/tours">Book your experience here</a></strong> to experience Egypt's heat heritage with smart, photography-optimized planning that prioritizes health safety.</p>
 <div class="tour-recommendation">
 <span class="tour-badge">MOST POPULAR</span>
-<h4><a href="https://www.egyptphotographytours.com/tour-pyramids-private.html">Private Pyramids Photography Tour</a></h4>
+<h4><a href="/tour-pyramids-private">Private Pyramids Photography Tour</a></h4>
 <p><strong>Heat Highlights:</strong> Cultural immersion focus with symptom access and safe photography timing. Perfect for capturing authentic heat experiences with expert cultural guidance and health-sensitive photography optimization.</p>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tour-pyramids-private.html"><i class="fas fa-pyramid"></i> Book Private Pyramids Tour</a>
+<a class="booking-cta" href="/tour-pyramids-private"><i class="fas fa-pyramid"></i> Book Private Pyramids Tour</a>
 </div>
 <div class="tour-recommendation">
 <span class="tour-badge">BEST VALUE</span>
-<h4><a href="https://www.egyptphotographytours.com/tour-cairo-giza-2day.html">Cairo &amp; Giza 2-Day Photo Tour</a></h4>
+<h4><a href="/tour-cairo-giza-2day">Cairo & Giza 2-Day Photo Tour</a></h4>
 <p><strong>Heat Highlights:</strong> Transportation-optimized heat extension with hydration photography focus. Ideal for travelers wanting exceptional Egypt photography with smart, reliable heat logistics and health sensitivity protocols.</p>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tour-cairo-giza-2day.html"><i class="fas fa-city"></i> Book Cairo &amp; Giza Tour</a>
+<a class="booking-cta" href="/tour-cairo-giza-2day"><i class="fas fa-city"></i> Book Cairo & Giza Tour</a>
 </div>
 <div class="tour-recommendation">
 <span class="tour-badge">ULTIMATE EXPERIENCE</span>
-<h4><a href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html">7-Day Egypt Photo Adventure</a></h4>
+<h4><a href="/tour-egypt-discovery-7day">7-Day Egypt Photo Adventure</a></h4>
 <p><strong>Heat Highlights:</strong> Comprehensive heat immersion with symptom recognition, hydration tactics, emergency protocols, and sustainable tourism practices. Perfect for adventure seekers wanting Egypt's best with expert heat planning and health respect.</p>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html"><i class="fas fa-route"></i> Book 7-Day Adventure</a>
+<a class="booking-cta" href="/tour-egypt-discovery-7day"><i class="fas fa-route"></i> Book 7-Day Adventure</a>
 </div>
 <div class="tour-recommendation">
-<h4><a href="https://www.egyptphotographytours.com/tour-alexandria.html">Alexandria Photography Day Trip</a></h4>
+<h4><a href="/tour-alexandria">Alexandria Photography Day Trip</a></h4>
 <p><strong>Heat Highlights:</strong> Mediterranean-to-heat transition with coastal and heat photography contrasts. Perfect for photographers seeking diverse Egyptian heritage with smart logistical planning and health sensitivity.</p>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/tour-alexandria.html"><i class="fas fa-umbrella-beach"></i> Book Alexandria Day Trip</a>
+<a class="booking-cta" href="/tour-alexandria"><i class="fas fa-umbrella-beach"></i> Book Alexandria Day Trip</a>
 </div>
 <div class="tour-recommendation">
-<h4><a href="https://www.egyptphotographytours.com/honeymoon-tours.html">Honeymoon Photography Tours</a></h4>
+<h4><a href="/honeymoon-tours">Honeymoon Photography Tours</a></h4>
 <p><strong>Heat Highlights:</strong> Romantic heat experiences with couple-focused photography and cultural immersion. Specialized packages for couples seeking intimate Egypt photography experiences with smart heat integration and health respect.</p>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/honeymoon-tours.html"><i class="fas fa-heart"></i> Book Honeymoon Tour</a>
+<a class="booking-cta" href="/honeymoon-tours"><i class="fas fa-heart"></i> Book Honeymoon Tour</a>
 </div>
 <div class="tour-recommendation">
-<h4><a href="https://www.egyptphotographytours.com/family-tours.html">Family Photography Tours</a></h4>
+<h4><a href="/family-tours">Family Photography Tours</a></h4>
 <p><strong>Heat Highlights:</strong> Family-friendly heat activities with educational cultural components for multi-generational photography. Designed for travelers with children seeking fun and educational heat experiences with smart family planning and health sensitivity.</p>
-<a class="booking-cta" href="https://www.egyptphotographytours.com/family-tours.html"><i class="fas fa-users"></i> Book Family Tour</a>
+<a class="booking-cta" href="/family-tours"><i class="fas fa-users"></i> Book Family Tour</a>
 </div>
 <div style="text-align: center; margin-top: 40px;">
-<a class="cta-button" href="https://www.egyptphotographytours.com/tours">
-<i class="fas fa-calendar-check"></i> View All Tours &amp; Book Now
-                            </a>
+<a class="cta-button" href="/tours">
+<i class="fas fa-calendar-check"></i> View All Tours & Book Now
+</a>
 </div>
 </div>
-<!-- Chapter 8: Final Preparation Checklist with Strong CTA -->
 <h2>Chapter 8: Final Preparation - Book Your Heat-Guided Adventure Today</h2>
 <p>Use this verified timeline to ensure successful, heat-optimized photography experiences in Egypt with Egypt Photography Tours.</p>
 <div class="heat-checklist">
 <h4>Before You Book</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Visit <a href="https://www.egyptphotographytours.com/tours">Egypt Photography Tours</a> to browse heat-guided experiences and select your preferred tour</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Choose between Private Pyramids, Cairo &amp; Giza 2-Day, 7-Day Adventure, Alexandria Day Trip, Honeymoon, or Family tours based on your heat preferences and photographic goals</div></div>
+<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Visit <a href="/tours">Egypt Photography Tours</a> to browse heat-guided experiences and select your preferred tour</div></div>
+<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Choose between Private Pyramids, Cairo & Giza 2-Day, 7-Day Adventure, Alexandria Day Trip, Honeymoon, or Family tours based on your heat preferences and photographic goals</div></div>
 <div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Contact our team for personalized heat consultation and customized health-sensitive photography recommendations</div></div>
 <h4>After Booking</h4>
 <div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Receive detailed heat guidance, safety protocols, and heat photography strategies from our professional photographers and health experts</div></div>
@@ -2157,22 +1547,168 @@
 <div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Capture Egypt's heat beauty with privileged access and expert guidance that maximizes the value of your health photography expedition while honoring heat traditions</div></div>
 <div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Receive on-tour heat consultation and adaptive strategies for changing health conditions and unexpected photographic opportunities</div></div>
 </div>
-<!-- Final CTA - Maximum Conversion Focus -->
+
+<h2>Related Reading on the Egypt Photography Tours Blog</h2>
+<p>Continue planning your trip with more guides from our <a href="/blog">Egypt travel blog</a>:</p>
+<div class="related-guides-grid">
+    <div class="related-guide-card">
+        <h4><a href="/egypt-weather-guide-best-time-to-visit">Egypt Weather Guide: Best Time to Visit</a></h4>
+        <p>Find out the best months to visit Egypt, seasonal temperature breakdowns, and how to avoid the extreme summer heat.</p>
+        <a href="/egypt-weather-guide-best-time-to-visit" class="read-more">Read Guide →</a>
+    </div>
+    <div class="related-guide-card">
+        <h4><a href="/egyptian-visa">Egyptian Visa — Everything You Need to Know</a></h4>
+        <p>A step-by-step guide to getting your Egyptian visa, including e-Visa applications, visa on arrival, and passport requirements.</p>
+        <a href="/egyptian-visa" class="read-more">Read Guide →</a>
+    </div>
+    <div class="related-guide-card">
+        <h4><a href="/egypt-transportation-guide-2026">Egypt Transportation Guide 2026</a></h4>
+        <p>Navigate Egypt with ease using our guide to domestic flights, sleeper trains, Nile cruises, and private transfers.</p>
+        <a href="/egypt-transportation-guide-2026" class="read-more">Read Guide →</a>
+    </div>
+    <div class="related-guide-card">
+        <h4><a href="/baksheesh-tipping-guide-egypt-2026">The "Baksheesh" Guide: Mastering Tipping in Egypt</a></h4>
+        <p>Learn the art of tipping in Egypt, how much to give, and how to handle baksheesh requests respectfully and confidently.</p>
+        <a href="/baksheesh-tipping-guide-egypt-2026" class="read-more">Read Guide →</a>
+    </div>
+    <div class="related-guide-card">
+        <h4><a href="/is-egypt-safe-to-visit-2026-guide">Is Egypt Safe to Visit? 2026 Guide</a></h4>
+        <p>Real data and practical safety tips for solo travelers, families, and couples exploring Egypt's ancient sites and cities.</p>
+        <a href="/is-egypt-safe-to-visit-2026-guide" class="read-more">Read Guide →</a>
+    </div>
+    <div class="related-guide-card">
+        <h4><a href="/egypt-photography-gear-packing-guide-2026">Egypt Photography Gear & Packing Guide 2026</a></h4>
+        <p>Find out exactly what camera gear, lenses, and accessories to pack for your photography trip to Egypt.</p>
+        <a href="/egypt-photography-gear-packing-guide-2026" class="read-more">Read Guide →</a>
+    </div>
+</div>
+<div style="text-align:center;margin-top:28px">
+<a class="btn btn-outline-dark" href="/blog"><i aria-hidden="true" class="fas fa-blog"></i> Browse All Egypt Travel Guides</a>
+</div>
+
+<!-- CONTACT FORM SECTION -->
+<section class="section section-accent" id="customize-trip" aria-labelledby="custom-h2-form">
+<div class="container">
+<div class="text-c">
+<div class="eyebrow">Design Your Dream Journey</div>
+<h2 id="custom-h2-form">Customize Your Perfect Egypt Tour</h2>
+<p class="sec-sub">Tell us your dream Egypt experience and we'll craft a fully personalized itinerary within 2 hours. Private, group, photography or historical – entirely tailored to you.</p>
+</div>
+<div class="trip-builder">
+<div class="trip-form-box">
+<h3 style="color:var(--primary-dark);margin-bottom:20px;font-size:20px">Send Your Trip Request</h3>
+<form aria-label="Custom Egypt tour request form" id="contactForm" novalidate="">
+<div class="form-row-2">
+<div class="form-row">
+<label class="form-label" for="f-name">Your Name <span class="form-req">*</span></label>
+<input class="form-input" id="f-name" name="name" placeholder="e.g. Sarah Johnson" autocomplete="name" required="" type="text"/>
+</div>
+<div class="form-row">
+<label class="form-label" for="f-email">Email Address <span class="form-req">*</span></label>
+<input class="form-input" id="f-email" name="email" placeholder="your@email.com" autocomplete="email" required="" type="email"/>
+</div>
+</div>
+<div class="form-row-2">
+<div class="form-row">
+<label class="form-label" for="f-whatsapp">WhatsApp / Phone</label>
+<input class="form-input" id="f-whatsapp" name="phone" placeholder="+1 234 567 8900" autocomplete="tel" type="tel"/>
+</div>
+<div class="form-row">
+<label class="form-label" for="f-group">Group Size</label>
+<select class="form-select" id="f-group" name="group_size">
+<option value="">Select group size…</option>
+<option value="solo">Solo traveler</option>
+<option value="2">2 people (couple)</option>
+<option value="3-5">3–5 people</option>
+<option value="6-10">6–10 people</option>
+<option value="10+">10+ people</option>
+</select>
+</div>
+</div>
+<div class="form-row-2">
+<div class="form-row">
+<label class="form-label" for="f-type">Tour Type</label>
+<select class="form-select" id="f-type" name="tour_type">
+<option value="">Select tour type…</option>
+<option value="private-historical">Private Historical Tour</option>
+<option value="private-photography">Private Photography Tour</option>
+<option value="group">Group Tour</option>
+<option value="pyramids-photoshoot">Pyramids Photoshoot</option>
+<option value="honeymoon">Honeymoon / Romance</option>
+<option value="family">Family Tour</option>
+<option value="luxury">Luxury All-Inclusive</option>
+<option value="custom">Fully Custom</option>
+</select>
+</div>
+<div class="form-row">
+<label class="form-label" for="f-duration">Trip Duration</label>
+<select class="form-select" id="f-duration" name="duration">
+<option value="">Select duration…</option>
+<option value="half-day">Half day tour</option>
+<option value="1-day">1 day</option>
+<option value="2-3-days">2–3 days</option>
+<option value="4-6-days">4–6 days</option>
+<option value="7-days">7 days</option>
+<option value="7+days">7+ days</option>
+</select>
+</div>
+</div>
+<div class="form-row">
+<label class="form-label" for="f-destinations">Destinations of Interest</label>
+<input class="form-input" id="f-destinations" name="destinations" placeholder="e.g. Cairo, Giza Pyramids, Luxor, Aswan…" type="text"/>
+</div>
+<div class="form-row">
+<label class="form-label" for="f-dates">Approximate Travel Dates</label>
+<input class="form-input" id="f-dates" name="dates" placeholder="e.g. March, flexible, 2 weeks from now…" type="text"/>
+</div>
+<div class="form-row">
+<label class="form-label" for="f-message">Your Dream Egypt Experience <span class="form-req">*</span></label>
+<textarea class="form-textarea" id="f-message" name="message" placeholder="Tell us what you'd love to see, do and experience in Egypt. We'll design the perfect itinerary for you within 2 hours…" required=""></textarea>
+</div>
+<div class="cf-turnstile" data-sitekey="0x4AAAAAADksi_3_nH-4QjMP" data-size="normal" data-theme="dark" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
+<button class="form-submit" type="submit"><i class="fas fa-paper-plane"></i> Send My Trip Request</button>
+<div id="form-status" style="margin-top:15px; text-align:center; font-size:0.9rem; color: #fff;"></div>
+</form>
+</div>
+<div class="trip-contacts">
+<div class="contact-card">
+<span class="contact-card-icon">💬</span>
+<h3>WhatsApp Us Now</h3>
+<p>The fastest way to plan your Egypt tour. We reply within 2 hours, 7 days a week, 8AM–10PM Cairo time.</p>
+<a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20a%20custom%20Egypt%20tour." rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:12px;background:#25D366;color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700" target="_blank">
+<i class="fab fa-whatsapp"></i> Chat on WhatsApp
+</a>
+<p style="font-size:13px;color:var(--c-muted);text-align:center">+20 155 073 5673</p>
+</div>
+<div class="contact-card" style="border-top:4px solid var(--c-gold)">
+<span class="contact-card-icon">✉️</span>
+<h3>Email Our Team</h3>
+<p>Prefer email? Send us your dream Egypt itinerary and we'll respond with a full custom quote within 24 hours.</p>
+<a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" style="width:100%;justify-content:center;margin-bottom:12px;background:var(--primary-dark);color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700">
+<i class="far fa-envelope"></i> Send an Email
+</a>
+<p style="font-size:13px;color:var(--c-muted);text-align:center">info@egyptphotographytours.com</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <div class="cta-section">
 <h2>Book Your Heat-Guided Photography Adventure in Egypt Today</h2>
 <p>Egypt's heat heritage holds photographic magic in their health traditions, community wellness, cultural continuity, and unique experiences. Capturing these moments requires not just skill, but smart heat planning, cultural sensitivity, health respect, and professional guidance that ensures your investment delivers exceptional photographic results without compromising heat traditions.</p>
 <p><strong>Don't let heat uncertainty limit your Egypt photography experience.</strong> Egypt Photography Tours provides expert heat guidance, heat photography tips, and safe immersion support that transform heat planning from stressful to strategic, confident, and health-sensitive exploration.</p>
 <p><strong>Every tour includes:</strong> professional photography services, expert Egyptologist guides, custom itineraries, private transportation, multilingual support, and comprehensive heat guidance with safety protocols—ensuring a seamless and elevated experience.</p>
-<a class="cta-button" href="https://www.egyptphotographytours.com/tours">
+<a class="cta-button" href="/tours">
 <i class="fas fa-temperature-high"></i> Book Your Heat-Guided Experience Now
-                        </a>
+</a>
 <p style="margin-top: 20px; font-size: 16px; opacity: 0.9;">
 <strong>Highlights of Egypt Photography Tours:</strong><br/>
-                            • Private Pyramids Photography Tour – Capture once-in-a-lifetime shots with a professional photographer at sunrise or sunset, with expert heat guidance and health-sensitive photography optimization.<br/>
-                            • 2-Day Cairo &amp; Giza Luxury Experience – Explore the Grand Egyptian Museum, Islamic Cairo, Khan El Khalili Bazaar, and more with smart heat extension planning and verified health logistics.<br/>
-                            • Alexandria Day Tour from Cairo – Discover the Mediterranean charm with guided photography at the Citadel, Library, and Corniche, with heat contrasts and smart health-sensitive photography strategies.<br/>
-                            • 7-Day Egypt Discovery Tour – A luxurious journey from Cairo to Luxor, designed for travelers seeking cultural depth and high-end comfort, with comprehensive heat optimization and sustainable, health-respectful tourism integration.
-                        </p>
+• Private Pyramids Photography Tour – Capture once-in-a-lifetime shots with a professional photographer at sunrise or sunset, with expert heat guidance and health-sensitive photography optimization.<br/>
+• 2-Day Cairo & Giza Luxury Experience – Explore the Grand Egyptian Museum, Islamic Cairo, Khan El Khalili Bazaar, and more with smart heat extension planning and verified health logistics.<br/>
+• Alexandria Day Tour from Cairo – Discover the Mediterranean charm with guided photography at the Citadel, Library, and Corniche, with heat contrasts and smart health-sensitive photography strategies.<br/>
+• 7-Day Egypt Discovery Tour – A luxurious journey from Cairo to Luxor, designed for travelers seeking cultural depth and high-end comfort, with comprehensive heat optimization and sustainable, health-respectful tourism integration.
+</p>
 </div>
 </div>
 </div>
@@ -2181,9 +1717,8 @@
 <div aria-label="Back to top" class="back-to-top" id="backToTop" role="button" tabindex="0">
 <i class="fas fa-chevron-up"></i>
 </div>
-<!-- Cookie Consent Banner -->
 <div aria-labelledby="cookie-title" class="cookie-consent" id="cookieConsent" role="dialog">
-<p id="cookie-title"><strong>We use cookies</strong> to enhance your experience and analyze traffic. By continuing, you agree to our <a href="/privacy-policy.html" style="color:var(--accent-light);text-decoration:underline">Privacy Policy</a>.</p>
+<p id="cookie-title"><strong>We use cookies</strong> to enhance your experience and analyze traffic. By continuing, you agree to our <a href="/privacy-policy" style="color:var(--accent-light);text-decoration:underline">Privacy Policy</a>.</p>
 <button aria-label="Accept cookies" id="acceptCookies">Accept</button>
 </div>
 <footer class="footer">
@@ -2197,16 +1732,16 @@
 <div class="footer-section">
 <h4 class="footer-title">Quick Links</h4>
 <ul class="footer-links">
-<li><a href="/index.html">Home</a></li>
-<li><a href="/about.html">About Us</a></li>
-<li><a href="https://www.egyptphotographytours.com/tours">Our Tours</a></li>
-<li><a href="/gallery.html">Gallery</a></li>
-<li><a href="/resources.html">Resources</a></li>
-<li><a href="/blog.html">Blog</a></li>
-<li><a href="https://www.egyptphotographytours.com/tours">Contact Us</a></li>
-<li><a href="/faqs.html">FAQs</a></li>
-<li><a href="/privacy-policy.html">Privacy Policy</a></li>
-<li><a href="/terms-of-service.html">Terms of Service</a></li>
+<li><a href="/">Home</a></li>
+<li><a href="/about">About Us</a></li>
+<li><a href="/tours">Our Tours</a></li>
+<li><a href="/gallery">Gallery</a></li>
+<li><a href="/resources">Resources</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/contact">Contact Us</a></li>
+<li><a href="/faqs">FAQs</a></li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+<li><a href="/terms">Terms of Service</a></li>
 </ul>
 </div>
 <div class="footer-section">
@@ -2215,10 +1750,10 @@
 <div class="footer-contact">
 <a class="footer-contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
 <i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
-                    </a>
+</a>
 <a class="footer-contact-info" href="mailto:info@egyptphotographytours.com">
 <i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
-                    </a>
+</a>
 </div>
 <div class="social-links">
 <a aria-label="Facebook" href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook-f"></i></a>
@@ -2234,270 +1769,243 @@
 </div>
 </footer>
 <script>
-        // MOBILE MENU FUNCTIONALITY
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            const menuIcon = mobileMenuToggle?.querySelector('i');
+(function () {
+'use strict';
+var $ = function (s) { return document.querySelector(s); };
+var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var on = function (el, ev, fn, opt) { if (el) el.addEventListener(ev, fn, opt || false); };
 
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    
-                    if (menuIcon) {
-                        menuIcon.classList.toggle('fa-bars');
-                        menuIcon.classList.toggle('fa-times');
-                    }
-                });
-            }
+var mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+var navLinks = document.querySelector('.nav-links');
+var menuIcon = mobileMenuToggle?.querySelector('i');
 
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-link a').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768 && navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        if (mobileMenuToggle && menuIcon) {
-                            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                            menuIcon.classList.remove('fa-times');
-                            menuIcon.classList.add('fa-bars');
-                        }
-                    }
-                });
-            });
+if (mobileMenuToggle) {
+mobileMenuToggle.addEventListener('click', function() {
+navLinks.classList.toggle('active');
+var isExpanded = this.getAttribute('aria-expanded') === 'true';
+this.setAttribute('aria-expanded', !isExpanded);
+if (menuIcon) {
+menuIcon.classList.toggle('fa-bars');
+menuIcon.classList.toggle('fa-times');
+}
+});
+}
 
-            // LANGUAGE SWITCHER FUNCTIONALITY - ALL 20 LANGUAGES
-            const languageSwitcher = document.querySelector('.language-switcher');
-            if (languageSwitcher) {
-                const currentLanguage = languageSwitcher.querySelector('.current-language');
-                const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
-                const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+document.querySelectorAll('.nav-link a').forEach(link => {
+link.addEventListener('click', function() {
+if (window.innerWidth < 768 && navLinks.classList.contains('active')) {
+navLinks.classList.remove('active');
+if (mobileMenuToggle && menuIcon) {
+mobileMenuToggle.setAttribute('aria-expanded', 'false');
+menuIcon.classList.remove('fa-times');
+menuIcon.classList.add('fa-bars');
+}
+}
+});
+});
 
-                // Toggle dropdown
-                const toggleDropdown = () => {
-                    const isActive = languageSwitcher.classList.toggle('active');
-                    dropdownIcon.classList.toggle('fa-chevron-up', isActive);
-                    dropdownIcon.classList.toggle('fa-chevron-down', !isActive);
-                    currentLanguage.setAttribute('aria-expanded', isActive);
-                };
+var languageSwitcher = document.querySelector('.language-switcher');
+if (languageSwitcher) {
+var currentLanguage = languageSwitcher.querySelector('.current-language');
+var languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+var dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
 
-                currentLanguage.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    toggleDropdown();
-                });
+var toggleDropdown = () => {
+var isActive = languageSwitcher.classList.toggle('active');
+dropdownIcon.classList.toggle('fa-chevron-up', isActive);
+dropdownIcon.classList.toggle('fa-chevron-down', !isActive);
+currentLanguage.setAttribute('aria-expanded', isActive);
+};
 
-                // Keyboard support
-                currentLanguage.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        toggleDropdown();
-                    }
-                    if (e.key === 'Escape') {
-                        languageSwitcher.classList.remove('active');
-                        dropdownIcon.classList.remove('fa-chevron-up');
-                        dropdownIcon.classList.add('fa-chevron-down');
-                        currentLanguage.setAttribute('aria-expanded', 'false');
-                    }
-                });
+currentLanguage.addEventListener('click', (e) => {
+e.stopPropagation();
+toggleDropdown();
+});
 
-                // Close when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!languageSwitcher.contains(e.target) && languageSwitcher.classList.contains('active')) {
-                        languageSwitcher.classList.remove('active');
-                        dropdownIcon.classList.remove('fa-chevron-up');
-                        dropdownIcon.classList.add('fa-chevron-down');
-                        currentLanguage.setAttribute('aria-expanded', 'false');
-                    }
-                });
+currentLanguage.addEventListener('keydown', (e) => {
+if (e.key === 'Enter' || e.key === ' ') {
+e.preventDefault();
+toggleDropdown();
+}
+if (e.key === 'Escape') {
+languageSwitcher.classList.remove('active');
+dropdownIcon.classList.remove('fa-chevron-up');
+dropdownIcon.classList.add('fa-chevron-down');
+currentLanguage.setAttribute('aria-expanded', 'false');
+}
+});
 
-                // Language selection
-                languageDropdown.querySelectorAll('.language-item').forEach(item => {
-                    item.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const flag = this.dataset.flag;
-                        const lang = this.dataset.lang;
+document.addEventListener('click', function(e) {
+if (!languageSwitcher.contains(e.target) && languageSwitcher.classList.contains('active')) {
+languageSwitcher.classList.remove('active');
+dropdownIcon.classList.remove('fa-chevron-up');
+dropdownIcon.classList.add('fa-chevron-down');
+currentLanguage.setAttribute('aria-expanded', 'false');
+}
+});
 
-                        currentLanguage.querySelector('.current-flag').textContent = flag;
-                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+languageDropdown.querySelectorAll('.language-item').forEach(item => {
+item.addEventListener('click', function(e) {
+e.preventDefault();
+var flag = this.dataset.flag;
+var lang = this.dataset.lang;
+currentLanguage.querySelector('.current-flag').textContent = flag;
+currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+languageSwitcher.classList.remove('active');
+dropdownIcon.classList.remove('fa-chevron-up');
+dropdownIcon.classList.add('fa-chevron-down');
+currentLanguage.setAttribute('aria-expanded', 'false');
+languageDropdown.querySelectorAll('.language-item').forEach(i => i.classList.remove('active'));
+this.classList.add('active');
+var href = this.getAttribute('href');
+if (href && !window.location.pathname.includes(href)) {
+window.location.href = href;
+}
+});
+});
+}
 
-                        languageSwitcher.classList.remove('active');
-                        dropdownIcon.classList.remove('fa-chevron-up');
-                        dropdownIcon.classList.add('fa-chevron-down');
-                        currentLanguage.setAttribute('aria-expanded', 'false');
+var backToTopButton = document.getElementById('backToTop');
+var showBackToTopThreshold = 300;
+var handleScroll = () => {
+if (window.pageYOffset > showBackToTopThreshold) {
+if(backToTopButton) backToTopButton.classList.add('visible');
+} else {
+if(backToTopButton) backToTopButton.classList.remove('visible');
+}
+};
+window.addEventListener('scroll', handleScroll, { passive: true });
+if (backToTopButton) {
+backToTopButton.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+backToTopButton.addEventListener('keydown', (e) => {
+if (e.key === 'Enter' || e.key === ' ') {
+e.preventDefault();
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+});
+}
 
-                        // Update active state
-                        languageDropdown.querySelectorAll('.language-item').forEach(i => i.classList.remove('active'));
-                        this.classList.add('active');
+if ('IntersectionObserver' in window) {
+var observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+var observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0)";
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
 
-                        // Navigate if different page
-                        const href = this.getAttribute('href');
-                        if (href && !window.location.pathname.includes(href)) {
-                            window.location.href = href;
-                        }
-                    });
-                });
+document.querySelectorAll('.culture-card, .trust-card, .reference-item, .tour-recommendation, .review-card').forEach(card => {
+card.style.opacity = "0";
+card.style.transform = "translateY(30px)";
+card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+observer.observe(card);
+});
+}
 
-                // Set current language based on URL - English default
-                const currentPath = window.location.pathname;
-                let englishFound = false;
-                
-                languageDropdown.querySelectorAll('.language-item').forEach(item => {
-                    const itemHref = item.getAttribute('href');
-                    if (currentPath.includes(itemHref) ||
-                        (currentPath.endsWith('heat-illness-prevention-guide-2026.html') &&
-                         itemHref?.includes('heat-illness-prevention-guide-2026.html') &&
-                         item.dataset.lang === 'en')) {
-                        item.classList.add('active');
-                        const flag = item.dataset.flag;
-                        const lang = item.dataset.lang;
-                        currentLanguage.querySelector('.current-flag').textContent = flag;
-                        currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
-                        englishFound = true;
-                    }
-                });
-                
-                // Ensure English is default if no match found
-                if (!englishFound) {
-                    const englishItem = languageDropdown.querySelector('[data-lang="en"]');
-                    if (englishItem) {
-                        englishItem.classList.add('active');
-                        currentLanguage.querySelector('.current-flag').textContent = '🇺🇸';
-                        currentLanguage.querySelector('.current-text').textContent = 'EN';
-                    }
-                }
-            }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+var targetId = this.getAttribute('href');
+if (targetId && targetId !== '#' && targetId !== window.location.href) {
+e.preventDefault();
+var targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 100,
+behavior: 'smooth'
+});
+}
+}
+});
+});
 
-            // BACK TO TOP BUTTON
-            const backToTopButton = document.getElementById('backToTop');
-            const showBackToTopThreshold = 300;
-            
-            const handleScroll = () => {
-                if (window.pageYOffset > showBackToTopThreshold) {
-                    backToTopButton?.classList.add('visible');
-                } else {
-                    backToTopButton?.classList.remove('visible');
-                }
-            };
-            
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            
-            if (backToTopButton) {
-                backToTopButton.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-                backToTopButton.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                });
-            }
+var tableRows = document.querySelectorAll('.heat-table tbody tr');
+tableRows.forEach(row => {
+row.addEventListener('mouseenter', function() {
+this.style.backgroundColor = '#f0f9ff';
+this.style.transition = 'background-color 0.2s ease';
+});
+row.addEventListener('mouseleave', function() {
+this.style.backgroundColor = '';
+});
+});
 
-            // ANIMATE ELEMENTS ON SCROLL
-            if ('IntersectionObserver' in window) {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = "1";
-                            entry.target.style.transform = "translateY(0)";
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
+var cookieConsent = document.getElementById('cookieConsent');
+var acceptCookiesBtn = document.getElementById('acceptCookies');
+if (cookieConsent && !localStorage.getItem('cookiesAccepted')) {
+setTimeout(() => {
+cookieConsent?.classList.add('visible');
+}, 2000);
+}
+if (acceptCookiesBtn) {
+acceptCookiesBtn.addEventListener('click', () => {
+localStorage.setItem('cookiesAccepted', 'true');
+if(cookieConsent) cookieConsent.classList.remove('visible');
+});
+}
 
-                // Animate cards and tables
-                document.querySelectorAll('.culture-card, .trust-card, .reference-item, .tour-recommendation, .review-card').forEach(card => {
-                    card.style.opacity = "0";
-                    card.style.transform = "translateY(30px)";
-                    card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-                    observer.observe(card);
-                });
-            }
+var tourLinks = document.querySelectorAll('.tour-recommendation a, .cta-button, .book-now-button, .booking-cta');
+tourLinks.forEach(link => {
+link.addEventListener('click', function() {
+console.log('Tour link clicked:', this.href);
+});
+});
 
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId && targetId !== '#' && targetId !== window.location.href) {
-                        e.preventDefault();
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 100,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // Interactive table rows for better UX
-            const tableRows = document.querySelectorAll('.heat-table tbody tr');
-            tableRows.forEach(row => {
-                row.addEventListener('mouseenter', function() {
-                    this.style.backgroundColor = '#f0f9ff';
-                    this.style.transition = 'background-color 0.2s ease';
-                });
-                row.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = '';
-                });
-            });
-
-            // Cookie Consent Banner
-            const cookieConsent = document.getElementById('cookieConsent');
-            const acceptCookiesBtn = document.getElementById('acceptCookies');
-            
-            // Check if user has already accepted
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    cookieConsent?.classList.add('visible');
-                }, 2000);
-            }
-            
-            if (acceptCookiesBtn) {
-                acceptCookiesBtn.addEventListener('click', () => {
-                    localStorage.setItem('cookiesAccepted', 'true');
-                    cookieConsent?.classList.remove('visible');
-                });
-            }
-
-            // Tour link tracking (for analytics integration placeholder)
-            const tourLinks = document.querySelectorAll('.tour-recommendation a, .cta-button, .book-now-button, .booking-cta');
-            tourLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    // Placeholder for analytics: gtag('event', 'click', { event_category: 'Tour Link', event_label: this.href });
-                    console.log('Tour link clicked:', this.href);
-                });
-            });
-        });
-
-        // Preload critical images with error handling
-        function preloadCriticalImages() {
-            const criticalImages = [
-                '/images/heat-illness-prevention-guide-2026.jpg',
-                '/images/egypt-photography-tours-logo.jpg'
-            ];
-
-            criticalImages.forEach(src => {
-                const img = new Image();
-                img.src = src;
-                // Optional: Add error handling
-                img.onerror = () => console.warn(`Failed to preload: ${src}`);
-            });
-        }
-        
-        // Execute preloading
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', preloadCriticalImages);
-        } else {
-            preloadCriticalImages();
-        }
-    </script>
+// Cloudflare Worker Form Submission
+var cfForm = document.getElementById('contactForm');
+var cfStatus = document.getElementById('form-status');
+var WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
+if (cfForm) {
+cfForm.addEventListener('submit', async function(e) {
+e.preventDefault();
+cfStatus.innerHTML = 'Sending...';
+cfStatus.style.color = '#fff';
+var turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+if (!turnstileToken) {
+cfStatus.innerHTML = 'Please complete the security check.';
+cfStatus.style.color = '#ff6b6b';
+return;
+}
+var formData = new FormData(cfForm);
+var payload = {
+name: formData.get('name') || '',
+email: formData.get('email') || '',
+phone: formData.get('phone') || '',
+subject: 'Custom Egypt Tour Request',
+message: 'Group Size: ' + (formData.get('group_size') || 'Not specified') + '\nTour Type: ' + (formData.get('tour_type') || 'Not specified') + '\nDuration: ' + (formData.get('duration') || 'Not specified') + '\nDestinations: ' + (formData.get('destinations') || 'Not specified') + '\nDates: ' + (formData.get('dates') || 'Not specified') + '\nMessage: ' + (formData.get('message') || ''),
+turnstileToken: turnstileToken
+};
+try {
+var response = await fetch(WORKER_URL, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
+var result = await response.json();
+if (response.ok && result.success) {
+cfStatus.innerHTML = '✅ Message sent successfully! We will get back to you within 2 hours.';
+cfStatus.style.color = '#4ade80';
+cfForm.reset();
+if (typeof turnstile !== 'undefined') turnstile.reset();
+} else {
+cfStatus.innerHTML = result.error || 'Something went wrong. Please try again.';
+cfStatus.style.color = '#ff6b6b';
+}
+} catch (err) {
+cfStatus.innerHTML = 'Network error. Please check your connection.';
+cfStatus.style.color = '#ff6b6b';
+console.error(err);
+}
+});
+}
+})();
+</script>
 </body>
 </html>
