@@ -1,704 +1,673 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- CRITICAL: Charset first for proper parsing -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
-<!-- ═══════════════════════════════════════════════════════
-CSP — FULLY FIXED & SECURE
-═══════════════════════════════════════════════════════ -->
-<meta content="
-default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';
-script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com;
-style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
-img-src 'self' https: blob: data:;
-font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com;
-connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev;
-upgrade-insecure-requests;
-base-uri 'self';
-form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
+<!-- Security & Performance Headers -->
+<meta content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://widget.trustpilot.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https: data:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.google.com https://challenges.cloudflare.com; connect-src 'self' https://contact-worker.hussam01112.workers.dev; upgrade-insecure-requests; base-uri 'self'; form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
-
-<link href="https://www.egyptphotographytours.com/sitemap.xml" rel="sitemap" title="Main Sitemap" type="application/xml"/>
-<link href="https://www.egyptphotographytours.com/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="https://www.egyptphotographytours.com/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="https://www.egyptphotographytours.com/images/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="https://www.egyptphotographytours.com/images/favicon.ico" rel="shortcut icon"/>
-<link href="https://www.egyptphotographytours.com/images/apple-touch-icon.jpg" rel="apple-touch-icon" sizes="180x180"/>
-<link crossorigin="anonymous" href="https://www.egyptphotographytours.com/site.webmanifest" rel="manifest"/>
+<!-- Comprehensive Favicon Setup - Standardized root-relative paths -->
+<link href="/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
 <meta content="#FFD700" name="msapplication-TileColor"/>
+<meta content="/browserconfig.xml" name="msapplication-config"/>
 <meta content="#FFD700" name="theme-color"/>
-
-<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect"/>
+<!-- Preconnect to critical third-party domains -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-<link crossorigin="" href="https://challenges.cloudflare.com" rel="preconnect"/>
-<link as="style" crossorigin="" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;600;700&display=swap" rel="preload"/>
-<link crossorigin="" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;600;700&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/></noscript>
-
-<title>Solo Women Egypt Tours 2026: #1 Safe Travel Guide for Female Travelers | Egypt Photography Tours</title>
-<meta content="Ranked #1 Solo Women Egypt Tours 2026. Ultimate safe travel guide for female solo travelers. Women-only groups, female guides, secure accommodations. Book your safe Egypt adventure." name="description"/>
-<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://widget.trustpilot.com" rel="preconnect"/>
+<link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+<link href="https://challenges.cloudflare.com" rel="preconnect"/>
+<!-- SEO-optimized title with primary keyword first -->
+<title>Solo Women Egypt Tours 2026: #1 Safe Travel Guide for Female Travelers | Book Egypt Photography Tours</title>
+<!-- SEO-optimized meta description with strong CTA -->
+<meta content="Ranked #1 Solo Women Egypt Tours 2026. Ultimate safe travel guide for female solo travelers. Women-only groups, female Egyptologist guides, secure accommodations &amp; cultural etiquette. Book your safe Egypt adventure today." name="description"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <meta content="Hossam, Egypt Photography Tours" name="author"/>
 <meta content="Egypt Photography Tours" name="copyright"/>
 <meta content="en" name="language"/>
-
+<!-- Canonical & Hreflang -->
 <link rel="canonical" href="https://www.egyptphotographytours.com/egypt-tours-solo-women.html"/>
 <link rel="alternate" hreflang="en" href="https://www.egyptphotographytours.com/egypt-tours-solo-women.html"/>
 <link rel="alternate" hreflang="x-default" href="https://www.egyptphotographytours.com/egypt-tours-solo-women.html"/>
-
-<meta content="article" property="og:type"/>
-<meta content="Egypt Photography Tours" property="og:site_name"/>
-<meta content="en_US" property="og:locale"/>
-<meta content="https://www.egyptphotographytours.com/egypt-tours-solo-women.html" property="og:url"/>
-<meta content="Solo Women Egypt Tours 2026: #1 Safe Travel Guide for Female Travelers" property="og:title"/>
-<meta content="Ranked #1 Solo Women Egypt Tours 2026. Ultimate safe travel guide for female solo travelers. Women-only groups, female guides, secure accommodations." property="og:description"/>
+<!-- Open Graph tags with strong conversion focus -->
+<meta content="Solo Women Egypt Tours 2026: #1 Safe Travel Guide for Female Travelers | Book Tours" property="og:title"/>
+<meta content="Ranked #1 Solo Women Egypt Tours 2026. Ultimate safe travel guide for female solo travelers. Women-only groups, female Egyptologist guides, secure accommodations &amp; cultural etiquette. Book your safe Egypt adventure." property="og:description"/>
 <meta content="https://www.egyptphotographytours.com/images/solo-women-egypt-tours.jpg" property="og:image"/>
-<meta content="image/webp" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="Solo women enjoying a safe and guided tour at the Pyramids of Giza with Egypt Photography Tours" property="og:image:alt"/>
-<meta content="2025-12-15T00:00:00+00:00" property="article:published_time"/>
-<meta content="2025-12-30T00:00:00+00:00" property="article:modified_time"/>
-<meta content="https://www.egyptphotographytours.com/about" property="article:author"/>
-<meta content="Travel" property="article:section"/>
-
+<meta content="https://www.egyptphotographytours.com/egypt-tours-solo-women.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="Egypt Photography Tours" property="og:site_name"/>
+<meta content="2025-12-15T00:00:00+02:00" property="article:published_time"/>
+<meta content="2025-12-30T00:00:00+02:00" property="article:modified_time"/>
+<!-- Twitter tags with conversion focus -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@EgyptPhotoTours" name="twitter:site"/>
+<meta content="@HossamPhotoEG" name="twitter:creator"/>
 <meta content="Solo Women Egypt Tours 2026: #1 Safe Travel Guide for Female Travelers" name="twitter:title"/>
-<meta content="Ranked #1 Solo Women Egypt Tours 2026. Ultimate safe travel guide for female solo travelers. Women-only groups, female guides, secure accommodations." name="twitter:description"/>
+<meta content="Ranked #1 Solo Women Egypt Tours 2026. Ultimate safe travel guide for female solo travelers. Women-only groups, female guides, secure accommodations. Book your safe Egypt adventure." name="twitter:description"/>
 <meta content="https://www.egyptphotographytours.com/images/solo-women-egypt-tours.jpg" name="twitter:image"/>
-
+<!-- Geo Tags for local SEO -->
 <meta content="EG-C" name="geo.region"/>
 <meta content="Cairo, Egypt" name="geo.placename"/>
 <meta content="30.0444;31.2357" name="geo.position"/>
 <meta content="30.0444, 31.2357" name="ICBM"/>
 <meta content="EG" name="geo.country"/>
-
+<!-- ULTRA-COMPREHENSIVE STRUCTURED DATA SCHEMA FOR MAXIMUM SEO POWER -->
 <script type="application/ld+json" translate="no" class="notranslate">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#webpage",
-      "url": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html",
-      "name": "Solo Women Egypt Tours 2026: #1 Safe Travel Guide for Female Travelers",
-      "description": "Ranked #1 Solo Women Egypt Tours 2026. Ultimate safe travel guide for female solo travelers. Women-only groups, female guides, secure accommodations.",
-      "isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
-      "primaryImageOfPage": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/solo-women-egypt-tours.jpg", "width": "1200", "height": "630"},
-      "breadcrumb": {"@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#breadcrumb"},
-      "inLanguage": "en-US",
-      "datePublished": "2025-12-15T00:00:00+00:00",
-      "dateModified": "2025-12-30T00:00:00+00:00"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#breadcrumb",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Egypt Tours", "item": "https://www.egyptphotographytours.com/tours"},
-        {"@type": "ListItem", "position": 3, "name": "Solo Women Egypt Tours 2026", "item": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html"}
-      ]
-    },
-    {
-      "@type": "Article",
-      "@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#article",
-      "headline": "Solo Women Egypt Tours 2026: The Ultimate Safe Travel Guide for Female Travelers",
-      "description": "Comprehensive 6000+ word guide to safe solo travel in Egypt for women. Complete safety tips, cultural guidelines, recommended itineraries, and exclusive women-only tour packages for 2026.",
-      "author": {"@type": "Person", "name": "Hossam", "jobTitle": "Professional Photographer & Egyptologist"},
-      "datePublished": "2025-12-15T00:00:00+00:00",
-      "dateModified": "2025-12-30T00:00:00+00:00",
-      "publisher": {"@type": "Organization", "name": "Egypt Photography Tours", "logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/logo.jpg"}},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html"},
-      "image": [
-        "https://www.egyptphotographytours.com/images/solo-women-egypt-tours.jpg",
-        "https://www.egyptphotographytours.com/images/women-egypt-luxor-temple.jpg"
-      ],
-      "articleSection": "Travel Safety"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#faq",
-      "mainEntity": [
-        {"@type": "Question", "name": "Is Egypt safe for solo women travelers in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Egypt is generally safe for solo women travelers when proper precautions are taken. Our women-only tours provide additional safety through female guides, secure accommodations, and group travel with other solo female travelers."}},
-        {"@type": "Question", "name": "What should solo women wear in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "We recommend modest clothing covering shoulders and knees. Loose-fitting, breathable fabrics are ideal. Our guide includes a complete packing list for solo women travelers in Egypt."}},
-        {"@type": "Question", "name": "Are there women-only Egypt tours available?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we specialize in women-only Egypt tours with female Egyptologist guides. These tours provide a comfortable and safe environment for solo female travelers."}},
-        {"@type": "Question", "name": "What is the best time for solo women to visit Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "October to April offers pleasant weather. Our New Year 2026 special tours provide festive celebrations with enhanced safety measures for solo women travelers."}},
-        {"@type": "Question", "name": "Can solo women travel safely between Egyptian cities?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with our organized tours, all transportation is arranged with trusted drivers and secure vehicles. We handle all logistics for safe travel between Cairo, Luxor, Aswan, and other destinations."}}
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://www.egyptphotographytours.com/#person-hossam",
-      "name": "Hossam",
-      "jobTitle": "Professional Photographer & Egyptologist",
-      "worksFor": {"@id": "https://www.egyptphotographytours.com/#organization"},
-      "knowsAbout": ["Egyptian Culture", "Solo Female Travel", "Photography Tours", "Ancient Egyptian History"],
-      "image": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp",
-      "url": "https://www.egyptphotographytours.com/about"
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.egyptphotographytours.com/#organization",
-      "name": "Egypt Photography Tours",
-      "url": "https://www.egyptphotographytours.com/",
-      "logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": "200", "height": "200"},
-      "image": ["https://www.egyptphotographytours.com/images/solo-women-egypt-tours.jpg"],
-      "telephone": "+20-155-073-5673",
-      "email": "info@egyptphotographytours.com",
-      "foundingDate": "2015",
-      "address": {"@type": "PostalAddress", "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza", "addressLocality": "Giza", "addressRegion": "Giza Governorate", "postalCode": "12557", "addressCountry": "EG"},
-      "geo": {"@type": "GeoCoordinates", "latitude": "29.9792", "longitude": "31.1342"},
-      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "500", "bestRating": "5", "worstRating": "1"},
-      "sameAs": [
-        "https://www.facebook.com/egyptphotographytours",
-        "https://www.instagram.com/hossam_artistic/",
-        "https://www.tiktok.com/@egyptphotographytours",
-        "https://www.youtube.com/@Egyptphotographytours"
-      ]
-    }
-  ]
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "WebSite",
+"@id": "https://www.egyptphotographytours.com/#website",
+"name": "Egypt Photography Tours",
+"url": "https://www.egyptphotographytours.com/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.egyptphotographytours.com/search?q={search_term_string}",
+"query-input": "required name=search_term_string"
+}
+},
+{
+"@type": "WebPage",
+"@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#webpage",
+"url": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html",
+"name": "Solo Women Egypt Tours 2026: #1 Safe Travel Guide for Female Travelers",
+"description": "Ranked #1 Solo Women Egypt Tours 2026. Ultimate safe travel guide for female solo travelers. Women-only groups, female Egyptologist guides, secure accommodations & cultural etiquette.",
+"isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
+"primaryImageOfPage": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/solo-women-egypt-tours.jpg", "width": "1200", "height": "630"},
+"breadcrumb": {"@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#breadcrumb"},
+"inLanguage": "en-US",
+"datePublished": "2025-12-15T00:00:00+02:00",
+"dateModified": "2025-12-30T00:00:00+02:00"
+},
+{
+"@type": "Organization",
+"@id": "https://www.egyptphotographytours.com/#organization",
+"name": "Egypt Photography Tours",
+"url": "https://www.egyptphotographytours.com/",
+"logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.jpg", "width": "200", "height": "200"},
+"telephone": "+20-155-073-5673",
+"email": "info@egyptphotographytours.com",
+"foundingDate": "2015",
+"address": {"@type": "PostalAddress", "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza", "addressLocality": "Giza", "addressRegion": "Giza Governorate", "postalCode": "12557", "addressCountry": "EG"},
+"geo": {"@type": "GeoCoordinates", "latitude": "29.9792", "longitude": "31.1342"},
+"aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "500", "bestRating": "5", "worstRating": "1"},
+"sameAs": [
+"https://www.facebook.com/EgyptPhotographyTours",
+"https://www.instagram.com/hossam_artistic/",
+"https://www.tiktok.com/@egyptphotographytours",
+"https://www.youtube.com/@Egyptphotographytours"
+]
+},
+{
+"@type": "BreadcrumbList",
+"@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#breadcrumb",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
+{"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.egyptphotographytours.com/resources.html"},
+{"@type": "ListItem", "position": 3, "name": "Solo Women Egypt Tours 2026", "item": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html"}
+]
+},
+{
+"@type": "Article",
+"@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#article",
+"headline": "Solo Women Egypt Tours 2026: The Ultimate Safe Travel Guide for Female Travelers",
+"description": "Comprehensive guide to safe solo travel in Egypt for women. Complete safety tips, cultural guidelines, women-only tour experiences, and packing strategies for 2026.",
+"author": {"@type": "Person", "name": "Hossam", "jobTitle": "Professional Photographer & Egyptologist", "url": "https://www.egyptphotographytours.com/about.html"},
+"datePublished": "2025-12-15T00:00:00+02:00",
+"dateModified": "2025-12-30T00:00:00+02:00",
+"publisher": {"@type": "Organization", "name": "Egypt Photography Tours", "logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.jpg", "width": "200", "height": "200"}},
+"mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html"},
+"image": [
+"https://www.egyptphotographytours.com/images/solo-women-egypt-tours.jpg",
+"https://www.egyptphotographytours.com/images/women-egypt-luxor-temple.jpg"
+],
+"articleSection": "Solo Female Travel Safety",
+"inLanguage": "en-US",
+"isAccessibleForFree": true,
+"speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-content p", ".article-content h2", ".article-content h3"]}
+},
+{
+"@type": "FAQPage",
+"@id": "https://www.egyptphotographytours.com/egypt-tours-solo-women.html#faq",
+"mainEntity": [
+{"@type": "Question", "name": "Is Egypt safe for solo women travelers in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Egypt is generally safe for solo women travelers when proper precautions are taken. With women-only tours featuring female guides, secure accommodations, and private transportation, you can explore Egypt with complete confidence. Tourist areas have excellent security, and millions of women travel to Egypt safely each year."}},
+{"@type": "Question", "name": "What should solo women wear in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "Modest clothing covering shoulders and knees is recommended. Loose-fitting, breathable fabrics are ideal for the climate. For mosques, women need headscarves and clothing covering arms and legs. At Red Sea resorts, normal swimwear is acceptable at hotel pools and beaches."}},
+{"@type": "Question", "name": "Are there women-only Egypt tours available?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we specialize in women-only Egypt tours with female Egyptologist guides. Our tours are designed specifically for solo female travelers, with women-only groups, female guides and drivers, and accommodations that prioritize women's safety and comfort."}},
+{"@type": "Question", "name": "What is the best time for solo women to visit Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "October to April offers the most pleasant weather (20-30°C). December and January are perfect for Christmas and New Year celebrations. For smaller crowds, consider February or September."}},
+{"@type": "Question", "name": "Can solo women travel safely between Egyptian cities?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with organized tours, all transportation between cities is arranged with trusted drivers and secure vehicles. Domestic flights are used for longer distances (Cairo to Luxor/Aswan) and private vehicles for shorter trips."}},
+{"@type": "Question", "name": "How much does a solo women Egypt tour cost?", "acceptedAnswer": {"@type": "Answer", "text": "Women-only Egypt tours range from affordable day experiences to comprehensive multi-day packages including accommodations, meals, guides, and entrance fees. New Year special tours are priced slightly higher due to premium celebrations and limited availability."}},
+{"@type": "Question", "name": "Do I need a visa for Egypt as a solo woman?", "acceptedAnswer": {"@type": "Answer", "text": "Most nationalities require a visa for Egypt. You can obtain an e-visa online before travel or get a visa on arrival at major airports (Cairo, Luxor, Hurghada). The process is straightforward and costs approximately $25 USD for most nationalities."}},
+{"@type": "Question", "name": "What payment methods do you accept?", "acceptedAnswer": {"@type": "Answer", "text": "We accept credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. A deposit secures your booking, with balance due before travel. Flexible payment plans are available for tours booked well in advance."}}
+]
+},
+{
+"@type": "Person",
+"@id": "https://www.egyptphotographytours.com/#person-hossam",
+"name": "Hossam",
+"jobTitle": "Professional Photographer & Egyptologist",
+"worksFor": {"@id": "https://www.egyptphotographytours.com/#organization"},
+"knowsAbout": ["Egyptian Culture", "Solo Female Travel", "Photography Tours", "Ancient Egyptian History"],
+"url": "https://www.egyptphotographytours.com/about.html"
+}
+]
 }
 </script>
-
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
+<!-- Fonts & Icons with SRI hashes for security -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<!-- Trustpilot widget script with async loading -->
+<script async="" defer="" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" type="text/javascript"></script>
+<!-- Cloudflare Turnstile for contact form -->
 <script async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
-
 <style>
+/* BASE STYLES - MATCHES RESOURCE ARTICLE DESIGN SYSTEM */
 :root {
-    --primary-dark: #1a202c;
-    --accent-light: #FFD700;
-    --accent-dark: #E2B700;
-    --text-color: #333;
-    --safe-green: #10b981;
-    --warning-red: #ef4444;
-    --c-gold: #FFD700;
-    --c-gold-d: #E2B700;
-    --c-white: #fff;
-    --c-bg: #f8f8f8;
-    --c-border: #e2e8f0;
-    --c-muted: #5A6475;
-    --radius-sm: 8px;
-    --radius: 14px;
-    --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
-    --shadow: 0 4px 20px rgba(0,0,0,.11);
+--primary-dark: #1a202c;
+--accent-light: #FFD700;
+--accent-dark: #E2B700;
+--text-color: #333;
+--solo-color: #DB2777;
+--safe-green: #10B981;
+--warning-color: #e53e3e;
+--success-color: #10B981;
+--booking-color: #059669;
+--tour-color: #10B981;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f8f8f8;
-    color: var(--text-color);
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
-    line-height: 1.6;
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+background-color: #f8f8f8;
+color: var(--text-color);
+margin: 0;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+line-height: 1.6;
+font-size: 16px;
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+/* Skip to Content Link for Accessibility */
+.skip-link {
+position: absolute; top: -40px; left: 0;
+background: var(--accent-light); color: var(--primary-dark);
+padding: 8px 16px; z-index: 10000; text-decoration: none;
+font-weight: 600; border-radius: 0 0 4px 0;
+}
+.skip-link:focus { top: 0; }
+/* HEADER & NAV */
 .header {
-    background-color: var(--primary-dark);
-    color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 12px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+background-color: var(--primary-dark); color: white;
+box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); padding: 12px 0;
 }
 .header .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+display: flex; flex-direction: column; align-items: center;
+justify-content: space-between; gap: 12px;
 }
 @media (min-width: 768px) {
-    .header .content { flex-direction: row; justify-content: space-between; }
+.header .content { flex-direction: row; gap: 0; }
+.header-text { margin-top: 0; font-size: 16px; }
 }
 .logo-section { display: flex; align-items: center; gap: 8px; }
-.logo-img { height: 40px; width: 40px; border-radius: 9999px; object-fit: cover; }
+.logo-img { height: 40px; width: auto; border-radius: 9999px; }
 .logo-link {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--accent-light);
-    text-decoration: none;
+font-size: 20px; font-weight: 700; letter-spacing: -0.025em;
+color: var(--accent-light); text-decoration: none;
 }
-.header-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
+.header-text { font-size: 14px; font-style: italic; text-align: center; margin-top: 4px; }
+.header-contact { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 @media (min-width: 768px) { .header-contact { align-items: flex-end; } }
 .contact-info {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
+display: flex; align-items: center; gap: 6px; color: white;
+text-decoration: none; font-size: 14px; transition: color 0.3s ease; padding: 4px 0;
 }
 .contact-info:hover { color: var(--accent-light); }
+.contact-icon { font-size: 14px; width: 16px; text-align: center; }
+/* NAVBAR */
 .navbar {
-    background-color: #374151;
-    color: white;
-    position: sticky;
-    top: 64px;
-    z-index: 999;
+background-color: #374151; color: white;
+box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+position: sticky; top: 0; z-index: 50; padding: 0;
 }
-.navbar-content {
-    display: flex;
-    flex-direction: column;
-}
-@media (min-width: 768px) {
-    .navbar-content { flex-direction: row; align-items: center; justify-content: space-between; }
-}
+.navbar-content { display: flex; flex-direction: column; align-items: stretch; justify-content: space-between; }
+@media (min-width: 768px) { .navbar-content { flex-direction: row; align-items: center; } }
 .nav-links {
-    display: none;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+display: none; flex-direction: column; width: 100%; gap: 0;
+font-size: 16px; font-weight: 500; list-style: none; padding: 0; margin: 0;
+background-color: #374151;
 }
 .nav-links.active { display: flex; }
 @media (min-width: 768px) {
-    .nav-links { display: flex; flex-direction: row; gap: 16px; }
+.nav-links { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; width: auto; }
 }
-.nav-link a {
-    color: white;
-    text-decoration: none;
-    padding: 12px 16px;
-    display: block;
-    transition: color 0.3s ease;
-}
-@media (min-width: 768px) { .nav-link a { padding: 16px 8px; } }
+.nav-link { border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-link:last-child { border-bottom: none; }
+@media (min-width: 768px) { .nav-link { border-bottom: none; } }
+.nav-link a { color: white; text-decoration: none; padding: 12px 16px; transition: color 0.3s ease; display: block; }
+@media (min-width: 768px) { .nav-link a { padding: 8px 0; } }
 .nav-link a:hover { color: var(--accent-light); }
-.cta-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-}
-@media (min-width: 768px) {
-    .cta-container { padding: 0; gap: 12px; }
-}
-.mobile-menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 8px;
-}
-@media (min-width: 768px) { .mobile-menu-toggle { display: none; } }
-.hero-section {
-    position: relative;
-    background: url('/images/solo-women-egypt-tours.jpg') no-repeat center center;
-    background-size: cover;
-    height: 60vh;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-}
-.hero-content {
-    color: white;
-    max-width: 800px;
-    margin: 0 auto;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.hero-title {
-    font-size: 36px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: var(--accent-light);
-    line-height: 1.2;
-}
-@media (min-width: 768px) { .hero-title { font-size: 48px; } }
-.hero-subtitle {
-    font-size: 18px;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-@media (min-width: 768px) { .hero-subtitle { font-size: 22px; } }
-.badge-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin: 20px 0;
-}
-.badge {
-    background: rgba(255, 215, 0, 0.2);
-    border: 2px solid var(--accent-light);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-.article-section { padding: 40px 0; }
-@media (min-width: 768px) { .article-section { padding: 60px 0; } }
-.article-container {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 30px;
-}
-@media (min-width: 768px) { .article-container { padding: 50px; } }
-h1 { font-size: 32px; color: var(--primary-dark); margin-bottom: 20px; line-height: 1.2; }
-@media (min-width: 768px) { h1 { font-size: 42px; } }
-h2 {
-    font-size: 28px;
-    color: var(--primary-dark);
-    margin: 40px 0 20px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid var(--accent-light);
-}
-@media (min-width: 768px) { h2 { font-size: 36px; } }
-h3 { font-size: 22px; color: var(--primary-dark); margin: 30px 0 15px; }
-@media (min-width: 768px) { h3 { font-size: 28px; } }
-h4 { font-size: 18px; color: #4b5563; margin: 20px 0 10px; }
-p { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
-@media (min-width: 768px) { p { font-size: 18px; } }
-.info-box {
-    background: #f0f9ff;
-    border-left: 4px solid #3b82f6;
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 0 8px 8px 0;
-}
-.warning-box {
-    background: #fef2f2;
-    border-left: 4px solid #ef4444;
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 0 8px 8px 0;
-}
-.tip-box {
-    background: #f0fdf4;
-    border-left: 4px solid #10b981;
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 0 8px 8px 0;
-}
-.content-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.image-caption {
-    text-align: center;
-    font-style: italic;
-    color: #6b7280;
-    margin-top: 8px;
-    font-size: 14px;
-}
-.tour-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin: 30px 0;
-}
-@media (min-width: 768px) { .tour-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .tour-grid { grid-template-columns: repeat(3, 1fr); } }
-.tour-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    border: 2px solid transparent;
-}
-.tour-card:hover { transform: translateY(-5px); border-color: var(--accent-light); }
-.tour-img { width: 100%; height: 200px; object-fit: cover; }
-.tour-card-body { padding: 20px; }
-.tour-card-title { font-size: 20px; margin-bottom: 12px; color: var(--primary-dark); }
-.tour-card-features { list-style: none; padding: 0; margin: 15px 0; }
-.tour-card-features li { padding: 5px 0; display: flex; align-items: center; gap: 8px; }
-.tour-card-features i { color: var(--accent-light); }
-.tour-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-.tour-price { font-size: 24px; font-weight: bold; color: var(--accent-dark); }
-.tour-cta {
-    display: inline-block;
-    background: var(--accent-light);
-    color: var(--primary-dark);
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-.tour-cta:hover { background: var(--accent-dark); }
-.safety-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin: 30px 0;
-}
-@media (min-width: 640px) { .safety-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .safety-grid { grid-template-columns: repeat(4, 1fr); } }
-.safety-card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.safety-icon { font-size: 40px; color: var(--safe-green); margin-bottom: 15px; }
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 30px 0;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.comparison-table th {
-    background: var(--primary-dark);
-    color: white;
-    padding: 15px;
-    text-align: left;
-    font-weight: 600;
-}
-.comparison-table td { padding: 15px; border-bottom: 1px solid #e5e7eb; }
-.comparison-table tr:last-child td { border-bottom: none; }
-.comparison-table tr:nth-child(even) { background: #f9fafb; }
-.faq-container { margin: 30px 0; }
-.faq-item {
-    background: white;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.faq-question {
-    padding: 20px;
-    background: #f8f9fa;
-    cursor: pointer;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.faq-answer { padding: 20px; display: none; }
-.faq-answer.active { display: block; }
-.cta-section {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, #2d3748 100%);
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-    margin: 40px 0;
-    border-radius: 12px;
-}
-.cta-title { color: var(--accent-light); margin-bottom: 20px; }
-.cta-button {
-    display: inline-block;
-    background: var(--accent-light);
-    color: var(--primary-dark);
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-.cta-button:hover { background: var(--accent-dark); transform: scale(1.05); }
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin: 30px 0;
-}
-@media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
-.testimonial-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.testimonial-stars { color: var(--accent-light); margin-bottom: 15px; }
-.testimonial-text { font-style: italic; margin-bottom: 20px; line-height: 1.6; }
-.testimonial-author { display: flex; align-items: center; gap: 10px; }
-.testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-.footer {
-    background: var(--primary-dark);
-    color: white;
-    padding: 40px 0;
-    margin-top: 60px;
-}
-.footer-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
-@media (min-width: 768px) { .footer-content { grid-template-columns: repeat(3, 1fr); } }
-.footer-title { color: var(--accent-light); font-size: 20px; margin-bottom: 16px; }
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 8px; }
-.footer-links a { color: white; text-decoration: none; transition: color 0.3s ease; }
-.footer-links a:hover { color: var(--accent-light); }
-.social-links { display: flex; gap: 16px; margin-top: 16px; }
-.social-links a { color: white; font-size: 20px; transition: color 0.3s ease; }
-.social-links a:hover { color: var(--accent-light); }
-.footer-map { grid-column: 1 / -1; }
-.footer-map iframe { width: 100%; height: 300px; border: none; border-radius: 8px; }
-.text-center { text-align: center; }
-.mb-20 { margin-bottom: 20px; }
-.mt-30 { margin-top: 30px; }
-.mb-30 { margin-bottom: 30px; }
-.highlight { color: var(--accent-dark); font-weight: 600; }
-@media print {
-    .hero-section, .navbar, .footer-map, .social-links, .cta-button { display: none !important; }
-    .article-container { box-shadow: none; padding: 0; }
-}
-:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    .tour-card:hover { transform: none; }
-}
-.breadcrumb { margin-bottom: 20px; font-size: 14px; color: #6b7280; }
-.breadcrumb a { color: var(--primary-dark); text-decoration: none; }
-.breadcrumb span { margin: 0 5px; }
+.cta-container { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
+@media (min-width: 768px) { .cta-container { justify-content: flex-end; gap: 12px; padding: 0; } }
+/* LANGUAGE SWITCHER */
 .language-switcher { position: relative; display: inline-block; z-index: 1000; }
 .current-language {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background: rgba(255, 215, 0, 0.1);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: white;
-    font-weight: 500;
+display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.3);
+border-radius: 6px; cursor: pointer; transition: all 0.3s ease; color: white; font-weight: 500;
 }
-.current-language:hover { background: rgba(255, 215, 0, 0.2); border-color: rgba(255, 215, 0, 0.5); }
+.current-language:hover { background: rgba(255,215,0,0.2); border-color: rgba(255,215,0,0.5); }
 .current-flag { font-size: 16px; }
 .current-text { font-size: 14px; font-weight: 600; }
 .dropdown-icon { font-size: 12px; transition: transform 0.3s ease; }
 .language-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 220px;
-    max-height: 400px;
-    overflow-y: auto;
-    background: #374151;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    margin-top: 8px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 1001;
+position: absolute; top: 100%; right: 0; width: 240px; max-height: 450px; overflow-y: auto;
+background: #374151; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+margin-top: 8px; opacity: 0; visibility: hidden; transform: translateY(-10px);
+transition: all 0.3s ease; z-index: 1001;
 }
 .language-switcher.active .language-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 .language-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    color: white;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: white;
+text-decoration: none; transition: all 0.2s ease; border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .language-item:last-child { border-bottom: none; }
-.language-item:hover { background: rgba(255, 215, 0, 0.1); color: var(--accent-light); }
-.language-item.active { background: rgba(255, 215, 0, 0.2); color: var(--accent-light); font-weight: 600; }
+.language-item:hover { background: rgba(255,215,0,0.1); color: var(--accent-light); }
+.language-item.active { background: rgba(255,215,0,0.2); color: var(--accent-light); font-weight: 600; }
 .flag-icon { font-size: 18px; min-width: 24px; }
 .language-text { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.language-dropdown::-webkit-scrollbar { width: 6px; }
-.language-dropdown::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.1); border-radius: 3px; }
-.language-dropdown::-webkit-scrollbar-thumb { background: rgba(255, 215, 0, 0.3); border-radius: 3px; }
-.language-dropdown::-webkit-scrollbar-thumb:hover { background: rgba(255, 215, 0, 0.5); }
-.book-now-button {
-    background: var(--accent-light);
-    color: var(--primary-dark);
-    padding: 10px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+/* MOBILE MENU TOGGLE */
+.mobile-menu-toggle { display: block; background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 8px; }
+@media (min-width: 768px) { .mobile-menu-toggle { display: none; } }
+/* HERO SECTION */
+.hero-section {
+position: relative;
+background-image: url('/images/solo-women-egypt-tours.jpg');
+background-size: cover; background-position: center;
+height: 60vh; min-height: 500px;
+display: flex; align-items: center; justify-content: center;
+text-align: center; padding: 24px;
 }
-.book-now-button:hover { background: var(--accent-dark); transform: scale(1.05); }
-
-/* Text Only Related Guides */
+.hero-overlay { position: absolute; inset: 0; background-color: rgba(0,0,0,0.7); }
+.hero-content { position: relative; z-index: 10; color: white; max-width: 960px; margin: 0 auto; }
+.hero-title {
+font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 20px;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.7); color: var(--accent-light);
+}
+@media (min-width: 768px) { .hero-title { font-size: 56px; } }
+.hero-subtitle {
+font-size: 18px; margin-bottom: 40px; text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+max-width: 800px; margin-left: auto; margin-right: auto;
+}
+@media (min-width: 768px) { .hero-subtitle { font-size: 22px; } }
+/* MAIN CONTENT */
+.article-section { padding: 40px 0; }
+@media (min-width: 768px) { .article-section { padding: 80px 0; } }
+.article-container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+.article-meta {
+display: flex; justify-content: center; gap: 20px; margin-bottom: 40px;
+font-size: 14px; color: #6b7280; flex-wrap: wrap;
+}
+@media (min-width: 768px) { .article-meta { font-size: 16px; } }
+.last-updated {
+background: rgba(219,39,119,0.1); color: var(--solo-color);
+padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;
+display: inline-flex; align-items: center; gap: 4px;
+}
+.article-content h2 {
+font-size: 32px; font-weight: 800; color: var(--primary-dark);
+margin: 60px 0 25px; padding-bottom: 10px;
+border-bottom: 3px solid var(--solo-color); line-height: 1.3;
+}
+@media (min-width: 768px) { .article-content h2 { font-size: 40px; margin: 80px 0 30px; } }
+.article-content h3 { font-size: 26px; font-weight: 700; color: var(--primary-dark); margin: 50px 0 20px; }
+@media (min-width: 768px) { .article-content h3 { font-size: 30px; margin: 60px 0 25px; } }
+.article-content h4 { font-size: 20px; font-weight: 600; color: var(--primary-dark); margin: 35px 0 15px; }
+.article-content p { font-size: 18px; line-height: 1.8; margin-bottom: 25px; }
+@media (min-width: 768px) { .article-content p { font-size: 20px; margin-bottom: 30px; } }
+.article-content ul, .article-content ol { margin-bottom: 30px; padding-left: 30px; }
+.article-content li { font-size: 18px; line-height: 1.8; margin-bottom: 15px; }
+@media (min-width: 768px) { .article-content li { font-size: 20px; } }
+.article-content strong { color: var(--primary-dark); font-weight: 700; }
+.article-content a {
+color: var(--tour-color); text-decoration: none; font-weight: 600;
+transition: color 0.3s ease; border-bottom: 1px dashed var(--tour-color);
+}
+.article-content a:hover { color: var(--primary-dark); border-bottom-style: solid; }
+/* SOLO BADGES */
+.solo-badge {
+display: inline-flex; align-items: center; gap: 6px;
+background: rgba(219,39,119,0.1); color: var(--solo-color);
+padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600; margin: 4px;
+}
+/* BOOKING CTA STYLES */
+.booking-cta {
+display: inline-block;
+background: linear-gradient(135deg, var(--booking-color) 0%, #047857 100%);
+color: white; font-weight: 700; padding: 14px 28px; border-radius: 50px;
+text-align: center; text-decoration: none; transition: all 0.4s ease; font-size: 16px;
+box-shadow: 0 10px 25px -5px rgba(5,150,105,0.3); border: 2px solid transparent; margin: 20px 0;
+}
+.booking-cta:hover, .booking-cta:active, .booking-cta:focus {
+background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+transform: scale(1.05); color: white !important; text-decoration: none;
+border-color: var(--accent-light); box-shadow: 0 15px 35px -5px rgba(5,150,105,0.4);
+}
+.booking-cta i { margin-right: 8px; }
+/* REVIEW CARDS */
+.review-card {
+background: white; border-radius: 12px; padding: 25px; margin: 25px 0;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--solo-color);
+}
+.review-header {
+display: flex; align-items: center; gap: 12px; margin-bottom: 15px;
+padding-bottom: 12px; border-bottom: 1px solid #e5e7eb;
+}
+.reviewer-avatar {
+width: 48px; height: 48px; border-radius: 50%; background: var(--solo-color);
+display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px;
+}
+.reviewer-info h4 { margin: 0; font-size: 16px; color: var(--primary-dark); }
+.reviewer-info p { margin: 4px 0 0; font-size: 14px; color: #6b7280; }
+.review-rating { display: flex; gap: 2px; color: #f59e0b; font-size: 14px; }
+.review-content p { margin: 0; font-size: 16px; line-height: 1.7; }
+/* CULTURAL CONTEXT CARDS */
+.culture-grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin: 40px 0; }
+@media (min-width: 768px) { .culture-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .culture-grid { grid-template-columns: repeat(3, 1fr); } }
+.culture-card {
+background: white; padding: 30px; border-radius: 12px;
+box-shadow: 0 6px 15px rgba(0,0,0,0.08); border-top: 5px solid var(--solo-color);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.culture-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
+.culture-icon { font-size: 42px; color: var(--solo-color); margin-bottom: 20px; display: block; text-align: center; }
+.culture-card h4 { color: var(--solo-color); text-align: center; margin-top: 0; }
+/* SOLO HIGHLIGHT */
+.solo-highlight {
+background: linear-gradient(135deg, #FDF2F8 0%, #FCE7F3 100%);
+border-left: 6px solid var(--solo-color); padding: 35px; margin: 50px 0;
+border-radius: 12px; text-align: center;
+}
+@media (min-width: 768px) { .solo-highlight { padding: 45px; } }
+/* TABLE */
+.table-wrapper {
+width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+margin: 35px 0; border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.solo-table { width: 100%; border-collapse: collapse; font-size: 16px; min-width: 600px; }
+@media (min-width: 768px) { .solo-table { font-size: 18px; } }
+.solo-table th {
+background-color: var(--primary-dark); color: white; padding: 20px 15px;
+text-align: left; font-weight: 700; font-size: 18px; position: sticky; top: 0;
+}
+@media (min-width: 768px) { .solo-table th { padding: 25px 20px; } }
+.solo-table td { padding: 20px 15px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+@media (min-width: 768px) { .solo-table td { padding: 25px 20px; } }
+.solo-table tr:nth-child(even) { background-color: #f9fafb; }
+.solo-table tr:hover { background-color: #f3f4f6; }
+/* SERVICE CATEGORY */
+.service-category {
+background: white; border-radius: 15px; padding: 35px; margin: 40px 0;
+box-shadow: 0 6px 15px rgba(0,0,0,0.1); border-top: 6px solid;
+}
+@media (min-width: 768px) { .service-category { padding: 45px; } }
+.category-safety { border-color: var(--solo-color); }
+.category-culture { border-color: var(--tour-color); }
+.category-packing { border-color: var(--safe-green); }
+.category-transport { border-color: #0EA5E9; }
+/* QUICK REFERENCE GRID (Safety Features) */
+.quick-reference { display: grid; grid-template-columns: 1fr; gap: 25px; margin: 50px 0; }
+@media (min-width: 768px) { .quick-reference { grid-template-columns: repeat(3, 1fr); } }
+.reference-item {
+background: white; padding: 30px; border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center;
+transition: transform 0.3s ease; border-top: 4px solid;
+}
+.reference-item:hover { transform: translateY(-5px); }
+.reference-solo { border-color: var(--solo-color); }
+.reference-icon { font-size: 48px; margin-bottom: 20px; display: block; color: var(--solo-color); }
+/* TIP CARD */
+.tip-card {
+background: white; padding: 30px; border-radius: 12px; margin: 30px 0;
+box-shadow: 0 4px 8px rgba(0,0,0,0.08); border-left: 4px solid var(--accent-light);
+}
+/* WARNING & ADVICE BOXES */
+.warning-box {
+background: linear-gradient(135deg, #fed7d7 0%, #fef2f2 100%);
+border-left: 6px solid var(--warning-color); padding: 35px; margin: 40px 0; border-radius: 12px;
+}
+.warning-box h3 { color: var(--warning-color); margin-top: 0; font-size: 24px; }
+.advice-box {
+background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+border-left: 6px solid var(--success-color); padding: 35px; margin: 40px 0; border-radius: 12px;
+}
+.advice-box h3 { color: var(--success-color); margin-top: 0; font-size: 24px; }
+.info-box {
+background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+border-left: 6px solid #3b82f6; padding: 35px; margin: 40px 0; border-radius: 12px;
+}
+.info-box h3, .info-box h4 { color: #1d4ed8; margin-top: 0; }
+/* TRUST SECTION */
+.trust-section {
+background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+color: white; padding: 80px 0; margin: 60px 0;
+}
+.trust-section h2 { color: var(--accent-light); text-align: center; margin-bottom: 50px; font-size: 36px; font-weight: 800; }
+@media (min-width: 768px) { .trust-section h2 { font-size: 42px; } }
+.trust-grid { display: grid; grid-template-columns: 1fr; gap: 35px; margin-top: 40px; }
+@media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
+.trust-card {
+background: rgba(255,255,255,0.1); padding: 35px; border-radius: 15px; text-align: center;
+border: 2px solid rgba(255,215,0,0.2); transition: transform 0.4s ease, border-color 0.4s ease;
+}
+.trust-card:hover { transform: translateY(-10px); border-color: var(--accent-light); }
+.trust-icon { font-size: 52px; margin-bottom: 25px; display: block; }
+.trust-card h3 { color: var(--accent-light); font-size: 26px; margin-bottom: 20px; }
+.trust-card p { color: #e2e8f0; font-size: 18px; line-height: 1.7; }
+.trust-card a { color: var(--accent-light); }
+/* CTA BUTTONS */
+.cta-button {
+display: inline-block; background-color: var(--accent-light); color: var(--primary-dark);
+font-weight: 700; padding: 18px 36px; border-radius: 50px; text-align: center;
+text-decoration: none; transition: all 0.4s ease; font-size: 18px;
+box-shadow: 0 15px 25px -5px rgba(0,0,0,0.15); border: 2px solid transparent;
+}
+.cta-button:hover, .cta-button:active, .cta-button:focus {
+background-color: var(--accent-dark); transform: scale(1.08);
+color: var(--primary-dark) !important; text-decoration: none;
+border-color: var(--primary-dark); box-shadow: 0 20px 35px -5px rgba(0,0,0,0.2);
+}
+/* CTA SECTION */
+.cta-section {
+background: linear-gradient(135deg, var(--primary-dark) 0%, #2d3748 100%);
+color: white; padding: 60px 0; text-align: center; margin-top: 60px; border-radius: 15px;
+background-image: radial-gradient(circle at 20% 80%, rgba(255,215,0,0.15) 0%, transparent 50%);
+}
+@media (min-width: 768px) { .cta-section { padding: 80px 0; margin-top: 80px; } }
+.cta-section h2 { color: var(--accent-light); margin-bottom: 25px; font-size: 36px; font-weight: 800; }
+@media (min-width: 768px) { .cta-section h2 { font-size: 42px; } }
+.cta-section p { max-width: 700px; margin: 0 auto 35px; font-size: 20px; line-height: 1.7; }
+@media (min-width: 768px) { .cta-section p { font-size: 22px; margin: 0 auto 45px; } }
+/* FAQ ACCORDION */
+.faq-container { margin: 30px 0; }
+.faq-item { background: white; border-radius: 8px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.faq-question {
+padding: 20px; background: #f8f9fa; cursor: pointer; margin: 0;
+display: flex; justify-content: space-between; align-items: center;
+font-size: 18px; color: var(--primary-dark); gap: 12px;
+}
+.faq-question i { color: var(--solo-color); flex-shrink: 0; }
+.faq-answer { padding: 0 20px; display: none; }
+.faq-answer.active { display: block; padding: 20px; }
+.faq-answer p { font-size: 16px; color: var(--text-color); margin: 0; }
+/* RESPONSIVE IMAGES */
+.content-image { width: 100%; height: auto; border-radius: 12px; margin: 30px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.image-caption { text-align: center; font-style: italic; color: #6b7280; margin-top: -20px; margin-bottom: 30px; font-size: 16px; }
+/* BREADCRUMB */
+.breadcrumb { padding: 16px 0; font-size: 14px; color: #6b7280; }
+.breadcrumb a { color: var(--tour-color); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 4px; color: #9ca3af; }
+/* BACK TO TOP */
+.back-to-top {
+position: fixed; bottom: 30px; right: 30px; background: var(--accent-light);
+color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center; font-size: 20px;
+cursor: pointer; box-shadow: 0 6px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;
+z-index: 999; opacity: 0; visibility: hidden;
+}
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { background: var(--accent-dark); transform: scale(1.1); }
+/* COOKIE CONSENT */
+.cookie-consent {
+position: fixed; bottom: 0; left: 0; right: 0; background: var(--primary-dark);
+color: white; padding: 16px 24px; display: flex; justify-content: space-between;
+align-items: center; gap: 16px; z-index: 10000;
+transform: translateY(100%); transition: transform 0.3s ease;
+}
+.cookie-consent.visible { transform: translateY(0); }
+.cookie-consent p { margin: 0; font-size: 14px; flex: 1; }
+.cookie-consent button {
+background: var(--accent-light); color: var(--primary-dark); border: none;
+padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.3s;
+}
+.cookie-consent button:hover { background: var(--accent-dark); }
+/* Trustpilot Widget Container */
+.trustpilot-widget-container { margin: 40px 0; text-align: center; }
+/* BOOK NOW BUTTON */
+.book-now-button {
+font-weight: 700; padding: 10px 20px; border-radius: 50px;
+background-color: var(--accent-light); color: #1a202c; text-decoration: none;
+transition: all 0.3s ease; font-size: 15px; white-space: nowrap;
+box-shadow: 0 6px 12px -3px rgba(0,0,0,0.15); display: inline-block; border: 2px solid transparent;
+}
+.book-now-button:hover, .book-now-button:active, .book-now-button:focus {
+background-color: var(--accent-dark); transform: scale(1.05);
+color: #1a202c !important; text-decoration: none; border-color: #1a202c;
+}
+/* RELATED GUIDES */
 .related-guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
 .related-guide-card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); border-left: 4px solid var(--accent-light); }
 .related-guide-card h4 { margin-bottom: 10px; font-size: 18px; }
 .related-guide-card h4 a { color: var(--primary-dark); text-decoration: none; }
-.related-guide-card h4 a:hover { color: var(--accent-light); }
+.related-guide-card h4 a:hover { color: var(--solo-color); }
 .related-guide-card p { font-size: 14px; color: #6b7280; margin-bottom: 12px; }
-.related-guide-card .read-more { color: var(--accent-light); font-weight: 600; text-decoration: none; }
+.related-guide-card .read-more { color: var(--solo-color); font-weight: 600; text-decoration: none; }
 .related-guide-card .read-more:hover { text-decoration: underline; }
-
-/* Contact Form CSS */
-.trip-builder{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
-@media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
-.trip-form-box{background:var(--c-white, #fff);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
-.form-row{margin-bottom:16px}
-.form-label{display:block;font-size:13px;font-weight:600;color:var(--primary-dark);margin-bottom:6px}
-.form-req{color:#ef4444}
-.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--text-color);transition:border-color .28s;background:#fff}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
-.form-textarea{min-height:90px;resize:vertical}
-.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:480px){.form-row-2{grid-template-columns:1fr}}
-.form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--primary-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all .28s;min-height:52px}
-.form-submit:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
-.trip-contacts{display:flex;flex-direction:column;gap:20px;justify-content:center}
-.contact-card{background:var(--c-white, #fff);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);text-align:center}
-.contact-card-icon{font-size:40px;margin-bottom:14px;display:block}
-.contact-card h3{font-size:18px;color:var(--primary-dark);margin-bottom:8px}
-.contact-card p{font-size:14px;color:var(--c-muted);margin-bottom:16px;line-height:1.6}
-.section-accent{background:linear-gradient(135deg,#1a202c 0%,#2d3748 100%);color:#fff}
-.section-accent h2, .section-accent h3{color:#fff}
-.section-accent .sec-sub{color:rgba(255,255,255,.85)}
+/* CONTACT FORM */
+.section-accent { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); color: #fff; padding: 60px 0; }
+.section-accent h2, .section-accent h3 { color: #fff; }
+.text-c { text-align: center; }
+.sec-sub { color: rgba(255,255,255,.85); max-width: 700px; margin: 12px auto 0; }
+.eyebrow {
+display: inline-block; background: rgba(255,215,0,.18); color: var(--accent-light);
+border: 1px solid rgba(255,215,0,.5); border-radius: 30px; padding: 5px 16px;
+font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 14px;
+}
+.trip-builder { display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
+@media (min-width: 900px) { .trip-builder { grid-template-columns: 1.1fr 1fr; } }
+.trip-form-box { background: #fff; border-radius: 14px; padding: 32px 28px; box-shadow: 0 4px 20px rgba(0,0,0,.11); }
+.form-row { margin-bottom: 16px; }
+.form-label { display: block; font-size: 13px; font-weight: 600; color: var(--primary-dark); margin-bottom: 6px; }
+.form-req { color: #ef4444; }
+.form-input, .form-select, .form-textarea {
+width: 100%; padding: 12px 16px; border: 1.5px solid #e2e8f0; border-radius: 8px;
+font-size: 14px; font-family: inherit; color: var(--text-color);
+transition: border-color .28s; background: #fff;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent-light); outline: none; box-shadow: 0 0 0 3px rgba(255,215,0,.15); }
+.form-textarea { min-height: 90px; resize: vertical; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .form-row-2 { grid-template-columns: 1fr; } }
+.form-submit {
+width: 100%; padding: 15px; background: var(--accent-light); color: var(--primary-dark);
+border: none; border-radius: 30px; font-weight: 800; font-size: 15px; cursor: pointer;
+transition: all .28s; min-height: 52px;
+}
+.form-submit:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,215,0,.4); }
+.trip-contacts { display: flex; flex-direction: column; gap: 20px; justify-content: center; }
+.contact-card { background: #fff; border-radius: 14px; padding: 28px 24px; box-shadow: 0 4px 20px rgba(0,0,0,.11); text-align: center; }
+.contact-card-icon { font-size: 40px; margin-bottom: 14px; display: block; }
+.contact-card h3 { font-size: 18px; color: var(--primary-dark); margin-bottom: 8px; }
+.contact-card p { font-size: 14px; color: #5A6475; margin-bottom: 16px; line-height: 1.6; }
+/* FOOTER */
+.footer { background-color: var(--primary-dark); color: white; padding: 40px 0; margin-top: auto; }
+@media (min-width: 768px) { .footer { padding: 50px 0; } }
+.footer-content { text-align: center; }
+@media (min-width: 768px) {
+.footer-content { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; flex-wrap: wrap; }
+}
+.footer-section { margin-bottom: 30px; flex: 1; min-width: 250px; }
+@media (min-width: 768px) { .footer-section { margin-bottom: 0; } }
+.footer-brand { text-align: left; margin-bottom: 30px; flex: 1; min-width: 250px; }
+@media (min-width: 768px) { .footer-brand { margin-bottom: 0; text-align: left; } }
+.footer-title { font-size: 22px; font-weight: 700; color: var(--accent-light); margin-bottom: 12px; }
+@media (min-width: 768px) { .footer-title { font-size: 26px; } }
+.footer-text { font-size: 15px; line-height: 1.6; margin: 0; }
+.footer-links { list-style: none; padding: 0; font-size: 15px; line-height: 2; }
+.footer-links li a { color: white; text-decoration: none; transition: color 0.3s ease; }
+.footer-links li a:hover { color: var(--accent-light); }
+.social-links { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
+@media (min-width: 768px) { .social-links { justify-content: flex-start; } }
+.social-links a { color: white; transition: color 0.3s ease; font-size: 20px; text-decoration: none; }
+.social-links a:hover { color: var(--accent-light); }
+.footer-contact { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; margin-bottom: 20px; }
+.footer-contact-info {
+display: flex; align-items: center; gap: 8px; color: white; text-decoration: none;
+font-size: 15px; transition: color 0.3s ease; justify-content: center;
+}
+@media (min-width: 768px) { .footer-contact-info { justify-content: flex-start; } }
+.footer-contact-info:hover { color: var(--accent-light); }
+.footer-map { margin-top: 30px; width: 100%; flex: 2; }
+@media (min-width: 768px) { .footer-map { margin-top: 0; } }
+.footer-map iframe { width: 100%; height: 350px; border: none; border-radius: 12px; }
+@media (min-width: 768px) { .footer-map iframe { height: 400px; } }
+@media (min-width: 1024px) { .footer-map iframe { height: 450px; } }
+/* AUTHOR BIO */
+.author-bio { border-top: 2px solid var(--accent-light); padding-top: 30px; margin-top: 50px; }
+.author-bio-inner { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.author-bio img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+.author-bio p { font-size: 16px; margin: 10px 0 0; }
+/* ACCESSIBILITY & MOTION */
+:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+}
+}
+@media print {
+.hero-section, .navbar, .footer-map, .social-links, .cta-button, .booking-cta, .back-to-top, .cookie-consent { display: none !important; }
+.article-container { box-shadow: none; padding: 0; }
+}
 </style>
 </head>
 <body>
+<!-- Accessibility: Skip to Content Link -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="header">
 <div class="container content">
 <div class="logo-section">
-<img alt="Egypt Photography Tours Logo - Safe tours for solo women travelers in Egypt" class="logo-img" height="40" loading="eager" src="/images/egypt-photography-tours-logo.jpg" width="40"/>
-<a class="logo-link" href="/">Egypt Photography Tours</a>
+<img alt="Egypt Photography Tours Logo - Safe solo women travel expertise" class="logo-img" height="40" loading="eager" src="/images/egypt-photography-tours-logo.jpg" width="40"/>
+<a class="logo-link" href="/index.html">Egypt Photography Tours</a>
 </div>
+<div class="header-text">Where Photography Meets Deep Cultural Understanding</div>
 <div class="header-contact">
-<a class="contact-info" href="https://wa.me/201550735673" rel="noopener nofollow" target="_blank">
-<i class="fab fa-whatsapp"></i> +20 155 073 5673
+<a class="contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
+<i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
 </a>
 <a class="contact-info" href="mailto:info@egyptphotographytours.com">
-<i class="far fa-envelope"></i> info@egyptphotographytours.com
+<i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
 </a>
 </div>
 </div>
@@ -706,92 +675,117 @@ p { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
 <nav class="navbar">
 <div class="container navbar-content">
 <div class="cta-container">
-<button aria-label="Toggle menu" class="mobile-menu-toggle">
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-menu-toggle">
 <i class="fas fa-bars"></i>
 </button>
-<a class="book-now-button" href="/contact">Book Now</a>
+<a class="book-now-button" href="https://www.egyptphotographytours.com/tours.html">Book Your Experience</a>
+<!-- Language Switcher - ENGLISH DEFAULT -->
 <div class="language-switcher">
-<div aria-label="Select language" class="current-language">
+<div aria-label="Select language" class="current-language" role="button" tabindex="0">
 <span class="current-flag">🇺🇸</span>
 <span class="current-text">EN</span>
-<i class="fas fa-chevron-down dropdown-icon"></i>
+<i aria-hidden="true" class="fas fa-chevron-down dropdown-icon"></i>
 </div>
-<div class="language-dropdown">
-<a class="language-item active" data-flag="🇺🇸" data-lang="en" href="/egypt-tours-solo-women.html">
+<div class="language-dropdown" role="menu">
+<a class="language-item active" data-flag="🇺🇸" data-lang="en" href="/egypt-tours-solo-women.html" role="menuitem">
 <span class="flag-icon">🇺🇸</span>
 <span class="language-text">English</span>
 </a>
 </div>
 </div>
 </div>
-<ul class="nav-links">
-<li class="nav-link"><a href="/">Home</a></li>
-<li class="nav-link"><a href="/about">About</a></li>
-<li class="nav-link"><a href="/tours">Tours</a></li>
-<li class="nav-link"><a href="/gallery">Gallery</a></li>
-<li class="nav-link"><a href="/resources">Resources</a></li>
-<li class="nav-link"><a href="/blog">Blog</a></li>
-<li class="nav-link"><a href="/contact">Contact</a></li>
-<li class="nav-link"><a href="/faqs">FAQs</a></li>
+<ul class="nav-links" role="menubar">
+<li class="nav-link" role="none"><a href="/index.html" role="menuitem">Home</a></li>
+<li class="nav-link" role="none"><a href="/about.html" role="menuitem">About Us</a></li>
+<li class="nav-link" role="none"><a href="https://www.egyptphotographytours.com/tours.html" role="menuitem">Our Tours</a></li>
+<li class="nav-link" role="none"><a href="/gallery.html" role="menuitem">Gallery</a></li>
+<li class="nav-link" role="none"><a href="/resources.html" role="menuitem">Resources</a></li>
+<li class="nav-link" role="none"><a href="/blog.html" role="menuitem">Blog</a></li>
+<li class="nav-link" role="none"><a href="/contact.html" role="menuitem">Contact Us</a></li>
+<li class="nav-link" role="none"><a href="/faqs.html" role="menuitem">FAQs</a></li>
 </ul>
 </div>
 </nav>
+<main class="main" id="main-content">
+<!-- Visible Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="breadcrumb container">
+<a href="/index.html">Home</a>
+<span aria-hidden="true">›</span>
+<a href="/resources.html">Resources</a>
+<span aria-hidden="true">›</span>
+<span aria-current="page">Solo Women Egypt Tours 2026</span>
+</nav>
 <section class="hero-section">
+<div class="hero-overlay"></div>
 <div class="hero-content">
-<div class="badge-container">
-<span class="badge">#1 Ranked Solo Women Tours</span>
-<span class="badge">2026 New Year Special</span>
-<span class="badge">Female Guides Only</span>
-<span class="badge">Safe & Secure</span>
-</div>
-<h1 class="hero-title">Solo Women Egypt Tours 2026: The Ultimate Safe Travel Guide</h1>
-<p class="hero-subtitle">Ranked #1 for solo female travelers. Experience Egypt with complete confidence through our women-only tours featuring female Egyptologist guides, secure accommodations, and exclusive access to ancient wonders. Perfect for New Year 2026 celebrations.</p>
-<a class="cta-button" href="#tour-packages">Explore 2026 Women-Only Tours</a>
+<h1 class="hero-title">Solo Women Egypt Tours 2026</h1>
+<p class="hero-subtitle">
+The Ultimate Safe Travel Guide for Female Travelers - Book Your Professional Photography Tour Today. Expert Safety Guidance, Female Egyptologist Guides &amp; Photography Strategies with Trusted Local Support.
+</p>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html">
+<i class="fas fa-shield-alt"></i> Book Your Safe Solo Women Tour
+</a>
 </div>
 </section>
-<main class="article-section">
-<div class="container">
-<div class="breadcrumb">
-<a href="/">Home</a> <span>&gt;</span>
-<a href="/tours">Egypt Tours</a> <span>&gt;</span>
-<span>Solo Women Egypt Tours 2026</span>
-</div>
+<section class="article-section">
 <div class="article-container">
-<div class="article-meta" style="display: flex; justify-content: space-between; color: #6b7280; margin-bottom: 30px; font-size: 14px;">
-<span><i class="far fa-calendar"></i> Published: December 15, 2025</span>
-<span><i class="far fa-clock"></i> Reading Time: 25 minutes</span>
-<span><i class="fas fa-pen"></i> Updated: December 30, 2025</span>
+<div class="article-meta">
+<span><i class="far fa-calendar"></i> December 15, 2025</span>
+<span><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
+<span><i class="fas fa-tags"></i> Solo Female Travel, Safety, Book Egypt Tours</span>
+<span><i class="far fa-clock"></i> 25 min read</span>
+<span class="last-updated"><i class="fas fa-sync-alt"></i> Updated: Dec 30, 2025</span>
 </div>
-<h1>Solo Women Egypt Tours 2026: Complete Safe Travel Guide for Female Travelers</h1>
-<p>Welcome to the <strong>most comprehensive guide to solo women Egypt tours for 2026</strong>. As the leading provider of women-only travel experiences in Egypt, we've compiled over 6000 words of essential information, safety tips, cultural insights, and exclusive tour recommendations specifically for female travelers. Whether you're planning a solo adventure for New Year 2026 celebrations or seeking a transformative journey through ancient lands, this guide covers everything you need to know about <strong>safe travel in Egypt for solo women</strong>.</p>
-<div class="info-box">
-<h3 style="margin-top: 0;">Table of Contents</h3>
-<ol>
-<li><a href="#safety-overview" style="color: #3b82f6;">Is Egypt Safe for Solo Women in 2026?</a></li>
-<li><a href="#cultural-guide" style="color: #3b82f6;">Cultural Guide for Female Travelers</a></li>
-<li><a href="#safety-features" style="color: #3b82f6;">Our Safety Features & Guarantees</a></li>
-<li><a href="#tour-packages" style="color: #3b82f6;">2026 Women-Only Tour Packages</a></li>
-<li><a href="#new-year-specials" style="color: #3b82f6;">New Year 2026 Special Tours</a></li>
-<li><a href="#itinerary-planning" style="color: #3b82f6;">Itinerary Planning Guide</a></li>
-<li><a href="#packing-guide" style="color: #3b82f6;">Packing Guide for Egypt</a></li>
-<li><a href="#transportation-guide" style="color: #3b82f6;">Transportation & Navigation</a></li>
-<li><a href="#faq" style="color: #3b82f6;">Frequently Asked Questions</a></li>
-<li><a href="#testimonials" style="color: #3b82f6;">Traveler Testimonials</a></li>
-</ol>
+<div class="article-content">
+<!-- Introduction with Strong Booking CTA -->
+<p><strong>Planning a solo trip to Egypt as a woman without understanding safety protocols and cultural norms is like shooting without checking your exposure—you might get acceptable results, but you're risking uncomfortable situations, missed experiences, or logistical challenges that could undermine your entire journey.</strong> Generic travel blogs offer oversimplified safety advice; guidebooks hide cultural nuances in dense text; and solo female travel-specific needs create unique planning requirements that standard advice doesn't address.</p>
+<p>This comprehensive 2026 guide empowers you to travel Egypt with complete confidence: verified safety insights with local expertise, cultural etiquette that earns respect and opens doors, women-only tour experiences with female Egyptologist guides, packing strategies for comfort and modesty, transportation options that keep you secure, and how <strong>booking with Egypt Photography Tours</strong> enhances your solo journey with local partnerships, female-led guidance, and privileged access to authentic experiences for stress-free, empowering travel.</p>
+<div class="solo-highlight">
+<h3>Ready for a Safe, Empowering Egypt Adventure?</h3>
+<p>Join hundreds of solo women who have explored Egypt safely and magnificently with our women-only tours. <a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-calendar-check"></i> Book Your Experience Now</a></p>
 </div>
-<h2 id="safety-overview">1. Is Egypt Safe for Solo Women Travelers in 2026?</h2>
-<p>This is the most common question we receive from women considering solo travel to Egypt. The answer is a resounding <strong>YES</strong> – when you travel with the right preparations and support. Egypt welcomes millions of female travelers annually, and with our specialized women-only tours, you can explore this magnificent country with complete confidence.</p>
-<img alt="Solo women travelers exploring Luxor Temple with female guide - Safe Egypt tours 2026" class="content-image" height="600" loading="lazy" src="/images/women-egypt-luxor-temple.jpg" width="900"/>
-<p class="image-caption">Women travelers exploring Luxor Temple with our female Egyptologist guide - A safe and enriching experience</p>
-<h3>Safety Statistics & Reality Check</h3>
-<p>According to the Egyptian Tourism Authority, over <strong>2.3 million solo female travelers</strong> visited Egypt in 2024, with a satisfaction rate exceeding 94%. The perception of safety often differs from reality. While you should exercise normal travel precautions (as you would in any country), Egypt's major tourist destinations – Cairo, Giza, Luxor, Aswan, and Alexandria – have extensive security measures in place specifically to protect tourists.</p>
-<div class="tip-box">
-<h4 style="color: #10b981; margin-top: 0;">Pro Safety Tip:</h4>
-<p>The key to safe solo travel in Egypt is choosing reputable tour operators with female guides, staying in well-reviewed accommodations, and avoiding isolated areas after dark. Our women-only tours address all these concerns proactively.</p>
+<!-- Trustpilot Widget Container -->
+<div class="trustpilot-widget-container">
+<div class="trustpilot-widget" data-businessunit-id="5f8c7b1e0000640001e6f3a2" data-locale="en-US" data-style-height="24px" data-style-width="100%" data-template-id="5419b6ffb0d04a076446a9ad" data-theme="light">
+<a href="https://www.trustpilot.com/review/egyptphotographytours.com" rel="noopener" target="_blank">Trustpilot</a>
 </div>
-<h3>Common Concerns Addressed</h3>
-<div class="comparison-table">
-<table>
+</div>
+<!-- Chapter 1: Is Egypt Safe -->
+<h2>Chapter 1: Is Egypt Safe for Solo Women Travelers in 2026?</h2>
+<p>This is the most common question we receive from women considering solo travel to Egypt. The answer is a resounding <strong>YES</strong> — when you travel with the right preparations and support. Egypt welcomes millions of female travelers annually, and with specialized women-only tours, you can explore this magnificent country with complete confidence. This chapter provides expert-vetted safety analysis specifically for solo female travelers.</p>
+<img alt="Solo women travelers exploring Luxor Temple with a female Egyptologist guide - Safe Egypt tours 2026" class="content-image" height="600" loading="lazy" src="/images/women-egypt-luxor-temple.jpg" width="900"/>
+<p class="image-caption">Women travelers exploring Luxor Temple with our female Egyptologist guide — a safe and enriching experience</p>
+<div class="culture-grid">
+<div class="culture-card">
+<span class="culture-icon">🛡️</span>
+<h4>Safety Reality Check</h4>
+<p><strong>Tourist Security:</strong> Major destinations — Cairo, Giza, Luxor, Aswan, and Alexandria — have extensive security measures to protect visitors • Safety benefit: Well-monitored environments for confident exploration<br/>
+<strong>Satisfaction Rates:</strong> Millions of solo female travelers visit Egypt annually with overwhelmingly positive experiences • Safety benefit: A proven track record of welcoming female visitors<br/>
+<strong>Perception vs. Reality:</strong> Concerns often exceed actual risk when standard travel precautions are followed • Safety benefit: Knowledge reduces anxiety and enables enjoyment<br/>
+<strong>Book This Experience:</strong> The <a href="https://www.egyptphotographytours.com/tour-cairo-giza-2day.html">Cairo &amp; Giza 2-Day Photo Tour</a> includes safety briefings that help you explore with confidence and respectful protocols</p>
+</div>
+<div class="culture-card">
+<span class="culture-icon">👩‍✈️</span>
+<h4>Why Women-Only Tours Work</h4>
+<p><strong>Female Guides:</strong> Licensed female Egyptologists who understand women's travel concerns • Safety benefit: A trusted cultural buffer and advocate<br/>
+<strong>Group Solidarity:</strong> Travel with other solo female travelers for shared safety and friendship • Safety benefit: Strength in numbers and instant support network<br/>
+<strong>Vetted Logistics:</strong> Secure accommodations and trusted transportation arranged in advance • Safety benefit: No guesswork or risky decisions on the ground<br/>
+<strong>Book This Experience:</strong> The <a href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day.html">7-Day Egypt Photo Adventure</a> includes women-focused safety planning that enhances both security and photographic storytelling</p>
+</div>
+<div class="culture-card">
+<span class="culture-icon">📸</span>
+<h4>Photography with Confidence</h4>
+<p><strong>Safe Locations:</strong> Guides know secure, photogenic spots away from crowded hassles • Best times: Golden hour for warm light, blue hour for atmosphere<br/>
+<strong>Cultural Buffer:</strong> Female guides facilitate respectful interactions and permissions • Best practices: Request consent, focus on storytelling<br/>
+<strong>Equipment Peace of Mind:</strong> Group travel means someone always watches your gear • Composition tip: Capture iconic sites with a relaxed, supported presence<br/>
+<strong>Book This Experience:</strong> All Egypt Photography Tours include photography guidance with location-specific timing strategies and cultural sensitivity protocols</p>
+</div>
+</div>
+<div class="warning-box">
+<h3><i class="fas fa-exclamation-triangle"></i> Common Concerns, Addressed Honestly</h3>
+<p>Solo female travel requires awareness. Here's how we proactively address the most common concerns:</p>
+<div class="table-wrapper">
+<table class="solo-table">
 <thead>
 <tr>
 <th>Concern</th>
@@ -803,295 +797,208 @@ p { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
 <tr>
 <td><strong>Unwanted Attention</strong></td>
 <td>Can occur in crowded tourist areas</td>
-<td>Female guides provide cultural buffer, group safety</td>
+<td>Female guides provide a cultural buffer and group safety</td>
 </tr>
 <tr>
 <td><strong>Cultural Misunderstandings</strong></td>
 <td>Different social norms may confuse visitors</td>
-<td>Pre-trip cultural briefing, on-ground guidance</td>
+<td>Pre-trip cultural briefing and on-ground guidance</td>
 </tr>
 <tr>
 <td><strong>Transportation Safety</strong></td>
 <td>Public transport can be challenging</td>
-<td>Private vehicles with trusted female drivers</td>
+<td>Private vehicles with trusted drivers</td>
 </tr>
 <tr>
 <td><strong>Accommodation Security</strong></td>
 <td>Varies by location and standard</td>
-<td>Vetted hotels with 24/7 security and female floors</td>
+<td>Vetted hotels with 24/7 security and safe locations</td>
 </tr>
 <tr>
 <td><strong>Language Barriers</strong></td>
-<td>Arabic is primary language</td>
+<td>Arabic is the primary language</td>
 <td>Fluent English-speaking female guides</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="cultural-guide">2. Cultural Guide for Solo Women in Egypt</h2>
-<p>Understanding and respecting Egyptian culture is essential for a smooth and enjoyable journey. Egypt is a predominantly Muslim country with conservative values in many areas, though tourist destinations tend to be more liberal.</p>
-<h3>Dress Code Guide for Female Travelers</h3>
-<p>Dressing appropriately shows respect for local culture and significantly reduces unwanted attention. Here's our comprehensive packing guide:</p>
-<div class="safety-grid">
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-tshirt"></i></div>
-<h4>Urban Areas (Cairo, Alexandria)</h4>
-<p>Knees and shoulders covered. Loose-fitting clothes in breathable fabrics. Light scarves handy for mosques.</p>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-shield-alt"></i> Book Your Safe Solo Experience</a>
 </div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-monument"></i></div>
-<h4>Tourist Sites (Pyramids, Temples)</h4>
-<p>Comfortable walking clothes with sun protection. Hats, sunglasses essential. Modest but practical.</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-ship"></i></div>
-<h4>Resort Areas (Red Sea)</h4>
-<p>More liberal. Swimwear acceptable at pools/beaches. Cover up when leaving resort premises.</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-mosque"></i></div>
-<h4>Religious Sites</h4>
-<p>Headscarves required for women in mosques. Long sleeves, ankle-length skirts or trousers.</p>
-</div>
-</div>
-<h3>Cultural Do's and Don'ts</h3>
-<div class="info-box">
-<h4 style="color: #3b82f6; margin-top: 0;">Cultural Do's:</h4>
+<div class="advice-box">
+<h3>Why Book Safety-Optimized Tours with Egypt Photography Tours?</h3>
 <ul>
-<li><strong>Do greet with "As-salamu alaykum"</strong> (Peace be upon you) - it's appreciated</li>
-<li><strong>Do accept tea invitations</strong> from shopkeepers - it's a sign of hospitality</li>
+<li><strong>Safety Expertise:</strong> Expert analysis of each destination's safety profile with practical logistics for confident access</li>
+<li><strong>Cultural Sensitivity:</strong> Guidance on respectful behavior that honors local norms while enabling creative expression</li>
+<li><strong>Secure Logistics:</strong> Strategies for protected accommodations, trusted transportation, and emergency support</li>
+<li><strong>Photography Timing:</strong> Local knowledge of optimal light and safe locations for each site</li>
+</ul>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-check-circle"></i> Book Your Safety-Optimized Tour Today</a>
+</div>
+<!-- Chapter 2: Cultural Guide -->
+<h2>Chapter 2: Cultural Guide for Solo Women in Egypt</h2>
+<p>Understanding and respecting Egyptian culture is essential for a smooth, enjoyable, and safe journey. Egypt is a predominantly Muslim country with conservative values in many areas, though tourist destinations tend to be more relaxed. This chapter reveals expert-vetted etiquette guidance specifically for solo female travelers.</p>
+<div class="service-category category-culture">
+<h4><i class="fas fa-tshirt"></i> Dress Code by Context</h4>
+<div class="culture-grid">
+<div class="culture-card">
+<span class="culture-icon">🏙️</span>
+<h4>Urban Areas</h4>
+<p><strong>Cairo &amp; Alexandria:</strong> Knees and shoulders covered. Loose-fitting clothes in breathable fabrics. A light scarf handy for mosques.<br/>
+<strong>Benefit:</strong> Shows respect for local culture and significantly reduces unwanted attention while keeping you comfortable in the climate.</p>
+</div>
+<div class="culture-card">
+<span class="culture-icon">🏛️</span>
+<h4>Tourist Sites</h4>
+<p><strong>Pyramids &amp; Temples:</strong> Comfortable walking clothes with sun protection. Hats and sunglasses essential. Modest but practical.<br/>
+<strong>Benefit:</strong> Enables full exploration of vast archaeological sites while staying cool and culturally appropriate.</p>
+</div>
+<div class="culture-card">
+<span class="culture-icon">🕌</span>
+<h4>Religious Sites</h4>
+<p><strong>Mosques &amp; Churches:</strong> Headscarves required for women in mosques. Long sleeves, ankle-length skirts or trousers.<br/>
+<strong>Benefit:</strong> Honors the spiritual significance of these living sacred spaces and allows respectful entry.</p>
+</div>
+</div>
+<h4>Cultural Do's and Don'ts</h4>
+<div class="info-box">
+<h4 style="margin-top:0;"><i class="fas fa-check-circle"></i> Cultural Do's</h4>
+<ul>
+<li><strong>Do greet with "As-salamu alaykum"</strong> (Peace be upon you) — it's appreciated</li>
+<li><strong>Do accept tea invitations</strong> from shopkeepers — it's a sign of hospitality</li>
 <li><strong>Do remove shoes</strong> before entering mosques and Egyptian homes</li>
 <li><strong>Do use your right hand</strong> for eating and handing items</li>
-<li><strong>Do bargain respectfully</strong> in markets - it's expected and part of the culture</li>
+<li><strong>Do bargain respectfully</strong> in markets — it's expected and part of the culture</li>
 </ul>
 </div>
 <div class="warning-box">
-<h4 style="color: #ef4444; margin-top: 0;">Cultural Don'ts:</h4>
+<h3 style="margin-top:0;"><i class="fas fa-times-circle"></i> Cultural Don'ts</h3>
 <ul>
-<li><strong>Don't show public displays of affection</strong> - holding hands is acceptable for married couples</li>
-<li><strong>Don't photograph people without permission</strong> - always ask first</li>
+<li><strong>Don't show public displays of affection</strong> — holding hands is acceptable for married couples</li>
+<li><strong>Don't photograph people without permission</strong> — always ask first</li>
 <li><strong>Don't drink alcohol in public places</strong> outside tourist areas</li>
 <li><strong>Don't discuss sensitive political topics</strong> unless initiated by locals</li>
 <li><strong>Don't visit religious sites during prayer times</strong> unless you're there to pray</li>
 </ul>
 </div>
-<h2 id="safety-features">3. Our Exclusive Safety Features for Solo Women</h2>
-<p>What sets our <strong>women-only Egypt tours</strong> apart is our comprehensive safety infrastructure designed specifically for solo female travelers:</p>
-<div class="safety-grid">
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-user-shield"></i></div>
-<h4>Female Egyptologist Guides</h4>
-<p>All tours led by licensed female Egyptologists who understand women's travel concerns</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-female"></i></div>
-<h4>Women-Only Groups</h4>
-<p>Travel exclusively with other solo female travelers - maximum 8 per group</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-hotel"></i></div>
-<h4>Secure Accommodations</h4>
-<p>Pre-vetted hotels with female-only floors, 24/7 security, and safe locations</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-car"></i></div>
-<h4>Private Transportation</h4>
-<p>Dedicated vehicles with female drivers for all transfers and sightseeing</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-phone-alt"></i></div>
-<h4>24/7 Support</h4>
-<p>Local emergency contacts and dedicated support line for immediate assistance</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-first-aid"></i></div>
-<h4>Health & Safety Protocol</h4>
-<p>Comprehensive medical support, hygiene standards, and emergency plans</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-camera"></i></div>
-<h4>Photography Security</h4>
-<p>Safe photography locations and guidance on respectful picture-taking</p>
-</div>
-<div class="safety-card">
-<div class="safety-icon"><i class="fas fa-users"></i></div>
-<h4>Cultural Mediation</h4>
-<p>Guidance through cultural interactions to prevent misunderstandings</p>
-</div>
-</div>
-<h2 id="tour-packages">4. 2026 Women-Only Egypt Tour Packages</h2>
-<p>Our carefully curated tour packages for 2026 combine safety, cultural immersion, and unforgettable experiences. All tours include female guides, secure accommodations, and transportation.</p>
-<div class="tour-grid">
-<div class="tour-card">
-<img alt="7-Day Solo Women Egypt Discovery Tour 2026 - Complete package for female travelers" class="tour-img" height="200" loading="lazy" src="/images/7day-egypt-women-tour.jpg" width="400"/>
-<div class="tour-card-body">
-<h3 class="tour-card-title">7-Day Solo Women Egypt Discovery</h3>
-<p>Perfect introduction for first-time visitors. Covers pyramids, Egyptian Museum, Luxor temples, and Nile cruise.</p>
-<ul class="tour-card-features">
-<li><i class="fas fa-check"></i> Female Egyptologist guide</li>
-<li><i class="fas fa-check"></i> Women-only group (max 8)</li>
-<li><i class="fas fa-check"></i> 4-star secure hotels</li>
-<li><i class="fas fa-check"></i> All entrance fees included</li>
-<li><i class="fas fa-check"></i> Daily breakfast & 4 dinners</li>
-</ul>
-<div class="tour-card-footer">
-<span class="tour-price">$1,299</span>
-<a class="tour-cta" href="/tour-egypt-discovery-7day">Book Now</a>
-</div>
-</div>
-</div>
-<div class="tour-card">
-<img alt="Private Pyramids Tour for Solo Women 2026 - Exclusive Giza experience" class="tour-img" height="200" loading="lazy" src="/images/pyramids-women-tour.jpg" width="400"/>
-<div class="tour-card-body">
-<h3 class="tour-card-title">Private Pyramids Experience</h3>
-<p>Exclusive private tour of Giza Plateau with camel ride and professional photoshoot at golden hour.</p>
-<ul class="tour-card-features">
-<li><i class="fas fa-check"></i> Private female guide</li>
-<li><i class="fas fa-check"></i> Camel ride experience</li>
-<li><i class="fas fa-check"></i> Professional photoshoot</li>
-<li><i class="fas fa-check"></i> Pyramid interior access</li>
-<li><i class="fas fa-check"></i> Traditional lunch included</li>
-</ul>
-<div class="tour-card-footer">
-<span class="tour-price">$249</span>
-<a class="tour-cta" href="/tour-pyramids-private">Book Now</a>
-</div>
-</div>
-</div>
-<div class="tour-card">
-<img alt="Luxor & Aswan Women-Only Nile Cruise 2026 - 5-day luxury cruise" class="tour-img" height="200" loading="lazy" src="/images/luxor-aswan-women-tour.jpg" width="400"/>
-<div class="tour-card-body">
-<h3 class="tour-card-title">Luxor & Aswan Nile Cruise</h3>
-<p>5-day luxury Nile cruise visiting Valley of the Kings, Karnak Temple, Abu Simbel, and more.</p>
-<ul class="tour-card-features">
-<li><i class="fas fa-check"></i> 5-star Nile cruise ship</li>
-<li><i class="fas fa-check"></i> Women-only excursions</li>
-<li><i class="fas fa-check"></i> All meals included</li>
-<li><i class="fas fa-check"></i> Hot air balloon option</li>
-<li><i class="fas fa-check"></i> Female Egyptologist</li>
-</ul>
-<div class="tour-card-footer">
-<span class="tour-price">$1,899</span>
-<a class="tour-cta" href="/tour-nile-cruise-women">Book Now</a>
-</div>
-</div>
-</div>
-</div>
-<div class="tour-grid">
-<div class="tour-card">
-<img alt="Alexandria Day Tour for Solo Women - Mediterranean Egypt experience" class="tour-img" height="200" loading="lazy" src="/images/alexandria-women-tour.jpg" width="400"/>
-<div class="tour-card-body">
-<h3 class="tour-card-title">Alexandria Coastal Escape</h3>
-<p>Day trip from Cairo to Alexandria featuring Catacombs, Library, Citadel, and Mediterranean lunch.</p>
-<ul class="tour-card-features">
-<li><i class="fas fa-check"></i> Female specialist guide</li>
-<li><i class="fas fa-check"></i> Private transportation</li>
-<li><i class="fas fa-check"></i> Fresh seafood lunch</li>
-<li><i class="fas fa-check"></i> Small group (max 6)</li>
-<li><i class="fas fa-check"></i> All entrance fees</li>
-</ul>
-<div class="tour-card-footer">
-<span class="tour-price">$199</span>
-<a class="tour-cta" href="/tour-alexandria-women">Book Now</a>
-</div>
-</div>
-</div>
-<div class="tour-card">
-<img alt="Egypt Photography Tour for Women - Professional photoshoot package" class="tour-img" height="200" loading="lazy" src="/images/photography-women-tour.jpg" width="400"/>
-<div class="tour-card-body">
-<h3 class="tour-card-title">Photography & Culture Tour</h3>
-<p>7-day tour combining cultural immersion with professional photography instruction at iconic sites.</p>
-<ul class="tour-card-features">
-<li><i class="fas fa-check"></i> Photography workshops</li>
-<li><i class="fas fa-check"></i> Female photographer guide</li>
-<li><i class="fas fa-check"></i> Portfolio development</li>
-<li><i class="fas fa-check"></i> Golden hour sessions</li>
-<li><i class="fas fa-check"></i> Editing tutorials</li>
-</ul>
-<div class="tour-card-footer">
-<span class="tour-price">$1,599</span>
-<a class="tour-cta" href="/tour-photography-women">Book Now</a>
-</div>
-</div>
-</div>
-<div class="tour-card">
-<img alt="Egypt Desert Adventure for Women - White Desert camping experience" class="tour-img" height="200" loading="lazy" src="/images/desert-women-tour.jpg" width="400"/>
-<div class="tour-card-body">
-<h3 class="tour-card-title">Desert Adventure Safari</h3>
-<p>3-day White Desert camping experience with female Bedouin guides, stargazing, and desert exploration.</p>
-<ul class="tour-card-features">
-<li><i class="fas fa-check"></i> Female Bedouin guides</li>
-<li><i class="fas fa-check"></i> Luxury desert camp</li>
-<li><i class="fas fa-check"></i> Stargazing equipment</li>
-<li><i class="fas fa-check"></i> All camping gear</li>
-<li><i class="fas fa-check"></i> Traditional meals</li>
-</ul>
-<div class="tour-card-footer">
-<span class="tour-price">$799</span>
-<a class="tour-cta" href="/tour-desert-women">Book Now</a>
-</div>
-</div>
-</div>
-</div>
-<h2 id="new-year-specials">5. New Year 2026 Special Tours for Solo Women</h2>
-<p>Celebrate the arrival of 2026 in spectacular Egyptian style with our exclusive New Year tours designed specifically for solo female travelers. These limited-availability packages combine festive celebrations with cultural immersion.</p>
-<div class="info-box">
-<h4 style="color: #3b82f6; margin-top: 0;">New Year 2026 Highlights:</h4>
+<div class="tip-card">
+<h4>Cultural Etiquette Benefits When You Book With Us</h4>
 <ul>
-<li><strong>December 28, 2025 - January 4, 2026:</strong> 8-Day New Year Celebration Tour</li>
-<li><strong>New Year's Eve at the Pyramids:</strong> Exclusive access to Giza Plateau for midnight celebration</li>
-<li><strong>Luxury Nile Cruise New Year Party:</strong> Festive celebration on 5-star cruise ship</li>
+<li><strong>Cultural Briefings:</strong> Pre-trip education on Egyptian norms and appropriate behavior</li>
+<li><strong>On-Ground Mediation:</strong> Female guides navigate cultural interactions to prevent misunderstandings</li>
+<li><strong>Respectful Access:</strong> Established relationships that open doors to authentic experiences</li>
+<li><strong>Confidence Building:</strong> Knowledge that lets you relax and enjoy every moment</li>
+</ul>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-hand-holding-heart"></i> Book Your Culturally-Guided Tour</a>
+</div>
+</div>
+<!-- Chapter 3: Safety Features -->
+<h2>Chapter 3: Our Exclusive Safety Features for Solo Women</h2>
+<p>What sets our <strong>women-only Egypt tours</strong> apart is a comprehensive safety infrastructure designed specifically for solo female travelers. Every element — from guides to accommodations to transportation — is chosen with your security and comfort as the top priority.</p>
+<div class="quick-reference">
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-user-shield"></i></span>
+<h4>Female Egyptologist Guides</h4>
+<p>All tours led by licensed female Egyptologists who understand women's travel concerns and act as cultural advocates.</p>
+</div>
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-female"></i></span>
+<h4>Women-Only Groups</h4>
+<p>Travel exclusively with other solo female travelers — small, supportive groups that build instant friendships.</p>
+</div>
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-hotel"></i></span>
+<h4>Secure Accommodations</h4>
+<p>Pre-vetted hotels with 24/7 security, safe locations, and women-friendly policies.</p>
+</div>
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-car"></i></span>
+<h4>Private Transportation</h4>
+<p>Dedicated vehicles with trusted drivers for all transfers and sightseeing — no navigating public transport alone.</p>
+</div>
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-phone-alt"></i></span>
+<h4>24/7 Support</h4>
+<p>Local emergency contacts and a dedicated support line for immediate assistance at any hour.</p>
+</div>
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-first-aid"></i></span>
+<h4>Health &amp; Safety Protocol</h4>
+<p>Comprehensive medical support coordination, hygiene standards, and clear emergency plans.</p>
+</div>
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-camera"></i></span>
+<h4>Photography Security</h4>
+<p>Safe photography locations and guidance on respectful picture-taking without hassle.</p>
+</div>
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-users"></i></span>
+<h4>Cultural Mediation</h4>
+<p>Guidance through cultural interactions to prevent misunderstandings and build positive exchanges.</p>
+</div>
+<div class="reference-item reference-solo">
+<span class="reference-icon"><i class="fas fa-map-marked-alt"></i></span>
+<h4>Curated Itineraries</h4>
+<p>Routes designed to balance iconic highlights with comfortable pacing and secure logistics.</p>
+</div>
+</div>
+<!-- Chapter 4: Women-Only Tour Experiences (NO CARDS) -->
+<h2>Chapter 4: Women-Only Tour Experiences for 2026</h2>
+<p>Our carefully curated experiences for 2026 combine safety, cultural immersion, and unforgettable moments. All journeys include female guides, secure accommodations, and private transportation — so you can focus on the experience, not the logistics.</p>
+<div class="service-category category-safety">
+<h4><i class="fas fa-route"></i> Signature Experiences for Solo Women</h4>
+<div class="culture-grid">
+<div class="culture-card">
+<span class="culture-icon">🏺</span>
+<h4>Classic Discovery Journey</h4>
+<p>A perfect introduction for first-time visitors, covering the pyramids, the Egyptian Museum, Luxor's temples, and a serene Nile cruise.<br/>
+<strong>Safety features:</strong> Female Egyptologist guide, women-only group, 4-star secure hotels, and all entrance fees handled for you.<br/>
+<strong>Best for:</strong> First-time solo travelers wanting a complete, supported Egypt experience.</p>
+</div>
+<div class="culture-card">
+<span class="culture-icon">🐪</span>
+<h4>Private Pyramids Experience</h4>
+<p>An exclusive private tour of the Giza Plateau with a camel ride and a professional photoshoot at golden hour.<br/>
+<strong>Safety features:</strong> Private female guide, secure transport, and photography security so your gear is always watched.<br/>
+<strong>Best for:</strong> Solo travelers wanting intimate, unhurried time at the world's most iconic site.</p>
+</div>
+<div class="culture-card">
+<span class="culture-icon">⛵</span>
+<h4>Luxor &amp; Aswan Nile Cruise</h4>
+<p>A luxury Nile cruise visiting the Valley of the Kings, Karnak Temple, and Abu Simbel, with women-only excursions.<br/>
+<strong>Safety features:</strong> 5-star cruise ship, all meals included, and a female Egyptologist guiding every shore visit.<br/>
+<strong>Best for:</strong> Solo travelers seeking a relaxed, scenic, and deeply cultural journey.</p>
+</div>
+</div>
+<div class="advice-box">
+<h3>Every Experience Includes</h3>
+<ul>
+<li><strong>Female Leadership:</strong> Licensed female Egyptologist guides on every journey</li>
+<li><strong>Secure Logistics:</strong> Vetted accommodations and private, trusted transportation</li>
+<li><strong>Cultural Support:</strong> Briefings and on-ground mediation for confident exploration</li>
+<li><strong>Photography Focus:</strong> Guidance on safe, respectful, and stunning image-making</li>
+</ul>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-compass"></i> Explore All Women-Only Experiences</a>
+</div>
+</div>
+<!-- Chapter 5: New Year Specials (NO CARDS) -->
+<h2>Chapter 5: New Year 2026 Special Tours for Solo Women</h2>
+<p>Celebrate the arrival of 2026 in spectacular Egyptian style with our exclusive New Year journeys designed specifically for solo female travelers. These limited-availability experiences combine festive celebrations with cultural immersion and enhanced safety measures for the holiday period.</p>
+<div class="info-box">
+<h4 style="margin-top:0;"><i class="fas fa-star"></i> New Year 2026 Highlights</h4>
+<ul>
+<li><strong>December 28, 2025 – January 4, 2026:</strong> Multi-day New Year Celebration journey</li>
+<li><strong>New Year's Eve at the Pyramids:</strong> A magical midnight celebration at the Giza Plateau</li>
+<li><strong>Luxury Nile Cruise New Year Party:</strong> A festive celebration aboard a 5-star cruise ship</li>
 <li><strong>Special Women-Only Events:</strong> New Year's Day brunch and cultural activities</li>
-<li><strong>Enhanced Security:</strong> Additional safety measures for holiday period</li>
+<li><strong>Enhanced Security:</strong> Additional safety measures for the holiday period</li>
 </ul>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-glass-cheers"></i> Check New Year 2026 Availability</a>
 </div>
-<h3>New Year 2026 Tour Packages</h3>
-<div class="tour-grid">
-<div class="tour-card">
-<div class="tour-card-body">
-<h3 class="tour-card-title">8-Day New Year Celebration</h3>
-<p>Complete Egypt experience with New Year's Eve at pyramids and Nile cruise celebration.</p>
-<ul class="tour-card-features">
-<li><i class="fas fa-check"></i> NYE at Pyramids access</li>
-<li><i class="fas fa-check"></i> Nile cruise party</li>
-<li><i class="fas fa-check"></i> Luxury accommodations</li>
-<li><i class="fas fa-check"></i> All festive meals</li>
-<li><i class="fas fa-check"></i> Women-only group</li>
-</ul>
-<div class="tour-card-footer">
-<span class="tour-price">$2,199</span>
-<a class="tour-cta" href="/tour-new-year-2026">Limited Spaces</a>
-</div>
-</div>
-</div>
-<div class="tour-card">
-<div class="tour-card-body">
-<h3 class="tour-card-title">5-Day Cairo NY Experience</h3>
-<p>Focused Cairo tour with New Year celebrations at luxury hotels and cultural sites.</p>
-<ul class="tour-card-features">
-<li><i class="fas fa-check"></i> Luxury hotel NYE gala</li>
-<li><i class="fas fa-check"></i> Female guide throughout</li>
-<li><i class="fas fa-check"></i> New Year's Day brunch</li>
-<li><i class="fas fa-check"></i> Small group (max 6)</li>
-<li><i class="fas fa-check"></i> All celebrations included</li>
-</ul>
-<div class="tour-card-footer">
-<span class="tour-price">$1,499</span>
-<a class="tour-cta" href="/tour-cairo-new-year">Book Now</a>
-</div>
-</div>
-</div>
-</div>
-<div class="cta-section">
-<h2 class="cta-title">Ready for Your 2026 Egypt Adventure?</h2>
-<p>Join hundreds of solo women who have experienced Egypt safely and magnificently with our women-only tours. Book your 2026 tour today and secure the best dates for New Year celebrations or preferred travel seasons.</p>
-<a class="cta-button" href="/contact">Book Your 2026 Tour Now</a>
-<p style="margin-top: 20px; font-size: 14px;"><i class="fas fa-shield-alt"></i> <strong>Safety Guarantee:</strong> Full refund if safety standards aren't met</p>
-</div>
-<h2 id="itinerary-planning">6. Comprehensive Itinerary Planning Guide</h2>
-<p>Planning your Egypt itinerary as a solo woman requires careful consideration of safety, logistics, and personal interests. Here's our month-by-month guide for 2026:</p>
-<div class="comparison-table">
-<table>
+<!-- Chapter 6: Itinerary Planning -->
+<h2>Chapter 6: Comprehensive Itinerary Planning Guide</h2>
+<p>Planning your Egypt itinerary as a solo woman requires careful consideration of safety, weather, and personal interests. Here's our month-by-month guide for 2026 to help you choose the perfect time to visit.</p>
+<div class="table-wrapper">
+<table class="solo-table">
 <thead>
 <tr>
 <th>Month</th>
@@ -1113,7 +1020,7 @@ p { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
 <td><strong>February</strong></td>
 <td>Mild, sunny (12-22°C)</td>
 <td>Low</td>
-<td>Luxor & Aswan, photography</td>
+<td>Luxor &amp; Aswan, photography</td>
 <td>Valentine's special tours</td>
 </tr>
 <tr>
@@ -1149,71 +1056,79 @@ p { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
 <td>Perfect (20-30°C)</td>
 <td>High</td>
 <td>All tours, best overall</td>
-<td>Ramadan (Oct-Nov 2026)</td>
+<td>Cultural festival season</td>
 </tr>
 <tr>
 <td><strong>December</strong></td>
 <td>Cool, pleasant (12-22°C)</td>
 <td>High (Holidays)</td>
-<td>Christmas & New Year tours</td>
+<td>Christmas &amp; New Year tours</td>
 <td>Christmas markets, NYE at pyramids</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="packing-guide">7. Essential Packing Guide for Solo Women in Egypt</h2>
-<p>Packing appropriately for Egypt is crucial for comfort, safety, and cultural respect. Here's our comprehensive packing list:</p>
-<div class="safety-grid">
-<div class="safety-card">
+<div class="tip-card">
+<h4>Planning Benefits When You Book With Us</h4>
+<ul>
+<li><strong>Seasonal Expertise:</strong> Local knowledge of the best timing for each destination and activity</li>
+<li><strong>Crowd Strategy:</strong> Scheduling that avoids peak times for safer, more comfortable visits</li>
+<li><strong>Event Coordination:</strong> Access to festivals and celebrations with respectful, supported participation</li>
+<li><strong>Flexible Adaptation:</strong> Itineraries adjusted for weather, energy, and photographic opportunities</li>
+</ul>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-calendar-alt"></i> Plan Your Perfect Timing</a>
+</div>
+<!-- Chapter 7: Packing Guide -->
+<h2>Chapter 7: Essential Packing Guide for Solo Women in Egypt</h2>
+<p>Packing appropriately for Egypt is crucial for comfort, safety, and cultural respect. Here's our comprehensive packing list organized by category, so you arrive prepared and confident.</p>
+<div class="service-category category-packing">
+<h4><i class="fas fa-suitcase"></i> What to Bring</h4>
+<div class="culture-grid">
+<div class="culture-card">
+<span class="culture-icon">👗</span>
 <h4>Clothing Essentials</h4>
-<ul style="text-align: left; padding-left: 20px;">
-<li>Lightweight, loose trousers (3-4 pairs)</li>
-<li>Long skirts/dresses (below knee)</li>
-<li>Long-sleeve tops (light fabrics)</li>
-<li>Light scarf/shawl (for mosques)</li>
-<li>Comfortable walking shoes</li>
-<li>Swimwear (resort areas only)</li>
-</ul>
+<p>Lightweight, loose trousers (3-4 pairs) • Long skirts or dresses (below knee) • Long-sleeve tops in light fabrics • A light scarf or shawl for mosques • Comfortable walking shoes • Swimwear for resort areas only</p>
 </div>
-<div class="safety-card">
-<h4>Health & Safety</h4>
-<ul style="text-align: left; padding-left: 20px;">
-<li>Prescription medications</li>
-<li>Travel insurance documents</li>
-<li>Hand sanitizer & wet wipes</li>
-<li>Sunscreen (SPF 50+)</li>
-<li>Insect repellent</li>
-<li>Basic first aid kit</li>
-</ul>
+<div class="culture-card">
+<span class="culture-icon">💊</span>
+<h4>Health &amp; Safety</h4>
+<p>Prescription medications • Travel insurance documents • Hand sanitizer &amp; wet wipes • Sunscreen (SPF 50+) • Insect repellent • A basic first aid kit</p>
 </div>
-<div class="safety-card">
-<h4>Documents & Money</h4>
-<ul style="text-align: left; padding-left: 20px;">
-<li>Passport + copies</li>
-<li>Egypt visa (obtainable on arrival)</li>
-<li>Credit/debit cards</li>
-<li>Small amount of USD/EGP cash</li>
-<li>Tour confirmation documents</li>
-<li>Emergency contact list</li>
-</ul>
+<div class="culture-card">
+<span class="culture-icon">📄</span>
+<h4>Documents &amp; Money</h4>
+<p>Passport plus copies • Egypt visa (obtainable on arrival) • Credit/debit cards • A small amount of USD/EGP cash • Tour confirmation documents • Emergency contact list</p>
 </div>
-<div class="safety-card">
-<h4>Electronics & Extras</h4>
-<ul style="text-align: left; padding-left: 20px;">
+</div>
+<div class="info-box">
+<h4 style="margin-top:0;"><i class="fas fa-plug"></i> Electronics &amp; Extras</h4>
+<ul>
 <li>Universal power adapter</li>
 <li>Power bank</li>
 <li>Camera/phone with charger</li>
-<li>Egypt SIM card (buy at airport)</li>
+<li>Egypt SIM card (buy at the airport)</li>
 <li>Headphones</li>
-<li>Small backpack for day trips</li>
+<li>A small backpack for day trips</li>
 </ul>
 </div>
+<div class="tip-card">
+<h4>Packing Benefits When You Book With Us</h4>
+<ul>
+<li><strong>Custom Packing Lists:</strong> Tailored to your specific itinerary and season</li>
+<li><strong>Cultural Guidance:</strong> Advice on appropriate attire for every site you'll visit</li>
+<li><strong>Equipment Protection:</strong> Recommendations for keeping camera gear safe and clean</li>
+<li><strong>Light Travel Support:</strong> Help packing smart for comfortable, hassle-free movement</li>
+</ul>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-suitcase-rolling"></i> Get Your Custom Packing List</a>
 </div>
-<h2 id="transportation-guide">8. Transportation & Navigation Guide for Solo Women</h2>
-<p>Navigating Egypt as a solo woman requires understanding local transportation options. Our tours include all transportation, but here's what you should know:</p>
-<h3>Safe Transportation Options</h3>
-<div class="comparison-table">
-<table>
+</div>
+<!-- Chapter 8: Transportation -->
+<h2>Chapter 8: Transportation &amp; Navigation Guide for Solo Women</h2>
+<p>Navigating Egypt as a solo woman requires understanding local transportation options. Our tours include all transportation, but here's what you should know to feel informed and secure.</p>
+<div class="service-category category-transport">
+<h4><i class="fas fa-car"></i> Safe Transportation Options</h4>
+<div class="table-wrapper">
+<table class="solo-table">
 <thead>
 <tr>
 <th>Transport Type</th>
@@ -1229,21 +1144,21 @@ p { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
 <td>Excellent</td>
 <td>$$$</td>
 <td>Highly Recommended</td>
-<td>We provide female drivers upon request</td>
+<td>We provide trusted drivers for all transfers</td>
 </tr>
 <tr>
 <td><strong>Uber/Careem</strong></td>
 <td>Good</td>
 <td>$$</td>
 <td>Recommended in Cities</td>
-<td>Share trip details with guide</td>
+<td>Share trip details with your guide</td>
 </tr>
 <tr>
 <td><strong>Official Taxi</strong></td>
 <td>Moderate</td>
 <td>$$</td>
 <td>Use with Caution</td>
-<td>Agree on price before entering</td>
+<td>Agree on the price before entering</td>
 </tr>
 <tr>
 <td><strong>Domestic Flights</strong></td>
@@ -1269,155 +1184,234 @@ p { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
 </tbody>
 </table>
 </div>
-<h2 id="faq">9. Frequently Asked Questions (FAQ)</h2>
+<div class="advice-box">
+<h3>Why Choose Transportation-Guided Tours with Egypt Photography Tours?</h3>
+<ul>
+<li><strong>Secure Logistics:</strong> All transportation arranged with trusted drivers and secure vehicles</li>
+<li><strong>Time Optimization:</strong> Domestic flights for long distances, private vehicles for shorter trips</li>
+<li><strong>Stress-Free Travel:</strong> Every transfer handled so you never navigate alone</li>
+<li><strong>Local Knowledge:</strong> Drivers who know safe routes and reliable stops</li>
+</ul>
+<a class="booking-cta" href="https://www.egyptphotographytours.com/tours.html"><i class="fas fa-route"></i> Book Transportation-Included Tours</a>
+</div>
+</div>
+<!-- Chapter 9: Reviews -->
+<h2>Chapter 9: Real Traveler Reviews — Book with Confidence</h2>
+<p>Learn from solo women who explored Egypt safely and joyfully with expert guidance from Egypt Photography Tours.</p>
+<div class="review-card">
+<div class="review-header">
+<div class="reviewer-avatar">SM</div>
+<div class="reviewer-info">
+<h4>Sarah M.</h4>
+<p>Australia | November 2025</p>
+<div class="review-rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+<span style="margin-left:4px;color:#6b7280;">5/5</span>
+</div>
+</div>
+</div>
+<div class="review-content">
+<p>"As a solo female traveler, I was nervous about Egypt. The women-only tour was perfect! Our female guide, Amira, was incredible — knowledgeable, protective, and fun. I never felt unsafe. The group of women I met became instant friends. Can't wait to return!"</p>
+</div>
+</div>
+<div class="review-card">
+<div class="review-header">
+<div class="reviewer-avatar">ER</div>
+<div class="reviewer-info">
+<h4>Emily R.</h4>
+<p>USA | December 2025</p>
+<div class="review-rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+<span style="margin-left:4px;color:#6b7280;">5/5</span>
+</div>
+</div>
+</div>
+<div class="review-content">
+<p>"The New Year's Eve celebration at the pyramids was magical! Being with a group of solo women made it special. The security was excellent, the guides were attentive, and I felt completely safe throughout. The photography tour addition was worth every penny — my photos are stunning!"</p>
+</div>
+</div>
+<div class="review-card">
+<div class="review-header">
+<div class="reviewer-avatar">MT</div>
+<div class="reviewer-info">
+<h4>Margaret T.</h4>
+<p>UK | March 2025</p>
+<div class="review-rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+<span style="margin-left:4px;color:#6b7280;">5/5</span>
+</div>
+</div>
+</div>
+<div class="review-content">
+<p>"I traveled alone to Egypt at 62 and was apprehensive. The women-only tour was perfect! Everything was taken care of — transportation, accommodations, meals. The female guide was like a personal guardian. I explored temples, cruised the Nile, and felt empowered. Highly recommend for any age!"</p>
+</div>
+</div>
+<div class="review-card">
+<div class="review-header">
+<div class="reviewer-avatar">LC</div>
+<div class="reviewer-info">
+<h4>Lisa Chen</h4>
+<p>Canada | October 2025</p>
+<div class="review-rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+<span style="margin-left:4px;color:#6b7280;">5/5</span>
+</div>
+</div>
+</div>
+<div class="review-content">
+<p>"The photography tour exceeded all expectations. Not only did I learn professional techniques, but our female photographer guide knew all the safe spots and best times for photos. The women-only group created a supportive environment. Came home with portfolio-quality images and amazing memories."</p>
+</div>
+</div>
+<!-- Chapter 10: Why Choose Us -->
+<h2>Chapter 10: Why Book Women-Only Tours with Egypt Photography Tours</h2>
+<p>Independent solo travel is possible but requires deep knowledge of safety nuances, cultural protocols, and logistics. Specialized operators remove uncertainty and maximize confidence while ensuring comprehensive, culturally respectful, and secure experiences.</p>
+<div class="trust-section">
+<div class="container">
+<h2>Egypt Photography Tours — Your Solo Women Travel Experts</h2>
+<div class="trust-grid">
+<div class="trust-card">
+<span class="trust-icon">🛡️</span>
+<h3>Safety Mastery</h3>
+<p>We provide personalized safety planning that balances exploration with security, ensuring your journey proceeds confidently through Egypt's magnificent sites. <a href="https://www.egyptphotographytours.com/tours.html">Book your experience here</a>.</p>
+</div>
+<div class="trust-card">
+<span class="trust-icon">👩‍✈️</span>
+<h3>Female-Led Expertise</h3>
+<p>Our female Egyptologist guides ensure optimal timing, cultural mediation, and photography techniques that maximize your experience while maintaining respectful protocols. <a href="https://www.egyptphotographytours.com/tours.html">Book your experience here</a>.</p>
+</div>
+<div class="trust-card">
+<span class="trust-icon">🤝</span>
+<h3>Empowering Community</h3>
+<p>We connect you with a supportive network of solo women travelers and local experts, enabling authentic experiences that empower both travelers and communities. <a href="https://www.egyptphotographytours.com/tours.html">Book your experience here</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ -->
+<h2 id="faq">Frequently Asked Questions</h2>
 <div class="faq-container">
 <div class="faq-item">
 <h3 class="faq-question">Is Egypt safe for solo women travelers in 2026? <i class="fas fa-chevron-down"></i></h3>
 <div class="faq-answer">
-<p>Yes, Egypt is generally safe for solo women travelers when proper precautions are taken. With our women-only tours featuring female guides, secure accommodations, and private transportation, you can explore Egypt with complete confidence. Tourist areas have excellent security, and millions of women travel to Egypt safely each year.</p>
+<p>Yes, Egypt is generally safe for solo women travelers when proper precautions are taken. With women-only tours featuring female guides, secure accommodations, and private transportation, you can explore Egypt with complete confidence. Tourist areas have excellent security, and millions of women travel to Egypt safely each year.</p>
 </div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">What should solo women wear in Egypt? <i class="fas fa-chevron-down"></i></h3>
 <div class="faq-answer">
-<p>Modest clothing covering shoulders and knees is recommended. Loose-fitting, breathable fabrics are ideal for the climate. In tourist areas like the pyramids, comfortable walking clothes are fine. For mosques, women need headscarves and clothing covering arms and legs. At Red Sea resorts, normal swimwear is acceptable at hotel pools and beaches.</p>
+<p>Modest clothing covering shoulders and knees is recommended. Loose-fitting, breathable fabrics are ideal for the climate. For mosques, women need headscarves and clothing covering arms and legs. At Red Sea resorts, normal swimwear is acceptable at hotel pools and beaches.</p>
 </div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">Are there women-only Egypt tours available? <i class="fas fa-chevron-down"></i></h3>
 <div class="faq-answer">
-<p>Yes, we specialize in women-only Egypt tours with female Egyptologist guides. Our tours are designed specifically for solo female travelers, with women-only groups, female guides and drivers, and accommodations that prioritize women's safety and comfort. We offer various packages from 3 to 14 days.</p>
+<p>Yes, we specialize in women-only Egypt tours with female Egyptologist guides. Our tours are designed specifically for solo female travelers, with women-only groups, female guides and drivers, and accommodations that prioritize women's safety and comfort.</p>
 </div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">What is the best time for solo women to visit Egypt? <i class="fas fa-chevron-down"></i></h3>
 <div class="faq-answer">
-<p>October to April offers the most pleasant weather (20-30°C). December and January are perfect for Christmas and New Year celebrations. For smaller crowds, consider February or September. Our New Year 2026 special tours provide festive celebrations with enhanced safety measures.</p>
+<p>October to April offers the most pleasant weather (20-30°C). December and January are perfect for Christmas and New Year celebrations. For smaller crowds, consider February or September.</p>
 </div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">Can solo women travel safely between Egyptian cities? <i class="fas fa-chevron-down"></i></h3>
 <div class="faq-answer">
-<p>Yes, with our organized tours, all transportation between cities is arranged with trusted drivers and secure vehicles. We use domestic flights for longer distances (Cairo to Luxor/Aswan) and private vehicles for shorter trips. All logistics are handled by our team to ensure safe and comfortable travel.</p>
+<p>Yes, with organized tours, all transportation between cities is arranged with trusted drivers and secure vehicles. Domestic flights are used for longer distances (Cairo to Luxor/Aswan) and private vehicles for shorter trips. All logistics are handled to ensure safe and comfortable travel.</p>
 </div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">How much does a solo women Egypt tour cost? <i class="fas fa-chevron-down"></i></h3>
 <div class="faq-answer">
-<p>Our women-only Egypt tours start from $249 for day tours to $2,199 for comprehensive 8-day packages. The 7-day Solo Women Egypt Discovery tour is $1,299 including accommodations, meals, guides, and entrance fees. New Year 2026 special tours are priced slightly higher due to premium celebrations and limited availability.</p>
+<p>Women-only Egypt tours range from affordable day experiences to comprehensive multi-day packages including accommodations, meals, guides, and entrance fees. New Year special tours are priced slightly higher due to premium celebrations and limited availability.</p>
 </div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">Do I need a visa for Egypt as a solo woman? <i class="fas fa-chevron-down"></i></h3>
 <div class="faq-answer">
-<p>Most nationalities require a visa for Egypt. You can obtain an e-visa online before travel or get a visa on arrival at major airports (Cairo, Luxor, Hurghada). The process is straightforward and we provide complete guidance. Cost is approximately $25 USD for most nationalities.</p>
+<p>Most nationalities require a visa for Egypt. You can obtain an e-visa online before travel or get a visa on arrival at major airports (Cairo, Luxor, Hurghada). The process is straightforward and costs approximately $25 USD for most nationalities.</p>
 </div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">What payment methods do you accept? <i class="fas fa-chevron-down"></i></h3>
 <div class="faq-answer">
-<p>We accept credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. A 30% deposit secures your booking, with balance due 30 days before travel. We offer flexible payment plans for tours booked 6+ months in advance.</p>
+<p>We accept credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. A deposit secures your booking, with balance due before travel. Flexible payment plans are available for tours booked well in advance.</p>
 </div>
 </div>
 </div>
-<h2 id="testimonials">10. Traveler Testimonials & Success Stories</h2>
-<div class="testimonials-grid">
-<div class="testimonial-card">
-<div class="testimonial-stars">
-<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-</div>
-<p class="testimonial-text">"As a solo female traveler, I was nervous about Egypt. The women-only tour was perfect! Our female guide, Amira, was incredible - knowledgeable, protective, and fun. I never felt unsafe. The group of women I met became instant friends. Can't wait to return!"</p>
-<div class="testimonial-author">
-<img alt="Sarah from Australia - Solo women Egypt tour testimonial" height="50" loading="lazy" src="/images/testimonial-sarah.jpg" width="50"/>
-<div>
-<strong>Sarah M.</strong>
-<div>Australia | November 2025</div>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<div class="testimonial-stars">
-<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-</div>
-<p class="testimonial-text">"The New Year's Eve celebration at the pyramids was magical! Being with a group of solo women made it special. The security was excellent, the guides were attentive, and I felt completely safe throughout. The photography tour addition was worth every penny - my photos are stunning!"</p>
-<div class="testimonial-author">
-<img alt="Emily from USA - Egypt New Year tour testimonial" height="50" loading="lazy" src="/images/testimonial-emily.jpg" width="50"/>
-<div>
-<strong>Emily R.</strong>
-<div>USA | December 2025</div>
-</div>
-</div>
-</div>
-</div>
-<div class="testimonials-grid">
-<div class="testimonial-card">
-<div class="testimonial-stars">
-<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-</div>
-<p class="testimonial-text">"I traveled alone to Egypt at 62 and was apprehensive. The women-only tour was perfect! Everything was taken care of - transportation, accommodations, meals. The female guide was like a personal guardian. I explored temples, cruised the Nile, and felt empowered. Highly recommend for any age!"</p>
-<div class="testimonial-author">
-<img alt="Margaret from UK - Senior solo women Egypt tour" height="50" loading="lazy" src="/images/testimonial-margaret.jpg" width="50"/>
-<div>
-<strong>Margaret T.</strong>
-<div>UK | March 2025</div>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<div class="testimonial-stars">
-<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-</div>
-<p class="testimonial-text">"The photography tour exceeded all expectations. Not only did I learn professional techniques, but our female photographer guide knew all the safe spots and best times for photos. The women-only group created a supportive environment. Came home with portfolio-quality images and amazing memories."</p>
-<div class="testimonial-author">
-<img alt="Lisa from Canada - Egypt photography tour testimonial" height="50" loading="lazy" src="/images/testimonial-lisa.jpg" width="50"/>
-<div>
-<strong>Lisa Chen</strong>
-<div>Canada | October 2025</div>
-</div>
-</div>
-</div>
-</div>
-
+<!-- Related Reading -->
 <h2>Related Reading on the Egypt Photography Tours Blog</h2>
-<p>Continue planning your trip with more guides from our <a href="/blog">Egypt travel blog</a>:</p>
+<p>Continue planning your trip with more guides from our <a href="/blog.html">Egypt travel blog</a>:</p>
 <div class="related-guides-grid">
-    <div class="related-guide-card">
-        <h4><a href="/egypt-weather-guide-best-time-to-visit">Egypt Weather Guide: Best Time to Visit</a></h4>
-        <p>Find out the best months to visit Egypt, seasonal temperature breakdowns, and how to avoid the extreme summer heat.</p>
-        <a href="/egypt-weather-guide-best-time-to-visit" class="read-more">Read Guide →</a>
-    </div>
-    <div class="related-guide-card">
-        <h4><a href="/egyptian-visa">Egyptian Visa — Everything You Need to Know</a></h4>
-        <p>A step-by-step guide to getting your Egyptian visa, including e-Visa applications, visa on arrival, and passport requirements.</p>
-        <a href="/egyptian-visa" class="read-more">Read Guide →</a>
-    </div>
-    <div class="related-guide-card">
-        <h4><a href="/egypt-transportation-guide-2026">Egypt Transportation Guide 2026</a></h4>
-        <p>Navigate Egypt with ease using our guide to domestic flights, sleeper trains, Nile cruises, and private transfers.</p>
-        <a href="/egypt-transportation-guide-2026" class="read-more">Read Guide →</a>
-    </div>
-    <div class="related-guide-card">
-        <h4><a href="/baksheesh-tipping-guide-egypt-2026">The "Baksheesh" Guide: Mastering Tipping in Egypt</a></h4>
-        <p>Learn the art of tipping in Egypt, how much to give, and how to handle baksheesh requests respectfully and confidently.</p>
-        <a href="/baksheesh-tipping-guide-egypt-2026" class="read-more">Read Guide →</a>
-    </div>
-    <div class="related-guide-card">
-        <h4><a href="/is-egypt-safe-to-visit-2026-guide">Is Egypt Safe to Visit? 2026 Guide</a></h4>
-        <p>Real data and practical safety tips for solo travelers, families, and couples exploring Egypt's ancient sites and cities.</p>
-        <a href="/is-egypt-safe-to-visit-2026-guide" class="read-more">Read Guide →</a>
-    </div>
-    <div class="related-guide-card">
-        <h4><a href="/egypt-photography-gear-packing-guide-2026">Egypt Photography Gear & Packing Guide 2026</a></h4>
-        <p>Find out exactly what camera gear, lenses, and accessories to pack for your photography trip to Egypt.</p>
-        <a href="/egypt-photography-gear-packing-guide-2026" class="read-more">Read Guide →</a>
-    </div>
+<div class="related-guide-card">
+<h4><a href="/egypt-weather-guide-best-time-to-visit.html">Egypt Weather Guide: Best Time to Visit</a></h4>
+<p>Find out the best months to visit Egypt, seasonal temperature breakdowns, and how to avoid the extreme summer heat.</p>
+<a href="/egypt-weather-guide-best-time-to-visit.html" class="read-more">Read Guide →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/egyptian-visa.html">Egyptian Visa — Everything You Need to Know</a></h4>
+<p>A step-by-step guide to getting your Egyptian visa, including e-Visa applications, visa on arrival, and passport requirements.</p>
+<a href="/egyptian-visa.html" class="read-more">Read Guide →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/egypt-transportation-guide-2026.html">Egypt Transportation Guide 2026</a></h4>
+<p>Navigate Egypt with ease using our guide to domestic flights, sleeper trains, Nile cruises, and private transfers.</p>
+<a href="/egypt-transportation-guide-2026.html" class="read-more">Read Guide →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/baksheesh-tipping-guide-egypt-2026.html">The "Baksheesh" Guide: Mastering Tipping in Egypt</a></h4>
+<p>Learn the art of tipping in Egypt, how much to give, and how to handle baksheesh requests respectfully and confidently.</p>
+<a href="/baksheesh-tipping-guide-egypt-2026.html" class="read-more">Read Guide →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/is-egypt-safe-to-visit-2026-guide.html">Is Egypt Safe to Visit? 2026 Guide</a></h4>
+<p>Real data and practical safety tips for solo travelers, families, and couples exploring Egypt's ancient sites and cities.</p>
+<a href="/is-egypt-safe-to-visit-2026-guide.html" class="read-more">Read Guide →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/egypt-photography-gear-packing-guide-2026.html">Egypt Photography Gear &amp; Packing Guide 2026</a></h4>
+<p>Find out exactly what camera gear, lenses, and accessories to pack for your photography trip to Egypt.</p>
+<a href="/egypt-photography-gear-packing-guide-2026.html" class="read-more">Read Guide →</a>
+</div>
 </div>
 <div style="text-align:center;margin-top:28px">
-<a class="btn btn-outline-dark" href="/blog"><i aria-hidden="true" class="fas fa-blog"></i> Browse All Egypt Travel Guides</a>
+<a class="cta-button" href="/blog.html" style="padding:14px 30px;font-size:16px;"><i aria-hidden="true" class="fas fa-blog"></i> Browse All Egypt Travel Guides</a>
 </div>
-
+<!-- Final CTA -->
+<div class="cta-section">
+<h2>Start Planning Your 2026 Egypt Adventure Today</h2>
+<p>Don't let concerns about solo travel hold you back from experiencing one of the world's most incredible destinations. With women-only tours, expert female guides, and comprehensive safety measures, you can explore Egypt with complete confidence and create memories that will last a lifetime.</p>
+<p><strong>Every tour includes:</strong> professional female Egyptologist guides, secure accommodations, private transportation, custom itineraries, multilingual support, and comprehensive safety briefings — ensuring a seamless and empowering experience.</p>
+<a class="cta-button" href="https://www.egyptphotographytours.com/tours.html">
+<i class="fas fa-shield-alt"></i> Book Your Safe Solo Experience Now
+</a>
+<p style="margin-top:20px;font-size:16px;opacity:0.9;">
+<strong>Highlights of Egypt Photography Tours:</strong><br/>
+• Private Pyramids Photography Tour — Capture once-in-a-lifetime shots at sunrise or sunset with a professional photographer and female guide.<br/>
+• 2-Day Cairo &amp; Giza Luxury Experience — Explore the Grand Egyptian Museum, Islamic Cairo, and Khan El Khalili Bazaar with secure, women-friendly logistics.<br/>
+• Alexandria Day Tour from Cairo — Discover the Mediterranean charm with guided photography at the Citadel, Library, and Corniche.<br/>
+• 7-Day Egypt Discovery Tour — A luxurious journey from Cairo to Luxor, designed for travelers seeking cultural depth and high-end comfort.
+</p>
+</div>
+<!-- Author Bio -->
+<div class="author-bio">
+<div class="author-bio-inner">
+<img alt="Hossam - Professional Photographer &amp; Egyptologist" loading="lazy" src="/images/hossam-profile.jpg"/>
+<div>
+<h3>About the Author</h3>
+<p><strong>Hossam</strong> is a professional photographer and licensed Egyptologist with over 15 years of experience guiding women through Egypt. As founder of Egypt Photography Tours, he has personally designed all women-only tour programs to ensure maximum safety, cultural sensitivity, and photographic opportunities for solo female travelers.</p>
+</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:40px;color:#6b7280;font-size:14px;">
+<i class="fas fa-sync-alt"></i> Last updated: December 30, 2025
+</p>
+</div>
+</div>
+</section>
+</main>
 <!-- CONTACT FORM SECTION -->
-<section class="section section-accent" id="customize-trip" aria-labelledby="custom-h2-form">
+<section class="section-accent" id="customize-trip" aria-labelledby="custom-h2-form">
 <div class="container">
 <div class="text-c">
 <div class="eyebrow">Design Your Dream Journey</div>
@@ -1505,283 +1499,314 @@ p { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
 <span class="contact-card-icon">💬</span>
 <h3>WhatsApp Us Now</h3>
 <p>The fastest way to plan your Egypt tour. We reply within 2 hours, 7 days a week, 8AM–10PM Cairo time.</p>
-<a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20a%20custom%20Egypt%20tour." rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:12px;background:#25D366;color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700" target="_blank">
+<a href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20a%20custom%20Egypt%20tour." rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-bottom:12px;background:#25D366;color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700" target="_blank">
 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
 </a>
-<p style="font-size:13px;color:var(--c-muted);text-align:center">+20 155 073 5673</p>
+<p style="font-size:13px;color:var(--text-color);text-align:center">+20 155 073 5673</p>
 </div>
-<div class="contact-card" style="border-top:4px solid var(--c-gold)">
+<div class="contact-card" style="border-top:4px solid var(--accent-light)">
 <span class="contact-card-icon">✉️</span>
 <h3>Email Our Team</h3>
 <p>Prefer email? Send us your dream Egypt itinerary and we'll respond with a full custom quote within 24 hours.</p>
-<a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" style="width:100%;justify-content:center;margin-bottom:12px;background:var(--primary-dark);color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700">
+<a href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-bottom:12px;background:var(--primary-dark);color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700">
 <i class="far fa-envelope"></i> Send an Email
 </a>
-<p style="font-size:13px;color:var(--c-muted);text-align:center">info@egyptphotographytours.com</p>
+<p style="font-size:13px;color:var(--text-color);text-align:center">info@egyptphotographytours.com</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-
-<div class="cta-section" style="margin-top: 50px;">
-<h2 class="cta-title">Start Planning Your 2026 Egypt Adventure Today</h2>
-<p>Don't let concerns about solo travel hold you back from experiencing one of the world's most incredible destinations. With our women-only tours, expert female guides, and comprehensive safety measures, you can explore Egypt with complete confidence and create memories that will last a lifetime.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 30px 0;">
-<a class="cta-button" href="/contact"><i class="fas fa-calendar-check"></i> Book Consultation</a>
-<a class="cta-button" href="/tours" style="background: white; color: var(--primary-dark);"><i class="fas fa-binoculars"></i> View All Tours</a>
-<a class="cta-button" href="https://wa.me/201550735673" style="background: #25D366; color: white;"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+<div aria-label="Back to top" class="back-to-top" id="backToTop" role="button" tabindex="0">
+<i class="fas fa-chevron-up"></i>
 </div>
-<p><strong>Limited 2026 Availability:</strong> New Year tours filling fast | Early booking discounts available until January 31, 2026</p>
+<!-- Cookie Consent Banner -->
+<div aria-labelledby="cookie-title" class="cookie-consent" id="cookieConsent" role="dialog">
+<p id="cookie-title"><strong>We use cookies</strong> to enhance your experience and analyze traffic. By continuing, you agree to our <a href="/privacy-policy.html" style="color:var(--accent-light);text-decoration:underline">Privacy Policy</a>.</p>
+<button aria-label="Accept cookies" id="acceptCookies">Accept</button>
 </div>
-<div style="border-top: 2px solid var(--accent-light); padding-top: 30px; margin-top: 50px;">
-<div style="display: flex; align-items: center; gap: 20px;">
-<img alt="Hossam - Professional Photographer & Egyptologist" loading="lazy" src="/images/hossam-profile.jpg" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"/>
-<div>
-<h3>About the Author</h3>
-<p><strong>Hossam</strong> is a professional photographer and licensed Egyptologist with over 15 years of experience guiding women through Egypt. As founder of Egypt Photography Tours, he has personally designed all women-only tour programs to ensure maximum safety, cultural sensitivity, and photographic opportunities for solo female travelers.</p>
-</div>
-</div>
-</div>
-<p style="text-align: center; margin-top: 40px; color: #6b7280; font-size: 14px;">
-<i class="fas fa-sync-alt"></i> Last updated: December 30, 2025 | Article word count: 6,250+ words
-</p>
-</div>
-</div>
-</main>
 <footer class="footer">
-<div class="container">
-<div class="footer-content">
-<div>
+<div class="container footer-content">
+<div class="footer-brand">
 <h3 class="footer-title">Egypt Photography Tours</h3>
-<p>Specializing in safe, women-only Egypt tours since 2015. Licensed female Egyptologist guides, secure accommodations, and unforgettable experiences designed specifically for solo female travelers.</p>
-<p>© <script>document.write(new Date().getFullYear())</script> Egypt Photography Tours. All rights reserved.</p>
+<p class="footer-text">© <script>document.write(new Date().getFullYear())</script> Egypt Photography Tours.</p>
+<p class="footer-text">All Rights Reserved.</p>
+<p class="footer-text">Mastering culture, capturing moments.</p>
 </div>
-<div>
-<h3 class="footer-title">Solo Women Tours</h3>
+<div class="footer-section">
+<h4 class="footer-title">Quick Links</h4>
 <ul class="footer-links">
-<li><a href="/egypt-tours-solo-women">2026 Women-Only Tours</a></li>
-<li><a href="/tour-egypt-discovery-7day">7-Day Discovery Tour</a></li>
-<li><a href="/tour-nile-cruise-women">Nile Cruise for Women</a></li>
-<li><a href="/tour-new-year-2026">New Year 2026 Special</a></li>
-<li><a href="/tour-photography-women">Photography Tours</a></li>
-<li><a href="/tour-desert-women">Desert Adventures</a></li>
+<li><a href="/index.html">Home</a></li>
+<li><a href="/about.html">About Us</a></li>
+<li><a href="https://www.egyptphotographytours.com/tours.html">Our Tours</a></li>
+<li><a href="/gallery.html">Gallery</a></li>
+<li><a href="/resources.html">Resources</a></li>
+<li><a href="/blog.html">Blog</a></li>
+<li><a href="/contact.html">Contact Us</a></li>
+<li><a href="/faqs.html">FAQs</a></li>
+<li><a href="/privacy-policy.html">Privacy Policy</a></li>
+<li><a href="/terms-of-service.html">Terms of Service</a></li>
 </ul>
 </div>
-<div>
-<h3 class="footer-title">Contact & Support</h3>
-<p><i class="fab fa-whatsapp"></i> +20 155 073 5673 (24/7 WhatsApp)</p>
-<p><i class="far fa-envelope"></i> info@egyptphotographytours.com</p>
-<p><i class="fas fa-map-marker-alt"></i> Giza, Egypt - Near Pyramids</p>
+<div class="footer-section">
+<h4 class="footer-title">Connect With Us</h4>
+<p class="footer-text">Address: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
+<div class="footer-contact">
+<a class="footer-contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
+<i class="fab fa-whatsapp contact-icon"></i> +20 155 073 5673
+</a>
+<a class="footer-contact-info" href="mailto:info@egyptphotographytours.com">
+<i class="far fa-envelope contact-icon"></i> info@egyptphotographytours.com
+</a>
+</div>
 <div class="social-links">
-<a aria-label="Facebook" href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook"></i></a>
+<a aria-label="Facebook" href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook-f"></i></a>
 <a aria-label="Instagram" href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
 <a aria-label="TikTok" href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
 <a aria-label="YouTube" href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
-<a aria-label="Pinterest" href="https://www.pinterest.com/egyptphotographytours"><i class="fab fa-pinterest"></i></a>
 </div>
 </div>
 <div class="footer-map">
-<iframe allowfullscreen="" aria-label="Our location near the Pyramids of Giza" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.1413113!3d29.9749687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1701715200000" style="border:0;" title="Egypt Photography Tours Location Map" width="100%">
+<iframe allowfullscreen="" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311399999995!3d29.974968799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" style="border:0;" title="Egypt Photography Tours Location Map" width="600">
 </iframe>
-</div>
-</div>
-<div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: center;">
-<span><i class="fas fa-shield-alt"></i> Safe Travel Provider Certified</span>
-<span><i class="fas fa-award"></i> 2025 Tourism Excellence Award</span>
-<span><i class="fas fa-star"></i> 4.9/5 Rating (500+ Reviews)</span>
-<span><i class="fas fa-user-friends"></i> Women-Owned Business</span>
-</div>
 </div>
 </div>
 </footer>
 <script>
+// MOBILE MENU FUNCTIONALITY
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            const icon = this.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-    }
-    
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const answer = this.nextElementSibling;
-            const icon = this.querySelector('i');
-            
-            document.querySelectorAll('.faq-answer').forEach(ans => {
-                if (ans !== answer) {
-                    ans.classList.remove('active');
-                    ans.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
-                    ans.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
-                }
-            });
-            
-            answer.classList.toggle('active');
-            if (answer.classList.contains('active')) {
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            } else {
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
-            }
-        });
-    });
-    
-    const languageSwitcher = document.querySelector('.language-switcher');
-    if (languageSwitcher) {
-        const currentLanguage = languageSwitcher.querySelector('.current-language');
-        const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
-        const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
-        
-        currentLanguage.addEventListener('click', function(e) {
-            e.stopPropagation();
-            languageSwitcher.classList.toggle('active');
-            dropdownIcon.classList.toggle('fa-chevron-up');
-            dropdownIcon.classList.toggle('fa-chevron-down');
-        });
-        
-        document.addEventListener('click', function(e) {
-            if (!languageSwitcher.contains(e.target)) {
-                languageSwitcher.classList.remove('active');
-                dropdownIcon.classList.remove('fa-chevron-up');
-                dropdownIcon.classList.add('fa-chevron-down');
-            }
-        });
-        
-        languageDropdown.querySelectorAll('.language-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const flag = this.dataset.flag;
-                const text = this.querySelector('.language-text').textContent;
-                const lang = this.dataset.lang;
-                
-                currentLanguage.querySelector('.current-flag').textContent = flag;
-                currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
-                
-                languageSwitcher.classList.remove('active');
-                dropdownIcon.classList.remove('fa-chevron-up');
-                dropdownIcon.classList.add('fa-chevron-down');
-                
-                const href = this.getAttribute('href');
-                if (href && href !== window.location.pathname) {
-                    window.location.href = href;
-                }
-            });
-        });
-    }
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                    }
-                    img.classList.add('loaded');
-                    observer.unobserve(img);
-                }
-            });
-        }, {
-            rootMargin: '50px 0px',
-            threshold: 0.1
-        });
-        
-        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-            imageObserver.observe(img);
-        });
-    }
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-                
-                history.pushState(null, null, targetId);
-            }
-        });
-    });
-
-    // Cloudflare Worker Form Submission
-    const cfForm = document.getElementById('contactForm');
-    const cfStatus = document.getElementById('form-status');
-    const WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
-    if (cfForm) {
-        cfForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            cfStatus.innerHTML = 'Sending...';
-            cfStatus.style.color = '#fff';
-            const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
-            if (!turnstileToken) {
-                cfStatus.innerHTML = 'Please complete the security check.';
-                cfStatus.style.color = '#ff6b6b';
-                return;
-            }
-            const formData = new FormData(cfForm);
-            const payload = {
-                name: formData.get('name') || '',
-                email: formData.get('email') || '',
-                phone: formData.get('phone') || '',
-                subject: 'Custom Egypt Tour Request',
-                message: 'Group Size: ' + (formData.get('group_size') || 'Not specified') + '\nTour Type: ' + (formData.get('tour_type') || 'Not specified') + '\nDuration: ' + (formData.get('duration') || 'Not specified') + '\nDestinations: ' + (formData.get('destinations') || 'Not specified') + '\nDates: ' + (formData.get('dates') || 'Not specified') + '\nMessage: ' + (formData.get('message') || ''),
-                turnstileToken: turnstileToken
-            };
-            try {
-                const response = await fetch(WORKER_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                if (response.ok && result.success) {
-                    cfStatus.innerHTML = '✅ Message sent successfully! We will get back to you within 2 hours.';
-                    cfStatus.style.color = '#4ade80';
-                    cfForm.reset();
-                    if (typeof turnstile !== 'undefined') turnstile.reset();
-                } else {
-                    cfStatus.innerHTML = result.error || 'Something went wrong. Please try again.';
-                    cfStatus.style.color = '#ff6b6b';
-                }
-            } catch (err) {
-                cfStatus.innerHTML = 'Network error. Please check your connection.';
-                cfStatus.style.color = '#ff6b6b';
-                console.error(err);
-            }
-        });
-    }
-});
-
-function preloadImage(url) {
-    const img = new Image();
-    img.src = url;
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const menuIcon = mobileMenuToggle?.querySelector('i');
+if (mobileMenuToggle) {
+mobileMenuToggle.addEventListener('click', function() {
+navLinks.classList.toggle('active');
+const isExpanded = this.getAttribute('aria-expanded') === 'true';
+this.setAttribute('aria-expanded', !isExpanded);
+if (menuIcon) {
+menuIcon.classList.toggle('fa-bars');
+menuIcon.classList.toggle('fa-times');
 }
-
-window.addEventListener('load', function() {
-    const imagesToPreload = [
-        '/images/7day-egypt-women-tour.jpg',
-        '/images/pyramids-women-tour.jpg',
-        '/images/luxor-aswan-women-tour.jpg'
-    ];
-    
-    imagesToPreload.forEach(preloadImage);
+});
+}
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-link a').forEach(link => {
+link.addEventListener('click', function() {
+if (window.innerWidth < 768 && navLinks.classList.contains('active')) {
+navLinks.classList.remove('active');
+if (mobileMenuToggle && menuIcon) {
+mobileMenuToggle.setAttribute('aria-expanded', 'false');
+menuIcon.classList.remove('fa-times');
+menuIcon.classList.add('fa-bars');
+}
+}
+});
+});
+// LANGUAGE SWITCHER FUNCTIONALITY
+const languageSwitcher = document.querySelector('.language-switcher');
+if (languageSwitcher) {
+const currentLanguage = languageSwitcher.querySelector('.current-language');
+const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+const toggleDropdown = () => {
+const isActive = languageSwitcher.classList.toggle('active');
+dropdownIcon.classList.toggle('fa-chevron-up', isActive);
+dropdownIcon.classList.toggle('fa-chevron-down', !isActive);
+currentLanguage.setAttribute('aria-expanded', isActive);
+};
+currentLanguage.addEventListener('click', (e) => {
+e.stopPropagation();
+toggleDropdown();
+});
+currentLanguage.addEventListener('keydown', (e) => {
+if (e.key === 'Enter' || e.key === ' ') {
+e.preventDefault();
+toggleDropdown();
+}
+if (e.key === 'Escape') {
+languageSwitcher.classList.remove('active');
+dropdownIcon.classList.remove('fa-chevron-up');
+dropdownIcon.classList.add('fa-chevron-down');
+currentLanguage.setAttribute('aria-expanded', 'false');
+}
+});
+document.addEventListener('click', function(e) {
+if (!languageSwitcher.contains(e.target) && languageSwitcher.classList.contains('active')) {
+languageSwitcher.classList.remove('active');
+dropdownIcon.classList.remove('fa-chevron-up');
+dropdownIcon.classList.add('fa-chevron-down');
+currentLanguage.setAttribute('aria-expanded', 'false');
+}
+});
+languageDropdown.querySelectorAll('.language-item').forEach(item => {
+item.addEventListener('click', function(e) {
+e.preventDefault();
+const flag = this.dataset.flag;
+const lang = this.dataset.lang;
+currentLanguage.querySelector('.current-flag').textContent = flag;
+currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
+languageSwitcher.classList.remove('active');
+dropdownIcon.classList.remove('fa-chevron-up');
+dropdownIcon.classList.add('fa-chevron-down');
+currentLanguage.setAttribute('aria-expanded', 'false');
+languageDropdown.querySelectorAll('.language-item').forEach(i => i.classList.remove('active'));
+this.classList.add('active');
+const href = this.getAttribute('href');
+if (href && !window.location.pathname.includes(href)) {
+window.location.href = href;
+}
+});
+});
+}
+// FAQ ACCORDION
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(question => {
+question.addEventListener('click', function() {
+const answer = this.nextElementSibling;
+const icon = this.querySelector('i');
+document.querySelectorAll('.faq-answer').forEach(ans => {
+if (ans !== answer) {
+ans.classList.remove('active');
+ans.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+ans.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+}
+});
+answer.classList.toggle('active');
+if (answer.classList.contains('active')) {
+icon.classList.remove('fa-chevron-down');
+icon.classList.add('fa-chevron-up');
+} else {
+icon.classList.remove('fa-chevron-up');
+icon.classList.add('fa-chevron-down');
+}
+});
+});
+// BACK TO TOP BUTTON
+const backToTopButton = document.getElementById('backToTop');
+const showBackToTopThreshold = 300;
+const handleScroll = () => {
+if (window.pageYOffset > showBackToTopThreshold) {
+backToTopButton?.classList.add('visible');
+} else {
+backToTopButton?.classList.remove('visible');
+}
+};
+window.addEventListener('scroll', handleScroll, { passive: true });
+if (backToTopButton) {
+backToTopButton.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+backToTopButton.addEventListener('keydown', (e) => {
+if (e.key === 'Enter' || e.key === ' ') {
+e.preventDefault();
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+});
+}
+// ANIMATE ELEMENTS ON SCROLL
+if ('IntersectionObserver' in window) {
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0)";
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+document.querySelectorAll('.culture-card, .reference-item, .review-card, .trust-card, .related-guide-card').forEach(card => {
+card.style.opacity = "0";
+card.style.transform = "translateY(30px)";
+card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+observer.observe(card);
+});
+}
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+const targetId = this.getAttribute('href');
+if (targetId && targetId !== '#' && targetId !== window.location.href) {
+e.preventDefault();
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({ top: targetElement.offsetTop - 100, behavior: 'smooth' });
+}
+}
+});
+});
+// Interactive table rows for better UX
+const tableRows = document.querySelectorAll('.solo-table tbody tr');
+tableRows.forEach(row => {
+row.addEventListener('mouseenter', function() {
+this.style.backgroundColor = '#f0f9ff';
+this.style.transition = 'background-color 0.2s ease';
+});
+row.addEventListener('mouseleave', function() {
+this.style.backgroundColor = '';
+});
+});
+// Cookie Consent Banner
+const cookieConsent = document.getElementById('cookieConsent');
+const acceptCookiesBtn = document.getElementById('acceptCookies');
+if (!localStorage.getItem('cookiesAccepted')) {
+setTimeout(() => {
+cookieConsent?.classList.add('visible');
+}, 2000);
+}
+if (acceptCookiesBtn) {
+acceptCookiesBtn.addEventListener('click', () => {
+localStorage.setItem('cookiesAccepted', 'true');
+cookieConsent?.classList.remove('visible');
+});
+}
+// Cloudflare Worker Form Submission
+const cfForm = document.getElementById('contactForm');
+const cfStatus = document.getElementById('form-status');
+const WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
+if (cfForm) {
+cfForm.addEventListener('submit', async function(e) {
+e.preventDefault();
+cfStatus.innerHTML = 'Sending...';
+cfStatus.style.color = '#fff';
+const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+if (!turnstileToken) {
+cfStatus.innerHTML = 'Please complete the security check.';
+cfStatus.style.color = '#ff6b6b';
+return;
+}
+const formData = new FormData(cfForm);
+const payload = {
+name: formData.get('name') || '',
+email: formData.get('email') || '',
+phone: formData.get('phone') || '',
+subject: 'Custom Egypt Tour Request',
+message: 'Group Size: ' + (formData.get('group_size') || 'Not specified') + '\nTour Type: ' + (formData.get('tour_type') || 'Not specified') + '\nDuration: ' + (formData.get('duration') || 'Not specified') + '\nDestinations: ' + (formData.get('destinations') || 'Not specified') + '\nDates: ' + (formData.get('dates') || 'Not specified') + '\nMessage: ' + (formData.get('message') || ''),
+turnstileToken: turnstileToken
+};
+try {
+const response = await fetch(WORKER_URL, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
+const result = await response.json();
+if (response.ok && result.success) {
+cfStatus.innerHTML = '✅ Message sent successfully! We will get back to you within 2 hours.';
+cfStatus.style.color = '#4ade80';
+cfForm.reset();
+if (typeof turnstile !== 'undefined') turnstile.reset();
+} else {
+cfStatus.innerHTML = result.error || 'Something went wrong. Please try again.';
+cfStatus.style.color = '#ff6b6b';
+}
+} catch (err) {
+cfStatus.innerHTML = 'Network error. Please check your connection.';
+cfStatus.style.color = '#ff6b6b';
+console.error(err);
+}
+});
+}
 });
 </script>
 </body>
