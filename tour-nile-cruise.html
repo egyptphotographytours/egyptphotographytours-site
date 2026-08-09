@@ -327,17 +327,16 @@ display: flex; align-items: center; justify-content: center; text-align: center;
 .paypal-button { display: block; width: 100%; background-color: var(--accent-light); color: var(--primary-dark); font-weight: 700; padding: 16px 24px; border-radius: 9999px; text-align: center; text-decoration: none; transition: background-color 0.3s ease; font-size: 18px; border: none; cursor: pointer; margin-top: 20px; font-family: inherit; }
 .paypal-button:hover:not(:disabled) { background-color: var(--accent-dark); }
 .paypal-button:disabled { background-color: #9ca3af; cursor: not-allowed; }
+/* ✅ TEXT-ONLY TOUR CARDS (images removed) */
 .tour-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
 @media (min-width: 768px) { .tour-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; } }
 @media (min-width: 1024px) { .tour-grid { grid-template-columns: repeat(4, 1fr); } }
-.tour-card { background-color: white; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease; position: relative; text-align: left; }
-.tour-card:hover { transform: scale(1.03); }
-.sale-tag { background-color: #E74C3C; color: white; padding: 4px 12px; border-radius: 9999px; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; position: absolute; top: 16px; left: 16px; z-index: 10; }
-.tour-img { width: 100%; height: 200px; object-fit: cover; }
-@media (min-width: 768px) { .tour-img { height: 224px; } }
-.tour-card-body { padding: 20px; }
-.tour-card-title { font-size: 20px; font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; line-height: 1.3; margin-top: 0; }
-.tour-card-text { color: #4b5563; margin-bottom: 16px; text-align: left; font-size: 14px; line-height: 1.5; }
+.tour-card { background-color: white; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; text-align: left; border-top: 4px solid var(--accent-light); display: flex; flex-direction: column; }
+.tour-card:hover { transform: scale(1.03); box-shadow: 0 10px 20px rgba(0,0,0,0.12); }
+.sale-tag { background-color: #E74C3C; color: white; padding: 4px 12px; border-radius: 9999px; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; position: absolute; top: 16px; right: 16px; z-index: 10; }
+.tour-card-body { padding: 24px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+.tour-card-title { font-size: 18px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px; line-height: 1.35; margin-top: 0; }
+.tour-card-text { color: #4b5563; margin-bottom: 16px; text-align: left; font-size: 14px; line-height: 1.6; flex: 1; }
 .tour-card-footer { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
 .tour-price { font-size: 16px; font-weight: 700; color: var(--accent-dark); }
 .tour-duration { font-size: 14px; color: #6b7280; }
@@ -733,13 +732,13 @@ Book Now via PayPal
 </div>
 </div>
 </section>
+<!-- ✅ TEXT-ONLY OTHER TOURS SECTION (images removed) -->
 <section class="main-section bg-light-gray">
 <div class="container">
 <h2>More Amazing Egypt Tours</h2>
 <div class="tour-grid">
 <div class="tour-card">
 <span class="sale-tag">Special Offer!</span>
-<img alt="Private Pyramids tour with expert guide" class="tour-img" height="224" loading="lazy" src="/images/pyramids-private-tour.jpg" width="400"/>
 <div class="tour-card-body">
 <h3 class="tour-card-title">Private Pyramids Tour: Guided Experience</h3>
 <p class="tour-card-text">Step into ancient history on this immersive one-day private tour of the Great Pyramids of Giza and the Sphinx, guided by a passionate local expert.</p>
@@ -752,7 +751,6 @@ Book Now via PayPal
 </div>
 <div class="tour-card">
 <span class="sale-tag">New Adventure!</span>
-<img alt="Two-day premium private tour covering Cairo landmarks and Giza pyramids" class="tour-img" height="224" loading="lazy" src="/images/cairo-giza-2day.jpg" width="400"/>
 <div class="tour-card-body">
 <h3 class="tour-card-title">2-Day Premium Private Tour: Cairo &amp; Giza Expedition</h3>
 <p class="tour-card-text">Immerse yourself in Egypt's vibrant capital and ancient wonders over two unforgettable days. Explore the majestic Pyramids, bustling Old Cairo, and the impressive National Museum.</p>
@@ -765,7 +763,6 @@ Book Now via PayPal
 </div>
 <div class="tour-card">
 <span class="sale-tag">Limited Slots!</span>
-<img alt="Private coastal day tour to Alexandria from Cairo" class="tour-img" height="224" loading="lazy" src="/images/alexandria-tour.jpg" width="400"/>
 <div class="tour-card-body">
 <h3 class="tour-card-title">Discover Alexandria: Private Coastal Day Tour from Cairo</h3>
 <p class="tour-card-text">Trade Cairo's desert dust for the fresh breeze of the Mediterranean on this unforgettable private day tour to Alexandria. Discover a mix of Greek, Roman, Islamic, and modern treasures.</p>
@@ -778,7 +775,6 @@ Book Now via PayPal
 </div>
 <div class="tour-card">
 <span class="sale-tag">Luxury Experience!</span>
-<img alt="7-Day comprehensive Egypt discovery tour" class="tour-img" height="224" loading="lazy" src="/images/egypt-discovery-7day.jpg" width="400"/>
 <div class="tour-card-body">
 <h3 class="tour-card-title">7-Day Egypt Discovery Tour: Cairo, Giza, Alexandria &amp; Luxor</h3>
 <p class="tour-card-text">Experience the wonders of ancient and modern Egypt on this immersive 7-day guided journey. From the towering Pyramids to the Mediterranean charm of Alexandria and the majestic temples of Luxor.</p>
