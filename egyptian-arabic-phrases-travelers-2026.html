@@ -9,9 +9,9 @@ CSP — FULLY FIXED & SECURE
 <meta content="
 default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';
 script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com;
-style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
 img-src 'self' https: blob: data:;
-font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
 frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com;
 connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev;
 upgrade-insecure-requests;
@@ -29,13 +29,28 @@ TECHNICAL SEO & PERFORMANCE
 <link crossorigin="anonymous" href="https://www.egyptphotographytours.com/site.webmanifest" rel="manifest"/>
 <meta content="#FFD700" name="msapplication-TileColor"/>
 <meta content="#FFD700" name="theme-color"/>
-<link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
 <link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
 <link crossorigin="" href="https://challenges.cloudflare.com" rel="preconnect"/>
-<link as="style" crossorigin="" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Cinzel:wght@400;600;700&amp;display=swap" rel="preload"/>
-<link crossorigin="" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Cinzel:wght@400;600;700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Cinzel:wght@400;600;700&amp;display=swap" rel="stylesheet"/></noscript>
+<link as="style" crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" rel="preload"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/500.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/600.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/700.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/800.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/400.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/600.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/700.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/500.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/600.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/700.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/800.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/400.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/600.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/700.css" rel="stylesheet"/>
+</noscript>
 <!-- ═══════════════════════════════════════════════════════
 PRIMARY SEO META
 ═══════════════════════════════════════════════════════ -->
@@ -178,11 +193,17 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .mobile-nav-contact i{color:var(--c-gold);width:16px}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
 .nav-overlay.is-open{display:block}
-.tours-hero{position:relative;height:56vh;min-height:380px;max-height:560px;overflow:hidden;margin-bottom:0}
-.tours-hero img{width:100%;height:100%;object-fit:cover}
-.tours-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.32),rgba(0,0,0,0.82));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;color:#fff}
-.tours-hero-overlay h1{color:#fff;font-size:clamp(24px,5vw,46px);text-shadow:0 3px 15px rgba(0,0,0,0.8);margin-bottom:12px;max-width:920px;font-family:'Cinzel',serif;letter-spacing:1px}
-.tours-hero-overlay p{color:rgba(255,255,255,0.95);font-size:clamp(15px,2vw,20px);text-shadow:0 2px 8px rgba(0,0,0,0.8);max-width:720px}
+/* ═══ TEXT-ONLY ARTICLE HERO (no image) ═══ */
+.article-hero{position:relative;background:linear-gradient(135deg,#12161f 0%,#1a202c 48%,#2d3748 100%);overflow:hidden;padding:66px 0 60px;text-align:center;border-bottom:3px solid var(--c-gold);margin-bottom:0}
+.article-hero::before{content:'أهلاً وسهلاً';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:clamp(90px,22vw,260px);font-weight:700;color:rgba(255,215,0,.05);white-space:nowrap;line-height:1;pointer-events:none;user-select:none}
+.article-hero::after{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:560px;height:300px;background:radial-gradient(ellipse at center,rgba(255,215,0,.14) 0%,rgba(255,215,0,0) 68%);pointer-events:none}
+.article-hero .wrap{position:relative;z-index:1}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,215,0,.14);border:1px solid rgba(255,215,0,.42);color:var(--c-gold);border-radius:30px;padding:7px 18px;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:20px}
+.hero-kicker i{font-size:12px}
+.article-hero h1{color:#fff;font-family:'Cinzel',serif;font-weight:700;letter-spacing:1px;font-size:clamp(26px,5vw,46px);line-height:1.22;max-width:920px;margin:0 auto 16px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.article-hero h1 .gold{color:var(--c-gold)}
+.hero-sub{color:rgba(255,255,255,.88);font-size:clamp(15px,2vw,19px);line-height:1.7;max-width:760px;margin:0 auto}
+.hero-rule{width:92px;height:3px;background:var(--c-gold);border-radius:2px;margin:24px auto 0}
 .meta-bar{background:var(--c-white);border-bottom:1px solid var(--c-border);padding:14px 0}
 .breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:var(--c-muted)}
 .breadcrumb a{color:var(--c-muted);transition:color var(--transition)}
@@ -336,8 +357,8 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .section-accent .sec-sub{color:rgba(255,255,255,.85)}
 .section-accent .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
 </style>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" media="print" onload="this.media='all'" referrerpolicy="no-referrer" rel="stylesheet"/>
-<noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/></noscript>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" referrerpolicy="no-referrer" rel="stylesheet"/>
+<noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/></noscript>
 <script async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
 <!-- ═══════════════════════════════════════════════════════
 STRUCTURED DATA
@@ -359,7 +380,6 @@ STRUCTURED DATA
 "name": "Egyptian Arabic: 20 Essential Phrases for Travelers – 2026 Complete Guide to Connect",
 "description": "Master Egyptian Arabic for travel in 2026 with our complete guide. Learn 20+ essential phrases with pronunciation, cultural context and expert tips for connecting with locals on your Egypt photography tour.",
 "isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
-"primaryImageOfPage": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egyptian-arabic-phrases-travelers-2026.jpg", "width": "1200", "height": "630"},
 "breadcrumb": {"@id": "https://www.egyptphotographytours.com/egyptian-arabic-phrases-travelers-2026.html#breadcrumb"},
 "inLanguage": "en-US",
 "datePublished": "2026-01-10T08:00:00+02:00",
@@ -380,11 +400,6 @@ STRUCTURED DATA
 "headline": "Egyptian Arabic: 20 Essential Phrases for Travelers – 2026 Complete Guide to Connect",
 "alternativeHeadline": "The Ultimate 2026 Guide to Egyptian Arabic Phrases, Pronunciation and Cultural Context for Travelers",
 "description": "Complete guide to essential Egyptian Arabic phrases for travelers in 2026, with phonetic pronunciation, cultural context, market bargaining scripts and photography-specific language tips.",
-"image": [
-"https://www.egyptphotographytours.com/images/egyptian-arabic-phrases-travelers-2026.jpg",
-"https://www.egyptphotographytours.com/images/arabic-phrases-guide.jpg",
-"https://www.egyptphotographytours.com/images/language-immersion-tours.jpg"
-],
 "datePublished": "2026-01-10T08:00:00+02:00",
 "dateModified": "2026-01-10T08:00:00+02:00",
 "author": {"@id": "https://www.egyptphotographytours.com/#person-hossam"},
@@ -451,7 +466,6 @@ STRUCTURED DATA
 "name": "Egypt Photography Tours",
 "url": "https://www.egyptphotographytours.com/",
 "logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": "200", "height": "200"},
-"image": ["https://www.egyptphotographytours.com/images/egyptian-arabic-phrases-travelers-2026.jpg"],
 "telephone": "+20-155-073-5673",
 "email": "info@egyptphotographytours.com",
 "foundingDate": "2015",
@@ -561,12 +575,13 @@ STRUCTURED DATA
 <div aria-hidden="true" class="nav-overlay" id="nav-overlay"></div>
 <!-- ═══════════════════ MAIN CONTENT ═══════════════════ -->
 <main id="main" tabindex="-1">
-<!-- HERO SECTION -->
-<section class="tours-hero">
-<img alt="Traveler greeting a local shopkeeper in Cairo while practicing Egyptian Arabic phrases" decoding="async" fetchpriority="high" height="1080" loading="eager" src="https://www.egyptphotographytours.com/images/egyptian-arabic-phrases-travelers-2026.jpg" title="Egyptian Arabic: 20 Essential Phrases for Travelers 2026" width="1920"/>
-<div class="tours-hero-overlay">
-<h1>Egyptian Arabic: 20 Essential Phrases for Travelers</h1>
-<p>Your 2026 complete guide to speaking Egyptian Arabic with confidence — pronunciation, cultural context, market bargaining and photography phrases that help you connect deeply with locals on your Egypt tour.</p>
+<!-- HERO SECTION — TEXT ONLY (no image) -->
+<section class="article-hero">
+<div class="wrap">
+<span class="hero-kicker"><i aria-hidden="true" class="fas fa-language"></i> 2026 Language &amp; Culture Guide</span>
+<h1>Egyptian Arabic: <span class="gold">20 Essential Phrases</span> for Travelers</h1>
+<p class="hero-sub">Your 2026 complete guide to speaking Egyptian Arabic with confidence — pronunciation, cultural context, market bargaining and photography phrases that help you connect deeply with locals on your Egypt tour.</p>
+<div class="hero-rule" aria-hidden="true"></div>
 </div>
 </section>
 <!-- BREADCRUMB + META -->
