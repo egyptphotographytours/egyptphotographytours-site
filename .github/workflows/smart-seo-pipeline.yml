@@ -9,7 +9,7 @@ on:
       - '!sitemap.xml'
       - '!scripts/**'
       - '!.github/**'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,12 +17,12 @@ permissions:
 jobs:
   translate-and-seo:
     runs-on: ubuntu-latest
-    timeout-minutes: 360 # Allow up to 6 hours for massive translation jobs
+    timeout-minutes: 360
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Required for incremental git diff detection
+          fetch-depth: 2
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -30,7 +30,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install beautifulsoup4 deep-translator lxml
+        run: pip install beautifulsoup4 deep-translator lxml translators
 
       - name: Configure Git for Pushing
         run: |
@@ -39,14 +39,14 @@ jobs:
 
       - name: Run Smart Incremental Translation & SEO Script
         env:
-          PYTHONUNBUFFERED: 1  # Forces real-time logs in GitHub UI
+          PYTHONUNBUFFERED: 1
         run: python scripts/smart_pipeline.py
 
-      - name: Final Commit and Push (Catch-all for Sitemap & SEO tags)
+      - name: Final Commit and Push
         run: |
           git add .
           if git diff --staged --quiet; then
-            echo "✅ No leftover changes to commit. All batches were pushed successfully!"
+            echo "✅ No leftover changes. All batches pushed successfully!"
           else
             git commit -m "🤖 Final SEO, Sitemap & leftover translations [skip ci]"
             git push
