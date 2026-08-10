@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Ultimate Smart Incremental Translation & SEO Pipeline v2
-=========================================================
+Ultimate Smart Incremental Translation & SEO Pipeline v2.1
+==========================================================
 ✅ Fixes Google blocks: 3-engine fallback (Google → Bing → MyMemory)
 ✅ Repair pass: failed chunks retried after cooldown
 ✅ Resume-smart: skips already-translated files, retries failed ones first
+✅ Content Hashing: Ignores layout/SEO changes, only translates when actual text changes
 ✅ Self-healing manifest: failed files auto-retried next run
 ✅ BATCH PUSH every 100 files
 ✅ try/finally: SEO injection runs even after errors
@@ -18,6 +19,7 @@ import sys
 import json
 import time
 import random
+import hashlib
 import argparse
 import subprocess
 import concurrent.futures
@@ -33,6 +35,7 @@ sys.stdout.reconfigure(line_buffering=True)
 DOMAIN = "https://www.egyptphotographytours.com"
 BATCH_SIZE = 100
 FAILED_MANIFEST = os.path.join('scripts', 'failed_translations.json')
+HASH_MANIFEST = os.path.join('scripts', 'translated_hashes.json')
 
 TARGET_LANGS = [
     'ar', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'zh-CN', 'ko',
@@ -129,7 +132,7 @@ class TranslationEngine:
         raise RuntimeError(f"All engines failed: {last_err}")
 
 # ==========================================
-# FAILED-FILE MANIFEST (SELF-HEALING)
+# FAILED-FILE MANIFEST & HASHING (SELF-HEALING)
 # ==========================================
 def load_failed_manifest():
     if os.path.exists(FAILED_MANIFEST):
@@ -144,6 +147,42 @@ def save_failed_manifest(failed_set):
     os.makedirs(os.path.dirname(FAILED_MANIFEST), exist_ok=True)
     with open(FAILED_MANIFEST, 'w', encoding='utf-8') as f:
         json.dump(sorted(failed_set), f, indent=2)
+
+def load_hashes():
+    if os.path.exists(HASH_MANIFEST):
+        try:
+            with open(HASH_MANIFEST, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+def save_hashes(hashes):
+    os.makedirs(os.path.dirname(HASH_MANIFEST), exist_ok=True)
+    with open(HASH_MANIFEST, 'w', encoding='utf-8') as f:
+        json.dump(hashes, f, indent=2)
+
+def get_content_hash(soup):
+    """Extracts ONLY translatable text and hashes it. Ignores <head> and layout changes."""
+    texts = []
+    if soup.title and soup.title.string:
+        texts.append(soup.title.string.strip())
+    for meta_name in ['description', 'og:title', 'og:description', 'twitter:title', 'twitter:description']:
+        tag = soup.find('meta', attrs={'name': meta_name}) or soup.find('meta', attrs={'property': meta_name})
+        if tag and tag.get('content'):
+            texts.append(tag['content'].strip())
+    for img in soup.find_all('img', alt=True):
+        if img['alt'].strip() and not img['alt'].startswith('http'):
+            texts.append(img['alt'].strip())
+    for text_node in soup.find_all(string=True):
+        if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)): continue
+        if not text_node.parent or not hasattr(text_node.parent, 'name'): continue
+        if is_translatable(text_node):
+            original = str(text_node).strip()
+            if len(original) > 2 and not original.isspace():
+                texts.append(original)
+    content_str = "|".join(texts)
+    return hashlib.md5(content_str.encode('utf-8')).hexdigest()
 
 # ==========================================
 # GIT BATCH PUSH WITH RETRIES
@@ -356,7 +395,9 @@ def fix_internal_links(soup, target_lang):
 def inject_dynamic_lang_menu(soup, target_lang, base_path):
     lang_menu = soup.find('div', id='lang-menu') or soup.find('div', class_='language-dropdown')
     if not lang_menu: return soup
-    for old_link in lang_menu.find_all('a', class_='lang-item') or lang_menu.find_all('a', class_='language-item'):
+    
+    # ✅ FIXED: Use list of classes for reliable decompose
+    for old_link in lang_menu.find_all('a', class_=['lang-item', 'language-item']):
         old_link.decompose()
 
     en_url = get_relative_url('en', base_path)
@@ -450,7 +491,7 @@ def main():
     args = parser.parse_args()
 
     print("=" * 60, flush=True)
-    print("🚀 Smart Incremental Translation & SEO Pipeline v2", flush=True)
+    print("🚀 Smart Incremental Translation & SEO Pipeline v2.1", flush=True)
     print("=" * 60, flush=True)
 
     # ── REPAIR MODE: fixes already-translated pages without re-translating ──
@@ -465,6 +506,8 @@ def main():
 
     engine = TranslationEngine()
     failed_manifest = load_failed_manifest()
+    translated_hashes = load_hashes()
+    
     modified_files = get_changed_english_files()
     all_en_files = get_all_english_files()
 
@@ -483,18 +526,29 @@ def main():
             if only_set and os.path.basename(rel_path) not in only_set and rel_path not in only_set:
                 continue
 
-            needs_update = rel_path in modified_files or rel_path in failed_manifest or args.force
-
             with open(rel_path, 'r', encoding='utf-8') as f:
                 en_soup = BeautifulSoup(f, 'lxml')
+                
+            # 🧠 SMART CHECK: Has the actual text changed?
+            current_hash = get_content_hash(en_soup)
+            saved_hash = translated_hashes.get(rel_path)
+            content_changed = (current_hash != saved_hash)
+
+            needs_update = rel_path in modified_files or rel_path in failed_manifest or args.force
 
             file_had_failures = False
+            
+            # ✅ THE FIX: If content is identical to last time and not a forced retry, SKIP IT.
+            if not content_changed and not args.force and rel_path not in failed_manifest:
+                translated_hashes[rel_path] = current_hash
+                skipped += len(TARGET_LANGS)
+                continue
 
             for lang in TARGET_LANGS:
                 trans_path = os.path.join(lang, rel_path)
 
-                # ✅ SKIP: exists + unchanged + not failed → already done
-                if os.path.exists(trans_path) and not needs_update:
+                # ✅ SKIP: exists + content unchanged + not failed → already done
+                if os.path.exists(trans_path) and not content_changed and not needs_update:
                     skipped += 1
                     continue
 
@@ -525,6 +579,10 @@ def main():
             elif rel_path in failed_manifest:
                 failed_manifest.discard(rel_path)
                 print(f"   ✅ {rel_path} fully recovered!", flush=True)
+                translated_hashes[rel_path] = current_hash
+            else:
+                # Save the new hash after a successful translation run
+                translated_hashes[rel_path] = current_hash
 
     except KeyboardInterrupt:
         print("\n⚠️ Interrupted — saving progress...", flush=True)
@@ -532,6 +590,8 @@ def main():
     finally:
         # ✅ ALWAYS RUNS (even after errors) — saves progress + injects SEO
         save_failed_manifest(failed_manifest)
+        save_hashes(translated_hashes)
+        
         if files_since_push > 0:
             batch_commit_and_push(files_since_push)
         print("\n🔒 Final safety step: injecting SEO, hreflang & language menus...", flush=True)
