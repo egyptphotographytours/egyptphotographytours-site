@@ -532,6 +532,15 @@ def main():
             # 🧠 SMART CHECK: Has the actual text changed?
             current_hash = get_content_hash(en_soup)
             saved_hash = translated_hashes.get(rel_path)
+
+            # 🕵️ FIRST-RUN SMART: If clipboard is blank, but all 24 translations exist on disk, SKIP IT!
+            if saved_hash is None:
+                all_exist = all(os.path.exists(os.path.join(lang, rel_path)) for lang in TARGET_LANGS)
+                if all_exist and not args.force:
+                    translated_hashes[rel_path] = current_hash
+                    skipped += len(TARGET_LANGS)
+                    continue
+
             content_changed = (current_hash != saved_hash)
 
             needs_update = rel_path in modified_files or rel_path in failed_manifest or args.force
