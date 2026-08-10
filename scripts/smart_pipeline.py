@@ -2,16 +2,14 @@
 """
 Ultimate Smart Incremental Translation & SEO Pipeline v2
 =========================================================
-✅ FIXES "No translation was found" / Google blocks:
-   - 3-engine fallback chain: Google → Bing → MyMemory
-   - Exponential backoff + random jitter between requests
-   - Repair pass: failed chunks retried after cooldown (never silently English)
-✅ RESUME-SMART: skips files already translated & unchanged
-✅ Self-healing: failed files saved to scripts/failed_translations.json → retried first next run
-✅ BATCH PUSH: commits & pushes every 100 files
-✅ GSC-SAFE SEO: canonical + hreflang + x-default injected on every file
-✅ Flawless international sitemap.xml with xhtml:link tags
-✅ DOM Firewall: DOCTYPE, <script>, <style>, JSON-LD protected from translation
+✅ Fixes Google blocks: 3-engine fallback (Google → Bing → MyMemory)
+✅ Repair pass: failed chunks retried after cooldown
+✅ Resume-smart: skips already-translated files, retries failed ones first
+✅ Self-healing manifest: failed files auto-retried next run
+✅ BATCH PUSH every 100 files
+✅ try/finally: SEO injection runs even after errors
+✅ --seo-only mode: repairs hreflang + menus + sitemap WITHOUT re-translating
+✅ GSC-safe: canonical, hreflang, x-default, international sitemap
 """
 
 import os
@@ -33,7 +31,7 @@ sys.stdout.reconfigure(line_buffering=True)
 # CONFIGURATION
 # ==========================================
 DOMAIN = "https://www.egyptphotographytours.com"
-BATCH_SIZE = 100                    # ✅ Push to GitHub after every 100 translated files
+BATCH_SIZE = 100
 FAILED_MANIFEST = os.path.join('scripts', 'failed_translations.json')
 
 TARGET_LANGS = [
@@ -49,11 +47,11 @@ IGNORE_TAGS = {
 
 TIMEOUT_SECONDS = 15
 MAX_RETRIES = 3
-CHUNK_SIZE = 4500                   # chars per chunk (Google limit is 5000 — stay safely under)
-CHUNK_DELAY_MIN = 2.0               # base delay between chunks
+CHUNK_SIZE = 4500
+CHUNK_DELAY_MIN = 2.0
 CHUNK_DELAY_MAX = 4.5
-COOLDOWN_AFTER_FAILURE = 90         # seconds to wait before repair pass
-ENGINE_SWITCH_THRESHOLD = 2         # consecutive failures before switching engine
+COOLDOWN_AFTER_FAILURE = 90
+ENGINE_SWITCH_THRESHOLD = 2
 
 LANG_META = {
     'en':    {'flag': '🇺🇸', 'name': 'English'}, 'ar':    {'flag': '🇸🇦', 'name': 'العربية'},
@@ -71,7 +69,7 @@ LANG_META = {
     'zh-CN': {'flag': '🇨🇳', 'name': '中文 (简体)'}
 }
 
-# Optional Bing fallback (free, no API key) — degrades gracefully if missing
+# Optional Bing fallback (free, no API key)
 try:
     import translators as ts
     BING_AVAILABLE = True
@@ -83,19 +81,14 @@ except ImportError:
 # TRANSLATION ENGINE — FALLBACK CHAIN
 # ==========================================
 class TranslationEngine:
-    """Google → Bing → MyMemory with backoff, jitter, and block detection."""
-
     def __init__(self):
         self.consecutive_failures = 0
-        self.preferred = 'google'
 
-    # ---- timeout wrapper ----
     @staticmethod
     def _run_with_timeout(fn, *args):
         with concurrent.futures.ThreadPoolExecutor(max_workers=1) as ex:
             return ex.submit(fn, *args).result(timeout=TIMEOUT_SECONDS)
 
-    # ---- engines ----
     def _google(self, text, target):
         return GoogleTranslator(source='en', target=target).translate(text)
 
@@ -107,11 +100,8 @@ class TranslationEngine:
         from deep_translator import MyMemoryTranslator
         return MyMemoryTranslator(source='en', target=target).translate(text)
 
-    # ---- smart dispatcher ----
     def translate(self, text, target):
-        """Try engines in order. Raises if all fail."""
         engines = ['google', 'bing', 'mymemory']
-        # if Google keeps failing, start with the backup
         if self.consecutive_failures >= ENGINE_SWITCH_THRESHOLD:
             engines = ['bing', 'google', 'mymemory']
 
@@ -125,7 +115,7 @@ class TranslationEngine:
                     time.sleep(1)
                     result = self._run_with_timeout(self._bing, text, target)
                 else:
-                    if len(text) > 450: continue   # MyMemory limit
+                    if len(text) > 450: continue
                     time.sleep(1)
                     result = self._run_with_timeout(self._mymemory, text, target)
 
@@ -156,23 +146,29 @@ def save_failed_manifest(failed_set):
         json.dump(sorted(failed_set), f, indent=2)
 
 # ==========================================
-# GIT BATCH PUSH (SAVES PROGRESS)
+# GIT BATCH PUSH WITH RETRIES
 # ==========================================
-def batch_commit_and_push(count):
-    print(f"   📦 Pushing batch of {count} files to GitHub...", flush=True)
-    try:
-        subprocess.run(['git', 'add', '.'], check=True, capture_output=True)
-        status = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
-        if status.stdout.strip():
-            subprocess.run(['git', 'commit', '-m', f'🤖 Batch translation ({count} files) [skip ci]'], check=True, capture_output=True)
-            subprocess.run(['git', 'pull', '--rebase', '--autostash'], capture_output=True)
+def batch_commit_and_push(count, retries=3):
+    for attempt in range(retries):
+        try:
+            subprocess.run(['git', 'add', '.'], check=True, capture_output=True)
+            status = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
+            if not status.stdout.strip():
+                print("   ℹ️ No changes to push.", flush=True)
+                return
+            msg = f'🤖 Batch translation ({count} files) [skip ci]' if count > 0 else '🤖 SEO repair [skip ci]'
+            subprocess.run(['git', 'commit', '-m', msg], check=True, capture_output=True)
+            subprocess.run(['git', 'pull', '--rebase', '--autostash'], check=True, capture_output=True)
             subprocess.run(['git', 'push'], check=True, capture_output=True)
-            print(f"   ✅ Successfully pushed {count} files.", flush=True)
-        else:
-            print(f"   ℹ️ No changes to push.", flush=True)
-    except subprocess.CalledProcessError as e:
-        err_msg = e.stderr.decode('utf-8') if e.stderr else str(e)
-        print(f"   ⚠️ Git push warning: {err_msg}", flush=True)
+            print(f"   ✅ Pushed successfully.", flush=True)
+            return
+        except subprocess.CalledProcessError as e:
+            err = e.stderr.decode('utf-8') if e.stderr else str(e)
+            print(f"   ⚠️ Push attempt {attempt+1} failed: {err}", flush=True)
+            if attempt < retries - 1:
+                time.sleep(15 * (attempt + 1))
+            else:
+                print("   ❌ Push failed after retries — files saved locally, next run will push them.", flush=True)
 
 # ==========================================
 # URL HELPERS
@@ -210,7 +206,7 @@ def get_all_english_files():
     return en_files
 
 # ==========================================
-# DOM FIREWALL: SAFE TRANSLATION
+# DOM FIREWALL
 # ==========================================
 def is_translatable(text_node):
     if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)):
@@ -228,11 +224,8 @@ def is_translatable(text_node):
     return True
 
 def safe_translate(texts, target_lang, engine):
-    """Chunk, translate with backoff + fallback, and repair failed chunks after a cooldown.
-    Returns (translated_texts, had_failures)."""
     if not texts: return [], False
 
-    # ---- build chunks by CHARACTER count ----
     chunks, current_chunk, current_len = [], [], 0
     for t in texts:
         clean_t = t.replace('\n', ' ').replace('\r', ' ').strip() or t
@@ -244,17 +237,15 @@ def safe_translate(texts, target_lang, engine):
         current_len += add_len
     if current_chunk: chunks.append(current_chunk)
 
-    results = [None] * len(texts)   # filled positionally later
+    results = [None] * len(texts)
     failed_chunk_indices = []
+    chunk_map = []
     cursor = 0
-    chunk_map = []                  # (chunk_index, start_position)
-
     for ci, chunk in enumerate(chunks):
         chunk_map.append((ci, cursor))
         cursor += len(chunk)
 
     def attempt_chunk(chunk):
-        """Returns list of translated strings or None."""
         payload = "\n".join(chunk)
         for attempt in range(MAX_RETRIES):
             try:
@@ -262,7 +253,6 @@ def safe_translate(texts, target_lang, engine):
                 parts = res.split("\n")
                 if len(parts) == len(chunk):
                     return parts, eng
-                # newline mismatch → translate one by one
                 singles, ok = [], True
                 for t in chunk:
                     try:
@@ -279,7 +269,6 @@ def safe_translate(texts, target_lang, engine):
                 time.sleep(wait)
         return None, None
 
-    # ---- first pass ----
     for ci, chunk in enumerate(chunks):
         start = chunk_map[ci][1]
         print(f"      📦 Chunk {ci+1}/{len(chunks)} ({len(chunk)} strings) → {target_lang}", flush=True)
@@ -292,13 +281,11 @@ def safe_translate(texts, target_lang, engine):
             print(f"      ❌ Chunk {ci+1} failed — queued for repair pass", flush=True)
             failed_chunk_indices.append(ci)
         time.sleep(random.uniform(CHUNK_DELAY_MIN, CHUNK_DELAY_MAX))
-        # extra breathing room every 3 chunks
         if (ci + 1) % 3 == 0:
             time.sleep(random.uniform(6, 12))
 
-    # ---- repair pass after cooldown ----
     if failed_chunk_indices:
-        print(f"      💤 Cooling {COOLDOWN_AFTER_FAILURE}s before repairing {len(failed_chunk_indices)} failed chunk(s)...", flush=True)
+        print(f"      💤 Cooling {COOLDOWN_AFTER_FAILURE}s before repairing {len(failed_chunk_indices)} chunk(s)...", flush=True)
         time.sleep(COOLDOWN_AFTER_FAILURE)
         still_failed = []
         for ci in failed_chunk_indices:
@@ -312,7 +299,6 @@ def safe_translate(texts, target_lang, engine):
                 print(f"      ✅ Repaired via {eng}", flush=True)
             else:
                 still_failed.append(ci)
-                # keep English so the page still renders
                 for j, t in enumerate(chunk):
                     results[start + j] = t
                 print(f"      ❌ Chunk {ci+1} still failing — keeping English, file queued for next run", flush=True)
@@ -368,15 +354,16 @@ def fix_internal_links(soup, target_lang):
     return soup
 
 def inject_dynamic_lang_menu(soup, target_lang, base_path):
-    lang_menu = soup.find('div', id='lang-menu')
+    lang_menu = soup.find('div', id='lang-menu') or soup.find('div', class_='language-dropdown')
     if not lang_menu: return soup
-    for old_link in lang_menu.find_all('a', class_='lang-item'): old_link.decompose()
+    for old_link in lang_menu.find_all('a', class_='lang-item') or lang_menu.find_all('a', class_='language-item'):
+        old_link.decompose()
 
     en_url = get_relative_url('en', base_path)
     en_active = "is-active" if target_lang == 'en' else ""
     lang_menu.append(BeautifulSoup(
-        f'<a href="{en_url}" class="lang-item {en_active}" role="menuitem">'
-        f'<span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-name">English</span></a>', 'lxml'))
+        f'<a href="{en_url}" class="lang-item language-item {en_active}" role="menuitem">'
+        f'<span class="lang-flag flag-icon" aria-hidden="true">🇺🇸</span><span class="lang-name language-text">English</span></a>', 'lxml'))
 
     for lang in TARGET_LANGS:
         if os.path.exists(os.path.join(lang, base_path)):
@@ -384,15 +371,15 @@ def inject_dynamic_lang_menu(soup, target_lang, base_path):
             is_active = "is-active" if target_lang == lang else ""
             flag, name = LANG_META[lang]['flag'], LANG_META[lang]['name']
             lang_menu.append(BeautifulSoup(
-                f'<a href="{lang_url}" class="lang-item {is_active}" role="menuitem">'
-                f'<span class="lang-flag" aria-hidden="true">{flag}</span><span class="lang-name">{name}</span></a>', 'lxml'))
+                f'<a href="{lang_url}" class="lang-item language-item {is_active}" role="menuitem">'
+                f'<span class="lang-flag flag-icon" aria-hidden="true">{flag}</span><span class="lang-name language-text">{name}</span></a>', 'lxml'))
     return soup
 
 # ==========================================
 # GLOBAL SEO & SITEMAP (GSC INDEXING GUARANTEE)
 # ==========================================
 def inject_global_seo_and_sitemap():
-    print("\n🔗 Step 3: Injecting SEO Tags & Generating Sitemap...", flush=True)
+    print("\n🔗 Injecting SEO Tags & Generating Sitemap...", flush=True)
     page_map = {}
     for root, dirs, files in os.walk('.'):
         dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['scripts', 'node_modules', '.github']]
@@ -407,12 +394,14 @@ def inject_global_seo_and_sitemap():
                         break
                 page_map.setdefault(base, {})[lang_code] = rel
 
+    repaired = 0
     for base, langs in page_map.items():
         for lang_code, rel_path in langs.items():
             if not os.path.exists(rel_path): continue
             with open(rel_path, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f, 'lxml')
 
+            # ✅ Remove ALL old canonical/alternate links (including broken nested fragments)
             for old in soup.find_all('link', rel='alternate'): old.decompose()
             for old in soup.find_all('link', rel='canonical'): old.decompose()
             head = soup.find('head')
@@ -429,6 +418,8 @@ def inject_global_seo_and_sitemap():
             soup = inject_dynamic_lang_menu(soup, lang_code, base)
             with open(rel_path, 'w', encoding='utf-8') as f:
                 f.write(str(soup))
+            repaired += 1
+    print(f"   ✅ SEO tags injected on {repaired} files.", flush=True)
 
     today = datetime.now().strftime('%Y-%m-%d')
     xml = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -452,91 +443,103 @@ def inject_global_seo_and_sitemap():
 # ==========================================
 def main():
     parser = argparse.ArgumentParser(description='Smart Translation & SEO Pipeline')
-    parser.add_argument('--only', help='Comma-separated filenames to process (skip everything else)')
-    parser.add_argument('--force', action='store_true', help='Re-translate ALL files even if they exist')
+    parser.add_argument('--only', help='Comma-separated filenames to process')
+    parser.add_argument('--force', action='store_true', help='Re-translate ALL files')
+    parser.add_argument('--seo-only', action='store_true',
+                        help='Skip translation — only repair hreflang, language menus & sitemap')
     args = parser.parse_args()
-
-    only_set = set(f.strip() for f in args.only.split(',')) if args.only else None
 
     print("=" * 60, flush=True)
     print("🚀 Smart Incremental Translation & SEO Pipeline v2", flush=True)
     print("=" * 60, flush=True)
+
+    # ── REPAIR MODE: fixes already-translated pages without re-translating ──
+    if args.seo_only:
+        print("🔧 SEO-ONLY REPAIR MODE — no translation will happen.", flush=True)
+        inject_global_seo_and_sitemap()
+        batch_commit_and_push(0)
+        print("\n🎉 Repair complete!", flush=True)
+        return
+
+    only_set = set(f.strip() for f in args.only.split(',')) if args.only else None
 
     engine = TranslationEngine()
     failed_manifest = load_failed_manifest()
     modified_files = get_changed_english_files()
     all_en_files = get_all_english_files()
 
-    # ✅ RESUME SMART: retry previously-failed files FIRST
-    def priority(path):
-        return (0 if path in failed_manifest else 1, path)
-    all_en_files.sort(key=priority)
-
+    # ✅ Resume smart: retry previously-failed files FIRST
+    all_en_files.sort(key=lambda p: (0 if p in failed_manifest else 1, p))
     if failed_manifest:
         print(f"   🔁 Retrying {len(failed_manifest)} previously-failed file(s) first...", flush=True)
 
     files_since_push = 0
     skipped = 0
 
-    print(f"\n🌍 Step 2: Translating into {len(TARGET_LANGS)} languages (batch push every {BATCH_SIZE} files)...", flush=True)
-    for rel_path in all_en_files:
-        if only_set and os.path.basename(rel_path) not in only_set and rel_path not in only_set:
-            continue
+    print(f"\n🌍 Translating into {len(TARGET_LANGS)} languages (push every {BATCH_SIZE} files)...", flush=True)
 
-        needs_update = rel_path in modified_files or rel_path in failed_manifest or args.force
-
-        with open(rel_path, 'r', encoding='utf-8') as f:
-            en_soup = BeautifulSoup(f, 'lxml')
-
-        file_had_failures = False
-
-        for lang in TARGET_LANGS:
-            trans_path = os.path.join(lang, rel_path)
-
-            # ✅ SKIP: exists, unchanged, not failed → already done
-            if os.path.exists(trans_path) and not needs_update:
-                skipped += 1
+    try:
+        for rel_path in all_en_files:
+            if only_set and os.path.basename(rel_path) not in only_set and rel_path not in only_set:
                 continue
 
-            action = 'RETRY' if rel_path in failed_manifest else ('UPDATED' if os.path.exists(trans_path) else 'NEW')
-            print(f"   🔄 [{action}] {rel_path} → {lang}", flush=True)
+            needs_update = rel_path in modified_files or rel_path in failed_manifest or args.force
 
-            lang_soup = BeautifulSoup(str(en_soup), 'lxml')
-            lang_soup, had_failures = extract_and_translate(lang_soup, lang, engine)
-            lang_soup.html['lang'] = 'zh' if lang == 'zh-CN' else lang
-            lang_soup = fix_internal_links(lang_soup, lang)
+            with open(rel_path, 'r', encoding='utf-8') as f:
+                en_soup = BeautifulSoup(f, 'lxml')
 
-            os.makedirs(os.path.dirname(trans_path), exist_ok=True)
-            with open(trans_path, 'w', encoding='utf-8') as f:
-                f.write(str(lang_soup))
+            file_had_failures = False
 
-            if had_failures:
-                file_had_failures = True
-            files_since_push += 1
+            for lang in TARGET_LANGS:
+                trans_path = os.path.join(lang, rel_path)
 
-            # ✅ PUSH EVERY 100 FILES
-            if files_since_push >= BATCH_SIZE:
-                batch_commit_and_push(files_since_push)
-                files_since_push = 0
+                # ✅ SKIP: exists + unchanged + not failed → already done
+                if os.path.exists(trans_path) and not needs_update:
+                    skipped += 1
+                    continue
 
-        # update self-healing manifest
-        if file_had_failures:
-            failed_manifest.add(rel_path)
-            print(f"   📝 {rel_path} queued for retry next run.", flush=True)
-        elif rel_path in failed_manifest:
-            failed_manifest.discard(rel_path)
-            print(f"   ✅ {rel_path} fully recovered!", flush=True)
+                action = 'RETRY' if rel_path in failed_manifest else ('UPDATED' if os.path.exists(trans_path) else 'NEW')
+                print(f"   🔄 [{action}] {rel_path} → {lang}", flush=True)
 
-    if files_since_push > 0:
-        batch_commit_and_push(files_since_push)
+                lang_soup = BeautifulSoup(str(en_soup), 'lxml')
+                lang_soup, had_failures = extract_and_translate(lang_soup, lang, engine)
+                lang_soup.html['lang'] = 'zh' if lang == 'zh-CN' else lang
+                lang_soup = fix_internal_links(lang_soup, lang)
 
-    save_failed_manifest(failed_manifest)
+                os.makedirs(os.path.dirname(trans_path), exist_ok=True)
+                with open(trans_path, 'w', encoding='utf-8') as f:
+                    f.write(str(lang_soup))
+
+                if had_failures:
+                    file_had_failures = True
+                files_since_push += 1
+
+                # ✅ PUSH EVERY 100 FILES
+                if files_since_push >= BATCH_SIZE:
+                    batch_commit_and_push(files_since_push)
+                    files_since_push = 0
+
+            if file_had_failures:
+                failed_manifest.add(rel_path)
+                print(f"   📝 {rel_path} queued for retry next run.", flush=True)
+            elif rel_path in failed_manifest:
+                failed_manifest.discard(rel_path)
+                print(f"   ✅ {rel_path} fully recovered!", flush=True)
+
+    except KeyboardInterrupt:
+        print("\n⚠️ Interrupted — saving progress...", flush=True)
+
+    finally:
+        # ✅ ALWAYS RUNS (even after errors) — saves progress + injects SEO
+        save_failed_manifest(failed_manifest)
+        if files_since_push > 0:
+            batch_commit_and_push(files_since_push)
+        print("\n🔒 Final safety step: injecting SEO, hreflang & language menus...", flush=True)
+        inject_global_seo_and_sitemap()
+
     if failed_manifest:
-        print(f"\n⚠️ {len(failed_manifest)} file(s) still incomplete — saved to {FAILED_MANIFEST} for next run.", flush=True)
-
-    print(f"\n⏭️ Skipped {skipped} already-translated file/language pairs (resume mode).", flush=True)
-
-    inject_global_seo_and_sitemap()
+        print(f"\n⚠️ {len(failed_manifest)} file(s) still incomplete — will retry next run.", flush=True)
+    print(f"⏭️ Skipped {skipped} already-translated file/language pairs (resume mode).", flush=True)
     print("\n🎉 Pipeline Complete!", flush=True)
 
 if __name__ == "__main__":
