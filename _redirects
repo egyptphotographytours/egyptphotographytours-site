@@ -1,9 +1,15 @@
 # --------------------------------------
+# AMP TO NORMAL REDIRECTS (301)
+# --------------------------------------
+/index.amp     /           301
+/*.amp         /:splat     301
+/*.amp.html    /:splat     301
+
+# --------------------------------------
 # OLD URL REDIRECTS (SAFE)
 # --------------------------------------
 /old-pyramids-tour.html     /pyramids-tour.html     301
 /old-alexandria-tour.html   /alexandria-tour.html   301
-
 
 # --------------------------------------
 # MULTILINGUAL ROUTES (SAFE STATIC MAPPING)
@@ -32,7 +38,6 @@
 /no/*        /no/:splat        200
 /da/*        /da/:splat        200
 /fi/*        /fi/:splat        200
-
 
 # --------------------------------------
 # OPTIONAL: STATIC MEDIA PATHS
