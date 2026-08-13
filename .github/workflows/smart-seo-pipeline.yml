@@ -15,6 +15,10 @@ on:
         description: 'Repair mode: only fix hreflang, language menus & sitemap (fast, no translation)'
         type: boolean
         default: false
+      force_file:
+        description: 'Force re-translate a specific file (e.g. index.html) even if text has not changed'
+        type: string
+        required: false
 
 # ✅ Prevents overlapping runs from killing each other
 concurrency:
@@ -53,7 +57,13 @@ jobs:
         continue-on-error: true
         env:
           PYTHONUNBUFFERED: 1
-        run: python scripts/smart_pipeline.py
+        run: |
+          if [ -n "${{ github.event.inputs.force_file }}" ]; then
+            echo "🚀 Forcing translation for: ${{ github.event.inputs.force_file }}"
+            python scripts/smart_pipeline.py --force-file "${{ github.event.inputs.force_file }}"
+          else
+            python scripts/smart_pipeline.py
+          fi
 
       # ✅ SEO REPAIR — ALWAYS runs, even after the 6h kill
       # This is what adds hreflang + language menus to already-translated pages
