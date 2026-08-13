@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Ultimate Smart Incremental Translation & SEO Pipeline v2.1
+Ultimate Smart Incremental Translation & SEO Pipeline v2.2
 ==========================================================
 ✅ Fixes Google blocks: 3-engine fallback (Google → Bing → MyMemory)
 ✅ Repair pass: failed chunks retried after cooldown
 ✅ Resume-smart: skips already-translated files, retries failed ones first
 ✅ Content Hashing: Ignores layout/SEO changes, only translates when actual text changes
+✅ Force Translate: Manually trigger a specific file via GitHub Actions
 ✅ Self-healing manifest: failed files auto-retried next run
 ✅ BATCH PUSH every 100 files
 ✅ try/finally: SEO injection runs even after errors
@@ -486,12 +487,13 @@ def main():
     parser = argparse.ArgumentParser(description='Smart Translation & SEO Pipeline')
     parser.add_argument('--only', help='Comma-separated filenames to process')
     parser.add_argument('--force', action='store_true', help='Re-translate ALL files')
+    parser.add_argument('--force-file', type=str, help='Force re-translate a specific file')
     parser.add_argument('--seo-only', action='store_true',
                         help='Skip translation — only repair hreflang, language menus & sitemap')
     args = parser.parse_args()
 
     print("=" * 60, flush=True)
-    print("🚀 Smart Incremental Translation & SEO Pipeline v2.1", flush=True)
+    print("🚀 Smart Incremental Translation & SEO Pipeline v2.2", flush=True)
     print("=" * 60, flush=True)
 
     # ── REPAIR MODE: fixes already-translated pages without re-translating ──
@@ -523,7 +525,15 @@ def main():
 
     try:
         for rel_path in all_en_files:
-            if only_set and os.path.basename(rel_path) not in only_set and rel_path not in only_set:
+            # 🎯 FORCE FILE LOGIC: If a specific file is requested, skip everything else
+            is_forced = False
+            if args.force_file:
+                if os.path.basename(rel_path) == args.force_file or rel_path == args.force_file:
+                    is_forced = True
+                else:
+                    continue # Skip all other files
+            
+            elif only_set and os.path.basename(rel_path) not in only_set and rel_path not in only_set:
                 continue
 
             with open(rel_path, 'r', encoding='utf-8') as f:
@@ -536,7 +546,7 @@ def main():
             # 🕵️ FIRST-RUN SMART: If clipboard is blank, but all 24 translations exist on disk, SKIP IT!
             if saved_hash is None:
                 all_exist = all(os.path.exists(os.path.join(lang, rel_path)) for lang in TARGET_LANGS)
-                if all_exist and not args.force:
+                if all_exist and not args.force and not is_forced:
                     translated_hashes[rel_path] = current_hash
                     skipped += len(TARGET_LANGS)
                     continue
@@ -548,7 +558,7 @@ def main():
             file_had_failures = False
             
             # ✅ THE FIX: If content is identical to last time and not a forced retry, SKIP IT.
-            if not content_changed and not args.force and rel_path not in failed_manifest:
+            if not content_changed and not args.force and not is_forced and rel_path not in failed_manifest:
                 translated_hashes[rel_path] = current_hash
                 skipped += len(TARGET_LANGS)
                 continue
@@ -557,11 +567,12 @@ def main():
                 trans_path = os.path.join(lang, rel_path)
 
                 # ✅ SKIP: exists + content unchanged + not failed → already done
-                if os.path.exists(trans_path) and not content_changed and not needs_update:
+                if os.path.exists(trans_path) and not content_changed and not needs_update and not is_forced:
                     skipped += 1
                     continue
 
                 action = 'RETRY' if rel_path in failed_manifest else ('UPDATED' if os.path.exists(trans_path) else 'NEW')
+                if is_forced: action = 'FORCED'
                 print(f"   🔄 [{action}] {rel_path} → {lang}", flush=True)
 
                 lang_soup = BeautifulSoup(str(en_soup), 'lxml')
@@ -579,6 +590,7 @@ def main():
 
                 # ✅ PUSH EVERY 100 FILES
                 if files_since_push >= BATCH_SIZE:
+                    save_hashes(translated_hashes) # Save hashes on batch push
                     batch_commit_and_push(files_since_push)
                     files_since_push = 0
 
