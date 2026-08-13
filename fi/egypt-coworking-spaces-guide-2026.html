@@ -1,937 +1,955 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<!-- CRITICAL: Charset first for proper parsing -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
-<!-- Security & Performance Headers -->
-<meta content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https: blob: data:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev; upgrade-insecure-requests; base-uri 'self'; form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
+<meta content="
+default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';
+script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com;
+style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+img-src 'self' https: blob: data:;
+font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com;
+connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev;
+upgrade-insecure-requests;
+base-uri 'self';
+form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
-<!-- Comprehensive Favicon Setup -->
 <link href="https://www.egyptphotographytours.com/sitemap.xml" rel="sitemap" title="Main Sitemap" type="application/xml"/>
 <link href="https://www.egyptphotographytours.com/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="https://www.egyptphotographytours.com/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
 <link href="https://www.egyptphotographytours.com/images/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://www.egyptphotographytours.com/images/favicon.ico" rel="shortcut icon"/>
-<link href="https://www.egyptphotographytours.com/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/site.webmanifest" rel="manifest"/>
+<link href="https://www.egyptphotographytours.com/images/apple-touch-icon.jpg" rel="apple-touch-icon" sizes="180x180"/>
+<link crossorigin="anonymous" href="https://www.egyptphotographytours.com/site.webmanifest" rel="manifest"/>
 <meta content="#FFD700" name="msapplication-TileColor"/>
 <meta content="#FFD700" name="theme-color"/>
-<!-- Preconnect to critical third-party domains -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://widget.trustpilot.com" rel="preconnect"/>
-<link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-<link href="https://challenges.cloudflare.com" rel="preconnect"/>
-<!-- SEO-optimized title -->
-<title>Egypt Coworking Spaces Arvosteltu: Kairo, Aleksandria ja Hurghada oikeilla käyttäjäarvioilla | Varaa Egyptin valokuvamatkat</title>
-<!-- SEO-optimized meta description -->
-<meta content="Egyptin coworking-tilat arvioitu 2026: Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla, internetin nopeuksilla, valokuvauspalveluilla ja hinnoittelulla. Vahvistetut arvostelut etätyöntekijöiltä. Varaa yksityisiä pyramideja, Kairoa ja Gizaa tai 7 päivän seikkailumatkoja coworking-opastuksella." name="description"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+<link crossorigin="" href="https://challenges.cloudflare.com" rel="preconnect"/>
+<link as="style" crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" rel="preload"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/500.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/600.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/700.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/800.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/400.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/600.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/700.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/500.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/600.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/700.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/800.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/400.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/600.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/700.css" rel="stylesheet"/>
+</noscript>
+<title>Egypt Coworking Spaces Arvosteltu: Kairo, Aleksandria ja Hurghada oikeilla käyttäjäarvioilla | Egyptin valokuvamatkat</title>
+<meta content="Egyptin coworking-tilat arvioitu 2026: Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla, internetin nopeuksilla, valokuvauspalveluilla ja hinnoittelulla. Vahvistetut arvostelut etätyöntekijöiltä. Varaa retkiä coworking-ohjauksella." name="description"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="Hossam, Egypt Photography Tours" name="author"/>
 <meta content="Egypt Photography Tours" name="copyright"/>
 <meta content="en" name="language"/>
-<!-- Open Graph tags -->
-<meta content="Egypt Coworking Spaces Arvosteltu: Kairo, Aleksandria ja Hurghada oikeilla käyttäjäarvioilla | Varaa matkat" property="og:title"/>
-<meta content="Egyptin coworking-tilat arvioitu 2026: Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla, internetin nopeuksilla, valokuvauspalveluilla ja hinnoittelulla. Vahvistetut arvostelut etätyöntekijöiltä. Varaa yksityiset pyramidit tai 7 päivän seikkailu coworking-ohjauksella." property="og:description"/>
-<meta content="https://www.egyptphotographytours.com/images/egypt-coworking-spaces-guide-2026.jpg" property="og:image"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="Egypt coworking spaces reviewed - Cairo, Alexandria, Hurghada with real user ratings, internet speeds, photography amenities" property="og:image:alt"/>
-<meta content="https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html" property="og:url"/>
+<link href="https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html" rel="canonical"/>
+<link href="https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html" hreflang="en" rel="alternate"/>
+<link href="https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html" hreflang="x-default" rel="alternate"/>
 <meta content="article" property="og:type"/>
 <meta content="Egypt Photography Tours" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html" property="og:url"/>
+<meta content="Egypti Coworking Spaces Arvosteltu: Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla" property="og:title"/>
+<meta content="Egyptin coworking-tilat arvioitu 2026: Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla, internetin nopeuksilla, valokuvauspalveluilla ja hinnoittelulla." property="og:description"/>
+<meta content="https://www.egyptphotographytours.com/images/egypt-coworking-spaces-guide-2026.jpg" property="og:image"/>
+<meta content="image/jpeg" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Egypt coworking spaces reviewed - Cairo, Alexandria, Hurghada with real user ratings" property="og:image:alt"/>
 <meta content="2026-01-28T00:00:00+02:00" property="article:published_time"/>
 <meta content="2026-02-03T15:10:00+02:00" property="article:modified_time"/>
-<!-- Twitter tags -->
+<meta content="https://www.egyptphotographytours.com/about" property="article:author"/>
+<meta content="Coworking Space Reviews &amp; Tour Booking Guidance" property="article:section"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@EgyptPhotoTours" name="twitter:site"/>
-<meta content="@HossamPhotoEG" name="twitter:creator"/>
 <meta content="Egypti Coworking Spaces Arvosteltu: Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla" name="twitter:title"/>
-<meta content="Egyptin coworking-tilat arvioitu 2026: Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla, internetin nopeuksilla, valokuvauspalveluilla ja hinnoittelulla. Vahvistetut arvostelut etätyöntekijöiltä. Varaa matkoja coworking-ohjauksella jo tänään." name="twitter:description"/>
+<meta content="Egyptin coworking-tilat arvioitu 2026: Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla, internetin nopeuksilla, valokuvauspalveluilla ja hinnoittelulla." name="twitter:description"/>
 <meta content="https://www.egyptphotographytours.com/images/egypt-coworking-spaces-guide-2026.jpg" name="twitter:image"/>
-<!-- Geo Tags -->
 <meta content="EG-C" name="geo.region"/>
 <meta content="Cairo, Egypt" name="geo.placename"/>
 <meta content="30.0444;31.2357" name="geo.position"/>
 <meta content="30.0444, 31.2357" name="ICBM"/>
 <meta content="EG" name="geo.country"/>
-<!-- ULTRA-COMPREHENSIVE STRUCTURED DATA SCHEMA -->
 <script class="notranslate" translate="no" type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "Egypt Photography Tours - Coworking Space Experts",
-      "url": "https://www.egyptphotographytours.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.egyptphotographytours.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "Organization",
-      "name": "Egypt Photography Tours",
-      "url": "https://www.egyptphotographytours.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp",
-        "width": 200,
-        "height": 200
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+20-155-073-5673",
-        "contactType": "customer service",
-        "areaServed": ["EG", "US", "GB", "CA", "AU", "DE", "FR", "ES", "IT"],
-        "availableLanguage": ["en", "ar", "fr", "de", "es"]
-      },
-      "sameAs": [
-        "https://www.facebook.com/EgyptPhotographyTours",
-        "https://www.instagram.com/hossam_artistic/",
-        "https://www.tiktok.com/@egyptphotographytours",
-        "https://www.youtube.com/@Egyptphotographytours"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "foundingDate": "2015",
-      "founder": {
-        "@type": "Person",
-        "name": "Hossam",
-        "jobTitle": "Professional Photographer & Egyptologist"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.egyptphotographytours.com/resources" },
-        { "@type": "ListItem", "position": 3, "name": "Egypt Coworking Spaces Guide 2026", "item": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html" }
-      ]
-    },
-    {
-      "@type": "Article",
-      "headline": "Egypt Coworking Spaces Reviewed: Cairo, Alexandria & Hurghada with Real User Ratings",
-      "description": "Complete 2026 guide to Egypt coworking spaces. Expert reviews with real user ratings, internet speeds, photography amenities & pricing for Cairo, Alexandria & Hurghada with booking integration for Egypt Photography Tours.",
-      "author": { "@type": "Person", "name": "Hossam", "jobTitle": "Professional Photographer & Egyptologist" },
-      "datePublished": "2026-01-28T00:00:00+02:00",
-      "dateModified": "2026-02-03T15:10:00+02:00",
-      "publisher": { "@type": "Organization", "name": "Egypt Photography Tours", "logo": { "@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": 200, "height": 200 } },
-      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html" },
-      "image": [ "https://www.egyptphotographytours.com/images/egypt-coworking-spaces-guide-2026.jpg" ],
-      "articleSection": "Coworking Space Reviews & Tour Booking Guidance"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Which Cairo coworking space has the best internet for photographers in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Based on 2026 verified user ratings and speed tests: 1) GrEEK Campus (Downtown): 4.8/5 rating, 80-150 Mbps fiber, photography equipment storage, creative community. 2) The District (New Cairo): 4.7/5 rating, 70-140 Mbps fiber, backup power, modern facilities. 3) RiseUp Summit Hub (Zamalek): 4.6/5 rating, 60-130 Mbps fiber, Nile views, networking events." } },
-        { "@type": "Question", "name": "Are Alexandria coworking spaces suitable for remote photography work?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Alexandria offers excellent options: 1) Bibliotheca Alexandrina Innovation Station: 4.5/5 rating, 50-120 Mbps fiber. 2) Montaza Coworking: 4.4/5 rating, 45-110 Mbps fiber, Mediterranean views. 3) Alexandria Digital Hub: 4.3/5 rating, 40-100 Mbps fiber, startup community." } },
-        { "@type": "Question", "name": "What photography-friendly amenities should I look for in Egypt coworking spaces?", "acceptedAnswer": { "@type": "Answer", "text": "Essential amenities: 1) Equipment Storage: Secure lockers for cameras and lenses. 2) High Upload Speeds: 10+ Mbps upload for sending large RAW files. 3) Flexible Hours: 24/7 access for golden hour shooting schedules. 4) Backup Power: Generator or UPS systems to prevent work loss." } },
-        { "@type": "Question", "name": "How reliable are user ratings for Egypt coworking spaces?", "acceptedAnswer": { "@type": "Answer", "text": "User rating reliability varies by platform. Google Reviews are generally reliable but focus on recent reviews from remote workers. Coworker.com is more specialized. Facebook Groups offer authentic community feedback. We verify all spaces for photography-specific needs." } },
-        { "@type": "Question", "name": "What are typical pricing ranges for Egypt coworking spaces?", "acceptedAnswer": { "@type": "Answer", "text": "Egypt coworking pricing: Cairo: Hot desks $50-100/month, dedicated desks $100-200/month. Alexandria: Hot desks $40-80/month. Hurghada: Hot desks $35-70/month. Premium spaces with photography amenities may charge 20-30% more." } }
-      ]
-    }
-  ]
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "WebSite",
+"@id": "https://www.egyptphotographytours.com/#website",
+"url": "https://www.egyptphotographytours.com/",
+"name": "Egypt Photography Tours"
+},
+{
+"@type": "WebPage",
+"@id": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html#webpage",
+"url": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html",
+"name": "Egypt Coworking Spaces Reviewed: Cairo, Alexandria & Hurghada with Real User Ratings",
+"description": "Complete 2026 guide to Egypt coworking spaces. Expert reviews with real user ratings, internet speeds, photography amenities & pricing for Cairo, Alexandria & Hurghada.",
+"isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
+"breadcrumb": {"@id": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html#breadcrumb"},
+"inLanguage": "en-US",
+"datePublished": "2026-01-28T00:00:00+02:00",
+"dateModified": "2026-02-03T15:10:00+02:00"
+},
+{
+"@type": "BreadcrumbList",
+"@id": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html#breadcrumb",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
+{"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.egyptphotographytours.com/resources"},
+{"@type": "ListItem", "position": 3, "name": "Egypt Coworking Spaces Guide 2026", "item": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html"}
+]
+},
+{
+"@type": "Article",
+"@id": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html#article",
+"headline": "Egypt Coworking Spaces Reviewed: Cairo, Alexandria & Hurghada with Real User Ratings",
+"alternativeHeadline": "The Complete 2026 Digital Nomad's Guide to Coworking in Egypt with Photography-Friendly Amenities",
+"description": "Complete 2026 guide to Egypt coworking spaces. Expert reviews with real user ratings, internet speeds, photography amenities & pricing for Cairo, Alexandria & Hurghada.",
+"datePublished": "2026-01-28T00:00:00+02:00",
+"dateModified": "2026-02-03T15:10:00+02:00",
+"author": {"@id": "https://www.egyptphotographytours.com/#person-hossam"},
+"publisher": {"@id": "https://www.egyptphotographytours.com/#organization"},
+"mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html#webpage"},
+"articleSection": "Coworking Space Reviews & Tour Booking Guidance",
+"timeRequired": "PT48M",
+"speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-lede", ".faq-answer"]}
+},
+{
+"@type": "FAQPage",
+"@id": "https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026.html#faq",
+"mainEntity": [
+{"@type": "Question", "name": "Which Cairo coworking space has the best internet for photographers in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Based on 2026 verified user ratings and speed tests: 1) GrEEK Campus (Downtown): 4.8/5 rating, 80-150 Mbps fiber, photography equipment storage, creative community. 2) The District (New Cairo): 4.7/5 rating, 70-140 Mbps fiber, backup power, modern facilities. 3) RiseUp Summit Hub (Zamalek): 4.6/5 rating, 60-130 Mbps fiber, Nile views, networking events."}},
+{"@type": "Question", "name": "Are Alexandria coworking spaces suitable for remote photography work?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Alexandria offers excellent options: 1) Bibliotheca Alexandrina Innovation Station: 4.5/5 rating, 50-120 Mbps fiber. 2) Montaza Coworking: 4.4/5 rating, 45-110 Mbps fiber, Mediterranean views. 3) Alexandria Digital Hub: 4.3/5 rating, 40-100 Mbps fiber, startup community."}},
+{"@type": "Question", "name": "What photography-friendly amenities should I look for in Egypt coworking spaces?", "acceptedAnswer": {"@type": "Answer", "text": "Essential amenities: 1) Equipment Storage: Secure lockers for cameras and lenses. 2) High Upload Speeds: 10+ Mbps upload for sending large RAW files. 3) Flexible Hours: 24/7 access for golden hour shooting schedules. 4) Backup Power: Generator or UPS systems to prevent work loss."}},
+{"@type": "Question", "name": "How reliable are user ratings for Egypt coworking spaces?", "acceptedAnswer": {"@type": "Answer", "text": "User rating reliability varies by platform. Google Reviews are generally reliable but focus on recent reviews from remote workers. Coworker.com is more specialized. Facebook Groups offer authentic community feedback. We verify all spaces for photography-specific needs."}},
+{"@type": "Question", "name": "What are typical pricing ranges for Egypt coworking spaces?", "acceptedAnswer": {"@type": "Answer", "text": "Egypt coworking pricing: Cairo: Hot desks $50-100/month, dedicated desks $100-200/month. Alexandria: Hot desks $40-80/month. Hurghada: Hot desks $35-70/month. Premium spaces with photography amenities may charge 20-30% more."}}
+]
+},
+{
+"@type": "Person",
+"@id": "https://www.egyptphotographytours.com/#person-hossam",
+"name": "Hossam",
+"jobTitle": "Professional Photographer & Egyptologist",
+"worksFor": {"@id": "https://www.egyptphotographytours.com/#organization"},
+"knowsAbout": ["Egyptian Tourism", "Remote Work Spaces", "Photography Amenities", "Coworking Infrastructure"],
+"url": "https://www.egyptphotographytours.com/about"
+},
+{
+"@type": "Organization",
+"@id": "https://www.egyptphotographytours.com/#organization",
+"name": "Egypt Photography Tours",
+"url": "https://www.egyptphotographytours.com/",
+"logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": "200", "height": "200"},
+"telephone": "+20-155-073-5673",
+"email": "info@egyptphotographytours.com",
+"foundingDate": "2015",
+"address": {"@type": "PostalAddress", "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza", "addressLocality": "Giza", "addressRegion": "Giza Governorate", "postalCode": "12557", "addressCountry": "EG"},
+"geo": {"@type": "GeoCoordinates", "latitude": "29.9792", "longitude": "31.1342"},
+"aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "150", "bestRating": "5", "worstRating": "1"},
+"sameAs": [
+"https://www.facebook.com/egyptphotographytours",
+"https://www.instagram.com/hossam_artistic/",
+"https://www.tiktok.com/@egyptphotographytours",
+"https://www.youtube.com/@Egyptphotographytours"
+]
+}
+]
 }
 </script>
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
-<!-- Trustpilot widget script -->
-<script async="" defer="" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" type="text/javascript"></script>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
 <script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+<!-- ═══════════════════════════════════════════════════════
+CRITICAL CSS — UNIFIED ARTICLE DESIGN + COWORKING THEME (NO PHOTOS)
+═══════════════════════════════════════════════════════ -->
 <style>
-/* BASE STYLES */
-:root {
-    --primary-dark: #1a202c;
-    --accent-light: #FFD700;
-    --accent-dark: #E2B700;
-    --text-color: #333;
-    --culture-color: #8B5A2B;
-    --dining-color: #DC2626;
-    --hotel-color: #2563EB;
-    --tour-color: #10B981;
-    --warning-color: #e53e3e;
-    --success-color: #10B981;
-    --coworking-color: #8B5CF6;
-    --booking-color: #059669;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f8f8f8; color: var(--text-color); margin: 0; display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; font-size: 16px; }
-.container, .wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-@media (min-width: 768px) { .container, .wrap { padding: 0 16px; } }
-.skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-light); color: var(--primary-dark); padding: 8px 16px; z-index: 10000; text-decoration: none; font-weight: 600; border-radius: 0 0 4px 0; }
-.skip-link:focus { top: 0; }
-.header { background-color: var(--primary-dark); color: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 12px 0; }
-.header .content { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px; }
-@media (min-width: 768px) { .header .content { flex-direction: row; gap: 0; } .header-text { margin-top: 0; font-size: 16px; } }
-.logo-section { display: flex; align-items: center; gap: 8px; }
-.logo-img { height: 40px; width: auto; border-radius: 9999px; }
-.logo-link { font-size: 20px; font-weight: 700; letter-spacing: -0.025em; color: var(--accent-light); text-decoration: none; }
-.header-text { font-size: 14px; font-style: italic; text-align: center; margin-top: 4px; }
-.header-contact { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-@media (min-width: 768px) { .header-contact { align-items: flex-end; } }
-.contact-info { display: flex; align-items: center; gap: 6px; color: white; text-decoration: none; font-size: 14px; transition: color 0.3s ease; padding: 4px 0; }
-.contact-info:hover { color: var(--accent-light); }
-.contact-icon { font-size: 14px; width: 16px; text-align: center; }
-.navbar { background-color: #374151; color: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 50; padding: 0; }
-.navbar-content { display: flex; flex-direction: column; align-items: stretch; justify-content: space-between; }
-@media (min-width: 768px) { .navbar-content { flex-direction: row; align-items: center; } }
-.nav-links { display: none; flex-direction: column; width: 100%; gap: 0; font-size: 16px; font-weight: 500; list-style: none; padding: 0; margin: 0; background-color: #374151; }
-.nav-links.active { display: flex; }
-@media (min-width: 768px) { .nav-links { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; width: auto; } }
-.nav-link { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.nav-link:last-child { border-bottom: none; }
-@media (min-width: 768px) { .nav-link { border-bottom: none; } }
-.nav-link a { color: white; text-decoration: none; padding: 12px 16px; transition: color 0.3s ease; display: block; }
-@media (min-width: 768px) { .nav-link a { padding: 8px 0; } }
-.nav-link a:hover { color: var(--accent-light); }
-.cta-container { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
-@media (min-width: 768px) { .cta-container { justify-content: flex-end; gap: 12px; padding: 0; } }
-.language-switcher { position: relative; display: inline-block; z-index: 1000; }
-.current-language { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 6px; cursor: pointer; transition: all 0.3s ease; color: white; font-weight: 500; }
-.current-language:hover { background: rgba(255, 215, 0, 0.2); border-color: rgba(255, 215, 0, 0.5); }
-.current-flag { font-size: 16px; }
-.current-text { font-size: 14px; font-weight: 600; }
-.dropdown-icon { font-size: 12px; transition: transform 0.3s ease; }
-.language-dropdown { position: absolute; top: 100%; right: 0; width: 240px; max-height: 450px; overflow-y: auto; background: #374151; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin-top: 8px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; z-index: 1001; }
-.language-switcher.active .language-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-.language-item { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: white; text-decoration: none; transition: all 0.2s ease; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.language-item:last-child { border-bottom: none; }
-.language-item:hover { background: rgba(255, 215, 0, 0.1); color: var(--accent-light); }
-.language-item.active { background: rgba(255, 215, 0, 0.2); color: var(--accent-light); font-weight: 600; }
-.flag-icon { font-size: 18px; min-width: 24px; }
-.language-text { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mobile-menu-toggle { display: block; background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 8px; }
-@media (min-width: 768px) { .mobile-menu-toggle { display: none; } }
-.hero-section { position: relative; background-image: url('/images/egypt-coworking-spaces-guide-2026.jpg'); background-size: cover; background-position: center; height: 60vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; }
-.hero-overlay { position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.7); }
-.hero-content { position: relative; z-index: 10; color: white; max-width: 960px; margin: 0 auto; }
-.hero-title { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); color: var(--accent-light); }
-@media (min-width: 768px) { .hero-title { font-size: 56px; } }
-.hero-subtitle { font-size: 18px; margin-bottom: 40px; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); max-width: 800px; margin-left: auto; margin-right: auto; }
-@media (min-width: 768px) { .hero-subtitle { font-size: 22px; } }
-.article-section { padding: 40px 0; }
-@media (min-width: 768px) { .article-section { padding: 80px 0; } }
-.article-container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
-.article-meta { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; font-size: 14px; color: #6b7280; flex-wrap: wrap; }
-@media (min-width: 768px) { .article-meta { font-size: 16px; } }
-.last-updated { background: rgba(139, 92, 246, 0.1); color: var(--coworking-color); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
-.article-content h2 { font-size: 32px; font-weight: 800; color: var(--primary-dark); margin: 60px 0 25px; padding-bottom: 10px; border-bottom: 3px solid var(--coworking-color); line-height: 1.3; }
-@media (min-width: 768px) { .article-content h2 { font-size: 40px; margin: 80px 0 30px; } }
-.article-content h3 { font-size: 26px; font-weight: 700; color: var(--primary-dark); margin: 50px 0 20px; }
-@media (min-width: 768px) { .article-content h3 { font-size: 30px; margin: 60px 0 25px; } }
-.article-content h4 { font-size: 20px; font-weight: 600; color: var(--primary-dark); margin: 35px 0 15px; }
-.article-content p { font-size: 18px; line-height: 1.8; margin-bottom: 25px; }
-@media (min-width: 768px) { .article-content p { font-size: 20px; margin-bottom: 30px; } }
-.article-content ul, .article-content ol { margin-bottom: 30px; padding-left: 30px; }
-.article-content li { font-size: 18px; line-height: 1.8; margin-bottom: 15px; }
-@media (min-width: 768px) { .article-content li { font-size: 20px; } }
-.article-content strong { color: var(--primary-dark); font-weight: 700; }
-.article-content a { color: var(--tour-color); text-decoration: none; font-weight: 600; transition: color 0.3s ease; border-bottom: 1px dashed var(--tour-color); }
-.article-content a:hover { color: var(--primary-dark); border-bottom-style: solid; }
-.coworking-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(139, 92, 246, 0.1); color: var(--coworking-color); padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600; margin: 4px; }
-.booking-cta { display: inline-block; background: linear-gradient(135deg, var(--booking-color) 0%, #047857 100%); color: white; font-weight: 700; padding: 14px 28px; border-radius: 50px; text-align: center; text-decoration: none; transition: all 0.4s ease; font-size: 16px; box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.3); border: 2px solid transparent; margin: 20px 0; }
-.booking-cta:hover, .booking-cta:active, .booking-cta:focus { background: linear-gradient(135deg, #047857 0%, #065f46 100%); transform: scale(1.05); color: white !important; text-decoration: none; border-color: var(--accent-light); box-shadow: 0 15px 35px -5px rgba(5, 150, 105, 0.4); }
-.booking-cta i { margin-right: 8px; }
-.review-card { background: white; border-radius: 12px; padding: 25px; margin: 25px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--coworking-color); }
-.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid #e5e7eb; }
-.reviewer-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--coworking-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; }
-.reviewer-info h4 { margin: 0; font-size: 16px; color: var(--primary-dark); }
-.reviewer-info p { margin: 4px 0 0; font-size: 14px; color: #6b7280; }
-.review-rating { display: flex; gap: 2px; color: #f59e0b; font-size: 14px; }
-.review-content p { margin: 0; font-size: 16px; line-height: 1.7; }
-.culture-grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin: 40px 0; }
-@media (min-width: 768px) { .culture-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .culture-grid { grid-template-columns: repeat(3, 1fr); } }
-.culture-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); border-top: 5px solid var(--coworking-color); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.culture-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
-.culture-icon { font-size: 42px; color: var(--coworking-color); margin-bottom: 20px; display: block; text-align: center; }
-.culture-card h4 { color: var(--coworking-color); text-align: center; margin-top: 0; }
-.coworking-highlight { background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); border-left: 6px solid var(--coworking-color); padding: 35px; margin: 50px 0; border-radius: 12px; text-align: center; }
-@media (min-width: 768px) { .coworking-highlight { padding: 45px; } }
-.table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 35px 0; border-radius: 10px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); }
-.coworking-table { width: 100%; border-collapse: collapse; font-size: 16px; min-width: 600px; }
-@media (min-width: 768px) { .coworking-table { font-size: 18px; } }
-.coworking-table th { background-color: var(--primary-dark); color: white; padding: 20px 15px; text-align: left; font-weight: 700; font-size: 18px; position: sticky; top: 0; }
-@media (min-width: 768px) { .coworking-table th { padding: 25px 20px; } }
-.coworking-table td { padding: 20px 15px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
-@media (min-width: 768px) { .coworking-table td { padding: 25px 20px; } }
-.coworking-table tr:nth-child(even) { background-color: #f9fafb; }
-.coworking-table tr:hover { background-color: #f3f4f6; }
-.coworking-table .badge { font-weight: 600; padding: 4px 8px; border-radius: 4px; font-size: 14px; }
-.service-category { background: white; border-radius: 15px; padding: 35px; margin: 40px 0; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); border-top: 6px solid; }
-@media (min-width: 768px) { .service-category { padding: 45px; } }
-.category-cairo { border-color: var(--coworking-color); }
-.category-alexandria { border-color: var(--tour-color); }
-.category-hurghada { border-color: var(--hotel-color); }
-.category-ratings { border-color: var(--success-color); }
-.tip-card { background: white; padding: 30px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.08); border-left: 4px solid var(--accent-light); }
-.quick-reference { display: grid; grid-template-columns: 1fr; gap: 25px; margin: 50px 0; }
-@media (min-width: 768px) { .quick-reference { grid-template-columns: repeat(3, 1fr); } }
-.reference-item { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s ease; border-top: 4px solid; }
-.reference-item:hover { transform: translateY(-5px); }
-.reference-cairo { border-color: #8B5CF6; }
-.reference-alexandria { border-color: #10B981; }
-.reference-hurghada { border-color: #3B82F6; }
-.reference-icon { font-size: 48px; margin-bottom: 20px; display: block; }
-.trust-section { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); color: white; padding: 80px 0; margin: 60px 0; }
-.trust-section h2 { color: var(--accent-light); text-align: center; margin-bottom: 50px; font-size: 36px; font-weight: 800; }
-@media (min-width: 768px) { .trust-section h2 { font-size: 42px; } }
-.trust-grid { display: grid; grid-template-columns: 1fr; gap: 35px; margin-top: 40px; }
-@media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
-.trust-card { background: rgba(255, 255, 255, 0.1); padding: 35px; border-radius: 15px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2); transition: transform 0.4s ease, border-color 0.4s ease; }
-.trust-card:hover { transform: translateY(-10px); border-color: var(--accent-light); }
-.trust-icon { font-size: 52px; margin-bottom: 25px; display: block; }
-.trust-card h3 { color: var(--accent-light); font-size: 26px; margin-bottom: 20px; }
-.trust-card p { color: #e2e8f0; font-size: 18px; line-height: 1.7; }
-.tour-integration { background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); border-left: 6px solid var(--booking-color); padding: 40px; margin: 50px 0; border-radius: 15px; }
-.tour-recommendation { background: white; padding: 30px; border-radius: 12px; margin: 25px 0; border: 2px solid #EDE9FE; transition: transform 0.3s ease; position: relative; }
-.tour-recommendation:hover { transform: translateX(10px); border-color: var(--booking-color); box-shadow: 0 10px 25px rgba(5, 150, 105, 0.15); }
-.tour-recommendation h4 { margin-top: 0; color: var(--primary-dark); font-size: 20px; font-weight: 700; }
-.tour-recommendation a { color: var(--booking-color); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--booking-color); transition: all 0.3s ease; }
-.tour-recommendation a:hover { color: var(--primary-dark); border-bottom-color: var(--primary-dark); }
-.tour-badge { position: absolute; top: 15px; right: 15px; background: var(--booking-color); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
-.cta-button { display: inline-block; background-color: var(--accent-light); color: var(--primary-dark); font-weight: 700; padding: 18px 36px; border-radius: 50px; text-align: center; text-decoration: none; transition: all 0.4s ease; font-size: 18px; box-shadow: 0 15px 25px -5px rgba(0,0,0,0.15); border: 2px solid transparent; }
-.cta-button:hover, .cta-button:active, .cta-button:focus { background-color: var(--accent-dark); transform: scale(1.08); color: var(--primary-dark) !important; text-decoration: none; border-color: var(--primary-dark); box-shadow: 0 20px 35px -5px rgba(0,0,0,0.2); }
-.cta-section { background: linear-gradient(135deg, var(--primary-dark) 0%, #2d3748 100%); color: white; padding: 60px 0; text-align: center; margin-top: 60px; border-radius: 15px; background-image: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%); }
-@media (min-width: 768px) { .cta-section { padding: 80px 0; margin-top: 80px; } }
-.cta-section h2 { color: var(--accent-light); margin-bottom: 25px; font-size: 36px; font-weight: 800; }
-@media (min-width: 768px) { .cta-section h2 { font-size: 42px; } }
-.cta-section p { max-width: 700px; margin: 0 auto 35px; font-size: 20px; line-height: 1.7; }
-@media (min-width: 768px) { .cta-section p { font-size: 22px; margin: 0 auto 45px; } }
-.footer { background-color: var(--primary-dark); color: white; padding: 40px 0; margin-top: auto; }
-@media (min-width: 768px) { .footer { padding: 50px 0; } }
-.footer-content { text-align: center; }
-@media (min-width: 768px) { .footer-content { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; flex-wrap: wrap; } }
-.footer-section { margin-bottom: 30px; flex: 1; min-width: 250px; }
-@media (min-width: 768px) { .footer-section { margin-bottom: 0; } }
-.footer-brand { text-align: left; margin-bottom: 30px; flex: 1; min-width: 250px; }
-@media (min-width: 768px) { .footer-brand { margin-bottom: 0; text-align: left; } }
-.footer-title { font-size: 22px; font-weight: 700; color: var(--accent-light); margin-bottom: 12px; }
-@media (min-width: 768px) { .footer-title { font-size: 26px; } }
-.footer-text { font-size: 15px; line-height: 1.6; margin: 0; }
-.footer-links { list-style: none; padding: 0; font-size: 15px; line-height: 2; }
-.footer-links li a { color: white; text-decoration: none; transition: color 0.3s ease; }
-.footer-links li a:hover { color: var(--accent-light); }
-.social-links { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
-@media (min-width: 768px) { .social-links { justify-content: flex-start; } }
-.social-links a { color: white; transition: color 0.3s ease; font-size: 20px; }
-.social-links a:hover { color: var(--accent-light); }
-.footer-contact { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; margin-bottom: 20px; }
-.footer-contact-info { display: flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 15px; transition: color 0.3s ease; justify-content: center; }
-@media (min-width: 768px) { .footer-contact-info { justify-content: flex-start; } }
-.footer-contact-info:hover { color: var(--accent-light); }
-.footer-map { margin-top: 30px; width: 100%; flex: 2; }
-@media (min-width: 768px) { .footer-map { margin-top: 0; } }
-.footer-map iframe { width: 100%; height: 350px; border: none; border-radius: 12px; }
-@media (min-width: 768px) { .footer-map iframe { height: 400px; } }
-@media (min-width: 1024px) { .footer-map iframe { height: 450px; } }
-.book-now-button { font-weight: 700; padding: 10px 20px; border-radius: 50px; background-color: var(--accent-light); color: #1a202c; text-decoration: none; transition: all 0.3s ease; font-size: 15px; white-space: nowrap; box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.15); display: inline-block; border: 2px solid transparent; }
-.book-now-button:hover, .book-now-button:active, .book-now-button:focus { background-color: var(--accent-dark); transform: scale(1.05); color: #1a202c !important; text-decoration: none; border-color: #1a202c; }
-.standard-badge { display: inline-block; background-color: #38a169; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-left: 10px; vertical-align: middle; }
-.premium-badge { display: inline-block; background-color: #805ad5; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-left: 10px; vertical-align: middle; }
-.recommended-badge { display: inline-block; background-color: #B8860B; color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-left: 10px; vertical-align: middle; }
-.warning-box { background: linear-gradient(135deg, #fed7d7 0%, #fef2f2 100%); border-left: 6px solid var(--warning-color); padding: 35px; margin: 40px 0; border-radius: 12px; }
-.warning-box h3 { color: var(--warning-color); margin-top: 0; font-size: 24px; }
-.advice-box { background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%); border-left: 6px solid var(--success-color); padding: 35px; margin: 40px 0; border-radius: 12px; }
-.advice-box h3 { color: var(--success-color); margin-top: 0; font-size: 24px; }
-.coworking-widget { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); margin: 30px 0; border: 2px solid #e5e7eb; }
-.coworking-widget h4 { margin-top: 0; color: var(--primary-dark); }
-.coworking-list { background: #f9fafb; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 3px solid var(--coworking-color); }
-.coworking-disclaimer { font-size: 13px; color: #6b7280; text-align: center; margin-top: 8px; font-style: italic; }
-.photography-tips { background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%); border-radius: 15px; padding: 40px; margin: 50px 0; border: 3px dashed var(--accent-light); }
-.content-image { width: 100%; height: auto; border-radius: 12px; margin: 30px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-.image-caption { text-align: center; font-style: italic; color: #6b7280; margin-top: -20px; margin-bottom: 30px; font-size: 16px; }
-.back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--accent-light); color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 6px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; z-index: 999; opacity: 0; visibility: hidden; }
-.back-to-top.visible { opacity: 1; visibility: visible; }
-.back-to-top:hover { background: var(--accent-dark); transform: scale(1.1); }
-.trustpilot-widget-container { margin: 40px 0; text-align: center; }
-.breadcrumb { padding: 16px 0; font-size: 14px; color: #6b7280; }
-.breadcrumb a { color: var(--tour-color); text-decoration: none; }
-.breadcrumb a:hover { text-decoration: underline; }
-.breadcrumb span { margin: 0 4px; color: #9ca3af; }
-.cookie-consent { position: fixed; bottom: 0; left: 0; right: 0; background: var(--primary-dark); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; z-index: 10000; transform: translateY(100%); transition: transform 0.3s ease; }
-.cookie-consent.visible { transform: translateY(0); }
-.cookie-consent p { margin: 0; font-size: 14px; flex: 1; }
-.cookie-consent button { background: var(--accent-light); color: var(--primary-dark); border: none; padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
-.cookie-consent button:hover { background: var(--accent-dark); }
-.coworking-checklist { background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); border-radius: 12px; padding: 30px; margin: 30px 0; border-left: 5px solid var(--coworking-color); }
-.checklist-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-size: 16px; }
-.checklist-item i { color: var(--success-color); margin-top: 3px; }
-.coworking-rating { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; padding: 8px 16px; border-radius: 20px; margin: 10px 0; }
-.rating-cairo { background: rgba(139, 92, 246, 0.1); color: var(--coworking-color); }
-.rating-alexandria { background: rgba(16, 185, 129, 0.1); color: var(--success-color); }
-.rating-hurghada { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
-.rating-user { background: rgba(245, 158, 11, 0.1); color: #d97706; }
-
-/* Text Only Related Guides */
-.related-guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-.related-guide-card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); border-left: 4px solid var(--coworking-color); }
-.related-guide-card h4 { margin-bottom: 10px; font-size: 18px; }
-.related-guide-card h4 a { color: var(--primary-dark); text-decoration: none; }
-.related-guide-card h4 a:hover { color: var(--coworking-color); }
-.related-guide-card p { font-size: 14px; color: #6b7280; margin-bottom: 12px; }
-.related-guide-card .read-more { color: var(--coworking-color); font-weight: 600; text-decoration: none; }
-.related-guide-card .read-more:hover { text-decoration: underline; }
-
-/* Contact Form CSS */
+:root{--c-dark:#1a202c;--c-gold:#FFD700;--c-gold-d:#E6C200;--c-white:#fff;--c-bg:#f7f8fa;--c-text:#2d3748;--c-muted:#5A6475;--c-price:#6B5000;--c-border:#e2e8f0;--c-nile:#1E6FD9;--c-warn:#C53030;--c-ac-rose:#8B5CF6;--c-book:#059669;--radius-sm:8px;--radius:14px;--shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow:0 4px 20px rgba(0,0,0,.11);--shadow-lg:0 12px 40px rgba(0,0,0,.16);--nav-height:56px;--header-height:60px;--transition:.28s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer}
+[hidden]{display:none!important}
+.skip-link{position:absolute;top:-60px;left:12px;background:var(--c-gold);color:var(--c-dark);padding:10px 18px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;font-size:14px;z-index:99999;transition:top var(--transition)}
+.skip-link:focus{top:0;outline:3px solid var(--c-dark)}
+:focus-visible{outline:3px solid var(--c-gold);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 28px}}
+.section{padding:52px 0}
+@media(min-width:768px){.section{padding:80px 0}}
+.section-alt{background:#eef0f5}
+.section-dark{background:var(--c-dark);color:var(--c-white)}
+.section-gold{background:linear-gradient(135deg,#FFD700 0%,#FFF3B0 60%,#FFD700 100%)}
+h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--c-dark)}
+.section-dark h1,.section-dark h2,.section-accent h1,.section-accent h2{color:var(--c-white)}
+h1{font-size:clamp(22px,5vw,44px)}
+h2{font-size:clamp(20px,3.5vw,36px)}
+h3{font-size:clamp(16px,2.5vw,22px)}
+p{font-size:15px;line-height:1.75;color:var(--c-text)}
+.section-dark p{color:rgba(255,255,255,.9)}
+.eyebrow{display:inline-block;background:rgba(255,215,0,.18);color:#7A5C00;border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px}
+.section-dark .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
+.text-c{text-align:center}
+.text-c .sec-sub{margin-inline:auto}
+.sec-sub{font-size:clamp(14px,1.8vw,17px);color:var(--c-muted);max-width:660px;line-height:1.7;margin-top:12px}
+.section-dark .sec-sub{color:rgba(255,255,255,.85)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:14px;transition:all var(--transition);border:2px solid transparent;white-space:nowrap;cursor:pointer;text-decoration:none;min-height:48px}
+.btn-gold{background:var(--c-gold);color:var(--c-dark);border-color:var(--c-gold)}
+.btn-gold:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+.btn-dark{background:var(--c-dark);color:var(--c-white)}
+.btn-dark:hover{background:#0f141c;transform:translateY(-2px)}
+.btn-outline-dark{background:transparent;color:var(--c-dark);border-color:var(--c-dark)}
+.btn-outline-dark:hover{background:var(--c-dark);color:var(--c-white)}
+.btn-outline-white{background:rgba(255,255,255,.15);color:var(--c-white);border-color:rgba(255,255,255,.6);backdrop-filter:blur(4px)}
+.btn-outline-white:hover{background:rgba(255,255,255,.28);border-color:var(--c-white)}
+.btn-wa{background:#25D366;color:#fff;border-color:#25D366}
+.btn-wa:hover{background:#20ba59;transform:translateY(-2px)}
+.btn-sm{padding:9px 18px;font-size:13px;min-height:44px}
+.btn-lg{padding:16px 36px;font-size:16px}
+.btn-group{display:flex;flex-wrap:wrap;gap:14px}
+.header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0}
+.logo-mark{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#2d3748 0%,#1a202c 70%);border:2px solid var(--c-gold);display:flex;align-items:center;justify-content:center;color:var(--c-gold);font-size:17px;flex-shrink:0}
+.logo-copy{display:flex;flex-direction:column}
+.logo-name{font-size:15px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap}
+.logo-tag{font-size:10px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px}
+@media(min-width:400px){.logo-name{font-size:16px}}
+@media(min-width:768px){.logo-name{font-size:19px}.logo-tag{font-size:11px}}
+.header-contacts{display:none}
+@media(min-width:900px){.header-contacts{display:flex;flex-direction:column;align-items:flex-end;gap:4px}.hc-link{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.92);font-size:13px;transition:color var(--transition)}.hc-link:hover{color:var(--c-gold)}.hc-link i{color:var(--c-gold);width:14px}}
+.navbar{background:#2d3748;position:sticky;top:0;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.35)}
+.nav-inner{display:flex;align-items:center;height:var(--nav-height);gap:10px}
+.hamburger{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:var(--radius-sm);color:var(--c-white);font-size:18px;transition:all var(--transition);flex-shrink:0}
+.hamburger:hover{background:rgba(255,215,0,.18);border-color:rgba(255,215,0,.4)}
+@media(min-width:900px){.hamburger{display:none}}
+.nav-links-desk{display:none;list-style:none;align-items:center;gap:2px;flex:1}
+@media(min-width:900px){.nav-links-desk{display:flex}.nav-links-desk li a{display:flex;align-items:center;padding:8px 11px;min-height:44px;color:rgba(255,255,255,.92);font-size:13px;font-weight:500;border-radius:var(--radius-sm);transition:all var(--transition)}.nav-links-desk li a:hover{color:var(--c-gold);background:rgba(255,215,0,.1)}.nav-links-desk li a.active{color:var(--c-gold);background:rgba(255,215,0,.08)}}
+.nav-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+.nav-book{display:inline-flex;align-items:center;gap:6px;background:var(--c-gold);color:var(--c-dark);padding:9px 16px;border-radius:20px;font-weight:700;font-size:13px;transition:all var(--transition);white-space:nowrap;min-height:44px}
+.nav-book:hover{background:var(--c-gold-d);transform:scale(1.03)}
+.lang-wrap{position:relative}
+.lang-toggle{display:flex;align-items:center;gap:5px;background:rgba(255,215,0,.12);border:1.5px solid rgba(255,215,0,.3);border-radius:20px;padding:8px 11px;color:var(--c-white);font-size:12px;font-weight:600;transition:all var(--transition);min-height:44px;cursor:pointer}
+.lang-toggle:hover,.lang-toggle[aria-expanded="true"]{background:rgba(255,215,0,.24);border-color:var(--c-gold)}
+.lang-chevron{font-size:9px;transition:transform var(--transition);flex-shrink:0}
+.lang-wrap[data-open="true"] .lang-chevron{transform:rotate(180deg)}
+.lang-menu{display:none;position:fixed;top:calc(var(--header-height) + var(--nav-height) + 4px);left:50%;transform:translateX(-50%);width:min(300px,92vw);max-height:68vh;overflow-y:auto;background:#1e293b;border-radius:var(--radius);border:1px solid rgba(255,215,0,.25);box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:9999;-webkit-overflow-scrolling:touch}
+.lang-wrap[data-open="true"] .lang-menu{display:block}
+@media(min-width:900px){.lang-menu{position:absolute;top:calc(100% + 8px);left:auto;right:0;transform:none;width:240px;max-height:440px}}
+.lang-menu-head{padding:12px 16px 8px;font-size:10px;font-weight:700;color:var(--c-gold);text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;background:#1e293b;z-index:1}
+.lang-item{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:48px;color:rgba(255,255,255,.92);font-size:14px;border-bottom:1px solid rgba(255,255,255,.06);transition:background var(--transition);cursor:pointer}
+.lang-item:last-child{border-bottom:none}
+.lang-item:hover,.lang-item:active{background:rgba(255,215,0,.1);color:var(--c-gold)}
+.lang-item.is-active{background:rgba(255,215,0,.16);color:var(--c-gold);font-weight:700}
+.lang-item.is-active::after{content:'✓';margin-left:auto;font-weight:700}
+.lang-flag{font-size:19px;min-width:26px;text-align:center}
+.lang-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lang-menu::-webkit-scrollbar{width:4px}
+.lang-menu::-webkit-scrollbar-thumb{background:rgba(255,215,0,.35);border-radius:2px}
+.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;bottom:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);z-index:390;overflow-y:auto;padding:8px 0 48px;border-top:2px solid var(--c-gold);animation:slideDown .22s ease-out}
+.mobile-nav.is-open{display:flex}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:900px){.mobile-nav{display:none!important}}
+.mobile-nav-link{display:flex;align-items:center;gap:12px;padding:16px 24px;min-height:56px;color:rgba(255,255,255,.92);font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07);transition:all var(--transition);text-decoration:none}
+.mobile-nav-link:hover,.mobile-nav-link:active{background:rgba(255,215,0,.1);color:var(--c-gold);padding-left:32px}
+.mobile-nav-link.active{color:var(--c-gold);background:rgba(255,215,0,.07)}
+.mobile-nav-link i{width:20px;text-align:center;color:var(--c-gold);font-size:15px}
+.mobile-nav-sep{height:1px;background:rgba(255,255,255,.1);margin:10px 24px}
+.mobile-nav-contact{margin:14px 20px 0;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px}
+.mobile-nav-contact a{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.92);font-size:14px;transition:color var(--transition);min-height:48px}
+.mobile-nav-contact a:hover{color:var(--c-gold)}
+.mobile-nav-contact i{color:var(--c-gold);width:16px}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
+.nav-overlay.is-open{display:block}
+/* ═══ TEXT-ONLY ARTICLE HERO (no photos) — COWORKING THEME ═══ */
+.article-hero{position:relative;background:linear-gradient(135deg,#1a0f2e 0%,#2d1b4e 48%,#4c1d95 100%);overflow:hidden;padding:66px 0 60px;text-align:center;border-bottom:3px solid var(--c-gold);margin-bottom:0}
+.article-hero::before{content:'عمل';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:clamp(80px,20vw,240px);font-weight:700;color:rgba(255,215,0,.06);white-space:nowrap;line-height:1;pointer-events:none;user-select:none;font-family:'Cinzel',serif}
+.article-hero::after{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:560px;height:300px;background:radial-gradient(ellipse at center,rgba(255,215,0,.16) 0%,rgba(255,215,0,0) 68%);pointer-events:none}
+.article-hero .wrap{position:relative;z-index:1}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,215,0,.14);border:1px solid rgba(255,215,0,.42);color:var(--c-gold);border-radius:30px;padding:7px 18px;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:20px}
+.hero-kicker i{font-size:12px}
+.article-hero h1{color:#fff;font-family:'Cinzel',serif;font-weight:700;letter-spacing:1px;font-size:clamp(26px,5vw,46px);line-height:1.22;max-width:920px;margin:0 auto 16px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.article-hero h1 .gold{color:var(--c-gold)}
+.hero-sub{color:rgba(255,255,255,.88);font-size:clamp(15px,2vw,19px);line-height:1.7;max-width:760px;margin:0 auto}
+.hero-rule{width:92px;height:3px;background:var(--c-gold);border-radius:2px;margin:24px auto 0}
+.meta-bar{background:var(--c-white);border-bottom:1px solid var(--c-border);padding:14px 0}
+.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:var(--c-muted)}
+.breadcrumb a{color:var(--c-muted);transition:color var(--transition)}
+.breadcrumb a:hover{color:var(--c-price)}
+.breadcrumb span[aria-hidden]{color:var(--c-border)}
+.article-meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:10px;font-size:13px;color:var(--c-muted)}
+.article-meta-row span{display:flex;align-items:center;gap:6px}
+.article-meta-row i{color:var(--c-gold-d)}
+.article-wrap{max-width:840px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.article-wrap{padding:0 28px}}
+.article-content h2{font-size:clamp(22px,3.2vw,30px);font-weight:800;color:var(--c-dark);margin:46px 0 18px;padding-bottom:10px;border-bottom:3px solid var(--c-ac-rose);scroll-margin-top:90px;font-family:'Cinzel',serif;letter-spacing:.5px}
+.article-content h3{font-size:clamp(17px,2.4vw,21px);font-weight:700;color:var(--c-dark);margin:30px 0 14px;font-family:'Cinzel',serif}
+.article-content h4{font-size:15px;font-weight:700;color:var(--c-ac-rose);margin:18px 0 8px}
+.article-content p{font-size:16px;line-height:1.8;margin-bottom:18px;color:var(--c-text)}
+.article-content ul,.article-content ol{margin:0 0 20px;padding-left:22px}
+.article-content li{font-size:15px;line-height:1.75;margin-bottom:10px;color:var(--c-text)}
+.article-content li::marker{color:var(--c-gold-d);font-weight:700}
+.article-content strong{color:var(--c-dark);font-weight:700}
+.article-content a:not(.btn):not(.tour-rec-cta){color:var(--c-nile);text-decoration:underline;text-decoration-color:rgba(30,111,217,.3);text-underline-offset:2px;transition:color var(--transition)}
+.article-content a:not(.btn):not(.tour-rec-cta):hover{color:var(--c-price)}
+.article-lede{font-size:18px!important;line-height:1.8!important;color:var(--c-dark)!important}
+.article-lede strong{color:var(--c-price)}
+.quick-facts{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:22px;margin:28px 0 36px;display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){.quick-facts{grid-template-columns:repeat(4,1fr)}}
+.quick-facts h3{grid-column:1/-1;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--c-ac-rose);border-bottom:1px solid var(--c-border);padding-bottom:10px;margin:0}
+.qf-item{display:flex;flex-direction:column;gap:3px}
+.qf-label{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--c-muted);font-weight:700}
+.qf-value{font-size:14px;color:var(--c-dark);font-weight:600}
+.toc-box{background:#faf5ff;border:1px solid rgba(139,92,246,.35);border-radius:var(--radius);padding:22px 24px;margin:30px 0}
+.toc-box h3{margin:0 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:.8px;color:var(--c-ac-rose)}
+.toc-list{columns:1;margin:0;padding:0}
+@media(min-width:640px){.toc-list{columns:2;column-gap:24px}}
+.toc-list li{font-size:14px;margin-bottom:9px;break-inside:avoid}
+.toc-list a{color:var(--c-text);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.toc-list a:hover{color:var(--c-ac-rose)}
+.toc-list a::before{content:'→';color:var(--c-ac-rose);font-weight:700}
+.callout{border-radius:var(--radius);padding:24px 26px;margin:30px 0}
+.callout h3{margin-top:0;margin-bottom:10px}
+.callout-gold{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 55%,#fef3c7 100%);border-left:4px solid var(--c-gold-d)}
+.callout-blue{background:linear-gradient(135deg,#e8f1fd 0%,#d6e8fc 100%);border-left:4px solid var(--c-nile)}
+.callout-purple{background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 100%);border-left:4px solid var(--c-ac-rose)}
+.callout-purple h3{color:var(--c-ac-rose)}
+.callout-warn{background:linear-gradient(135deg,#fde8e8 0%,#fbeaea 100%);border-left:4px solid var(--c-warn)}
+.callout-warn h3{color:var(--c-warn)}
+.callout-dark{background:var(--c-dark);color:#fff;border-left:4px solid var(--c-gold)}
+.callout-dark h3{color:var(--c-gold)}
+.callout-dark p{color:rgba(255,255,255,.88)}
+.callout .btn{margin-top:10px}
+.table-scroll{overflow-x:auto;margin:24px 0;border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)}
+.data-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px;background:var(--c-white)}
+.data-table caption{caption-side:top;text-align:left;font-weight:700;font-size:13px;color:var(--c-ac-rose);padding:0 0 10px}
+.data-table th{background:var(--c-dark);color:var(--c-gold);padding:12px 14px;text-align:left;font-weight:700;white-space:nowrap}
+.data-table td{padding:12px 14px;border-bottom:1px solid var(--c-border);vertical-align:top}
+.data-table tr:nth-child(even) td{background:#f9fafb}
+.data-table tr:hover td{background:#faf5ff}
+.development-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+@media(min-width:640px){.development-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.development-grid{grid-template-columns:repeat(3,1fr)}}
+.development-card{background:var(--c-white);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow-sm);border-left:4px solid var(--c-ac-rose);transition:transform var(--transition),box-shadow var(--transition);text-align:left}
+.development-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.development-card .dev-icon{font-size:28px;margin-bottom:10px;display:block;color:var(--c-ac-rose)}
+.development-card h4{font-size:15px;font-weight:700;color:var(--c-ac-rose);margin:0 0 8px;font-family:'Cinzel',serif}
+.development-card p{font-size:13.5px;color:var(--c-muted);line-height:1.65;margin:0}
+.rating-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(139,92,246,.12);color:var(--c-ac-rose);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;margin:3px 3px 3px 0}
+.rating-pill i{font-size:10px}
+.space-list{list-style:none;padding:0;margin:14px 0 0}
+.space-list li{padding:14px 0;border-bottom:1px solid var(--c-border)}
+.space-list li:last-child{border-bottom:none}
+.space-list li strong{display:block;color:var(--c-dark);font-size:14px;margin-bottom:4px}
+.space-list li span{font-size:13px;color:var(--c-muted);line-height:1.6}
+.tour-rec-grid{display:grid;grid-template-columns:1fr;gap:18px;margin:28px 0}
+@media(min-width:700px){.tour-rec-grid{grid-template-columns:repeat(2,1fr)}}
+.tour-rec{position:relative;background:var(--c-white);border:1.5px solid var(--c-border);border-radius:var(--radius-sm);padding:20px;transition:all var(--transition)}
+.tour-rec:hover{border-color:var(--c-book);box-shadow:var(--shadow-sm);transform:translateY(-3px)}
+.tour-rec h4{margin-top:0;font-size:15.5px}
+.tour-rec h4 a{color:var(--c-dark);text-decoration:none}
+.tour-rec h4 a:hover{color:var(--c-book)}
+.tour-rec p{font-size:13.5px;margin-bottom:12px}
+.tour-rec-cta{display:inline-flex;align-items:center;gap:6px;color:var(--c-book)!important;font-weight:700;font-size:13px;text-decoration:none}
+.tour-rec-cta:hover{text-decoration:underline}
+.rec-badge{position:absolute;top:14px;right:14px;background:var(--c-book);color:#fff;padding:4px 12px;border-radius:20px;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+.faq-list{margin:28px 0}
+.faq-item{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:700;font-size:15px;color:var(--c-dark);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:22px;color:var(--c-ac-rose);font-weight:700;flex-shrink:0;transition:transform var(--transition)}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{background:#faf5ff}
+.faq-answer{padding:0 20px 20px;font-size:14.5px;line-height:1.75;color:var(--c-muted)}
+.faq-answer a{color:var(--c-nile);text-decoration:underline}
+.author-box{display:flex;flex-wrap:wrap;align-items:center;gap:16px;background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius);padding:20px;margin:36px 0}
+.author-avatar{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#2d3748 0%,#1a202c 70%);border:2px solid var(--c-gold);display:flex;align-items:center;justify-content:center;color:var(--c-gold);font-size:24px;flex-shrink:0}
+.author-box-name{font-weight:800;color:var(--c-dark);font-size:15px}
+.author-box-role{font-size:12.5px;color:var(--c-muted);margin-bottom:6px}
+.author-box-bio{font-size:13px;color:var(--c-muted);max-width:520px;margin:0}
+.related-guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px}
+.related-guide-card{background:var(--c-white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow-sm);border-left:4px solid var(--c-ac-rose);transition:transform var(--transition),box-shadow var(--transition)}
+.related-guide-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.related-guide-card h4{margin-bottom:10px;font-size:16px}
+.related-guide-card h4 a{color:var(--c-dark);text-decoration:none}
+.related-guide-card h4 a:hover{color:var(--c-ac-rose)}
+.related-guide-card p{font-size:13.5px;color:var(--c-muted);margin-bottom:12px;line-height:1.6}
+.related-guide-card .read-more{color:var(--c-nile);font-weight:700;text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:6px}
+.related-guide-card .read-more:hover{text-decoration:underline}
+.checklist-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+@media(min-width:640px){.checklist-grid{grid-template-columns:repeat(2,1fr)}}
+.checklist-block{background:var(--c-white);border:1px solid var(--c-border);border-top:4px solid var(--c-ac-rose);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);padding:22px}
+.checklist-block h4{font-size:15px;color:var(--c-ac-rose);margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.checklist-block ul{margin:0;padding:0;list-style:none}
+.checklist-block li{display:flex;gap:10px;font-size:13.5px;line-height:1.6;margin-bottom:10px;color:var(--c-text)}
+.checklist-block li i{color:var(--c-gold-d);margin-top:3px;flex-shrink:0}
 .trip-builder{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
 @media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
-.trip-form-box{background:white;border-radius:12px;padding:32px 28px;box-shadow:0 4px 20px rgba(0,0,0,.11)}
+.trip-form-box{background:var(--c-white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
 .form-row{margin-bottom:16px}
-.form-label{display:block;font-size:13px;font-weight:600;color:var(--primary-dark);margin-bottom:6px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px}
 .form-req{color:#ef4444}
-.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;font-family:inherit;color:var(--text-color);transition:border-color .28s;background:#fff}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent-light);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--c-text);transition:border-color var(--transition);background:#fff}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
 .form-textarea{min-height:90px;resize:vertical}
 .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:480px){.form-row-2{grid-template-columns:1fr}}
-.form-submit{width:100%;padding:15px;background:var(--accent-light);color:var(--primary-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all .28s;min-height:52px}
-.form-submit:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+.form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all var(--transition);min-height:52px}
+.form-submit:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
 .trip-contacts{display:flex;flex-direction:column;gap:20px;justify-content:center}
-.contact-card{background:white;border-radius:12px;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.11);text-align:center}
-.contact-card-icon{font-size:40px;margin-bottom:14px;display:block}
-.contact-card h3{font-size:18px;color:var(--primary-dark);margin-bottom:8px}
-.contact-card p{font-size:14px;color:#6b7280;margin-bottom:16px;line-height:1.6}
+.contact-card{background:var(--c-white);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);text-align:center}
+.contact-card-icon{font-size:40px;margin-bottom:14px;display:block;color:var(--c-ac-rose)}
+.contact-card h3{font-size:18px;color:var(--c-dark);margin-bottom:8px}
+.contact-card p{font-size:14px;color:var(--c-muted);margin-bottom:16px;line-height:1.6}
 .section-accent{background:linear-gradient(135deg,#1a202c 0%,#2d3748 100%);color:#fff}
-.section-accent h2, .section-accent h3{color:#fff}
+.section-accent h2,.section-accent h3{color:#fff}
 .section-accent .sec-sub{color:rgba(255,255,255,.85)}
+.section-accent .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
+.footer{background:var(--c-dark);color:#fff;padding:52px 0 24px;margin-top:auto}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+.f-brand-desc{font-size:13px;color:rgba(255,255,255,.82);line-height:1.7;margin:12px 0}
+.f-h{color:var(--c-gold);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;margin-bottom:14px}
+.f-links{display:flex;flex-direction:column;gap:2px}
+.f-links a{color:rgba(255,255,255,.82);font-size:13px;display:flex;align-items:center;gap:7px;transition:color var(--transition);min-height:40px;padding:4px 0}
+.f-links a:hover{color:var(--c-gold)}
+.f-links a i{color:var(--c-gold);width:13px;font-size:11px}
+.f-contact-r a,.f-contact-r div{display:flex;align-items:flex-start;gap:9px;color:rgba(255,255,255,.82);font-size:13px;margin-bottom:11px;transition:color var(--transition);text-decoration:none}
+.f-contact-r a:hover{color:var(--c-gold)}
+.f-contact-r i{color:var(--c-gold);width:14px;margin-top:2px;flex-shrink:0}
+.social-row{display:flex;gap:9px;margin-top:16px}
+.social-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;transition:all var(--transition);text-decoration:none}
+.social-btn:hover{background:var(--c-gold);color:var(--c-dark)}
+.footer-map{grid-column:1/-1}
+.footer-map iframe{width:100%;height:250px;border:none;border-radius:var(--radius-sm);opacity:.85}
+.footer-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:8px;text-align:center}
+@media(min-width:640px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+.footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.65)}
+.footer-bottom a:hover{color:var(--c-gold)}
+.f-legal{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.cookie-bar{position:fixed;bottom:0;left:0;right:0;background:#1e293b;border-top:2px solid var(--c-gold);padding:13px 16px;z-index:50000;display:none}
+.cookie-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.cookie-txt{font-size:13px;color:rgba(255,255,255,.92);flex:1;min-width:200px}
+.cookie-txt a{color:var(--c-gold);text-decoration:underline}
+.cookie-btns{display:flex;gap:8px}
+.c-decline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;border-radius:6px;font-size:13px;cursor:pointer;min-height:44px}
+.c-decline:hover{border-color:#fff}
+.c-accept{background:var(--c-gold);color:var(--c-dark);border:none;padding:10px 18px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;min-height:44px}
+.c-accept:hover{background:var(--c-gold-d)}
+.wa-float{position:fixed;bottom:24px;right:16px;z-index:1000;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.5);animation:wa-pulse 2.8s infinite;transition:all var(--transition)}
+.wa-float:hover{background:#20ba59;transform:scale(1.08)}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75)}}
+.mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-32{margin-top:32px}.mt-40{margin-top:40px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
-<html><head><link href="https://www.egyptphotographytours.com/fi/egypt-coworking-spaces-guide-2026" rel="canonical"/></head></html><html><head><link href="https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026" hreflang="en" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/no/egypt-coworking-spaces-guide-2026" hreflang="no" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/pt/egypt-coworking-spaces-guide-2026" hreflang="pt" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ru/egypt-coworking-spaces-guide-2026" hreflang="ru" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/sv/egypt-coworking-spaces-guide-2026" hreflang="sv" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/hi/egypt-coworking-spaces-guide-2026" hreflang="hi" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/pl/egypt-coworking-spaces-guide-2026" hreflang="pl" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/de/egypt-coworking-spaces-guide-2026" hreflang="de" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/id/egypt-coworking-spaces-guide-2026" hreflang="id" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/fr/egypt-coworking-spaces-guide-2026" hreflang="fr" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/da/egypt-coworking-spaces-guide-2026" hreflang="da" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ar/egypt-coworking-spaces-guide-2026" hreflang="ar" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/cs/egypt-coworking-spaces-guide-2026" hreflang="cs" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/vi/egypt-coworking-spaces-guide-2026" hreflang="vi" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ro/egypt-coworking-spaces-guide-2026" hreflang="ro" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/th/egypt-coworking-spaces-guide-2026" hreflang="th" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/es/egypt-coworking-spaces-guide-2026" hreflang="es" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ko/egypt-coworking-spaces-guide-2026" hreflang="ko" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/it/egypt-coworking-spaces-guide-2026" hreflang="it" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/zh-CN/egypt-coworking-spaces-guide-2026" hreflang="zh" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/nl/egypt-coworking-spaces-guide-2026" hreflang="nl" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/tl/egypt-coworking-spaces-guide-2026" hreflang="tl" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/fi/egypt-coworking-spaces-guide-2026" hreflang="fi" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/ja/egypt-coworking-spaces-guide-2026" hreflang="ja" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/tr/egypt-coworking-spaces-guide-2026" hreflang="tr" rel="alternate"/></head></html><html><head><link href="https://www.egyptphotographytours.com/egypt-coworking-spaces-guide-2026" hreflang="x-default" rel="alternate"/></head></html></head>
+</head>
 <body>
-<!-- Accessibility: Skip to Content Link -->
-<a class="skip-link" href="#main-content">Siirry pääsisältöön</a>
-<header class="header">
-<div class="container content">
-<div class="logo-section">
-<img alt="Egypt Photography Tours Logo - Coworking space -asiantuntemus" class="logo-img" height="40" loading="eager" src="/images/egypt-photography-tours-logo.jpg" width="40"/>
-<a class="logo-link" href="/fi/">Egyptin valokuvamatkat</a>
+<!-- Cookie Banner -->
+<div aria-labelledby="cookie-msg" aria-modal="true" class="cookie-bar" id="cookie-bar" role="dialog">
+<div class="cookie-inner">
+<p class="cookie-txt" id="cookie-msg">Käytämme evästeitä parantaaksemme käyttökokemustasi.<a href="/fi/privacy-policy">Lue lisää tietosuojakäytännöstämme</a></p>
+<div class="cookie-btns">
+<button class="c-decline" id="c-decline" type="button">Hylkää</button>
+<button class="c-accept" id="c-accept" type="button">Hyväksy kaikki</button>
 </div>
-<div class="header-text">Missä valokuvaus kohtaa syvän kulttuurisen ymmärryksen</div>
-<div class="header-contact">
-<a class="contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
-<i class="fab fa-whatsapp contact-icon"></i>+20 155 073 5673</a>
-<a class="contact-info" href="mailto:info@egyptphotographytours.com">
-<i class="far fa-envelope contact-icon"></i>info@egyptphotographytours.com</a>
+</div>
+</div>
+<!-- Floating WhatsApp -->
+<a aria-label="Chat with Egypt Photography Tours on WhatsApp" class="wa-float" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
+<a class="skip-link" href="#main">Siirry pääsisältöön</a>
+<!-- ═══════════════════ HEADER (text-only logo) ═══════════════════ -->
+<header class="header" id="site-header">
+<div class="wrap header-inner">
+<a aria-label="Egypt Photography Tours - Go to Homepage" class="logo" href="/fi/">
+<span aria-hidden="true" class="logo-mark"><i class="fas fa-camera-retro"></i></span>
+<div class="logo-copy">
+<span class="logo-name">Egyptin valokuvamatkat</span>
+<span class="logo-tag">Yksityis- ja ryhmämatkat vuodesta 2015</span>
+</div>
+</a>
+<div class="header-contacts">
+<a aria-label="WhatsApp Egypt Photography Tours" class="hc-link" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i>+20 155 073 5673</a>
+<a aria-label="Email Egypt Photography Tours" class="hc-link" href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i>info@egyptphotographytours.com</a>
 </div>
 </div>
 </header>
-<nav class="navbar">
-<div class="container navbar-content">
-<div class="cta-container">
-<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-menu-toggle">
-<i class="fas fa-bars"></i>
-</button>
-<a class="book-now-button" href="/fi/tours">Varaa kokemuksesi</a>
-<!-- Language Switcher -->
-<div class="language-switcher">
-<div aria-label="Select language" class="current-language" role="button" tabindex="0">
-<span class="current-flag">🇺🇸</span>
-<span class="current-text">EN</span>
-<i aria-hidden="true" class="fas fa-chevron-down dropdown-icon"></i>
-</div>
-<div class="language-dropdown" role="menu">
-<html><body><a class="lang-item language-item" href="/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇺🇸</span><span class="lang-name language-text">English</span></a></body></html><html><body><a class="lang-item language-item" href="/ar/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇸🇦</span><span class="lang-name language-text">العربية</span></a></body></html><html><body><a class="lang-item language-item" href="/es/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇪🇸</span><span class="lang-name language-text">Español</span></a></body></html><html><body><a class="lang-item language-item" href="/fr/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇫🇷</span><span class="lang-name language-text">Français</span></a></body></html><html><body><a class="lang-item language-item" href="/de/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇩🇪</span><span class="lang-name language-text">Deutsch</span></a></body></html><html><body><a class="lang-item language-item" href="/it/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇹</span><span class="lang-name language-text">Italiano</span></a></body></html><html><body><a class="lang-item language-item" href="/pt/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇹</span><span class="lang-name language-text">Português</span></a></body></html><html><body><a class="lang-item language-item" href="/ru/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇷🇺</span><span class="lang-name language-text">Русский</span></a></body></html><html><body><a class="lang-item language-item" href="/ja/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇯🇵</span><span class="lang-name language-text">日本語</span></a></body></html><html><body><a class="lang-item language-item" href="/zh-CN/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇨🇳</span><span class="lang-name language-text">中文 (简体)</span></a></body></html><html><body><a class="lang-item language-item" href="/ko/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇰🇷</span><span class="lang-name language-text">한국어</span></a></body></html><html><body><a class="lang-item language-item" href="/hi/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇳</span><span class="lang-name language-text">हिन्दी</span></a></body></html><html><body><a class="lang-item language-item" href="/nl/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇳🇱</span><span class="lang-name language-text">Nederlands</span></a></body></html><html><body><a class="lang-item language-item" href="/sv/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇸🇪</span><span class="lang-name language-text">Svenska</span></a></body></html><html><body><a class="lang-item language-item" href="/pl/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇱</span><span class="lang-name language-text">Polski</span></a></body></html><html><body><a class="lang-item language-item" href="/tr/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇹🇷</span><span class="lang-name language-text">Türkçe</span></a></body></html><html><body><a class="lang-item language-item" href="/vi/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇻🇳</span><span class="lang-name language-text">Tiếng Việt</span></a></body></html><html><body><a class="lang-item language-item" href="/th/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇹🇭</span><span class="lang-name language-text">ไทย</span></a></body></html><html><body><a class="lang-item language-item" href="/id/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇩</span><span class="lang-name language-text">Bahasa Indonesia</span></a></body></html><html><body><a class="lang-item language-item" href="/cs/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇨🇿</span><span class="lang-name language-text">Čeština</span></a></body></html><html><body><a class="lang-item language-item" href="/ro/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇷🇴</span><span class="lang-name language-text">Română</span></a></body></html><html><body><a class="lang-item language-item" href="/tl/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇭</span><span class="lang-name language-text">Filipino</span></a></body></html><html><body><a class="lang-item language-item" href="/no/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇳🇴</span><span class="lang-name language-text">Norsk</span></a></body></html><html><body><a class="lang-item language-item" href="/da/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇩🇰</span><span class="lang-name language-text">Dansk</span></a></body></html><html><body><a class="lang-item language-item is-active" href="/fi/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇫🇮</span><span class="lang-name language-text">Suomi</span></a></body></html></div>
-</div>
-</div>
-<ul class="nav-links" role="menubar">
-<li class="nav-link" role="none"><a href="/fi/" role="menuitem">Kotiin</a></li>
-<li class="nav-link" role="none"><a href="/fi/about" role="menuitem">Tietoja meistä</a></li>
-<li class="nav-link" role="none"><a href="/fi/tours" role="menuitem">Matkamme</a></li>
-<li class="nav-link" role="none"><a href="/fi/gallery" role="menuitem">Galleria</a></li>
-<li class="nav-link" role="none"><a href="/fi/resources" role="menuitem">Resurssit</a></li>
-<li class="nav-link" role="none"><a href="/fi/blog" role="menuitem">Blogi</a></li>
-<li class="nav-link" role="none"><a href="/fi/contact" role="menuitem">Ota yhteyttä</a></li>
-<li class="nav-link" role="none"><a href="/fi/faqs" role="menuitem">UKK</a></li>
+<!-- ═══════════════════ STICKY NAV ═══════════════════ -->
+<nav aria-label="Main navigation" class="navbar" id="navbar">
+<div class="wrap nav-inner">
+<button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" type="button"><i aria-hidden="true" class="fas fa-bars" id="ham-icon"></i></button>
+<ul class="nav-links-desk" role="list">
+<li><a href="/fi/">Kotiin</a></li>
+<li><a href="/fi/about">Tietoja meistä</a></li>
+<li><a href="/fi/tours">Matkamme</a></li>
+<li><a href="/fi/gallery">Galleria</a></li>
+<li><a aria-current="page" class="active" href="/fi/resources">Resurssit</a></li>
+<li><a href="/fi/blog">Blogi</a></li>
+<li><a href="/fi/contact">Ota yhteyttä</a></li>
+<li><a href="/fi/faqs">UKK</a></li>
 </ul>
+<div class="nav-right">
+<a aria-label="Customize and book your Egypt tour" class="nav-book" href="/fi/contact#customize-trip"><i aria-hidden="true" class="fas fa-magic"></i> <span>Mukauta matkaa</span></a>
+<div class="lang-wrap" data-open="false" id="lang-wrap">
+<button aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Select language – currently English" class="lang-toggle" id="lang-toggle" type="button"><span aria-hidden="true">🇺🇸</span><span>EN</span><i aria-hidden="true" class="fas fa-chevron-down lang-chevron"></i></button>
+<div aria-hidden="true" class="lang-menu" id="lang-menu" role="menu">
+<div class="lang-menu-head">Valitse Kieli</div>
+<a class="lang-item is-active" href="/fi/egypt-coworking-spaces-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag">🇺🇸</span><span class="lang-name">englanti</span></a>
+</div>
+</div>
+</div>
 </div>
 </nav>
-<main class="main" id="main-content">
-<!-- Visible Breadcrumb Navigation -->
-<nav aria-label="Breadcrumb" class="breadcrumb container">
-<a href="/fi/">Kotiin</a>
-<span aria-hidden="true">›</span>
-<a href="/fi/resources">Resurssit</a>
-<span aria-hidden="true">›</span>
-<span aria-current="page">Egyptin Coworking Spaces -opas 2026</span>
+<!-- Mobile Nav -->
+<nav aria-hidden="true" aria-label="Mobile navigation" class="mobile-nav" id="mobile-nav">
+<a class="mobile-nav-link" href="/fi/"><i aria-hidden="true" class="fas fa-home"></i>Kotiin</a>
+<a class="mobile-nav-link" href="/fi/about"><i aria-hidden="true" class="fas fa-user-tie"></i>Tietoja meistä</a>
+<a class="mobile-nav-link" href="/fi/tours"><i aria-hidden="true" class="fas fa-map-marked-alt"></i>Matkamme</a>
+<a class="mobile-nav-link" href="/fi/gallery"><i aria-hidden="true" class="fas fa-images"></i>Galleria</a>
+<a class="mobile-nav-link" href="/fi/resources"><i aria-hidden="true" class="fas fa-book-open"></i>Resurssit</a>
+<a aria-current="page" class="mobile-nav-link active" href="/fi/blog"><i aria-hidden="true" class="fas fa-blog"></i>Blogi</a>
+<a class="mobile-nav-link" href="/fi/contact"><i aria-hidden="true" class="fas fa-envelope"></i>Ota yhteyttä</a>
+<a class="mobile-nav-link" href="/fi/faqs"><i aria-hidden="true" class="fas fa-question-circle"></i>UKK</a>
+<div class="mobile-nav-sep" role="separator"></div>
+<div class="mobile-nav-contact">
+<a aria-label="WhatsApp us" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i>WhatsApp: +20 155 073 5673</a>
+<a aria-label="Email us" href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i>info@egyptphotographytours.com</a>
+<a aria-label="Customize and book your tour" href="/fi/contact#customize-trip" style="background:var(--c-gold);color:var(--c-dark);padding:14px 16px;border-radius:8px;text-align:center;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;min-height:52px">
+<i aria-hidden="true" class="fas fa-magic"></i>Mukauta ja varaa matkasi</a>
+</div>
 </nav>
-<section class="hero-section">
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h1 class="hero-title">Egypti Coworking Spaces Arvosteltu</h1>
-<p class="hero-subtitle">Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla – Varaa ammattivalokuvausmatkasi jo tänään. Asiantuntevat avaruusarviot, vahvistetut Internet-nopeudet ja valokuvausystävälliset mukavuudet luotettavalla paikallisella tuella.</p>
-<a class="booking-cta" href="/fi/tours">
-<i class="fas fa-laptop-code"></i>Varaa Coworking-opastettu kierros</a>
+<div aria-hidden="true" class="nav-overlay" id="nav-overlay"></div>
+<main id="main" tabindex="-1">
+<!-- HERO SECTION — TEXT ONLY (no photos) -->
+<section class="article-hero">
+<div class="wrap">
+<span class="hero-kicker"><i aria-hidden="true" class="fas fa-laptop-code"></i>2026 Coworking Review Guide</span>
+<h1>Egypti Coworking Spaces<span class="gold">Arvosteltu</span></h1>
+<p class="hero-sub">Kairo, Aleksandria ja Hurghada todellisilla käyttäjäarvioilla, tarkistetuilla internetnopeuksilla, valokuvausystävällisillä mukavuuksilla ja rehellisillä hinnoilla – sekä kuinka yhdistää etätyösi Egyptin valokuvauskierrokseen.</p>
+<div aria-hidden="true" class="hero-rule"></div>
 </div>
 </section>
-<section class="article-section">
-<div class="article-container">
-<div class="article-meta">
-<span><i class="far fa-calendar"></i>28. tammikuuta 2026</span>
-<span><i class="fas fa-map-marker-alt"></i>Kairo, Egypti</span>
-<span><i class="fas fa-tags"></i>Coworking Spaces, käyttäjäarviot, varaa Egyptin matkat</span>
-<span><i class="far fa-clock"></i>48 minuuttia luettua</span>
-<span class="last-updated"><i class="fas fa-sync-alt"></i>Päivitetty: 3. helmikuuta 2026</span>
+<!-- BREADCRUMB + META -->
+<div class="meta-bar">
+<div class="wrap">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="/fi/">Kotiin</a><span aria-hidden="true">/</span>
+<a href="/fi/resources">Resurssit</a><span aria-hidden="true">/</span>
+<span aria-current="page" style="color:var(--c-dark);font-weight:600">Egyptin Coworking Spaces -opas 2026</span>
+</nav>
+<div class="article-meta-row">
+<span><i aria-hidden="true" class="far fa-calendar"></i>Julkaistu 28. tammikuuta 2026</span>
+<span><i aria-hidden="true" class="fas fa-sync-alt"></i>Päivitetty 3.2.2026</span>
+<span><i aria-hidden="true" class="far fa-clock"></i>48 minuuttia luettua</span>
+<span><i aria-hidden="true" class="fas fa-map-marker-alt"></i>Kairo, Egypti</span>
+<span><i aria-hidden="true" class="fas fa-user"></i>Kirjailija: Hossam, egyptiologi ja valokuvaaja</span>
 </div>
-<div class="article-content">
-<!-- Introduction with Strong Booking CTA -->
-<p><strong>Pitkän Egyptin valokuvausjakson suunnitteleminen etätyöntekijänä ymmärtämättä coworking-tilan todellisuutta on kuin kuvaamista tarkastamatta tarkennusta – saatat saada hyväksyttäviä tuloksia, mutta vaarana on huono yhteys, riittämättömät mukavuudet tai ajanhukkaa, joka voi pilata koko kokemuksesi.</strong>Yleiset matkablogit tarjoavat vanhentuneita coworking-arvosteluja; avaruussivustot piilottavat luotettavuusongelmat markkinointikielessä; ja valokuvauskohtaiset etätyötarpeet luovat ainutlaatuisia työtilavaatimuksia, joihin tavalliset neuvot eivät vastaa.</p>
-<p>Tämän kattavan vuoden 2026 oppaan avulla voit tehdä älykkäitä Egyptin yhteistyöpäätöksiä: todellisia käyttäjäarvioita ja tarkistettuja arvosteluja Kairossa, Aleksandriassa ja Hurghadassa, Internetin nopeustestejä valokuvauskohtaisilla vertailuarvoilla, valokuvauslaitteiden ja työnkulun viihtyisanalyysit, hintojen läpinäkyvyys arvon optimointistrategioilla ja miten<strong>varaus Egypt Photography Toursilta</strong>parantaa työskentelykokemuksia liitettävyyden todentamisella, paikallisilla kumppanuuksilla ja etuoikeutetulla pääsyllä luotettuihin työtiloihin stressittömän pidennetyn valokuvaamisen ansiosta.</p>
-<div class="coworking-highlight">
+</div>
+</div>
+<!-- ARTICLE BODY -->
+<section class="section" style="padding-top:44px">
+<div class="article-wrap article-content">
+<p class="article-lede"><strong>Pitkän Egyptin valokuvausjakson suunnitteleminen etätyöntekijänä ymmärtämättä coworking-tilan todellisuutta on kuin kuvaamista tarkastamatta tarkennusta – saatat saada hyväksyttäviä tuloksia, mutta vaarana on huono yhteys, riittämättömät mukavuudet tai hukattu aika, joka voi pilata koko kokemuksesi.</strong>Yleiset matkablogit tarjoavat vanhentuneita coworking-arvosteluja; avaruussivustot piilottavat luotettavuusongelmat markkinointikielessä; ja valokuvauskohtaiset etätyötarpeet luovat ainutlaatuisia työtilavaatimuksia, joihin tavalliset neuvot eivät vastaa.</p>
+<p>Tämän kattavan vuoden 2026 oppaan avulla voit tehdä älykkäitä Egyptin yhteistyöpäätöksiä: todellisia käyttäjäarvioita ja tarkistettuja arvosteluja Kairossa, Aleksandriassa ja Hurghadassa, Internetin nopeustestejä valokuvauskohtaisilla vertailuarvoilla, valokuvauslaitteiden ja työnkulun viihtyisanalyysit, hintojen läpinäkyvyys arvon optimointistrategioilla ja miten<strong>varaus Egypt Photography Toursilta</strong>parantaa työskentelykokemuksia liitettävyyden todentamisella, paikallisilla kumppanuuksilla ja etuoikeutetulla pääsyllä luotettuihin työtiloihin.</p>
+<div class="quick-facts">
+<h3>Yhteistyöskentelyn nopeita faktoja</h3>
+<div class="qf-item">
+<span class="qf-label">Kairo Hot Desk</span>
+<span class="qf-value">50-100 dollaria/kk</span>
+</div>
+<div class="qf-item">
+<span class="qf-label">Huippunopeus (Kairo)</span>
+<span class="qf-value">80-150 Mbps</span>
+</div>
+<div class="qf-item">
+<span class="qf-label">Parhaiksi arvioitu tila</span>
+<span class="qf-value">KREIKKA Kampus 4,8/5</span>
+</div>
+<div class="qf-item">
+<span class="qf-label">Minimi latausnopeus</span>
+<span class="qf-value">10+ Mbps RAW:lle</span>
+</div>
+</div>
+<div class="callout callout-purple">
 <h3>Oletko valmis Smart Egypt Coworking -suunnitteluun?</h3>
-<p>Liity Egypt Photography Toursille saadaksesi ammattivalokuvauskokemuksia asiantuntijoiden yhteistyötilaarvostelujen, vahvistettujen käyttäjien arvioiden ja valokuvausystävällisen viihtyisohjeen avulla.<a class="booking-cta" href="/fi/tours"><i class="fas fa-calendar-check"></i>Varaa kokemuksesi nyt</a></p>
+<p>Liity Egypt Photography Toursille saadaksesi ammattivalokuvauskokemuksia asiantuntijoiden yhteistyötilaarvostelujen, vahvistettujen käyttäjien arvioiden ja valokuvausystävällisen viihtyisohjeen avulla.</p>
+<a class="btn btn-dark" href="/fi/tours">Varaa Coworking-opastettu kierros</a>
 </div>
-<!-- Trustpilot Widget Container -->
-<div class="trustpilot-widget-container">
-<div class="trustpilot-widget" data-businessunit-id="5f8c7b1e0000640001e6f3a2" data-locale="en-US" data-style-height="24px" data-style-width="100%" data-template-id="5419b6ffb0d04a076446a9ad" data-theme="light">
-<a href="https://www.trustpilot.com/review/egyptphotographytours.com" rel="noopener" target="_blank">Trustpilot</a>
+<div class="toc-box">
+<h3>Pikanavigointi</h3>
+<ul class="toc-list">
+<li><a href="#cairo">Kairo Coworking Spaces</a></li>
+<li><a href="#alexandria">Alexandria Coastal Spaces</a></li>
+<li><a href="#hurghada">Hurghada Red Sea Spaces</a></li>
+<li><a href="#ratings">Todellisten käyttäjien arvioiden analyysi</a></li>
+<li><a href="#amenities">Valokuvausystävälliset mukavuudet</a></li>
+<li><a href="#strategy">Strategiat valokuvaajatyypin mukaan</a></li>
+<li><a href="#reviews">Real Traveler Arvostelut</a></li>
+<li><a href="#why">Miksi varata meiltä</a></li>
+<li><a href="#checklist">Lopullisen valmistelun tarkistuslista</a></li>
+<li><a href="#faq">Usein kysytyt kysymykset</a></li>
+</ul>
 </div>
-</div>
-<!-- Chapter 1: Cairo Coworking Spaces - Verified Reviews -->
-<h2>Luku 1: Kairo Coworking Spaces - Tarkistetut arvostelut ja todelliset käyttäjäarviot</h2>
+<h2 id="cairo">Luku 1: Cairo Coworking Spaces — Tarkistetut arvostelut ja todelliset käyttäjäarviot</h2>
 <p>Kairo tarjoaa Egyptin monipuolisimman coworking-maiseman, mutta laatu vaihtelee dramaattisesti naapuruston ja johdon mukaan. Tässä luvussa on asiantuntijoiden arvioimia arvioita, joissa on todellisia käyttäjäarvioita erityisesti valokuvaukseen keskittyneille etätyöntekijöille.</p>
-<div class="culture-grid">
-<div class="culture-card">
-<span class="culture-icon">🏢</span>
-<h4>Kairon parhaat työskentelytilat valokuvaajille</h4>
-<p><strong>Kreikan kampus (keskusta):</strong>4,8/5 käyttäjäarvio • 80-150 Mbps valokuitu • 85-180 dollaria/kk • Valokuvauslaitteiden säilytys • Luovan yhteisön tapahtumat • Keskeinen sijainti katukuvaukseen •<span class="coworking-badge"><i class="fas fa-star"></i>Paras dokumenttielokuvalle/katulle</span><br/>
-<strong>Piiri (Uusi Kairo):</strong>4,7/5 käyttäjäarvio • 70-140 Mbps kuitu • 95-200 $/kk • Varavirtajärjestelmät • Nykyaikaiset tilat • Läheisyys autiomaakuvauspaikkoihin •<span class="coworking-badge"><i class="fas fa-star"></i>Paras kaupalliseen/studioon</span><br/>
-<strong>RiseUp Summit Hub (Zamalek):</strong>4,6/5 käyttäjäarvio • 60–130 Mbps kuitu • 100–220 dollaria/kk • Niilin näköalatyötilat • Verkostoituminen luovien tekijöiden kanssa • Kävelymatkan päässä kulttuurivalokuvauskohteista •<span class="coworking-badge"><i class="fas fa-star"></i>Paras kuvataiteeseen/verkostoitumiseen</span><br/>
-<strong>Varaa tämä kokemus:</strong>The<a href="/fi/tour-cairo-giza-2day">Kairo &amp; Giza 2 päivän valokuvakierros</a>sisältää coworking-tilan todentamisen valokuvauskohtaisen viihtyisyyden arvioinnin kanssa</p>
+<div class="development-grid">
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-building"></i></span>
+<h4>KREIKKA-kampus (keskusta)</h4>
+<p><span class="rating-pill"><i class="fas fa-star"></i>4,8/5</span> <span class="rating-pill">80-150 Mbps</span> <span class="rating-pill">85-180 dollaria/kk</span><br/><br/>Valokuvausvälinevarasto, luovan yhteisön tapahtumat, keskeinen sijainti katukuvaukseen.<strong>Paras dokumenttielokuvaajille/katuvalokuvaajille.</strong></p>
 </div>
-<div class="culture-card">
-<span class="culture-icon">📊</span>
-<h4>Real User Rating Analysis Methodology</h4>
-<p><strong>Vahvistusprosessi:</strong>Vertailemme Google-arvosteluja, Coworker.com-sivustoa, Facebook-ryhmiä ja suoritamme käyttäjien haastatteluja suodattaaksemme väärennetyt tai vanhentuneet arvostelut.<br/>
-<strong>Valokuvakohtaiset suodattimet:</strong>Arvosteluissa mainitaan internetin luotettavuus, laitteiden säilytys, joustavat työajat ja luova yhteisö – tärkeitä tekijöitä valokuvauksen etätyössä.<br/>
-<strong>Viimeaikainen painopiste:</strong>Ainoastaan viimeisen 6 kuukauden arvioinnit otetaan huomioon nykyisen hallinnon ja infrastruktuurin laadun varmistamiseksi<br/>
-<strong>Varaa tämä kokemus:</strong>The<a href="/fi/tour-pyramids-private">Yksityinen pyramidivalokuvauskierros</a>sisältää pääsyn vahvistettuun coworking-arvostelutietokantaamme valokuvauskohtaisilla suodattimilla</p>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-city"></i></span>
+<h4>Piiri (Uusi Kairo)</h4>
+<p><span class="rating-pill"><i class="fas fa-star"></i>4,7/5</span> <span class="rating-pill">70-140 Mbps</span> <span class="rating-pill">95-200 dollaria/kk</span><br/><br/>Varavirtajärjestelmät, modernit tilat, läheisyys aavikon valokuvauspaikkoihin.<strong>Paras kaupallisille/studiovalokuvaajille.</strong></p>
 </div>
-<div class="culture-card">
-<span class="culture-icon">⚡</span>
-<h4>Internetin nopeuden testausprotokolla</h4>
-<p><strong>Testausmenetelmät:</strong>Suoritamme nopeustestejä ruuhka-aikoina (9.00-17.00 paikallista aikaa) Ookla Speedtestin ja Fast.comin avulla itsenäiseen varmennukseen.<br/>
-<strong>Valokuvauksen vertailuarvot:</strong>Priorisoimme lähetysnopeudet (suositus: 10+ Mbps) suurten RAW-tiedostojen lähettämiseen, ei vain latausnopeuksia<br/>
-<strong>Redundanssin varmistus:</strong>Testaamme varayhteysvaihtoehtoja (mobiilihotspotit, toissijaiset Internet-palveluntarjoajat), joita spaces tarjoavat kriittisissä työajoissa<br/>
-<strong>Varaa tämä kokemus:</strong>Kaikki Egyptin valokuvausmatkat sisältävät liitettävyyden vahvistuksen suositelluissa työskentelytiloissa valokuvauskohtaisilla nopeustesteillä</p>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-rocket"></i></span>
+<h4>RiseUp Summit Hub (Zamalek)</h4>
+<p><span class="rating-pill"><i class="fas fa-star"></i>4,6/5</span> <span class="rating-pill">60-130 Mbps</span> <span class="rating-pill">100-220 dollaria/kk</span><br/><br/>Niilille avautuvat työtilat, verkostoituminen luovien ihmisten kanssa, kävelymatkan päässä kulttuurivalokuvauskohteista.<strong>Paras kuvataiteeseen/verkostoitumiseen.</strong></p>
 </div>
 </div>
-<div class="advice-box">
+<div class="callout callout-blue">
+<h3>Real User Rating Analysis Methodology</h3>
+<ul>
+<li><strong>Vahvistusprosessi:</strong>Vertailemme Google-arvosteluja, Coworker.com-sivustoa, Facebook-ryhmiä ja suoritamme käyttäjien haastatteluja suodattaaksemme väärennetyt tai vanhentuneet arvostelut.</li>
+<li><strong>Valokuvakohtaiset suodattimet:</strong>Arvosteluissa mainitaan internetin luotettavuus, laitteiden säilytys, joustavat työajat ja luova yhteisö – tärkeät tekijät valokuvauksen etätyössä.</li>
+<li><strong>Viimeaikainen painopiste:</strong>Vain viimeisen 6 kuukauden arvioinnit otetaan huomioon nykyisen hallinnon ja infrastruktuurin laadun varmistamiseksi.</li>
+</ul>
+</div>
+<div class="callout callout-gold">
 <h3>Miksi varata Kairon Coworking Tours Egyptin valokuvausmatkoilla?</h3>
 <ul>
-<li><strong>Vahvistetut arvostelut:</strong>Asiantuntijaanalyysi todellisista käyttäjäarvioista, jotka on suodatettu valokuvauskohtaisten tarpeiden ja viimeaikaisten kokemusten perusteella</li>
-<li><strong>Yhteyden vahvistus:</strong>Internetin nopeuden testaus ennen matkaa suositelluissa yhteistyötiloissa varmistaaksesi työvalmiuden</li>
-<li><strong>Viihtyisyyden arviointi:</strong>Ohjeita valokuvaukseen sopivista ominaisuuksista, kuten laitteiden säilytys, joustavat työajat ja luovan yhteisön pääsy</li>
-<li><strong>Paikalliset kumppanuudet:</strong>Yhteydet coworking-tilan johtajiin, jotka ymmärtävät valokuvaajan tarpeet ja voivat tarjota erityisiä majoitusvaihtoehtoja</li>
+<li><strong>Vahvistetut arvostelut:</strong>Asiantuntijaanalyysi todellisista käyttäjäarvioista, jotka on suodatettu valokuvauskohtaisten tarpeiden ja viimeaikaisten kokemusten perusteella.</li>
+<li><strong>Yhteyden vahvistus:</strong>Internetin nopeuden testaus ennen matkaa suositelluissa yhteistyötiloissa varmistaaksesi työvalmiuden.</li>
+<li><strong>Viihtyisyyden arviointi:</strong>Ohjeita valokuvaukseen sopivista ominaisuuksista, kuten laitteiden säilytys, joustavat työajat ja luovan yhteisön pääsy.</li>
+<li><strong>Paikalliset kumppanuudet:</strong>Yhteydet coworking-tilan johtajiin, jotka ymmärtävät valokuvaajan tarpeet ja voivat tarjota erityisiä majoitusvaihtoehtoja.</li>
 </ul>
-<a class="booking-cta" href="/fi/tours"><i class="fas fa-check-circle"></i>Varaa Kairo Coworking Tour tänään</a>
+<a class="btn btn-dark" href="/fi/tours"><i aria-hidden="true" class="fas fa-check-circle"></i>Varaa Kairo Coworking Tour</a>
 </div>
-<!-- Chapter 2: Alexandria Coworking Spaces - Coastal Remote Work Reviews -->
-<h2>Luku 2: Alexandria Coworking Spaces - Coastal Remote Work Reviews</h2>
+<h2 id="alexandria">Luku 2: Alexandria Coworking Spaces — Coastal Remote Work Reviews</h2>
 <p>Aleksandrian välimerellinen viehätys houkuttelee etätyöntekijöitä, jotka etsivät inspiraatiota rannikolta, mutta yhteistyön infrastruktuuri vaihtelee huomattavasti. Tämä luku paljastaa asiantuntijoiden tarkastamia rannikkotyötilojen katsauksia valokuvauskohtaisin huomioin.</p>
-<div class="service-category category-alexandria">
-<h4><i class="fas fa-water"></i>Ammattimainen Coastal Coworking -analyysi</h4>
-<div class="coworking-widget">
-<h4>Alexandria Coworking Space -arvostelut oikeilla arvioilla</h4>
-<div class="coworking-list">
-<p><strong>Bibliotheca Alexandrina Innovation Station:</strong>4,5/5 käyttäjäarvio • 50–120 Mbps kuitu • 70–150 dollaria/kk • Akateeminen ilmapiiri • Kulttuurivalokuvausmahdollisuus • Luotettava varavirta •<span class="coworking-badge"><i class="fas fa-star"></i>Paras Heritage/Documentary</span></p>
-<p><strong>Montazan yhteistyö:</strong>4,4/5 käyttäjäarvio • 45–110 Mbps kuitu • 65–140 dollaria/kk • Välimeren näkymät • Rannikkokuvaus • Joustavat työajat kultaisen tunnin kuvaamiseen •<span class="coworking-badge"><i class="fas fa-star"></i>Paras maisemaan/merenrantaan</span></p>
-<p><strong>Alexandria Digital Hub:</strong>4,3/5 käyttäjäarvio • 40–100 Mbps kuitu • 60–130 dollaria/kk • Startup-yhteisö • Verkostoitumistapahtumat • Keskeinen sijainti kaupunkikuvaukseen •<span class="coworking-badge"><i class="fas fa-star"></i>Paras kaupalliseen/verkostoitumiseen</span></p>
-<p><strong>Rannikkoyhteydet Huomautus:</strong>Kuitujen saatavuus on erinomainen Montazan, San Stefanon ja Sidi Gaberin kaupunginosissa; tarkista nopeudet historiallisessa keskustassa ennen varauksen tekemistä</p>
-</div>
-<p class="coworking-disclaimer">Kaikki kierrokset sisältävät Alexandria-coworking-opastuksen valokuvauskohtaisen viihtyisyyden todentamiseen ja todellisten käyttäjien arvioiden analyysiin.</p>
-</div>
-<h4>Coastal Coworking -optimointistrategiat valokuvaajille</h4>
-<ul>
-<li><strong>Golden Hour -aikataulu:</strong>Järjestä työpäivä Välimeren kultaisten tuntien ympärille optimaalista valokuvausta varten ja säilytä tuottavuus</li>
-<li><strong>Laitelogistiikka:</strong>Valitse tilat, joissa on turvallinen säilytystila rannikkokuvausvälineille, jotka voivat olla hiekkaisia tai märkiä</li>
-<li><strong>Yhteisön integrointi:</strong>Ota yhteyttä Alexandrian kasvavaan expat-valokuvaajayhteisöön saadaksesi sijaintivinkkejä ja yhteistyömahdollisuuksia</li>
-<li><strong>Kausisuunnittelu:</strong>Ota huomioon kesäinen väkijoukko ja talvimyrskyt, kun suunnittelet pitkiä työskentelyaikoja optimaalisten valokuvausolosuhteiden saavuttamiseksi</li>
-<li><strong>Kulttuurikylpylä:</strong>Tasapainota etätyötä Aleksandrian rikkaan kreikkalais-roomalaisen perinnön kanssa ainutlaatuisten valokuvaustarinoiden kertomiseen</li>
+<div class="callout callout-blue">
+<h4 style="color:var(--c-nile)"><i aria-hidden="true" class="fas fa-water"></i>Ammattimainen Coastal Coworking -analyysi</h4>
+<ul class="space-list">
+<li><strong>Bibliotheca Alexandrina Innovation Station</strong> <span class="rating-pill"><i class="fas fa-star"></i>4,5/5</span> <span class="rating-pill">50–120 Mbps</span> <span class="rating-pill">70-150 dollaria/kk</span><br/>Akateeminen ilmapiiri, kulttuurivalokuvaus, luotettava varavirta.<strong>Paras Heritage/Documentary.</strong></li>
+<li><strong>Montaza Coworking</strong> <span class="rating-pill"><i class="fas fa-star"></i>4,4/5</span> <span class="rating-pill">45–110 Mbps</span> <span class="rating-pill">65-140 dollaria/kk</span><br/>Välimeren näkymät, rannikkokuvausmahdollisuus, joustavat työajat kultaisen tunnin kuvaamiseen.<strong>Paras maisemaan/merenrantaan.</strong></li>
+<li><strong>Alexandria digitaalinen keskus</strong> <span class="rating-pill"><i class="fas fa-star"></i>4,3/5</span> <span class="rating-pill">40-100 Mbps</span> <span class="rating-pill">60-130 €/kk</span><br/>Startup-yhteisö, verkostoitumistapahtumat, kaupunkikuvauksen keskeinen sijainti.<strong>Paras kaupalliseen/verkostoitumiseen.</strong></li>
 </ul>
-<div class="tip-card">
-<h4>Coastal Coworking -edut, kun varaat meiltä</h4>
+<p style="margin-top:14px;font-size:13px;color:var(--c-muted);font-style:italic;margin-bottom:0">Coastal Connectivity Huomautus: Kuitujen saatavuus on erinomainen Montazan, San Stefanon ja Sidi Gaberin kaupunginosissa. tarkista nopeudet historiallisessa keskustassa ennen varauksen tekemistä.</p>
+</div>
+<h3>Coastal Coworking -optimointistrategiat valokuvaajille</h3>
 <ul>
-<li><strong>Vahvistetut arvosanat:</strong>Asiantuntijaanalyysi todellisista käyttäjäarvosteluista, jotka on suodatettu rannikkokuvaustarpeiden ja viimeaikaisten kokemusten perusteella</li>
-<li><strong>Yhteyden testaus:</strong>Internetin nopeuden varmistus ennen matkaa suositelluissa rannikon työskentelytiloissa työvalmiuden varmistamiseksi</li>
-<li><strong>Valokuvausintegraatio:</strong>Strateginen aikataulutus, joka tasapainottaa etätyösitoumukset ja optimaaliset Välimeren valokuvausmahdollisuudet</li>
-<li><strong>Paikalliset kumppanuudet:</strong>Yhteydet Aleksandriassa toimivien työskentelyjohtajien kanssa, jotka ymmärtävät sekä liitettävyyden että rannikkokuvaustarpeet</li>
+<li><strong>Golden Hour -aikataulu:</strong>Järjestä työpäivä Välimeren kultaisten tuntien ympärille optimaalista valokuvausta varten ja säilytä tuottavuus.</li>
+<li><strong>Laitelogistiikka:</strong>Valitse tilat, joissa on turvallinen säilytystila rannikkokuvausvälineille, jotka voivat olla hiekkaisia tai märkiä.</li>
+<li><strong>Yhteisön integrointi:</strong>Ota yhteyttä Alexandrian kasvavaan expat-valokuvaajayhteisöön saadaksesi sijaintivinkkejä ja yhteistyömahdollisuuksia.</li>
+<li><strong>Kausisuunnittelu:</strong>Ota huomioon kesäinen väkijoukko ja talvimyrskyt, kun suunnittelet pitkiä työskentelyaikoja optimaalisten valokuvausolosuhteiden saavuttamiseksi.</li>
+<li><strong>Kulttuurikylpylä:</strong>Tasapainota etätyötä Aleksandrian rikkaan kreikkalais-roomalaisen perinnön kanssa ainutlaatuisten valokuvaustarinoiden kertomiseen.</li>
 </ul>
-<a class="booking-cta" href="/fi/tours"><i class="fas fa-water"></i>Varaa Coastal Coworking Tour</a>
-</div>
-</div>
-<!-- Chapter 3: Hurghada Coworking Spaces - Red Sea Remote Work Reviews -->
-<h2>Luku 3: Hurghada Coworking Spaces - Red Sea Remote Work Reviews</h2>
+<h2 id="hurghada">Luku 3: Hurghada Coworking Spaces – Red Sea Remote Work Reviews</h2>
 <p>Hurghada tarjoaa ainutlaatuisen sekoituksen Punaisenmeren rentoutumista ja kehittyvää etätyöinfrastruktuuria, mutta yhteistyövaihtoehdot ovat uudempia ja vähemmän dokumentoituja. Tämä luku tarjoaa asiantuntija-analyysin Hurghadan yhteistyöhön liittyvistä maisemista sukellus- ja aavikkokuvauksen näkökulmasta.</p>
-<div class="service-category category-hurghada">
-<h4><i class="fas fa-umbrella-beach"></i>Ammattimainen Red Sea Coworking -analyysi</h4>
-<div class="table-wrapper">
-<table class="coworking-table">
+<div class="table-scroll">
+<table class="data-table">
+<caption>Ammattimainen Red Sea Coworking -analyysi</caption>
 <thead>
 <tr>
 <th>Yhteistyötila</th>
 <th>Käyttäjäluokitus</th>
 <th>Internetin nopeus</th>
 <th>Valokuvan arvo</th>
-<th>Varaa tämä kiertue</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Red Sea Hub (Sakkala)</strong></td>
-<td>4,2/5 • 120 arvostelua</td>
+<td>4,2/5 · 120 arvostelua</td>
 <td>35-90 Mbps kuitu</td>
 <td>Sukelluskuvausmahdollisuus, vedenalainen laitteiden kuivausalue, merivalokuvaajayhteisö</td>
-<td><a href="/fi/tour-egypt-discovery-7day">7 päivän seikkailu</a></td>
 </tr>
 <tr>
 <td><strong>Hurghada Digital Lounge (Village Road)</strong></td>
-<td>4,0/5 • 85 arvostelua</td>
-<td>30-80 Mbps sekakuitu/DSL</td>
+<td>4,0/5 · 85 arvostelua</td>
+<td>30–80 Mbps sekakuitu/DSL</td>
 <td>Aavikkokuvausmahdollisuus, laitteiden varastointi hiekkasuojausta varten, ulkomaalaisten etätyöntekijöiden verkko</td>
-<td><a href="/fi/tour-cairo-giza-2day">Kairo &amp; Giza 2 päivää</a></td>
 </tr>
 <tr>
 <td><strong>Marina Coworking (Marina Boulevard)</strong></td>
-<td>3,9/5 • 65 arvostelua</td>
-<td>25-70 Mbps muuttuva</td>
+<td>3,9/5 · 65 arvostelua</td>
+<td>25–70 Mbps muuttuva</td>
 <td>Yacht-kuvausyhteys, rantakuvauspaikat, matkailukuvausyhteydet</td>
-<td><a href="/fi/tours">Kaikki matkat</a></td>
 </tr>
 <tr>
 <td><strong>Rantatyötila (Sheraton Road)</strong></td>
-<td>3,8/5 • 45 arvostelua</td>
-<td>20-65 Mbps DSL ensisijainen</td>
+<td>3,8/5 · 45 arvostelua</td>
+<td>20–65 Mbps DSL ensisijainen</td>
 <td>Pääsy rantavalokuvaukseen, kultaisen tunnin aikataulujen joustavuus, lomakeskusvalokuvaajien verkostoituminen</td>
-<td><a href="/fi/tour-egypt-discovery-7day">7 päivän seikkailu</a></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="advice-box">
+<div class="callout callout-blue">
 <h3>Miksi valita Red Sea Coworking Tours Egypt Photography Toursin kanssa?</h3>
 <ul>
-<li><strong>Kehittyvien markkinoiden asiantuntemus:</strong>Asiantuntijaopastus Hurghadan uudempaan yhteistyöhön ja infrastruktuurin kypsyyden rehelliseen arviointiin</li>
-<li><strong>Valokuvakohtainen vahvistus:</strong>Sukellus-, autiomaa- ja lomakuvaustyönkulun kannalta kriittisten Internet-nopeuksien ja mukavuuksien testaus</li>
-<li><strong>Yhteisöyhteydet:</strong>Esittelyt Hurghadan kasvavaan ulkomaalaisten valokuvaajayhteisöön sijaintivinkkejä ja yhteistyötä varten</li>
-<li><strong>Varmuuskopiointistrategiat:</strong>Ohjeita mobiilitukipisteistä ja kahden Internet-palveluntarjoajan asetuksista kriittisiin työpäiviin kehittyvillä infrastruktuurialueilla</li>
+<li><strong>Kehittyvien markkinoiden asiantuntemus:</strong>Asiantuntijaopastus Hurghadan uudempaan yhteistyöhön ja infrastruktuurin kypsyyden rehelliseen arviointiin.</li>
+<li><strong>Valokuvakohtainen vahvistus:</strong>Sukellus-, autiomaa- ja lomakuvaustyönkulun kannalta kriittisten Internet-nopeuksien ja mukavuuksien testaus.</li>
+<li><strong>Yhteisöyhteydet:</strong>Esittelyt Hurghadan kasvavaan ulkomaalaisten valokuvaajayhteisöön sijaintivinkkejä ja yhteistyötä varten.</li>
+<li><strong>Varmuuskopiointistrategiat:</strong>Ohjeita mobiilitukipisteisiin ja kahden Internet-palveluntarjoajan asetuksiin kriittisten töiden määräaikoja varten kehittyvillä infrastruktuurialueilla.</li>
 </ul>
-<a class="booking-cta" href="/fi/tours"><i class="fas fa-umbrella-beach"></i>Varaa Red Sea Coworking Tour</a>
+<a class="btn btn-dark" href="/fi/tours"><i aria-hidden="true" class="fas fa-umbrella-beach"></i>Varaa Red Sea Coworking Tour</a>
 </div>
+<h2 id="ratings">Luku 4: Todelliset käyttäjäarviot ja arvosteluanalyysi</h2>
+<p>Coworking-tilan arvioiden tulkinnan ymmärtäminen on erittäin tärkeää etätyöntekijöille, jotka investoivat kalliisiin laitteisiin ja kertaluonteisiin kokemuksiin. Tämä luku sisältää asiantuntija-analyysin luokitusjärjestelmistä ja tarkasteluvarmennusstrategioista.</p>
+<div class="development-grid">
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-search"></i></span>
+<h4>Luokitusalustan luotettavuus</h4>
+<p><strong>Google-arvostelut:</strong>Yleensä luotettava, mutta turistiarvostelut voivat olla paisutettuja; keskittyä etätyöntekijöiden yksityiskohtaisiin arvosteluihin, joissa mainitaan Internetin nopeus.<br/><strong>Coworker.com:</strong>Erikoistunut mutta pienempi käyttäjäkunta; etsi vahvistettuja yöpymisiä ja yksityiskohtaisia ​​palveluarvioita.<br/><strong>Facebook ryhmät:</strong>Aito yhteisöpalaute, mutta jäsentämätön; etsi valokuvaajakohtaisia ​​keskusteluja.</p>
 </div>
-<!-- Chapter 4: Real User Ratings & Review Analysis -->
-<h2>Luku 4: Todelliset käyttäjäarviot ja arvosteluanalyysi – kirja, jossa on vahvistettu palauteopas</h2>
-<p>Coworking-tilaarvioinnin tulkinnan ymmärtäminen on tärkeää etätyöntekijöille, jotka investoivat kalliisiin laitteisiin ja kertaluonteisiin kokemuksiin. Tämä luku sisältää asiantuntija-analyysin luokitusjärjestelmistä ja tarkasteluvarmennusstrategioista.</p>
-<div class="service-category category-ratings">
-<h4><i class="fas fa-star-half-alt"></i>Ammattimaisen arvostelun vahvistusstrategiat</h4>
-<div class="culture-grid">
-<div class="culture-card">
-<span class="culture-icon">🔍</span>
-<h4>Luokitusalustan luotettavuusanalyysi</h4>
-<p><strong>Google-arvostelut:</strong>Yleensä luotettava, mutta turistiarvostelut voivat olla paisutettuja; keskittyä etätyöntekijöiden yksityiskohtaisiin arvosteluihin, joissa mainitaan Internetin nopeus ja valokuvaustarpeet<br/>
-<strong>Coworker.com:</strong>Erikoistunut mutta pienempi käyttäjäkunta; etsi vahvistettuja yöpymisiä ja yksityiskohtaisia palveluarvioita<br/>
-<strong>Facebook ryhmät:</strong>Aito yhteisöpalaute, mutta jäsentämätön; etsi valokuvaajakohtaisia keskusteluja ja viimeaikaisia julkaisuja<br/>
-<strong>Paikalliset Expat-foorumit:</strong>Erittäin luotettava pitkäaikaisiin etätyökokemuksiin, mutta saattaa olla vanhentunut; tarkistaa tiedon tuoreuden<br/>
-<strong>Varaa tämä kokemus:</strong>The<a href="/fi/tour-cairo-giza-2day">Kairo &amp; Giza 2 päivän valokuvakierros</a>sisältää pääsyn vahvistettuun arvostelutietokantaamme valokuvauskohtaisilla suodattimilla</p>
-</div>
-<div class="culture-card">
-<span class="culture-icon">✅</span>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-check-circle"></i></span>
 <h4>Tarkista vahvistusprotokolla</h4>
-<p><strong>Ristiviittaukset:</strong>Vertailemme useiden alustojen arvosteluja tunnistaaksemme johdonmukaiset mallit ja suodattaaksemme poikkeamat tai väärennetyt arvostelut<br/>
-<strong>Äskettäisyyden suodatus:</strong>Ainoastaan viimeisen 6 kuukauden arvioinnit otetaan huomioon nykyisen hallinnon ja infrastruktuurin laadun varmistamiseksi<br/>
-<strong>Valokuvauskohtaiset avainsanat:</strong>Etusijalla ovat arvostelut, joissa mainitaan laitteiden säilytys, joustavat työajat, luova yhteisö ja internetin luotettavuus<br/>
-<strong>Suora vahvistus:</strong>Otamme yhteyttä viimeaikaisiin käyttäjiin verkostomme kautta tarkistaaksemme arvostelun aitouden ja kerätäksemme lisätietoa<br/>
-<strong>Varaa tämä kokemus:</strong>The<a href="/fi/tour-egypt-discovery-7day">7 päivän Egyptin valokuvaseikkailu</a>sisältää tarkistuksen ohjeet, joiden avulla voit tunnistaa luotettavat yhteistyösuositukset</p>
+<p><strong>Ristiviittaukset:</strong>Vertailemme useiden alustojen arvosteluja tunnistaaksemme johdonmukaiset mallit ja suodattaaksemme poikkeamat.<br/><strong>Äskettäisyyden suodatus:</strong>Ainoastaan viimeisen 6 kuukauden arvostelut otetaan huomioon nykyisen johtamisen laadun varmistamiseksi.<br/><strong>Suora vahvistus:</strong>Otamme yhteyttä viimeisimpiin käyttäjiin verkostomme kautta tarkistaaksemme aitouden.</p>
 </div>
-<div class="culture-card">
-<span class="culture-icon">📈</span>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-chart-line"></i></span>
 <h4>Rating Interpretation Framework</h4>
-<p><strong>4,5+ tähteä:</strong>Poikkeukselliset tilat jatkuvalla positiivisella palautteella; ihanteellinen kriittisiin etätöihin ja valokuvausprojekteihin<br/>
-<strong>4,0–4,4 tähteä:</strong>Erittäin hyvät tilat pienin rajoituksin; sopii useimpiin etätöihin asianmukaisella suunnittelulla<br/>
-<strong>3,5-3,9 tähteä:</strong>Hyvät tilat merkittävillä rajoituksilla; vaatii huolellisen mukavuuden tarkistamisen ennen varausta<br/>
-<strong>Alle 3,5 tähteä:</strong>Jatka varovasti; voi olla merkittäviä yhteys- tai mukavuusongelmia valokuvaustyössä<br/>
-<strong>Varaa tämä kokemus:</strong>Kaikki Egyptin valokuvausmatkat sisältävät arvioiden tulkintaohjeita, jotka auttavat sinua tekemään tietoisia yhteistyöpäätöksiä erityisten valokuvaustarpeidesi perusteella</p>
+<p><strong>4,5+ tähteä:</strong>Poikkeukselliset tilat jatkuvalla positiivisella palautteella; ihanteellinen kriittiseen etätyöskentelyyn.<br/><strong>4,0–4,4 tähteä:</strong>Erittäin hyvät tilat pienin rajoituksin; sopii useimpiin etätöihin.<br/><strong>3,5–3,9 tähteä:</strong>Hyvät tilat merkittävillä rajoituksilla; vaatii huolellisen mukavuuden tarkistamisen.<br/><strong>Alle 3,5 tähteä:</strong>Jatka varovasti; voi olla merkittäviä yhteysongelmia.</p>
 </div>
 </div>
-<div class="tip-card">
-<h4>Tarkista analyysin edut, kun varaat meiltä</h4>
-<ul>
-<li><strong>Vahvistettu palaute:</strong>Asiantuntijaanalyysi todellisista käyttäjäarvosteluista, jotka on suodatettu valokuvauskohtaisten tarpeiden ja viimeaikaisten kokemusten perusteella</li>
-<li><strong>Kuvion tunnistus:</strong>Ohjeita johdonmukaisten vahvuuksien ja heikkouksien tunnistamiseen useiden arviointialustojen välillä</li>
-<li><strong>Punaisen lipun tunnistus:</strong>Strategiat väärennettyjen arvostelujen, vanhentuneiden tietojen tai tilan laatuun vaikuttavien hallintomuutosten havaitsemiseksi</li>
-<li><strong>Valokuvauksen priorisointi:</strong>Kehys tarkastelutekijöiden painottamiseen valokuvauksen työnkulkuun ja laitetarpeisiisi perustuen</li>
-</ul>
-<a class="booking-cta" href="/fi/tours"><i class="fas fa-star-half-alt"></i>Varaa arvostelun vahvistama yhteistyökierros</a>
-</div>
-</div>
-<!-- Chapter 5: Photography-Friendly Coworking Features -->
-<h2>Luku 5: Valokuvausystävälliset työskentelyominaisuudet - Kirja viihtyisyyden optimoinnin ohjeilla</h2>
+<h2 id="amenities">Luku 5: Valokuvausystävälliset työskentelyominaisuudet</h2>
 <p>Kaikkia työskentelytiloja ei ole luotu yhtäläisiksi valokuvaukseen keskittyvää etätyötä varten. Tässä luvussa esitellään valokuvauksen työnkulkuja tukevat keskeiset mukavuudet ja ominaisuudet asiantuntijoiden vahvistusstrategioiden avulla.</p>
-<div class="service-category category-ratings">
-<h4><i class="fas fa-camera"></i>Ammattimainen viihtyisyysanalyysi</h4>
-<div class="coworking-widget">
-<h4>Tärkeimmät valokuvaustyöskentelymahdollisuudet</h4>
-<div class="coworking-list">
-<p><strong>Laitteiden säilytys:</strong>Turvalliset kaapit tai erillinen säilytystila kameroille, objektiiveille, jalustalle ja tarvikkeille – kriittistä arvokkaiden varusteiden suojaamisessa</p>
-<p><strong>Suuret latausnopeudet:</strong>Vähintään 10+ Mbps lähetysnopeus suurien RAW-tiedostojen lähettämiseen asiakkaille; Yli 20 Mbps tehokkaaseen työnkulkuun</p>
-<p><strong>Joustavat aukioloajat:</strong>24/7 pääsy tai pidennetyt tunnit kultaisen tunnin kuvausaikataulujen ja editointiistuntojen mukaan</p>
-<p><strong>Luova yhteisö:</strong>Verkostoidu muiden valokuvaajien ja luovien tekijöiden kanssa yhteistyötä, sijaintivinkkejä ja taitojen jakamista varten</p>
-<p><strong>Varavirta:</strong>Generaattori- tai UPS-järjestelmät estämään työn menetys Egyptin satunnaisten virranvaihteluiden aikana</p>
-<p><strong>Editointiasemat:</strong>Värikalibroidut näytöt ja ergonomiset asetukset ammattimaiseen valokuvien käsittelyyn</p>
-<p><strong>Tulostuspalvelut:</strong>Tulostus paikan päällä tai yhteistyökumppanien kanssa asiakasvedoksia, portfolioita tai näyttelyvalmisteluja varten</p>
-</div>
-<p class="coworking-disclaimer">Kaikki kierrokset sisältävät viihtyisyyden vahvistusohjeet, jotka auttavat sinua tunnistamaan erityistä valokuvaustyönkulkuasi tukevat yhteistyötilat.</p>
-</div>
-<h4>Viihtyisyyden vahvistusstrategiat valokuvaajille</h4>
-<ul>
-<li><strong>Vierailua edeltävä vahvistus:</strong>Ota yhteyttä suoraan tiloihin vahvistaaksesi valokuvauskohtaiset mukavuudet ennen varausta; pyydä kuvia varastoalueista ja muokkauspisteistä</li>
-<li><strong>Nopeustestin dokumentaatio:</strong>Pyydä viimeisimmät nopeustestin tulokset tyypillisinä työaikoinasi; Tarkista latausnopeudet erityisesti tiedostojen siirtoa varten</li>
-<li><strong>Yhteisön arviointi:</strong>Vieraile tiloissa eri aikoina arvioimassa luovan yhteisön tunnelmaa ja valokuvaajan läsnäoloa</li>
-<li><strong>Varmuuskopiointisuunnittelu:</strong>Varmista varavirta- ja liitäntävaihtoehdot kriittisten töiden määräaikojen ja laitteiden suojauksen kannalta</li>
-<li><strong>Sopimuksen selkeys:</strong>Varmista, että vuokrasopimukset sallivat valokuvauslaitteiden säilytyksen ja editointityöt käytäntöjen ristiriitojen välttämiseksi</li>
+<div class="callout callout-purple">
+<h4 style="color:var(--c-ac-rose)"><i aria-hidden="true" class="fas fa-camera"></i>Tärkeimmät valokuvaustyöskentelymahdollisuudet</h4>
+<ul class="space-list">
+<li><strong>Laitteiden varastointi</strong><br/>Turvalliset kaapit tai oma säilytystila kameroille, objektiiveille, jalustoille ja lisävarusteille – tärkeitä arvokkaiden varusteiden suojaamisessa.</li>
+<li><strong>Suuret latausnopeudet</strong><br/>Vähintään 10+ Mbps lähetysnopeus suurien RAW-tiedostojen lähettämiseen asiakkaille; Yli 20 Mbps tehokkaaseen työnkulkuun.</li>
+<li><strong>Joustavat aukioloajat</strong><br/>24/7 pääsy tai pidennetyt tunnit kultaisen tunnin kuvausaikataulujen ja editointiistuntojen mukaan.</li>
+<li><strong>Luova yhteisö</strong><br/>Verkostoidu muiden valokuvaajien ja luovien tekijöiden kanssa yhteistyötä, sijaintivinkkejä ja taitojen jakamista varten.</li>
+<li><strong>Varavirta</strong><br/>Generaattori- tai UPS-järjestelmät estämään työn menetys Egyptin satunnaisten virranvaihteluiden aikana.</li>
+<li><strong>Asemien muokkaaminen</strong><br/>Värikalibroidut näytöt ja ergonomiset asetukset ammattimaiseen valokuvien käsittelyyn.</li>
+<li><strong>Tulostuspalvelut</strong><br/>Tulostus paikan päällä tai yhteistyökumppanien kanssa asiakasvedoksia, portfolioita tai näyttelyvalmisteluja varten.</li>
 </ul>
-<div class="tip-card">
-<h4>Palvelujen optimoinnin edut, kun varaat meiltä</h4>
+</div>
+<h3>Viihtyisyyden vahvistusstrategiat valokuvaajille</h3>
 <ul>
-<li><strong>Ennakkovarmennetut mukavuudet:</strong>Asiantuntijavahvistus valokuvauskohtaisista ominaisuuksista suositelluissa coworking-tiloissa ennen saapumistasi</li>
-<li><strong>Työnkulun integrointi:</strong>Ohjeita etätyöaikataulusi jäsentämiseen tuottavuuden ja valokuvausmahdollisuuksien maksimoimiseksi</li>
-<li><strong>Yhteisön pääsy:</strong>Johdatus coworking-tiloihin aktiivisten valokuvaajayhteisöjen kanssa yhteistyötä ja sijainnin jakamista varten</li>
-<li><strong>Laitteen suojaus:</strong>Strategiat arvokkaiden valokuvausvarusteiden turvaamiseksi jaetuissa työtiloissa</li>
+<li><strong>Vierailua edeltävä vahvistus:</strong>Ota yhteyttä suoraan tiloihin vahvistaaksesi valokuvauskohtaiset mukavuudet ennen varausta; pyydä kuvia varastoalueista ja muokkauspisteistä.</li>
+<li><strong>Nopeustestin dokumentaatio:</strong>Pyydä viimeisimmät nopeustestin tulokset tyypillisinä työaikoinasi; Tarkista latausnopeudet erityisesti tiedostojen siirtoa varten.</li>
+<li><strong>Yhteisön arviointi:</strong>Vieraile tiloissa eri aikoina arvioimassa luovan yhteisön tunnelmaa ja valokuvaajan läsnäoloa.</li>
+<li><strong>Varmuuskopiointisuunnittelu:</strong>Varmista varavirta- ja liitäntävaihtoehdot kriittisten töiden määräaikojen ja laitteiden suojauksen kannalta.</li>
+<li><strong>Sopimuksen selkeys:</strong>Varmista, että vuokrasopimukset sallivat valokuvauslaitteiden säilytyksen ja editointityöt käytäntöjen ristiriitojen välttämiseksi.</li>
 </ul>
-<a class="booking-cta" href="/fi/tours"><i class="fas fa-camera"></i>Varaa mukavuuteen optimoitu työskentelykierros</a>
-</div>
-</div>
-<!-- Chapter 6: Best Coworking Strategies by Photographer Type -->
-<h2>Luku 6: Optimaaliset yhteistyöstrategiat valokuvaajatyypin mukaan – Varaa täydellinen työtilakokemuksesi</h2>
+<h2 id="strategy">Luku 6: Optimaaliset yhteistyöstrategiat valokuvaajatyypin mukaan</h2>
 <p>Eri valokuvauksen erikoisalat vaativat räätälöityjä yhteistyöhön liittyviä lähestymistapoja. Kiertueemme tarjoavat räätälöityjä työtilastrategioita, jotka perustuvat valokuvaukseen, asiakkaiden tarpeisiin ja luovaan työnkulkuun.</p>
-<div class="service-category category-ratings">
-<h4><i class="fas fa-route"></i>Kiertuekohtaiset työskentelysuositukset</h4>
-<div class="table-wrapper">
-<table class="coworking-table">
+<div class="table-scroll">
+<table class="data-table">
+<caption>Kiertuekohtaiset työskentelysuositukset</caption>
 <thead>
 <tr>
 <th>Valokuvaajan tyyppi</th>
 <th>Optimaalinen yhteistyöstrategia</th>
 <th>Tärkeimmät mukavuudet</th>
-<th>Varaa tämä kiertue</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Matkailu/dokumentti</strong></td>
 <td>Kairon tukikohta (kreikan kampus) ja strategiset Aleksandrian laajennukset</td>
-<td>Suuret latausnopeudet suuriin tiedostojen siirtoihin, joustavat työajat kultaisen tunnin kuvaamiseen, luova yhteisö sijaintivinkkejä varten</td>
-<td><a href="/fi/tour-egypt-discovery-7day">7 päivän seikkailu</a></td>
+<td>Suuret latausnopeudet suuriin tiedostojen siirtoihin, joustavat työajat kultaisen tunnin kuvaamiseen</td>
 </tr>
 <tr>
-<td><strong>Kaupallinen/Toimituksellinen</strong></td>
+<td><strong>Kaupallinen/toimituksellinen</strong></td>
 <td>Kairo (The District/New Cairo) asiakastapaamisiin ja luotettavaan infrastruktuuriin</td>
-<td>Ammattimaiset kokoushuoneet, varavirta määräaikakriittiseen työhön, asiakasesitysominaisuudet, laitteiden säilytys</td>
-<td><a href="/fi/tour-cairo-giza-2day">Kairo &amp; Giza 2 päivää</a></td>
+<td>Ammattimaiset kokoushuoneet, varavirtaa määräaikakriittiseen työhön</td>
 </tr>
 <tr>
 <td><strong>Kuvataide/maisema</strong></td>
 <td>Alexandria (Montaza Coworking) Välimeren näkymiin, joissa on vahvistettu yhteys</td>
-<td>Kultaisen tunnin ajoituksen joustavuus, värikalibroidut muokkausasemat, rannikkokuvaus, luova inspiraatio</td>
-<td><a href="/fi/tour-pyramids-private">Yksityiset pyramidit</a></td>
+<td>Kultaisen tunnin ajoituksen joustavuus, värikalibroidut editointiasemat</td>
 </tr>
 <tr>
 <td><strong>Vedenalainen/meri</strong></td>
 <td>Hurghada (Red Sea Hub) sukellusmahdollisuuksiin varusteiden kuivaustiloilla</td>
-<td>Märkävarusteiden kuivaus/säilytys, merivalokuvaajayhteisö, pääsy Punaisenmeren sijaintiin, joustavat työajat sukellusaikatauluille</td>
-<td><a href="/fi/tour-egypt-discovery-7day">7 päivän seikkailu</a></td>
+<td>Laitteiden kuivaus/säilytys märkävarusteille, merivalokuvaajille</td>
 </tr>
 <tr>
 <td><strong>Pariskunta/matkaduo</strong></td>
 <td>Koordinoitu coworking-strategia ja yhteinen työtilasuunnittelu</td>
-<td>Kahden työaseman asetukset, jaettu laitteiden tallennustila, yhteiskäyttöiset muokkaustilat, pariskunnille ystävällinen yhteisö</td>
-<td><a href="/fi/honeymoon-tours">Honeymoon Tours</a></td>
+<td>Kahden työaseman asetukset, jaettu laitteiden tallennustila, yhteiskäyttöiset muokkaustilat</td>
 </tr>
 <tr>
 <td><strong>Perhevalokuvaus</strong></td>
 <td>Perheystävällinen yhteistyö, jossa koulutus ja yhteydet ovat tasapainossa</td>
-<td>Lapsille turvalliset ympäristöt, joustavat perhekuvausaikataulut, koulutusintegraatio, perheystävällinen yhteisö</td>
-<td><a href="/fi/family-tours">Perhematkat</a></td>
+<td>Lapsille turvalliset ympäristöt, joustavat aikataulut perhekuvaukseen</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="advice-box">
-<h3>Miksi valita Egyptin valokuvausmatkat yhteistyöstrategialle?</h3>
-<ul>
-<li><strong>Henkilökohtainen arviointi:</strong>Matkaa edeltävä valokuvausalan, asiakkaan tarpeiden ja työnkulkujen arviointi optimaalisen yhteistyöstrategian suosittelemiseksi</li>
-<li><strong>Retkikohtaiset ohjeet:</strong>Räätälöidyt coworking-strategiat kunkin matkareitin ainutlaatuisille paikoille ja mukavuusvaatimuksille</li>
-<li><strong>Mukautuva tuki:</strong>Coworking-konsultointi kiertueella ja mukautuvat strategiat muuttuviin olosuhteisiin tai odottamattomiin mahdollisuuksiin</li>
-<li><strong>Ammattimainen pääsy:</strong>Kumppanuudet valokuvausmatkoista kokeneiden coworking-tilan johtajien kanssa, jotka ymmärtävät etätyön erityistarpeita</li>
-</ul>
-<a class="booking-cta" href="/fi/tours"><i class="fas fa-cogs"></i>Varaa räätälöity työkokemus</a>
-</div>
-</div>
-<!-- Chapter 7: Real Traveler Coworking Experiences -->
-<h2>Luku 7: Real Traveler Coworking -arvostelut – Varaa itsevarmasti</h2>
+<h2 id="reviews">Luku 7: Real Traveler Coworking -arvostelut</h2>
 <p>Opi valokuvaajilta, jotka optimoivat Egyptin yhteistyökokemuksensa Egypt Photography Toursin asiantuntijaohjeiden avulla vuosina 2025–2026.</p>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">NK</div>
-<div class="reviewer-info">
-<h4>Nina K., matkavalokuvaaja</h4>
-<p>Vieraillut: lokakuussa 2025 | Painopiste: Kairon coworking-tukikohta</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<span style="margin-left: 4px; color: #6b7280;">5/5</span>
+<div class="callout callout-purple" style="padding:20px 22px">
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(139,92,246,.2)">
+<span aria-hidden="true" style="width:48px;height:48px;border-radius:50%;background:var(--c-ac-rose);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0">NK</span>
+<span>
+<strong style="display:block;color:var(--c-dark)">Nina K., matkavalokuvaaja</strong>
+<span style="font-size:12.5px;color:var(--c-muted)">Vieraillut: lokakuussa 2025 | Painopiste: Kairon coworking-tukikohta</span>
+</span>
+<span aria-label="Rated 5 out of 5 stars" style="margin-left:auto;color:var(--c-gold-d);font-size:13px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
 </div>
+<p style="margin:0">"Egypt Photography Toursin työskentelytilaarvostelut olivat oivallisia! He suosittelivat Kairossa sijaitsevaa GEEK-kampusta valokuvaustarpeideni perusteella – nopea internetyhteys, laitevarasto ja luova yhteisö. Todelliset käyttäjäarviot auttoivat minua välttämään turistiansa ja löytämään työtilan, joka todella tuki etätyötäni ja valokuvaustavoitteitani."</p>
 </div>
+<div class="callout callout-purple" style="padding:20px 22px">
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(139,92,246,.2)">
+<span aria-hidden="true" style="width:48px;height:48px;border-radius:50%;background:var(--c-ac-rose);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0">TB</span>
+<span>
+<strong style="display:block;color:var(--c-dark)">Thomas B., kaupallinen valokuvaaja</strong>
+<span style="font-size:12.5px;color:var(--c-muted)">Vieraillut: joulukuussa 2025 | Painopiste: Alexandrian rannikkoyhteistyö</span>
+</span>
+<span aria-label="Rated 4.5 out of 5 stars" style="margin-left:auto;color:var(--c-gold-d);font-size:13px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
 </div>
-<div class="review-content">
-<p><strong>"Egypt Photography Toursin työskentelytilaarvostelut olivat oivallisia! He suosittelivat Kairossa sijaitsevaa GEEK-kampusta valokuvaustarpeideni perusteella – nopea internetyhteys, laitteiden säilytys ja luovien henkilöiden yhteisö. Todelliset käyttäjäarviot auttoivat minua välttämään turistiansa ja löytämään työtilan, joka todella tuki etätyötäni ja valokuvaustavoitteitani. Heidän varmistusprosessinsa antoi minulle varmuuden tehdä varaukseni varmasti.<a href="/fi/tours">Varaa kokemuksesi tästä</a>älykkään Egyptin yhteistyön suunnitteluun."</strong></p>
+<p style="margin:0">"Egypt Photography Toursin varmennetut työskentelyarviot säästivät minulta tuntikausia tutkimustyötä. He testasivat internetin nopeuksia suositelluissa tiloissa Aleksandriassa ja Hurghadassa, mikä varmisti, että pystyin käsittelemään videopuheluita ja suuria tiedostojen latauksia samalla, kun kuvasin Egyptin rannikkoa. Heidän valokuvausystävällisen viihtyisyyden todentaminen oli korvaamatonta."</p>
 </div>
+<div class="callout callout-purple" style="padding:20px 22px">
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(139,92,246,.2)">
+<span aria-hidden="true" style="width:48px;height:48px;border-radius:50%;background:var(--c-ac-rose);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0">RK</span>
+<span>
+<strong style="display:block;color:var(--c-dark)">Ryan K., vedenalainen valokuvaaja</strong>
+<span style="font-size:12.5px;color:var(--c-muted)">Vieraillut: tammikuussa 2026 | Painopiste: Hurghada-sukellusyhteistyö</span>
+</span>
+<span aria-label="Rated 5 out of 5 stars" style="margin-left:auto;color:var(--c-gold-d);font-size:13px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
 </div>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">TB</div>
-<div class="reviewer-info">
-<h4>Thomas B., kaupallinen valokuvaaja</h4>
-<p>Vieraillut: joulukuussa 2025 | Painopiste: Alexandrian rannikkoyhteistyö</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star-half-alt"></i>
-<span style="margin-left: 4px; color: #6b7280;">4,5/5</span>
+<p style="margin:0">"Egypt Photography Toursin Hurghada-coworking-opastus muutti Red Sea -valokuvausprojektini. He yhdistivät minut Red Sea Hubiin, jossa oli kuivaustilat vedenalaisille varusteilleni, sekä merivalokuvaajien yhteisöön, joka jakoi sijaintivinkkejä."</p>
 </div>
-</div>
-</div>
-<div class="review-content">
-<p><strong>"Egypt Photography Toursin todennetut työskentelyarviot säästivät minulta tuntikausia tutkimustyötä. He testasivat internetin nopeuksia suositelluissa tiloissa Aleksandriassa ja Hurghadassa, mikä varmisti, että pystyin käsittelemään videopuheluita ja suuria tiedostojen latauksia valokuvattaessa Egyptin rannikkoa. Heidän valokuvausystävällisen viihtyisyyden todentaminen oli korvaamaton – he vahvistivat laitteiden säilytyksen ja joustavat aukioloajat ennen sitoutumistani.<a href="/fi/tour-egypt-discovery-7day">Varaa 7 päivän seikkailu</a>asiantuntevaa työskentelytilaohjausta varten."</strong></p>
-</div>
-</div>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">RK</div>
-<div class="reviewer-info">
-<h4>Ryan K., vedenalainen valokuvaaja</h4>
-<p>Vieraillut: tammikuussa 2026 | Painopiste: Hurghada-sukellusyhteistyö</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<span style="margin-left: 4px; color: #6b7280;">5/5</span>
-</div>
-</div>
-</div>
-<div class="review-content">
-<p><strong>"Egypt Photography Toursin Hurghada-työskentelyopas muutti Red Sea -valokuvausprojektiani. He yhdistivät minut Red Sea Hubiin, jossa oli kuivaustilat vedenalaisille kalustoilleni, sekä merivalokuvaajien yhteisöön, joka jakoi sijaintivinkkejä. Heidän nopeustestauksensa varmisti, että pystyin lataamaan suuria vedenalaisia tiedostoja asiakkaille, ja heidän joustava tuntikäytäntönsä vastasi sukellusaikatauluani.<a href="/fi/tour-pyramids-private">Varaa yksityinen pyramidikierros</a>asiantuntevaa erityistä coworking-opastusta."</strong></p>
-</div>
-</div>
-<!-- Chapter 8: Why Choose Egypt Photography Tours - Strong Conversion Focus -->
-<h2>Luku 8: Miksi varata Coworking-opastettuja kierroksia Egyptin valokuvausmatkoilla</h2>
+<h2 id="why">Luku 8: Miksi varata Coworking-opastettuja kierroksia Egyptin valokuvausmatkoilla</h2>
 <p>Riippumaton Egyptin yhteistyön suunnittelu on mahdollista, mutta vaatii syvää paikallisen infrastruktuurin tuntemusta, viihtyisyyden varmistamista ja yhteisön integraatiota. Erikoistuneet käyttäjät poistavat epävarmuuden ja maksimoivat yhteistyön arvon samalla kun varmistavat kattavat, valokuvaukseen optimoidut työtilastrategiat.</p>
-<div class="trust-section">
-<div class="container">
-<h2>Egyptin valokuvausmatkat – työtila-asiantuntijasi</h2>
-<div class="trust-grid">
-<div class="trust-card">
-<span class="trust-icon">🏢</span>
-<h3>Verified Space Arvostelut</h3>
-<p>Tarjoamme henkilökohtaista työtila-analyysiä todellisilla käyttäjäarvioilla ja valokuvauskohtaisen viihtyisyyden varmennuksella, joka maksimoi etätyön luotettavuuden ja minimoi työtilan riskit.<a href="/fi/tours">Varaa kokemuksesi tästä</a>.</p>
+<div class="development-grid">
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-building"></i></span>
+<div class="exp-title">Verified Space Arvostelut</div>
+<div class="exp-desc">Henkilökohtainen työtila-analyysi todellisilla käyttäjäarvioilla ja valokuvauskohtaisella viihtyisyyden varmistuksella, joka maksimoi etätyön luotettavuuden ja minimoi työtilan riskit.</div>
 </div>
-<div class="trust-card">
-<span class="trust-icon">⚡</span>
-<h3>Yhteyden vahvistus</h3>
-<p>Asiantunteva opastuksemme sisältää matkaa edeltävän Internet-nopeuden testauksen ja varayhteyssuunnittelun, joka varmistaa, että työtilasi tukee sekä etätyön vaatimuksia että valokuvauksen työnkulkutarpeita.<a href="/fi/tours">Varaa kokemuksesi tästä</a>.</p>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-bolt"></i></span>
+<div class="exp-title">Yhteyden vahvistus</div>
+<div class="exp-desc">Asiantunteva opastus sisältää matkaa edeltävän Internet-nopeuden testauksen ja varayhteyden suunnittelun, joka varmistaa, että yhteistyötilasi tukee sekä etätyön vaatimuksia että valokuvauksen työnkulkutarpeita.</div>
 </div>
-<div class="trust-card">
-<span class="trust-icon">🤝</span>
-<h3>Valokuvausyhteisön käyttöoikeus</h3>
-<p>Yhdistämme sinut coworking-tiloihin ja expat-yhteisöihin, jotka ymmärtävät valokuvaajakohtaisia tarpeita, mikä parantaa sekä etätyösi tuottavuutta että luovia mahdollisuuksia Egyptissä oleskelusi aikana.<a href="/fi/tours">Varaa kokemuksesi tästä</a>.</p>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-handshake"></i></span>
+<div class="exp-title">Valokuvausyhteisön käyttöoikeus</div>
+<div class="exp-desc">Yhdistämme sinut coworking-tiloihin ja expat-yhteisöihin, jotka ymmärtävät valokuvaajakohtaisia tarpeita, mikä parantaa sekä etätyön tuottavuutta että luovia mahdollisuuksia Egyptissä oleskelusi aikana.</div>
 </div>
 </div>
-</div>
-</div>
-<!-- Tour Integration Section -->
-<div class="tour-integration">
 <h3>Varaa Coworking-ohjattu valokuvauskokemus jo tänään</h3>
-<p>Jokaisella tarjoamallamme kiertueella on asiantuntija coworking-arvosteluja, tarkistettuja käyttäjäarvioita ja valokuvausystävällisiä viihtyisohjeita stressittömään Egyptiin matkustamiseen.<strong><a href="/fi/tours">Varaa kokemuksesi tästä</a></strong>kokea Egypti älykkään, valokuvaukseen optimoidun yhteistyösuunnittelun avulla.</p>
-<div class="tour-recommendation">
-<span class="tour-badge">SUOSITTUIN</span>
+<p>Jokaisella tarjoamallamme kiertueella on asiantuntija coworking-arvosteluja, tarkistettuja käyttäjäarvioita ja valokuvausystävällisiä viihtyisohjeita stressittömään Egyptiin matkustamiseen.</p>
+<div class="tour-rec-grid">
+<div class="tour-rec">
+<span class="rec-badge">Suosituin</span>
 <h4><a href="/fi/tour-pyramids-private">Yksityinen pyramidivalokuvauskierros</a></h4>
-<p><strong>Yhteistyön kohokohdat:</strong>Alexandria (Montaza Coworking) -yhteyden varmistus Välimeren näkymistä ja rannikkokuvausmahdollisuuksista. Täydellinen kerran elämässä otettavien pyramidikuvien ottamiseen asiantuntevan työskentelyohjauksen ja taidevalokuvauksen optimoinnin avulla.</p>
-<a class="booking-cta" href="/fi/tour-pyramids-private"><i class="fas fa-pyramid"></i>Varaa yksityinen pyramidikierros</a>
+<p><strong>Yhteistyön kohokohdat:</strong>Alexandria (Montaza Coworking) -yhteyden varmistus Välimeren näkymistä ja rannikkokuvausmahdollisuuksista. Täydellinen kertaluonteisten pyramidikuvien ottamiseen taidevalokuvauksen optimoinnilla.</p>
+<a class="tour-rec-cta" href="/fi/tour-pyramids-private">Näytä tämä kiertue<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
-<div class="tour-recommendation">
-<span class="tour-badge">PARAS ARVO</span>
+<div class="tour-rec">
+<span class="rec-badge">Paras arvo</span>
 <h4><a href="/fi/tour-cairo-giza-2day">Kairo &amp; Giza 2 päivän valokuvakierros</a></h4>
-<p><strong>Yhteistyön kohokohdat:</strong>Kairo (Kreikan kampus) vahvisti arvostelut luovaan yhteisöön ja katukuvaukseen. Ihanteellinen matkailijoille, jotka haluavat poikkeuksellista Egyptin valokuvausta älykkäällä ja luotettavalla yhteistyöinfrastruktuurilla.</p>
-<a class="booking-cta" href="/fi/tour-cairo-giza-2day"><i class="fas fa-city"></i>Varaa matka Kairoon ja Gizaan</a>
+<p><strong>Yhteistyön kohokohdat:</strong>Kairo (Kreikan kampus) vahvisti arvostelut luovaan yhteisöön ja katukuvaukseen. Ihanteellinen matkailijoille, jotka haluavat poikkeuksellista Egyptin valokuvausta älykkäällä yhteistyöinfrastruktuurilla.</p>
+<a class="tour-rec-cta" href="/fi/tour-cairo-giza-2day">Näytä tämä kiertue<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
-<div class="tour-recommendation">
-<span class="tour-badge">TÄRKEÄ KOKEMUS</span>
+<div class="tour-rec">
+<span class="rec-badge">Lopullinen kokemus</span>
 <h4><a href="/fi/tour-egypt-discovery-7day">7 päivän Egyptin valokuvaseikkailu</a></h4>
-<p><strong>Yhteistyön kohokohdat:</strong>Monen kaupungin yhteistyöstrategia Kairon tukikohdan ja Alexandria/Hurghada-laajennusten kanssa kattaviin etätyö- ja valokuvausmahdollisuuksiin. Täydellinen seikkailunhakijoille, jotka haluavat Egyptin parasta asiantuntevan coworking-suunnittelun avulla.</p>
-<a class="booking-cta" href="/fi/tour-egypt-discovery-7day"><i class="fas fa-route"></i>Kirja 7 päivän seikkailu</a>
+<p><strong>Yhteistyön kohokohdat:</strong>Monen kaupungin yhteistyöstrategia Kairon tukikohdan ja Alexandria/Hurghada-laajennusten kanssa kattaviin etätyö- ja valokuvausmahdollisuuksiin.</p>
+<a class="tour-rec-cta" href="/fi/tour-egypt-discovery-7day">Näytä tämä kiertue<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
-<div class="tour-recommendation">
+<div class="tour-rec">
 <h4><a href="/fi/tour-alexandria">Alexandrian valokuvauspäiväretki</a></h4>
-<p><strong>Yhteistyön kohokohdat:</strong>Välimeren rannikkoyhteistyö, vahvistettu kuituinternet ja ulkomaalaisten yhteisön integraatio. Täydellinen Välimeren rannikkovalokuvauksen ystäville älykkäillä ja luotettavilla yhteistyöstrategioilla.</p>
-<a class="booking-cta" href="/fi/tour-alexandria"><i class="fas fa-umbrella-beach"></i>Varaa Aleksandrian päiväretki</a>
+<p><strong>Yhteistyön kohokohdat:</strong>Välimeren rannikkoyhteistyö, vahvistettu kuituinternet ja ulkomaalaisten yhteisön integraatio. Täydellinen Välimeren rannikkovalokuvauksen ystäville.</p>
+<a class="tour-rec-cta" href="/fi/tour-alexandria">Näytä tämä kiertue<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
-<div class="tour-recommendation">
+<div class="tour-rec">
 <h4><a href="/fi/honeymoon-tours">Honeymoon Photography Tours</a></h4>
-<p><strong>Yhteistyön kohokohdat:</strong>Koordinoitu coworking-strategia ja yhteinen työtilasuunnittelu parivalokuvaajille. Erikoispaketit pariskunnille, jotka etsivät romanttisia Egyptin valokuvauskokemuksia älykkäällä coworking-integraatiolla.</p>
-<a class="booking-cta" href="/fi/honeymoon-tours"><i class="fas fa-heart"></i>Varaa Honeymoon Tour</a>
+<p><strong>Yhteistyön kohokohdat:</strong>Koordinoitu coworking-strategia ja yhteinen työtilasuunnittelu parivalokuvaajille. Erikoispaketit pariskunnille, jotka etsivät romanttisia Egyptin valokuvauselämyksiä.</p>
+<a class="tour-rec-cta" href="/fi/honeymoon-tours">Näytä tämä kiertue<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
-<div class="tour-recommendation">
+<div class="tour-rec">
 <h4><a href="/fi/family-tours">Perhekuvausmatkat</a></h4>
-<p><strong>Yhteistyön kohokohdat:</strong>Perheystävällinen työskentely yhdessä koulutuksen ja liitettävyyden tasapainon kanssa monen sukupolven valokuvauspaimentolaisille. Suunniteltu lasten kanssa matkustaville, jotka etsivät hauskoja ja opettavia valokuvauskokemuksia älykkään perhesuunnittelun avulla.</p>
-<a class="booking-cta" href="/fi/family-tours"><i class="fas fa-users"></i>Varaa perhekierros</a>
-</div>
-<div style="text-align: center; margin-top: 40px;">
-<a class="cta-button" href="/fi/tours">
-<i class="fas fa-calendar-check"></i>Katso kaikki matkat ja varaa nyt</a>
+<p><strong>Yhteistyön kohokohdat:</strong>Perheystävällinen työskentely yhdessä koulutuksen ja liitettävyyden tasapainon kanssa monen sukupolven valokuvauspaimentolaisille. Suunniteltu lasten kanssa matkustaville, jotka etsivät hauskoja ja opettavia valokuvauskokemuksia.</p>
+<a class="tour-rec-cta" href="/fi/family-tours">Näytä tämä kiertue<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
 </div>
-<!-- Chapter 9: Final Preparation Checklist with Strong CTA -->
-<h2>Luku 9: Viimeinen valmistelu - Varaa yhteistyöopastettu seikkailusi tänään</h2>
+<div style="text-align:center;margin:32px 0">
+<a class="btn btn-dark btn-lg" href="/fi/tours"><i aria-hidden="true" class="fas fa-calendar-check"></i>Katso kaikki matkat ja varaa nyt</a>
+</div>
+<h2 id="checklist">Luku 9: Viimeinen valmistelu – Varaa yhteistyöopastettu seikkailusi tänään</h2>
 <p>Käytä tätä vahvistettua aikajanaa varmistaaksesi onnistuneet, yhteistyöhön optimoidut valokuvauskokemukset Egyptissä Egypt Photography Toursin kanssa.</p>
-<div class="coworking-checklist">
-<h4>Ennen kuin varaat</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Vieraile<a href="/fi/tours">Egyptin valokuvamatkat</a>selata coworking-ohjattuja kokemuksia ja valita haluamasi kiertue</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Valitse yksityisten pyramidien, Kairon ja Gizan 2 päivän, 7 päivän seikkailun, Alexandrian päiväretken, häämatkan tai perheretkien välillä työskentelyn mieltymystesi ja valokuvaustavoitteidesi perusteella</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Ota yhteyttä tiimiimme saadaksesi räätälöityjä coworking-konsultaatioita ja mukautettuja viihtyisuuksia</div></div>
-<h4>Varauksen jälkeen</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Saat ammattivalokuvaajiltamme ja paikallisilta kumppaneiltamme yksityiskohtaisia työskentelyarvosteluja, liitettävyyden vahvistusstrategioita ja valokuvausmukavuutta koskevia ohjeita</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Valmistele etätyöasetelmasi asiantuntevan opastuksen avulla ja vältä työtilan yllätyksiä etukäteen suunnittelemalla</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Harjoittele integrointitekniikoita esimerkkiskenaarioiden kanssa ennen matkaasi saadaksesi itsevarmuutta ja tuottavuutta parantavaa valmistautumista</div></div>
-<h4>Kiertueesi aikana</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Noudata asiantuntijoiden ohjeita yhteistyöskentelyn optimoinnista, oikeasta aikataulusta ja yhteisön sitoutumisesta saadaksesi maksimaalisen etätyön arvon ja valokuvausmahdollisuudet</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Ikuista Egyptin kauneus etuoikeutetulla käyttöoikeudella ja asiantuntevalla ohjauksella, joka maksimoi luotettavan yhteistyöinfrastruktuurisi arvon</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Saat kiertoajelulla coworking-konsultaatiota ja mukautuvia strategioita muuttuviin olosuhteisiin ja odottamattomiin valokuvausmahdollisuuksiin</div></div>
+<div class="checklist-grid">
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-search"></i>Ennen kuin varaat</h4>
+<ul>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Vieraile<a href="/fi/tours">Egyptin valokuvamatkat</a>selata coworking-ohjattuja kokemuksia ja valita haluamasi kiertue</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Valitse yksityisten pyramidien, Kairon ja Gizan 2 päivän, 7 päivän seikkailun, Alexandrian päivämatkan, häämatkan tai perheretkien välillä</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Ota yhteyttä tiimiimme saadaksesi räätälöityjä coworking-konsultaatioita ja mukautettuja viihtyisuuksia</span></li>
+</ul>
 </div>
-<!-- TEXT-ONLY RELATED ARTICLES -->
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-clipboard-check"></i>Varauksen jälkeen</h4>
+<ul>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Saat yksityiskohtaisia työskentelyarvosteluja, liitettävyyden vahvistusstrategioita ja valokuvausmukavuutta koskevia ohjeita</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Valmistele etätyöasetelmasi asiantuntevan opastuksen avulla ja vältä työtilan yllätyksiä</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Harjoittele integraatiotekniikoita esimerkkiskenaarioiden avulla ennen matkaasi</span></li>
+</ul>
+</div>
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-laptop-code"></i>Kiertueesi aikana</h4>
+<ul>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Noudata asiantuntijoiden ohjeita yhteistyön optimoinnista, oikeasta aikataulusta ja yhteisön osallistumisesta</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Ikuista Egyptin kauneus etuoikeutetulla käyttöoikeudella ja asiantuntevalla ohjauksella, joka maksimoi yhteistyön arvon</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Saat kiertueella coworking-konsultaatiota ja mukautuvia strategioita muuttuviin olosuhteisiin</span></li>
+</ul>
+</div>
+</div>
+<div class="author-box">
+<span aria-hidden="true" class="author-avatar"><i class="fas fa-user-tie"></i></span>
+<div>
+<div class="author-box-name">Hossam</div>
+<div class="author-box-role">Ammattivalokuvaaja ja egyptiologi, Egyptin valokuvausmatkat</div>
+<p class="author-box-bio">Hossam on tarkastellut Egyptin coworking-maisemaa vuodesta 2015 lähtien yhdistämällä egyptiläisen koulutuksen todelliseen etätyökokemukseen auttaakseen digitaalisia nomadeja ja matkustavia valokuvaajia työskentelemään ja kuvaamaan saumattomasti ympäri Egyptiä.</p>
+</div>
+</div>
+<h2 id="faq">Usein kysytyt kysymykset</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Missä Kairon työskentelytilassa on paras internet valokuvaajille vuonna 2026?</summary>
+<div class="faq-answer">Perustuu vuoden 2026 vahvistettuihin käyttäjäarvioihin ja nopeustesteihin: 1) Kreikan kampus (keskusta): 4,8/5 arvio, 80-150 Mbps kuitu, valokuvauslaitteiden säilytys, luova yhteisö. 2) Piiri (Uusi Kairo): 4,7/5, 70-140 Mbps kuitu, varavirta, modernit tilat. 3) RiseUp Summit Hub (Zamalek): 4,6/5 luokitus, 60-130 Mbps kuitu, Niilin näkymät, verkkotapahtumat.</div>
+</details>
+<details class="faq-item">
+<summary>Soveltuvatko Alexandrian coworking-tilat etäkuvaustöihin?</summary>
+<div class="faq-answer">Kyllä, Alexandria tarjoaa erinomaisia ​​vaihtoehtoja: 1) Bibliotheca Alexandrina Innovation Station: 4,5/5 arvio, 50-120 Mbps kuitu. 2) Montaza Coworking: 4,4/5, 45-110 Mbps kuitu, Välimeren näkymät. 3) Alexandria Digital Hub: 4,3/5 luokitus, 40–100 Mbps kuitu, käynnistysyhteisö.</div>
+</details>
+<details class="faq-item">
+<summary>Mitä valokuvaamiseen sopivia mukavuuksia minun pitäisi etsiä Egyptin coworking-tiloista?</summary>
+<div class="faq-answer">Tärkeimmät mukavuudet: 1) Varusteiden säilytys: Turvalliset kaapit kameroille ja objektiiveille. 2) Suuri latausnopeus: 10+ Mbps lähetys suurten RAW-tiedostojen lähettämiseen. 3) Joustavat tunnit: 24/7 pääsy kultaisen tunnin kuvausaikatauluille. 4) Varavirta: Generaattori tai UPS-järjestelmä työn menettämisen estämiseksi.</div>
+</details>
+<details class="faq-item">
+<summary>Kuinka luotettavia ovat Egyptin työtilojen käyttäjäarviot?</summary>
+<div class="faq-answer">Käyttäjäarvioiden luotettavuus vaihtelee alustasta riippuen. Google-arvostelut ovat yleensä luotettavia, mutta niissä keskitytään etätyöntekijöiden viimeaikaisiin arvosteluihin. Coworker.com on erikoistunut. Facebook-ryhmät tarjoavat aitoa yhteisöpalautetta. Tarkistamme kaikki tilat valokuvauskohtaisiin tarpeisiin.</div>
+</details>
+<details class="faq-item">
+<summary>Mitkä ovat Egyptin coworking-tilojen tyypilliset hintaluokat?</summary>
+<div class="faq-answer">Egyptin coworking-hinnoittelu: Kairo: Kuumat pöydät 50-100 dollaria/kk, erilliset työpöydät 100-200 dollaria/kk. Alexandria: Kuumat työpöydät 40-80 dollaria/kk. Hurghada: Kuumat työpöydät 35-70 $/kk. Premium-tilat, joissa on valokuvausmahdollisuus, voivat veloittaa 20-30 % enemmän.</div>
+</details>
+</div>
 <h2>Aiheeseen liittyvää lukemista Egyptin valokuvausmatkat -blogista</h2>
 <p>Jatka Egyptin seikkailun suunnittelua muiden oppaiden avulla<a href="/fi/blog">Egyptin matkablogi</a>:</p>
 <div class="related-guides-grid">
@@ -967,7 +985,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 </div>
 </div>
 <div style="text-align:center;margin-top:28px">
-<a class="btn btn-outline-dark" href="/fi/blog" style="background: transparent; border: 2px solid var(--primary-dark); color: var(--primary-dark); padding: 12px 24px; border-radius: 30px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-blog"></i>Selaa kaikkia Egyptin matkaoppaita</a>
+<a class="btn btn-outline-dark" href="/fi/blog"><i aria-hidden="true" class="fas fa-blog"></i>Selaa kaikkia Egyptin matkaoppaita</a>
 </div>
 <!-- CONTACT FORM SECTION -->
 <section aria-labelledby="custom-h2-form" class="section section-accent" id="customize-trip">
@@ -979,7 +997,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 </div>
 <div class="trip-builder">
 <div class="trip-form-box">
-<h3 style="color:var(--primary-dark);margin-bottom:20px;font-size:20px">Lähetä matkapyyntösi</h3>
+<h3 style="color:var(--c-dark);margin-bottom:20px;font-size:20px">Lähetä matkapyyntösi</h3>
 <form aria-label="Custom Egypt tour request form" id="contactForm" novalidate="">
 <div class="form-row-2">
 <div class="form-row">
@@ -999,7 +1017,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 <div class="form-row">
 <label class="form-label" for="f-group">Ryhmän koko</label>
 <select class="form-select" id="f-group" name="group_size">
-<option value="">Valitse ryhmän koko…</option>
+<option value="">Valitse ryhmäkoko…</option>
 <option value="solo">Yksin matkustava</option>
 <option value="2">2 henkilöä (pari)</option>
 <option value="3-5">3-5 henkilöä</option>
@@ -1058,349 +1076,152 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 <span class="contact-card-icon">💬</span>
 <h3>WhatsApp meille nyt</h3>
 <p>Nopein tapa suunnitella Egyptin kiertue. Vastaamme 2 tunnin sisällä, 7 päivää viikossa, klo 8–22 Kairon aikaa.</p>
-<a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20a%20custom%20Egypt%20tour." rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:12px;background:#25D366;color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700" target="_blank">
+<a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20a%20custom%20Egypt%20tour." rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:12px" target="_blank">
 <i class="fab fa-whatsapp"></i>Chat WhatsAppissa</a>
-<p style="font-size:13px;color:#6b7280;text-align:center">+20 155 073 5673</p>
+<p style="font-size:13px;color:var(--c-muted);text-align:center">+20 155 073 5673</p>
 </div>
-<div class="contact-card" style="border-top:4px solid var(--accent-light)">
+<div class="contact-card" style="border-top:4px solid var(--c-gold)">
 <span class="contact-card-icon">✉️</span>
 <h3>Lähetä sähköpostia tiimillemme</h3>
 <p>Haluatko sähköpostin? Lähetä meille unelmiesi Egyptin matkasuunnitelma, niin vastaamme täydellisellä räätälöimällä tarjouksella 24 tunnin kuluessa.</p>
-<a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" style="width:100%;justify-content:center;margin-bottom:12px;background:var(--primary-dark);color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700">
+<a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" style="width:100%;justify-content:center;margin-bottom:12px">
 <i class="far fa-envelope"></i>Lähetä sähköposti</a>
-<p style="font-size:13px;color:#6b7280;text-align:center">info@egyptphotographytours.com</p>
+<p style="font-size:13px;color:var(--c-muted);text-align:center">info@egyptphotographytours.com</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Final CTA - Maximum Conversion Focus -->
-<div class="cta-section">
-<h2>Varaa coworking-ohjattu valokuvaseikkailu Egyptiin jo tänään</h2>
-<p>Egyptin valokuvataika elää sen ikonisissa paikoissa, elävässä kulttuurissa ja kultaisessa valossa. Näiden hetkien vangitseminen vaatii paitsi taitoa myös älykästä yhteistyön suunnittelua, luotettavaa liitettävyyttä ja ammattimaista ohjausta, joka varmistaa, että sijoituksesi tuottaa poikkeuksellisia valokuvaustuloksia ilman työskentelyn keskeytyksiä.</p>
-<p><strong>Älä anna coworking-epävarmuuden rajoittaa Egyptin valokuvauskokemustasi.</strong>Egypt Photography Tours tarjoaa asiantuntijoiden yhteistyötilaarvioita, vahvistettuja käyttäjäarvioita ja valokuvausystävällisiä viihtyisohjeita, jotka muuttavat työtilan suunnittelun stressaavasta strategiseksi, itsevarmaksi tutkimiseksi.</p>
-<p><strong>Jokainen kiertue sisältää:</strong>ammattimaiset valokuvauspalvelut, asiantuntija-egyptologien oppaat, mukautetut matkasuunnitelmat, yksityinen kuljetus, monikielinen tuki ja kattava coworking-opastus – varmistavat saumattoman ja korkeatasoisen kokemuksen.</p>
-<a class="cta-button" href="/fi/tours">
-<i class="fas fa-laptop-code"></i>Varaa opastettu työskentelykokemuksesi nyt</a>
-<p style="margin-top: 20px; font-size: 16px; opacity: 0.9;">
-<strong>Egyptin valokuvaretkien kohokohdat:</strong><br/>• Yksityinen pyramidivalokuvauskierros – Ota ammattivalokuvaajan kanssa kerran elämässään kuvia auringonnousun tai auringonlaskun aikaan asiantuntevan coworking-opastuksen ja taidevalokuvauksen optimoinnin avulla.<br/>• 2 päivän Kairo &amp; Giza Luxury Experience – Tutustu Grand Egyptian Museumiin, Islamic Kairoon, Khan El Khalili Bazaariin ja muihin älykkään coworking-suunnittelun ja vahvistettujen käyttäjäarvioiden avulla.<br/>• Alexandria Day Tour Kairosta – Tutustu Välimeren viehätysvoimaan opastetulla valokuvauksella Citadelissa, kirjastossa ja Cornichessa, rannikkoyhteistyötä ja älykkäitä etätyöstrategioita huomioiden.<br/>• 7 päivän Egyptin Discovery Tour – Ylellinen matka Kairosta Luxoriin, suunniteltu matkailijoille, jotka etsivät kulttuurista syvyyttä ja huippuluokan mukavuutta, kattavan coworking-optimoinnin ja usean kaupungin liitettävyyden suunnittelun.</p>
 </div>
+</section>
+<!-- FINAL CTA -->
+<section class="section section-gold">
+<div class="wrap text-c">
+<div class="eyebrow" style="background:rgba(26,32,44,.12);color:#1a202c;border-color:rgba(26,32,44,.2)">Työskentele ja ammu Egyptissä</div>
+<h2 style="color:var(--c-dark)">Varaa Coworking-ohjattu valokuvaseikkailu tänään</h2>
+<p class="sec-sub" style="color:rgba(26,32,44,.82)">Egyptin valokuvataika elää sen ikonisissa paikoissa, elävässä kulttuurissa ja kultaisessa valossa. Näiden hetkien vangitseminen vaatii paitsi taitoa myös älykästä yhteistyön suunnittelua, luotettavaa liitettävyyttä ja ammattimaista ohjausta, joka varmistaa, että sijoituksesi tuottaa poikkeuksellisia valokuvaustuloksia ilman työskentelyn keskeytyksiä.</p>
+<div class="btn-group mt-32" style="justify-content:center">
+<a class="btn btn-dark btn-lg" href="/fi/tours"><i aria-hidden="true" class="fas fa-laptop-code"></i>Varaa opastettu työskentelykokemuksesi</a>
+<a class="btn btn-outline-dark btn-lg" href="/fi/contact"><i aria-hidden="true" class="fas fa-comments"></i>Keskustele Coworking-asiantuntijan kanssa</a>
 </div>
 </div>
 </section>
 </main>
-<div aria-label="Back to top" class="back-to-top" id="backToTop" role="button" tabindex="0">
-<i class="fas fa-chevron-up"></i>
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer aria-label="Site footer" class="footer">
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<a aria-label="Egypt Photography Tours - Go to Homepage" class="logo" href="/fi/" style="margin-bottom:14px">
+<span aria-hidden="true" class="logo-mark"><i class="fas fa-camera-retro"></i></span>
+<div class="logo-copy"><span class="logo-name">Egyptin valokuvamatkat</span><span class="logo-tag">Yksityis- ja ryhmämatkat vuodesta 2015</span></div>
+</a>
+<p class="f-brand-desc">Egyptin johtava valokuvaukseen keskittynyt matkanjärjestäjä vuodesta 2015. Kulttuurin hallintaa, hetkien vangitsemista – digitaalisten paimentolaisten varmennettua coworking-opastusta.</p>
+<div class="social-row">
+<a aria-label="Facebook" class="social-btn" href="https://www.facebook.com/egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-facebook"></i></a>
+<a aria-label="Instagram" class="social-btn" href="https://www.instagram.com/hossam_artistic/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+<a aria-label="TikTok" class="social-btn" href="https://www.tiktok.com/@egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-tiktok"></i></a>
+<a aria-label="YouTube" class="social-btn" href="https://www.youtube.com/@Egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+<a aria-label="WhatsApp" class="social-btn" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
 </div>
-<!-- Cookie Consent Banner -->
-<div aria-labelledby="cookie-title" class="cookie-consent" id="cookieConsent" role="dialog">
-<p id="cookie-title"><strong>Käytämme evästeitä</strong>parantaaksesi kokemustasi ja analysoidaksesi liikennettä. Jatkamalla hyväksyt meidän<a href="/fi/privacy-policy" style="color:var(--accent-light);text-decoration:underline">Tietosuojakäytäntö</a>.</p>
-<button aria-label="Accept cookies" id="acceptCookies">Hyväksy</button>
 </div>
-<footer class="footer">
-<div class="container footer-content">
-<div class="footer-brand">
-<h3 class="footer-title">Egyptin valokuvamatkat</h3>
-<p class="footer-text">© <script>document.write(new Date().getFullYear())</script>Egyptin valokuvamatkat.</p>
-<p class="footer-text">Kaikki oikeudet pidätetään.</p>
-<p class="footer-text">Kulttuurin hallinta, hetkien vangitseminen.</p>
-</div>
-<div class="footer-section">
-<h4 class="footer-title">Pikalinkit</h4>
-<ul class="footer-links">
-<li><a href="/fi/">Kotiin</a></li>
-<li><a href="/fi/about">Tietoja meistä</a></li>
-<li><a href="/fi/tours">Matkamme</a></li>
-<li><a href="/fi/gallery">Galleria</a></li>
-<li><a href="/fi/resources">Resurssit</a></li>
-<li><a href="/fi/blog">Blogi</a></li>
-<li><a href="/fi/contact">Ota yhteyttä</a></li>
-<li><a href="/fi/faqs">UKK</a></li>
-<li><a href="/fi/privacy-policy">Tietosuojakäytäntö</a></li>
-<li><a href="/fi/terms">Palveluehdot</a></li>
+<div>
+<h3 class="f-h">Matkapaketit</h3>
+<ul class="f-links">
+<li><a href="/fi/tour-pyramids-private"><i aria-hidden="true" class="fas fa-chevron-right"></i>Pyramidit Photoshoot</a></li>
+<li><a href="/fi/tour-cairo-giza-2day"><i aria-hidden="true" class="fas fa-chevron-right"></i>Kairo &amp; Giza 2 päivää</a></li>
+<li><a href="/fi/tour-alexandria"><i aria-hidden="true" class="fas fa-chevron-right"></i>Aleksandrian päiväretki</a></li>
+<li><a href="/fi/tour-egypt-discovery-7day"><i aria-hidden="true" class="fas fa-chevron-right"></i>7 päivän löytö</a></li>
+<li><a href="/fi/tours"><i aria-hidden="true" class="fas fa-chevron-right"></i>Kaikki paketit</a></li>
 </ul>
 </div>
-<div class="footer-section">
-<h4 class="footer-title">Ota yhteyttä meihin</h4>
-<p class="footer-text">Osoite: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Gizan kuvernööri 12557</p>
-<div class="footer-contact">
-<a class="footer-contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
-<i class="fab fa-whatsapp contact-icon"></i>+20 155 073 5673</a>
-<a class="footer-contact-info" href="mailto:info@egyptphotographytours.com">
-<i class="far fa-envelope contact-icon"></i>info@egyptphotographytours.com</a>
+<div>
+<h3 class="f-h">Resurssit</h3>
+<ul class="f-links">
+<li><a href="/fi/blog"><i aria-hidden="true" class="fas fa-chevron-right"></i>Matkailublogi</a></li>
+<li><a href="/fi/resources"><i aria-hidden="true" class="fas fa-chevron-right"></i>Matkaoppaat</a></li>
+<li><a href="/fi/faqs"><i aria-hidden="true" class="fas fa-chevron-right"></i>UKK</a></li>
+<li><a href="/fi/gallery"><i aria-hidden="true" class="fas fa-chevron-right"></i>Valokuvagalleria</a></li>
+<li><a href="/fi/contact"><i aria-hidden="true" class="fas fa-chevron-right"></i>Varaustiedot</a></li>
+</ul>
 </div>
-<div class="social-links">
-<a aria-label="Facebook" href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook-f"></i></a>
-<a aria-label="Instagram" href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
-<a aria-label="TikTok" href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
-<a aria-label="YouTube" href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+<div>
+<h3 class="f-h">Ota yhteyttä</h3>
+<div class="f-contact-r">
+<a href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i><span>+20 155 073 5673</span></a>
+<a href="tel:+201550735673"><i aria-hidden="true" class="fas fa-phone"></i><span>+20 155 073 5673</span></a>
+<a href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i><span>info@egyptphotographytours.com</span></a>
+<div><i aria-hidden="true" class="fas fa-map-marker-alt"></i><span>Abou Elhool, Nazlet El-Samman, Giza</span></div>
 </div>
 </div>
 <div class="footer-map">
-<iframe allowfullscreen="" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311399999995!3d29.974968799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" style="border:0;" title="Egypt Photography Tours Location Map" width="600">
-</iframe>
+<iframe allowfullscreen="" height="250" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311399999995!3d29.974968799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" style="border:0" title="Egypt Photography Tours Location Map" width="100%"></iframe>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2015–<span id="yr">2026</span>Egyptin valokuvamatkat. Kaikki oikeudet pidätetään.</p>
+<div class="f-legal">
+<a href="/fi/privacy-policy">Tietosuojakäytäntö</a>
+<a href="/fi/return-policy">Palautuskäytäntö</a>
+<a href="/fi/terms">Ehdot</a>
+<a href="/fi/sitemap.xml">Sivustokartta</a>
+</div>
 </div>
 </div>
 </footer>
 <script>
-// MOBILE MENU FUNCTIONALITY
-document.addEventListener('DOMContentLoaded', function() {
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-const menuIcon = mobileMenuToggle?.querySelector('i');
+(function () {
+'use strict';
+var $ = function (s) { return document.querySelector(s); };
+var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var on = function (el, ev, fn, opt) { if (el) el.addEventListener(ev, fn, opt || false); };
 
-if (mobileMenuToggle) {
-mobileMenuToggle.addEventListener('click', function() {
-navLinks.classList.toggle('active');
-const isExpanded = this.getAttribute('aria-expanded') === 'true';
-this.setAttribute('aria-expanded', !isExpanded);
+/* ═══ MOBILE NAV ═══ */
+var hamburger = $('#hamburger'), hamIcon = $('#ham-icon'), mobileNav = $('#mobile-nav'), navOverlay = $('#nav-overlay'), siteHeader = $('#site-header'), navbar = $('#navbar'), isMenuOpen = false;
+function getTop() { return Math.round((siteHeader ? siteHeader.getBoundingClientRect().height : 60) + (navbar ? navbar.getBoundingClientRect().height : 56)); }
+function openMenu() { isMenuOpen=true; mobileNav.style.top=getTop()+'px'; mobileNav.classList.add('is-open'); mobileNav.setAttribute('aria-hidden','false'); navOverlay.classList.add('is-open'); navOverlay.setAttribute('aria-hidden','false'); hamburger.setAttribute('aria-expanded','true'); hamIcon.className = 'fas fa-times'; document.body.style.overflow = 'hidden'; }
+function closeMenu() { isMenuOpen=false; mobileNav.classList.remove('is-open'); mobileNav.setAttribute('aria-hidden','true'); navOverlay.classList.remove('is-open'); navOverlay.setAttribute('aria-hidden','true'); hamburger.setAttribute('aria-expanded','false'); hamIcon.className = 'fas fa-bars'; document.body.style.overflow = ''; }
+on(hamburger, 'click', function() { isMenuOpen ? closeMenu() : openMenu(); });
+on(navOverlay, 'click', closeMenu);
+$$('#mobile-nav a').forEach(function(l) { on(l, 'click', closeMenu); });
 
-if (menuIcon) {
-menuIcon.classList.toggle('fa-bars');
-menuIcon.classList.toggle('fa-times');
-}
-});
-}
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-link a').forEach(link => {
-link.addEventListener('click', function() {
-if (window.innerWidth < 768 && navLinks.classList.contains('active')) {
-navLinks.classList.remove('active');
-if (mobileMenuToggle && menuIcon) {
-mobileMenuToggle.setAttribute('aria-expanded', 'false');
-menuIcon.classList.remove('fa-times');
-menuIcon.classList.add('fa-bars');
-}
-}
-});
+/* ═══ LANGUAGE SWITCHER ═══ */
+var langWrap=$('#lang-wrap'), langToggle=$('#lang-toggle'), langMenu=$('#lang-menu'), isLangOpen=false;
+function openLang() { isLangOpen=true; langWrap.setAttribute('data-open','true'); langToggle.setAttribute('aria-expanded','true'); langMenu.setAttribute('aria-hidden','false'); langMenu.style.display='block'; }
+function closeLang() { isLangOpen=false; langWrap.setAttribute('data-open','false'); langToggle.setAttribute('aria-expanded','false'); langMenu.setAttribute('aria-hidden','true'); langMenu.style.display='none'; }
+on(langToggle, 'click', function(e) { e.stopPropagation(); isLangOpen ? closeLang() : openLang(); });
+on(document, 'click', function(e) { if (isLangOpen && langWrap && !langWrap.contains(e.target)) closeLang(); });
+$$('.lang-item').forEach(function(item) {
+on(item, 'click', function(e) { e.preventDefault(); var h=item.getAttribute('href'); if(h && h!==window.location.pathname) window.location.href=h; });
 });
 
-// LANGUAGE SWITCHER FUNCTIONALITY
-const languageSwitcher = document.querySelector('.language-switcher');
-if (languageSwitcher) {
-const currentLanguage = languageSwitcher.querySelector('.current-language');
-const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
-const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
+/* ═══ KEYBOARD ═══ */
+on(document, 'keydown', function(e) { if(e.key==='Escape'){if(isMenuOpen)closeMenu();if(isLangOpen)closeLang();} });
 
-const toggleDropdown = () => {
-const isActive = languageSwitcher.classList.toggle('active');
-dropdownIcon.classList.toggle('fa-chevron-up', isActive);
-dropdownIcon.classList.toggle('fa-chevron-down', !isActive);
-currentLanguage.setAttribute('aria-expanded', isActive);
-};
-
-currentLanguage.addEventListener('click', (e) => {
-e.stopPropagation();
-toggleDropdown();
-});
-
-currentLanguage.addEventListener('keydown', (e) => {
-if (e.key === 'Enter' || e.key === ' ') {
-e.preventDefault();
-toggleDropdown();
-}
-if (e.key === 'Escape') {
-languageSwitcher.classList.remove('active');
-dropdownIcon.classList.remove('fa-chevron-up');
-dropdownIcon.classList.add('fa-chevron-down');
-currentLanguage.setAttribute('aria-expanded', 'false');
-}
-});
-
-document.addEventListener('click', function(e) {
-if (!languageSwitcher.contains(e.target) && languageSwitcher.classList.contains('active')) {
-languageSwitcher.classList.remove('active');
-dropdownIcon.classList.remove('fa-chevron-up');
-dropdownIcon.classList.add('fa-chevron-down');
-currentLanguage.setAttribute('aria-expanded', 'false');
-}
-});
-
-languageDropdown.querySelectorAll('.language-item').forEach(item => {
-item.addEventListener('click', function(e) {
-e.preventDefault();
-const flag = this.dataset.flag;
-const lang = this.dataset.lang;
-
-currentLanguage.querySelector('.current-flag').textContent = flag;
-currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
-
-languageSwitcher.classList.remove('active');
-dropdownIcon.classList.remove('fa-chevron-up');
-dropdownIcon.classList.add('fa-chevron-down');
-currentLanguage.setAttribute('aria-expanded', 'false');
-
-languageDropdown.querySelectorAll('.language-item').forEach(i => i.classList.remove('active'));
-this.classList.add('active');
-
-const href = this.getAttribute('href');
-if (href && !window.location.pathname.includes(href)) {
-window.location.href = href;
-}
+/* ═══ FAQ ACCORDION ═══ */
+var faqItems = $$('.faq-item');
+faqItems.forEach(function(item) {
+on(item, 'toggle', function() {
+if (item.open) { faqItems.forEach(function(other){ if(other !== item) other.open = false; }); }
 });
 });
 
-const currentPath = window.location.pathname;
-let englishFound = false;
+/* ═══ COOKIES ═══ */
+var cookieBar = $('#cookie-bar'), cAccept = $('#c-accept'), cDecline = $('#c-decline');
+var existing = document.cookie.split('; ').find(function(r){ return r.startsWith('cookie_consent='); });
+if(!existing && cookieBar) cookieBar.style.display = 'block';
+on(cAccept, 'click', function(){ document.cookie = 'cookie_consent=accepted; max-age=31536000; path=/; SameSite=Lax'; if(cookieBar) cookieBar.style.display = 'none'; });
+on(cDecline, 'click', function(){ document.cookie = 'cookie_consent=declined; max-age=31536000; path=/; SameSite=Lax'; if(cookieBar) cookieBar.style.display = 'none'; });
 
-languageDropdown.querySelectorAll('.language-item').forEach(item => {
-const itemHref = item.getAttribute('href');
-if (currentPath.includes(itemHref) ||
-(currentPath.endsWith('egypt-coworking-spaces-guide-2026.html') &&
-itemHref?.includes('egypt-coworking-spaces-guide-2026.html') &&
-item.dataset.lang === 'en')) {
-item.classList.add('active');
-const flag = item.dataset.flag;
-const lang = item.dataset.lang;
-currentLanguage.querySelector('.current-flag').textContent = flag;
-currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
-englishFound = true;
-}
-});
+/* ═══ YEAR ═══ */
+var yr = document.getElementById('yr'); if(yr) yr.textContent = new Date().getFullYear();
 
-if (!englishFound) {
-const englishItem = languageDropdown.querySelector('[data-lang="en"]');
-if (englishItem) {
-englishItem.classList.add('active');
-currentLanguage.querySelector('.current-flag').textContent = '🇺🇸';
-currentLanguage.querySelector('.current-text').textContent = 'EN';
-}
-}
-}
-
-// BACK TO TOP BUTTON
-const backToTopButton = document.getElementById('backToTop');
-const showBackToTopThreshold = 300;
-
-const handleScroll = () => {
-if (window.pageYOffset > showBackToTopThreshold) {
-backToTopButton?.classList.add('visible');
-} else {
-backToTopButton?.classList.remove('visible');
-}
-};
-
-window.addEventListener('scroll', handleScroll, { passive: true });
-
-if (backToTopButton) {
-backToTopButton.addEventListener('click', () => {
-window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-backToTopButton.addEventListener('keydown', (e) => {
-if (e.key === 'Enter' || e.key === ' ') {
-e.preventDefault();
-window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-});
-}
-
-// ANIMATE ELEMENTS ON SCROLL
-if ('IntersectionObserver' in window) {
-const observerOptions = {
-threshold: 0.1,
-rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.style.opacity = "1";
-entry.target.style.transform = "translateY(0)";
-observer.unobserve(entry.target);
-}
-});
-}, observerOptions);
-
-document.querySelectorAll('.culture-card, .trust-card, .reference-item, .tour-recommendation, .review-card').forEach(card => {
-card.style.opacity = "0";
-card.style.transform = "translateY(30px)";
-card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-observer.observe(card);
-});
-}
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-const targetId = this.getAttribute('href');
-if (targetId && targetId !== '#' && targetId !== window.location.href) {
-e.preventDefault();
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 100,
-behavior: 'smooth'
-});
-}
-}
-});
-});
-
-// Interactive table rows for better UX
-const tableRows = document.querySelectorAll('.coworking-table tbody tr');
-tableRows.forEach(row => {
-row.addEventListener('mouseenter', function() {
-this.style.backgroundColor = '#f0f9ff';
-this.style.transition = 'background-color 0.2s ease';
-});
-row.addEventListener('mouseleave', function() {
-this.style.backgroundColor = '';
-});
-});
-
-// Cookie Consent Banner
-const cookieConsent = document.getElementById('cookieConsent');
-const acceptCookiesBtn = document.getElementById('acceptCookies');
-
-if (!localStorage.getItem('cookiesAccepted')) {
-setTimeout(() => {
-cookieConsent?.classList.add('visible');
-}, 2000);
-}
-
-if (acceptCookiesBtn) {
-acceptCookiesBtn.addEventListener('click', () => {
-localStorage.setItem('cookiesAccepted', 'true');
-cookieConsent?.classList.remove('visible');
-});
-}
-
-// Tour link tracking
-const tourLinks = document.querySelectorAll('.tour-recommendation a, .cta-button, .book-now-button, .booking-cta');
-tourLinks.forEach(link => {
-link.addEventListener('click', function() {
-console.log('Tour link clicked:', this.href);
-});
-});
-});
-
-// Preload critical images with error handling
-function preloadCriticalImages() {
-const criticalImages = [
-'/images/egypt-coworking-spaces-guide-2026.jpg',
-'/images/egypt-photography-tours-logo.jpg'
-];
-
-criticalImages.forEach(src => {
-const img = new Image();
-img.src = src;
-img.onerror = () => console.warn(`Failed to preload: ${src}`);
-});
-}
-
-if (document.readyState === 'loading') {
-document.addEventListener('DOMContentLoaded', preloadCriticalImages);
-} else {
-preloadCriticalImages();
-}
-
-// Cloudflare Worker Form Submission
+/* ═══ CLOUDFLARE WORKER FORM SUBMISSION ═══ */
 const cfForm = document.getElementById('contactForm');
 const cfStatus = document.getElementById('form-status');
 const WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
 if (cfForm) {
-cfForm.addEventListener('submit', async (e) => {
+cfForm.addEventListener('submit', async function(e) {
 e.preventDefault();
 cfStatus.innerHTML = 'Sending...';
 cfStatus.style.color = '#fff';
@@ -1416,7 +1237,7 @@ name: formData.get('name') || '',
 email: formData.get('email') || '',
 phone: formData.get('phone') || '',
 subject: 'Custom Egypt Tour Request',
-message: `Group Size: ${formData.get('group_size') || 'Not specified'}\nTour Type: ${formData.get('tour_type') || 'Not specified'}\nDuration: ${formData.get('duration') || 'Not specified'}\nDestinations: ${formData.get('destinations') || 'Not specified'}\nDates: ${formData.get('dates') || 'Not specified'}\nMessage: ${formData.get('message') || ''}`,
+message: 'Group Size: ' + (formData.get('group_size') || 'Not specified') + '\nTour Type: ' + (formData.get('tour_type') || 'Not specified') + '\nDuration: ' + (formData.get('duration') || 'Not specified') + '\nDestinations: ' + (formData.get('destinations') || 'Not specified') + '\nDates: ' + (formData.get('dates') || 'Not specified') + '\nMessage: ' + (formData.get('message') || ''),
 turnstileToken: turnstileToken
 };
 try {
@@ -1442,6 +1263,7 @@ console.error(err);
 }
 });
 }
+})();
 </script>
 </body>
 </html>
