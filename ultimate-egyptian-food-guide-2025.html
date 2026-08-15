@@ -297,9 +297,6 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .article-content a:not(.btn):not(.tour-rec-cta):hover{color:var(--c-spice)}
 .article-lede{font-size:18px!important;line-height:1.8!important;color:var(--c-dark)!important}
 .article-lede strong{color:var(--c-spice)}
-.article-figure{margin:26px 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--c-border)}
-.article-figure img{width:100%;height:auto;object-fit:cover}
-.article-figure figcaption{font-size:12.5px;color:var(--c-muted);padding:10px 14px;background:var(--c-white)}
 .quick-facts{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:22px;margin:28px 0 36px;display:grid;grid-template-columns:1fr;gap:14px}
 @media(min-width:640px){.quick-facts{grid-template-columns:repeat(4,1fr)}}
 .quick-facts h3{grid-column:1/-1;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--c-spice);border-bottom:1px solid var(--c-border);padding-bottom:10px;margin:0}
@@ -325,9 +322,14 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .callout-spice h3{color:var(--c-spice)}
 .callout-warn{background:linear-gradient(135deg,#fde8e8 0%,#fbeaea 100%);border-left:4px solid var(--c-warn)}
 .callout-warn h3{color:var(--c-warn)}
-.callout-dark{background:var(--c-dark);color:#fff;border-left:4px solid var(--c-gold)}
+.callout-dark{background:linear-gradient(135deg,#1a202c 0%,#2d3748 100%);color:#fff;border-left:4px solid var(--c-gold)}
 .callout-dark h3{color:var(--c-gold)}
-.callout-dark p{color:rgba(255,255,255,.88)}
+.callout-dark p{color:rgba(255,255,255,.9)}
+.callout-dark ul{margin:0 0 4px;padding-left:22px}
+.callout-dark li{color:rgba(255,255,255,.92);font-size:15px;line-height:1.8;margin-bottom:12px}
+.callout-dark li strong{color:#fff;font-weight:700}
+.callout-dark li::marker{color:var(--c-gold)}
+.callout-dark a{color:var(--c-gold);text-decoration:underline}
 .callout .btn{margin-top:10px}
 .table-scroll{overflow-x:auto;margin:24px 0;border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)}
 .data-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px;background:var(--c-white)}
@@ -568,10 +570,6 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 <div class="article-wrap article-content">
 <p class="article-lede"><strong>Egyptian cuisine represents one of the world's oldest, most diverse, and culturally significant culinary traditions,</strong> with documented recipes and cooking techniques dating back over five millennia to the time of the pharaohs. This living culinary heritage has absorbed influences from Pharaonic, Greek, Roman, Coptic, Arab, Ottoman, and modern Mediterranean cultures, creating a uniquely rich and flavorful gastronomic landscape that continues to evolve while maintaining its deep historical roots.</p>
 <p>At Egypt Photography Tours, we believe that food photography represents one of the most intimate and authentic ways to document Egyptian culture. Our culinary-focused photography tours provide exclusive access to traditional kitchens, street food vendors, spice markets, and family dining experiences that capture the soul of Egyptian cuisine — from the bustling food stalls of Cairo's Khan el-Khalili market to sophisticated restaurants overlooking the Nile.</p>
-<figure class="article-figure">
-<img alt="Traditional Egyptian food spread including koshari, ful medames, taameya, aish baladi and karkadeh tea" height="630" loading="lazy" src="https://image.qwenlm.ai/public_source/6694672a-01bf-48e0-b3be-b7a32abf83df/1625d2b94-bab6-4f47-a6a9-dcefe97e08cc.png" width="1200"/>
-<figcaption>A traditional Egyptian spread: koshari, ful medames, taameya, aish baladi and hibiscus karkadeh tea.</figcaption>
-</figure>
 <div class="quick-facts">
 <h3>Egyptian Cuisine Quick Facts</h3>
 <div class="qf-item">
@@ -652,7 +650,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 </div>
 <div class="callout callout-dark">
 <h3>Why Choose Egypt Photography Tours for Culinary Experiences</h3>
-<ul style="margin:0;padding-left:20px">
+<ul>
 <li><strong>Exclusive Food Access:</strong> VIP access to traditional kitchens, private cooking demonstrations, and meetings with master chefs not available to independent travelers.</li>
 <li><strong>Culinary Expertise:</strong> We partner with Egypt's top food historians, chefs, and culinary experts to provide authentic experiences and accurate cultural context for food photography.</li>
 <li><strong>Comprehensive Food Safety:</strong> We carefully vet all food establishments for hygiene and authenticity, ensuring safe culinary adventures while maintaining authentic experiences.</li>
