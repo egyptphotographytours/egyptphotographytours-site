@@ -12,15 +12,15 @@ on:
   workflow_dispatch:
     inputs:
       seo_only:
-        description: 'Repair mode: only fix hreflang, language menus & sitemap (fast, no translation)'
+        description: '🔧 Repair mode: Fix DOM, hreflang, menus & sitemap (Fast, NO translation)'
         type: boolean
         default: false
       force_file:
-        description: 'Force re-translate a specific file (e.g. index.html) even if text has not changed'
+        description: 'Force re-translate a specific file (e.g. index.html)'
         type: string
         required: false
 
-# ✅ Prevents overlapping runs from killing each other
+# Prevents overlapping runs from killing each other
 concurrency:
   group: translate-seo-pipeline
   cancel-in-progress: false
@@ -51,7 +51,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-      # ✅ Translation step — may be killed at 6h, that's OK
+      # Translation step (Skipped if seo_only is checked)
       - name: Run Translation Pipeline
         if: ${{ github.event.inputs.seo_only != 'true' }}
         continue-on-error: true
@@ -65,15 +65,14 @@ jobs:
             python scripts/smart_pipeline.py
           fi
 
-      # ✅ SEO REPAIR — ALWAYS runs, even after the 6h kill
-      # This is what adds hreflang + language menus to already-translated pages
-      - name: SEO Repair (hreflang + language menus + sitemap)
+      # SEO REPAIR — ALWAYS runs to ensure DOM is clean and Sitemap is perfect
+      - name: SEO Repair (DOM Cleanup + hreflang + Sitemap)
         if: always()
         env:
           PYTHONUNBUFFERED: 1
         run: python scripts/smart_pipeline.py --seo-only
 
-      # ✅ Final push — ALWAYS runs
+      # Final push
       - name: Final Commit and Push
         if: always()
         run: |
@@ -81,7 +80,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "✅ No leftover changes. Everything already pushed!"
           else
-            git commit -m "🤖 Final SEO, Sitemap & leftovers [skip ci]"
+            git commit -m "🤖 Final SEO, Sitemap & DOM cleanup [skip ci]"
             git pull --rebase --autostash || true
             git push
           fi
