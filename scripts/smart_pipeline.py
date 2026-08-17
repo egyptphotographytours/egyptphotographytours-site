@@ -1,17 +1,12 @@
 #!/usr/bin/env python3
 """
-Ultimate Smart Incremental Translation & SEO Pipeline v2.2
+Ultimate Smart Incremental Translation & SEO Pipeline v3.0
 ==========================================================
-✅ Fixes Google blocks: 3-engine fallback (Google → Bing → MyMemory)
-✅ Repair pass: failed chunks retried after cooldown
-✅ Resume-smart: skips already-translated files, retries failed ones first
-✅ Content Hashing: Ignores layout/SEO changes, only translates when actual text changes
-✅ Force Translate: Manually trigger a specific file via GitHub Actions
-✅ Self-healing manifest: failed files auto-retried next run
-✅ BATCH PUSH every 100 files
-✅ try/finally: SEO injection runs even after errors
-✅ --seo-only mode: repairs hreflang + menus + sitemap WITHOUT re-translating
-✅ GSC-safe: canonical, hreflang, x-default, international sitemap
+✅ DOM Firewall: Prevents <html><body> injection bugs using html.parser & new_tag()
+✅ DOM Cleanup: Automatically deletes broken nested tags from previous buggy runs
+✅ .html Preservation: Keeps .html extensions in canonicals, sitemaps, and internal links
+✅ Advanced Sitemap: Generates Google-optimized XML with real <lastmod>, <priority>, & <changefreq>
+✅ --seo-only mode: Instantly repairs hreflang, menus, DOM structure & sitemap WITHOUT translating
 """
 
 import os
@@ -26,7 +21,7 @@ import subprocess
 import concurrent.futures
 from bs4 import BeautifulSoup, Comment, NavigableString, Doctype, Declaration, ProcessingInstruction
 from deep_translator import GoogleTranslator
-from datetime import datetime
+from datetime import datetime, timezone
 
 sys.stdout.reconfigure(line_buffering=True)
 
@@ -73,16 +68,15 @@ LANG_META = {
     'zh-CN': {'flag': '🇨🇳', 'name': '中文 (简体)'}
 }
 
-# Optional Bing fallback (free, no API key)
 try:
     import translators as ts
     BING_AVAILABLE = True
 except ImportError:
     BING_AVAILABLE = False
-    print("   ⚠️ 'translators' not installed — Bing fallback disabled (pip install translators)", flush=True)
+    print("   ⚠️ 'translators' not installed — Bing fallback disabled", flush=True)
 
 # ==========================================
-# TRANSLATION ENGINE — FALLBACK CHAIN
+# TRANSLATION ENGINE
 # ==========================================
 class TranslationEngine:
     def __init__(self):
@@ -133,15 +127,14 @@ class TranslationEngine:
         raise RuntimeError(f"All engines failed: {last_err}")
 
 # ==========================================
-# FAILED-FILE MANIFEST & HASHING (SELF-HEALING)
+# MANIFESTS & HASHING
 # ==========================================
 def load_failed_manifest():
     if os.path.exists(FAILED_MANIFEST):
         try:
             with open(FAILED_MANIFEST, 'r', encoding='utf-8') as f:
                 return set(json.load(f))
-        except Exception:
-            pass
+        except Exception: pass
     return set()
 
 def save_failed_manifest(failed_set):
@@ -154,8 +147,7 @@ def load_hashes():
         try:
             with open(HASH_MANIFEST, 'r', encoding='utf-8') as f:
                 return json.load(f)
-        except Exception:
-            pass
+        except Exception: pass
     return {}
 
 def save_hashes(hashes):
@@ -164,29 +156,23 @@ def save_hashes(hashes):
         json.dump(hashes, f, indent=2)
 
 def get_content_hash(soup):
-    """Extracts ONLY translatable text and hashes it. Ignores <head> and layout changes."""
     texts = []
-    if soup.title and soup.title.string:
-        texts.append(soup.title.string.strip())
+    if soup.title and soup.title.string: texts.append(soup.title.string.strip())
     for meta_name in ['description', 'og:title', 'og:description', 'twitter:title', 'twitter:description']:
         tag = soup.find('meta', attrs={'name': meta_name}) or soup.find('meta', attrs={'property': meta_name})
-        if tag and tag.get('content'):
-            texts.append(tag['content'].strip())
+        if tag and tag.get('content'): texts.append(tag['content'].strip())
     for img in soup.find_all('img', alt=True):
-        if img['alt'].strip() and not img['alt'].startswith('http'):
-            texts.append(img['alt'].strip())
+        if img['alt'].strip() and not img['alt'].startswith('http'): texts.append(img['alt'].strip())
     for text_node in soup.find_all(string=True):
         if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)): continue
         if not text_node.parent or not hasattr(text_node.parent, 'name'): continue
         if is_translatable(text_node):
             original = str(text_node).strip()
-            if len(original) > 2 and not original.isspace():
-                texts.append(original)
-    content_str = "|".join(texts)
-    return hashlib.md5(content_str.encode('utf-8')).hexdigest()
+            if len(original) > 2 and not original.isspace(): texts.append(original)
+    return hashlib.md5("|".join(texts).encode('utf-8')).hexdigest()
 
 # ==========================================
-# GIT BATCH PUSH WITH RETRIES
+# GIT PUSH
 # ==========================================
 def batch_commit_and_push(count, retries=3):
     for attempt in range(retries):
@@ -205,16 +191,19 @@ def batch_commit_and_push(count, retries=3):
         except subprocess.CalledProcessError as e:
             err = e.stderr.decode('utf-8') if e.stderr else str(e)
             print(f"   ⚠️ Push attempt {attempt+1} failed: {err}", flush=True)
-            if attempt < retries - 1:
-                time.sleep(15 * (attempt + 1))
-            else:
-                print("   ❌ Push failed after retries — files saved locally, next run will push them.", flush=True)
+            if attempt < retries - 1: time.sleep(15 * (attempt + 1))
+            else: print("   ❌ Push failed after retries.", flush=True)
 
 # ==========================================
-# URL HELPERS
+# URL HELPERS (.html PRESERVED)
 # ==========================================
 def get_relative_url(lang_code, base_path):
-    clean = base_path.replace('index.html', '').replace('.html', '')
+    # Keeps .html extension for SEO and Sitemap accuracy
+    if base_path == 'index.html':
+        clean = ''
+    else:
+        clean = base_path 
+        
     if lang_code == 'en':
         return f"/{clean}" if clean else "/"
     return f"/{lang_code}/{clean}" if clean else f"/{lang_code}/"
@@ -222,8 +211,16 @@ def get_relative_url(lang_code, base_path):
 def get_absolute_url(lang_code, base_path):
     return f"{DOMAIN}{get_relative_url(lang_code, base_path)}"
 
+def get_file_lastmod(rel_path):
+    try:
+        mtime = os.path.getmtime(rel_path)
+        file_dt = datetime.fromtimestamp(mtime, tz=timezone.utc)
+        return file_dt.strftime('%Y-%m-%dT%H:%M:%S+00:00')
+    except Exception:
+        return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S+00:00')
+
 # ==========================================
-# GIT CHANGE DETECTION (INCREMENTAL)
+# GIT DETECTION
 # ==========================================
 def get_changed_english_files():
     try:
@@ -232,8 +229,7 @@ def get_changed_english_files():
         return [f for f in changed if f.endswith('.html')
                 and not any(f.startswith(lang + '/') for lang in TARGET_LANGS)
                 and os.path.exists(f)]
-    except Exception:
-        return []
+    except Exception: return []
 
 def get_all_english_files():
     en_files = []
@@ -246,13 +242,11 @@ def get_all_english_files():
     return en_files
 
 # ==========================================
-# DOM FIREWALL
+# DOM FIREWALL & TRANSLATION
 # ==========================================
 def is_translatable(text_node):
-    if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)):
-        return False
-    if not hasattr(text_node, 'parent') or not text_node.parent or not hasattr(text_node.parent, 'name'):
-        return False
+    if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)): return False
+    if not hasattr(text_node, 'parent') or not text_node.parent or not hasattr(text_node.parent, 'name'): return False
     curr = text_node.parent
     while curr:
         if not hasattr(curr, 'name'): break
@@ -265,7 +259,6 @@ def is_translatable(text_node):
 
 def safe_translate(texts, target_lang, engine):
     if not texts: return [], False
-
     chunks, current_chunk, current_len = [], [], 0
     for t in texts:
         clean_t = t.replace('\n', ' ').replace('\r', ' ').strip() or t
@@ -291,8 +284,7 @@ def safe_translate(texts, target_lang, engine):
             try:
                 res, eng = engine.translate(payload, target_lang)
                 parts = res.split("\n")
-                if len(parts) == len(chunk):
-                    return parts, eng
+                if len(parts) == len(chunk): return parts, eng
                 singles, ok = [], True
                 for t in chunk:
                     try:
@@ -314,15 +306,13 @@ def safe_translate(texts, target_lang, engine):
         print(f"      📦 Chunk {ci+1}/{len(chunks)} ({len(chunk)} strings) → {target_lang}", flush=True)
         parts, eng = attempt_chunk(chunk)
         if parts:
-            for j, p in enumerate(parts):
-                results[start + j] = p
+            for j, p in enumerate(parts): results[start + j] = p
             print(f"      ✅ via {eng}", flush=True)
         else:
             print(f"      ❌ Chunk {ci+1} failed — queued for repair pass", flush=True)
             failed_chunk_indices.append(ci)
         time.sleep(random.uniform(CHUNK_DELAY_MIN, CHUNK_DELAY_MAX))
-        if (ci + 1) % 3 == 0:
-            time.sleep(random.uniform(6, 12))
+        if (ci + 1) % 3 == 0: time.sleep(random.uniform(6, 12))
 
     if failed_chunk_indices:
         print(f"      💤 Cooling {COOLDOWN_AFTER_FAILURE}s before repairing {len(failed_chunk_indices)} chunk(s)...", flush=True)
@@ -334,41 +324,32 @@ def safe_translate(texts, target_lang, engine):
             print(f"      🔁 Repairing chunk {ci+1}...", flush=True)
             parts, eng = attempt_chunk(chunk)
             if parts:
-                for j, p in enumerate(parts):
-                    results[start + j] = p
+                for j, p in enumerate(parts): results[start + j] = p
                 print(f"      ✅ Repaired via {eng}", flush=True)
             else:
                 still_failed.append(ci)
-                for j, t in enumerate(chunk):
-                    results[start + j] = t
-                print(f"      ❌ Chunk {ci+1} still failing — keeping English, file queued for next run", flush=True)
+                for j, t in enumerate(chunk): results[start + j] = t
+                print(f"      ❌ Chunk {ci+1} still failing — keeping English", flush=True)
             time.sleep(random.uniform(4, 7))
-        if still_failed:
-            return results, True
-
+        if still_failed: return results, True
     return results, False
 
 def extract_and_translate(soup, target_lang, engine):
     texts, nodes = [], []
-    if soup.title and soup.title.string:
-        texts.append(soup.title.string.strip()); nodes.append(('title', soup.title))
+    if soup.title and soup.title.string: texts.append(soup.title.string.strip()); nodes.append(('title', soup.title))
     for meta_name in ['description', 'og:title', 'og:description', 'twitter:title', 'twitter:description']:
         tag = soup.find('meta', attrs={'name': meta_name}) or soup.find('meta', attrs={'property': meta_name})
-        if tag and tag.get('content'):
-            texts.append(tag['content'].strip()); nodes.append(('meta', tag))
+        if tag and tag.get('content'): texts.append(tag['content'].strip()); nodes.append(('meta', tag))
     for img in soup.find_all('img', alt=True):
-        if img['alt'].strip() and not img['alt'].startswith('http'):
-            texts.append(img['alt'].strip()); nodes.append(('alt', img))
+        if img['alt'].strip() and not img['alt'].startswith('http'): texts.append(img['alt'].strip()); nodes.append(('alt', img))
     for text_node in soup.find_all(string=True):
         if isinstance(text_node, (Comment, Doctype, Declaration, ProcessingInstruction)): continue
         if not text_node.parent or not hasattr(text_node.parent, 'name'): continue
         if is_translatable(text_node):
             original = str(text_node).strip()
-            if len(original) > 2 and not original.isspace():
-                texts.append(original); nodes.append(('text', text_node))
+            if len(original) > 2 and not original.isspace(): texts.append(original); nodes.append(('text', text_node))
 
     if not texts: return soup, False
-
     print(f"      🧠 Translating {len(texts)} strings...", flush=True)
     translated, had_failures = safe_translate(texts, target_lang, engine)
 
@@ -387,41 +368,51 @@ def fix_internal_links(soup, target_lang):
         if href.startswith(('http', 'mailto:', 'tel:', 'javascript:', '#', '//')): continue
         if re.search(r'\.(jpg|jpeg|png|gif|svg|webp|css|js|pdf|zip|mp4|webm|ico|woff|woff2|ttf)(\?|$)', href, re.I): continue
         if any(href.startswith(f"/{lang}/") or href == f"/{lang}" for lang in TARGET_LANGS): continue
-        if href.startswith('/'):
-            a['href'] = f"/{target_lang}{href}" if href != '/' else f"/{target_lang}/"
+        
+        clean_href = href.lstrip('/')
+        if clean_href == 'index.html': clean_href = ''
+            
+        if target_lang == 'en':
+            a['href'] = f"/{clean_href}" if clean_href else "/"
         else:
-            a['href'] = f"/{target_lang}/{href.replace('.html', '')}"
+            a['href'] = f"/{target_lang}/{clean_href}" if clean_href else f"/{target_lang}/"
     return soup
 
 def inject_dynamic_lang_menu(soup, target_lang, base_path):
     lang_menu = soup.find('div', id='lang-menu') or soup.find('div', class_='language-dropdown')
     if not lang_menu: return soup
     
-    # ✅ FIXED: Use list of classes for reliable decompose
     for old_link in lang_menu.find_all('a', class_=['lang-item', 'language-item']):
         old_link.decompose()
 
     en_url = get_relative_url('en', base_path)
     en_active = "is-active" if target_lang == 'en' else ""
-    lang_menu.append(BeautifulSoup(
+    
+    # 🛠️ FIX: Use html.parser to prevent <html><body> wrapping
+    en_link_html = (
         f'<a href="{en_url}" class="lang-item language-item {en_active}" role="menuitem">'
-        f'<span class="lang-flag flag-icon" aria-hidden="true">🇺🇸</span><span class="lang-name language-text">English</span></a>', 'lxml'))
+        f'<span class="lang-flag flag-icon" aria-hidden="true">🇺🇸</span><span class="lang-name language-text">English</span></a>'
+    )
+    lang_menu.append(BeautifulSoup(en_link_html, 'html.parser'))
 
     for lang in TARGET_LANGS:
         if os.path.exists(os.path.join(lang, base_path)):
             lang_url = get_relative_url(lang, base_path)
             is_active = "is-active" if target_lang == lang else ""
             flag, name = LANG_META[lang]['flag'], LANG_META[lang]['name']
-            lang_menu.append(BeautifulSoup(
+            
+            lang_link_html = (
                 f'<a href="{lang_url}" class="lang-item language-item {is_active}" role="menuitem">'
-                f'<span class="lang-flag flag-icon" aria-hidden="true">{flag}</span><span class="lang-name language-text">{name}</span></a>', 'lxml'))
+                f'<span class="lang-flag flag-icon" aria-hidden="true">{flag}</span><span class="lang-name language-text">{name}</span></a>'
+            )
+            lang_menu.append(BeautifulSoup(lang_link_html, 'html.parser'))
     return soup
 
 # ==========================================
-# GLOBAL SEO & SITEMAP (GSC INDEXING GUARANTEE)
+# GLOBAL SEO & ADVANCED SITEMAP
 # ==========================================
 def inject_global_seo_and_sitemap():
-    print("\n🔗 Injecting SEO Tags & Generating Sitemap...", flush=True)
+    print("\n🔗 Injecting SEO Tags, Cleaning DOM & Generating Advanced Sitemap...", flush=True)
     page_map = {}
     for root, dirs, files in os.walk('.'):
         dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['scripts', 'node_modules', '.github']]
@@ -443,42 +434,76 @@ def inject_global_seo_and_sitemap():
             with open(rel_path, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f, 'lxml')
 
-            # ✅ Remove ALL old canonical/alternate links (including broken nested fragments)
+            # 🧹 CLEANUP: Nuke any stray nested <html>, <head>, or <body> tags left by previous buggy runs
+            for nested_html in soup.find_all('html'):
+                if nested_html != soup.html: nested_html.decompose()
+            for nested_body in soup.find_all('body'):
+                if nested_body != soup.body: nested_body.decompose()
+            for nested_head in soup.find_all('head'):
+                if nested_head != soup.head: nested_head.decompose()
+
+            # ✅ Remove ALL old canonical/alternate links
             for old in soup.find_all('link', rel='alternate'): old.decompose()
             for old in soup.find_all('link', rel='canonical'): old.decompose()
+            
             head = soup.find('head')
             if not head: continue
 
-            head.append(BeautifulSoup(f'<link rel="canonical" href="{get_absolute_url(lang_code, base)}" />', 'lxml'))
+            # 🛠️ FIX: Use soup.new_tag() to create clean tags without parser wrappers
+            canon = soup.new_tag('link', rel='canonical', href=get_absolute_url(lang_code, base))
+            head.append(canon)
+            
             for sib_lang in langs:
                 hl = 'zh' if sib_lang == 'zh-CN' else sib_lang
-                head.append(BeautifulSoup(
-                    f'<link rel="alternate" hreflang="{hl}" href="{get_absolute_url(sib_lang, base)}" />', 'lxml'))
-            head.append(BeautifulSoup(
-                f'<link rel="alternate" hreflang="x-default" href="{get_absolute_url("en", base)}" />', 'lxml'))
+                alt = soup.new_tag('link', rel='alternate', hreflang=hl, href=get_absolute_url(sib_lang, base))
+                head.append(alt)
+                
+            x_default = soup.new_tag('link', rel='alternate', hreflang='x-default', href=get_absolute_url("en", base))
+            head.append(x_default)
 
             soup = inject_dynamic_lang_menu(soup, lang_code, base)
             with open(rel_path, 'w', encoding='utf-8') as f:
                 f.write(str(soup))
             repaired += 1
-    print(f"   ✅ SEO tags injected on {repaired} files.", flush=True)
+    print(f"   ✅ SEO tags injected & DOM cleaned on {repaired} files.", flush=True)
 
-    today = datetime.now().strftime('%Y-%m-%d')
-    xml = ['<?xml version="1.0" encoding="UTF-8"?>',
-           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    # 🚀 ADVANCED SITEMAP GENERATION
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
+    ]
+    
     for base, langs in page_map.items():
         for lang_code, rel_path in langs.items():
             if '404.html' in rel_path or 'sitemap.html' in rel_path: continue
+            
             url = get_absolute_url(lang_code, base).replace(' ', '%20')
-            xml.append(f'  <url>\n    <loc>{url}</loc>\n    <lastmod>{today}</lastmod>')
+            lastmod = get_file_lastmod(rel_path)
+            
+            # Smart Priority & Frequency
+            priority = "1.0" if base == 'index.html' else "0.8" if lang_code == 'en' else "0.6"
+            changefreq = "weekly" if base == 'index.html' else "monthly"
+            
+            xml_lines.append(f'  <url>')
+            xml_lines.append(f'    <loc>{url}</loc>')
+            xml_lines.append(f'    <lastmod>{lastmod}</lastmod>')
+            xml_lines.append(f'    <changefreq>{changefreq}</changefreq>')
+            xml_lines.append(f'    <priority>{priority}</priority>')
+            
             for sib_lang in langs:
                 hl = 'zh' if sib_lang == 'zh-CN' else sib_lang
-                xml.append(f'    <xhtml:link rel="alternate" hreflang="{hl}" href="{get_absolute_url(sib_lang, base).replace(" ", "%20")}" />')
-            xml.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{get_absolute_url("en", base).replace(" ", "%20")}" />\n  </url>')
-    xml.append('</urlset>')
+                alt_url = get_absolute_url(sib_lang, base).replace(' ', '%20')
+                xml_lines.append(f'    <xhtml:link rel="alternate" hreflang="{hl}" href="{alt_url}" />')
+            
+            x_default_url = get_absolute_url("en", base).replace(' ', '%20')
+            xml_lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{x_default_url}" />')
+            xml_lines.append(f'  </url>')
+            
+    xml_lines.append('</urlset>')
+    
     with open('sitemap.xml', 'w', encoding='utf-8') as f:
-        f.write('\n'.join(xml))
-    print("   ✅ sitemap.xml generated.", flush=True)
+        f.write('\n'.join(xml_lines))
+    print("   ✅ Advanced sitemap.xml generated with real timestamps & priorities.", flush=True)
 
 # ==========================================
 # MAIN EXECUTION
@@ -489,14 +514,13 @@ def main():
     parser.add_argument('--force', action='store_true', help='Re-translate ALL files')
     parser.add_argument('--force-file', type=str, help='Force re-translate a specific file')
     parser.add_argument('--seo-only', action='store_true',
-                        help='Skip translation — only repair hreflang, language menus & sitemap')
+                        help='Skip translation — only repair hreflang, language menus, DOM & sitemap')
     args = parser.parse_args()
 
     print("=" * 60, flush=True)
-    print("🚀 Smart Incremental Translation & SEO Pipeline v2.2", flush=True)
+    print("🚀 Smart Incremental Translation & SEO Pipeline v3.0", flush=True)
     print("=" * 60, flush=True)
 
-    # ── REPAIR MODE: fixes already-translated pages without re-translating ──
     if args.seo_only:
         print("🔧 SEO-ONLY REPAIR MODE — no translation will happen.", flush=True)
         inject_global_seo_and_sitemap()
@@ -505,7 +529,6 @@ def main():
         return
 
     only_set = set(f.strip() for f in args.only.split(',')) if args.only else None
-
     engine = TranslationEngine()
     failed_manifest = load_failed_manifest()
     translated_hashes = load_hashes()
@@ -513,7 +536,6 @@ def main():
     modified_files = get_changed_english_files()
     all_en_files = get_all_english_files()
 
-    # ✅ Resume smart: retry previously-failed files FIRST
     all_en_files.sort(key=lambda p: (0 if p in failed_manifest else 1, p))
     if failed_manifest:
         print(f"   🔁 Retrying {len(failed_manifest)} previously-failed file(s) first...", flush=True)
@@ -525,25 +547,20 @@ def main():
 
     try:
         for rel_path in all_en_files:
-            # 🎯 FORCE FILE LOGIC: If a specific file is requested, skip everything else
             is_forced = False
             if args.force_file:
                 if os.path.basename(rel_path) == args.force_file or rel_path == args.force_file:
                     is_forced = True
-                else:
-                    continue # Skip all other files
-            
+                else: continue
             elif only_set and os.path.basename(rel_path) not in only_set and rel_path not in only_set:
                 continue
 
             with open(rel_path, 'r', encoding='utf-8') as f:
                 en_soup = BeautifulSoup(f, 'lxml')
                 
-            # 🧠 SMART CHECK: Has the actual text changed?
             current_hash = get_content_hash(en_soup)
             saved_hash = translated_hashes.get(rel_path)
 
-            # 🕵️ FIRST-RUN SMART: If clipboard is blank, but all 24 translations exist on disk, SKIP IT!
             if saved_hash is None:
                 all_exist = all(os.path.exists(os.path.join(lang, rel_path)) for lang in TARGET_LANGS)
                 if all_exist and not args.force and not is_forced:
@@ -552,12 +569,9 @@ def main():
                     continue
 
             content_changed = (current_hash != saved_hash)
-
             needs_update = rel_path in modified_files or rel_path in failed_manifest or args.force
-
             file_had_failures = False
             
-            # ✅ THE FIX: If content is identical to last time and not a forced retry, SKIP IT.
             if not content_changed and not args.force and not is_forced and rel_path not in failed_manifest:
                 translated_hashes[rel_path] = current_hash
                 skipped += len(TARGET_LANGS)
@@ -566,7 +580,6 @@ def main():
             for lang in TARGET_LANGS:
                 trans_path = os.path.join(lang, rel_path)
 
-                # ✅ SKIP: exists + content unchanged + not failed → already done
                 if os.path.exists(trans_path) and not content_changed and not needs_update and not is_forced:
                     skipped += 1
                     continue
@@ -584,13 +597,11 @@ def main():
                 with open(trans_path, 'w', encoding='utf-8') as f:
                     f.write(str(lang_soup))
 
-                if had_failures:
-                    file_had_failures = True
+                if had_failures: file_had_failures = True
                 files_since_push += 1
 
-                # ✅ PUSH EVERY 100 FILES
                 if files_since_push >= BATCH_SIZE:
-                    save_hashes(translated_hashes) # Save hashes on batch push
+                    save_hashes(translated_hashes)
                     batch_commit_and_push(files_since_push)
                     files_since_push = 0
 
@@ -602,14 +613,12 @@ def main():
                 print(f"   ✅ {rel_path} fully recovered!", flush=True)
                 translated_hashes[rel_path] = current_hash
             else:
-                # Save the new hash after a successful translation run
                 translated_hashes[rel_path] = current_hash
 
     except KeyboardInterrupt:
         print("\n⚠️ Interrupted — saving progress...", flush=True)
 
     finally:
-        # ✅ ALWAYS RUNS (even after errors) — saves progress + injects SEO
         save_failed_manifest(failed_manifest)
         save_hashes(translated_hashes)
         
