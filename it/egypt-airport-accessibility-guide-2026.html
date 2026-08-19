@@ -1,950 +1,929 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<!-- CRITICAL: Charset first for proper parsing -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
-<!-- Security & Performance Headers -->
-<meta content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https: blob: data:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev; upgrade-insecure-requests; base-uri 'self'; form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
+<meta content="
+default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';
+script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com;
+style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+img-src 'self' https: blob: data:;
+font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com;
+connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev;
+upgrade-insecure-requests;
+base-uri 'self';
+form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
-<!-- Comprehensive Favicon Setup -->
 <link href="https://www.egyptphotographytours.com/sitemap.xml" rel="sitemap" title="Main Sitemap" type="application/xml"/>
 <link href="https://www.egyptphotographytours.com/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="https://www.egyptphotographytours.com/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
 <link href="https://www.egyptphotographytours.com/images/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://www.egyptphotographytours.com/images/favicon.ico" rel="shortcut icon"/>
-<link href="https://www.egyptphotographytours.com/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/site.webmanifest" rel="manifest"/>
+<link href="https://www.egyptphotographytours.com/images/apple-touch-icon.jpg" rel="apple-touch-icon" sizes="180x180"/>
+<link crossorigin="anonymous" href="https://www.egyptphotographytours.com/site.webmanifest" rel="manifest"/>
 <meta content="#FFD700" name="msapplication-TileColor"/>
 <meta content="#FFD700" name="theme-color"/>
-<!-- Preconnect to critical third-party domains -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://widget.trustpilot.com" rel="preconnect"/>
-<link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-<link href="https://challenges.cloudflare.com" rel="preconnect"/>
-<!-- SEO-optimized title -->
-<title>Guida all'accessibilità dell'aeroporto dell'Egitto: navigazione al Cairo, Luxor e Assuan per utenti su sedia a rotelle</title>
-<!-- SEO-optimized meta description -->
-<meta content="Guida completa 2026 per spostarsi negli aeroporti egiziani con sedia a rotelle. Funzionalità di accessibilità verificate negli aeroporti del Cairo (CAI), Luxor (LXR) e Aswan (ASW), procedure di assistenza, protocolli di sicurezza e suggerimenti pratici." name="description"/>
-<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<!-- Open Graph tags -->
-<meta content="Guida all'accessibilità dell'aeroporto dell'Egitto: navigazione al Cairo, Luxor e Assuan per utenti su sedia a rotelle" property="og:title"/>
-<meta content="Guida completa 2026 per spostarsi negli aeroporti egiziani con sedia a rotelle. Funzionalità di accessibilità verificate negli aeroporti del Cairo (CAI), Luxor (LXR) e Aswan (ASW), procedure di assistenza e consigli pratici." property="og:description"/>
-<meta content="https://www.egyptphotographytours.com/images/egypt-airport-accessibility-guide-2026.jpg" property="og:image"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="Wheelchair accessible Egypt airports - Cairo, Luxor &amp; Aswan navigation guide" property="og:image:alt"/>
-<meta content="https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html" property="og:url"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+<link crossorigin="" href="https://challenges.cloudflare.com" rel="preconnect"/>
+<link as="style" crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" rel="preload"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/500.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/600.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/700.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/800.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/400.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/600.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/700.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/500.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/600.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/700.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/800.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/400.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/600.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/700.css" rel="stylesheet"/>
+</noscript>
+<title>Guida all'accessibilità dell'aeroporto egiziano 2026: assistenza per sedie a rotelle, servizi speciali e supporto per disabili | Tour fotografici in Egitto</title>
+<meta content="Guida completa 2026 all'accessibilità aeroportuale in Egitto: assistenza su sedia a rotelle, servizi speciali per passeggeri con disabilità, strutture accessibili negli aeroporti del Cairo, Luxor, Aswan, Hurghada e Sharm El Sheikh." name="description"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="Hossam, Egypt Photography Tours" name="author"/>
+<meta content="Egypt Photography Tours" name="copyright"/>
+<meta content="en" name="language"/>
 <meta content="article" property="og:type"/>
 <meta content="Egypt Photography Tours" property="og:site_name"/>
-<meta content="2026-01-26T00:00:00+02:00" property="article:published_time"/>
-<meta content="2026-02-01T13:45:00+02:00" property="article:modified_time"/>
-<!-- Twitter tags -->
+<meta content="en_US" property="og:locale"/>
+<meta content="https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html" property="og:url"/>
+<meta content="Guida all'accessibilità dell'aeroporto egiziano 2026: assistenza per sedie a rotelle, servizi speciali e supporto per disabili" property="og:title"/>
+<meta content="Guida completa 2026 all'accessibilità aeroportuale in Egitto: assistenza su sedia a rotelle, servizi speciali per passeggeri con disabilità, strutture accessibili nei principali aeroporti." property="og:description"/>
+<meta content="https://www.egyptphotographytours.com/images/egypt-airport-accessibility-guide-2026.jpg" property="og:image"/>
+<meta content="image/jpeg" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Wheelchair accessible facilities at Egyptian airports for travelers with disabilities" property="og:image:alt"/>
+<meta content="2026-02-28T08:00:00+02:00" property="article:published_time"/>
+<meta content="2026-02-28T08:00:00+02:00" property="article:modified_time"/>
+<meta content="https://www.egyptphotographytours.com/about.html" property="article:author"/>
+<meta content="Accessibility Travel Guide" property="article:section"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="@EgyptPhotoTours" name="twitter:site"/>
-<meta content="@HossamPhotoEG" name="twitter:creator"/>
-<meta content="Guida all'accessibilità dell'aeroporto dell'Egitto: navigazione al Cairo, Luxor e Assuan per utenti su sedia a rotelle" name="twitter:title"/>
-<meta content="Guida completa 2026 per spostarsi negli aeroporti egiziani con sedia a rotelle. Funzionalità di accessibilità verificate, procedure di assistenza e consigli pratici per gli aeroporti del Cairo, Luxor e Aswan." name="twitter:description"/>
+<meta content="@egyptphotographytours" name="twitter:site"/>
+<meta content="Guida all'accessibilità dell'aeroporto egiziano 2026: assistenza per sedie a rotelle, servizi speciali e supporto per disabili" name="twitter:title"/>
+<meta content="Guida completa 2026 all'accessibilità aeroportuale in Egitto: assistenza su sedia a rotelle, servizi speciali per passeggeri con disabilità, strutture accessibili nei principali aeroporti." name="twitter:description"/>
 <meta content="https://www.egyptphotographytours.com/images/egypt-airport-accessibility-guide-2026.jpg" name="twitter:image"/>
-<!-- Geo Tags -->
 <meta content="EG-C" name="geo.region"/>
 <meta content="Cairo, Egypt" name="geo.placename"/>
 <meta content="30.0444;31.2357" name="geo.position"/>
 <meta content="30.0444, 31.2357" name="ICBM"/>
 <meta content="EG" name="geo.country"/>
-<!-- COMPREHENSIVE STRUCTURED DATA SCHEMA -->
 <script class="notranslate" translate="no" type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "Egypt Photography Tours - Airport Accessibility Guide",
-      "url": "https://www.egyptphotographytours.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.egyptphotographytours.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": ["TravelAgency", "PhotographyService"],
-      "name": "Egypt Photography Tours",
-      "url": "https://www.egyptphotographytours.com",
-      "logo": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp",
-      "telephone": "+20-155-073-5673",
-      "email": "info@egyptphotographytours.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "foundingDate": "2015",
-      "founder": {
-        "@type": "Person",
-        "name": "Hossam",
-        "jobTitle": "Professional Photographer & Egyptologist"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.egyptphotographytours.com/resources"},
-        {"@type": "ListItem", "position": 3, "name": "Egypt Airport Accessibility Guide 2026", "item": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html"}
-      ]
-    },
-    {
-      "@type": "Article",
-      "headline": "Egypt Airport Accessibility Guide: Cairo, Luxor & Aswan Navigation for Wheelchair Users",
-      "description": "Complete 2026 guide to navigating Egypt airports with wheelchairs. Verified accessibility features at Cairo (CAI), Luxor (LXR) & Aswan (ASW) airports, assistance procedures, security protocols and practical tips for wheelchair travelers.",
-      "author": {"@type": "Person", "name": "Hossam", "jobTitle": "Professional Photographer & Egyptologist"},
-      "datePublished": "2026-01-26T00:00:00+02:00",
-      "dateModified": "2026-02-01T13:45:00+02:00",
-      "publisher": {"@type": "Organization", "name": "Egypt Photography Tours", "logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": 200, "height": 200}},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html"},
-      "image": ["https://www.egyptphotographytours.com/images/egypt-airport-accessibility-guide-2026.jpg"],
-      "articleSection": "Airport Accessibility Guide"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "How do I request wheelchair assistance at Cairo International Airport (CAI)?", "acceptedAnswer": {"@type": "Answer", "text": "Request wheelchair assistance when booking your flight (minimum 48 hours advance notice). Upon arrival at CAI, proceed to the Special Assistance desk in Terminal 3 arrivals hall. Staff will provide airport wheelchair and escort through immigration, baggage claim, and customs."}},
-        {"@type": "Question", "name": "Are Egypt airport restrooms wheelchair accessible?", "acceptedAnswer": {"@type": "Answer", "text": "Cairo International Airport (Terminal 3) has fully accessible restrooms with grab bars, adequate turning space, and lowered fixtures in all concourses. Luxor and Aswan airports have at least one accessible restroom in the main terminal building."}},
-        {"@type": "Question", "name": "Can I bring my own wheelchair through Egypt airport security?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, personal wheelchairs and mobility aids pass through security screening. You may remain in your wheelchair during screening; staff will conduct a pat-down inspection. Battery-powered wheelchairs require advance notification to airlines."}},
-        {"@type": "Question", "name": "What accessible transportation options exist from Egypt airports?", "acceptedAnswer": {"@type": "Answer", "text": "Standard taxis and ride-shares are not wheelchair-accessible. Egypt Photography Tours provides verified accessible vehicles with hydraulic lifts or ramps, secure tie-down systems, and trained drivers for airport transfers."}},
-        {"@type": "Question", "name": "How long does airport processing take for wheelchair users in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "Allow 2-3 hours for arrival processing at Cairo International Airport when using wheelchair assistance. Luxor and Aswan airports typically require 1-1.5 hours. Departure processing is faster."}}
-      ]
-    }
-  ]
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "WebSite",
+"@id": "https://www.egyptphotographytours.com/#website",
+"url": "https://www.egyptphotographytours.com/",
+"name": "Egypt Photography Tours"
+},
+{
+"@type": "WebPage",
+"@id": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html#webpage",
+"url": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html",
+"name": "Egypt Airport Accessibility Guide 2026: Wheelchair Assistance, Special Services & Disability Support",
+"description": "Complete 2026 guide to airport accessibility in Egypt: wheelchair assistance, special services for passengers with disabilities, accessible facilities at Cairo, Luxor, Aswan, Hurghada and Sharm El Sheikh airports.",
+"isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
+"breadcrumb": {"@id": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html#breadcrumb"},
+"inLanguage": "en-US",
+"datePublished": "2026-02-28T08:00:00+02:00",
+"dateModified": "2026-02-28T08:00:00+02:00"
+},
+{
+"@type": "BreadcrumbList",
+"@id": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html#breadcrumb",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
+{"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.egyptphotographytours.com/resources.html"},
+{"@type": "ListItem", "position": 3, "name": "Egypt Airport Accessibility Guide 2026", "item": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html"}
+]
+},
+{
+"@type": "Article",
+"@id": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html#article",
+"headline": "Egypt Airport Accessibility Guide 2026: Wheelchair Assistance, Special Services & Disability Support",
+"alternativeHeadline": "The Complete 2026 Guide to Airport Accessibility in Egypt — Wheelchair Assistance, Special Services & Disability Support at Major Airports",
+"description": "Complete 2026 guide to airport accessibility in Egypt: wheelchair assistance, special services for passengers with disabilities, accessible facilities at major airports.",
+"datePublished": "2026-02-28T08:00:00+02:00",
+"dateModified": "2026-02-28T08:00:00+02:00",
+"author": {"@id": "https://www.egyptphotographytours.com/#person-hossam"},
+"publisher": {"@id": "https://www.egyptphotographytours.com/#organization"},
+"mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html#webpage"},
+"articleSection": "Accessibility Travel Guide",
+"wordCount": "2800",
+"timeRequired": "PT25M",
+"speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-lede", ".faq-answer"]}
+},
+{
+"@type": "FAQPage",
+"@id": "https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html#faq",
+"mainEntity": [
+{"@type": "Question", "name": "Are Egyptian airports wheelchair accessible?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, all major Egyptian airports (Cairo, Luxor, Aswan, Hurghada, Sharm El Sheikh) provide wheelchair assistance services. Cairo International Airport (Terminals 2 and 3) offers the most comprehensive accessibility features including accessible restrooms, elevators, ramps, and dedicated assistance staff. Request wheelchair assistance when booking your flight or at least 48 hours before departure."}},
+{"@type": "Question", "name": "How do I request wheelchair assistance at Egyptian airports?", "acceptedAnswer": {"@type": "Answer", "text": "Request wheelchair assistance when booking your flight or contact your airline at least 48 hours before departure. Upon arrival, proceed to the special assistance desk or ask any airline staff. Assistance is provided from check-in through baggage claim. For departures, request assistance at check-in and you'll be escorted through priority security and immigration lanes."}},
+{"@type": "Question", "name": "Are accessible restrooms available at Egyptian airports?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, accessible restrooms are available at all major Egyptian airports. Cairo International Airport (especially Terminal 2 and Terminal 3) has the most comprehensive accessible facilities. Luxor, Aswan, Hurghada and Sharm El Sheikh airports also provide accessible restrooms. Look for the international accessibility symbol."}},
+{"@type": "Question", "name": "Can I bring my own wheelchair through Egyptian airports?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can bring your own wheelchair. Manual wheelchairs can be used throughout the airport and checked at the gate for flights. Electric wheelchairs require advance notice to airlines due to battery regulations. Airport staff can provide airport wheelchairs if you prefer not to use your own throughout the airport."}},
+{"@type": "Question", "name": "Are Egyptian tourist sites wheelchair accessible?", "acceptedAnswer": {"@type": "Answer", "text": "Accessibility varies by site. The Grand Egyptian Museum is fully wheelchair accessible with ramps and elevators. The Pyramids plateau has some accessible paths but uneven terrain in areas. Karnak and Luxor temples have partial accessibility with some uneven areas. Egypt Photography Tours provides accessible tour options and can arrange accessible transportation and site access."}},
+{"@type": "Question", "name": "Does Egypt Photography Tours offer accessible tours for travelers with disabilities?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Egypt Photography Tours offers accessible tour options for travelers with mobility challenges. We provide accessible vehicles, coordinate accessible site access, and can arrange specialized assistance. Contact us in advance to discuss your specific needs and we'll customize your itinerary accordingly."}}
+]
+},
+{
+"@type": "Person",
+"@id": "https://www.egyptphotographytours.com/#person-hossam",
+"name": "Hossam",
+"jobTitle": "Professional Photographer & Egyptologist",
+"worksFor": {"@id": "https://www.egyptphotographytours.com/#organization"},
+"knowsAbout": ["Accessible Travel", "Airport Accessibility", "Disability Travel Support", "Egypt Travel Logistics"],
+"url": "https://www.egyptphotographytours.com/about.html"
+},
+{
+"@type": "Organization",
+"@id": "https://www.egyptphotographytours.com/#organization",
+"name": "Egypt Photography Tours",
+"url": "https://www.egyptphotographytours.com/",
+"logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": "200", "height": "200"},
+"telephone": "+20-155-073-5673",
+"email": "info@egyptphotographytours.com",
+"foundingDate": "2015",
+"address": {"@type": "PostalAddress", "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza", "addressLocality": "Giza", "addressRegion": "Giza Governorate", "postalCode": "12557", "addressCountry": "EG"},
+"geo": {"@type": "GeoCoordinates", "latitude": "29.9792", "longitude": "31.1342"},
+"aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "150", "bestRating": "5", "worstRating": "1"},
+"sameAs": [
+"https://www.facebook.com/egyptphotographytours",
+"https://www.instagram.com/hossam_artistic/",
+"https://www.tiktok.com/@egyptphotographytours",
+"https://www.youtube.com/@Egyptphotographytours"
+]
+}
+]
 }
 </script>
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
-<script async="" defer="" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" type="text/javascript"></script>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
 <script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
 <style>
-:root {
-    --primary-dark: #1a202c;
-    --accent-light: #FFD700;
-    --accent-dark: #E2B700;
-    --text-color: #333;
-    --culture-color: #8B5A2B;
-    --dining-color: #DC2626;
-    --hotel-color: #2563EB;
-    --tour-color: #10B981;
-    --warning-color: #e53e3e;
-    --success-color: #10B981;
-    --airport-color: #059669;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f8f8f8;
-    color: var(--text-color);
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    line-height: 1.6;
-    font-size: 16px;
-}
-.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-.skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-light); color: var(--primary-dark); padding: 8px 16px; z-index: 10000; text-decoration: none; font-weight: 600; border-radius: 0 0 4px 0; }
-.skip-link:focus { top: 0; }
-.header { background-color: var(--primary-dark); color: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 12px 0; }
-.header .content { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px; }
-@media (min-width: 768px) { .header .content { flex-direction: row; gap: 0; } .header-text { margin-top: 0; font-size: 16px; } }
-.logo-section { display: flex; align-items: center; gap: 8px; }
-.logo-img { height: 40px; width: auto; border-radius: 9999px; }
-.logo-link { font-size: 20px; font-weight: 700; letter-spacing: -0.025em; color: var(--accent-light); text-decoration: none; }
-.header-text { font-size: 14px; font-style: italic; text-align: center; margin-top: 4px; }
-.header-contact { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-@media (min-width: 768px) { .header-contact { align-items: flex-end; } }
-.contact-info { display: flex; align-items: center; gap: 6px; color: white; text-decoration: none; font-size: 14px; transition: color 0.3s ease; padding: 4px 0; }
-.contact-info:hover { color: var(--accent-light); }
-.contact-icon { font-size: 14px; width: 16px; text-align: center; }
-.navbar { background-color: #374151; color: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 50; padding: 0; }
-.navbar-content { display: flex; flex-direction: column; align-items: stretch; justify-content: space-between; }
-@media (min-width: 768px) { .navbar-content { flex-direction: row; align-items: center; } }
-.nav-links { display: none; flex-direction: column; width: 100%; gap: 0; font-size: 16px; font-weight: 500; list-style: none; padding: 0; margin: 0; background-color: #374151; }
-.nav-links.active { display: flex; }
-@media (min-width: 768px) { .nav-links { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; width: auto; } }
-.nav-link { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.nav-link:last-child { border-bottom: none; }
-@media (min-width: 768px) { .nav-link { border-bottom: none; } }
-.nav-link a { color: white; text-decoration: none; padding: 12px 16px; transition: color 0.3s ease; display: block; }
-@media (min-width: 768px) { .nav-link a { padding: 8px 0; } }
-.nav-link a:hover { color: var(--accent-light); }
-.cta-container { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
-@media (min-width: 768px) { .cta-container { justify-content: flex-end; gap: 12px; padding: 0; } }
-.language-switcher { position: relative; display: inline-block; z-index: 1000; }
-.current-language { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 6px; cursor: pointer; transition: all 0.3s ease; color: white; font-weight: 500; }
-.current-language:hover { background: rgba(255, 215, 0, 0.2); border-color: rgba(255, 215, 0, 0.5); }
-.current-flag { font-size: 16px; }
-.current-text { font-size: 14px; font-weight: 600; }
-.dropdown-icon { font-size: 12px; transition: transform 0.3s ease; }
-.language-dropdown { position: absolute; top: 100%; right: 0; width: 240px; max-height: 450px; overflow-y: auto; background: #374151; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin-top: 8px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; z-index: 1001; }
-.language-switcher.active .language-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-.language-item { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: white; text-decoration: none; transition: all 0.2s ease; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.language-item:last-child { border-bottom: none; }
-.language-item:hover { background: rgba(255, 215, 0, 0.1); color: var(--accent-light); }
-.language-item.active { background: rgba(255, 215, 0, 0.2); color: var(--accent-light); font-weight: 600; }
-.flag-icon { font-size: 18px; min-width: 24px; }
-.language-text { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mobile-menu-toggle { display: block; background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 8px; }
-@media (min-width: 768px) { .mobile-menu-toggle { display: none; } }
-.hero-section { position: relative; background-image: url('/images/egypt-airport-accessibility-guide-2026.jpg'); background-size: cover; background-position: center; height: 60vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; }
-.hero-overlay { position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.7); }
-.hero-content { position: relative; z-index: 10; color: white; max-width: 960px; margin: 0 auto; }
-.hero-title { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); color: var(--accent-light); }
-@media (min-width: 768px) { .hero-title { font-size: 56px; } }
-.hero-subtitle { font-size: 18px; margin-bottom: 40px; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); max-width: 800px; margin-left: auto; margin-right: auto; }
-@media (min-width: 768px) { .hero-subtitle { font-size: 22px; } }
-.article-section { padding: 40px 0; }
-@media (min-width: 768px) { .article-section { padding: 80px 0; } }
-.article-container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
-.article-meta { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; font-size: 14px; color: #6b7280; flex-wrap: wrap; }
-@media (min-width: 768px) { .article-meta { font-size: 16px; } }
-.last-updated { background: rgba(5, 150, 105, 0.1); color: var(--airport-color); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
-.article-content h2 { font-size: 32px; font-weight: 800; color: var(--primary-dark); margin: 60px 0 25px; padding-bottom: 10px; border-bottom: 3px solid var(--airport-color); line-height: 1.3; }
-@media (min-width: 768px) { .article-content h2 { font-size: 40px; margin: 80px 0 30px; } }
-.article-content h3 { font-size: 26px; font-weight: 700; color: var(--primary-dark); margin: 50px 0 20px; }
-@media (min-width: 768px) { .article-content h3 { font-size: 30px; margin: 60px 0 25px; } }
-.article-content h4 { font-size: 20px; font-weight: 600; color: var(--primary-dark); margin: 35px 0 15px; }
-.article-content p { font-size: 18px; line-height: 1.8; margin-bottom: 25px; }
-@media (min-width: 768px) { .article-content p { font-size: 20px; margin-bottom: 30px; } }
-.article-content ul, .article-content ol { margin-bottom: 30px; padding-left: 30px; }
-.article-content li { font-size: 18px; line-height: 1.8; margin-bottom: 15px; }
-@media (min-width: 768px) { .article-content li { font-size: 20px; } }
-.article-content strong { color: var(--primary-dark); font-weight: 700; }
-.article-content a { color: var(--tour-color); text-decoration: none; font-weight: 600; transition: color 0.3s ease; border-bottom: 1px dashed var(--tour-color); }
-.article-content a:hover { color: var(--primary-dark); border-bottom-style: solid; }
-.airport-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(5, 150, 105, 0.1); color: var(--airport-color); padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600; margin: 4px; }
-.partially-accessible { background: rgba(245, 158, 11, 0.1); color: #d97706; }
-.review-card { background: white; border-radius: 12px; padding: 25px; margin: 25px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--airport-color); }
-.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid #e5e7eb; }
-.reviewer-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--airport-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; }
-.reviewer-info h4 { margin: 0; font-size: 16px; color: var(--primary-dark); }
-.reviewer-info p { margin: 4px 0 0; font-size: 14px; color: #6b7280; }
-.review-rating { display: flex; gap: 2px; color: #f59e0b; font-size: 14px; }
-.review-content p { margin: 0; font-size: 16px; line-height: 1.7; }
-.culture-grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin: 40px 0; }
-@media (min-width: 768px) { .culture-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .culture-grid { grid-template-columns: repeat(3, 1fr); } }
-.culture-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); border-top: 5px solid var(--airport-color); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.culture-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
-.culture-icon { font-size: 42px; color: var(--airport-color); margin-bottom: 20px; display: block; text-align: center; }
-.culture-card h4 { color: var(--airport-color); text-align: center; margin-top: 0; }
-.tipping-highlight { background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%); border-left: 6px solid var(--accent-light); padding: 35px; margin: 50px 0; border-radius: 12px; text-align: center; }
-@media (min-width: 768px) { .tipping-highlight { padding: 45px; } }
-.table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 35px 0; border-radius: 10px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); }
-.tipping-table { width: 100%; border-collapse: collapse; font-size: 16px; min-width: 600px; }
-@media (min-width: 768px) { .tipping-table { font-size: 18px; } }
-.tipping-table th { background-color: var(--primary-dark); color: white; padding: 20px 15px; text-align: left; font-weight: 700; font-size: 18px; position: sticky; top: 0; }
-@media (min-width: 768px) { .tipping-table th { padding: 25px 20px; } }
-.tipping-table td { padding: 20px 15px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
-@media (min-width: 768px) { .tipping-table td { padding: 25px 20px; } }
-.tipping-table tr:nth-child(even) { background-color: #f9fafb; }
-.tipping-table tr:hover { background-color: #f3f4f6; }
-.tipping-table .currency { font-weight: 600; color: var(--primary-dark); }
-.service-category { background: white; border-radius: 15px; padding: 35px; margin: 40px 0; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); border-top: 6px solid; }
-@media (min-width: 768px) { .service-category { padding: 45px; } }
-.category-airport { border-color: var(--airport-color); }
-.tip-card { background: white; padding: 30px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.08); border-left: 4px solid var(--accent-light); }
-.trust-section { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); color: white; padding: 80px 0; margin: 60px 0; }
-.trust-section h2 { color: var(--accent-light); text-align: center; margin-bottom: 50px; font-size: 36px; font-weight: 800; }
-@media (min-width: 768px) { .trust-section h2 { font-size: 42px; } }
-.trust-grid { display: grid; grid-template-columns: 1fr; gap: 35px; margin-top: 40px; }
-@media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
-.trust-card { background: rgba(255, 255, 255, 0.1); padding: 35px; border-radius: 15px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2); transition: transform 0.4s ease, border-color 0.4s ease; }
-.trust-card:hover { transform: translateY(-10px); border-color: var(--accent-light); }
-.trust-icon { font-size: 52px; margin-bottom: 25px; display: block; }
-.trust-card h3 { color: var(--accent-light); font-size: 26px; margin-bottom: 20px; }
-.trust-card p { color: #e2e8f0; font-size: 18px; line-height: 1.7; }
-.tour-integration { background: linear-gradient(135deg, #e6f7ff 0%, #d1ecff 100%); border-left: 6px solid var(--accent-light); padding: 40px; margin: 50px 0; border-radius: 15px; }
-.tour-recommendation { background: white; padding: 30px; border-radius: 12px; margin: 25px 0; border: 2px solid #d1ecff; transition: transform 0.3s ease; }
-.tour-recommendation:hover { transform: translateX(10px); border-color: var(--accent-light); }
-.cta-button { display: inline-block; background-color: var(--accent-light); color: var(--primary-dark); font-weight: 700; padding: 18px 36px; border-radius: 50px; text-align: center; text-decoration: none; transition: all 0.4s ease; font-size: 18px; box-shadow: 0 15px 25px -5px rgba(0,0,0,0.15); border: 2px solid transparent; }
-.cta-button:hover, .cta-button:active, .cta-button:focus { background-color: var(--accent-dark); transform: scale(1.08); color: var(--primary-dark) !important; text-decoration: none; border-color: var(--primary-dark); box-shadow: 0 20px 35px -5px rgba(0,0,0,0.2); }
-.cta-section { background-color: var(--primary-dark); color: white; padding: 60px 0; text-align: center; margin-top: 60px; border-radius: 15px; background-image: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%); }
-@media (min-width: 768px) { .cta-section { padding: 80px 0; margin-top: 80px; } }
-.cta-section h2 { color: var(--accent-light); margin-bottom: 25px; font-size: 36px; font-weight: 800; }
-@media (min-width: 768px) { .cta-section h2 { font-size: 42px; } }
-.cta-section p { max-width: 700px; margin: 0 auto 35px; font-size: 20px; line-height: 1.7; }
-@media (min-width: 768px) { .cta-section p { font-size: 22px; margin: 0 auto 45px; } }
-.footer { background-color: var(--primary-dark); color: white; padding: 40px 0; margin-top: auto; }
-@media (min-width: 768px) { .footer { padding: 50px 0; } }
-.footer-content { text-align: center; }
-@media (min-width: 768px) { .footer-content { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; flex-wrap: wrap; } }
-.footer-section { margin-bottom: 30px; flex: 1; min-width: 250px; }
-@media (min-width: 768px) { .footer-section { margin-bottom: 0; } }
-.footer-brand { text-align: left; margin-bottom: 30px; flex: 1; min-width: 250px; }
-@media (min-width: 768px) { .footer-brand { margin-bottom: 0; text-align: left; } }
-.footer-title { font-size: 22px; font-weight: 700; color: var(--accent-light); margin-bottom: 12px; }
-@media (min-width: 768px) { .footer-title { font-size: 26px; } }
-.footer-text { font-size: 15px; line-height: 1.6; margin: 0; }
-.footer-links { list-style: none; padding: 0; font-size: 15px; line-height: 2; }
-.footer-links li a { color: white; text-decoration: none; transition: color 0.3s ease; }
-.footer-links li a:hover { color: var(--accent-light); }
-.social-links { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
-@media (min-width: 768px) { .social-links { justify-content: flex-start; } }
-.social-links a { color: white; transition: color 0.3s ease; font-size: 20px; }
-.social-links a:hover { color: var(--accent-light); }
-.footer-contact { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; margin-bottom: 20px; }
-.footer-contact-info { display: flex; align-items: center; gap: 8px; color: white; text-decoration: none; font-size: 15px; transition: color 0.3s ease; justify-content: center; }
-@media (min-width: 768px) { .footer-contact-info { justify-content: flex-start; } }
-.footer-contact-info:hover { color: var(--accent-light); }
-.footer-map { margin-top: 30px; width: 100%; flex: 2; }
-@media (min-width: 768px) { .footer-map { margin-top: 0; } }
-.footer-map iframe { width: 100%; height: 350px; border: none; border-radius: 12px; }
-@media (min-width: 768px) { .footer-map iframe { height: 400px; } }
-@media (min-width: 1024px) { .footer-map iframe { height: 450px; } }
-.book-now-button { font-weight: 700; padding: 10px 20px; border-radius: 50px; background-color: var(--accent-light); color: #1a202c; text-decoration: none; transition: all 0.3s ease; font-size: 15px; white-space: nowrap; box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.15); display: inline-block; border: 2px solid transparent; }
-.book-now-button:hover, .book-now-button:active, .book-now-button:focus { background-color: var(--accent-dark); transform: scale(1.05); color: #1a202c !important; text-decoration: none; border-color: #1a202c; }
-.warning-box { background: linear-gradient(135deg, #fed7d7 0%, #fef2f2 100%); border-left: 6px solid var(--warning-color); padding: 35px; margin: 40px 0; border-radius: 12px; }
-.warning-box h3 { color: var(--warning-color); margin-top: 0; font-size: 24px; }
-.advice-box { background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%); border-left: 6px solid var(--success-color); padding: 35px; margin: 40px 0; border-radius: 12px; }
-.advice-box h3 { color: var(--success-color); margin-top: 0; font-size: 24px; }
-.back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--accent-light); color: var(--primary-dark); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 6px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; z-index: 999; opacity: 0; visibility: hidden; }
-.back-to-top.visible { opacity: 1; visibility: visible; }
-.back-to-top:hover { background: var(--accent-dark); transform: scale(1.1); }
-.trustpilot-widget-container { margin: 40px 0; text-align: center; }
-.breadcrumb { padding: 16px 0; font-size: 14px; color: #6b7280; }
-.breadcrumb a { color: var(--tour-color); text-decoration: none; }
-.breadcrumb a:hover { text-decoration: underline; }
-.breadcrumb span { margin: 0 4px; color: #9ca3af; }
-.cookie-consent { position: fixed; bottom: 0; left: 0; right: 0; background: var(--primary-dark); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; z-index: 10000; transform: translateY(100%); transition: transform 0.3s ease; }
-.cookie-consent.visible { transform: translateY(0); }
-.cookie-consent p { margin: 0; font-size: 14px; flex: 1; }
-.cookie-consent button { background: var(--accent-light); color: var(--primary-dark); border: none; padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
-.cookie-consent button:hover { background: var(--accent-dark); }
-.airport-checklist { background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%); border-radius: 12px; padding: 30px; margin: 30px 0; border-left: 5px solid var(--airport-color); }
-.checklist-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; font-size: 16px; }
-.checklist-item i { color: var(--success-color); margin-top: 3px; }
-
-/* Text Only Related Guides */
-.related-guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-.related-guide-card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); border-left: 4px solid var(--airport-color); }
-.related-guide-card h4 { margin-bottom: 10px; font-size: 18px; }
-.related-guide-card h4 a { color: var(--primary-dark); text-decoration: none; }
-.related-guide-card h4 a:hover { color: var(--airport-color); }
-.related-guide-card p { font-size: 14px; color: #6b7280; margin-bottom: 12px; }
-.related-guide-card .read-more { color: var(--airport-color); font-weight: 600; text-decoration: none; }
-.related-guide-card .read-more:hover { text-decoration: underline; }
-
-/* Contact Form CSS */
+:root{--c-dark:#1a202c;--c-gold:#FFD700;--c-gold-d:#E6C200;--c-white:#fff;--c-bg:#f7f8fa;--c-text:#2d3748;--c-muted:#5A6475;--c-price:#6B5000;--c-border:#e2e8f0;--c-nile:#1E6FD9;--c-warn:#C53030;--c-ac-rose:#0891B2;--c-book:#059669;--radius-sm:8px;--radius:14px;--shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow:0 4px 20px rgba(0,0,0,.11);--shadow-lg:0 12px 40px rgba(0,0,0,.16);--nav-height:56px;--header-height:60px;--transition:.28s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer}
+[hidden]{display:none!important}
+.skip-link{position:absolute;top:-60px;left:12px;background:var(--c-gold);color:var(--c-dark);padding:10px 18px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;font-size:14px;z-index:99999;transition:top var(--transition)}
+.skip-link:focus{top:0;outline:3px solid var(--c-dark)}
+:focus-visible{outline:3px solid var(--c-gold);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 28px}}
+.section{padding:52px 0}
+@media(min-width:768px){.section{padding:80px 0}}
+.section-alt{background:#eef0f5}
+.section-dark{background:var(--c-dark);color:var(--c-white)}
+.section-gold{background:linear-gradient(135deg,#FFD700 0%,#FFF3B0 60%,#FFD700 100%)}
+h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--c-dark)}
+.section-dark h1,.section-dark h2,.section-accent h1,.section-accent h2{color:var(--c-white)}
+h1{font-size:clamp(22px,5vw,44px)}
+h2{font-size:clamp(20px,3.5vw,36px)}
+h3{font-size:clamp(16px,2.5vw,22px)}
+p{font-size:15px;line-height:1.75;color:var(--c-text)}
+.section-dark p{color:rgba(255,255,255,.9)}
+.eyebrow{display:inline-block;background:rgba(255,215,0,.18);color:#7A5C00;border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px}
+.section-dark .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
+.text-c{text-align:center}
+.text-c .sec-sub{margin-inline:auto}
+.sec-sub{font-size:clamp(14px,1.8vw,17px);color:var(--c-muted);max-width:660px;line-height:1.7;margin-top:12px}
+.section-dark .sec-sub{color:rgba(255,255,255,.85)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:14px;transition:all var(--transition);border:2px solid transparent;white-space:nowrap;cursor:pointer;text-decoration:none;min-height:48px}
+.btn-gold{background:var(--c-gold);color:var(--c-dark);border-color:var(--c-gold)}
+.btn-gold:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+.btn-dark{background:var(--c-dark);color:var(--c-white)}
+.btn-dark:hover{background:#0f141c;transform:translateY(-2px)}
+.btn-outline-dark{background:transparent;color:var(--c-dark);border-color:var(--c-dark)}
+.btn-outline-dark:hover{background:var(--c-dark);color:var(--c-white)}
+.btn-outline-white{background:rgba(255,255,255,.15);color:var(--c-white);border-color:rgba(255,255,255,.6);backdrop-filter:blur(4px)}
+.btn-outline-white:hover{background:rgba(255,255,255,.28);border-color:var(--c-white)}
+.btn-wa{background:#25D366;color:#fff;border-color:#25D366}
+.btn-wa:hover{background:#20ba59;transform:translateY(-2px)}
+.btn-sm{padding:9px 18px;font-size:13px;min-height:44px}
+.btn-lg{padding:16px 36px;font-size:16px}
+.btn-group{display:flex;flex-wrap:wrap;gap:14px}
+.header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0}
+.logo-mark{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#2d3748 0%,#1a202c 70%);border:2px solid var(--c-gold);display:flex;align-items:center;justify-content:center;color:var(--c-gold);font-size:17px;flex-shrink:0}
+.logo-copy{display:flex;flex-direction:column}
+.logo-name{font-size:15px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap}
+.logo-tag{font-size:10px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px}
+@media(min-width:400px){.logo-name{font-size:16px}}
+@media(min-width:768px){.logo-name{font-size:19px}.logo-tag{font-size:11px}}
+.header-contacts{display:none}
+@media(min-width:900px){.header-contacts{display:flex;flex-direction:column;align-items:flex-end;gap:4px}.hc-link{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.92);font-size:13px;transition:color var(--transition)}.hc-link:hover{color:var(--c-gold)}.hc-link i{color:var(--c-gold);width:14px}}
+.navbar{background:#2d3748;position:sticky;top:0;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.35)}
+.nav-inner{display:flex;align-items:center;height:var(--nav-height);gap:10px}
+.hamburger{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:var(--radius-sm);color:var(--c-white);font-size:18px;transition:all var(--transition);flex-shrink:0}
+.hamburger:hover{background:rgba(255,215,0,.18);border-color:rgba(255,215,0,.4)}
+@media(min-width:900px){.hamburger{display:none}}
+.nav-links-desk{display:none;list-style:none;align-items:center;gap:2px;flex:1}
+@media(min-width:900px){.nav-links-desk{display:flex}.nav-links-desk li a{display:flex;align-items:center;padding:8px 11px;min-height:44px;color:rgba(255,255,255,.92);font-size:13px;font-weight:500;border-radius:var(--radius-sm);transition:all var(--transition)}.nav-links-desk li a:hover{color:var(--c-gold);background:rgba(255,215,0,.1)}.nav-links-desk li a.active{color:var(--c-gold);background:rgba(255,215,0,.08)}}
+.nav-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+.nav-book{display:inline-flex;align-items:center;gap:6px;background:var(--c-gold);color:var(--c-dark);padding:9px 16px;border-radius:20px;font-weight:700;font-size:13px;transition:all var(--transition);white-space:nowrap;min-height:44px}
+.nav-book:hover{background:var(--c-gold-d);transform:scale(1.03)}
+.lang-wrap{position:relative}
+.lang-toggle{display:flex;align-items:center;gap:5px;background:rgba(255,215,0,.12);border:1.5px solid rgba(255,215,0,.3);border-radius:20px;padding:8px 11px;color:var(--c-white);font-size:12px;font-weight:600;transition:all var(--transition);min-height:44px;cursor:pointer}
+.lang-toggle:hover,.lang-toggle[aria-expanded="true"]{background:rgba(255,215,0,.24);border-color:var(--c-gold)}
+.lang-chevron{font-size:9px;transition:transform var(--transition);flex-shrink:0}
+.lang-wrap[data-open="true"] .lang-chevron{transform:rotate(180deg)}
+.lang-menu{display:none;position:fixed;top:calc(var(--header-height) + var(--nav-height) + 4px);left:50%;transform:translateX(-50%);width:min(300px,92vw);max-height:68vh;overflow-y:auto;background:#1e293b;border-radius:var(--radius);border:1px solid rgba(255,215,0,.25);box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:9999;-webkit-overflow-scrolling:touch}
+.lang-wrap[data-open="true"] .lang-menu{display:block}
+@media(min-width:900px){.lang-menu{position:absolute;top:calc(100% + 8px);left:auto;right:0;transform:none;width:240px;max-height:440px}}
+.lang-menu-head{padding:12px 16px 8px;font-size:10px;font-weight:700;color:var(--c-gold);text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;background:#1e293b;z-index:1}
+.lang-item{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:48px;color:rgba(255,255,255,.92);font-size:14px;border-bottom:1px solid rgba(255,255,255,.06);transition:background var(--transition);cursor:pointer}
+.lang-item:last-child{border-bottom:none}
+.lang-item:hover,.lang-item:active{background:rgba(255,215,0,.1);color:var(--c-gold)}
+.lang-item.is-active{background:rgba(255,215,0,.16);color:var(--c-gold);font-weight:700}
+.lang-item.is-active::after{content:'✓';margin-left:auto;font-weight:700}
+.lang-flag{font-size:19px;min-width:26px;text-align:center}
+.lang-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lang-menu::-webkit-scrollbar{width:4px}
+.lang-menu::-webkit-scrollbar-thumb{background:rgba(255,215,0,.35);border-radius:2px}
+.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;bottom:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);z-index:390;overflow-y:auto;padding:8px 0 48px;border-top:2px solid var(--c-gold);animation:slideDown .22s ease-out}
+.mobile-nav.is-open{display:flex}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:900px){.mobile-nav{display:none!important}}
+.mobile-nav-link{display:flex;align-items:center;gap:12px;padding:16px 24px;min-height:56px;color:rgba(255,255,255,.92);font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07);transition:all var(--transition);text-decoration:none}
+.mobile-nav-link:hover,.mobile-nav-link:active{background:rgba(255,215,0,.1);color:var(--c-gold);padding-left:32px}
+.mobile-nav-link.active{color:var(--c-gold);background:rgba(255,215,0,.07)}
+.mobile-nav-link i{width:20px;text-align:center;color:var(--c-gold);font-size:15px}
+.mobile-nav-sep{height:1px;background:rgba(255,255,255,.1);margin:10px 24px}
+.mobile-nav-contact{margin:14px 20px 0;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px}
+.mobile-nav-contact a{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.92);font-size:14px;transition:color var(--transition);min-height:48px}
+.mobile-nav-contact a:hover{color:var(--c-gold)}
+.mobile-nav-contact i{color:var(--c-gold);width:16px}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
+.nav-overlay.is-open{display:block}
+.article-hero{position:relative;background:linear-gradient(135deg,#0a1428 0%,#1e3a5f 48%,#0891B2 100%);overflow:hidden;padding:66px 0 60px;text-align:center;border-bottom:3px solid var(--c-gold);margin-bottom:0}
+.article-hero::before{content:'إمكانية الوصول';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:clamp(70px,18vw,220px);font-weight:700;color:rgba(8,145,178,.08);white-space:nowrap;line-height:1;pointer-events:none;user-select:none}
+.article-hero::after{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:560px;height:300px;background:radial-gradient(ellipse at center,rgba(8,145,178,.18) 0%,rgba(8,145,178,0) 68%);pointer-events:none}
+.article-hero .wrap{position:relative;z-index:1}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(8,145,178,.14);border:1px solid rgba(8,145,178,.42);color:var(--c-gold);border-radius:30px;padding:7px 18px;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:20px}
+.hero-kicker i{font-size:12px}
+.article-hero h1{color:#fff;font-family:'Cinzel',serif;font-weight:700;letter-spacing:1px;font-size:clamp(26px,5vw,46px);line-height:1.22;max-width:920px;margin:0 auto 16px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.article-hero h1 .gold{color:var(--c-gold)}
+.hero-sub{color:rgba(255,255,255,.88);font-size:clamp(15px,2vw,19px);line-height:1.7;max-width:760px;margin:0 auto}
+.hero-rule{width:92px;height:3px;background:var(--c-gold);border-radius:2px;margin:24px auto 0}
+.meta-bar{background:var(--c-white);border-bottom:1px solid var(--c-border);padding:14px 0}
+.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:var(--c-muted)}
+.breadcrumb a{color:var(--c-muted);transition:color var(--transition)}
+.breadcrumb a:hover{color:var(--c-ac-rose)}
+.breadcrumb span[aria-hidden]{color:var(--c-border)}
+.article-meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:10px;font-size:13px;color:var(--c-muted)}
+.article-meta-row span{display:flex;align-items:center;gap:6px}
+.article-meta-row i{color:var(--c-gold-d)}
+.article-wrap{max-width:840px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.article-wrap{padding:0 28px}}
+.article-content h2{font-size:clamp(22px,3.2vw,30px);font-weight:800;color:var(--c-dark);margin:46px 0 18px;padding-bottom:10px;border-bottom:3px solid var(--c-ac-rose);scroll-margin-top:90px;font-family:'Cinzel',serif;letter-spacing:.5px}
+.article-content h3{font-size:clamp(17px,2.4vw,21px);font-weight:700;color:var(--c-dark);margin:30px 0 14px;font-family:'Cinzel',serif}
+.article-content h4{font-size:15px;font-weight:700;color:var(--c-ac-rose);margin:18px 0 8px}
+.article-content p{font-size:16px;line-height:1.8;margin-bottom:18px;color:var(--c-text)}
+.article-content ul,.article-content ol{margin:0 0 20px;padding-left:22px}
+.article-content li{font-size:15px;line-height:1.75;margin-bottom:10px;color:var(--c-text)}
+.article-content li::marker{color:var(--c-gold-d);font-weight:700}
+.article-content strong{color:var(--c-dark);font-weight:700}
+.article-content a:not(.btn):not(.tour-rec-cta){color:var(--c-nile);text-decoration:underline;text-decoration-color:rgba(30,111,217,.3);text-underline-offset:2px;transition:color var(--transition)}
+.article-content a:not(.btn):not(.tour-rec-cta):hover{color:var(--c-price)}
+.article-lede{font-size:18px!important;line-height:1.8!important;color:var(--c-dark)!important}
+.article-lede strong{color:var(--c-ac-rose)}
+.quick-facts{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:22px;margin:28px 0 36px;display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){.quick-facts{grid-template-columns:repeat(4,1fr)}}
+.quick-facts h3{grid-column:1/-1;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--c-ac-rose);border-bottom:1px solid var(--c-border);padding-bottom:10px;margin:0}
+.qf-item{display:flex;flex-direction:column;gap:3px}
+.qf-label{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--c-muted);font-weight:700}
+.qf-value{font-size:14px;color:var(--c-dark);font-weight:600}
+.toc-box{background:#ecfeff;border:1px solid rgba(8,145,178,.35);border-radius:var(--radius);padding:22px 24px;margin:30px 0}
+.toc-box h3{margin:0 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:.8px;color:var(--c-ac-rose)}
+.toc-list{columns:1;margin:0;padding:0;list-style:none}
+@media(min-width:640px){.toc-list{columns:2;column-gap:24px}}
+.toc-list li{font-size:14px;margin-bottom:9px;break-inside:avoid}
+.toc-list a{color:var(--c-text);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.toc-list a:hover{color:var(--c-ac-rose)}
+.toc-list a::before{content:'→';color:var(--c-ac-rose);font-weight:700}
+.callout{border-radius:var(--radius);padding:24px 26px;margin:30px 0}
+.callout h3{margin-top:0;margin-bottom:10px}
+.callout-gold{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 55%,#fef3c7 100%);border-left:4px solid var(--c-gold-d)}
+.callout-blue{background:linear-gradient(135deg,#e8f1fd 0%,#d6e8fc 100%);border-left:4px solid var(--c-nile)}
+.callout-indigo{background:linear-gradient(135deg,#ecfeff 0%,#cffafe 100%);border-left:4px solid var(--c-ac-rose)}
+.callout-indigo h3{color:var(--c-ac-rose)}
+.callout-warn{background:linear-gradient(135deg,#fde8e8 0%,#fbeaea 100%);border-left:4px solid var(--c-warn)}
+.callout-warn h3{color:var(--c-warn)}
+.callout-dark{background:var(--c-dark);color:#fff;border-left:4px solid var(--c-gold)}
+.callout-dark h3{color:var(--c-gold)}
+.callout-dark p,.callout-dark li{color:rgba(255,255,255,.92)}
+.callout-dark strong{color:var(--c-gold)}
+.callout-dark ul{list-style:disc}
+.callout-dark ol{list-style:decimal}
+.callout-dark li::marker{color:var(--c-gold-d)}
+.callout .btn{margin-top:10px}
+.table-scroll{overflow-x:auto;margin:24px 0;border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)}
+.data-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px;background:var(--c-white)}
+.data-table caption{caption-side:top;text-align:left;font-weight:700;font-size:13px;color:var(--c-ac-rose);padding:0 0 10px}
+.data-table th{background:var(--c-dark);color:var(--c-gold);padding:12px 14px;text-align:left;font-weight:700;white-space:nowrap}
+.data-table td{padding:12px 14px;border-bottom:1px solid var(--c-border);vertical-align:top}
+.data-table tr:nth-child(even) td{background:#f9fafb}
+.data-table tr:hover td{background:#ecfeff}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap}
+.badge-safe{background:rgba(16,185,129,.12);color:#047857}
+.badge-care{background:rgba(245,158,11,.15);color:#b45309}
+.development-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+@media(min-width:640px){.development-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.development-grid{grid-template-columns:repeat(3,1fr)}}
+.development-card{background:var(--c-white);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow-sm);border-left:4px solid var(--c-ac-rose);transition:transform var(--transition),box-shadow var(--transition);text-align:left}
+.development-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.development-card .dev-icon{font-size:28px;margin-bottom:10px;display:block;color:var(--c-ac-rose)}
+.development-card h4{font-size:15px;font-weight:700;color:var(--c-ac-rose);margin:0 0 8px;font-family:'Cinzel',serif}
+.development-card p{font-size:13.5px;color:var(--c-muted);line-height:1.65;margin:0}
+.testimonial-box{background:var(--c-white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow-sm);margin:24px 0;position:relative;border-left:4px solid var(--c-gold)}
+.testimonial-box::before{content:'"';position:absolute;top:8px;left:16px;font-size:52px;color:var(--c-gold);opacity:.25;font-family:'Cinzel',serif;line-height:1}
+.testimonial-text{font-style:italic;font-size:14.5px;line-height:1.7;margin:0 0 14px;color:var(--c-text)}
+.testimonial-author-info h4{margin:0;font-size:14px;color:var(--c-ac-rose);font-family:'Cinzel',serif}
+.testimonial-author-info p{margin:2px 0 0;font-size:12.5px;color:var(--c-muted)}
+.tour-rec-grid{display:grid;grid-template-columns:1fr;gap:18px;margin:28px 0}
+@media(min-width:700px){.tour-rec-grid{grid-template-columns:repeat(2,1fr)}}
+.tour-rec{position:relative;background:var(--c-white);border:1.5px solid var(--c-border);border-radius:var(--radius-sm);padding:20px;transition:all var(--transition)}
+.tour-rec:hover{border-color:var(--c-book);box-shadow:var(--shadow-sm);transform:translateY(-3px)}
+.tour-rec h4{margin-top:0;font-size:15.5px}
+.tour-rec h4 a{color:var(--c-dark);text-decoration:none}
+.tour-rec h4 a:hover{color:var(--c-book)}
+.tour-rec p{font-size:13.5px;margin-bottom:12px}
+.tour-rec-cta{display:inline-flex;align-items:center;gap:6px;color:var(--c-book)!important;font-weight:700;font-size:13px;text-decoration:none}
+.tour-rec-cta:hover{text-decoration:underline}
+.rec-badge{position:absolute;top:14px;right:14px;background:var(--c-book);color:#fff;padding:4px 12px;border-radius:20px;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+.faq-list{margin:28px 0}
+.faq-item{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:700;font-size:15px;color:var(--c-dark);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:22px;color:var(--c-ac-rose);font-weight:700;flex-shrink:0;transition:transform var(--transition)}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{background:#ecfeff}
+.faq-answer{padding:0 20px 20px;font-size:14.5px;line-height:1.75;color:var(--c-muted)}
+.faq-answer a{color:var(--c-nile);text-decoration:underline}
+.author-box{display:flex;flex-wrap:wrap;align-items:center;gap:16px;background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius);padding:20px;margin:36px 0}
+.author-avatar{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#2d3748 0%,#1a202c 70%);border:2px solid var(--c-gold);display:flex;align-items:center;justify-content:center;color:var(--c-gold);font-size:24px;flex-shrink:0}
+.author-box-name{font-weight:800;color:var(--c-dark);font-size:15px}
+.author-box-role{font-size:12.5px;color:var(--c-muted);margin-bottom:6px}
+.author-box-bio{font-size:13px;color:var(--c-muted);max-width:520px;margin:0}
+.related-guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px}
+.related-guide-card{background:var(--c-white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow-sm);border-left:4px solid var(--c-ac-rose);transition:transform var(--transition),box-shadow var(--transition)}
+.related-guide-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.related-guide-card h4{margin-bottom:10px;font-size:16px;font-family:'Cinzel',serif}
+.related-guide-card h4 a{color:var(--c-dark);text-decoration:none}
+.related-guide-card h4 a:hover{color:var(--c-ac-rose)}
+.related-guide-card p{font-size:13.5px;color:var(--c-muted);margin-bottom:12px;line-height:1.6}
+.related-guide-card .read-more{color:var(--c-nile);font-weight:700;text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:6px}
+.related-guide-card .read-more:hover{text-decoration:underline}
+.checklist-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+@media(min-width:640px){.checklist-grid{grid-template-columns:repeat(3,1fr)}}
+.checklist-block{background:var(--c-white);border:1px solid var(--c-border);border-top:4px solid var(--c-ac-rose);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);padding:22px}
+.checklist-block h4{font-size:15px;color:var(--c-ac-rose);margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.checklist-block ul{margin:0;padding:0;list-style:none}
+.checklist-block li{display:flex;gap:10px;font-size:13.5px;line-height:1.6;margin-bottom:10px;color:var(--c-text)}
+.checklist-block li i{color:var(--c-gold-d);margin-top:3px;flex-shrink:0}
 .trip-builder{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
 @media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
-.trip-form-box{background:white;border-radius:12px;padding:32px 28px;box-shadow:0 4px 20px rgba(0,0,0,.11)}
+.trip-form-box{background:var(--c-white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
 .form-row{margin-bottom:16px}
-.form-label{display:block;font-size:13px;font-weight:600;color:var(--primary-dark);margin-bottom:6px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px}
 .form-req{color:#ef4444}
-.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;font-family:inherit;color:var(--text-color);transition:border-color .28s;background:#fff}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent-light);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--c-text);transition:border-color var(--transition);background:#fff}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
 .form-textarea{min-height:90px;resize:vertical}
 .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:480px){.form-row-2{grid-template-columns:1fr}}
-.form-submit{width:100%;padding:15px;background:var(--accent-light);color:var(--primary-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all .28s;min-height:52px}
-.form-submit:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+.form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all var(--transition);min-height:52px}
+.form-submit:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
 .trip-contacts{display:flex;flex-direction:column;gap:20px;justify-content:center}
-.contact-card{background:white;border-radius:12px;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.11);text-align:center}
-.contact-card-icon{font-size:40px;margin-bottom:14px;display:block}
-.contact-card h3{font-size:18px;color:var(--primary-dark);margin-bottom:8px}
-.contact-card p{font-size:14px;color:#6b7280;margin-bottom:16px;line-height:1.6}
+.contact-card{background:var(--c-white);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);text-align:center}
+.contact-card-icon{font-size:40px;margin-bottom:14px;display:block;color:var(--c-ac-rose)}
+.contact-card h3{font-size:18px;color:var(--c-dark);margin-bottom:8px;font-family:'Cinzel',serif}
+.contact-card p{font-size:14px;color:var(--c-muted);margin-bottom:16px;line-height:1.6}
 .section-accent{background:linear-gradient(135deg,#1a202c 0%,#2d3748 100%);color:#fff}
-.section-accent h2, .section-accent h3{color:#fff}
+.section-accent h2,.section-accent h3{color:#fff}
 .section-accent .sec-sub{color:rgba(255,255,255,.85)}
+.section-accent .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
+.footer{background:var(--c-dark);color:#fff;padding:52px 0 24px;margin-top:auto}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+.f-brand-desc{font-size:13px;color:rgba(255,255,255,.82);line-height:1.7;margin:12px 0}
+.f-h{color:var(--c-gold);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;margin-bottom:14px}
+.f-links{display:flex;flex-direction:column;gap:2px}
+.f-links a{color:rgba(255,255,255,.82);font-size:13px;display:flex;align-items:center;gap:7px;transition:color var(--transition);min-height:40px;padding:4px 0}
+.f-links a:hover{color:var(--c-gold)}
+.f-links a i{color:var(--c-gold);width:13px;font-size:11px}
+.f-contact-r a,.f-contact-r div{display:flex;align-items:flex-start;gap:9px;color:rgba(255,255,255,.82);font-size:13px;margin-bottom:11px;transition:color var(--transition);text-decoration:none}
+.f-contact-r a:hover{color:var(--c-gold)}
+.f-contact-r i{color:var(--c-gold);width:14px;margin-top:2px;flex-shrink:0}
+.social-row{display:flex;gap:9px;margin-top:16px}
+.social-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;transition:all var(--transition);text-decoration:none}
+.social-btn:hover{background:var(--c-gold);color:var(--c-dark)}
+.footer-map{grid-column:1/-1}
+.footer-map iframe{width:100%;height:250px;border:none;border-radius:var(--radius-sm);opacity:.85}
+.footer-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:8px;text-align:center}
+@media(min-width:640px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+.footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.65)}
+.footer-bottom a:hover{color:var(--c-gold)}
+.f-legal{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.cookie-bar{position:fixed;bottom:0;left:0;right:0;background:#1e293b;border-top:2px solid var(--c-gold);padding:13px 16px;z-index:50000;display:none}
+.cookie-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.cookie-txt{font-size:13px;color:rgba(255,255,255,.92);flex:1;min-width:200px}
+.cookie-txt a{color:var(--c-gold);text-decoration:underline}
+.cookie-btns{display:flex;gap:8px}
+.c-decline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;border-radius:6px;font-size:13px;cursor:pointer;min-height:44px}
+.c-decline:hover{border-color:#fff}
+.c-accept{background:var(--c-gold);color:var(--c-dark);border:none;padding:10px 18px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;min-height:44px}
+.c-accept:hover{background:var(--c-gold-d)}
+.wa-float{position:fixed;bottom:24px;right:16px;z-index:1000;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.5);animation:wa-pulse 2.8s infinite;transition:all var(--transition)}
+.wa-float:hover{background:#20ba59;transform:scale(1.08)}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75)}}
+.mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-32{margin-top:32px}.mt-40{margin-top:40px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
-<link href="https://www.egyptphotographytours.com/it/egypt-airport-accessibility-guide-2026.html" rel="canonical"/><link href="https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html" hreflang="en" rel="alternate"/><link href="https://www.egyptphotographytours.com/tl/egypt-airport-accessibility-guide-2026.html" hreflang="tl" rel="alternate"/><link href="https://www.egyptphotographytours.com/ja/egypt-airport-accessibility-guide-2026.html" hreflang="ja" rel="alternate"/><link href="https://www.egyptphotographytours.com/ar/egypt-airport-accessibility-guide-2026.html" hreflang="ar" rel="alternate"/><link href="https://www.egyptphotographytours.com/vi/egypt-airport-accessibility-guide-2026.html" hreflang="vi" rel="alternate"/><link href="https://www.egyptphotographytours.com/ru/egypt-airport-accessibility-guide-2026.html" hreflang="ru" rel="alternate"/><link href="https://www.egyptphotographytours.com/cs/egypt-airport-accessibility-guide-2026.html" hreflang="cs" rel="alternate"/><link href="https://www.egyptphotographytours.com/ro/egypt-airport-accessibility-guide-2026.html" hreflang="ro" rel="alternate"/><link href="https://www.egyptphotographytours.com/no/egypt-airport-accessibility-guide-2026.html" hreflang="no" rel="alternate"/><link href="https://www.egyptphotographytours.com/sv/egypt-airport-accessibility-guide-2026.html" hreflang="sv" rel="alternate"/><link href="https://www.egyptphotographytours.com/da/egypt-airport-accessibility-guide-2026.html" hreflang="da" rel="alternate"/><link href="https://www.egyptphotographytours.com/hi/egypt-airport-accessibility-guide-2026.html" hreflang="hi" rel="alternate"/><link href="https://www.egyptphotographytours.com/id/egypt-airport-accessibility-guide-2026.html" hreflang="id" rel="alternate"/><link href="https://www.egyptphotographytours.com/nl/egypt-airport-accessibility-guide-2026.html" hreflang="nl" rel="alternate"/><link href="https://www.egyptphotographytours.com/zh-CN/egypt-airport-accessibility-guide-2026.html" hreflang="zh" rel="alternate"/><link href="https://www.egyptphotographytours.com/fr/egypt-airport-accessibility-guide-2026.html" hreflang="fr" rel="alternate"/><link href="https://www.egyptphotographytours.com/pl/egypt-airport-accessibility-guide-2026.html" hreflang="pl" rel="alternate"/><link href="https://www.egyptphotographytours.com/es/egypt-airport-accessibility-guide-2026.html" hreflang="es" rel="alternate"/><link href="https://www.egyptphotographytours.com/ko/egypt-airport-accessibility-guide-2026.html" hreflang="ko" rel="alternate"/><link href="https://www.egyptphotographytours.com/fi/egypt-airport-accessibility-guide-2026.html" hreflang="fi" rel="alternate"/><link href="https://www.egyptphotographytours.com/pt/egypt-airport-accessibility-guide-2026.html" hreflang="pt" rel="alternate"/><link href="https://www.egyptphotographytours.com/tr/egypt-airport-accessibility-guide-2026.html" hreflang="tr" rel="alternate"/><link href="https://www.egyptphotographytours.com/de/egypt-airport-accessibility-guide-2026.html" hreflang="de" rel="alternate"/><link href="https://www.egyptphotographytours.com/th/egypt-airport-accessibility-guide-2026.html" hreflang="th" rel="alternate"/><link href="https://www.egyptphotographytours.com/it/egypt-airport-accessibility-guide-2026.html" hreflang="it" rel="alternate"/><link href="https://www.egyptphotographytours.com/egypt-airport-accessibility-guide-2026.html" hreflang="x-default" rel="alternate"/></head>
+</head>
 <body>
-<!-- Accessibility: Skip to Content Link -->
-<a class="skip-link" href="#main-content">Passa al contenuto principale</a>
-<header class="header">
-<div class="container content">
-<div class="logo-section">
-<img alt="Logo Egypt Photography Tours - Supporto per la navigazione aeroportuale accessibile" class="logo-img" height="40" loading="eager" src="/images/egypt-photography-tours-logo.jpg" width="40"/>
-<a class="logo-link" href="/it/">Tour fotografici in Egitto</a>
+<div aria-labelledby="cookie-msg" aria-modal="true" class="cookie-bar" id="cookie-bar" role="dialog">
+<div class="cookie-inner">
+<p class="cookie-txt" id="cookie-msg">Utilizziamo i cookie per migliorare la tua esperienza.<a href="/it/privacy-policy.html">Scopri di più sulla nostra politica sulla privacy</a></p>
+<div class="cookie-btns">
+<button class="c-decline" id="c-decline" type="button">Rifiutare</button>
+<button class="c-accept" id="c-accept" type="button">Accetta tutto</button>
 </div>
-<div class="header-text">Dove la fotografia incontra una profonda comprensione culturale</div>
-<div class="header-contact">
-<a class="contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
-<i class="fab fa-whatsapp contact-icon"></i>+20 155 073 5673</a>
-<a class="contact-info" href="mailto:info@egyptphotographytours.com">
-<i class="far fa-envelope contact-icon"></i>info@egizianophotographytours.com</a>
+</div>
+</div>
+<a aria-label="Chat with Egypt Photography Tours on WhatsApp" class="wa-float" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
+<a class="skip-link" href="#main">Passa al contenuto principale</a>
+<header class="header" id="site-header">
+<div class="wrap header-inner">
+<a aria-label="Egypt Photography Tours - Go to Homepage" class="logo" href="/it/">
+<span aria-hidden="true" class="logo-mark"><i class="fas fa-camera-retro"></i></span>
+<div class="logo-copy">
+<span class="logo-name">Tour fotografici in Egitto</span>
+<span class="logo-tag">Tour privati e di gruppo dal 2015</span>
+</div>
+</a>
+<div class="header-contacts">
+<a aria-label="WhatsApp Egypt Photography Tours" class="hc-link" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i>+20 155 073 5673</a>
+<a aria-label="Email Egypt Photography Tours" class="hc-link" href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i>info@egizianophotographytours.com</a>
 </div>
 </div>
 </header>
-<nav class="navbar">
-<div class="container navbar-content">
-<div class="cta-container">
-<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-menu-toggle">
-<i class="fas fa-bars"></i>
-</button>
-<a class="book-now-button" href="/it/contact">Prenota ora</a>
-<!-- Language Switcher -->
-<div class="language-switcher">
-<div aria-label="Select language" class="current-language" role="button" tabindex="0">
-<span class="current-flag">🇺🇸</span>
-<span class="current-text">EN</span>
-<i aria-hidden="true" class="fas fa-chevron-down dropdown-icon"></i>
-</div>
-<div class="language-dropdown" role="menu">
-<a class="lang-item language-item" href="/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇺🇸</span><span class="lang-name language-text">English</span></a><a class="lang-item language-item" href="/ar/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇸🇦</span><span class="lang-name language-text">العربية</span></a><a class="lang-item language-item" href="/es/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇪🇸</span><span class="lang-name language-text">Español</span></a><a class="lang-item language-item" href="/fr/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇫🇷</span><span class="lang-name language-text">Français</span></a><a class="lang-item language-item" href="/de/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇩🇪</span><span class="lang-name language-text">Deutsch</span></a><a class="lang-item language-item is-active" href="/it/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇹</span><span class="lang-name language-text">Italiano</span></a><a class="lang-item language-item" href="/pt/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇹</span><span class="lang-name language-text">Português</span></a><a class="lang-item language-item" href="/ru/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇷🇺</span><span class="lang-name language-text">Русский</span></a><a class="lang-item language-item" href="/ja/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇯🇵</span><span class="lang-name language-text">日本語</span></a><a class="lang-item language-item" href="/zh-CN/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇨🇳</span><span class="lang-name language-text">中文 (简体)</span></a><a class="lang-item language-item" href="/ko/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇰🇷</span><span class="lang-name language-text">한국어</span></a><a class="lang-item language-item" href="/hi/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇳</span><span class="lang-name language-text">हिन्दी</span></a><a class="lang-item language-item" href="/nl/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇳🇱</span><span class="lang-name language-text">Nederlands</span></a><a class="lang-item language-item" href="/sv/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇸🇪</span><span class="lang-name language-text">Svenska</span></a><a class="lang-item language-item" href="/pl/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇱</span><span class="lang-name language-text">Polski</span></a><a class="lang-item language-item" href="/tr/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇹🇷</span><span class="lang-name language-text">Türkçe</span></a><a class="lang-item language-item" href="/vi/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇻🇳</span><span class="lang-name language-text">Tiếng Việt</span></a><a class="lang-item language-item" href="/th/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇹🇭</span><span class="lang-name language-text">ไทย</span></a><a class="lang-item language-item" href="/id/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇩</span><span class="lang-name language-text">Bahasa Indonesia</span></a><a class="lang-item language-item" href="/cs/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇨🇿</span><span class="lang-name language-text">Čeština</span></a><a class="lang-item language-item" href="/ro/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇷🇴</span><span class="lang-name language-text">Română</span></a><a class="lang-item language-item" href="/tl/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇭</span><span class="lang-name language-text">Filipino</span></a><a class="lang-item language-item" href="/no/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇳🇴</span><span class="lang-name language-text">Norsk</span></a><a class="lang-item language-item" href="/da/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇩🇰</span><span class="lang-name language-text">Dansk</span></a><a class="lang-item language-item" href="/fi/egypt-airport-accessibility-guide-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇫🇮</span><span class="lang-name language-text">Suomi</span></a></div>
-</div>
-</div>
-<ul class="nav-links" role="menubar">
-<li class="nav-link" role="none"><a href="/it/" role="menuitem">Casa</a></li>
-<li class="nav-link" role="none"><a href="/it/about" role="menuitem">Chi siamo</a></li>
-<li class="nav-link" role="none"><a href="/it/tours" role="menuitem">I nostri tour</a></li>
-<li class="nav-link" role="none"><a href="/it/gallery" role="menuitem">Galleria</a></li>
-<li class="nav-link" role="none"><a href="/it/resources" role="menuitem">Risorse</a></li>
-<li class="nav-link" role="none"><a href="/it/blog" role="menuitem">Blog</a></li>
-<li class="nav-link" role="none"><a href="/it/contact" role="menuitem">Contattaci</a></li>
-<li class="nav-link" role="none"><a href="/it/faqs" role="menuitem">Domande frequenti</a></li>
+<nav aria-label="Main navigation" class="navbar" id="navbar">
+<div class="wrap nav-inner">
+<button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" type="button"><i aria-hidden="true" class="fas fa-bars" id="ham-icon"></i></button>
+<ul class="nav-links-desk" role="list">
+<li><a href="/it/">Casa</a></li>
+<li><a href="/it/about.html">Chi siamo</a></li>
+<li><a href="/it/tours.html">I nostri tour</a></li>
+<li><a href="/it/gallery.html">Galleria</a></li>
+<li><a aria-current="page" class="active" href="/it/resources.html">Risorse</a></li>
+<li><a href="/it/blog.html">Blog</a></li>
+<li><a href="/it/contact.html">Contattaci</a></li>
+<li><a href="/it/faqs.html">Domande frequenti</a></li>
 </ul>
+<div class="nav-right">
+<a aria-label="Plan your accessible Egypt tour" class="nav-book" href="/it/contact.html#customize-trip"><i aria-hidden="true" class="fas fa-wheelchair"></i> <span>Tour accessibili</span></a>
+<div class="lang-wrap" data-open="false" id="lang-wrap">
+<button aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Select language – currently English" class="lang-toggle" id="lang-toggle" type="button"><span aria-hidden="true">🇺🇸</span><span>EN</span><i aria-hidden="true" class="fas fa-chevron-down lang-chevron"></i></button>
+<div aria-hidden="true" class="lang-menu" id="lang-menu" role="menu">
+<div class="lang-menu-head">Seleziona lingua</div>
+<a class="lang-item is-active" href="/it/egypt-airport-accessibility-guide-2026" role="menuitem"><span aria-hidden="true" class="lang-flag">🇺🇸</span><span class="lang-name">Inglese</span></a>
+</div>
+</div>
+</div>
 </div>
 </nav>
-<main class="main" id="main-content">
-<!-- Visible Breadcrumb Navigation -->
-<nav aria-label="Breadcrumb" class="breadcrumb container">
-<a href="/it/">Casa</a>
-<span aria-hidden="true">›</span>
-<a href="/it/resources">Risorse</a>
-<span aria-hidden="true">›</span>
-<span aria-current="page">Guida all'accessibilità dell'aeroporto egiziano 2026</span>
+<nav aria-hidden="true" aria-label="Mobile navigation" class="mobile-nav" id="mobile-nav">
+<a class="mobile-nav-link" href="/it/"><i aria-hidden="true" class="fas fa-home"></i>Casa</a>
+<a class="mobile-nav-link" href="/it/about.html"><i aria-hidden="true" class="fas fa-user-tie"></i>Chi siamo</a>
+<a class="mobile-nav-link" href="/it/tours.html"><i aria-hidden="true" class="fas fa-map-marked-alt"></i>I nostri tour</a>
+<a class="mobile-nav-link" href="/it/gallery.html"><i aria-hidden="true" class="fas fa-images"></i>Galleria</a>
+<a aria-current="page" class="mobile-nav-link active" href="/it/resources.html"><i aria-hidden="true" class="fas fa-book-open"></i>Risorse</a>
+<a class="mobile-nav-link" href="/it/blog.html"><i aria-hidden="true" class="fas fa-blog"></i>Blog</a>
+<a class="mobile-nav-link" href="/it/contact.html"><i aria-hidden="true" class="fas fa-envelope"></i>Contattaci</a>
+<a class="mobile-nav-link" href="/it/faqs.html"><i aria-hidden="true" class="fas fa-question-circle"></i>Domande frequenti</a>
+<div class="mobile-nav-sep" role="separator"></div>
+<div class="mobile-nav-contact">
+<a aria-label="WhatsApp us" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i>WhatsApp: +20 155 073 5673</a>
+<a aria-label="Email us" href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i>info@egizianophotographytours.com</a>
+<a aria-label="Customize and book your tour" href="/it/contact.html#customize-trip" style="background:var(--c-gold);color:var(--c-dark);padding:14px 16px;border-radius:8px;text-align:center;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;min-height:52px">
+<i aria-hidden="true" class="fas fa-magic"></i>Personalizza e prenota il tuo tour</a>
+</div>
 </nav>
-<section class="hero-section">
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h1 class="hero-title">Guida all'accessibilità dell'aeroporto dell'Egitto</h1>
-<p class="hero-subtitle">Navigazione del Cairo, Luxor e Assuan per utenti su sedia a rotelle: la tua guida completa per arrivi e partenze aeroportuali senza stress con caratteristiche di accessibilità verificate, procedure di assistenza e consigli pratici</p>
+<div aria-hidden="true" class="nav-overlay" id="nav-overlay"></div>
+<main id="main" tabindex="-1">
+<section class="article-hero">
+<div class="wrap">
+<span class="hero-kicker"><i aria-hidden="true" class="fas fa-wheelchair"></i>Guida all'accessibilità dell'aeroporto 2026</span>
+<h1>Accessibilità all'aeroporto dell'Egitto:<span class="gold">Assistenza per sedie a rotelle e servizi speciali</span></h1>
+<p class="hero-sub">La guida completa 2026 all'accessibilità aeroportuale in Egitto: servizi di assistenza per sedie a rotelle, strutture accessibili, assistenza speciale per passeggeri con disabilità e suggerimenti per una navigazione agevole negli aeroporti del Cairo, Luxor, Aswan, Hurghada e Sharm El Sheikh.</p>
+<div aria-hidden="true" class="hero-rule"></div>
 </div>
 </section>
-<section class="article-section">
-<div class="article-container">
-<div class="article-meta">
-<span><i class="far fa-calendar"></i>26 gennaio 2026</span>
-<span><i class="fas fa-map-marker-alt"></i>Il Cairo, Egitto</span>
-<span><i class="fas fa-tags"></i>Accessibilità aeroportuale, Navigazione su sedia a rotelle, Viaggi in Egitto</span>
-<span><i class="far fa-clock"></i>25 minuti di lettura</span>
-<span class="last-updated"><i class="fas fa-sync-alt"></i>Aggiornato: 1 febbraio 2026</span>
-</div>
-<div class="article-content">
-<!-- Introduction -->
-<p><strong>Muoversi negli aeroporti con una sedia a rotelle richiede preparazione ovunque, ma in Egitto comprendere le procedure locali fa la differenza.</strong>Gli aeroporti Internazionale del Cairo (CAI), Luxor International (LXR) e Aswan International (ASW) hanno ciascuno caratteristiche di accessibilità, protocolli di assistenza e sfide di navigazione distinti. Con informazioni verificate e pianificazione strategica, gli utenti su sedia a rotelle possono sperimentare arrivi e partenze fluidi e dignitosi.</p>
-<p>Questa guida completa fornisce valutazioni di accessibilità valutate in modo onesto per i tre principali aeroporti turistici dell'Egitto, percorsi di navigazione dettagliati passo dopo passo, procedure di richiesta di assistenza, protocolli di controllo di sicurezza, collegamenti di trasporto ed esperienze di viaggio reali. Che tu utilizzi una sedia a rotelle manuale, una carrozzina elettrica, uno scooter per disabili o un deambulatore, questa guida garantisce che il tuo viaggio in Egitto inizi e finisca comodamente.</p>
-<div class="tipping-highlight">
-<h3>Hai bisogno di trasferimenti aeroportuali accessibili?</h3>
-<p>Egypt Photography Tours fornisce veicoli verificati accessibili in sedia a rotelle con ascensori idraulici, autisti qualificati e coordinamento aeroportuale senza interruzioni. Gestiamo le richieste di assistenza, acceleriamo le procedure doganali e garantiamo che la tua avventura in Egitto inizi senza stress.<a href="/it/contact">Contattaci</a>per l'organizzazione del trasferimento aeroportuale.</p>
-<a class="cta-button" href="/it/tours">Sfoglia i tour accessibili dell'Egitto</a>
-</div>
-<!-- Trustpilot Widget Container -->
-<div class="trustpilot-widget-container">
-<div class="trustpilot-widget" data-businessunit-id="5f8c7b1e0000640001e6f3a2" data-locale="en-US" data-style-height="24px" data-style-width="100%" data-template-id="5419b6ffb0d04a076446a9ad" data-theme="light">
-<a href="https://www.trustpilot.com/review/egyptphotographytours.com" rel="noopener" target="_blank">Trustpilot</a>
+<div class="meta-bar">
+<div class="wrap">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="/it/">Casa</a><span aria-hidden="true">/</span>
+<a href="/it/resources.html">Risorse</a><span aria-hidden="true">/</span>
+<span aria-current="page" style="color:var(--c-dark);font-weight:600">Guida all'accessibilità dell'aeroporto egiziano 2026</span>
+</nav>
+<div class="article-meta-row">
+<span><i aria-hidden="true" class="far fa-calendar"></i>Pubblicato il 28 febbraio 2026</span>
+<span><i aria-hidden="true" class="fas fa-sync-alt"></i>Aggiornato il 28 febbraio 2026</span>
+<span><i aria-hidden="true" class="far fa-clock"></i>25 minuti di lettura</span>
+<span><i aria-hidden="true" class="fas fa-map-marker-alt"></i>Il Cairo, Egitto</span>
+<span><i aria-hidden="true" class="fas fa-user"></i>Di Hossam, fotografo professionista</span>
 </div>
 </div>
-<!-- Chapter 1: Airport Accessibility Overview -->
-<h2>Capitolo 1: Controllo reale dell'accessibilità dell'aeroporto egiziano</h2>
-<p>Gli aeroporti egiziani hanno apportato miglioramenti significativi in termini di accessibilità dal 2020, ma gli standard variano notevolmente tra il moderno Terminal 3 del Cairo e gli aeroporti regionali. Ecco il paesaggio realistico:</p>
-<div class="culture-grid">
-<div class="culture-card">
-<span class="culture-icon">✅</span>
-<h4>Cosa funziona bene</h4>
-<p>Il Terminal 3 del Cairo soddisfa gli standard internazionali di accessibilità con ascensori, bagni accessibili e banchi di assistenza dedicati. Tutti gli aeroporti forniscono assistenza per sedie a rotelle su richiesta. Il personale è generalmente disponibile e parla inglese nelle aree chiave.</p>
 </div>
-<div class="culture-card">
-<span class="culture-icon">⚠️</span>
-<h4>Sfide conosciute</h4>
-<p>Gli aeroporti regionali (Luxor, Assuan) dispongono di infrastrutture accessibili limitate. I tempi di risposta dell'assistenza variano. I collegamenti con i trasporti pubblici non sono accessibili alle persone su sedia a rotelle. Il coordinamento avanzato migliora significativamente la qualità dell'esperienza.</p>
+<section class="section" style="padding-top:44px">
+<div class="article-wrap article-content">
+<p class="article-lede"><strong>I principali aeroporti egiziani sono sempre più accessibili ai viaggiatori con disabilità, ma sapere cosa aspettarsi e come richiedere assistenza fa la differenza.</strong>Questa guida definitiva del 2026 copre i servizi di assistenza per sedie a rotelle, le strutture accessibili, le procedure di assistenza speciale e i consigli pratici per spostarsi con sicurezza negli aeroporti del Cairo, Luxor, Aswan, Hurghada e Sharm El Sheikh - e come<strong>prenotazione con Egypt Photography Tours</strong>garantisce un supporto continuo per l'accessibilità dall'arrivo alla partenza.</p>
+<p>Che tu stia viaggiando con una sedia a rotelle, un ausilio per la mobilità o altre esigenze di accessibilità, questi strumenti garantiscono una navigazione aeroportuale fluida e il modo in cui le nostre opzioni di tour accessibili assicurano che la tua esperienza in Egitto sia comoda, accessibile e memorabile dall'inizio alla fine.</p>
+<div class="quick-facts">
+<h3>Accessibilità dell'aeroporto I fatti in breve</h3>
+<div class="qf-item">
+<span class="qf-label">Assistenza per sedie a rotelle</span>
+<span class="qf-value">Disponibile in tutti i principali aeroporti</span>
 </div>
-<div class="culture-card">
-<span class="culture-icon">💡</span>
-<h4>Strategia di successo</h4>
-<p>Richiedi assistenza in anticipo al momento della prenotazione dei voli, arriva in anticipo per l'elaborazione, utilizza trasferimenti privati accessibili (non trasporti pubblici) e collabora con i tour operator che coordinano la logistica aeroportuale. La preparazione trasforma il potenziale stress in transizioni fluide.</p>
+<div class="qf-item">
+<span class="qf-label">Richiedi avviso</span>
+<span class="qf-value">48 ore prima del volo</span>
 </div>
+<div class="qf-item">
+<span class="qf-label">Servizi igienici accessibili</span>
+<span class="qf-value">Disponibile in tutti gli aeroporti</span>
 </div>
-<h3>Comprensione del quadro di accessibilità aeroportuale dell'Egitto</h3>
-<p>L'Egitto segue le linee guida sull'accessibilità dell'ICAO, sebbene l'implementazione vari in base all'età dell'aeroporto e al finanziamento. Il Ministero dell’Aviazione Civile ha dato priorità agli aggiornamenti del Cairo International, mentre gli aeroporti regionali ricevono miglioramenti incrementali. L'assistenza per sedie a rotelle è universalmente disponibile ma richiede una notifica anticipata.</p>
-<div class="advice-box">
-<h3>Aspettative realistiche per il 2026</h3>
-<p><strong>Aspettatevi:</strong>Personale disponibile, assistenza di base per sedie a rotelle, servizi igienici accessibili nei terminal principali e miglioramento delle infrastrutture.<br/>
-<strong>Non aspettarti:</strong>Accesso universale senza gradini, risposta rapida dell'assistenza negli aeroporti regionali o collegamenti di trasporto pubblico accessibili.<br/>
-<strong>In conclusione:</strong>Gli aeroporti egiziani sono assolutamente navigabili per gli utenti su sedia a rotelle con un'adeguata pianificazione e il giusto team di supporto.</p>
-</div>
-<!-- Chapter 2: Cairo International Airport (CAI) Deep Dive -->
-<h2>Capitolo 2: Aeroporto Internazionale del Cairo (CAI) - Guida completa alla navigazione</h2>
-<p>Cairo International è il gateway principale dell'Egitto e offre le funzionalità di accessibilità più complete. Il Terminal 3 (utilizzato dalla maggior parte dei vettori internazionali) è all'avanguardia negli standard moderni.</p>
-<div class="service-category category-airport">
-<h4><i class="fas fa-building"></i>Caratteristiche di accessibilità del Terminal 3 CAI</h4>
-<div class="airport-checklist">
-<h4>✅ Funzionalità di accessibilità verificate</h4>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>Ingresso e marciapiede:</strong>Zone di riconsegna in piano con percorsi accessibili agli ingressi dei terminal; punti di incontro di assistenza dedicati chiaramente segnalati</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>Sportello di Assistenza Speciale:</strong>Situato nella sala arrivi (post-immigrazione); personale disponibile 24 ore su 24, 7 giorni su 7, con personale che parla inglese; fornisce sedie a rotelle aeroportuali e servizi di scorta</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>Immigrazione e dogane:</strong>Corsie accessibili dedicate con sportelli ribassati; personale formato per l'assistenza su sedia a rotelle; elaborazione accelerata disponibile su richiesta</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>Servizi igienici accessibili:</strong>Strutture completamente attrezzate con maniglioni, adeguato spazio di svolta, infissi ribassati in tutti gli atri; servizi igienici per famiglie disponibili</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>Ascensori e rampe:</strong>Gli ascensori collegano tutti i livelli; rampe nelle transizioni chiave; percorsi di guida tattile nei corridoi principali</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>Posti a sedere e aree di riposo:</strong>Posti a sedere accessibili in tutti i terminal; zone tranquille designate con comodi posti a sedere</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>Screening di sicurezza:</strong>Gli utenti su sedia a rotelle possono rimanere sulle sedie durante lo screening; sale di proiezione private disponibili su richiesta</div>
+<div class="qf-item">
+<span class="qf-label">Supporto</span>
+<span class="qf-value">WhatsApp 24 ore su 24, 7 giorni su 7</span>
 </div>
 </div>
-<div class="warning-box">
-<h3>⚠️Considerazioni sulla Navigazione CAI</h3>
-<ul>
-<li><strong>Collegamenti terminali:</strong>Per spostarsi tra i Terminal 1, 2 e 3 sono necessari bus navetta; non tutti sono accessibili alle persone su sedia a rotelle: confermalo al momento della prenotazione delle coincidenze</li>
-<li><strong>Ritiro bagagli:</strong>I caroselli possono essere affollati; richiedere assistenza per il ritiro dei bagagli, se necessario</li>
-<li><strong>Trasporto via terra:</strong>I taxi standard non sono accessibili; prenotare in anticipo trasferimenti privati accessibili</li>
-<li><strong>Orari di punta:</strong>La risposta dell'assistenza potrebbe rallentare durante i periodi di volume elevato (6-9:00, 18-22:00); consentire tempi di elaborazione aggiuntivi</li>
+<div class="callout callout-indigo">
+<h3>Pronto per la tua avventura in Egitto accessibile?</h3>
+<p>Unisciti a Egypt Photography Tours per opzioni di tour accessibili con veicoli accessibili in sedia a rotelle, accesso coordinato al sito e assistenza specializzata. Contattaci per discutere le tue specifiche esigenze di accessibilità e personalizzeremo il tuo itinerario di conseguenza.</p>
+<a class="btn btn-dark" href="/it/contact.html#customize-trip">Pianifica il mio tour accessibile</a>
+</div>
+<div class="toc-box">
+<h3>Navigazione rapida</h3>
+<ul class="toc-list">
+<li><a href="#services">Servizi di assistenza per sedie a rotelle</a></li>
+<li><a href="#facilities">Strutture aeroportuali accessibili</a></li>
+<li><a href="#procedures">Procedure di assistenza speciale</a></li>
+<li><a href="#tips">Suggerimenti per i viaggiatori con disabilità</a></li>
+<li><a href="#reviews">Recensioni di viaggiatori reali</a></li>
+<li><a href="#tours">Opzioni di tour accessibili</a></li>
+<li><a href="#checklist">Lista di controllo per la preparazione</a></li>
+<li><a href="#faq">Domande frequenti</a></li>
 </ul>
 </div>
-<h4>Processo di arrivo passo dopo passo al CAI</h4>
-<ol>
-<li><strong>Pre-volo:</strong>Richiedere assistenza per sedia a rotelle al momento della prenotazione del volo (avviso minimo 48 ore)</li>
-<li><strong>Sbarco:</strong>Rimani seduto fino all'arrivo del personale di assistenza con la sedia a rotelle aeroportuale, se necessario</li>
-<li><strong>Immigrazione:</strong>Procedere sulla corsia accessibile; presentare passaporto e visto; il personale assisterà nella gestione dei documenti</li>
-<li><strong>Ritiro bagagli:</strong>Il personale assisterà nel ritiro dei bagagli, se richiesto; caroselli accessibili contrassegnati</li>
-<li><strong>Dogana:</strong>Utilizzare corsia accessibile; dichiarare gli articoli secondo necessità; il personale può assistere nella compilazione del modulo</li>
-<li><strong>Sportello di Assistenza:</strong>Visita il banco di assistenza speciale nella sala arrivi per il coordinamento successivo</li>
-<li><strong>Trasporto via terra:</strong>Incontra il trasferimento accessibile prestabilito al punto d'incontro designato (livello arrivi del Terminal 3)</li>
-</ol>
-<div class="tip-card">
-<h4>Suggerimenti professionali per la navigazione CAI</h4>
+<h2 id="services">Capitolo 1: Servizi di assistenza per sedie a rotelle negli aeroporti egiziani</h2>
+<p>Tutti i principali aeroporti egiziani forniscono servizi di assistenza su sedia a rotelle per i passeggeri con difficoltà motorie. Comprendere come richiedere e utilizzare questi servizi garantisce una navigazione agevole in aeroporto dal check-in al ritiro bagagli.</p>
+<div class="development-grid">
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-wheelchair"></i></span>
+<h4>Disponibilità di assistenza per sedie a rotelle</h4>
+<p><strong>Aeroporto Internazionale del Cairo:</strong>Assistenza completa per sedie a rotelle disponibile in tutti i terminal (il Terminal 2 e il Terminal 3 dispongono delle strutture più complete).<strong>Luxor, Assuan, Hurghada, Sharm El Sheikh:</strong>Assistenza per sedie a rotelle disponibile in tutti gli aeroporti. Richiedi assistenza al momento della prenotazione del tuo volo o almeno 48 ore prima della partenza.</p>
+</div>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-phone-alt"></i></span>
+<h4>Come richiedere assistenza</h4>
+<p><strong>Al momento della prenotazione:</strong>Richiedi assistenza per sedia a rotelle al momento della prenotazione del volo tramite la tua compagnia aerea.<strong>48 ore prima:</strong>Contatta la tua compagnia aerea almeno 48 ore prima della partenza per confermare l'assistenza.<strong>All'arrivo:</strong>Procedi al banco di assistenza speciale o chiedi assistenza alla sedia a rotelle al personale della compagnia aerea. L'assistenza è fornita dal check-in al ritiro bagagli.</p>
+</div>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-plane-departure"></i></span>
+<h4>Assistenza alla partenza</h4>
+<p><strong>Check-in:</strong>Richiedi assistenza per sedie a rotelle al banco del check-in.<strong>Corsie prioritarie:</strong>Verrai accompagnato attraverso le corsie prioritarie di sicurezza e di immigrazione.<strong>Imbarco:</strong>L'assistenza pre-imbarco è disponibile per i passeggeri che necessitano di assistenza su sedia a rotelle. La tua sedia a rotelle verrà depositata nella stiva dell'aereo e riconsegnata alla porta dell'aereo all'arrivo.</p>
+</div>
+</div>
+<div class="callout callout-gold">
+<h3>Suggerimenti importanti per l'assistenza in sedia a rotelle</h3>
 <ul>
-<li><strong>Porta con te la conferma di assistenza stampata:</strong>Il personale della compagnia aerea e dell'aeroporto risponde più rapidamente alle richieste documentate</li>
-<li><strong>Utilizza il Terminale 3:</strong>Più accessibile; conferma che la tua compagnia aerea utilizza questo terminale al momento della prenotazione</li>
-<li><strong>Richiedi un'elaborazione accelerata:</strong>Menzionare le esigenze di mobilità al momento del check-in per le corsie preferenziali</li>
-<li><strong>Scarica mappe offline:</strong>Il Terminal 3 è grande; le mappe offline aiutano la navigazione se l'assistenza subisce ritardi</li>
-<li><strong>Mantieni gli elementi essenziali accessibili:</strong>Farmaci, documenti e dispositivi di comunicazione in una borsa a portata di mano</li>
+<li><strong>Richiedi in anticipo:</strong>Richiedi assistenza su sedia a rotelle al momento della prenotazione del volo o almeno 48 ore prima della partenza per garantire la disponibilità.</li>
+<li><strong>Specificare le esigenze:</strong>Specifica se hai bisogno di assistenza al gate, alla porta dell'aeromobile o di assistenza all'imbarco sull'aeromobile.</li>
+<li><strong>Sedie a rotelle elettriche:</strong>Le sedie a rotelle elettriche richiedono un preavviso a causa delle normative sulla batteria. Contatta la tua compagnia aerea in anticipo per le specifiche della batteria.</li>
+<li><strong>Assistenza all'arrivo:</strong>Richiedi assistenza per sedia a rotelle anche sul tuo volo di ritorno: l'assistenza è disponibile in tutti i principali aeroporti egiziani.</li>
 </ul>
 </div>
-</div>
-<!-- Chapter 3: Luxor & Aswan Airports -->
-<h2>Capitolo 3: Navigazione aeroportuale regionale - Luxor (LXR) e Aswan (ASW)</h2>
-<p>Gli aeroporti di Luxor e Aswan servono il circuito turistico meridionale dell'Egitto. Sebbene più piccoli e meno moderni del Cairo, entrambi forniscono servizi di accessibilità essenziali con un adeguato coordinamento.</p>
-<div class="table-wrapper">
-<table class="tipping-table">
+<h2 id="facilities">Capitolo 2: Strutture aeroportuali accessibili</h2>
+<p>Gli aeroporti egiziani forniscono diverse strutture accessibili ai passeggeri con disabilità. Capire cosa è disponibile ti aiuta a pianificare con sicurezza la navigazione in aeroporto.</p>
+<div class="table-scroll">
+<table class="data-table">
+<caption>Strutture accessibili nei principali aeroporti egiziani</caption>
 <thead>
 <tr>
-<th>Caratteristica</th>
-<th>Luxor Internazionale (LXR)</th>
-<th>Internazionale di Assuan (ASW)</th>
+<th>Aeroporto</th>
+<th>Servizi igienici accessibili</th>
+<th>Ascensori/Rampe</th>
+<th>Assistenza per sedie a rotelle</th>
+<th>Corsie prioritarie</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Valutazione complessiva di accessibilità</strong></td>
-<td><span class="airport-badge partially-accessible">Moderato</span></td>
-<td><span class="airport-badge partially-accessible">Moderato</span></td>
+<td><strong>Internazionale del Cairo (Terminal 2)</strong></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
 </tr>
 <tr>
-<td><strong>Procedura di richiesta di assistenza</strong></td>
-<td>Richiedi al check-in della compagnia aerea o chiama l'aeroporto +20 95 237 0000 (avviso di 24 ore)</td>
-<td>Richiedi al check-in della compagnia aerea o chiama l'aeroporto +20 97 230 2000 (preavviso di 24 ore)</td>
+<td><strong>Internazionale del Cairo (Terminal 3)</strong></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
 </tr>
 <tr>
-<td><strong>Servizi igienici accessibili</strong></td>
-<td>1 struttura completamente attrezzata nel terminal principale; ulteriori stalli accessibili di base</td>
-<td>1 struttura completamente attrezzata nella sala partenze/arrivi</td>
+<td><strong>Luxor Internazionale</strong></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
 </tr>
 <tr>
-<td><strong>Ascensori/Rampe</strong></td>
-<td>L'ascensore collega il check-in alle partenze; rampe all'ingresso principale</td>
-<td>Ascensore singolo; rampe nelle transizioni chiave; alcune aree sono accessibili solo tramite gradini</td>
+<td><strong>Internazionale di Assuan</strong></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
 </tr>
 <tr>
-<td><strong>Screening di sicurezza</strong></td>
-<td>Gli utenti su sedia a rotelle possono rimanere seduti; proiezione privata disponibile su richiesta</td>
-<td>Procedura standard con assistenza; concedere più tempo per il coordinamento</td>
+<td><strong>Internazionale di Hurghada</strong></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
 </tr>
 <tr>
-<td><strong>Assistenza bagagli</strong></td>
-<td>Il personale assisterà con il recupero su richiesta; concedere tempo extra</td>
-<td>Assistenza di base disponibile; considera di viaggiare leggeri per una maggiore maneggevolezza</td>
-</tr>
-<tr>
-<td><strong>Trasporto via terra</strong></td>
-<td>Nessun trasporto pubblico accessibile; è essenziale prenotare in anticipo i trasferimenti privati ​​accessibili</td>
-<td>Opzioni di taxi limitate; trasferimenti accessibili prestabiliti fortemente consigliati</td>
-</tr>
-<tr>
-<td><strong>Stima del tempo di elaborazione</strong></td>
-<td>60-90 minuti per arrivi con assistenza</td>
-<td>45-75 minuti per arrivi con assistenza</td>
+<td><strong>Internazionale di Sharm el-Sheikh</strong></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
+<td><span class="badge badge-safe">Disponibile</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h4>Strategie di successo per gli aeroporti regionali</h4>
-<p>Gli aeroporti più piccoli richiedono approcci diversi rispetto ai principali hub:</p>
+<h3>Panoramica delle strutture accessibili</h3>
 <ul>
-<li><strong>Coordinarsi direttamente con le compagnie aeree:</strong>Il personale aeroportuale regionale ha meno autonomia; il coordinamento della compagnia aerea garantisce la disponibilità dell'assistenza</li>
-<li><strong>Concedere tempi di elaborazione generosi:</strong>Squadre di personale più piccole significano tempi di attesa più lunghi; aggiungere 30-45 minuti alle stime standard</li>
-<li><strong>Portare le forniture essenziali:</strong>Gli aeroporti regionali hanno una vendita al dettaglio limitata; portare con sé acqua, snack, farmaci e articoli di conforto</li>
-<li><strong>Preorganizzare tutti i trasporti via terra:</strong>Non esistono opzioni pubbliche accessibili; i trasferimenti privati sono obbligatori per gli utenti su sedia a rotelle</li>
-<li><strong>Portare con sé la documentazione stampata:</strong>Richieste di assistenza, conferme di hotel e itinerari di tour in arabo/inglese accelerano l'elaborazione</li>
+<li><strong>Servizi igienici accessibili:</strong>Disponibile in tutti i principali aeroporti con stalli accessibili, maniglioni e lavandini accessibili.</li>
+<li><strong>Ascensori e rampe:</strong>Disponibile in tutti i terminal per l'accesso tra i livelli.</li>
+<li><strong>Assistenza per sedie a rotelle:</strong>Disponibile dal check-in tramite ritiro bagagli; richiedere in anticipo.</li>
+<li><strong>Corsie prioritarie:</strong>Corsie prioritarie di sicurezza e immigrazione disponibili per i passeggeri che necessitano di assistenza.</li>
+<li><strong>Parcheggio accessibile:</strong>Parcheggi accessibili disponibili in tutti gli aeroporti vicino agli ingressi dei terminal.</li>
 </ul>
-<!-- Chapter 4: Assistance Request Procedures -->
-<h2>Capitolo 4: Richiesta e ricezione di assistenza aeroportuale in Egitto</h2>
-<p>Comprendere il sistema di richiesta di assistenza dell'Egitto ti garantisce di ricevere un supporto tempestivo e appropriato.</p>
-<div class="service-category category-airport">
-<h4><i class="fas fa-hands-helping"></i>Tempistiche e processo della richiesta di assistenza</h4>
-<h5>✅ Preparazione pre-volo (oltre 48 ore prima)</h5>
-<ol>
-<li><strong>Al momento della prenotazione del volo:</strong>Seleziona l'opzione "assistenza sedia a rotelle" o chiama direttamente la compagnia aerea</li>
-<li><strong>Conferma i dettagli:</strong>Specificare la sedia a rotelle manuale o elettrica, il livello di assistenza necessario (solo accompagnatore o assistenza completa)</li>
-<li><strong>Richiesta documenti:</strong>Salva il numero di conferma e le informazioni di contatto del personale</li>
-<li><strong>Coordinamento con il tour operator:</strong>Egypt Photography Tours può inviare richieste di assistenza per tuo conto quando prenoti i trasferimenti aeroportuali</li>
-</ol>
-<h5>✅ Processo di arrivo in aeroporto</h5>
-<ol>
-<li><strong>Sbarco:</strong>Rimani seduto fino all'arrivo del personale di assistenza con la sedia a rotelle aeroportuale, se necessario</li>
-<li><strong>Scorta attraverso l'immigrazione:</strong>Il personale ti guiderà verso le corsie accessibili e ti assisterà nella gestione dei documenti</li>
-<li><strong>Assistenza bagagli:</strong>Richiedere aiuto per il recupero, se necessario; il personale può accompagnarti alla giostra</li>
-<li><strong>Elaborazione doganale:</strong>Utilizzare corsia accessibile; il personale può assistere nella compilazione del modulo, se richiesto</li>
-<li><strong>Trasferimento al trasporto via terra:</strong>Il personale ti accompagnerà al punto d'incontro accessibile per il trasferimento prestabilito</li>
-</ol>
-<h5>⚠️ Sfide e soluzioni di assistenza comuni</h5>
-<div class="warning-box">
-<h3>Sfida: risposta ritardata all'assistenza</h3>
-<p><strong>Soluzione:</strong>Portare con sé la conferma di assistenza stampata; richiedere gentilmente al supervisore se l'attesa supera i 20 minuti; avere il contatto del tour operator disponibile per l'escalation</p>
-<h3>Sfida: barriere linguistiche con il personale</h3>
-<p><strong>Soluzione:</strong>Portare una frase in arabo per esigenze di accessibilità; utilizzare l'app di traduzione; richiedere personale che parli inglese al banco assistenza</p>
-<h3>Sfida: trasporto via terra inaccessibile</h3>
-<p><strong>Soluzione:</strong>Non fare mai affidamento sui taxi aeroportuali; prenota in anticipo trasferimenti accessibili verificati tramite Egypt Photography Tours o specialisti simili</p>
+<h2 id="procedures">Capitolo 3: Procedure di assistenza speciale</h2>
+<p>La comprensione delle procedure di assistenza speciale garantisce una navigazione aeroportuale fluida per i passeggeri con disabilità. Queste procedure si applicano a tutti i principali aeroporti egiziani.</p>
+<div class="development-grid">
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-clipboard-check"></i></span>
+<h4>Preparazione pre-volo</h4>
+<p><strong>Richiedi assistenza:</strong>Richiedi sedia a rotelle o assistenza speciale al momento della prenotazione del volo o almeno 48 ore prima della partenza.<strong>Specificare le esigenze:</strong>Specifica se hai bisogno di assistenza al gate, alla porta dell'aeromobile o di assistenza all'imbarco.<strong>Sedie a rotelle elettriche:</strong>Fornire in anticipo alla compagnia aerea le specifiche della batteria per le sedie a rotelle elettriche.</p>
 </div>
-<div class="tip-card">
-<h4>Frasi arabe essenziali per l'assistenza aeroportuale</h4>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-plane-arrival"></i></span>
+<h4>Procedure di arrivo</h4>
+<p><strong>All'arrivo:</strong>Procedi al banco di assistenza speciale o chiedi assistenza alla sedia a rotelle al personale della compagnia aerea.<strong>Elaborazione prioritaria:</strong>Verrai accompagnato attraverso le corsie preferenziali per l'immigrazione e il ritiro bagagli.<strong>Riconsegna sedia a rotelle:</strong>La sedia a rotelle verrà restituita alla porta dell'aereo all'arrivo.</p>
+</div>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-plane-departure"></i></span>
+<h4>Procedure di partenza</h4>
+<p><strong>Check-in:</strong>Richiedi assistenza su sedia a rotelle al momento del check-in.<strong>Corsie prioritarie:</strong>Sono disponibili corsie prioritarie per la sicurezza e l'immigrazione.<strong>Imbarco:</strong>Assistenza pre-imbarco disponibile per i passeggeri che necessitano di assistenza su sedia a rotelle.</p>
+</div>
+</div>
+<div class="callout callout-gold">
+<h3>Suggerimenti per l'assistenza speciale</h3>
 <ul>
-<li><strong>"Ana bi-htaj ila musa'ada"</strong>(Ho bisogno di assistenza)</li>
-<li><strong>"Kalbi kursi mutaharrik"</strong>(Io uso una sedia a rotelle)</li>
-<li><strong>"Ayna al-hammamat al-muta'atiqa?"</strong>(Dov'è il bagno accessibile?)</li>
-<li><strong>"Shukran jazeelan"</strong>(Grazie mille)</li>
+<li><strong>Arrivare presto:</strong>Arrivare in aeroporto almeno 3 ore prima dei voli internazionali per avere tempo per le procedure di assistenza speciale.</li>
+<li><strong>Comunicare i bisogni:</strong>Comunica chiaramente le tue esigenze specifiche al personale della compagnia aerea al momento del check-in e al gate.</li>
+<li><strong>Farmaci:</strong>Conservare i farmaci nel bagaglio a mano con le prescrizioni. Conservare i farmaci nei contenitori originali.</li>
+<li><strong>Ausili per la mobilità:</strong>Informa il personale della compagnia aerea su eventuali ausili per la mobilità che stai utilizzando (sedia a rotelle, deambulatore, bastone) per una corretta gestione.</li>
 </ul>
 </div>
+<h2 id="tips">Capitolo 4: Suggerimenti per i viaggiatori con disabilità</h2>
+<p>Questi consigli pratici aiutano i viaggiatori con disabilità a spostarsi negli aeroporti e nei siti turistici egiziani in modo comodo e sicuro.</p>
+<div class="development-grid">
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-info-circle"></i></span>
+<h4>Suggerimenti per la navigazione aeroportuale</h4>
+<p><strong>Richiedi assistenza in anticipo:</strong>Richiedi sedia a rotelle o assistenza speciale al momento della prenotazione del volo.<strong>Arrivare presto:</strong>Arrivare almeno 3 ore prima dei voli internazionali.<strong>Comunicare i bisogni:</strong>Comunica chiaramente le tue esigenze specifiche al personale della compagnia aerea e dell'aeroporto.<strong>Utilizza corsie preferenziali:</strong>Per i passeggeri che necessitano di assistenza sono disponibili corsie prioritarie di sicurezza e di immigrazione.</p>
 </div>
-<!-- Chapter 5: Security Screening Protocols -->
-<h2>Capitolo 5: Controlli di sicurezza per gli utenti su sedia a rotelle in Egitto</h2>
-<p>La sicurezza aeroportuale egiziana segue i protocolli internazionali con adattamenti locali. Comprendere il processo riduce l'ansia e garantisce uno screening regolare.</p>
-<div class="culture-grid">
-<div class="culture-card">
-<span class="culture-icon">🔍</span>
-<h4>Procedura di screening standard</h4>
-<p>Gli utenti su sedia a rotelle possono rimanere sulla propria sedia durante lo screening iniziale. Il personale di sicurezza effettuerà un'ispezione della persona e della sedia a rotelle. Le sedie alimentate a batteria richiedono un'ulteriore verifica del tipo di batteria e dell'imballaggio.</p>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-map-marked-alt"></i></span>
+<h4>Accessibilità dei siti turistici</h4>
+<p><strong>Grande Museo Egizio:</strong>Completamente accessibile ai disabili con rampe e ascensori.<strong>Altopiano delle piramidi:</strong>Alcuni sentieri accessibili ma terreno irregolare in alcune zone.<strong>Templi di Karnak e Luxor:</strong>Accessibilità parziale con alcuni tratti sconnessi.<strong>Contattaci:</strong>Possiamo organizzare opzioni di tour accessibili e coordinare l'accesso ai siti accessibili.</p>
 </div>
-<div class="culture-card">
-<span class="culture-icon">🔋</span>
-<h4>Regole sulla batteria della carrozzina elettrica</h4>
-<p><strong>Batterie a secco/gel:</strong>Consentito in cabina se fissato saldamente alla sedia a rotelle.<br/><strong>Batterie a celle umide:</strong>Deve essere rimosso, imballato in un contenitore a tenuta stagna e trasportato nella stiva.<br/><strong>Documentazione:</strong>Portare con sé le specifiche della batteria e la documentazione di approvazione della compagnia aerea.</p>
-</div>
-<div class="culture-card">
-<span class="culture-icon">🛡️</span>
-<h4>Tutela della privacy e della dignità</h4>
-<p>Sale di proiezione private sono disponibili su richiesta in tutti gli aeroporti. Le viaggiatrici possono richiedere che le donne addette alla sicurezza vengano perquisite. Hai il diritto di avere un compagno di viaggio presente durante lo screening.</p>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-car"></i></span>
+<h4>Trasporti accessibili</h4>
+<p><strong>Veicoli accessibili:</strong>Forniamo veicoli accessibili per i tour.<strong>Trasferimenti aeroportuali:</strong>Trasferimenti aeroportuali accessibili disponibili su richiesta.<strong>Accesso al sito:</strong>Coordiniamo l'accesso ai siti accessibili nei siti turistici.<strong>Contattaci:</strong>Discuti le tue specifiche esigenze di accessibilità e personalizzeremo il tuo itinerario di conseguenza.</p>
 </div>
 </div>
-<div class="advice-box">
-<h3>Lista di controllo per la preparazione ai controlli di sicurezza</h3>
+<div class="callout callout-gold">
+<h3>Consigli generali di viaggio per viaggiatori con disabilità</h3>
 <ul>
-<li>Arrivare 30 minuti prima rispetto alla raccomandazione standard per il coordinamento dello screening</li>
-<li>Portare con sé la documentazione della batteria per le sedie a rotelle elettroniche (specifiche del produttore, approvazione della compagnia aerea)</li>
-<li>Conservare i farmaci e i dispositivi essenziali in contenitori facilmente accessibili e chiaramente etichettati</li>
-<li>Richiedi la proiezione privata se preferisci; richiesta di frase educatamente ma con fermezza</li>
-<li>Consentire al personale di assistere nella rimozione degli oggetti dai bagagli; sono addestrati in procedure efficienti</li>
+<li><strong>Richiedi assistenza in anticipo:</strong>Richiedi sedia a rotelle o assistenza speciale al momento della prenotazione di voli e hotel.</li>
+<li><strong>Portare con sé la documentazione:</strong>Portare con sé documentazione medica e prescrizioni di farmaci.</li>
+<li><strong>Mantenere i farmaci accessibili:</strong>Conservare i farmaci nel bagaglio a mano nei contenitori originali.</li>
+<li><strong>Comunicare i bisogni:</strong>Comunica chiaramente le tue esigenze specifiche alle guide turistiche, agli autisti e al personale dell'hotel.</li>
+<li><strong>Contattaci:</strong>Contattaci in anticipo per discutere le tue specifiche esigenze di accessibilità e personalizzeremo il tuo itinerario.</li>
 </ul>
 </div>
-<!-- Chapter 6: Ground Transportation Connections -->
-<h2>Capitolo 6: Trasporto via terra accessibile dagli aeroporti egiziani</h2>
-<p>Andare dall'aeroporto al tuo hotel è la transizione più critica per l'accessibilità. Le opzioni standard sono in gran parte inaccessibili; sono essenziali soluzioni specializzate.</p>
-<div class="service-category category-airport">
-<h4><i class="fas fa-shuttle-van"></i>Opzioni di trasporto accessibili verificate</h4>
-<h5>✅ Consigliato: Trasferimenti Privati Accessibili</h5>
-<p><strong>Cosa è disponibile:</strong></p>
+<h2 id="reviews">Capitolo 5: Recensioni di viaggiatori reali</h2>
+<p>Impara dai viaggiatori con disabilità che hanno esplorato l'Egitto con le opzioni di tour accessibili di Egypt Photography Tours nel 2025-2026.</p>
+<div class="testimonial-box">
+<p class="testimonial-text">"Essendo un utente su sedia a rotelle, ero nervoso all'idea di viaggiare in Egitto, ma Egypt Photography Tours ha reso tutto perfetto. Hanno organizzato trasferimenti aeroportuali accessibili, veicoli accessibili per i tour e coordinato l'accesso ai siti accessibili in ogni sito. Il Grande Museo Egizio era completamente accessibile e hanno trovato percorsi accessibili alle Piramidi. Le guide turistiche erano incredibilmente attente alle mie esigenze. Un'esperienza indimenticabile."</p>
+<div class="testimonial-author-info">
+<h4>Marco T.</h4>
+<p>Utente su sedia a rotelle, Stati Uniti - Discovery Tour di 7 giorni, dicembre 2025</p>
+</div>
+</div>
+<div class="testimonial-box">
+<p class="testimonial-text">"Ho viaggiato con mia madre che usa un deambulatore e Egypt Photography Tours ha reso tutto comodo e accessibile. Hanno organizzato veicoli accessibili, camere d'albergo accessibili e coordinato l'accesso ai siti accessibili in ogni sito. Le guide turistiche erano incredibilmente attente e si assicuravano che mia madre fosse a suo agio ovunque. Un'esperienza familiare indimenticabile."</p>
+<div class="testimonial-author-info">
+<h4>Sophie L.</h4>
+<p>In viaggio con la madre (utente Walker), Francia: tour alla scoperta di 7 giorni, gennaio 2026</p>
+</div>
+</div>
+<div class="testimonial-box">
+<p class="testimonial-text">"Come viaggiatore con problemi di mobilità, sono rimasto colpito dal modo in cui Egypt Photography Tours ha soddisfatto le mie esigenze. Hanno organizzato trasferimenti aeroportuali accessibili, veicoli accessibili e accesso coordinato ai siti accessibili in ogni sito. Le guide turistiche sono state incredibilmente attente e si sono assicurate che fossi a mio agio ovunque. Il Grande Museo Egizio era completamente accessibile e hanno trovato percorsi accessibili in altri siti. Un'esperienza indimenticabile."</p>
+<div class="testimonial-author-info">
+<h4>Alex K.</h4>
+<p>Sfide di mobilità, Germania – Discovery Tour di 7 giorni, novembre 2025</p>
+</div>
+</div>
+<div class="callout callout-dark">
+<h3>Perché prenotare tour accessibili con Egypt Photography Tours?</h3>
 <ul>
-<li>Veicoli con sollevatori o rampe idrauliche (Mercedes Vito, Toyota Hiace modificate)</li>
-<li>Sistemi di ancoraggio sicuri per sedia a rotelle (minimo 4 punti)</li>
-<li>Autisti formati con esperienza in assistenza alla mobilità e protocolli aeroportuali</li>
-<li>Veicoli con aria condizionata essenziali per il comfort nel clima egiziano</li>
-<li>Disponibile negli aeroporti del Cairo, Luxor e Assuan con prenotazione anticipata</li>
-</ul>
-<p><strong>Costo:</strong>1.200-2.500 EGP per i trasferimenti aeroportuali del Cairo; 800-1.500 EGP per gli aeroporti regionali</p>
-<h5>❌ Non consigliato: opzioni standard</h5>
-<ul>
-<li><strong>Taxi aeroportuali:</strong>Le berline standard non possono ospitare sedie a rotelle; gli autisti raramente assistono al carico</li>
-<li><strong>Uber/Careem:</strong>Attualmente in Egitto non è disponibile alcuna opzione per veicoli accessibili in sedia a rotelle</li>
-<li><strong>Autobus pubblici:</strong>Non accessibile in sedia a rotelle; gradini alti, assenza di rampe, condizioni di affollamento</li>
-<li><strong>Navette dell'hotel:</strong>Raramente accessibile; confermare le capacità specifiche del veicolo al momento della prenotazione</li>
-</ul>
-<div class="tip-card">
-<h4>Lista di controllo per la prenotazione del trasporto</h4>
-<ul>
-<li>✅ Confermare che il veicolo sia dotato di ascensore/rampa idraulica (non solo "accessibile")</li>
-<li>✅ Verificare che il sistema di ancoraggio corrisponda alle specifiche della sedia a rotelle</li>
-<li>✅ Richiedi autista che parli inglese per una comunicazione chiara</li>
-<li>✅ Fornire i dettagli del volo per un incontro tempestivo agli arrivi</li>
-<li>✅ Porta con te il contatto del tour operator per assistenza immediata in caso di problemi</li>
-<li>✅ <a href="/it/contact">Prenota tramite Egypt Photography Tours</a>per trasferimenti aeroportuali accessibili pre-verificati</li>
-</ul>
-</div>
-</div>
-<!-- Chapter 7: Practical Preparation Timeline -->
-<h2>Capitolo 7: Cronologia della preparazione pratica per la navigazione aeroportuale</h2>
-<p>Il successo della navigazione aeroportuale con mobilità limitata richiede una preparazione graduale. Utilizza questa sequenza temporale verificata.</p>
-<div class="airport-checklist">
-<h4>2-4 settimane prima del viaggio</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Richiedere assistenza per sedia a rotelle al momento della prenotazione dei voli (è richiesto un preavviso minimo di 48 ore)</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Prenota trasferimenti aeroportuali privati accessibili tramite un fornitore verificato</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Conferma le caratteristiche di accessibilità dell'hotel e organizza il check-in anticipato, se necessario</div></div>
-<h4>1 settimana prima del viaggio</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Riconfermare le richieste di assistenza con compagnia aerea e aeroporto</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Prepara una frase in arabo per le esigenze di accessibilità</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Riponi i documenti essenziali in un organizer accessibile e impermeabile</div></div>
-<h4>Giorno di partenza</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Arrivo in aeroporto 3 ore prima dei voli internazionali (2 ore nazionali)</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Effettua il check-in presso lo sportello di assistenza speciale, se disponibile</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Mantieni la conferma dell'assistenza, i dettagli del volo e il contatto del trasferimento facilmente accessibili</div></div>
-<h4>Arrivo in Egitto</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Rimanere seduti fino all'arrivo del personale di assistenza</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Procedi attraverso l'immigrazione/dogana con la scorta del personale</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Incontra il trasferimento accessibile prestabilito al punto d'incontro designato</div></div>
-</div>
-<!-- Chapter 8: Real Traveler Reviews -->
-<h2>Capitolo 8: Recensioni di viaggiatori reali - Esperienze in aeroporto con sedie a rotelle</h2>
-<p>Esperienze verificate di utenti su sedia a rotelle che hanno navigato negli aeroporti egiziani nel 2025-2026.</p>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">JS</div>
-<div class="reviewer-info">
-<h4>Jennifer S., utente di sedia a rotelle elettrica</h4>
-<p>Visitato: novembre 2025 | Aeroporti: arrivo al Cairo (CAI), partenza Luxor (LXR).</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<span style="margin-left: 4px; color: #6b7280;">5/5</span>
-</div>
-</div>
-</div>
-<div class="review-content">
-<p><strong>"Il Terminal 3 del CAI era impressionante: bagni accessibili, percorsi agevoli e personale che sapeva esattamente cosa fare. L'assistenza è arrivata entro 10 minuti dall'atterraggio. Luxor era più piccola ma il personale era altrettanto disponibile. La chiave era prenotare in anticipo trasferimenti accessibili tramite Egypt Photography Tours. Nessuno stress, solo transizioni fluide."</strong></p>
-</div>
-</div>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">MR</div>
-<div class="reviewer-info">
-<h4>Michael R., Utente manuale su sedia a rotelle</h4>
-<p>Visitato: dicembre 2025 | Aeroporti: partenza dal Cairo (CAI), arrivo ad Assuan (ASW).</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star-half-alt"></i>
-<span style="margin-left: 4px; color: #6b7280;">4,5/5</span>
-</div>
-</div>
-</div>
-<div class="review-content">
-<p><strong>"La partenza del CAI è avvenuta senza intoppi con l'assistenza pre-richiesta. L'arrivo ad Assuan ha richiesto più tempo (45 minuti per l'arrivo dell'assistenza) ma il personale si è scusato ed è stato efficiente una volta arrivato. Il trasferimento accessibile in attesa all'esterno ha fatto la differenza. Consiglio dei professionisti: porta pazienza per gli aeroporti regionali ma fidati del processo."</strong></p>
-</div>
-</div>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">AL</div>
-<div class="reviewer-info">
-<h4>Aisha L., utilizzatrice di Walker con dolore cronico</h4>
-<p>Visitato: gennaio 2026 | Aeroporti: Cairo (CAI) arrivo/partenza</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<span style="margin-left: 4px; color: #6b7280;">5/5</span>
-</div>
-</div>
-</div>
-<div class="review-content">
-<p><strong>"Essendo una persona che ha bisogno di riposo frequente, le aree salotto accessibili del CAI sono state salvavita. Il personale ha notato il mio deambulatore e mi ha offerto assistenza in modo proattivo senza che lo chiedessi. Il bagno accessibile era pulito e spazioso. Il servizio di accoglienza di Egypt Photography Tours mi ha fatto sì che non dovessi mai navigare da solo. Lo consiglio vivamente ai viaggiatori con mobilità ridotta."</strong></p>
-</div>
-</div>
-<div class="advice-box">
-<h3>Punti chiave dalle recensioni dei viaggiatori</h3>
-<ul>
-<li><strong>La pre-richiesta di assistenza non è negoziabile:</strong>Le richieste walk-up causano ritardi significativi</li>
-<li><strong>Il Terminal 3 del Cairo stabilisce lo standard:</strong>Gli aeroporti regionali richiedono più pazienza ma operano con coordinamento</li>
-<li><strong>I trasferimenti accessibili privati sono essenziali:</strong>Non fare mai affidamento sui taxi aeroportuali o sui trasporti pubblici</li>
-<li><strong>La documentazione accelera tutto:</strong>Conferme stampate, frasi arabe e una comunicazione chiara prevengono malintesi</li>
-<li><strong>Gli operatori specializzati aggiungono un valore immenso:</strong>Le compagnie turistiche che coordinano la logistica aeroportuale rimuovono i principali punti di stress</li>
+<li><strong>Veicoli accessibili:</strong>Forniamo veicoli accessibili per tour con accessibilità per sedie a rotelle o alloggi per ausili alla mobilità.</li>
+<li><strong>Accesso al sito accessibile:</strong>Coordiniamo l'accesso ai siti accessibili nei siti turistici e troviamo percorsi accessibili ove disponibili.</li>
+<li><strong>Guide attente:</strong>Le nostre guide turistiche sono addestrate per accogliere i viaggiatori con disabilità e garantire comfort durante tutto il viaggio.</li>
+<li><strong>Itinerari personalizzati:</strong>Contattaci per discutere le tue specifiche esigenze di accessibilità e personalizzeremo il tuo itinerario di conseguenza.</li>
 </ul>
 </div>
-<!-- Chapter 9: Why Choose Specialized Airport Support -->
-<h2>Capitolo 9: Perché collaborare con gli specialisti dell'accessibilità aeroportuale</h2>
-<p>La navigazione aeroportuale indipendente con mobilità limitata è possibile ma richiede una vasta conoscenza locale, risoluzione dei problemi in tempo reale e coordinamento del personale. Gli operatori specializzati rimuovono gli attriti e massimizzano la qualità dell'esperienza.</p>
-<div class="trust-section">
-<div class="container">
-<h2>Tour fotografici in Egitto - Esperti di accessibilità aeroportuale</h2>
-<div class="trust-grid">
-<div class="trust-card">
-<span class="trust-icon">🛬</span>
-<h3>Assistenza aeroportuale precoordinata</h3>
-<p>Inviamo richieste di assistenza per tuo conto, le confermiamo con il personale aeroportuale 24 ore prima dell'arrivo e forniamo contatti diretti per supporto in tempo reale. Nessuna supposizione, nessun ritardo.<a href="/it/tours">Sfoglia i tour accessibili</a>.</p>
+<h2 id="tours">Capitolo 6: Opzioni del tour accessibile</h2>
+<p>Egypt Photography Tours offre opzioni di tour accessibili per i viaggiatori con disabilità. Contattaci per discutere le tue specifiche esigenze di accessibilità e personalizzeremo il tuo itinerario di conseguenza.</p>
+<div class="tour-rec-grid">
+<div class="tour-rec">
+<span class="rec-badge">Il più popolare</span>
+<h4><a href="/it/tour-pyramids-private.html">Tour fotografico privato di piramidi e sfinge</a></h4>
+<p><strong>Funzionalità di accessibilità:</strong>Veicolo accessibile, accesso al sito accessibile sull'altopiano delle Piramidi, guida attenta e addestrata in alloggi per l'accessibilità.</p>
+<a class="tour-rec-cta" href="/it/tour-pyramids-private.html">Visualizza questo tour<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
-<div class="trust-card">
-<span class="trust-icon">🚐</span>
-<h3>Trasferimenti accessibili verificati</h3>
-<p>La nostra flotta comprende veicoli con sollevatori idraulici, sistemi di ancoraggio sicuri e autisti formati nell'assistenza alla mobilità. Ogni veicolo viene pre-ispezionato per verificarne la conformità in termini di accessibilità.<a href="/it/contact">Richiedi i dettagli del trasferimento</a>.</p>
+<div class="tour-rec">
+<h4><a href="/it/tour-cairo-giza-2day.html">Tour immersivo di 2 giorni al Cairo e Giza</a></h4>
+<p><strong>Funzionalità di accessibilità:</strong>Veicolo accessibile, accesso ai siti accessibili nei principali siti, camere d'albergo accessibili, guida attenta e addestrata in alloggi accessibili.</p>
+<a class="tour-rec-cta" href="/it/tour-cairo-giza-2day.html">Visualizza questo tour<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
-<div class="trust-card">
-<span class="trust-icon">⏱️</span>
-<h3>Supporto per l'elaborazione accelerata</h3>
-<p>Il nostro servizio di accoglienza include personale che si coordina con il personale aeroportuale per ridurre al minimo i tempi di attesa, assistere con la documentazione e garantire transizioni senza interruzioni dall'aereo al veicolo.<a href="/it/tour-cairo-giza-2day">Consulta il nostro supporto aeroportuale</a>.</p>
+<div class="tour-rec">
+<h4><a href="/it/tour-egypt-discovery-7day.html">Tour alla scoperta dell'Egitto di 7 giorni</a></h4>
+<p><strong>Funzionalità di accessibilità:</strong>Veicolo accessibile, accesso ai siti accessibili nei principali siti, camere d'albergo accessibili, guida attenta e addestrata in alloggi accessibili.</p>
+<a class="tour-rec-cta" href="/it/tour-egypt-discovery-7day.html">Visualizza questo tour<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
+<div class="tour-rec">
+<h4><a href="/it/tour-alexandria.html">Gita di un giorno ad Alessandria dal Cairo</a></h4>
+<p><strong>Funzionalità di accessibilità:</strong>Veicolo accessibile, accesso ai siti accessibili nei principali siti, guida attenta e addestrata in alloggi per l'accessibilità.</p>
+<a class="tour-rec-cta" href="/it/tour-alexandria.html">Visualizza questo tour<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
+<div class="tour-rec">
+<h4><a href="/it/family-tours.html">Tour fotografici per famiglie</a></h4>
+<p><strong>Funzionalità di accessibilità:</strong>Veicolo accessibile, accesso al sito accessibile, guida attenta e formata in alloggi accessibili per famiglie con difficoltà motorie.</p>
+<a class="tour-rec-cta" href="/it/family-tours.html">Visualizza questo tour<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
-</div>
-<!-- Tour Integration Section with All Links -->
-<div class="tour-integration">
-<h3>Tour dell'Egitto inclusi nell'aeroporto di Egypt Photography Tours</h3>
-<p>Ogni tour che offriamo include supporto verificato per l'accessibilità aeroportuale, trasferimenti accessibili e ritmo ottimizzato per la mobilità. Ecco le nostre opzioni più popolari:</p>
-<div class="tour-recommendation">
-<h4><a href="/it/tour-pyramids-private">Tour fotografico privato di piramidi e sfinge</a></h4>
-<p><strong>Caratteristiche di accessibilità dell'aeroporto:</strong>Assistenza pre-coordinata all'aeroporto del Cairo, trasferimento accessibile verificato a Giza, ritmi flessibili con soste, itinerario incentrato sulla fotografia che soddisfa le esigenze di mobilità dall'arrivo alla partenza.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="/it/tour-cairo-giza-2day">Tour immersivo di 2 giorni al Cairo e Giza</a></h4>
-<p><strong>Caratteristiche di accessibilità dell'aeroporto:</strong>Coordinamento perfetto dell'aeroporto del Cairo, hotel accessibile con ascensore e doccia con accesso per sedie a rotelle, trasporto privato accessibile in tutta la struttura, periodi di recupero integrati dopo le transizioni aeroportuali.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="/it/tour-alexandria">Gita di un giorno ad Alessandria dal Cairo</a></h4>
-<p><strong>Caratteristiche di accessibilità dell'aeroporto:</strong>Coordinamento dell'assistenza all'aeroporto del Cairo, veicolo accessibile per il trasferimento ad Alessandria, orari flessibili per il ritmo e le pause di riposo, opportunità fotografiche al ritmo adatto alla tua mobilità.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="/it/tour-egypt-discovery-7day">Tour alla scoperta dell'Egitto di 7 giorni</a></h4>
-<p><strong>Caratteristiche di accessibilità dell'aeroporto:</strong>Coordinamento aeroportuale completo per arrivi/partenze al Cairo e collegamenti Luxor/Assuan, trasferimenti accessibili verificati tra tutte le destinazioni, ritmo di massimo comfort con periodi di recupero integrati.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="/it/family-tours">Tour fotografici per famiglie multigenerazionali</a></h4>
-<p><strong>Caratteristiche di accessibilità dell'aeroporto:</strong>Ritmi aeroportuali a misura di famiglia che si adattano a diversi livelli di mobilità, trasferimenti accessibili adatti a nonni e bambini, attività pensate per tutte le abilità dall'arrivo alla partenza.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="/it/honeymoon-tours">Tour di lusso in luna di miele in Egitto</a></h4>
-<p><strong>Caratteristiche di accessibilità dell'aeroporto:</strong>Esperienza aeroportuale premium con coordinamento dell'assistenza privata, trasferimenti accessibili di lusso, attenzione personalizzata alle esigenze di mobilità, logistica senza soluzione di continuità in modo che possiate concentrarvi l'uno sull'altro dal momento in cui atterrerete.</p>
-</div>
-<div style="text-align: center; margin-top: 40px;">
-<a class="cta-button" href="/it/tours">Visualizza tutti i tour accessibili dell'Egitto</a>
+<div class="tour-rec">
+<h4><a href="/it/honeymoon-tours.html">Tour di lusso in luna di miele in Egitto</a></h4>
+<p><strong>Funzionalità di accessibilità:</strong>Veicolo di lusso accessibile, camere di hotel di lusso accessibili, accesso al sito accessibile, guida attenta e addestrata in alloggi per l'accessibilità.</p>
+<a class="tour-rec-cta" href="/it/honeymoon-tours.html">Visualizza questo tour<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </div>
 </div>
-<!-- Chapter 10: Final Checklist & CTA -->
-<h2>Capitolo 10: Lista di controllo finale per la preparazione dell'aeroporto</h2>
-<p>Utilizza questa cronologia verificata per garantire esperienze aeroportuali confortevoli e dignitose con mobilità ridotta.</p>
-<div class="airport-checklist">
-<h4>Azioni essenziali prima della partenza</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Richiedere assistenza per sedia a rotelle al momento della prenotazione dei voli (preavviso minimo 48 ore)</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Prenota trasferimenti aeroportuali privati accessibili tramite un fornitore verificato</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Prepara una frase in arabo per le esigenze di accessibilità</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Stampa tutte le conferme: assistenza, trasferimenti, hotel, itinerario del tour</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Riponi farmaci, documenti ed elementi essenziali in un organizer accessibile e impermeabile</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Scarica mappe offline degli aeroporti del Cairo/Luxor/Assuan</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Portare con sé la documentazione della batteria per le sedie a rotelle elettroniche</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Contatto di emergenza di Save Egypt Photography Tours: +20 155 073 5673</div></div>
-<div class="warning-box">
-<h3>⚠️ Promemoria critici per la navigazione aeroportuale</h3>
+<h2 id="checklist">Capitolo 7: Lista di controllo per la preparazione finale</h2>
+<p>Utilizza questo elenco di controllo verificato per garantire una navigazione aeroportuale agevole e tour confortevoli per i viaggiatori con disabilità in Egitto.</p>
+<div class="checklist-grid">
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-calendar-check"></i>Prima di prenotare</h4>
 <ul>
-<li><strong>Non fare mai affidamento sui taxi aeroportuali:</strong>Prenota in anticipo esclusivamente trasferimenti accessibili</li>
-<li><strong>Consenti tempo di elaborazione aggiuntivo:</strong>Aggiungi 30-45 minuti alle stime standard di arrivo in aeroporto</li>
-<li><strong>Mantieni gli elementi essenziali accessibili:</strong>Farmaci, documenti e dispositivi di comunicazione in una borsa a portata di mano</li>
-<li><strong>Richiedi assistenza in modo proattivo:</strong>Non aspettare che il personale si accorga delle tue esigenze</li>
-<li><strong>Rimani idratato e riposato:</strong>La navigazione aeroportuale è fisicamente impegnativa; ritmo con te stesso</li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Contattaci per discutere le tue specifiche esigenze di accessibilità</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Richiedi sedia a rotelle o assistenza speciale al momento della prenotazione dei voli</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Confermare le camere d'albergo accessibili e i veicoli accessibili per i tour</span></li>
+</ul>
+</div>
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-tasks"></i>Prima di viaggiare</h4>
+<ul>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Conferma la sedia a rotelle o l'assistenza speciale con la compagnia aerea almeno 48 ore prima del volo</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Portare con sé documentazione medica e prescrizioni di farmaci</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Conservare i farmaci nel bagaglio a mano nei contenitori originali</span></li>
+</ul>
+</div>
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-wheelchair"></i>Durante il tuo viaggio</h4>
+<ul>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Richiedi sedia a rotelle o assistenza speciale al check-in e al gate dell'aeroporto</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Comunica le tue esigenze specifiche a guide turistiche e autisti</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>Contattaci immediatamente se si verifica un problema di accessibilità: rispondiamo in tempo reale</span></li>
 </ul>
 </div>
 </div>
-<!-- TEXT-ONLY RELATED ARTICLES -->
+<div class="author-box">
+<span aria-hidden="true" class="author-avatar"><i aria-hidden="true" class="fas fa-user-tie"></i></span>
+<div>
+<div class="author-box-name">Hossam</div>
+<div class="author-box-role">Fotografo professionista ed egittologo, tour fotografici in Egitto</div>
+<p class="author-box-bio">Dal 2015, Hossam guida i viaggiatori con disabilità attraverso l'Egitto, organizzando veicoli accessibili, coordinando l'accesso ai siti accessibili e garantendo esperienze confortevoli e accessibili per tutti i viaggiatori.</p>
+</div>
+</div>
+<h2 id="faq">Domande frequenti</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Gli aeroporti egiziani sono accessibili alle persone su sedia a rotelle?</summary>
+<div class="faq-answer">Sì, tutti i principali aeroporti egiziani (Il Cairo, Luxor, Aswan, Hurghada, Sharm El Sheikh) forniscono servizi di assistenza per sedie a rotelle. L'Aeroporto Internazionale del Cairo (Terminal 2 e 3) offre le funzionalità di accessibilità più complete, inclusi bagni accessibili, ascensori, rampe e personale di assistenza dedicato. Richiedi l'assistenza per sedia a rotelle al momento della prenotazione del volo o almeno 48 ore prima della partenza.</div>
+</details>
+<details class="faq-item">
+<summary>Come posso richiedere l'assistenza per sedie a rotelle negli aeroporti egiziani?</summary>
+<div class="faq-answer">Richiedi assistenza per sedia a rotelle al momento della prenotazione del volo o contatta la compagnia aerea almeno 48 ore prima della partenza. All'arrivo, recati al banco di assistenza speciale o chiedi al personale della compagnia aerea. L'assistenza è fornita dal check-in al ritiro bagagli. Per le partenze, richiedi assistenza al check-in e verrai accompagnato attraverso le corsie prioritarie di sicurezza e immigrazione.</div>
+</details>
+<details class="faq-item">
+<summary>Sono disponibili servizi igienici accessibili negli aeroporti egiziani?</summary>
+<div class="faq-answer">Sì, i bagni accessibili sono disponibili in tutti i principali aeroporti egiziani. L'aeroporto internazionale del Cairo (in particolare il Terminal 2 e il Terminal 3) dispone delle strutture accessibili più complete. Anche gli aeroporti di Luxor, Aswan, Hurghada e Sharm El Sheikh dispongono di servizi igienici accessibili. Cerca il simbolo di accessibilità internazionale.</div>
+</details>
+<details class="faq-item">
+<summary>Posso portare la mia sedia a rotelle negli aeroporti egiziani?</summary>
+<div class="faq-answer">Sì, puoi portare la tua sedia a rotelle. Le sedie a rotelle manuali possono essere utilizzate in tutto l'aeroporto e registrate al gate dei voli. Le sedie a rotelle elettriche richiedono un preavviso alle compagnie aeree a causa delle normative sulle batterie. Il personale dell'aeroporto può fornirti sedie a rotelle se preferisci non utilizzare la tua in tutto l'aeroporto.</div>
+</details>
+<details class="faq-item">
+<summary>I siti turistici egiziani sono accessibili alle persone su sedia a rotelle?</summary>
+<div class="faq-answer">L'accessibilità varia in base al sito. Il Grande Museo Egizio è completamente accessibile ai disabili tramite rampe e ascensori. L'altopiano delle Piramidi ha alcuni sentieri accessibili ma in alcune aree terreno irregolare. I templi di Karnak e Luxor hanno un'accessibilità parziale con alcune aree irregolari. Egypt Photography Tours offre opzioni di tour accessibili e può organizzare trasporti accessibili e accesso al sito.</div>
+</details>
+<details class="faq-item">
+<summary>Egypt Photography Tours offre tour accessibili ai viaggiatori con disabilità?</summary>
+<div class="faq-answer">Sì, Egypt Photography Tours offre opzioni di tour accessibili per i viaggiatori con difficoltà motorie. Forniamo veicoli accessibili, coordiniamo l'accesso ai siti accessibili e possiamo organizzare assistenza specializzata. Contattaci in anticipo per discutere le tue esigenze specifiche e personalizzeremo il tuo itinerario di conseguenza.</div>
+</details>
+</div>
 <h2>Lettura correlata sul blog dei tour fotografici in Egitto</h2>
-<p>Continua a pianificare la tua avventura in Egitto accessibile con altre guide del nostro<a href="/it/blog">Blog di viaggio in Egitto</a>:</p>
+<p>Continua a pianificare la tua avventura in Egitto accessibile con altre guide del nostro<a href="/it/blog.html">Blog di viaggio in Egitto</a>:</p>
 <div class="related-guides-grid">
 <div class="related-guide-card">
-<h4><a href="/it/wheelchair-accessibility-egypt-temples-guide-2026.html">Accessibilità in sedia a rotelle nei templi egiziani: guida 2026</a></h4>
-<p>Scopri quali antichi templi in Egitto sono accessibili in sedia a rotelle e come visitarli comodamente.</p>
-<a class="read-more" href="/it/wheelchair-accessibility-egypt-temples-guide-2026.html">Leggi la guida →</a>
-</div>
-<div class="related-guide-card">
-<h4><a href="/it/inclusive-egypt-tours-disabilities-neurodiversity-2026.html">Tour inclusivi dell'Egitto: guida su disabilità e neurodiversità</a></h4>
-<p>Scopri come pianificare un viaggio in Egitto inclusivo e accessibile per viaggiatori con disabilità e bisogni neurodivergenti.</p>
-<a class="read-more" href="/it/inclusive-egypt-tours-disabilities-neurodiversity-2026.html">Leggi la guida →</a>
-</div>
-<div class="related-guide-card">
-<h4><a href="/it/egypt-seniors-guide-2026.html">Egitto per anziani: la guida turistica definitiva per il 2026</a></h4>
-<p>Una guida completa per viaggiatori senior in visita in Egitto, che copre ritmo, accessibilità e consigli di viaggio comodi.</p>
-<a class="read-more" href="/it/egypt-seniors-guide-2026.html">Leggi la guida →</a>
+<h4><a href="/it/is-egypt-safe-to-visit-2026-guide.html">L’Egitto è sicuro da visitare? Guida 2026</a></h4>
+<p>Panoramica completa sulla sicurezza per i viaggiatori che visitano l'Egitto nel 2026, con suggerimenti pratici e consigli di esperti.</p>
+<a class="read-more" href="/it/is-egypt-safe-to-visit-2026-guide.html">Leggi la guida →</a>
 </div>
 <div class="related-guide-card">
 <h4><a href="/it/egypt-packing-list-2026.html">La lista dei bagagli definitiva per l'Egitto per il 2026</a></h4>
-<p>Cosa mettere in valigia per il tuo viaggio in Egitto, inclusa l'attrezzatura essenziale per l'accessibilità, il comfort e la fotografia.</p>
+<p>Cosa mettere in valigia per il tuo viaggio in Egitto: oggetti essenziali, vestiti e attrezzatura fotografica.</p>
 <a class="read-more" href="/it/egypt-packing-list-2026.html">Leggi la guida →</a>
 </div>
 <div class="related-guide-card">
 <h4><a href="/it/egypt-transportation-guide-2026.html">Guida ai trasporti in Egitto 2026</a></h4>
-<p>Naviga in Egitto con facilità utilizzando la nostra guida ai trasferimenti accessibili, ai voli nazionali e alle crociere sul Nilo.</p>
+<p>Naviga in Egitto con facilità utilizzando la nostra guida ai voli nazionali, ai treni, alle crociere sul Nilo e ai trasferimenti privati.</p>
 <a class="read-more" href="/it/egypt-transportation-guide-2026.html">Leggi la guida →</a>
 </div>
 <div class="related-guide-card">
-<h4><a href="/it/is-egypt-safe-to-visit-2026-guide.html">L’Egitto è sicuro da visitare? Guida alla sicurezza 2026</a></h4>
-<p>Tutto quello che devi sapere sulla sicurezza e sul viaggiare con sicurezza come turista in Egitto.</p>
-<a class="read-more" href="/it/is-egypt-safe-to-visit-2026-guide.html">Leggi la guida →</a>
+<h4><a href="/it/egypt-food-guide-2026.html">Guida alimentare egiziana 2026</a></h4>
+<p>Esplora piatti tradizionali, street food, dessert e consigli per mangiare in sicurezza per i viaggiatori.</p>
+<a class="read-more" href="/it/egypt-food-guide-2026.html">Leggi la guida →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/it/best-time-to-visit-egypt-2026-guide.html">Periodo migliore per visitare l'Egitto 2026</a></h4>
+<p>Scopri i mesi migliori per visitare l'Egitto, gli sbalzi di temperatura stagionali e come evitare il caldo estivo estremo.</p>
+<a class="read-more" href="/it/best-time-to-visit-egypt-2026-guide.html">Leggi la guida →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/it/egypt-tipping-guide-baksheesh.html">Guida alle mance in Egitto: spiegazione di Baksheesh</a></h4>
+<p>Scopri quando, come e quanto dare la mancia in Egitto senza pagare più del dovuto o causare situazioni imbarazzanti.</p>
+<a class="read-more" href="/it/egypt-tipping-guide-baksheesh.html">Leggi la guida →</a>
 </div>
 </div>
 <div style="text-align:center;margin-top:28px">
-<a class="btn btn-outline-dark" href="/it/blog" style="background: transparent; border: 2px solid var(--primary-dark); color: var(--primary-dark); padding: 12px 24px; border-radius: 30px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-blog"></i>Sfoglia tutte le guide turistiche dell'Egitto</a>
+<a class="btn btn-outline-dark" href="/it/blog.html"><i aria-hidden="true" class="fas fa-blog"></i>Sfoglia tutte le guide turistiche dell'Egitto</a>
 </div>
-<!-- CONTACT FORM SECTION -->
-<section aria-labelledby="custom-h2-form" class="section section-accent" id="customize-trip">
-<div class="container">
+<section aria-labelledby="custom-h2-form" class="section section-accent" id="customize-trip" style="border-radius:15px;border:2px solid var(--c-gold);margin:50px 0 0">
+<div class="wrap">
 <div class="text-c">
-<div class="eyebrow">Progetta il viaggio dei tuoi sogni</div>
-<h2 id="custom-h2-form">Personalizza il tuo tour perfetto in Egitto</h2>
-<p class="sec-sub">Raccontaci la tua esperienza da sogno in Egitto e realizzeremo un itinerario completamente personalizzato entro 2 ore. Privato, di gruppo, fotografico o storico – interamente su misura per te.</p>
+<div class="eyebrow">Progetta il tuo viaggio accessibile</div>
+<h2 id="custom-h2-form">Organizza il tuo tour dell'Egitto accessibile</h2>
+<p class="sec-sub">Comunicaci le date del tuo viaggio e le tue esigenze di accessibilità e creeremo un itinerario accessibile completamente personalizzato entro 2 ore, con veicoli accessibili, accesso al sito accessibile e assistenza specializzata inclusi.</p>
 </div>
 <div class="trip-builder">
 <div class="trip-form-box">
-<h3 style="color:var(--primary-dark);margin-bottom:20px;font-size:20px">Invia la tua richiesta di viaggio</h3>
-<form aria-label="Custom Egypt tour request form" id="contactForm" novalidate="">
+<h3 style="color:var(--c-dark);margin-bottom:20px;font-size:20px">Invia la tua richiesta di tour accessibile</h3>
+<form aria-label="Custom accessible Egypt tour request form" id="contactForm" novalidate="">
 <div class="form-row-2">
 <div class="form-row">
 <label class="form-label" for="f-name">Il tuo nome<span class="form-req">*</span></label>
@@ -977,13 +956,11 @@ body {
 <label class="form-label" for="f-type">Tipo di tour</label>
 <select class="form-select" id="f-type" name="tour_type">
 <option value="">Seleziona il tipo di tour…</option>
-<option value="private-historical">Tour storico privato</option>
-<option value="private-photography">Tour fotografico privato</option>
-<option value="group">Giro di gruppo</option>
-<option value="pyramids-photoshoot">Servizio fotografico sulle Piramidi</option>
-<option value="honeymoon">Luna di miele/Romanzo</option>
+<option value="accessible-tour">Giro accessibile</option>
+<option value="photography-tour">Tour fotografico</option>
+<option value="private-tour">Tour privato</option>
 <option value="family">Giro per famiglie</option>
-<option value="luxury">Tutto compreso di lusso</option>
+<option value="honeymoon">Giro della luna di miele</option>
 <option value="custom">Completamente personalizzato</option>
 </select>
 </div>
@@ -1002,406 +979,196 @@ body {
 </div>
 <div class="form-row">
 <label class="form-label" for="f-destinations">Destinazioni di interesse</label>
-<input class="form-input" id="f-destinations" name="destinations" placeholder="e.g. Cairo, Giza Pyramids, Luxor, Aswan…" type="text"/>
+<input class="form-input" id="f-destinations" name="destinations" placeholder="e.g. Cairo, Luxor, Aswan, Alexandria…" type="text"/>
 </div>
 <div class="form-row">
 <label class="form-label" for="f-dates">Date di viaggio approssimative</label>
-<input class="form-input" id="f-dates" name="dates" placeholder="e.g. March, flexible, 2 weeks from now…" type="text"/>
+<input class="form-input" id="f-dates" name="dates" placeholder="e.g. March, flexible, 3 months from now…" type="text"/>
 </div>
 <div class="form-row">
-<label class="form-label" for="f-message">La tua esperienza da sogno in Egitto<span class="form-req">*</span></label>
-<textarea class="form-textarea" id="f-message" name="message" placeholder="Tell us what you'd love to see, do and experience in Egypt. We'll design the perfect itinerary for you within 2 hours…" required=""></textarea>
+<label class="form-label" for="f-message">Le tue esigenze di accessibilità e obiettivi di viaggio<span class="form-req">*</span></label>
+<textarea class="form-textarea" id="f-message" name="message" placeholder="Tell us your specific accessibility needs and travel goals. We'll design the perfect accessible itinerary within 2 hours…" required=""></textarea>
 </div>
 <div class="cf-turnstile" data-sitekey="0x4AAAAAADksi_3_nH-4QjMP" data-size="normal" data-theme="dark" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
-<button class="form-submit" type="submit"><i class="fas fa-paper-plane"></i>Invia la mia richiesta di viaggio</button>
+<button class="form-submit" type="submit"><i class="fas fa-paper-plane"></i>Invia la mia richiesta di tour accessibile</button>
 <div id="form-status" style="margin-top:15px; text-align:center; font-size:0.9rem; color: #fff;"></div>
 </form>
 </div>
 <div class="trip-contacts">
 <div class="contact-card">
-<span class="contact-card-icon">💬</span>
+<span aria-hidden="true" class="contact-card-icon">💬</span>
 <h3>Scrivici su WhatsApp adesso</h3>
-<p>Il modo più veloce per pianificare il tuo tour in Egitto. Rispondiamo entro 2 ore, 7 giorni su 7, dalle 8:00 alle 22:00, ora del Cairo.</p>
-<a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20a%20custom%20Egypt%20tour." rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:12px;background:#25D366;color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700" target="_blank">
+<p>Il modo più veloce per pianificare il tuo tour accessibile in Egitto. Rispondiamo entro 2 ore, 7 giorni su 7, dalle 8:00 alle 22:00, ora del Cairo.</p>
+<a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20an%20accessible%20Egypt%20tour." rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:12px" target="_blank">
 <i class="fab fa-whatsapp"></i>Chatta su WhatsApp</a>
-<p style="font-size:13px;color:#6b7280;text-align:center">+20 155 073 5673</p>
+<p style="font-size:13px;color:var(--c-muted);text-align:center">+20 155 073 5673</p>
 </div>
-<div class="contact-card" style="border-top:4px solid var(--accent-light)">
-<span class="contact-card-icon">✉️</span>
+<div class="contact-card" style="border-top:4px solid var(--c-gold)">
+<span aria-hidden="true" class="contact-card-icon">✉️</span>
 <h3>Invia un'e-mail al nostro team</h3>
-<p>Preferisci la posta elettronica? Inviaci l'itinerario dei tuoi sogni in Egitto e ti risponderemo con un preventivo personalizzato completo entro 24 ore.</p>
-<a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" style="width:100%;justify-content:center;margin-bottom:12px;background:var(--primary-dark);color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700">
+<p>Preferisci la posta elettronica? Inviaci le tue esigenze di accessibilità e i tuoi obiettivi di viaggio e ti risponderemo con un preventivo personalizzato completo entro 24 ore.</p>
+<a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Custom%20Accessible%20Egypt%20Tour%20Request" style="width:100%;justify-content:center;margin-bottom:12px">
 <i class="far fa-envelope"></i>Invia un'e-mail</a>
-<p style="font-size:13px;color:#6b7280;text-align:center">info@egizianophotographytours.com</p>
+<p style="font-size:13px;color:var(--c-muted);text-align:center">info@egizianophotographytours.com</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Final CTA -->
-<div class="cta-section">
-<h2>Inizia la tua avventura in Egitto con fiducia</h2>
-<p>L'accessibilità alle sedie a rotelle negli aeroporti egiziani è assolutamente realizzabile con un'adeguata preparazione, assistenza verificata e supporto esperto. Non lasciare che la logistica aeroportuale ti impedisca di vivere le meraviglie dell'Egitto.</p>
-<p>Lascia che Egypt Photography Tours gestisca il coordinamento dell'aeroporto mentre tu ti concentri sul viaggio da percorrere. Verifichiamo ogni trasferimento, ci coordiniamo con il personale dell'aeroporto e progettiamo transizioni senza interruzioni in modo che la tua avventura in Egitto inizi senza intoppi, comodamente e in modo memorabile.</p>
-<a class="cta-button" href="/it/contact">Inizia a pianificare la tua avventura in Egitto accessibile</a>
-</div>
+<section class="section section-gold">
+<div class="wrap text-c">
+<div class="eyebrow" style="background:rgba(26,32,44,.12);color:#1a202c;border-color:rgba(26,32,44,.2)">Viaggi Accessibili, Esperienze Indimenticabili</div>
+<h2 style="color:var(--c-dark)">Esplora l'Egitto con sicurezza e comfort</h2>
+<p class="sec-sub" style="color:rgba(26,32,44,.82)">Con veicoli accessibili, accesso accessibile al sito e assistenza specializzata, Egypt Photography Tours garantisce che la tua esperienza in Egitto sia confortevole, accessibile e indimenticabile dall'inizio alla fine. Contattaci per discutere le tue specifiche esigenze di accessibilità e personalizzeremo il tuo itinerario di conseguenza.</p>
+<div class="btn-group mt-32" style="justify-content:center">
+<a class="btn btn-dark btn-lg" href="/it/contact.html"><i aria-hidden="true" class="fas fa-wheelchair"></i>Organizza il tuo tour accessibile</a>
+<a class="btn btn-outline-dark btn-lg" href="/it/tours.html"><i aria-hidden="true" class="fas fa-eye"></i>Visualizza tutti i pacchetti</a>
 </div>
 </div>
 </section>
-</main>
-<div aria-label="Back to top" class="back-to-top" id="backToTop" role="button" tabindex="0">
-<i class="fas fa-chevron-up"></i>
+<footer aria-label="Site footer" class="footer">
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<a aria-label="Egypt Photography Tours - Go to Homepage" class="logo" href="/it/" style="margin-bottom:14px">
+<span aria-hidden="true" class="logo-mark"><i class="fas fa-camera-retro"></i></span>
+<div class="logo-copy"><span class="logo-name">Tour fotografici in Egitto</span><span class="logo-tag">Tour privati e di gruppo dal 2015</span></div>
+</a>
+<p class="f-brand-desc">Il principale tour operator egiziano focalizzato sulla fotografia dal 2015. Padroneggiare la cultura, catturare momenti - con opzioni di tour accessibili, veicoli accessibili e assistenza specializzata per i viaggiatori con disabilità.</p>
+<div class="social-row">
+<a aria-label="Facebook" class="social-btn" href="https://www.facebook.com/egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-facebook"></i></a>
+<a aria-label="Instagram" class="social-btn" href="https://www.instagram.com/hossam_artistic/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+<a aria-label="TikTok" class="social-btn" href="https://www.tiktok.com/@egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-tiktok"></i></a>
+<a aria-label="YouTube" class="social-btn" href="https://www.youtube.com/@Egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+<a aria-label="WhatsApp" class="social-btn" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
 </div>
-<!-- Cookie Consent Banner -->
-<div aria-labelledby="cookie-title" class="cookie-consent" id="cookieConsent" role="dialog">
-<p id="cookie-title"><strong>Utilizziamo i cookie</strong>per migliorare la tua esperienza e analizzare il traffico. Continuando accetti i ns<a href="/it/privacy-policy" style="color:var(--accent-light);text-decoration:underline">Informativa sulla privacy</a>.</p>
-<button aria-label="Accept cookies" id="acceptCookies">Accetta</button>
 </div>
-<footer class="footer">
-<div class="container footer-content">
-<div class="footer-brand">
-<h3 class="footer-title">Tour fotografici in Egitto</h3>
-<p class="footer-text">© <script>document.write(new Date().getFullYear())</script>Tour fotografici in Egitto.</p>
-<p class="footer-text">Tutti i diritti riservati.</p>
-<p class="footer-text">Padroneggiare la cultura, catturare momenti.</p>
-</div>
-<div class="footer-section">
-<h4 class="footer-title">Collegamenti rapidi</h4>
-<ul class="footer-links">
-<li><a href="/it/">Casa</a></li>
-<li><a href="/it/about">Chi siamo</a></li>
-<li><a href="/it/tours">I nostri tour</a></li>
-<li><a href="/it/gallery">Galleria</a></li>
-<li><a href="/it/resources">Risorse</a></li>
-<li><a href="/it/blog">Blog</a></li>
-<li><a href="/it/contact">Contattaci</a></li>
-<li><a href="/it/faqs">Domande frequenti</a></li>
-<li><a href="/it/privacy-policy">Informativa sulla privacy</a></li>
-<li><a href="/it/terms">Termini di servizio</a></li>
+<div>
+<h3 class="f-h">Pacchetti turistici</h3>
+<ul class="f-links">
+<li><a href="/it/tour-pyramids-private.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Servizio fotografico sulle Piramidi</a></li>
+<li><a href="/it/tour-cairo-giza-2day.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Cairo e Giza 2 giorni</a></li>
+<li><a href="/it/tour-alexandria.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Gita di un giorno ad Alessandria</a></li>
+<li><a href="/it/tour-egypt-discovery-7day.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Scoperta di 7 giorni</a></li>
+<li><a href="/it/tours.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Tutti i pacchetti</a></li>
 </ul>
 </div>
-<div class="footer-section">
-<h4 class="footer-title">Connettiti con noi</h4>
-<p class="footer-text">Indirizzo: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Governatorato di Giza 12557</p>
-<div class="footer-contact">
-<a class="footer-contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
-<i class="fab fa-whatsapp contact-icon"></i>+20 155 073 5673</a>
-<a class="footer-contact-info" href="mailto:info@egyptphotographytours.com">
-<i class="far fa-envelope contact-icon"></i>info@egizianophotographytours.com</a>
+<div>
+<h3 class="f-h">Risorse</h3>
+<ul class="f-links">
+<li><a href="/it/blog.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Blog di viaggio</a></li>
+<li><a href="/it/resources.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Guide di viaggio</a></li>
+<li><a href="/it/faqs.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Domande frequenti</a></li>
+<li><a href="/it/gallery.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Galleria fotografica</a></li>
+<li><a href="/it/contact.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>Informazioni sulla prenotazione</a></li>
+</ul>
 </div>
-<div class="social-links">
-<a aria-label="Facebook" href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook-f"></i></a>
-<a aria-label="Instagram" href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
-<a aria-label="TikTok" href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
-<a aria-label="YouTube" href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+<div>
+<h3 class="f-h">Contattaci</h3>
+<div class="f-contact-r">
+<a href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i><span>+20 155 073 5673</span></a>
+<a href="tel:+201550735673"><i aria-hidden="true" class="fas fa-phone"></i><span>+20 155 073 5673</span></a>
+<a href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i><span>info@egizianophotographytours.com</span></a>
+<div><i aria-hidden="true" class="fas fa-map-marker-alt"></i><span>Abou Elhool, Nazlet El-Samman, Giza</span></div>
 </div>
 </div>
 <div class="footer-map">
-<iframe allowfullscreen="" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311399999995!3d29.974968799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" style="border:0;" title="Egypt Photography Tours Location Map" width="600">
-</iframe>
+<iframe allowfullscreen="" height="250" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311399999995!3d29.974968799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" style="border:0" title="Egypt Photography Tours Location Map" width="100%"></iframe>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2015–<span id="yr">2026</span>Tour fotografici in Egitto. Tutti i diritti riservati.</p>
+<div class="f-legal">
+<a href="/it/privacy-policy.html">Informativa sulla privacy</a>
+<a href="/it/return-policy.html">Politica di restituzione</a>
+<a href="/it/terms-of-service.html">Termini e condizioni</a>
+<a href="/it/sitemap.xml">Mappa del sito</a>
+</div>
 </div>
 </div>
 </footer>
 <script>
-// MOBILE MENU FUNCTIONALITY
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const menuIcon = mobileMenuToggle?.querySelector('i');
-
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            if (menuIcon) {
-                menuIcon.classList.toggle('fa-bars');
-                menuIcon.classList.toggle('fa-times');
-            }
-        });
-    }
-
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-link a').forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth < 768 && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                if (mobileMenuToggle && menuIcon) {
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
-            }
-        });
-    });
-
-    // LANGUAGE SWITCHER FUNCTIONALITY
-    const languageSwitcher = document.querySelector('.language-switcher');
-    if (languageSwitcher) {
-        const currentLanguage = languageSwitcher.querySelector('.current-language');
-        const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
-        const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
-
-        const toggleDropdown = () => {
-            const isActive = languageSwitcher.classList.toggle('active');
-            dropdownIcon.classList.toggle('fa-chevron-up', isActive);
-            dropdownIcon.classList.toggle('fa-chevron-down', !isActive);
-            currentLanguage.setAttribute('aria-expanded', isActive);
-        };
-
-        currentLanguage.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleDropdown();
-        });
-
-        currentLanguage.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleDropdown();
-            }
-            if (e.key === 'Escape') {
-                languageSwitcher.classList.remove('active');
-                dropdownIcon.classList.remove('fa-chevron-up');
-                dropdownIcon.classList.add('fa-chevron-down');
-                currentLanguage.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        document.addEventListener('click', function(e) {
-            if (!languageSwitcher.contains(e.target) && languageSwitcher.classList.contains('active')) {
-                languageSwitcher.classList.remove('active');
-                dropdownIcon.classList.remove('fa-chevron-up');
-                dropdownIcon.classList.add('fa-chevron-down');
-                currentLanguage.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        languageDropdown.querySelectorAll('.language-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const flag = this.dataset.flag;
-                const lang = this.dataset.lang;
-
-                currentLanguage.querySelector('.current-flag').textContent = flag;
-                currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
-
-                languageSwitcher.classList.remove('active');
-                dropdownIcon.classList.remove('fa-chevron-up');
-                dropdownIcon.classList.add('fa-chevron-down');
-                currentLanguage.setAttribute('aria-expanded', 'false');
-
-                languageDropdown.querySelectorAll('.language-item').forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
-
-                const href = this.getAttribute('href');
-                if (href && !window.location.pathname.includes(href)) {
-                    window.location.href = href;
-                }
-            });
-        });
-
-        const currentPath = window.location.pathname;
-        let englishFound = false;
-        
-        languageDropdown.querySelectorAll('.language-item').forEach(item => {
-            const itemHref = item.getAttribute('href');
-            if (currentPath.includes(itemHref) ||
-                (currentPath.endsWith('egypt-airport-accessibility-guide-2026.html') &&
-                 itemHref?.includes('egypt-airport-accessibility-guide-2026.html') &&
-                 item.dataset.lang === 'en')) {
-                item.classList.add('active');
-                const flag = item.dataset.flag;
-                const lang = item.dataset.lang;
-                currentLanguage.querySelector('.current-flag').textContent = flag;
-                currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
-                englishFound = true;
-            }
-        });
-        
-        if (!englishFound) {
-            const englishItem = languageDropdown.querySelector('[data-lang="en"]');
-            if (englishItem) {
-                englishItem.classList.add('active');
-                currentLanguage.querySelector('.current-flag').textContent = '🇺🇸';
-                currentLanguage.querySelector('.current-text').textContent = 'EN';
-            }
-        }
-    }
-
-    // BACK TO TOP BUTTON
-    const backToTopButton = document.getElementById('backToTop');
-    const showBackToTopThreshold = 300;
-    
-    const handleScroll = () => {
-        if (window.pageYOffset > showBackToTopThreshold) {
-            backToTopButton?.classList.add('visible');
-        } else {
-            backToTopButton?.classList.remove('visible');
-        }
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        backToTopButton.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-    }
-
-    // ANIMATE ELEMENTS ON SCROLL
-    if ('IntersectionObserver' in window) {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.culture-card, .trust-card, .reference-item, .tour-recommendation, .review-card').forEach(card => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-            observer.observe(card);
-        });
-    }
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId && targetId !== '#' && targetId !== window.location.href) {
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-
-    // Interactive table rows for better UX
-    const tableRows = document.querySelectorAll('.tipping-table tbody tr');
-    tableRows.forEach(row => {
-        row.addEventListener('mouseenter', function() {
-            this.style.backgroundColor = '#f0f9ff';
-            this.style.transition = 'background-color 0.2s ease';
-        });
-        row.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = '';
-        });
-    });
-
-    // Cookie Consent Banner
-    const cookieConsent = document.getElementById('cookieConsent');
-    const acceptCookiesBtn = document.getElementById('acceptCookies');
-    
-    if (!localStorage.getItem('cookiesAccepted')) {
-        setTimeout(() => {
-            cookieConsent?.classList.add('visible');
-        }, 2000);
-    }
-    
-    if (acceptCookiesBtn) {
-        acceptCookiesBtn.addEventListener('click', () => {
-            localStorage.setItem('cookiesAccepted', 'true');
-            cookieConsent?.classList.remove('visible');
-        });
-    }
-
-    // Tour link tracking
-    const tourLinks = document.querySelectorAll('.tour-recommendation a, .cta-button, .book-now-button');
-    tourLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            console.log('Tour link clicked:', this.href);
-        });
-    });
-
-    // Cloudflare Worker Form Submission
-    const cfForm = document.getElementById('contactForm');
-    const cfStatus = document.getElementById('form-status');
-    const WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
-    if (cfForm) {
-        cfForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            cfStatus.innerHTML = 'Sending...';
-            cfStatus.style.color = '#fff';
-            const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
-            if (!turnstileToken) {
-                cfStatus.innerHTML = 'Please complete the security check.';
-                cfStatus.style.color = '#ff6b6b';
-                return;
-            }
-            const formData = new FormData(cfForm);
-            const payload = {
-                name: formData.get('name') || '',
-                email: formData.get('email') || '',
-                phone: formData.get('phone') || '',
-                subject: 'Custom Egypt Tour Request',
-                message: `Group Size: ${formData.get('group_size') || 'Not specified'}\nTour Type: ${formData.get('tour_type') || 'Not specified'}\nDuration: ${formData.get('duration') || 'Not specified'}\nDestinations: ${formData.get('destinations') || 'Not specified'}\nDates: ${formData.get('dates') || 'Not specified'}\nMessage: ${formData.get('message') || ''}`,
-                turnstileToken: turnstileToken
-            };
-            try {
-                const response = await fetch(WORKER_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                if (response.ok && result.success) {
-                    cfStatus.innerHTML = '✅ Message sent successfully! We will get back to you within 2 hours.';
-                    cfStatus.style.color = '#4ade80';
-                    cfForm.reset();
-                    if (typeof turnstile !== 'undefined') turnstile.reset();
-                } else {
-                    cfStatus.innerHTML = result.error || 'Something went wrong. Please try again.';
-                    cfStatus.style.color = '#ff6b6b';
-                }
-            } catch (err) {
-                cfStatus.innerHTML = 'Network error. Please check your connection.';
-                cfStatus.style.color = '#ff6b6b';
-                console.error(err);
-            }
-        });
-    }
+(function () {
+'use strict';
+var $ = function (s) { return document.querySelector(s); };
+var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var on = function (el, ev, fn, opt) { if (el) el.addEventListener(ev, fn, opt || false); };
+var hamburger = $('#hamburger'), hamIcon = $('#ham-icon'), mobileNav = $('#mobile-nav'), navOverlay = $('#nav-overlay'), siteHeader = $('#site-header'), navbar = $('#navbar'), isMenuOpen = false;
+function getTop() { return Math.round((siteHeader ? siteHeader.getBoundingClientRect().height : 60) + (navbar ? navbar.getBoundingClientRect().height : 56)); }
+function openMenu() { isMenuOpen = true; mobileNav.style.top = getTop() + 'px'; mobileNav.classList.add('is-open'); mobileNav.setAttribute('aria-hidden', 'false'); navOverlay.classList.add('is-open'); navOverlay.setAttribute('aria-hidden', 'false'); hamburger.setAttribute('aria-expanded', 'true'); hamIcon.className = 'fas fa-times'; document.body.style.overflow = 'hidden'; }
+function closeMenu() { isMenuOpen = false; mobileNav.classList.remove('is-open'); mobileNav.setAttribute('aria-hidden', 'true'); navOverlay.classList.remove('is-open'); navOverlay.setAttribute('aria-hidden', 'true'); hamburger.setAttribute('aria-expanded', 'false'); hamIcon.className = 'fas fa-bars'; document.body.style.overflow = ''; }
+on(hamburger, 'click', function () { isMenuOpen ? closeMenu() : openMenu(); });
+on(navOverlay, 'click', closeMenu);
+$$('#mobile-nav a').forEach(function (l) { on(l, 'click', closeMenu); });
+var langWrap = $('#lang-wrap'), langToggle = $('#lang-toggle'), langMenu = $('#lang-menu'), isLangOpen = false;
+function openLang() { isLangOpen = true; langWrap.setAttribute('data-open', 'true'); langToggle.setAttribute('aria-expanded', 'true'); langMenu.setAttribute('aria-hidden', 'false'); langMenu.style.display = 'block'; }
+function closeLang() { isLangOpen = false; langWrap.setAttribute('data-open', 'false'); langToggle.setAttribute('aria-expanded', 'false'); langMenu.setAttribute('aria-hidden', 'true'); langMenu.style.display = 'none'; }
+on(langToggle, 'click', function (e) { e.stopPropagation(); isLangOpen ? closeLang() : openLang(); });
+on(document, 'click', function (e) { if (isLangOpen && langWrap && !langWrap.contains(e.target)) closeLang(); });
+$$('.lang-item').forEach(function (item) {
+on(item, 'click', function (e) { e.preventDefault(); var h = item.getAttribute('href'); if (h && h !== window.location.pathname) window.location.href = h; });
 });
-
-// Preload critical images
-function preloadCriticalImages() {
-    const criticalImages = [
-        '/images/egypt-airport-accessibility-guide-2026.jpg',
-        '/images/egypt-photography-tours-logo.jpg'
-    ];
-
-    criticalImages.forEach(src => {
-        const img = new Image();
-        img.src = src;
-        img.onerror = () => console.warn(`Failed to preload: ${src}`);
-    });
+on(document, 'keydown', function (e) { if (e.key === 'Escape') { if (isMenuOpen) closeMenu(); if (isLangOpen) closeLang(); } });
+var faqItems = $$('.faq-item');
+faqItems.forEach(function (item) {
+on(item, 'toggle', function () {
+if (item.open) { faqItems.forEach(function (other) { if (other !== item) other.open = false; }); }
+});
+});
+var cookieBar = $('#cookie-bar'), cAccept = $('#c-accept'), cDecline = $('#c-decline');
+var existing = document.cookie.split('; ').find(function (r) { return r.startsWith('cookie_consent='); });
+if (!existing && cookieBar) cookieBar.style.display = 'block';
+on(cAccept, 'click', function () { document.cookie = 'cookie_consent=accepted; max-age=31536000; path=/; SameSite=Lax'; if (cookieBar) cookieBar.style.display = 'none'; });
+on(cDecline, 'click', function () { document.cookie = 'cookie_consent=declined; max-age=31536000; path=/; SameSite=Lax'; if (cookieBar) cookieBar.style.display = 'none'; });
+var yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
+var cfForm = document.getElementById('contactForm');
+var cfStatus = document.getElementById('form-status');
+var WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
+if (cfForm) {
+cfForm.addEventListener('submit', async function (e) {
+e.preventDefault();
+cfStatus.innerHTML = 'Sending...';
+cfStatus.style.color = '#fff';
+var turnstileInput = document.querySelector('[name="cf-turnstile-response"]');
+var turnstileToken = turnstileInput ? turnstileInput.value : '';
+if (!turnstileToken) {
+cfStatus.innerHTML = 'Please complete the security check.';
+cfStatus.style.color = '#ff6b6b';
+return;
 }
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', preloadCriticalImages);
+var formData = new FormData(cfForm);
+var payload = {
+name: formData.get('name') || '',
+email: formData.get('email') || '',
+phone: formData.get('phone') || '',
+subject: 'Custom Accessible Egypt Tour Request',
+message: 'Group Size: ' + (formData.get('group_size') || 'Not specified') + '\nTour Type: ' + (formData.get('tour_type') || 'Not specified') + '\nDuration: ' + (formData.get('duration') || 'Not specified') + '\nDestinations: ' + (formData.get('destinations') || 'Not specified') + '\nDates: ' + (formData.get('dates') || 'Not specified') + '\nMessage: ' + (formData.get('message') || ''),
+turnstileToken: turnstileToken
+};
+try {
+var response = await fetch(WORKER_URL, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
+var result = await response.json();
+if (response.ok && result.success) {
+cfStatus.innerHTML = '✅ Message sent successfully! We will get back to you within 2 hours.';
+cfStatus.style.color = '#4ade80';
+cfForm.reset();
+if (typeof turnstile !== 'undefined') turnstile.reset();
 } else {
-    preloadCriticalImages();
+cfStatus.innerHTML = result.error || 'Something went wrong. Please try again.';
+cfStatus.style.color = '#ff6b6b';
 }
+} catch (err) {
+cfStatus.innerHTML = 'Network error. Please check your connection.';
+cfStatus.style.color = '#ff6b6b';
+console.error(err);
+}
+});
+}
+})();
 </script>
-</body>
+</div></section></main></body>
 </html>
