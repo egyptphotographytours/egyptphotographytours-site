@@ -1,1664 +1,891 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<!-- CRITICAL: Charset first for proper parsing -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
-<!-- Security & Performance Headers -->
-<meta content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https: blob: data:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev; upgrade-insecure-requests; base-uri 'self'; form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
+<meta content="
+default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';
+script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://staticxx.facebook.com https://www.facebook.com https://www.youtube.com https://maps.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com;
+style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+img-src 'self' https: blob: data:;
+font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com https://challenges.cloudflare.com;
+connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://challenges.cloudflare.com https://contact-worker.hussam01112.workers.dev;
+upgrade-insecure-requests;
+base-uri 'self';
+form-action 'self' https://wa.me;" http-equiv="Content-Security-Policy"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
-<!-- Comprehensive Favicon Setup -->
 <link href="https://www.egyptphotographytours.com/sitemap.xml" rel="sitemap" title="Main Sitemap" type="application/xml"/>
 <link href="https://www.egyptphotographytours.com/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="https://www.egyptphotographytours.com/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
 <link href="https://www.egyptphotographytours.com/images/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://www.egyptphotographytours.com/images/favicon.ico" rel="shortcut icon"/>
-<link href="https://www.egyptphotographytours.com/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/site.webmanifest" rel="manifest"/>
+<link href="https://www.egyptphotographytours.com/images/apple-touch-icon.jpg" rel="apple-touch-icon" sizes="180x180"/>
+<link crossorigin="anonymous" href="https://www.egyptphotographytours.com/site.webmanifest" rel="manifest"/>
 <meta content="#FFD700" name="msapplication-TileColor"/>
 <meta content="#FFD700" name="theme-color"/>
-<!-- Preconnect to critical third-party domains -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://widget.trustpilot.com" rel="preconnect"/>
-<link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-<link href="https://challenges.cloudflare.com" rel="preconnect"/>
-<!-- SEO-optimized title -->
-<title>이집트 여성 복장 규정: 현지인들이 실제로 입는 옷과 관광객의 기대치</title>
-<!-- SEO-optimized meta description -->
-<meta content="여성을 위한 이집트 복장 규정에 대한 검증된 2026 가이드. 현지인들이 실제로 입는 옷과 관광객의 기대치, 문화적 맥락, 실용적인 짐 꾸리기 요령, 존중하는 여행 전략을 비교해보세요." name="description"/>
-<meta content="index, follow" name="robots"/>
-<!-- Open Graph tags -->
-<meta content="이집트 여성 복장 규정: 현지인들이 실제로 입는 옷과 관광객의 기대치" property="og:title"/>
-<meta content="여성을 위한 이집트 복장 규정에 대한 검증된 2026 가이드. 현지 관행과 관광객의 기대, 문화적 맥락 및 존중하는 여행 전략." property="og:description"/>
-<meta content="https://www.egyptphotographytours.com/images/egypt-dress-code-women-locals-vs-tourist-expectations-2026.jpg" property="og:image"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="Egypt dress code for women guide - local practices vs tourist expectations, cultural context" property="og:image:alt"/>
-<meta content="https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" property="og:url"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+<link crossorigin="" href="https://challenges.cloudflare.com" rel="preconnect"/>
+<link as="style" crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" rel="preload"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/500.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/600.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/700.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/800.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/400.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/600.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/700.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/400.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/500.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/600.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/700.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/800.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/400.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/600.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cinzel@latest/700.css" rel="stylesheet"/>
+</noscript>
+<title>이집트 복장 규정 2026: 여성에 대한 현지 vs 관광객의 기대 | 이집트 사진 투어</title>
+<meta content="여성을 위한 이집트 복장 규정에 대한 2026년 가이드를 완성하세요: 현지인과 관광객의 기대치, 문화적 규범, 정중한 옷차림에 대한 실용적인 팁, 모스크 예절 및 사진 촬영에 적합한 복장을 비교하세요." name="description"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="Hossam, Egypt Photography Tours" name="author"/>
+<meta content="Egypt Photography Tours" name="copyright"/>
+<meta content="en" name="language"/>
 <meta content="article" property="og:type"/>
 <meta content="Egypt Photography Tours" property="og:site_name"/>
-<meta content="2026-04-25T00:00:00+02:00" property="article:published_time"/>
-<meta content="2026-04-25T17:30:00+02:00" property="article:modified_time"/>
-<!-- Twitter tags -->
+<meta content="en_US" property="og:locale"/>
+<meta content="https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" property="og:url"/>
+<meta content="이집트 복장 규정 2026: 여성에 대한 현지 vs 관광객의 기대" property="og:title"/>
+<meta content="여성을 위한 이집트 복장 규정에 대한 2026년 가이드를 완성하세요: 현지인과 관광객의 기대치, 문화적 규범, 정중한 복장 및 모스크 예절에 대한 실용적인 팁을 비교하세요." property="og:description"/>
+<meta content="https://www.egyptphotographytours.com/images/egypt-dress-code-women-2026.jpg" property="og:image"/>
+<meta content="image/jpeg" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Egypt dress code guide comparing local and tourist expectations for women travelers" property="og:image:alt"/>
+<meta content="2026-02-25T08:00:00+02:00" property="article:published_time"/>
+<meta content="2026-02-25T08:00:00+02:00" property="article:modified_time"/>
+<meta content="https://www.egyptphotographytours.com/about.html" property="article:author"/>
+<meta content="Egypt Cultural Guide" property="article:section"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="@EgyptPhotoTours" name="twitter:site"/>
-<meta content="@HossamPhotoEG" name="twitter:creator"/>
-<meta content="이집트 여성 복장 규정: 현지인들이 실제로 입는 옷과 관광객의 기대치" name="twitter:title"/>
-<meta content="2026년 이집트 여성 복장 규정 가이드. 현지 관행과 관광객의 기대, 문화적 맥락 및 존중하는 여행 전략." name="twitter:description"/>
-<meta content="https://www.egyptphotographytours.com/images/egypt-dress-code-women-locals-vs-tourist-expectations-2026.jpg" name="twitter:image"/>
-<!-- Geo Tags -->
+<meta content="@egyptphotographytours" name="twitter:site"/>
+<meta content="이집트 복장 규정 2026: 여성에 대한 현지 vs 관광객의 기대" name="twitter:title"/>
+<meta content="여성을 위한 이집트 복장 규정에 대한 2026년 가이드를 완성하세요: 현지인과 관광객의 기대치, 문화 규범 및 실용적인 팁을 비교하세요." name="twitter:description"/>
+<meta content="https://www.egyptphotographytours.com/images/egypt-dress-code-women-2026.jpg" name="twitter:image"/>
 <meta content="EG-C" name="geo.region"/>
 <meta content="Cairo, Egypt" name="geo.placename"/>
 <meta content="30.0444;31.2357" name="geo.position"/>
 <meta content="30.0444, 31.2357" name="ICBM"/>
 <meta content="EG" name="geo.country"/>
-<!-- COMPREHENSIVE STRUCTURED DATA SCHEMA -->
 <script class="notranslate" translate="no" type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "Egypt Photography Tours - Women's Dress Code Guide",
-      "url": "https://www.egyptphotographytours.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.egyptphotographytours.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": ["TravelAgency", "PhotographyService"],
-      "name": "Egypt Photography Tours",
-      "url": "https://www.egyptphotographytours.com",
-      "logo": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp",
-      "telephone": "+20-155-073-5673",
-      "email": "info@egyptphotographytours.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-        "addressLocality": "Giza",
-        "addressRegion": "Giza Governorate",
-        "postalCode": "12557",
-        "addressCountry": "EG"
-      },
-      "foundingDate": "2015",
-      "founder": {
-        "@type": "Person",
-        "name": "Hossam",
-        "jobTitle": "Professional Photographer & Egyptologist"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.egyptphotographytours.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Resources",
-          "item": "https://www.egyptphotographytours.com/resources.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Egypt Dress Code for Women Guide 2026",
-          "item": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "headline": "Egypt Dress Code for Women: What Locals Actually Wear vs. Tourist Expectations",
-      "description": "Verified 2026 guide to Egypt dress code for women featuring real local practices, tourist expectations, cultural context, practical packing tips, and respectful travel strategies for confident exploration.",
-      "author": {
-        "@type": "Person",
-        "name": "Hossam",
-        "jobTitle": "Professional Photographer & Egyptologist"
-      },
-      "datePublished": "2026-04-25T00:00:00+02:00",
-      "dateModified": "2026-04-25T17:30:00+02:00",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Egypt Photography Tours",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp",
-          "width": 200,
-          "height": 200
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html"
-      },
-      "image": [
-        "https://www.egyptphotographytours.com/images/egypt-dress-code-women-locals-vs-tourist-expectations-2026.jpg"
-      ],
-      "articleSection": "Women's Travel & Cultural Etiquette Guide"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What should women wear in Egypt as tourists?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Recommended attire: loose-fitting tops covering shoulders, pants or skirts below knee, lightweight scarves for versatility. This isn't about restriction—it's about cultural respect and reducing unwanted attention. Most Egyptian women in cities wear modern modest fashion: jeans with long tops, maxi dresses, or abayas. Tourists aren't required to cover hair except at religious sites."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need to wear a hijab in Egypt?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No, foreign women are not required to wear hijab (headscarf) in Egypt. Head covering is only required inside mosques and some religious sites. Many Egyptian women choose to wear hijab as personal/religious expression, but it's not legally mandated for tourists. Carry a lightweight scarf for religious site visits and versatile styling."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What's the difference between Cairo and rural Egypt dress expectations?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cairo and major cities: More cosmopolitan; women wear jeans, long tops, modest dresses. Rural areas and conservative regions: More traditional expectations; loose clothing covering arms/legs is appreciated. Religious sites: Shoulders and knees covered, headscarf for women at mosques. Egypt Photography Tours provides location-specific guidance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I wear shorts or tank tops in Egypt?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Technically yes, but not recommended. Shorts and tank tops draw unwanted attention, especially outside resort areas. Most Egyptian women don't wear revealing clothing in public. Modest dress (shoulders/knees covered) shows cultural respect and significantly reduces staring/comments while allowing full participation in experiences."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What fabrics work best for Egypt's climate while staying modest?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Best fabrics: lightweight cotton, linen, rayon, and moisture-wicking blends. These breathe in heat while maintaining coverage. Avoid synthetics that trap heat. Loose fits allow air circulation. Light colors reflect sun. Egypt Photography Tours provides season-specific packing lists balancing modesty with comfort."
-          }
-        }
-      ]
-    }
-  ]
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "WebSite",
+"@id": "https://www.egyptphotographytours.com/#website",
+"url": "https://www.egyptphotographytours.com/",
+"name": "Egypt Photography Tours"
+},
+{
+"@type": "WebPage",
+"@id": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html#webpage",
+"url": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html",
+"name": "Egypt Dress Code 2026: Local vs Tourist Expectations for Women",
+"description": "Complete 2026 guide to Egypt dress code for women: compare local vs tourist expectations, cultural norms, practical tips for respectful dressing, mosque etiquette and photography-friendly attire.",
+"isPartOf": {"@id": "https://www.egyptphotographytours.com/#website"},
+"breadcrumb": {"@id": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html#breadcrumb"},
+"inLanguage": "en-US",
+"datePublished": "2026-02-25T08:00:00+02:00",
+"dateModified": "2026-02-25T08:00:00+02:00"
+},
+{
+"@type": "BreadcrumbList",
+"@id": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html#breadcrumb",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/"},
+{"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.egyptphotographytours.com/resources.html"},
+{"@type": "ListItem", "position": 3, "name": "Egypt Dress Code 2026", "item": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html"}
+]
+},
+{
+"@type": "Article",
+"@id": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html#article",
+"headline": "Egypt Dress Code 2026: Local vs Tourist Expectations for Women",
+"alternativeHeadline": "The Complete 2026 Guide to Egypt Dress Code for Women — Local vs Tourist Expectations, Cultural Norms & Practical Tips",
+"description": "Complete 2026 guide to Egypt dress code for women: compare local vs tourist expectations, cultural norms, practical tips for respectful dressing, mosque etiquette and photography-friendly attire.",
+"datePublished": "2026-02-25T08:00:00+02:00",
+"dateModified": "2026-02-25T08:00:00+02:00",
+"author": {"@id": "https://www.egyptphotographytours.com/#person-hossam"},
+"publisher": {"@id": "https://www.egyptphotographytours.com/#organization"},
+"mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html#webpage"},
+"articleSection": "Egypt Cultural Guide",
+"wordCount": "2500",
+"timeRequired": "PT20M",
+"speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-lede", ".faq-answer"]}
+},
+{
+"@type": "FAQPage",
+"@id": "https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html#faq",
+"mainEntity": [
+{"@type": "Question", "name": "What is the dress code for women in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "Egypt is a conservative Muslim country, but dress codes vary by location and context. Local women typically wear modest clothing covering shoulders and knees. Tourist women have more flexibility but should still dress modestly: cover shoulders, avoid short shorts/short skirts, and carry a lightweight scarf for mosque visits. In tourist areas, dress codes are more relaxed, but modest dress shows cultural respect and reduces unwanted attention."}},
+{"@type": "Question", "name": "Do tourists need to cover their hair in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "No, tourist women do not need to cover their hair in general. However, head covering is required when entering mosques. Carry a lightweight scarf (cotton or linen) that can be easily tied when needed. In conservative areas or rural villages, some local women may cover their hair, but tourists are not expected to do so unless entering religious sites."}},
+{"@type": "Question", "name": "What should women wear to mosques in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "When visiting mosques, women must cover their hair, shoulders, arms and legs. Wear long pants or maxi skirts, long-sleeve tops, and bring a lightweight scarf for head covering. Some mosques provide scarves, but it's best to bring your own. Remove shoes before entering prayer areas. Dress modestly to show respect for religious customs."}},
+{"@type": "Question", "name": "Can women wear shorts in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "In tourist areas like resorts, beaches and tourist sites, women can wear shorts. However, in cities, markets, rural areas and religious sites, shorts are considered inappropriate. Best practice: wear loose pants, maxi skirts or knee-length shorts in cities; shorts are acceptable at beaches and resorts. When in doubt, dress more modestly to show cultural respect."}},
+{"@type": "Question", "name": "What is the difference between local and tourist dress expectations in Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "Local women typically dress more conservatively: covering shoulders, arms and knees, with many wearing headscarves. Tourist women have more flexibility but should still dress modestly. In tourist areas, locals expect tourists to dress somewhat modestly but are more tolerant of Western clothing. Dressing modestly shows cultural respect, reduces unwanted attention, and shows appreciation for local customs."}},
+{"@type": "Question", "name": "What should women pack for Egypt?", "acceptedAnswer": {"@type": "Answer", "text": "Essential items: lightweight long-sleeve tops, loose pants or maxi skirts, lightweight scarf for mosques, comfortable walking shoes, sunglasses and hat for sun protection. Pack neutral colors (beige, navy, black) that blend with locals. Avoid revealing clothing, short shorts, tank tops. Pack modest swimwear for beaches/resorts. Bring layers for temperature changes."}}
+]
+},
+{
+"@type": "Person",
+"@id": "https://www.egyptphotographytours.com/#person-hossam",
+"name": "Hossam",
+"jobTitle": "Professional Photographer & Egyptologist",
+"worksFor": {"@id": "https://www.egyptphotographytours.com/#organization"},
+"knowsAbout": ["Egypt Cultural Norms", "Dress Code Guidelines", "Cultural Sensitivity", "Photography Tours"],
+"url": "https://www.egyptphotographytours.com/about.html"
+},
+{
+"@type": "Organization",
+"@id": "https://www.egyptphotographytours.com/#organization",
+"name": "Egypt Photography Tours",
+"url": "https://www.egyptphotographytours.com/",
+"logo": {"@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": "200", "height": "200"},
+"telephone": "+20-155-073-5673",
+"email": "info@egyptphotographytours.com",
+"foundingDate": "2015",
+"address": {"@type": "PostalAddress", "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza", "addressLocality": "Giza", "addressRegion": "Giza Governorate", "postalCode": "12557", "addressCountry": "EG"},
+"geo": {"@type": "GeoCoordinates", "latitude": "29.9792", "longitude": "31.1342"},
+"aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "287", "bestRating": "5", "worstRating": "1"},
+"sameAs": [
+"https://www.facebook.com/egyptphotographytours",
+"https://www.instagram.com/hossam_artistic/",
+"https://www.tiktok.com/@egyptphotographytours",
+"https://www.youtube.com/@Egyptphotographytours"
+]
+}
+]
 }
 </script>
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
-<!-- Trustpilot widget -->
-<script async="" defer="" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" type="text/javascript"></script>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/></noscript>
 <script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
 <style>
-/* BASE STYLES - SAME AS REFERENCE */
-:root {
-    --primary-dark: #1a202c;
-    --accent-light: #FFD700;
-    --accent-dark: #E2B700;
-    --text-color: #333;
-    --culture-color: #8B5A2B;
-    --dining-color: #DC2626;
-    --hotel-color: #2563EB;
-    --tour-color: #10B981;
-    --warning-color: #e53e3e;
-    --success-color: #10B981;
-    --dress-color: #7C3AED;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f8f8f8;
-    color: var(--text-color);
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    line-height: 1.6;
-    font-size: 16px;
-}
-.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--accent-light);
-    color: var(--primary-dark);
-    padding: 8px 16px;
-    z-index: 10000;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 0 0 4px 0;
-}
-.skip-link:focus { top: 0; }
-
-/* HEADER & NAV */
-.header {
-    background-color: var(--primary-dark);
-    color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 12px 0;
-}
-.header .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-@media (min-width: 768px) {
-    .header .content { flex-direction: row; gap: 0; }
-    .header-text { margin-top: 0; font-size: 16px; }
-}
-.logo-section { display: flex; align-items: center; gap: 8px; }
-.logo-img { height: 40px; width: auto; border-radius: 9999px; }
-.logo-link {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    color: var(--accent-light);
-    text-decoration: none;
-}
-.header-text {
-    font-size: 14px;
-    font-style: italic;
-    text-align: center;
-    margin-top: 4px;
-}
-.header-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
-@media (min-width: 768px) { .header-contact { align-items: flex-end; } }
-.contact-info {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-    padding: 4px 0;
-}
-.contact-info:hover { color: var(--accent-light); }
-.contact-icon { font-size: 14px; width: 16px; text-align: center; }
-
-.navbar {
-    background-color: #374151;
-    color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    padding: 0;
-}
-.navbar-content {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
-}
-@media (min-width: 768px) {
-    .navbar-content { flex-direction: row; align-items: center; }
-}
-.nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-    font-size: 16px;
-    font-weight: 500;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: #374151;
-}
-.nav-links.active { display: flex; }
-@media (min-width: 768px) {
-    .nav-links {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-        width: auto;
-    }
-}
-.nav-link { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.nav-link:last-child { border-bottom: none; }
-@media (min-width: 768px) { .nav-link { border-bottom: none; } }
-.nav-link a {
-    color: white;
-    text-decoration: none;
-    padding: 12px 16px;
-    transition: color 0.3s ease;
-    display: block;
-}
-@media (min-width: 768px) { .nav-link a { padding: 8px 0; } }
-.nav-link a:hover { color: var(--accent-light); }
-.cta-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-}
-@media (min-width: 768px) {
-    .cta-container {
-        justify-content: flex-end;
-        gap: 12px;
-        padding: 0;
-    }
-}
-
-/* LANGUAGE SWITCHER */
-.language-switcher { position: relative; display: inline-block; z-index: 1000; }
-.current-language {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background: rgba(255, 215, 0, 0.1);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: white;
-    font-weight: 500;
-}
-.current-language:hover {
-    background: rgba(255, 215, 0, 0.2);
-    border-color: rgba(255, 215, 0, 0.5);
-}
-.current-flag { font-size: 16px; }
-.current-text { font-size: 14px; font-weight: 600; }
-.dropdown-icon { font-size: 12px; transition: transform 0.3s ease; }
-.language-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 240px;
-    max-height: 450px;
-    overflow-y: auto;
-    background: #374151;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    margin-top: 8px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 1001;
-}
-.language-switcher.active .language-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-.language-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    color: white;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.language-item:last-child { border-bottom: none; }
-.language-item:hover {
-    background: rgba(255, 215, 0, 0.1);
-    color: var(--accent-light);
-}
-.language-item.active {
-    background: rgba(255, 215, 0, 0.2);
-    color: var(--accent-light);
-    font-weight: 600;
-}
-.flag-icon { font-size: 18px; min-width: 24px; }
-.language-text { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-.mobile-menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 8px;
-}
-@media (min-width: 768px) { .mobile-menu-toggle { display: none; } }
-
-/* HERO SECTION */
-.hero-section {
-    position: relative;
-    background-image: url('/images/egypt-dress-code-women-locals-vs-tourist-expectations-2026.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 24px;
-}
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-.hero-content {
-    position: relative;
-    z-index: 10;
-    color: white;
-    max-width: 960px;
-    margin: 0 auto;
-}
-.hero-title {
-    font-size: 26px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    color: var(--accent-light);
-}
-@media (min-width: 768px) { .hero-title { font-size: 42px; } }
-.hero-subtitle {
-    font-size: 16px;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-@media (min-width: 768px) { .hero-subtitle { font-size: 18px; } }
-
-/* MAIN CONTENT */
-.article-section { padding: 40px 0; }
-@media (min-width: 768px) { .article-section { padding: 80px 0; } }
-.article-container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
-.article-meta {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-    font-size: 14px;
-    color: #6b7280;
-    flex-wrap: wrap;
-}
-@media (min-width: 768px) { .article-meta { font-size: 16px; } }
-.last-updated {
-    background: rgba(124, 58, 237, 0.1);
-    color: var(--dress-color);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-.article-content h2 {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--primary-dark);
-    margin: 50px 0 25px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid var(--dress-color);
-    line-height: 1.3;
-}
-@media (min-width: 768px) {
-    .article-content h2 { font-size: 32px; margin: 70px 0 30px; }
-}
-.article-content h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin: 40px 0 20px;
-}
-@media (min-width: 768px) { .article-content h3 { font-size: 24px; margin: 50px 0 25px; } }
-.article-content h4 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--primary-dark);
-    margin: 30px 0 15px;
-}
-.article-content p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-@media (min-width: 768px) {
-    .article-content p { font-size: 18px; margin-bottom: 30px; }
-}
-.article-content ul, .article-content ol {
-    margin-bottom: 30px;
-    padding-left: 30px;
-}
-.article-content li {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-@media (min-width: 768px) { .article-content li { font-size: 18px; } }
-.article-content strong {
-    color: var(--primary-dark);
-    font-weight: 700;
-}
-.article-content a {
-    color: var(--tour-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    border-bottom: 1px dashed var(--tour-color);
-}
-.article-content a:hover { 
-    color: var(--primary-dark); 
-    border-bottom-style: solid;
-}
-
-/* DRESS BADGES */
-.dress-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(124, 58, 237, 0.1);
-    color: var(--dress-color);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 4px;
-}
-.rating-local {
-    background: rgba(16, 185, 129, 0.1);
-    color: var(--success-color);
-}
-.rating-tourist {
-    background: rgba(59, 130, 246, 0.1);
-    color: #3b82f6;
-}
-.rating-religious {
-    background: rgba(124, 58, 237, 0.1);
-    color: var(--dress-color);
-}
-
-/* REVIEW CARDS */
-.review-card {
-    background: white;
-    border-radius: 12px;
-    padding: 25px;
-    margin: 25px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-left: 4px solid var(--dress-color);
-}
-.review-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e5e7eb;
-}
-.reviewer-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--dress-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 600;
-    font-size: 18px;
-}
-.reviewer-info h4 {
-    margin: 0;
-    font-size: 16px;
-    color: var(--primary-dark);
-}
-.reviewer-info p {
-    margin: 4px 0 0;
-    font-size: 14px;
-    color: #6b7280;
-}
-.review-rating {
-    display: flex;
-    gap: 2px;
-    color: #f59e0b;
-    font-size: 14px;
-}
-.review-content p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-/* INFO CARDS GRID */
-.info-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin: 40px 0;
-}
-@media (min-width: 768px) {
-    .info-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1024px) {
-    .info-grid { grid-template-columns: repeat(3, 1fr); }
-}
-.info-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    border-top: 5px solid var(--dress-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.info-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-}
-.info-icon {
-    font-size: 42px;
-    color: var(--dress-color);
-    margin-bottom: 20px;
-    display: block;
-    text-align: center;
-}
-.info-card h4 {
-    color: var(--dress-color);
-    text-align: center;
-    margin-top: 0;
-}
-
-/* TABLES */
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin: 35px 0;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-.dress-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 16px;
-    min-width: 600px;
-}
-@media (min-width: 768px) { .dress-table { font-size: 17px; } }
-.dress-table th {
-    background-color: var(--primary-dark);
-    color: white;
-    padding: 20px 15px;
-    text-align: left;
-    font-weight: 700;
-    font-size: 17px;
-    position: sticky;
-    top: 0;
-}
-@media (min-width: 768px) { .dress-table th { padding: 25px 20px; } }
-.dress-table td {
-    padding: 20px 15px;
-    border-bottom: 1px solid #e5e7eb;
-    vertical-align: top;
-}
-@media (min-width: 768px) { .dress-table td { padding: 25px 20px; } }
-.dress-table tr:nth-child(even) { background-color: #f9fafb; }
-.dress-table tr:hover { background-color: #f3f4f6; }
-
-.service-category {
-    background: white;
-    border-radius: 15px;
-    padding: 35px;
-    margin: 40px 0;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    border-top: 6px solid;
-}
-@media (min-width: 768px) { .service-category { padding: 45px; } }
-.category-dress { border-color: var(--dress-color); }
-.category-warning { border-color: var(--warning-color); }
-.category-success { border-color: var(--success-color); }
-
-.tip-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    margin: 30px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    border-left: 4px solid var(--accent-light);
-}
-
-/* CHECKLIST */
-.dress-checklist {
-    background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);
-    border-radius: 12px;
-    padding: 30px;
-    margin: 30px 0;
-    border-left: 5px solid var(--dress-color);
-}
-.checklist-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-.checklist-item i {
-    color: var(--success-color);
-    margin-top: 3px;
-}
-
-/* WARNING & ADVICE BOXES */
-.warning-box {
-    background: linear-gradient(135deg, #fed7d7 0%, #fef2f2 100%);
-    border-left: 6px solid var(--warning-color);
-    padding: 35px;
-    margin: 40px 0;
-    border-radius: 12px;
-}
-.warning-box h3 {
-    color: var(--warning-color);
-    margin-top: 0;
-    font-size: 22px;
-}
-.advice-box {
-    background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
-    border-left: 6px solid var(--success-color);
-    padding: 35px;
-    margin: 40px 0;
-    border-radius: 12px;
-}
-.advice-box h3 {
-    color: var(--success-color);
-    margin-top: 0;
-    font-size: 22px;
-}
-
-/* TRUST SECTION */
-.trust-section {
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-    color: white;
-    padding: 80px 0;
-    margin: 60px 0;
-}
-.trust-section h2 {
-    color: var(--accent-light);
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 28px;
-    font-weight: 800;
-}
-@media (min-width: 768px) { .trust-section h2 { font-size: 36px; } }
-.trust-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 35px;
-    margin-top: 40px;
-}
-@media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
-.trust-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 35px;
-    border-radius: 15px;
-    text-align: center;
-    border: 2px solid rgba(255, 215, 0, 0.2);
-    transition: transform 0.4s ease, border-color 0.4s ease;
-}
-.trust-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-light);
-}
-.trust-icon {
-    font-size: 52px;
-    margin-bottom: 25px;
-    display: block;
-}
-.trust-card h3 {
-    color: var(--accent-light);
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.trust-card p {
-    color: #e2e8f0;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-/* TOUR INTEGRATION */
-.tour-integration {
-    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-    border-left: 6px solid var(--accent-light);
-    padding: 40px;
-    margin: 50px 0;
-    border-radius: 15px;
-}
-.tour-recommendation {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    margin: 25px 0;
-    border: 2px solid #e9d5ff;
-    transition: transform 0.3s ease;
-}
-.tour-recommendation:hover {
-    transform: translateX(10px);
-    border-color: var(--accent-light);
-}
-
-/* CTA BUTTONS */
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent-light);
-    color: var(--primary-dark);
-    font-weight: 700;
-    padding: 18px 36px;
-    border-radius: 50px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    font-size: 18px;
-    box-shadow: 0 15px 25px -5px rgba(0,0,0,0.15);
-    border: 2px solid transparent;
-}
-.cta-button:hover, .cta-button:active, .cta-button:focus {
-    background-color: var(--accent-dark);
-    transform: scale(1.08);
-    color: var(--primary-dark) !important;
-    text-decoration: none;
-    border-color: var(--primary-dark);
-    box-shadow: 0 20px 35px -5px rgba(0,0,0,0.2);
-}
-
-/* CTA SECTION */
-.cta-section {
-    background-color: var(--primary-dark);
-    color: white;
-    padding: 60px 0;
-    text-align: center;
-    margin-top: 60px;
-    border-radius: 15px;
-    background-image: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%);
-}
-@media (min-width: 768px) {
-    .cta-section { padding: 80px 0; margin-top: 80px; }
-}
-.cta-section h2 {
-    color: var(--accent-light);
-    margin-bottom: 25px;
-    font-size: 28px;
-    font-weight: 800;
-}
-@media (min-width: 768px) { .cta-section h2 { font-size: 36px; } }
-.cta-section p {
-    max-width: 700px;
-    margin: 0 auto 35px;
-    font-size: 18px;
-    line-height: 1.7;
-}
-@media (min-width: 768px) {
-    .cta-section p { font-size: 20px; margin: 0 auto 45px; }
-}
-
-/* FOOTER */
-.footer {
-    background-color: var(--primary-dark);
-    color: white;
-    padding: 40px 0;
-    margin-top: auto;
-}
-@media (min-width: 768px) { .footer { padding: 50px 0; } }
-.footer-content {
-    text-align: center;
-}
-@media (min-width: 768px) {
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        text-align: left;
-        flex-wrap: wrap;
-    }
-}
-.footer-section {
-    margin-bottom: 30px;
-    flex: 1;
-    min-width: 250px;
-}
-@media (min-width: 768px) { .footer-section { margin-bottom: 0; } }
-.footer-brand {
-    text-align: left;
-    margin-bottom: 30px;
-    flex: 1;
-    min-width: 250px;
-}
-@media (min-width: 768px) { .footer-brand { margin-bottom: 0; text-align: left; } }
-.footer-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--accent-light);
-    margin-bottom: 12px;
-}
-@media (min-width: 768px) { .footer-title { font-size: 24px; } }
-.footer-text {
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-}
-.footer-links {
-    list-style: none;
-    padding: 0;
-    font-size: 14px;
-    line-height: 2;
-}
-.footer-links li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer-links li a:hover { color: var(--accent-light); }
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
-}
-@media (min-width: 768px) { .social-links { justify-content: flex-start; } }
-.social-links a {
-    color: white;
-    transition: color 0.3s ease;
-    font-size: 20px;
-}
-.social-links a:hover { color: var(--accent-light); }
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.footer-contact-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-    justify-content: center;
-}
-@media (min-width: 768px) { .footer-contact-info { justify-content: flex-start; } }
-.footer-contact-info:hover { color: var(--accent-light); }
-.footer-map {
-    margin-top: 30px;
-    width: 100%;
-    flex: 2;
-}
-@media (min-width: 768px) { .footer-map { margin-top: 0; } }
-.footer-map iframe {
-    width: 100%;
-    height: 350px;
-    border: none;
-    border-radius: 12px;
-}
-@media (min-width: 768px) { .footer-map iframe { height: 400px; } }
-@media (min-width: 1024px) { .footer-map iframe { height: 450px; } }
-
-.book-now-button {
-    font-weight: 700;
-    padding: 10px 20px;
-    border-radius: 50px;
-    background-color: var(--accent-light);
-    color: #1a202c;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 15px;
-    white-space: nowrap;
-    box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.15);
-    display: inline-block;
-    border: 2px solid transparent;
-}
-.book-now-button:hover, .book-now-button:active, .book-now-button:focus {
-    background-color: var(--accent-dark);
-    transform: scale(1.05);
-    color: #1a202c !important;
-    text-decoration: none;
-    border-color: #1a202c;
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--accent-light);
-    color: var(--primary-dark);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-}
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-.back-to-top:hover {
-    background: var(--accent-dark);
-    transform: scale(1.1);
-}
-
-.trustpilot-widget-container {
-    margin: 40px 0;
-    text-align: center;
-}
-
-.breadcrumb {
-    padding: 16px 0;
-    font-size: 14px;
-    color: #6b7280;
-}
-.breadcrumb a {
-    color: var(--tour-color);
-    text-decoration: none;
-}
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-.breadcrumb span {
-    margin: 0 4px;
-    color: #9ca3af;
-}
-
-.cookie-consent {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--primary-dark);
-    color: white;
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    z-index: 10000;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-.cookie-consent.visible {
-    transform: translateY(0);
-}
-.cookie-consent p {
-    margin: 0;
-    font-size: 14px;
-    flex: 1;
-}
-.cookie-consent button {
-    background: var(--accent-light);
-    color: var(--primary-dark);
-    border: none;
-    padding: 8px 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-.cookie-consent button:hover {
-    background: var(--accent-dark);
-}
-
-/* Contact Form CSS */
+:root{--c-dark:#1a202c;--c-gold:#FFD700;--c-gold-d:#E6C200;--c-white:#fff;--c-bg:#f7f8fa;--c-text:#2d3748;--c-muted:#5A6475;--c-price:#6B5000;--c-border:#e2e8f0;--c-nile:#1E6FD9;--c-warn:#C53030;--c-ac-rose:#8B5A2B;--c-book:#059669;--radius-sm:8px;--radius:14px;--shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow:0 4px 20px rgba(0,0,0,.11);--shadow-lg:0 12px 40px rgba(0,0,0,.16);--nav-height:56px;--header-height:60px;--transition:.28s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer}
+[hidden]{display:none!important}
+.skip-link{position:absolute;top:-60px;left:12px;background:var(--c-gold);color:var(--c-dark);padding:10px 18px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;font-size:14px;z-index:99999;transition:top var(--transition)}
+.skip-link:focus{top:0;outline:3px solid var(--c-dark)}
+:focus-visible{outline:3px solid var(--c-gold);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 28px}}
+.section{padding:52px 0}
+@media(min-width:768px){.section{padding:80px 0}}
+.section-alt{background:#eef0f5}
+.section-dark{background:var(--c-dark);color:var(--c-white)}
+.section-gold{background:linear-gradient(135deg,#FFD700 0%,#FFF3B0 60%,#FFD700 100%)}
+h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--c-dark)}
+.section-dark h1,.section-dark h2,.section-accent h1,.section-accent h2{color:var(--c-white)}
+h1{font-size:clamp(22px,5vw,44px)}
+h2{font-size:clamp(20px,3.5vw,36px)}
+h3{font-size:clamp(16px,2.5vw,22px)}
+p{font-size:15px;line-height:1.75;color:var(--c-text)}
+.section-dark p{color:rgba(255,255,255,.9)}
+.eyebrow{display:inline-block;background:rgba(255,215,0,.18);color:#7A5C00;border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px}
+.section-dark .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
+.text-c{text-align:center}
+.text-c .sec-sub{margin-inline:auto}
+.sec-sub{font-size:clamp(14px,1.8vw,17px);color:var(--c-muted);max-width:660px;line-height:1.7;margin-top:12px}
+.section-dark .sec-sub{color:rgba(255,255,255,.85)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:14px;transition:all var(--transition);border:2px solid transparent;white-space:nowrap;cursor:pointer;text-decoration:none;min-height:48px}
+.btn-gold{background:var(--c-gold);color:var(--c-dark);border-color:var(--c-gold)}
+.btn-gold:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+.btn-dark{background:var(--c-dark);color:var(--c-white)}
+.btn-dark:hover{background:#0f141c;transform:translateY(-2px)}
+.btn-outline-dark{background:transparent;color:var(--c-dark);border-color:var(--c-dark)}
+.btn-outline-dark:hover{background:var(--c-dark);color:var(--c-white)}
+.btn-outline-white{background:rgba(255,255,255,.15);color:var(--c-white);border-color:rgba(255,255,255,.6);backdrop-filter:blur(4px)}
+.btn-outline-white:hover{background:rgba(255,255,255,.28);border-color:var(--c-white)}
+.btn-wa{background:#25D366;color:#fff;border-color:#25D366}
+.btn-wa:hover{background:#20ba59;transform:translateY(-2px)}
+.btn-sm{padding:9px 18px;font-size:13px;min-height:44px}
+.btn-lg{padding:16px 36px;font-size:16px}
+.btn-group{display:flex;flex-wrap:wrap;gap:14px}
+.header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0}
+.logo-mark{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#2d3748 0%,#1a202c 70%);border:2px solid var(--c-gold);display:flex;align-items:center;justify-content:center;color:var(--c-gold);font-size:17px;flex-shrink:0}
+.logo-copy{display:flex;flex-direction:column}
+.logo-name{font-size:15px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap}
+.logo-tag{font-size:10px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px}
+@media(min-width:400px){.logo-name{font-size:16px}}
+@media(min-width:768px){.logo-name{font-size:19px}.logo-tag{font-size:11px}}
+.header-contacts{display:none}
+@media(min-width:900px){.header-contacts{display:flex;flex-direction:column;align-items:flex-end;gap:4px}.hc-link{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.92);font-size:13px;transition:color var(--transition)}.hc-link:hover{color:var(--c-gold)}.hc-link i{color:var(--c-gold);width:14px}}
+.navbar{background:#2d3748;position:sticky;top:0;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.35)}
+.nav-inner{display:flex;align-items:center;height:var(--nav-height);gap:10px}
+.hamburger{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);border-radius:var(--radius-sm);color:var(--c-white);font-size:18px;transition:all var(--transition);flex-shrink:0}
+.hamburger:hover{background:rgba(255,215,0,.18);border-color:rgba(255,215,0,.4)}
+@media(min-width:900px){.hamburger{display:none}}
+.nav-links-desk{display:none;list-style:none;align-items:center;gap:2px;flex:1}
+@media(min-width:900px){.nav-links-desk{display:flex}.nav-links-desk li a{display:flex;align-items:center;padding:8px 11px;min-height:44px;color:rgba(255,255,255,.92);font-size:13px;font-weight:500;border-radius:var(--radius-sm);transition:all var(--transition)}.nav-links-desk li a:hover{color:var(--c-gold);background:rgba(255,215,0,.1)}.nav-links-desk li a.active{color:var(--c-gold);background:rgba(255,215,0,.08)}}
+.nav-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+.nav-book{display:inline-flex;align-items:center;gap:6px;background:var(--c-gold);color:var(--c-dark);padding:9px 16px;border-radius:20px;font-weight:700;font-size:13px;transition:all var(--transition);white-space:nowrap;min-height:44px}
+.nav-book:hover{background:var(--c-gold-d);transform:scale(1.03)}
+.lang-wrap{position:relative}
+.lang-toggle{display:flex;align-items:center;gap:5px;background:rgba(255,215,0,.12);border:1.5px solid rgba(255,215,0,.3);border-radius:20px;padding:8px 11px;color:var(--c-white);font-size:12px;font-weight:600;transition:all var(--transition);min-height:44px;cursor:pointer}
+.lang-toggle:hover,.lang-toggle[aria-expanded="true"]{background:rgba(255,215,0,.24);border-color:var(--c-gold)}
+.lang-chevron{font-size:9px;transition:transform var(--transition);flex-shrink:0}
+.lang-wrap[data-open="true"] .lang-chevron{transform:rotate(180deg)}
+.lang-menu{display:none;position:fixed;top:calc(var(--header-height) + var(--nav-height) + 4px);left:50%;transform:translateX(-50%);width:min(300px,92vw);max-height:68vh;overflow-y:auto;background:#1e293b;border-radius:var(--radius);border:1px solid rgba(255,215,0,.25);box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:9999;-webkit-overflow-scrolling:touch}
+.lang-wrap[data-open="true"] .lang-menu{display:block}
+@media(min-width:900px){.lang-menu{position:absolute;top:calc(100% + 8px);left:auto;right:0;transform:none;width:240px;max-height:440px}}
+.lang-menu-head{padding:12px 16px 8px;font-size:10px;font-weight:700;color:var(--c-gold);text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;background:#1e293b;z-index:1}
+.lang-item{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:48px;color:rgba(255,255,255,.92);font-size:14px;border-bottom:1px solid rgba(255,255,255,.06);transition:background var(--transition);cursor:pointer}
+.lang-item:last-child{border-bottom:none}
+.lang-item:hover,.lang-item:active{background:rgba(255,215,0,.1);color:var(--c-gold)}
+.lang-item.is-active{background:rgba(255,215,0,.16);color:var(--c-gold);font-weight:700}
+.lang-item.is-active::after{content:'✓';margin-left:auto;font-weight:700}
+.lang-flag{font-size:19px;min-width:26px;text-align:center}
+.lang-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lang-menu::-webkit-scrollbar{width:4px}
+.lang-menu::-webkit-scrollbar-thumb{background:rgba(255,215,0,.35);border-radius:2px}
+.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;bottom:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);z-index:390;overflow-y:auto;padding:8px 0 48px;border-top:2px solid var(--c-gold);animation:slideDown .22s ease-out}
+.mobile-nav.is-open{display:flex}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:900px){.mobile-nav{display:none!important}}
+.mobile-nav-link{display:flex;align-items:center;gap:12px;padding:16px 24px;min-height:56px;color:rgba(255,255,255,.92);font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07);transition:all var(--transition);text-decoration:none}
+.mobile-nav-link:hover,.mobile-nav-link:active{background:rgba(255,215,0,.1);color:var(--c-gold);padding-left:32px}
+.mobile-nav-link.active{color:var(--c-gold);background:rgba(255,215,0,.07)}
+.mobile-nav-link i{width:20px;text-align:center;color:var(--c-gold);font-size:15px}
+.mobile-nav-sep{height:1px;background:rgba(255,255,255,.1);margin:10px 24px}
+.mobile-nav-contact{margin:14px 20px 0;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px}
+.mobile-nav-contact a{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.92);font-size:14px;transition:color var(--transition);min-height:48px}
+.mobile-nav-contact a:hover{color:var(--c-gold)}
+.mobile-nav-contact i{color:var(--c-gold);width:16px}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
+.nav-overlay.is-open{display:block}
+.article-hero{position:relative;background:linear-gradient(135deg,#1a0f05 0%,#5c3a1e 48%,#8B5A2B 100%);overflow:hidden;padding:66px 0 60px;text-align:center;border-bottom:3px solid var(--c-gold);margin-bottom:0}
+.article-hero::before{content:'حجاب';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:clamp(70px,18vw,220px);font-weight:700;color:rgba(139,90,43,.08);white-space:nowrap;line-height:1;pointer-events:none;user-select:none}
+.article-hero::after{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:560px;height:300px;background:radial-gradient(ellipse at center,rgba(139,90,43,.16) 0%,rgba(139,90,43,0) 68%);pointer-events:none}
+.article-hero .wrap{position:relative;z-index:1}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(139,90,43,.14);border:1px solid rgba(139,90,43,.42);color:var(--c-gold);border-radius:30px;padding:7px 18px;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:20px}
+.hero-kicker i{font-size:12px}
+.article-hero h1{color:#fff;font-family:'Cinzel',serif;font-weight:700;letter-spacing:1px;font-size:clamp(26px,5vw,46px);line-height:1.22;max-width:920px;margin:0 auto 16px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.article-hero h1 .gold{color:var(--c-gold)}
+.hero-sub{color:rgba(255,255,255,.88);font-size:clamp(15px,2vw,19px);line-height:1.7;max-width:760px;margin:0 auto}
+.hero-rule{width:92px;height:3px;background:var(--c-gold);border-radius:2px;margin:24px auto 0}
+.meta-bar{background:var(--c-white);border-bottom:1px solid var(--c-border);padding:14px 0}
+.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:var(--c-muted)}
+.breadcrumb a{color:var(--c-muted);transition:color var(--transition)}
+.breadcrumb a:hover{color:var(--c-ac-rose)}
+.breadcrumb span[aria-hidden]{color:var(--c-border)}
+.article-meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:10px;font-size:13px;color:var(--c-muted)}
+.article-meta-row span{display:flex;align-items:center;gap:6px}
+.article-meta-row i{color:var(--c-gold-d)}
+.article-wrap{max-width:840px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.article-wrap{padding:0 28px}}
+.article-content h2{font-size:clamp(22px,3.2vw,30px);font-weight:800;color:var(--c-dark);margin:46px 0 18px;padding-bottom:10px;border-bottom:3px solid var(--c-ac-rose);scroll-margin-top:90px;font-family:'Cinzel',serif;letter-spacing:.5px}
+.article-content h3{font-size:clamp(17px,2.4vw,21px);font-weight:700;color:var(--c-dark);margin:30px 0 14px;font-family:'Cinzel',serif}
+.article-content h4{font-size:15px;font-weight:700;color:var(--c-ac-rose);margin:18px 0 8px}
+.article-content p{font-size:16px;line-height:1.8;margin-bottom:18px;color:var(--c-text)}
+.article-content ul,.article-content ol{margin:0 0 20px;padding-left:22px}
+.article-content li{font-size:15px;line-height:1.75;margin-bottom:10px;color:var(--c-text)}
+.article-content li::marker{color:var(--c-gold-d);font-weight:700}
+.article-content strong{color:var(--c-dark);font-weight:700}
+.article-content a:not(.btn):not(.tour-rec-cta){color:var(--c-nile);text-decoration:underline;text-decoration-color:rgba(30,111,217,.3);text-underline-offset:2px;transition:color var(--transition)}
+.article-content a:not(.btn):not(.tour-rec-cta):hover{color:var(--c-price)}
+.article-lede{font-size:18px!important;line-height:1.8!important;color:var(--c-dark)!important}
+.article-lede strong{color:var(--c-ac-rose)}
+.quick-facts{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:22px;margin:28px 0 36px;display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){.quick-facts{grid-template-columns:repeat(4,1fr)}}
+.quick-facts h3{grid-column:1/-1;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--c-ac-rose);border-bottom:1px solid var(--c-border);padding-bottom:10px;margin:0}
+.qf-item{display:flex;flex-direction:column;gap:3px}
+.qf-label{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--c-muted);font-weight:700}
+.qf-value{font-size:14px;color:var(--c-dark);font-weight:600}
+.toc-box{background:#fef7ed;border:1px solid rgba(139,90,43,.35);border-radius:var(--radius);padding:22px 24px;margin:30px 0}
+.toc-box h3{margin:0 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:.8px;color:var(--c-ac-rose)}
+.toc-list{columns:1;margin:0;padding:0}
+@media(min-width:640px){.toc-list{columns:2;column-gap:24px}}
+.toc-list li{font-size:14px;margin-bottom:9px;break-inside:avoid}
+.toc-list a{color:var(--c-text);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.toc-list a:hover{color:var(--c-ac-rose)}
+.toc-list a::before{content:'→';color:var(--c-ac-rose);font-weight:700}
+.callout{border-radius:var(--radius);padding:24px 26px;margin:30px 0}
+.callout h3{margin-top:0;margin-bottom:10px}
+.callout-gold{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 55%,#fef3c7 100%);border-left:4px solid var(--c-gold-d)}
+.callout-blue{background:linear-gradient(135deg,#e8f1fd 0%,#d6e8fc 100%);border-left:4px solid var(--c-nile)}
+.callout-indigo{background:linear-gradient(135deg,#fef7ed 0%,#fde8cd 100%);border-left:4px solid var(--c-ac-rose)}
+.callout-indigo h3{color:var(--c-ac-rose)}
+.callout-warn{background:linear-gradient(135deg,#fde8e8 0%,#fbeaea 100%);border-left:4px solid var(--c-warn)}
+.callout-warn h3{color:var(--c-warn)}
+.callout-dark{background:var(--c-dark);color:#fff;border-left:4px solid var(--c-gold)}
+.callout-dark h3{color:var(--c-gold)}
+.callout-dark p{color:rgba(255,255,255,.88)}
+.callout .btn{margin-top:10px}
+.table-scroll{overflow-x:auto;margin:24px 0;border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)}
+.data-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px;background:var(--c-white)}
+.data-table caption{caption-side:top;text-align:left;font-weight:700;font-size:13px;color:var(--c-ac-rose);padding:0 0 10px}
+.data-table th{background:var(--c-dark);color:var(--c-gold);padding:12px 14px;text-align:left;font-weight:700;white-space:nowrap}
+.data-table td{padding:12px 14px;border-bottom:1px solid var(--c-border);vertical-align:top}
+.data-table tr:nth-child(even) td{background:#f9fafb}
+.data-table tr:hover td{background:#fef7ed}
+.development-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+@media(min-width:640px){.development-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.development-grid{grid-template-columns:repeat(3,1fr)}}
+.development-card{background:var(--c-white);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow-sm);border-left:4px solid var(--c-ac-rose);transition:transform var(--transition),box-shadow var(--transition);text-align:left}
+.development-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.development-card .dev-icon{font-size:28px;margin-bottom:10px;display:block;color:var(--c-ac-rose)}
+.development-card h4{font-size:15px;font-weight:700;color:var(--c-ac-rose);margin:0 0 8px;font-family:'Cinzel',serif}
+.development-card p{font-size:13.5px;color:var(--c-muted);line-height:1.65;margin:0}
+.testimonial-box{background:var(--c-white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow-sm);margin:24px 0;position:relative;border-left:4px solid var(--c-gold)}
+.testimonial-box::before{content:'"';position:absolute;top:8px;left:16px;font-size:52px;color:var(--c-gold);opacity:.25;font-family:'Cinzel',serif;line-height:1}
+.testimonial-text{font-style:italic;font-size:14.5px;line-height:1.7;margin:0 0 14px;color:var(--c-text)}
+.testimonial-author-info h4{margin:0;font-size:14px;color:var(--c-ac-rose);font-family:'Cinzel',serif}
+.testimonial-author-info p{margin:2px 0 0;font-size:12.5px;color:var(--c-muted)}
+.tour-rec-grid{display:grid;grid-template-columns:1fr;gap:18px;margin:28px 0}
+@media(min-width:700px){.tour-rec-grid{grid-template-columns:repeat(2,1fr)}}
+.tour-rec{position:relative;background:var(--c-white);border:1.5px solid var(--c-border);border-radius:var(--radius-sm);padding:20px;transition:all var(--transition)}
+.tour-rec:hover{border-color:var(--c-book);box-shadow:var(--shadow-sm);transform:translateY(-3px)}
+.tour-rec h4{margin-top:0;font-size:15.5px}
+.tour-rec h4 a{color:var(--c-dark);text-decoration:none}
+.tour-rec h4 a:hover{color:var(--c-book)}
+.tour-rec p{font-size:13.5px;margin-bottom:12px}
+.tour-rec-cta{display:inline-flex;align-items:center;gap:6px;color:var(--c-book)!important;font-weight:700;font-size:13px;text-decoration:none}
+.tour-rec-cta:hover{text-decoration:underline}
+.rec-badge{position:absolute;top:14px;right:14px;background:var(--c-book);color:#fff;padding:4px 12px;border-radius:20px;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+.faq-list{margin:28px 0}
+.faq-item{background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:700;font-size:15px;color:var(--c-dark);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:22px;color:var(--c-ac-rose);font-weight:700;flex-shrink:0;transition:transform var(--transition)}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{background:#fef7ed}
+.faq-answer{padding:0 20px 20px;font-size:14.5px;line-height:1.75;color:var(--c-muted)}
+.faq-answer a{color:var(--c-nile);text-decoration:underline}
+.author-box{display:flex;flex-wrap:wrap;align-items:center;gap:16px;background:var(--c-white);border:1px solid var(--c-border);border-radius:var(--radius);padding:20px;margin:36px 0}
+.author-avatar{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#2d3748 0%,#1a202c 70%);border:2px solid var(--c-gold);display:flex;align-items:center;justify-content:center;color:var(--c-gold);font-size:24px;flex-shrink:0}
+.author-box-name{font-weight:800;color:var(--c-dark);font-size:15px}
+.author-box-role{font-size:12.5px;color:var(--c-muted);margin-bottom:6px}
+.author-box-bio{font-size:13px;color:var(--c-muted);max-width:520px;margin:0}
+.related-guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px}
+.related-guide-card{background:var(--c-white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow-sm);border-left:4px solid var(--c-ac-rose);transition:transform var(--transition),box-shadow var(--transition)}
+.related-guide-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.related-guide-card h4{margin-bottom:10px;font-size:16px;font-family:'Cinzel',serif}
+.related-guide-card h4 a{color:var(--c-dark);text-decoration:none}
+.related-guide-card h4 a:hover{color:var(--c-ac-rose)}
+.related-guide-card p{font-size:13.5px;color:var(--c-muted);margin-bottom:12px;line-height:1.6}
+.related-guide-card .read-more{color:var(--c-nile);font-weight:700;text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:6px}
+.related-guide-card .read-more:hover{text-decoration:underline}
+.checklist-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+@media(min-width:640px){.checklist-grid{grid-template-columns:repeat(3,1fr)}}
+.checklist-block{background:var(--c-white);border:1px solid var(--c-border);border-top:4px solid var(--c-ac-rose);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);padding:22px}
+.checklist-block h4{font-size:15px;color:var(--c-ac-rose);margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.checklist-block ul{margin:0;padding:0;list-style:none}
+.checklist-block li{display:flex;gap:10px;font-size:13.5px;line-height:1.6;margin-bottom:10px;color:var(--c-text)}
+.checklist-block li i{color:var(--c-gold-d);margin-top:3px;flex-shrink:0}
 .trip-builder{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
 @media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
-.trip-form-box{background:var(--c-white, #fff);border-radius:12px;padding:32px 28px;box-shadow:0 4px 20px rgba(0,0,0,.11)}
+.trip-form-box{background:var(--c-white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
 .form-row{margin-bottom:16px}
-.form-label{display:block;font-size:13px;font-weight:600;color:var(--primary-dark);margin-bottom:6px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px}
 .form-req{color:#ef4444}
-.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;font-family:inherit;color:var(--text-color);transition:border-color .28s;background:#fff}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent-light);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;color:var(--c-text);transition:border-color var(--transition);background:#fff}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
 .form-textarea{min-height:90px;resize:vertical}
 .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:480px){.form-row-2{grid-template-columns:1fr}}
-.form-submit{width:100%;padding:15px;background:var(--accent-light);color:var(--primary-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all .28s;min-height:52px}
-.form-submit:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
+.form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:all var(--transition);min-height:52px}
+.form-submit:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
 .trip-contacts{display:flex;flex-direction:column;gap:20px;justify-content:center}
-.contact-card{background:var(--c-white, #fff);border-radius:12px;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.11);text-align:center}
-.contact-card-icon{font-size:40px;margin-bottom:14px;display:block}
-.contact-card h3{font-size:18px;color:var(--primary-dark);margin-bottom:8px}
-.contact-card p{font-size:14px;color:#6b7280;margin-bottom:16px;line-height:1.6}
+.contact-card{background:var(--c-white);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);text-align:center}
+.contact-card-icon{font-size:40px;margin-bottom:14px;display:block;color:var(--c-ac-rose)}
+.contact-card h3{font-size:18px;color:var(--c-dark);margin-bottom:8px;font-family:'Cinzel',serif}
+.contact-card p{font-size:14px;color:var(--c-muted);margin-bottom:16px;line-height:1.6}
 .section-accent{background:linear-gradient(135deg,#1a202c 0%,#2d3748 100%);color:#fff}
-.section-accent h2, .section-accent h3{color:#fff}
+.section-accent h2,.section-accent h3{color:#fff}
 .section-accent .sec-sub{color:rgba(255,255,255,.85)}
-
-/* Text Only Related Guides */
-.related-guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-.related-guide-card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); border-left: 4px solid var(--accent-light); }
-.related-guide-card h4 { margin-bottom: 10px; font-size: 18px; }
-.related-guide-card h4 a { color: var(--primary-dark); text-decoration: none; }
-.related-guide-card h4 a:hover { color: var(--accent-light); }
-.related-guide-card p { font-size: 14px; color: #6b7280; margin-bottom: 12px; }
-.related-guide-card .read-more { color: var(--accent-light); font-weight: 600; text-decoration: none; }
-.related-guide-card .read-more:hover { text-decoration: underline; }
+.section-accent .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
+.footer{background:var(--c-dark);color:#fff;padding:52px 0 24px;margin-top:auto}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+.f-brand-desc{font-size:13px;color:rgba(255,255,255,.82);line-height:1.7;margin:12px 0}
+.f-h{color:var(--c-gold);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;margin-bottom:14px}
+.f-links{display:flex;flex-direction:column;gap:2px}
+.f-links a{color:rgba(255,255,255,.82);font-size:13px;display:flex;align-items:center;gap:7px;transition:color var(--transition);min-height:40px;padding:4px 0}
+.f-links a:hover{color:var(--c-gold)}
+.f-links a i{color:var(--c-gold);width:13px;font-size:11px}
+.f-contact-r a,.f-contact-r div{display:flex;align-items:flex-start;gap:9px;color:rgba(255,255,255,.82);font-size:13px;margin-bottom:11px;transition:color var(--transition);text-decoration:none}
+.f-contact-r a:hover{color:var(--c-gold)}
+.f-contact-r i{color:var(--c-gold);width:14px;margin-top:2px;flex-shrink:0}
+.social-row{display:flex;gap:9px;margin-top:16px}
+.social-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;transition:all var(--transition);text-decoration:none}
+.social-btn:hover{background:var(--c-gold);color:var(--c-dark)}
+.footer-map{grid-column:1/-1}
+.footer-map iframe{width:100%;height:250px;border:none;border-radius:var(--radius-sm);opacity:.85}
+.footer-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:8px;text-align:center}
+@media(min-width:640px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+.footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.65)}
+.footer-bottom a:hover{color:var(--c-gold)}
+.f-legal{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.cookie-bar{position:fixed;bottom:0;left:0;right:0;background:#1e293b;border-top:2px solid var(--c-gold);padding:13px 16px;z-index:50000;display:none}
+.cookie-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.cookie-txt{font-size:13px;color:rgba(255,255,255,.92);flex:1;min-width:200px}
+.cookie-txt a{color:var(--c-gold);text-decoration:underline}
+.cookie-btns{display:flex;gap:8px}
+.c-decline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 16px;border-radius:6px;font-size:13px;cursor:pointer;min-height:44px}
+.c-decline:hover{border-color:#fff}
+.c-accept{background:var(--c-gold);color:var(--c-dark);border:none;padding:10px 18px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;min-height:44px}
+.c-accept:hover{background:var(--c-gold-d)}
+.wa-float{position:fixed;bottom:24px;right:16px;z-index:1000;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.5);animation:wa-pulse 2.8s infinite;transition:all var(--transition)}
+.wa-float:hover{background:#20ba59;transform:scale(1.08)}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75)}}
+.mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mt-32{margin-top:32px}.mt-40{margin-top:40px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
-<link href="https://www.egyptphotographytours.com/ko/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" rel="canonical"/><link href="https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="en" rel="alternate"/><link href="https://www.egyptphotographytours.com/tl/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="tl" rel="alternate"/><link href="https://www.egyptphotographytours.com/ja/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="ja" rel="alternate"/><link href="https://www.egyptphotographytours.com/ar/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="ar" rel="alternate"/><link href="https://www.egyptphotographytours.com/vi/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="vi" rel="alternate"/><link href="https://www.egyptphotographytours.com/ru/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="ru" rel="alternate"/><link href="https://www.egyptphotographytours.com/cs/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="cs" rel="alternate"/><link href="https://www.egyptphotographytours.com/ro/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="ro" rel="alternate"/><link href="https://www.egyptphotographytours.com/no/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="no" rel="alternate"/><link href="https://www.egyptphotographytours.com/sv/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="sv" rel="alternate"/><link href="https://www.egyptphotographytours.com/da/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="da" rel="alternate"/><link href="https://www.egyptphotographytours.com/hi/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="hi" rel="alternate"/><link href="https://www.egyptphotographytours.com/id/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="id" rel="alternate"/><link href="https://www.egyptphotographytours.com/nl/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="nl" rel="alternate"/><link href="https://www.egyptphotographytours.com/zh-CN/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="zh" rel="alternate"/><link href="https://www.egyptphotographytours.com/fr/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="fr" rel="alternate"/><link href="https://www.egyptphotographytours.com/pl/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="pl" rel="alternate"/><link href="https://www.egyptphotographytours.com/es/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="es" rel="alternate"/><link href="https://www.egyptphotographytours.com/ko/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="ko" rel="alternate"/><link href="https://www.egyptphotographytours.com/fi/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="fi" rel="alternate"/><link href="https://www.egyptphotographytours.com/pt/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="pt" rel="alternate"/><link href="https://www.egyptphotographytours.com/tr/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="tr" rel="alternate"/><link href="https://www.egyptphotographytours.com/de/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="de" rel="alternate"/><link href="https://www.egyptphotographytours.com/th/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="th" rel="alternate"/><link href="https://www.egyptphotographytours.com/it/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="it" rel="alternate"/><link href="https://www.egyptphotographytours.com/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" hreflang="x-default" rel="alternate"/></head>
+</head>
 <body>
-<a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
-<header class="header">
-<div class="container content">
-<div class="logo-section">
-<img alt="이집트 사진 투어 로고 - 여성의 복장 규정 가이드" class="logo-img" height="40" loading="eager" src="/images/egypt-photography-tours-logo.jpg" width="40"/>
-<a class="logo-link" href="/ko/index.html">이집트 사진 투어</a>
+<div aria-labelledby="cookie-msg" aria-modal="true" class="cookie-bar" id="cookie-bar" role="dialog">
+<div class="cookie-inner">
+<p class="cookie-txt" id="cookie-msg">우리는 귀하의 경험을 향상시키기 위해 쿠키를 사용합니다.<a href="/ko/privacy-policy.html">당사의 개인정보 보호정책에 대해 자세히 알아보세요.</a></p>
+<div class="cookie-btns">
+<button class="c-decline" id="c-decline" type="button">거절하다</button>
+<button class="c-accept" id="c-accept" type="button">모두 수락</button>
 </div>
-<div class="header-text">사진이 깊은 문화적 이해를 만나는 곳</div>
-<div class="header-contact">
-<a class="contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
-<i class="fab fa-whatsapp contact-icon"></i>+20 155 073 5673</a>
-<a class="contact-info" href="mailto:info@egyptphotographytours.com">
-<i class="far fa-envelope contact-icon"></i>info@egyptphotographytours.com</a>
+</div>
+</div>
+<a aria-label="Chat with Egypt Photography Tours on WhatsApp" class="wa-float" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
+<a class="skip-link" href="#main">주요 콘텐츠로 건너뛰기</a>
+<header class="header" id="site-header">
+<div class="wrap header-inner">
+<a aria-label="Egypt Photography Tours - Go to Homepage" class="logo" href="/ko/">
+<span aria-hidden="true" class="logo-mark"><i class="fas fa-camera-retro"></i></span>
+<div class="logo-copy">
+<span class="logo-name">이집트 사진 투어</span>
+<span class="logo-tag">2015년부터 개인 및 그룹 투어</span>
+</div>
+</a>
+<div class="header-contacts">
+<a aria-label="WhatsApp Egypt Photography Tours" class="hc-link" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i>+20 155 073 5673</a>
+<a aria-label="Email Egypt Photography Tours" class="hc-link" href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i>info@egyptphotographytours.com</a>
 </div>
 </div>
 </header>
-<nav class="navbar">
-<div class="container navbar-content">
-<div class="cta-container">
-<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-menu-toggle">
-<i class="fas fa-bars"></i>
-</button>
-<a class="book-now-button" href="https://egyptphotographytours.com/contact">지금 예약하세요</a>
-<div class="language-switcher">
-<div aria-label="Select language" class="current-language" role="button" tabindex="0">
-<span class="current-flag">🇺🇸</span>
-<span class="current-text">EN</span>
-<i aria-hidden="true" class="fas fa-chevron-down dropdown-icon"></i>
-</div>
-<div class="language-dropdown" role="menu">
-<a class="lang-item language-item" href="/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇺🇸</span><span class="lang-name language-text">English</span></a><a class="lang-item language-item" href="/ar/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇸🇦</span><span class="lang-name language-text">العربية</span></a><a class="lang-item language-item" href="/es/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇪🇸</span><span class="lang-name language-text">Español</span></a><a class="lang-item language-item" href="/fr/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇫🇷</span><span class="lang-name language-text">Français</span></a><a class="lang-item language-item" href="/de/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇩🇪</span><span class="lang-name language-text">Deutsch</span></a><a class="lang-item language-item" href="/it/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇹</span><span class="lang-name language-text">Italiano</span></a><a class="lang-item language-item" href="/pt/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇹</span><span class="lang-name language-text">Português</span></a><a class="lang-item language-item" href="/ru/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇷🇺</span><span class="lang-name language-text">Русский</span></a><a class="lang-item language-item" href="/ja/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇯🇵</span><span class="lang-name language-text">日本語</span></a><a class="lang-item language-item" href="/zh-CN/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇨🇳</span><span class="lang-name language-text">中文 (简体)</span></a><a class="lang-item language-item is-active" href="/ko/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇰🇷</span><span class="lang-name language-text">한국어</span></a><a class="lang-item language-item" href="/hi/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇳</span><span class="lang-name language-text">हिन्दी</span></a><a class="lang-item language-item" href="/nl/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇳🇱</span><span class="lang-name language-text">Nederlands</span></a><a class="lang-item language-item" href="/sv/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇸🇪</span><span class="lang-name language-text">Svenska</span></a><a class="lang-item language-item" href="/pl/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇱</span><span class="lang-name language-text">Polski</span></a><a class="lang-item language-item" href="/tr/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇹🇷</span><span class="lang-name language-text">Türkçe</span></a><a class="lang-item language-item" href="/vi/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇻🇳</span><span class="lang-name language-text">Tiếng Việt</span></a><a class="lang-item language-item" href="/th/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇹🇭</span><span class="lang-name language-text">ไทย</span></a><a class="lang-item language-item" href="/id/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇮🇩</span><span class="lang-name language-text">Bahasa Indonesia</span></a><a class="lang-item language-item" href="/cs/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇨🇿</span><span class="lang-name language-text">Čeština</span></a><a class="lang-item language-item" href="/ro/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇷🇴</span><span class="lang-name language-text">Română</span></a><a class="lang-item language-item" href="/tl/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇵🇭</span><span class="lang-name language-text">Filipino</span></a><a class="lang-item language-item" href="/no/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇳🇴</span><span class="lang-name language-text">Norsk</span></a><a class="lang-item language-item" href="/da/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇩🇰</span><span class="lang-name language-text">Dansk</span></a><a class="lang-item language-item" href="/fi/egypt-dress-code-women-locals-vs-tourist-expectations-2026.html" role="menuitem"><span aria-hidden="true" class="lang-flag flag-icon">🇫🇮</span><span class="lang-name language-text">Suomi</span></a></div>
-</div>
-</div>
-<ul class="nav-links" role="menubar">
-<li class="nav-link" role="none"><a href="/ko/index.html" role="menuitem">홈</a></li>
-<li class="nav-link" role="none"><a href="/ko/about.html" role="menuitem">회사 소개</a></li>
-<li class="nav-link" role="none"><a href="https://egyptphotographytours.com/tours" role="menuitem">우리의 투어</a></li>
-<li class="nav-link" role="none"><a href="/ko/gallery.html" role="menuitem">갤러리</a></li>
-<li class="nav-link" role="none"><a href="/ko/resources.html" role="menuitem">자원</a></li>
-<li class="nav-link" role="none"><a href="/ko/blog.html" role="menuitem">블로그</a></li>
-<li class="nav-link" role="none"><a href="https://egyptphotographytours.com/contact" role="menuitem">문의하기</a></li>
-<li class="nav-link" role="none"><a href="/ko/faqs.html" role="menuitem">자주 묻는 질문</a></li>
+<nav aria-label="Main navigation" class="navbar" id="navbar">
+<div class="wrap nav-inner">
+<button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" type="button"><i aria-hidden="true" class="fas fa-bars" id="ham-icon"></i></button>
+<ul class="nav-links-desk" role="list">
+<li><a href="/ko/">홈</a></li>
+<li><a href="/ko/about.html">회사 소개</a></li>
+<li><a href="/ko/tours.html">우리의 투어</a></li>
+<li><a href="/ko/gallery.html">갤러리</a></li>
+<li><a aria-current="page" class="active" href="/ko/resources.html">자원</a></li>
+<li><a href="/ko/blog.html">블로그</a></li>
+<li><a href="/ko/contact.html">문의하기</a></li>
+<li><a href="/ko/faqs.html">자주 묻는 질문</a></li>
 </ul>
+<div class="nav-right">
+<a aria-label="Plan your Egypt tour" class="nav-book" href="/ko/contact.html#customize-trip"><i aria-hidden="true" class="fas fa-map-marked-alt"></i> <span>투어 계획</span></a>
+<div class="lang-wrap" data-open="false" id="lang-wrap">
+<button aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Select language – currently English" class="lang-toggle" id="lang-toggle" type="button"><span aria-hidden="true">🇺🇸</span><span>EN</span><i aria-hidden="true" class="fas fa-chevron-down lang-chevron"></i></button>
+<div aria-hidden="true" class="lang-menu" id="lang-menu" role="menu">
+<div class="lang-menu-head">언어 선택</div>
+<a class="lang-item is-active" href="/ko/egypt-dress-code-women-locals-vs-tourist-expectations-2026" role="menuitem"><span aria-hidden="true" class="lang-flag">🇺🇸</span><span class="lang-name">영어</span></a>
+</div>
+</div>
+</div>
 </div>
 </nav>
-<main class="main" id="main-content">
-<nav aria-label="Breadcrumb" class="breadcrumb container">
-<a href="/ko/index.html">홈</a>
-<span aria-hidden="true">›</span>
-<a href="/ko/resources.html">자원</a>
-<span aria-hidden="true">›</span>
-<span aria-current="page">이집트 여성 복장 규정 2026</span>
+<nav aria-hidden="true" aria-label="Mobile navigation" class="mobile-nav" id="mobile-nav">
+<a class="mobile-nav-link" href="/ko/"><i aria-hidden="true" class="fas fa-home"></i>홈</a>
+<a class="mobile-nav-link" href="/ko/about.html"><i aria-hidden="true" class="fas fa-user-tie"></i>회사 소개</a>
+<a class="mobile-nav-link" href="/ko/tours.html"><i aria-hidden="true" class="fas fa-map-marked-alt"></i>우리의 투어</a>
+<a class="mobile-nav-link" href="/ko/gallery.html"><i aria-hidden="true" class="fas fa-images"></i>갤러리</a>
+<a aria-current="page" class="mobile-nav-link active" href="/ko/resources.html"><i aria-hidden="true" class="fas fa-book-open"></i>자원</a>
+<a class="mobile-nav-link" href="/ko/blog.html"><i aria-hidden="true" class="fas fa-blog"></i>블로그</a>
+<a class="mobile-nav-link" href="/ko/contact.html"><i aria-hidden="true" class="fas fa-envelope"></i>문의하기</a>
+<a class="mobile-nav-link" href="/ko/faqs.html"><i aria-hidden="true" class="fas fa-question-circle"></i>자주 묻는 질문</a>
+<div class="mobile-nav-sep" role="separator"></div>
+<div class="mobile-nav-contact">
+<a aria-label="WhatsApp us" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i>WhatsApp: +20 155 073 5673</a>
+<a aria-label="Email us" href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i>info@egyptphotographytours.com</a>
+<a aria-label="Customize and book your tour" href="/ko/contact.html#customize-trip" style="background:var(--c-gold);color:var(--c-dark);padding:14px 16px;border-radius:8px;text-align:center;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;min-height:52px">
+<i aria-hidden="true" class="fas fa-magic"></i>투어 맞춤화 및 예약</a>
+</div>
 </nav>
-<section class="hero-section">
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h1 class="hero-title">이집트 여성 복장 규정</h1>
-<p class="hero-subtitle">현지인이 실제로 입는 옷과 관광객의 기대치 — 검증된 2026년 문화적 맥락, 실용적인 짐 꾸리기 요령 및 자신감 있는 여성 여행자를 위한 존중하는 여행 전략</p>
+<div aria-hidden="true" class="nav-overlay" id="nav-overlay"></div>
+<main id="main" tabindex="-1">
+<section class="article-hero">
+<div class="wrap">
+<span class="hero-kicker"><i aria-hidden="true" class="fas fa-vest"></i>2026년 복장 규정 안내</span>
+<h1>이집트 복장 규정:<span class="gold">지역 대 관광객의 기대</span></h1>
+<p class="hero-sub">여성을 위한 이집트 복장 규정에 대한 2026년 전체 가이드 - 현지인과 관광객의 기대치, 문화적 규범, 정중한 옷차림에 대한 실용적인 팁, 모스크 예절 및 사진 촬영에 적합한 복장을 비교합니다.</p>
+<div aria-hidden="true" class="hero-rule"></div>
 </div>
 </section>
-<section class="article-section">
-<div class="article-container">
-<div class="article-meta">
-<span><i class="far fa-calendar"></i>2026년 4월 25일</span>
-<span><i class="fas fa-map-marker-alt"></i>카이로, 이집트</span>
-<span><i class="fas fa-tags"></i>여성 복장 규정, 문화 예절, 단정한 패션, 존중하는 여행</span>
-<span><i class="far fa-clock"></i>28분 읽기</span>
-<span class="last-updated"><i class="fas fa-sync-alt"></i>업데이트 날짜: 2026년 4월 25일</span>
-</div>
-<div class="article-content">
-<p><strong>이집트의 복장 규정을 이해하는 것은 제한이 아니라 문화적 연결에 관한 것입니다.</strong>온라인 포럼은 두려움에 기반한 조언을 증폭시키는 경우가 많지만 현실은 미묘한 차이가 있습니다. 이집트 여성은 개인적인 선택, 지역 문화 및 상황을 반영하는 다양한 스타일을 입습니다. 관광객은 현지인처럼 옷을 입을 필요는 없지만 정숙하고 정중한 옷을 입으면 편안함이 크게 향상되고 불필요한 관심이 줄어들며 진정한 문화 교류의 문이 열립니다.</p>
-<p>이 포괄적인 2026 가이드는 관광객의 기대와 비교하여 이집트 여성이 실제로 입는 옷, 실용적인 짐 꾸리기 전략, 종교 장소 지침 및 문화 탐색 팁에 대한 검증된 통찰력을 제공합니다. 혼자 여행하든, 가족과 함께 여행하든, 사진 여행을 가든 이 리소스를 통해 이집트 여행 내내 자신감 있고 정중하며 편안하게 옷을 입을 수 있습니다.</p>
-<div class="service-category category-dress">
-<h4><i class="fas fa-tshirt"></i>여성으로서 이집트 여행을 계획하시나요?</h4>
-<p>이집트 사진 투어는 여행 전 문화 오리엔테이션, 위치별 복장 안내, 여성 가이드 옵션 및 편안함과 겸손함의 균형을 맞춘 짐 목록을 제공합니다.<a href="https://egyptphotographytours.com/contact">문의하기</a>맞춤형 여성 여행 상담을 위해</p>
-<a class="cta-button" href="https://egyptphotographytours.com/tours" style="margin-top: 15px;">여성 친화적인 이집트 투어 찾아보기</a>
-</div>
-<div class="trustpilot-widget-container">
-<div class="trustpilot-widget" data-businessunit-id="5f8c7b1e0000640001e6f3a2" data-locale="en-US" data-style-height="24px" data-style-width="100%" data-template-id="5419b6ffb0d04a076446a9ad" data-theme="light">
-<a href="https://www.trustpilot.com/review/egyptphotographytours.com" rel="noopener" target="_blank">신뢰 조종사</a>
+<div class="meta-bar">
+<div class="wrap">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="/ko/">홈</a><span aria-hidden="true">/</span>
+<a href="/ko/resources.html">자원</a><span aria-hidden="true">/</span>
+<span aria-current="page" style="color:var(--c-dark);font-weight:600">이집트 복장 규정 2026</span>
+</nav>
+<div class="article-meta-row">
+<span><i aria-hidden="true" class="far fa-calendar"></i>게시일: 2026년 2월 25일</span>
+<span><i aria-hidden="true" class="fas fa-sync-alt"></i>2026년 2월 25일 업데이트됨</span>
+<span><i aria-hidden="true" class="far fa-clock"></i>20분 읽기</span>
+<span><i aria-hidden="true" class="fas fa-map-marker-alt"></i>카이로, 이집트</span>
+<span><i aria-hidden="true" class="fas fa-user"></i>작성자: Hossam, 이집트학자 겸 사진작가</span>
 </div>
 </div>
-<h2>1장: 이집트 여성 복장의 현실 - 현지 관습과 관광 신화</h2>
-<p>이집트 여성들이 실제로 무엇을 입는지, 그리고 그 이유를 이해하면 불안이 문화적 감상으로 바뀌게 됩니다. 검증된 2026년 풍경은 다음과 같습니다.</p>
-<div class="info-grid">
-<div class="info-card">
-<span class="info-icon">👗</span>
-<h4>도시 이집트 여성 패션</h4>
-<p>카이로, 알렉산드리아 및 주요 도시에서는 많은 여성들이 긴 상의가 달린 청바지, 맥시 드레스, 맞춤형 아바야 또는 세련된 히잡 등 현대적이고 수수한 패션을 입습니다. 패션은 다양하고 개인적이며 트렌디한 경우가 많습니다. 겸허함은 시대에 뒤떨어진 것을 의미하지 않습니다. 이는 문화적 가치 내에서 창의적인 표현을 의미합니다.</p>
 </div>
-<div class="info-card">
-<span class="info-icon">🕌</span>
-<h4>종교적인 장소 요구 사항</h4>
-<p>모스크와 일부 종교 장소에서는 어깨 보호, 무릎 보호, 여성용 머리 스카프가 필요합니다. 이는 성별 제한이 아닌 존중에 기반한 규칙입니다. 많은 모스크에서는 대여용 스카프를 제공합니다. 가벼운 스카프를 가지고 다니면 편안함과 준비가 보장됩니다.</p>
+<section class="section" style="padding-top:44px">
+<div class="article-wrap article-content">
+<p class="article-lede"><strong>이집트는 복장에 대해 뚜렷한 문화적 규범을 지닌 보수적인 이슬람 국가입니다. 하지만 현지인에게 기대되는 것과 관광객에게 기대되는 것은 다릅니다.</strong>이러한 차이점을 이해하면 정중하게 옷을 입고 편안함을 유지하는 데 도움이 됩니다. 이 최종 2026 가이드는 현지인과 관광객의 복장 기대치를 비교하고, 문화적 규범을 설명하고, 실용적인 짐 꾸리기 요령, 모스크 예절 지침 및 사진 촬영에 적합한 복장 권장 사항을 제공하므로 문화적 존중을 보여주면서 적절하게 옷을 입을 수 있습니다.</p>
+<p>카이로의 시장을 탐험하든, 모스크를 방문하든, 고대 사원을 사진 찍든 이 지침은 문화적인 감상을 보여주면서 적절한 옷차림을 하도록 보장합니다.<strong>이집트 사진 투어 예약</strong>여행 일정의 모든 위치에 대한 문화적 지침과 상황을 제공합니다. 이 가이드를 우리의 가이드와 페어링하세요<a href="/ko/egypt-packing-list-2026.html">포장 목록</a>그리고<a href="/ko/egypt-sim-card-internet-wifi-guide-2026.html">SIM 카드 안내</a>완벽한 여행 준비를 위해</p>
+<div class="quick-facts">
+<h3>이집트 복장 규정 요약 정보</h3>
+<div class="qf-item">
+<span class="qf-label">지역 여성</span>
+<span class="qf-value">겸손한 드레스</span>
 </div>
-<div class="info-card">
-<span class="info-icon">🏜️</span>
-<h4>농촌 및 보수적인 지역</h4>
-<p>마을과 보수적인 지역에서는 긴 소매, 헐렁한 바지/스커트, 머리 덮개 등 보다 전통적인 복장이 일반적입니다. 관광객들은 현지 복장과 일치할 것으로 기대되지 않지만 단정한 복장은 존중을 보여주고 문화적 마찰을 줄여줍니다.</p>
+<div class="qf-item">
+<span class="qf-label">관광 여성</span>
+<span class="qf-value">유연하지만 겸손함</span>
+</div>
+<div class="qf-item">
+<span class="qf-label">모스크</span>
+<span class="qf-value">전체 보장이 필요함</span>
+</div>
+<div class="qf-item">
+<span class="qf-label">필수 아이템</span>
+<span class="qf-value">경량 스카프</span>
 </div>
 </div>
-<div class="advice-box">
-<h3>지역 여성의 지혜: 복장 규정의 현실</h3>
-<ul>
-<li><strong>겸손함은 주의력을 감소시킵니다.</strong>어깨와 무릎을 덮는 헐렁한 옷은 문화적 존중을 보여주면서 응시와 발언을 크게 줄입니다.</li>
-<li><strong>편안함이 가장 중요합니다:</strong>가볍고 통기성이 좋은 헐렁한 핏의 원단은 정숙함을 유지하면서 시원함을 유지해줍니다. 이집트의 더위는 실용적인 선택을 요구합니다.</li>
-<li><strong>맥락이 핵심입니다:</strong>리조트 지역, 호텔 및 개인 여행을 통해 더 많은 유연성을 얻을 수 있습니다. 공공장소와 종교적인 장소에는 더 많은 보장이 필요합니다.</li>
-<li><strong>개인 선택 존중:</strong>이집트 여성의 의상은 획일적인 규칙이 아닌 개인의 신앙, 가족 전통, 개인의 스타일을 반영합니다.</li>
-<li><strong>관광객들은 은혜를 얻습니다:</strong>이집트인들은 문화적 차이를 이해합니다. 적당한 노력은 높이 평가되지만 완벽함은 기대되지 않습니다.</li>
+<div class="callout callout-indigo">
+<h3>이집트 모험을 떠날 준비가 되셨나요?</h3>
+<p>여행 일정의 모든 위치에 대해 복장 규정 안내, 문화적 맥락 및 사진 친화적인 위치 추천을 통해 문화적으로 인식된 사진 촬영 경험을 할 수 있는 이집트 사진 투어에 참여하세요.</p>
+<a class="btn btn-dark" href="/ko/contact.html#customize-trip">나의 이집트 투어 계획</a>
+</div>
+<div class="toc-box">
+<h3>빠른 탐색</h3>
+<ul class="toc-list">
+<li><a href="#local">지역 여성의 복장 규정</a></li>
+<li><a href="#tourist">관광 여성 복장 규정</a></li>
+<li><a href="#mosques">모스크 복장 규정</a></li>
+<li><a href="#packing">무엇을 포장할 것인가</a></li>
+<li><a href="#photography">사진 촬영에 적합한 복장</a></li>
+<li><a href="#reviews">실제 여행자 리뷰</a></li>
+<li><a href="#tours">문화 안내가 포함된 투어</a></li>
+<li><a href="#faq">자주 묻는 질문</a></li>
 </ul>
 </div>
-<h2>2장: 위치 및 상황에 따른 검증된 복장 규정 지침</h2>
-<p>복장에 대한 기대치는 위치, 활동, 문화적 맥락에 따라 다릅니다. 여성 여행자를 위해 검증된 2026년 매트릭스는 다음과 같습니다.</p>
-<div class="service-category category-dress">
-<h4><i class="fas fa-map-marked-alt"></i>상황별 검증된 드레스 코드 매트릭스</h4>
-<div class="table-wrapper">
-<table class="dress-table">
+<h2 id="local">1장: 이집트 현지 여성의 복장 규정</h2>
+<p>이집트는 보수적인 이슬람 국가이며 현지 여성들은 일반적으로 문화적, 종교적 규범에 따라 정숙한 옷을 입습니다. 이러한 규범을 이해하면 문화적 맥락을 이해하고 정중하게 옷을 입는 데 도움이 됩니다.</p>
+<div class="development-grid">
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-vest"></i></span>
+<h4>전형적인 현지 복장</h4>
+<p><strong>도시 지역:</strong>많은 현지 여성들은 팔과 다리를 덮는 단정한 옷에 히잡(머리 스카프)을 착용합니다. 일부는 니캅(얼굴 베일)을 착용합니다. 단정한 복장에는 긴 소매, 긴 치마나 바지, 헐렁한 옷이 포함됩니다.</p>
+</div>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-mosque"></i></span>
+<h4>종교적 맥락</h4>
+<p><strong>이슬람 영향:</strong>이집트는 주로 이슬람교도(90%+)이며 이슬람 복장 규정은 지역 규범에 영향을 미칩니다. 정숙한 복장은 종교적, 문화적 전통에 대한 존중을 나타냅니다. 관광 지역에서는 복장 규정이 좀 더 편안하지만 여전히 겸손합니다.</p>
+</div>
+<div class="development-card">
+<span class="dev-icon"><i class="fas fa-map-marker-alt"></i></span>
+<h4>지역적 변형</h4>
+<p><strong>도시 vs 시골:</strong>도시 지역(카이로, 알렉산드리아)은 다양한 드레스 스타일로 더욱 국제적입니다. 농촌 지역과 보수적인 동네에서는 보수적인 복장을 기대합니다. 관광 지역이 가장 편안합니다.</p>
+</div>
+</div>
+<div class="callout callout-gold">
+<h3>문화적 맥락의 이해</h3>
+<p>현지 여성의 복장은 문화적, 종교적 가치를 반영합니다. 관광객들이 똑같은 옷을 입을 것으로 기대되지는 않지만 정숙한 옷차림은 문화적 존중을 보여주고 원치 않는 관심을 줄여줍니다. 관광지에서는 현지인들이 서양식 의상에 익숙하지만 여전히 단정한 복장을 좋아합니다. 이러한 맥락을 이해하면 문화적 기대를 정중하게 탐색하는 데 도움이 됩니다.</p>
+</div>
+<h2 id="tourist">2장: 이집트 관광 여성의 복장 규정</h2>
+<p>관광 여성은 현지 여성보다 유연성이 더 뛰어나지만 문화적 존중을 보여주고 원치 않는 관심을 줄이기 위해 정숙한 옷차림을 해야 합니다. 다양한 상황에 적합한 내용은 다음과 같습니다.</p>
+<div class="table-scroll">
+<table class="data-table">
+<caption>지역별 관광객 복장 규정</caption>
 <thead>
 <tr>
-<th>위치/컨텍스트</th>
-<th>추천 복장</th>
-<th>머리 덮개</th>
-<th>문화 노트</th>
+<th>위치</th>
+<th>적절한 복장</th>
+<th>피하다</th>
+<th>메모</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>카이로/알렉산드리아 거리</strong></td>
-<td>헐렁한 상의, 무릎 아래 바지/스커트, 가벼운 옷</td>
-<td>선택사항; 다용도 스카프</td>
-<td>도시 패션은 다양하다. 겸손은 주의력을 감소시킨다</td>
+<td><strong>관광지(피라미드, 사원)</strong></td>
+<td>루즈한 팬츠, 맥시 스커트, 무릎까지 오는 반바지, 티셔츠, 블라우스</td>
+<td>짧은 반바지, 탱크탑, 노출이 심한 옷</td>
+<td>가장 편안합니다. 현지인들은 서양식 의류를 기대합니다</td>
 </tr>
 <tr>
-<td><strong>그랜드 이집트 박물관</strong></td>
-<td>편안하고 단정한 복장; AC 실내</td>
-<td>필요하지 않음</td>
-<td>현대적인 시설; 국제 표준이 적용됩니다</td>
+<td><strong>도시(카이로, 알렉산드리아)</strong></td>
+<td>루즈한 팬츠, 맥시 스커트, 긴팔 상의, 수수한 드레스</td>
+<td>짧은 반바지, 탱크탑, 노출이 심한 옷</td>
+<td>보통; 존경심을 표시하기 위해 정숙한 옷을 입으세요</td>
 </tr>
 <tr>
-<td><strong>모스크 및 종교 유적지</strong></td>
-<td>어깨/무릎이 가려짐; 느슨하고 불투명한 직물</td>
-<td>여성에게 필수입니다. 가벼운 스카프를 가져오세요</td>
-<td>신발을 벗으십시오. 많은 곳에서 대여 의류를 제공합니다.</td>
+<td><strong>시장(칸 엘 칼릴리)</strong></td>
+<td>루즈한 팬츠, 맥시 스커트, 긴팔 상의</td>
+<td>짧은 반바지, 탱크탑, 노출이 심한 옷</td>
+<td>보통; 보수적인 지역; 정숙하게 옷을 입다</td>
 </tr>
 <tr>
-<td><strong>피라미드 및 고고학 유적지</strong></td>
-<td>가볍고 겸손한 옷; 태양 보호</td>
-<td>선택사항; 햇빛/다용성을 위한 스카프</td>
-<td>야외 사이트; 실용적인 겸손은 편안함과 존중의 균형을 이룹니다</td>
+<td><strong>농촌 지역/마을</strong></td>
+<td>루즈한 바지, 맥시 스커트, 긴팔 상의, 헤드스카프 옵션</td>
+<td>짧은 반바지, 탱크탑, 노출이 심한 옷</td>
+<td>보수적; 존경심을 표시하기 위해 정숙한 옷을 입으세요</td>
 </tr>
 <tr>
-<td><strong>시골 마을</strong></td>
-<td>좀 더 보수적인 옷: 긴 소매, 헐렁한 바지/스커트</td>
-<td>감사하지만 필수는 아닙니다.</td>
-<td>전통적인 가치; 겸손은 문화적 존중을 나타냅니다.</td>
-</tr>
-<tr>
-<td><strong>리조트 지역/호텔</strong></td>
-<td>리조트 복장은 허용됩니다. 수영장/해변을 떠날 때 가리십시오</td>
-<td>필요하지 않음</td>
-<td>관광 지역은 더욱 편안해졌습니다. 탐험 시 전환 복장</td>
-</tr>
-<tr>
-<td><strong>나일 크루즈</strong></td>
-<td>스마트 캐주얼 겸손한 착용; 저녁 저녁 식사는 더 멋질 수 있습니다</td>
-<td>필요하지 않음</td>
-<td>국제 손님이 혼합되어 있습니다. 겸손한 우아함이 높이 평가되었습니다.</td>
-</tr>
-<tr>
-<td><strong>시장 및 시장</strong></td>
-<td>정숙하고 편안한 복장; 안전한 가방</td>
-<td>선택사항; 다용도 스카프</td>
-<td>혼잡한 공간; 겸손은 공급업체의 관심을 감소시킵니다.</td>
+<td><strong>해변/리조트</strong></td>
+<td>해변/수영장에서는 수영복 착용이 허용됩니다. 떠날 때 가려라</td>
+<td>해변/수영장 밖에서의 수영복</td>
+<td>해변에서 휴식을 취하세요. 다른 곳에서 은폐하다</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h4>이집트 여성의 주요 복장 원칙</h4>
+<h3>관광 여성을 위한 일반 지침</h3>
 <ul>
-<li><strong>어깨와 무릎을 덮으십시오:</strong>이 간단한 규칙은 대부분의 공공 장소에 적용되며 원치 않는 관심을 크게 줄여줍니다.</li>
-<li><strong>타이트한 것보다는 느슨한 것을 선택하세요:</strong>헐렁한 옷은 더위에 더 편안하고, 문화적으로 더 적합하며, 겹쳐 입기에도 더 다양합니다.</li>
-<li><strong>가벼운 원단은 필수입니다:</strong>면, 린넨, 통기성이 뛰어난 혼방 소재로 커버력을 유지하면서 시원함을 유지해줍니다.</li>
-<li><strong>다용도 스카프를 가지고 다니세요:</strong>가벼운 스카프는 모스크의 머리 덮개, 자외선 차단, AC 공간의 숄 및 스타일링 액세서리 역할을 합니다.</li>
-<li><strong>상황이 중요합니다:</strong>복장에 대한 기대치는 위치에 따라 달라집니다. 다양한 설정에 적응하는 다용도 제품을 포장하세요.</li>
+<li><strong>어깨 커버:</strong>도시와 보수적인 지역에서는 탱크탑, 스파게티 스트랩, 오프숄더 탑을 피하세요.</li>
+<li><strong>무릎 커버:</strong>도시와 보수적인 지역에서는 짧은 반바지와 미니스커트를 피하세요. 무릎길이 이상이 적당합니다.</li>
+<li><strong>헐렁한 옷:</strong>헐렁한 옷은 더위 속에서 더 편안하고 문화적으로 더 적합합니다.</li>
+<li><strong>스카프를 가지고 다니세요:</strong>모스크 방문이나 보수적인 지역을 방문할 때는 항상 가벼운 스카프를 휴대하세요.</li>
+<li><strong>중성색:</strong>중성색(베이지, 네이비, 검정색)은 현지 색상과 더 잘 어울리며 문화적으로 더 적합합니다.</li>
 </ul>
-<div class="tip-card">
-<h4>전문가 팁: 다재다능한 스카프 전략</h4>
-<p>하나의 가벼운 스카프로 다양한 요구 사항을 해결할 수 있습니다.<br/>• 모스크 및 종교 유적지용 머리 덮개<br/>• 보수적인 지역의 민소매 상의를 위한 어깨 커버<br/>• 야외 탐험 중 목/얼굴 자외선 차단<br/>• 에어컨이 완비된 박물관과 레스토랑을 위한 가벼운 랩<br/>• 사진 및 문화 몰입을 위한 스타일링 액세서리<br/>활용도를 극대화하려면 다양한 색상의 스카프 2~3개를 포장하세요.</p>
-</div>
-</div>
-<h2>3장: 계절 및 여행 일정에 따른 실용적인 짐 꾸리기 목록</h2>
-<p>전략적 포장은 문화적 존중, 기후의 편안함 및 여행 실용성의 균형을 맞춥니다. 이러한 검증된 목록은 이집트의 계절과 다양한 활동을 설명합니다.</p>
-<div class="service-category category-dress">
-<h4><i class="fas fa-suitcase-rolling"></i>계절별 검증된 포장 매트릭스</h4>
-<div class="table-wrapper">
-<table class="dress-table">
-<thead>
-<tr>
-<th>카테고리</th>
-<th>겨울(11~2월)</th>
-<th>봄/가을(3~4월, 10월)</th>
-<th>여름(5~9월)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>탑</strong></td>
-<td>긴소매 면/린넨 블라우스, 가벼운 스웨터, 레이어드 피스</td>
-<td>3/4소매 탑, 통기성이 뛰어난 튜닉, 가벼운 가디건</td>
-<td>루즈한 반소매 탑, 수분 흡수 원단, 자외선 차단 레이어</td>
-</tr>
-<tr>
-<td><strong>하의</strong></td>
-<td>가벼운 바지, 맥시 스커트, 편안한 청바지</td>
-<td>와이드 팬츠, 미디/맥시 스커트, 통기성이 좋은 팬츠</td>
-<td>루즈한 린넨 팬츠, 하늘거리는 스커트, 가벼운 퀼로트</td>
-</tr>
-<tr>
-<td><strong>드레스</strong></td>
-<td>레이어드하기 좋은 긴소매 맥시 드레스</td>
-<td>3/4소매 미디/맥시 드레스, 통기성이 뛰어난 소재</td>
-<td>루즈한 면/린넨 맥시 드레스, 자외선 차단 원단</td>
-</tr>
-<tr>
-<td><strong>외부 레이어</strong></td>
-<td>따뜻함을 선사하는 가벼운 재킷, 가디건, 스카프</td>
-<td>가벼운 가디건, 활용도 높은 스카프, 자외선 차단 레이어</td>
-<td>가벼운 스카프, 자외선 차단 커버업, AC 스페이스 랩</td>
-</tr>
-<tr>
-<td><strong>신발</strong></td>
-<td>편안한 운동화, 발가락 부분이 막힌 옵션</td>
-<td>통기성이 뛰어난 운동화, 커버력이 뛰어난 샌들</td>
-<td>편안한 샌들, 통기성이 뛰어난 운동화, 친수성 옵션</td>
-</tr>
-<tr>
-<td><strong>액세서리</strong></td>
-<td>시원한 아침을 위한 가벼운 스카프, 선햇, 장갑</td>
-<td>다용도 스카프, 태양 모자, 선글라스</td>
-<td>여러 개의 가벼운 스카프, 챙이 넓은 선캡, UV 선글라스</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4>사계절 필수 포장 아이템</h4>
-<div class="dress-checklist">
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>경량 스카프(2-3):</strong>머리 커버, 자외선 차단, 다양한 스타일링에 적합합니다. 면이나 리넨 같은 통기성이 좋은 소재를 선택하세요.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>헐렁한 상의:</strong>통기성이 뛰어난 소재로 제작된 긴팔 또는 3/4소매 옵션. 단단하거나 투명한 재료를 피하십시오.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>무릎 아래 하의:</strong>편안하고 통기성이 좋은 소재로 제작된 팬츠, 맥시 스커트, 미디 스커트.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>편안한 운동화:</strong>사이트를 위한 폐쇄형 옵션; 캐주얼한 탐험을 위한 통기성 샌들.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>자외선 차단:</strong>챙이 넓은 모자, UV 선글라스, 옷을 더럽히지 않는 SPF 50+ 자외선 차단제.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>가벼운 레이어링 조각:</strong>에어컨이 있는 공간과 시원한 저녁을 위한 카디건 또는 가벼운 재킷.</div>
-</div>
-</div>
-<div class="warning-box">
-<h3>⚠️ 이집트에서 피해야 할 옷</h3>
+<h2 id="mosques">제3장: 여성을 위한 모스크 복장 규정</h2>
+<p>모스크를 방문할 때 여성은 이슬람 복장 규정에 따라 단정한 옷을 입어야 합니다. 필요한 것과 가져가야 할 것은 다음과 같습니다.</p>
+<div class="callout callout-indigo">
+<h3>모스크 복장 요구 사항</h3>
 <ul>
-<li><strong>노출이 심한 의상:</strong>탱크탑, 짧은 반바지, 미니스커트, 깊게 파인 상의는 원치 않는 관심을 끌고 종교적인 장소에 대한 접근을 제한할 수 있습니다.</li>
-<li><strong>단단하거나 얇은 직물:</strong>가려져 있더라도 꽉 끼거나 투명한 옷은 보수적인 맥락에서 무례한 것으로 인식될 수 있습니다.</li>
-<li><strong>값비싼 보석/액세서리:</strong>화려한 아이템은 원치 않는 관심을 끌 수 있습니다. 귀중품을 안전하고 절제된 상태로 유지하세요.</li>
-<li><strong>불쾌한 이미지/텍스트가 포함된 의류:</strong>문화적으로 둔감하거나 정치적으로 부담스러울 수 있는 인쇄물은 피하세요.</li>
-<li><strong>고고학 유적지를 위한 흰색 옷:</strong>먼지와 모래가 쉽게 보입니다. 현장 방문을 위해 더 어둡거나 무늬가 있는 직물을 선택하십시오.</li>
+<li><strong>머리 덮개:</strong>여성들은 모스크에 들어갈 때 스카프나 히잡으로 머리를 가려야 합니다.</li>
+<li><strong>팔 적용 범위:</strong>숄/스카프로 덮는 긴 소매 또는 팔.</li>
+<li><strong>다리 범위:</strong>무릎과 다리를 덮는 긴 바지나 맥시 스커트.</li>
+<li><strong>헐렁한 옷:</strong>몸매가 드러나지 않는 헐렁한 옷.</li>
+<li><strong>신발 제거:</strong>기도 장소에 들어가기 전에 신발을 벗으십시오.</li>
+</ul>
+<p><strong>가져갈 것:</strong>모스크에 들어갈 때 쉽게 묶을 수 있는 가벼운 스카프(면 또는 리넨)를 휴대하세요. 일부 모스크에서는 스카프를 제공하지만 직접 가져오는 것이 가장 좋습니다. 모스크를 방문할 때는 긴 바지나 맥시 스커트, 긴 소매 상의를 착용하세요.</p>
+</div>
+<h3>방문할 만한 인기 모스크</h3>
+<ul>
+<li><strong>무하마드 알리 모스크(카이로 성채):</strong>멋진 건축물을 갖춘 상징적인 모스크; 머리 덮개가 필요합니다.</li>
+<li><strong>알아즈하르 모스크(카이로):</strong>가장 오래된 모스크 중 하나입니다. 머리 덮개가 필요합니다.</li>
+<li><strong>술탄 하산의 모스크-마드라사(카이로):</strong>놀라운 맘루크 건축물; 머리 덮개가 필요합니다.</li>
+<li><strong>아부 알 압바스 알 무르시 모스크(알렉산드리아):</strong>아름다운 모스크; 머리 덮개가 필요합니다.</li>
+</ul>
+<h2 id="packing">4장: 이집트 여행을 위해 무엇을 준비해야 할까요?</h2>
+<p>이집트에 맞게 적절하게 포장하면 편안하고 문화적으로 적절합니다. 다양한 상황에 맞춰 포장할 내용은 다음과 같습니다.</p>
+<div class="checklist-grid">
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-tshirt"></i>의류 필수품</h4>
+<ul>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>가벼운 긴팔 탑(면/린넨)</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>헐렁한 바지 또는 맥시 스커트</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>관광지/해변용 무릎길이 반바지</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>모스크와 보수적인 지역을 위한 경량 스카프</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>편안한 운동화</span></li>
+</ul>
+</div>
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-sun"></i>자외선 차단</h4>
+<ul>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>챙이 넓은 모자 또는 모자</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>자외선 차단 기능이 있는 선글라스</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>자외선 차단제(SPF 50+)</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>자외선 차단을 위한 가벼운 긴소매 셔츠</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>자외선 차단을 위한 가벼운 스카프</span></li>
+</ul>
+</div>
+<div class="checklist-block">
+<h4><i aria-hidden="true" class="fas fa-swimming-pool"></i>해변/재복</h4>
+<ul>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>해변/리조트를 위한 단정한 수영복</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>해변/수영장 지역을 떠날 때 은폐</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>속건성 수건</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>바위 해변을 위한 워터슈즈</span></li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i><span>자외선 차단을 위한 가벼운 커버업</span></li>
 </ul>
 </div>
 </div>
-<h2>제4장: 종교적 유적지와 문화적 감수성</h2>
-<p>종교적인 장소에는 제한이 아닌 존중에 뿌리를 둔 특정 복장 요구 사항이 있습니다. 이러한 지침을 이해하면 원활하고 의미 있는 방문이 보장됩니다.</p>
-<div class="dress-checklist">
-<h4>✅ 종교 장소 복장 지침<h4>모스크 방문</h4>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>어깨가 가려짐:</strong>탱크탑이나 민소매 상의는 안 됩니다. 커버력이 뛰어난 가벼운 카디건이나 스카프를 가져오세요.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>무릎 보호:</strong>바지, 맥시 스커트 또는 무릎 아래 드레스; 반바지나 짧은 치마를 피하세요.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>머리 덮개:</strong>여성은 머리카락을 가려야 합니다. 가벼운 스카프가 제공되거나 직접 가져오세요.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>신발 제거:</strong>대부분의 모스크에서는 신발을 벗어야 합니다. 신고 벗기 쉬운 신발을 신으세요.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>보통의 직물:</strong>비록 덮여 있더라도 투명하거나, 꽉 조이거나, 노출되는 재료를 피하십시오.</div>
-</div>
-<h4>교회 및 콥트 유적지</h4>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>유사한 겸손 기준:</strong>어깨와 무릎이 가려집니다. 머리 덮개는 종종 높이 평가되지만 항상 필요한 것은 아닙니다.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>조용한 존경심:</strong>복장은 신성한 공간에 대한 존중을 반영합니다. 정숙한 복장은 사색적인 분위기를 조성합니다.</div>
-</div>
-<h4>종교적 의미가 있는 고고학 유적지</h4>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>상황이 중요합니다:</strong>고대 사원은 활동적인 종교 유적지보다 복장 규정이 덜 엄격할 수 있지만 정숙함은 여전히 문화유산에 대한 존중을 나타냅니다.</div>
-</div>
-<div class="checklist-item">
-<i class="fas fa-check-circle"></i>
-<div><strong>실용적인 겸손:</strong>가볍고 통기성이 뛰어난 커버력은 편안함과 문화적인 감성의 균형을 유지합니다.</div>
-</div>
-</h4></div>
-<div class="advice-box">
-<h3>의류를 넘어서는 문화적 감수성</h3>
-<p><strong>신체 언어가 중요합니다:</strong>겸손한 복장은 한 가지 측면입니다. 존중하는 행동, 정중한 의사소통, 문화적 호기심이 그림을 완성합니다.<br/>
-<strong>인물 사진을 찍기 전에 물어보세요:</strong>특히 여성과 어린이; 미소와 몸짓으로 충분할 때가 많습니다.<br/>
-<strong>기본적인 아랍어 인사말을 배워보세요:</strong>"As-salamu alaykum"(평화가 당신에게 있기를)과 "Shukran"(감사합니다)은 존경심을 나타냅니다.<br/>
-<strong>지역적 단서를 관찰하세요:</strong>이집트 여성들이 다양한 상황에서 어떻게 옷을 입고 행동하는지 살펴보세요. 정중하게 적응하세요.<br/>
-<strong>학습을 수용하세요:</strong>문화 탐색은 기술입니다. 각 상호 작용은 자신감과 연결을 구축합니다.</p>
-</div>
-<h2>5장: 실제 여성 여행자 리뷰</h2>
-<p>2025~2026년 이집트의 복장 규정을 탐색한 여성들의 검증된 경험입니다.</p>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">KP</div>
-<div class="reviewer-info">
-<h4>Karen P., 캐나다에서 온 개인 여행자</h4>
-<p>방문 날짜: 2025년 11월 | 초점: 문화적 탐색과 편안함</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<span style="margin-left: 4px; color: #6b7280;">5/5</span>
-</div>
-</div>
-</div>
-<div class="review-content">
-<p><strong>"드레스 코드에 대해 긴장했지만 Egypt Photography Tours의 사전 여행 안내는 완벽했습니다. 저는 헐렁한 면 바지, 긴 소매 튜닉, 가벼운 스카프를 챙겼습니다. 카이로에서는 쉽게 적응했고, 모스크에서는 준비가 되어 있었습니다. 겸손한 드레스는 실제로 나를 더 편안하게 만들었습니다. 시선을 덜 끌었고, 더 의미 있는 상호 작용을 했습니다. 이집트 여성들은 친절했고 종종 저의 정중한 옷차림을 칭찬했습니다. 단정하게 옷을 입는 것은 제한이 아니라 해방이었습니다."</strong></p>
-</div>
-</div>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">JT</div>
-<div class="reviewer-info">
-<h4>Jessica T., 영국에서 온 가족 여행자</h4>
-<p>방문 날짜: 2026년 1월 | 초점: 포장의 실용성과 문화적 존중</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star-half-alt"></i>
-<span style="margin-left: 4px; color: #6b7280;">4.5/5</span>
-</div>
-</div>
-</div>
-<div class="review-content">
-<p><strong>"계절별 짐 목록은 매우 귀중했습니다. 이집트 겨울에는 시원한 아침과 따뜻한 오후에 적합한 가벼운 옷을 챙겼습니다. 딸(12세)은 헐렁한 바지, 긴 상의와 같은 수수한 스타일을 입었고 자신감을 느꼈습니다. 사소한 도전 과제: 자발적인 모스크 방문을 위해 스카프를 가지고 다니는 것을 기억했습니다. 이집트 사진 투어 가이드가 우리에게 부드럽게 상기시켜 주었습니다. 수수한 드레스가 문을 열었습니다. 상점 주인은 더 도움이 되고 현지인은 더 환영합니다. 지침을 따르는 것이 좋습니다."</strong></p>
-</div>
-</div>
-<div class="review-card">
-<div class="review-header">
-<div class="reviewer-avatar">ML</div>
-<div class="reviewer-info">
-<h4>Maria L., 호주 사진 애호가</h4>
-<p>방문 날짜: 2026년 3월 | 초점: 문화 몰입과 사진 촬영</p>
-<div class="review-rating">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<span style="margin-left: 4px; color: #6b7280;">5/5</span>
-</div>
-</div>
-</div>
-<div class="review-content">
-<p><strong>"사진작가로서 저는 진정한 순간을 포착하면서 조화를 이루고 싶었습니다. 단정한 복장 규정이 실제로 도움이 되었습니다. 정중하게 옷을 입으면 이집트 여성들이 사진에 더 편안하게 찍힐 수 있었습니다. 저는 제 짐이 얼마나 다재다능한지 좋아했습니다. 가벼운 스카프, 통기성이 좋은 튜닉, 하늘거리는 바지는 일출의 피라미드, 정오의 모스크 방문, 일몰의 나일강 저녁 식사에 적합했습니다. Egypt Photography Tours의 문화 지향이 모든 차이를 만들었습니다. 정중하게 옷을 입는 것은 숨는 것이 아니라 연결하는 것이었습니다."</strong></p>
-</div>
-</div>
-<div class="advice-box">
-<h3>여성 여행자 리뷰의 주요 내용</h3>
+<h3>포장 팁</h3>
 <ul>
-<li><strong>준비는 자신감을 키워줍니다.</strong>도착하기 전에 복장에 대한 기대치를 알면 불안감이 줄어들고 문화적 참여가 향상됩니다.</li>
-<li><strong>겸허함은 연결을 가능하게 합니다:</strong>정중한 복장은 종종 더 따뜻한 상호 작용과 더 실제적인 경험으로 이어집니다.</li>
-<li><strong>다양성이 핵심입니다:</strong>가볍고 적응성이 뛰어난 작품은 상황과 기후 전반에 걸쳐 작동합니다.</li>
-<li><strong>문화적 호기심이 중요합니다:</strong>복장은 한 측면입니다. 존중하는 행동, 의사소통, 개방성이 그림을 완성합니다.</li>
-<li><strong>지역 여성들은 동맹국입니다:</strong>이집트 여성들은 정중하게 옷을 입으려는 관광객의 노력에 감사하는 경우가 많으며 스타일링 팁이나 문화적 통찰력을 제공하기도 합니다.</li>
+<li><strong>중성색:</strong>현지인들과 어울리고 문화적으로 적합한 무채색(베이지, 네이비, 블랙, 올리브)을 준비하세요.</li>
+<li><strong>레이어:</strong>온도 변화에 대비해 여러 겹의 팩을 준비하세요. 아침과 저녁은 선선하고 한낮은 더 덥습니다.</li>
+<li><strong>편안한 신발:</strong>편안한 운동화는 현장과 시장을 탐험하는 데 필수적입니다.</li>
+<li><strong>가벼운 원단:</strong>가벼운 면과 리넨 소재는 더위 속에서도 가장 편안합니다.</li>
+<li><strong>노출이 심한 옷은 피하세요:</strong>문화적 존중을 보여주기 위해 짧은 반바지, 탱크탑, 노출이 심한 옷을 피하세요.</li>
+</ul>
+<h2 id="photography">5장: 사진 촬영에 적합한 복장</h2>
+<p>이집트에서 사진을 찍을 때 복장은 편안함과 사진 촬영 경험의 질 모두에 영향을 미칩니다. 사진 촬영을 위해 입을 옷은 다음과 같습니다.</p>
+<div class="callout callout-indigo">
+<h3>사진 촬영에 적합한 복장</h3>
+<ul>
+<li><strong>편안한 복장:</strong>웅크리고 무릎을 꿇고 카메라를 들어올릴 수 있는 편안하고 헐렁한 옷입니다.</li>
+<li><strong>주머니:</strong>메모리 카드, 렌즈 천, 작은 물병을 넣을 수 있는 주머니가 있는 의류.</li>
+<li><strong>중성색:</strong>중성적인 색상은 현지인과 조화를 이루며 사진 촬영 대상에 주의를 산만하게 하지 않습니다.</li>
+<li><strong>편안한 신발:</strong>명소와 시장을 탐험할 때 편안한 운동화입니다.</li>
+<li><strong>스카프:</strong>모스크 방문 및 자외선 차단을 위한 가벼운 스카프입니다.</li>
 </ul>
 </div>
-<h2>6장: 이집트 사진 투어 - 여성 여행 지원</h2>
-<p>우리는 여성 여행자에 대한 고유한 고려 사항을 이해하고 자신감 있고 문화적으로 인식된 탐험을 위한 포괄적인 지원을 제공합니다.</p>
-<div class="trust-section">
-<div class="container">
-<h2>이집트 사진 투어 - 여성 여행 전문가</h2>
-<div class="trust-grid">
-<div class="trust-card">
-<span class="trust-icon">👩‍🦰</span>
-<h3>여행 전 문화 오리엔테이션</h3>
-<p>출발 전 맞춤형 복장 규정 안내, 위치별 짐 목록, 문화적 맥락 교육을 제공합니다. 추측할 필요 없이 자신있게 준비하세요.<a href="https://egyptphotographytours.com/contact">여성여행 상담요청</a>.</p>
-</div>
-<div class="trust-card">
-<span class="trust-icon">🤝</span>
-<h3>여성 가이드 옵션</h3>
-<p>문화 탐색 지원, 복장 규정 질문, 여성 중심 체험을 위한 여성 가이드가 제공됩니다. 귀하의 편안함 수준과 여행 스타일에 맞춰드립니다.</p>
-</div>
-<div class="trust-card">
-<span class="trust-icon">🧳</span>
-<h3>다양한 포장 지원</h3>
-<p>정숙함, 편안함, 실용성의 균형을 맞춘 시즌별 여행 일정 기반 짐 목록입니다. 우리는 모든 문화적 기반을 포괄하면서 가볍게 짐을 꾸릴 수 있도록 도와드립니다.</p>
+<h3>사진 촬영 팁</h3>
+<ul>
+<li><strong>매달린 액세서리를 피하십시오.</strong>카메라 스트랩과 관자놀이 난간에 걸리는 매달려 있는 액세서리를 피하세요.</li>
+<li><strong>테스트 동작:</strong>옷을 테스트하면 편안하게 웅크리고 무릎을 꿇고 카메라를 올릴 수 있습니다.</li>
+<li><strong>자외선 차단:</strong>모자, 선글라스, 자외선 차단제, 가벼운 긴팔 셔츠 등 자외선 차단은 필수입니다.</li>
+<li><strong>편안한 신발:</strong>편안한 운동화는 현장과 시장을 탐험하는 데 필수적입니다.</li>
+<li><strong>레이어:</strong>온도 변화에 대비해 여러 겹의 팩을 준비하세요. 아침과 저녁은 선선하고 한낮은 더 덥습니다.</li>
+</ul>
+<h2 id="reviews">6장: 실제 여행자 리뷰</h2>
+<p>2025~2026년 이집트 사진 투어를 통해 이집트의 복장 규정을 성공적으로 탐색한 여행자로부터 알아보세요.</p>
+<div class="testimonial-box">
+<p class="testimonial-text">"이집트에서 적절한 옷차림을 해야 할지 걱정이 되었지만 여행 전 안내가 매우 귀중했습니다. 헐렁한 바지, 긴팔 상의, 가벼운 스카프를 챙기니 편안하고 문화적으로 적절했습니다. 문화적 맥락을 통해 단정한 옷차림이 왜 중요한지 이해하는 데 도움이 되었고, 현지인들로부터도 긍정적인 반응을 얻었습니다. 사진 촬영에 적합한 복장 덕분에 촬영하는 동안 편안하게 움직일 수 있었습니다."</p>
+<div class="testimonial-author-info">
+<h4>케이트 M.</h4>
+<p>개인 여행자, 호주 - 2025년 12월</p>
 </div>
 </div>
+<div class="testimonial-box">
+<p class="testimonial-text">"드레스 코드 지침은 정확했습니다. 단정한 옷을 챙기는 것은 문화적 존중을 보여주었고 현지인들로부터 긍정적인 반응을 얻었습니다. 가벼운 스카프는 모스크 방문에 필수적이었습니다. 사진 촬영에 적합한 복장은 촬영하는 동안 편안하게 움직일 수 있게 해주었습니다. 문화적 맥락은 단정한 복장이 왜 중요한지 이해하는 데 도움이 되었고 여행 내내 편안함을 느꼈습니다."</p>
+<div class="testimonial-author-info">
+<h4>소피 L.</h4>
+<p>여행 사진작가, 프랑스 — 2026년 1월</p>
 </div>
 </div>
-<div class="tour-integration">
-<h3>여성 친화적인 이집트 투어</h3>
-<p>우리가 제공하는 모든 투어에는 문화 오리엔테이션, 복장 규정 안내, 여성 가이드 옵션이 포함되어 있습니다. 가장 인기 있는 여성 중심 옵션은 다음과 같습니다.</p>
-<div class="tour-recommendation">
-<h4><a href="https://egyptphotographytours.com/tour-pyramids-private">개인 피라미드 &amp; 스핑크스 사진 투어</a></h4>
-<p><strong>여성의 특징:</strong>여성 가이드 옵션, 여행 전 복장 규정 상담, 단정하면서도 사진에 잘 어울리는 복장 안내, 문화적 몰입을 위한 유연한 속도, 현지 관습을 존중하는 사진 촬영 팁.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="https://egyptphotographytours.com/tour-cairo-giza-2day">2일 몰입형 카이로 &amp; 기자 투어</a></h4>
-<p><strong>여성의 특징:</strong>문화 오리엔테이션 세션, 장소별 복장 안내, 여성 가이드 코디 옵션, 계절별 간단한 짐 목록, 체험 중 실시간 문화 탐색 지원.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="https://egyptphotographytours.com/tour-alexandria">카이로에서 출발하는 알렉산드리아 당일 여행</a></h4>
-<p><strong>여성의 특징:</strong>해안 복장 안내, 지중해 문화 상황, 여성 가이드 옵션, 겸손하면서도 세련된 짐 꾸리기 팁, 현지 관습을 존중하는 사진 촬영 지원.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="https://egyptphotographytours.com/tour-egypt-discovery-7day">7일 이집트 디스커버리 투어</a></h4>
-<p><strong>여성의 특징:</strong>종합적인 문화 오리엔테이션, 여러 지역의 복장 안내, 여성 가이드 가용성, 다양한 기후에 맞는 다양한 짐 목록, 여성 중심의 문화 몰입 경험.</p>
-</div>
-<div class="tour-recommendation">
-<h4><a href="https://www.egyptphotographytours.com/female-solo-tours">여성 전용 소그룹 투어</a></h4>
-<p><strong>여성의 특징:</strong>소규모 여성 여행자 그룹, 여성 가이드 리더십, 문화 탐색 지원, 겸손한 패션 팁, 같은 생각을 가진 여행자와의 커뮤니티 구축.</p>
-</div>
-<div style="text-align: center; margin-top: 40px;">
-<a class="cta-button" href="https://egyptphotographytours.com/tours">모든 여성 친화적인 이집트 투어 보기</a>
+<div class="testimonial-box">
+<p class="testimonial-text">"복장 규정 지침은 매우 귀중했습니다. 정숙한 옷을 챙기는 것은 문화적 존중을 보여주었고 현지인들로부터 긍정적인 반응을 얻었습니다. 모스크 방문에는 가벼운 스카프가 필수였습니다. 사진 촬영에 적합한 복장 덕분에 촬영하는 동안 편안하게 움직일 수 있었습니다. 문화적 맥락은 정숙한 복장이 왜 중요한지 이해하는 데 도움이 되었고 여행 내내 편안함을 느꼈습니다."</p>
+<div class="testimonial-author-info">
+<h4>아나 L.</h4>
+<p>개인 여행자, 스페인 - 2025년 11월</p>
 </div>
 </div>
-<h2>7장: 최종 복장 규정 준비 체크리스트</h2>
-<p>이 검증된 체크리스트를 사용하여 이집트 여성으로서 자신감 있고 존중하며 편안한 여행을 보장하세요.</p>
-<div class="dress-checklist">
-<h4>여행 4~6주 전</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>문화적 맥락과 위치별 복장 기대치를 조사합니다.</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>Egypt Photography Tours의 계절별 짐 꾸리기 목록을 검토하세요.</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>다재다능하고 소박한 제품을 쇼핑하세요: 루즈한 상의, 무릎 아래 하의, 가벼운 스카프</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>따뜻한 날씨에 통기성과 편안함을 테스트하는 원단</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>문화 내비게이션 지원을 원하는 경우 여성 가이드 옵션을 확인하세요.</div></div>
-<h4>여행 2~3주 전</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>머리 커버, 자외선 차단, 스타일링을 위한 다용도 스카프(2-3개)를 준비하세요.</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>리조트나 나일강 크루즈를 방문하는 경우 단정한 수영복을 준비하세요.</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>정숙한 복장에 어울리는 편안한 운동화를 포함하세요</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>자외선 차단 팩: 챙이 넓은 모자, UV 선글라스, SPF 50+ 자외선 차단제</div></div>
-<h4>여행 1주일 전</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>종교적인 장소 복장 요구 사항을 검토합니다. 모스크용 경량 스카프를 준비하세요</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>이집트 사진 투어로 모든 예약을 확인하세요</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>현지 여성과 소통하기 위한 문화적 호기심 질문 준비</div></div>
-<h4>여행 중 매일</h4>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>공공장소에서는 단정한 옷차림을 하십시오: 어깨/무릎을 가리고 헐렁한 천을 입으십시오.</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>자발적인 모스크 방문이나 자외선 차단을 위해 가벼운 스카프를 휴대하세요.</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>상황별 단서를 찾기 위해 현지 여성의 복장을 관찰하세요.</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>문화적 호기심을 포용하세요. 현지 패션에 대해 정중하게 질문하세요.</div></div>
-<div class="checklist-item"><i class="fas fa-check-circle"></i> <div>기억하세요: 정숙한 옷차림은 제한이 아니라 존중에 관한 것입니다. 자신감 있게 이집트를 즐겨보세요!</div></div>
+<div class="callout callout-dark">
+<h3>왜 문화 안내와 함께 투어를 예약해야 할까요?</h3>
+<ul>
+<li><strong>문화적 맥락:</strong>우리는 복장 규정에 대한 문화적 맥락을 제공하므로 정숙한 복장이 중요한 이유와 적절한 복장 방법을 이해할 수 있습니다.</li>
+<li><strong>포장 지침:</strong>우리는 다양한 상황과 위치에 맞게 무엇을 포장해야 하는지 알 수 있도록 포장 지침을 제공합니다.</li>
+<li><strong>사진 촬영에 적합한 복장:</strong>촬영 시 편안한 움직임이 가능한 사진 친화적인 복장을 권장합니다.</li>
+</ul>
 </div>
-<!-- CONTACT FORM SECTION -->
-<section aria-labelledby="custom-h2-form" class="section section-accent" id="customize-trip">
-<div class="container">
+<h2 id="tours">7장: 문화 지도가 포함된 투어</h2>
+<p>우리가 제공하는 모든 투어에는 복장 규정에 대한 문화적 안내와 맥락이 포함되어 있습니다. 전체 찾아보기<a href="/ko/tours.html">투어 컬렉션</a>.</p>
+<div class="tour-rec-grid">
+<div class="tour-rec">
+<span class="rec-badge">가장 인기있는</span>
+<h4><a href="/ko/tour-pyramids-private.html">개인 피라미드 &amp; 스핑크스 사진 투어</a></h4>
+<p><strong>문화 지도:</strong>피라미드 및 모스크 방문을 위한 복장 규정 지침, 단정한 복장에 대한 문화적 맥락, 사진 촬영에 적합한 복장 권장 사항.</p>
+<a class="tour-rec-cta" href="/ko/tour-pyramids-private.html">이 투어 보기<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
+</div>
+<div class="tour-rec">
+<h4><a href="/ko/tour-cairo-giza-2day.html">2일 몰입형 카이로 &amp; 기자 투어</a></h4>
+<p><strong>문화 지도:</strong>카이로 시장, 모스크 및 관광 지역에 대한 복장 규정 지침, 단정한 복장에 대한 문화적 맥락 및 사진 촬영에 적합한 복장 권장 사항.</p>
+<a class="tour-rec-cta" href="/ko/tour-cairo-giza-2day.html">이 투어 보기<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
+</div>
+<div class="tour-rec">
+<h4><a href="/ko/tour-egypt-discovery-7day.html">7일 이집트 디스커버리 투어</a></h4>
+<p><strong>문화 지도:</strong>카이로, 룩소르, 아스완의 복장 규정, 다양한 지역의 문화적 맥락, 사진 촬영에 적합한 복장 권장 사항.</p>
+<a class="tour-rec-cta" href="/ko/tour-egypt-discovery-7day.html">이 투어 보기<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
+</div>
+<div class="tour-rec">
+<h4><a href="/ko/tour-alexandria.html">카이로에서 출발하는 알렉산드리아 당일 여행</a></h4>
+<p><strong>문화 지도:</strong>알렉산드리아 및 모스크 방문을 위한 복장 규정 지침, 단정한 복장에 대한 문화적 맥락, 사진 촬영에 적합한 복장 권장 사항.</p>
+<a class="tour-rec-cta" href="/ko/tour-alexandria.html">이 투어 보기<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
+</div>
+<div class="tour-rec">
+<h4><a href="/ko/family-tours.html">가족 사진 투어</a></h4>
+<p><strong>문화 지도:</strong>가족을 위한 복장 규정 지침, 단정한 복장에 대한 문화적 맥락, 모든 연령대를 위한 사진 촬영에 적합한 복장 권장 사항.</p>
+<a class="tour-rec-cta" href="/ko/family-tours.html">이 투어 보기<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
+</div>
+<div class="tour-rec">
+<h4><a href="/ko/honeymoon-tours.html">럭셔리 이집트 허니문 투어</a></h4>
+<p><strong>문화 지도:</strong>럭셔리한 경험을 위한 복장 규정 지침, 단정한 복장을 위한 문화적 맥락, 사진 촬영에 적합한 복장 권장 사항.</p>
+<a class="tour-rec-cta" href="/ko/honeymoon-tours.html">이 투어 보기<i aria-hidden="true" class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<h2 id="faq">8장: 자주 묻는 질문</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>이집트 여성의 복장 규정은 무엇입니까?</summary>
+<div class="faq-answer">이집트는 보수적인 이슬람 국가이지만 복장 규정은 위치와 상황에 따라 다릅니다. 현지 여성들은 일반적으로 어깨와 무릎을 덮는 단정한 옷을 입습니다. 관광 여성은 유연성이 더 높지만 정숙한 옷차림을 해야 합니다. 즉, 어깨를 가리고, 짧은 반바지/짧은 치마를 피하고, 모스크 방문 시 가벼운 스카프를 착용해야 합니다. 관광 지역에서는 복장 규정이 좀 더 편안하지만 단정한 복장은 문화적 존중을 보여주고 원치 않는 관심을 줄여줍니다.</div>
+</details>
+<details class="faq-item">
+<summary>이집트에서는 관광객들이 머리를 가려야 합니까?</summary>
+<div class="faq-answer">아니요, 일반적으로 관광객 여성은 머리를 가릴 필요가 없습니다. 그러나 모스크에 들어갈 때는 머리를 가리는 것이 필요합니다. 필요할 때 쉽게 묶을 수 있는 가벼운 스카프(면 또는 리넨)를 휴대하세요. 보수적인 지역이나 시골 마을에서는 일부 현지 여성들이 머리를 가리기도 하지만, 관광객들은 종교적인 장소에 들어가지 않는 한 머리를 가리지 않아야 합니다.</div>
+</details>
+<details class="faq-item">
+<summary>이집트 모스크에 여자들은 어떤 옷을 입어야 할까요?</summary>
+<div class="faq-answer">모스크를 방문할 때 여성은 머리, 어깨, 팔, 다리를 가려야 합니다. 긴 바지나 맥시 스커트, 긴 소매 상의를 착용하고 머리를 덮을 수 있는 가벼운 스카프를 가져오세요. 일부 모스크에서는 스카프를 제공하지만 직접 가져오는 것이 가장 좋습니다. 기도 장소에 들어가기 전에 신발을 벗으십시오. 종교적 관습에 대한 존중을 나타내기 위해 정숙한 옷차림을 하십시오.</div>
+</details>
+<details class="faq-item">
+<summary>이집트에서는 여자들이 반바지를 입을 수 있나요?</summary>
+<div class="faq-answer">리조트, 해변, 관광지 등 관광지에서는 여성도 반바지를 입을 수 있습니다. 그러나 도시, 시장, 농촌 지역 및 종교적인 장소에서는 반바지가 부적절한 것으로 간주됩니다. 모범 사례: 도시에서는 헐렁한 바지, 맥시 스커트 또는 무릎 길이의 반바지를 입으세요. 해변과 리조트에서는 반바지가 허용됩니다. 의심스러우면 문화적 존중을 보여주기 위해 좀 더 정숙한 옷을 입으십시오.</div>
+</details>
+<details class="faq-item">
+<summary>이집트의 현지 복장과 관광객 복장 기대치의 차이점은 무엇입니까?</summary>
+<div class="faq-answer">현지 여성들은 일반적으로 어깨, 팔, 무릎을 가리고 머리 스카프를 착용하는 등 좀 더 보수적으로 옷을 입습니다. 관광 여성들은 유연성이 더 뛰어나지만 여전히 정숙한 옷차림을 해야 합니다. 관광 지역에서는 현지인들이 관광객들이 다소 정숙한 옷차림을 하기를 기대하지만 서양식 복장에는 더 관대합니다. 정숙한 옷차림은 문화적 존중을 보여주고, 원치 않는 관심을 줄이며, 지역 관습에 대한 감사를 표시합니다.</div>
+</details>
+<details class="faq-item">
+<summary>이집트에 갈 때 여자들은 무엇을 챙겨야 할까요?</summary>
+<div class="faq-answer">필수 품목: 가벼운 긴팔 상의, 헐렁한 바지 또는 맥시 스커트, 모스크용 가벼운 스카프, 편안한 운동화, 자외선 차단을 위한 선글라스 및 모자. 현지인들과 잘 어울리는 뉴트럴 컬러(베이지, 네이비, 블랙)를 준비하세요. 노출이 심한 옷, 짧은 반바지, 탱크탑은 피하세요. 해변/리조트를 위한 적당한 수영복을 준비하세요. 온도 변화에 대비한 옷을 가져오세요.</div>
+</details>
+</div>
+<h2>이집트 사진 투어 블로그 관련 읽기</h2>
+<p>우리의 더 많은 가이드와 함께 이집트 모험을 계속 계획하세요<a href="/ko/blog.html">이집트 여행 블로그</a>:</p>
+<div class="related-guides-grid">
+<div class="related-guide-card">
+<h4><a href="/ko/egypt-packing-list-2026.html">2026년 최고의 이집트 짐싸기 목록</a></h4>
+<p>이집트 여행을 위해 무엇을 준비해야 할까요? 의류, 카메라 장비, 자외선 차단제, 문화 필수품.</p>
+<a class="read-more" href="/ko/egypt-packing-list-2026.html">가이드 읽기 →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/ko/egypt-sim-card-internet-wifi-guide-2026.html">이집트 SIM 카드 및 인터넷 가이드 2026</a></h4>
+<p>이집트 여행을 위한 SIM 카드, 인터넷 속도 및 연결 옵션에 대한 완벽한 가이드입니다.</p>
+<a class="read-more" href="/ko/egypt-sim-card-internet-wifi-guide-2026.html">가이드 읽기 →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/ko/is-egypt-safe-to-visit-2026-guide.html">이집트는 방문하기에 안전한가요? 2026년 가이드</a></h4>
+<p>실용적인 팁과 전문가의 조언이 포함된 2026년 이집트를 방문하는 여행자를 위한 완벽한 안전 개요입니다.</p>
+<a class="read-more" href="/ko/is-egypt-safe-to-visit-2026-guide.html">가이드 읽기 →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/ko/egypt-transportation-guide-2026.html">이집트 교통 가이드 2026</a></h4>
+<p>국내선, 침대 열차, 나일강 크루즈 및 개인 교통편에 대한 가이드를 사용하여 이집트를 쉽게 여행하세요.</p>
+<a class="read-more" href="/ko/egypt-transportation-guide-2026.html">가이드 읽기 →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/ko/egyptian-food-guide-2026.html">이집트 음식 가이드 2026</a></h4>
+<p>여행자를 위한 전통 요리, 길거리 음식, 디저트 및 안전한 식사 팁을 살펴보세요.</p>
+<a class="read-more" href="/ko/egyptian-food-guide-2026.html">가이드 읽기 →</a>
+</div>
+<div class="related-guide-card">
+<h4><a href="/ko/best-time-to-visit-egypt-2026-guide.html">2026년 이집트를 방문하기 가장 좋은 시기</a></h4>
+<p>이집트를 방문하기 가장 좋은 달, 계절별 기온 변화 및 여행 계획 방법을 알아보세요.</p>
+<a class="read-more" href="/ko/best-time-to-visit-egypt-2026-guide.html">가이드 읽기 →</a>
+</div>
+</div>
+<div style="text-align:center;margin-top:28px">
+<a class="btn btn-outline-dark" href="/ko/blog.html"><i aria-hidden="true" class="fas fa-blog"></i>모든 이집트 여행 가이드 찾아보기</a>
+</div>
+<section aria-labelledby="custom-h2-form" class="section section-accent" id="customize-trip" style="border-radius:15px;border:2px solid var(--c-gold);margin:50px 0 0">
+<div class="wrap">
 <div class="text-c">
-<h2 id="custom-h2-form" style="color: #fff;">완벽한 이집트 투어를 맞춤화하세요</h2>
-<p style="color:rgba(255,255,255,.85); max-width:660px; margin:12px auto 0;">당신이 꿈꾸는 이집트 경험을 알려주시면 2시간 이내에 완전히 맞춤화된 여행 일정을 만들어 드리겠습니다. 개인, 그룹, 사진 또는 역사 기록 – 전적으로 귀하에게 맞춤화되었습니다.</p>
+<div class="eyebrow">이집트 여행을 디자인해보세요</div>
+<h2 id="custom-h2-form">이집트 여행 계획하기</h2>
+<p class="sec-sub">여행 날짜와 사진 촬영 목표를 알려주시면 문화 안내, 복장 규정 추천, 사진 촬영에 적합한 위치 추천 등이 포함된 완전히 맞춤화된 여행 일정을 2시간 이내에 만들어 드립니다.</p>
 </div>
 <div class="trip-builder">
 <div class="trip-form-box">
-<h3 style="color:var(--primary-dark);margin-bottom:20px;font-size:20px">여행 요청 보내기</h3>
+<h3 style="color:var(--c-dark);margin-bottom:20px;font-size:20px">투어 요청 보내기</h3>
 <form aria-label="Custom Egypt tour request form" id="contactForm" novalidate="">
 <div class="form-row-2">
 <div class="form-row">
@@ -1692,13 +919,10 @@ body {
 <label class="form-label" for="f-type">투어 종류</label>
 <select class="form-select" id="f-type" name="tour_type">
 <option value="">투어 유형 선택…</option>
-<option value="private-historical">개인 역사 투어</option>
-<option value="private-photography">개인 사진 투어</option>
-<option value="group">그룹 투어</option>
-<option value="pyramids-photoshoot">피라미드 사진 촬영</option>
-<option value="honeymoon">허니문/로맨스</option>
+<option value="photography-tour">사진 투어</option>
+<option value="private-tour">프라이빗 투어</option>
 <option value="family">가족여행</option>
-<option value="luxury">럭셔리 올인클루시브</option>
+<option value="honeymoon">허니문 투어</option>
 <option value="custom">완전 맞춤형</option>
 </select>
 </div>
@@ -1717,409 +941,196 @@ body {
 </div>
 <div class="form-row">
 <label class="form-label" for="f-destinations">관심 목적지</label>
-<input class="form-input" id="f-destinations" name="destinations" placeholder="e.g. Cairo, Giza Pyramids, Luxor, Aswan…" type="text"/>
+<input class="form-input" id="f-destinations" name="destinations" placeholder="e.g. Cairo, Luxor, Aswan, Alexandria…" type="text"/>
 </div>
 <div class="form-row">
 <label class="form-label" for="f-dates">대략적인 여행 날짜</label>
-<input class="form-input" id="f-dates" name="dates" placeholder="e.g. March, flexible, 2 weeks from now…" type="text"/>
+<input class="form-input" id="f-dates" name="dates" placeholder="e.g. March, flexible, 3 months from now…" type="text"/>
 </div>
 <div class="form-row">
-<label class="form-label" for="f-message">당신의 꿈의 이집트 체험<span class="form-req">*</span></label>
-<textarea class="form-textarea" id="f-message" name="message" placeholder="Tell us what you'd love to see, do and experience in Egypt. We'll design the perfect itinerary for you within 2 hours…" required=""></textarea>
+<label class="form-label" for="f-message">여행 목표<span class="form-req">*</span></label>
+<textarea class="form-textarea" id="f-message" name="message" placeholder="Tell us your travel goals and photography interests. We'll design the perfect itinerary within 2 hours…" required=""></textarea>
 </div>
 <div class="cf-turnstile" data-sitekey="0x4AAAAAADksi_3_nH-4QjMP" data-size="normal" data-theme="dark" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
-<button class="form-submit" type="submit"><i class="fas fa-paper-plane"></i>내 여행 요청 보내기</button>
+<button class="form-submit" type="submit"><i class="fas fa-paper-plane"></i>내 투어 요청 보내기</button>
 <div id="form-status" style="margin-top:15px; text-align:center; font-size:0.9rem; color: #fff;"></div>
 </form>
 </div>
 <div class="trip-contacts">
 <div class="contact-card">
-<span class="contact-card-icon">💬</span>
+<span aria-hidden="true" class="contact-card-icon">💬</span>
 <h3>지금 WhatsApp에 우리를 보내세요</h3>
 <p>이집트 여행을 계획하는 가장 빠른 방법. 카이로 시간으로 주 7일, 오전 8시~오후 10시 2시간 이내에 답변해 드립니다.</p>
-<a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20a%20custom%20Egypt%20tour." rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:12px;background:#25D366;color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700" target="_blank">
+<a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20plan%20an%20Egypt%20tour." rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:12px" target="_blank">
 <i class="fab fa-whatsapp"></i>WhatsApp에서 채팅</a>
-<p style="font-size:13px;color:#6b7280;text-align:center">+20 155 073 5673</p>
+<p style="font-size:13px;color:var(--c-muted);text-align:center">+20 155 073 5673</p>
 </div>
-<div class="contact-card" style="border-top:4px solid var(--accent-light)">
-<span class="contact-card-icon">✉️</span>
+<div class="contact-card" style="border-top:4px solid var(--c-gold)">
+<span aria-hidden="true" class="contact-card-icon">✉️</span>
 <h3>우리 팀에 이메일을 보내세요</h3>
-<p>이메일을 선호하시나요? 당신이 꿈꾸던 이집트 여행 일정을 보내주시면 24시간 이내에 맞춤 견적 전체를 보내드리겠습니다.</p>
-<a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" style="width:100%;justify-content:center;margin-bottom:12px;background:var(--primary-dark);color:white;border-radius:30px;padding:16px;text-decoration:none;font-weight:700">
+<p>이메일을 선호하시나요? 여행 목표를 보내주시면 24시간 이내에 맞춤 견적 전체를 보내드리겠습니다.</p>
+<a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Custom%20Egypt%20Tour%20Request" style="width:100%;justify-content:center;margin-bottom:12px">
 <i class="far fa-envelope"></i>이메일 보내기</a>
-<p style="font-size:13px;color:#6b7280;text-align:center">info@egyptphotographytours.com</p>
+<p style="font-size:13px;color:var(--c-muted);text-align:center">info@egyptphotographytours.com</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- TEXT-ONLY RELATED ARTICLES -->
-<h2>이집트 사진 투어 블로그 관련 읽기</h2>
-<p>우리의 더 많은 가이드와 함께 이집트 모험을 계속 계획하세요<a href="/ko/blog">이집트 여행 블로그</a>:</p>
-<div class="related-guides-grid">
-<div class="related-guide-card">
-<h4><a href="/ko/egypt-packing-list-2026.html">2026년 최고의 이집트 짐싸기 목록</a></h4>
-<p>사원을 위한 단정한 의복, 사막 장비, 사진 장비 보호를 포함하여 이집트를 위해 준비해야 할 것.</p>
-<a class="read-more" href="/ko/egypt-packing-list-2026.html">가이드 읽기 →</a>
-</div>
-<div class="related-guide-card">
-<h4><a href="/ko/solo-female-egypt-safety-report-real-data-2026.html">솔로 여성 이집트 안전 보고서</a></h4>
-<p>이집트를 혼자 여행하는 여성을 위한 안전, 문화 예절, 복장 규정 등 실제 데이터와 실용적인 팁을 소개합니다.</p>
-<a class="read-more" href="/ko/solo-female-egypt-safety-report-real-data-2026.html">가이드 읽기 →</a>
-</div>
-<div class="related-guide-card">
-<h4><a href="/ko/egypt-weather-guide-best-time-to-visit.html">이집트 날씨 가이드: 방문하기 가장 좋은 시기</a></h4>
-<p>이집트를 방문하기 가장 좋은 달, 계절별 기온 변화, 극심한 여름 더위를 피하는 방법을 알아보세요.</p>
-<a class="read-more" href="/ko/egypt-weather-guide-best-time-to-visit.html">가이드 읽기 →</a>
-</div>
-<div class="related-guide-card">
-<h4><a href="/ko/scams-in-egypt-how-to-avoid-guide-2026.html">이집트의 사기: 피하는 방법</a></h4>
-<p>안전하고 즐거운 여행을 보장하기 위해 이집트에서 흔히 발생하는 관광 사기를 식별하고 방지하는 방법을 알아보세요.</p>
-<a class="read-more" href="/ko/scams-in-egypt-how-to-avoid-guide-2026.html">가이드 읽기 →</a>
-</div>
-<div class="related-guide-card">
-<h4><a href="/ko/egyptian-food-guide-2026.html">이집트 음식 가이드 2026</a></h4>
-<p>최고의 이집트 요리, 길거리 음식 안전, 그리고 전국 최고의 현지 요리를 찾을 수 있는 곳을 알아보세요.</p>
-<a class="read-more" href="/ko/egyptian-food-guide-2026.html">가이드 읽기 →</a>
-</div>
-<div class="related-guide-card">
-<h4><a href="/ko/egypt-transportation-guide-2026.html">이집트 교통 가이드 2026</a></h4>
-<p>국내선, 침대 열차, 나일강 크루즈 및 개인 교통편에 대한 가이드를 사용하여 이집트를 쉽게 탐색하세요.</p>
-<a class="read-more" href="/ko/egypt-transportation-guide-2026.html">가이드 읽기 →</a>
-</div>
-</div>
-<div style="text-align:center;margin-top:28px">
-<a class="cta-button" href="/ko/blog" style="background: transparent; border: 2px solid var(--accent-light); color: var(--accent-light);">모든 이집트 여행 가이드 찾아보기</a>
-</div>
-<div class="cta-section">
-<h2>여자로서 자신있게 이집트 여행하기</h2>
-<p>이집트의 복장 규정을 이해하는 것은 제한이 아니라 연결에 관한 것입니다. 정중하게 옷을 입으면 현지 문화를 존중하고 불필요한 관심을 줄이며 진정한 경험의 문을 열 수 있습니다. 실용적인 준비, 문화적 호기심, 전문가의 지원을 통해 자신감 있고 편안하며 의미 있게 이집트의 경이로움을 탐험할 수 있습니다.</p>
-<p>이집트 사진 투어는 문화 오리엔테이션, 복장 규정 안내, 여성 가이드 옵션, 다양한 짐 꾸리기 전략 등 포괄적인 여성 여행 지원을 제공합니다. 모험에 집중하는 동안 문화 탐색을 처리해 보세요.</p>
-<a class="cta-button" href="https://egyptphotographytours.com/contact">자신감 넘치는 이집트 모험 계획을 시작하세요</a>
-</div>
+<section class="section section-gold">
+<div class="wrap text-c">
+<div class="eyebrow" style="background:rgba(26,32,44,.12);color:#1a202c;border-color:rgba(26,32,44,.2)">정중하게 옷을 입고 진정성 있게 경험하세요</div>
+<h2 style="color:var(--c-dark)">문화적 존중을 바탕으로 이집트를 경험해보세요</h2>
+<p class="sec-sub" style="color:rgba(26,32,44,.82)">현지인과 관광객의 복장 기대치를 이해하고 적절하게 옷을 입음으로써 문화적 존중을 보여주고 이집트 경험을 향상시킬 수 있습니다. 문화적인 이해를 보여주면서 적절하게 옷을 입을 수 있도록 문화적 지도와 맥락을 제공하겠습니다.</p>
+<div class="btn-group mt-32" style="justify-content:center">
+<a class="btn btn-dark btn-lg" href="/ko/contact.html"><i aria-hidden="true" class="fas fa-map-marked-alt"></i>이집트 여행 계획하기</a>
+<a class="btn btn-outline-dark btn-lg" href="/ko/tours.html"><i aria-hidden="true" class="fas fa-eye"></i>모든 패키지 보기</a>
 </div>
 </div>
 </section>
-</main>
-<div aria-label="Back to top" class="back-to-top" id="backToTop" role="button" tabindex="0">
-<i class="fas fa-chevron-up"></i>
+<footer aria-label="Site footer" class="footer">
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<a aria-label="Egypt Photography Tours - Go to Homepage" class="logo" href="/ko/" style="margin-bottom:14px">
+<span aria-hidden="true" class="logo-mark"><i class="fas fa-camera-retro"></i></span>
+<div class="logo-copy"><span class="logo-name">이집트 사진 투어</span><span class="logo-tag">2015년부터 개인 및 그룹 투어</span></div>
+</a>
+<p class="f-brand-desc">2015년부터 이집트 최고의 사진 중심 여행사입니다. 문화를 마스터하고 순간을 포착하세요. 문화 안내, 복장 규정 추천, 사진 촬영에 적합한 위치 추천을 제공합니다.</p>
+<div class="social-row">
+<a aria-label="Facebook" class="social-btn" href="https://www.facebook.com/egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-facebook"></i></a>
+<a aria-label="Instagram" class="social-btn" href="https://www.instagram.com/hossam_artistic/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+<a aria-label="TikTok" class="social-btn" href="https://www.tiktok.com/@egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-tiktok"></i></a>
+<a aria-label="YouTube" class="social-btn" href="https://www.youtube.com/@Egyptphotographytours" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+<a aria-label="WhatsApp" class="social-btn" href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
 </div>
-<div aria-labelledby="cookie-title" class="cookie-consent" id="cookieConsent" role="dialog">
-<p id="cookie-title"><strong>우리는 쿠키를 사용합니다</strong>경험을 향상하고 트래픽을 분석합니다. 계속하면 다음 내용에 동의하게 됩니다.<a href="/ko/privacy-policy.html" style="color:var(--accent-light);text-decoration:underline">개인 정보 보호 정책</a>.</p>
-<button aria-label="Accept cookies" id="acceptCookies">수락</button>
 </div>
-<footer class="footer">
-<div class="container footer-content">
-<div class="footer-brand">
-<h3 class="footer-title">이집트 사진 투어</h3>
-<p class="footer-text">© <script>document.write(new Date().getFullYear())</script>이집트 사진 투어.</p>
-<p class="footer-text">모든 권리 보유.</p>
-<p class="footer-text">문화를 마스터하고 순간을 포착하세요.</p>
-</div>
-<div class="footer-section">
-<h4 class="footer-title">빠른 링크</h4>
-<ul class="footer-links">
-<li><a href="/ko/index.html">홈</a></li>
-<li><a href="/ko/about.html">회사 소개</a></li>
-<li><a href="https://egyptphotographytours.com/tours">우리의 투어</a></li>
-<li><a href="/ko/gallery.html">갤러리</a></li>
-<li><a href="/ko/resources.html">자원</a></li>
-<li><a href="/ko/blog.html">블로그</a></li>
-<li><a href="https://egyptphotographytours.com/contact">문의하기</a></li>
-<li><a href="/ko/faqs.html">자주 묻는 질문</a></li>
-<li><a href="/ko/privacy-policy.html">개인 정보 보호 정책</a></li>
-<li><a href="/ko/terms-of-service.html">서비스 약관</a></li>
+<div>
+<h3 class="f-h">투어 패키지</h3>
+<ul class="f-links">
+<li><a href="/ko/tour-pyramids-private.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>피라미드 사진 촬영</a></li>
+<li><a href="/ko/tour-cairo-giza-2day.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>카이로 &amp; 기자 2일</a></li>
+<li><a href="/ko/tour-alexandria.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>알렉산드리아 당일 여행</a></li>
+<li><a href="/ko/tour-egypt-discovery-7day.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>7일 탐색</a></li>
+<li><a href="/ko/tours.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>모든 패키지</a></li>
 </ul>
 </div>
-<div class="footer-section">
-<h4 class="footer-title">우리와 연결</h4>
-<p class="footer-text">주소: Abou Elhool, Nazlet El-Samman, Elsamman, Giza, Giza Governorate 12557</p>
-<div class="footer-contact">
-<a class="footer-contact-info" href="https://wa.me/201550735673" rel="noopener" target="_blank">
-<i class="fab fa-whatsapp contact-icon"></i>+20 155 073 5673</a>
-<a class="footer-contact-info" href="mailto:info@egyptphotographytours.com">
-<i class="far fa-envelope contact-icon"></i>info@egyptphotographytours.com</a>
+<div>
+<h3 class="f-h">자원</h3>
+<ul class="f-links">
+<li><a href="/ko/blog.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>여행 블로그</a></li>
+<li><a href="/ko/resources.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>여행 가이드</a></li>
+<li><a href="/ko/faqs.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>자주 묻는 질문</a></li>
+<li><a href="/ko/gallery.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>포토갤러리</a></li>
+<li><a href="/ko/contact.html"><i aria-hidden="true" class="fas fa-chevron-right"></i>예약 정보</a></li>
+</ul>
 </div>
-<div class="social-links">
-<a aria-label="Facebook" href="https://www.facebook.com/EgyptPhotographyTours"><i class="fab fa-facebook-f"></i></a>
-<a aria-label="Instagram" href="https://www.instagram.com/hossam_artistic/"><i class="fab fa-instagram"></i></a>
-<a aria-label="TikTok" href="https://www.tiktok.com/@egyptphotographytours"><i class="fab fa-tiktok"></i></a>
-<a aria-label="YouTube" href="https://www.youtube.com/@Egyptphotographytours"><i class="fab fa-youtube"></i></a>
+<div>
+<h3 class="f-h">문의하기</h3>
+<div class="f-contact-r">
+<a href="https://wa.me/201550735673" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i><span>+20 155 073 5673</span></a>
+<a href="tel:+201550735673"><i aria-hidden="true" class="fas fa-phone"></i><span>+20 155 073 5673</span></a>
+<a href="mailto:info@egyptphotographytours.com"><i aria-hidden="true" class="far fa-envelope"></i><span>info@egyptphotographytours.com</span></a>
+<div><i aria-hidden="true" class="fas fa-map-marker-alt"></i><span>아부 엘훌(Abou Elhool), 나즐렛 엘삼만(Nazlet El-Samman), 기자</span></div>
 </div>
 </div>
 <div class="footer-map">
-<iframe allowfullscreen="" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311399999995!3d29.974968799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" style="border:0;" title="Egypt Photography Tours Location Map" width="600"></iframe>
+<iframe allowfullscreen="" height="250" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.155225254349!2d31.141311399999995!3d29.974968799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145845f3c5f04d6b%3A0x307e74f9f6668518!2sEgypt%20Photography%20Tours!5e0!3m2!1sen!2seg!4v1760293165082!5m2!1sen!2seg" style="border:0" title="Egypt Photography Tours Location Map" width="100%"></iframe>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2015–<span id="yr">2026년</span>이집트 사진 투어. 모든 권리 보유.</p>
+<div class="f-legal">
+<a href="/ko/privacy-policy.html">개인 정보 보호 정책</a>
+<a href="/ko/return-policy.html">반품 정책</a>
+<a href="/ko/terms-of-service.html">이용약관</a>
+<a href="/ko/sitemap.xml">사이트맵</a>
+</div>
 </div>
 </div>
 </footer>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const menuIcon = mobileMenuToggle?.querySelector('i');
-
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            if (menuIcon) {
-                menuIcon.classList.toggle('fa-bars');
-                menuIcon.classList.toggle('fa-times');
-            }
-        });
-    }
-
-    document.querySelectorAll('.nav-link a').forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth < 768 && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                if (mobileMenuToggle && menuIcon) {
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
-            }
-        });
-    });
-
-    // Language switcher
-    const languageSwitcher = document.querySelector('.language-switcher');
-    if (languageSwitcher) {
-        const currentLanguage = languageSwitcher.querySelector('.current-language');
-        const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
-        const dropdownIcon = currentLanguage.querySelector('.dropdown-icon');
-
-        const toggleDropdown = () => {
-            const isActive = languageSwitcher.classList.toggle('active');
-            dropdownIcon.classList.toggle('fa-chevron-up', isActive);
-            dropdownIcon.classList.toggle('fa-chevron-down', !isActive);
-            currentLanguage.setAttribute('aria-expanded', isActive);
-        };
-
-        currentLanguage.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleDropdown();
-        });
-
-        currentLanguage.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleDropdown();
-            }
-            if (e.key === 'Escape') {
-                languageSwitcher.classList.remove('active');
-                dropdownIcon.classList.remove('fa-chevron-up');
-                dropdownIcon.classList.add('fa-chevron-down');
-                currentLanguage.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        document.addEventListener('click', function(e) {
-            if (!languageSwitcher.contains(e.target) && languageSwitcher.classList.contains('active')) {
-                languageSwitcher.classList.remove('active');
-                dropdownIcon.classList.remove('fa-chevron-up');
-                dropdownIcon.classList.add('fa-chevron-down');
-                currentLanguage.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        languageDropdown.querySelectorAll('.language-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const flag = this.dataset.flag;
-                const lang = this.dataset.lang;
-
-                currentLanguage.querySelector('.current-flag').textContent = flag;
-                currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
-
-                languageSwitcher.classList.remove('active');
-                dropdownIcon.classList.remove('fa-chevron-up');
-                dropdownIcon.classList.add('fa-chevron-down');
-                currentLanguage.setAttribute('aria-expanded', 'false');
-
-                languageDropdown.querySelectorAll('.language-item').forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
-
-                const href = this.getAttribute('href');
-                if (href && !window.location.pathname.includes(href)) {
-                    window.location.href = href;
-                }
-            });
-        });
-
-        const currentPath = window.location.pathname;
-        let englishFound = false;
-        
-        languageDropdown.querySelectorAll('.language-item').forEach(item => {
-            const itemHref = item.getAttribute('href');
-            if (currentPath.includes(itemHref) ||
-                (currentPath.endsWith('egypt-dress-code-women-locals-vs-tourist-expectations-2026.html') &&
-                 itemHref?.includes('egypt-dress-code-women-locals-vs-tourist-expectations-2026.html') &&
-                 item.dataset.lang === 'en')) {
-                item.classList.add('active');
-                const flag = item.dataset.flag;
-                const lang = item.dataset.lang;
-                currentLanguage.querySelector('.current-flag').textContent = flag;
-                currentLanguage.querySelector('.current-text').textContent = lang.toUpperCase();
-                englishFound = true;
-            }
-        });
-        
-        if (!englishFound) {
-            const englishItem = languageDropdown.querySelector('[data-lang="en"]');
-            if (englishItem) {
-                englishItem.classList.add('active');
-                currentLanguage.querySelector('.current-flag').textContent = '🇺🇸';
-                currentLanguage.querySelector('.current-text').textContent = 'EN';
-            }
-        }
-    }
-
-    // Back to top
-    const backToTopButton = document.getElementById('backToTop');
-    const showBackToTopThreshold = 300;
-    
-    const handleScroll = () => {
-        if (window.pageYOffset > showBackToTopThreshold) {
-            backToTopButton?.classList.add('visible');
-        } else {
-            backToTopButton?.classList.remove('visible');
-        }
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        backToTopButton.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-    }
-
-    // Animate on scroll
-    if ('IntersectionObserver' in window) {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.info-card, .trust-card, .tour-recommendation, .review-card').forEach(card => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-            observer.observe(card);
-        });
-    }
-
-    // Cookie consent
-    const cookieConsent = document.getElementById('cookieConsent');
-    const acceptCookiesBtn = document.getElementById('acceptCookies');
-    
-    if (!localStorage.getItem('cookiesAccepted')) {
-        setTimeout(() => {
-            cookieConsent?.classList.add('visible');
-        }, 2000);
-    }
-    
-    if (acceptCookiesBtn) {
-        acceptCookiesBtn.addEventListener('click', () => {
-            localStorage.setItem('cookiesAccepted', 'true');
-            cookieConsent?.classList.remove('visible');
-        });
-    }
-
-    // Tour link tracking
-    const tourLinks = document.querySelectorAll('.tour-recommendation a, .cta-button, .book-now-button');
-    tourLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            console.log('Tour link clicked:', this.href);
-        });
-    });
-
-    // Cloudflare Worker Form Submission
-    const cfForm = document.getElementById('contactForm');
-    const cfStatus = document.getElementById('form-status');
-    const WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
-    if (cfForm) {
-        cfForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            cfStatus.innerHTML = 'Sending...';
-            cfStatus.style.color = '#fff';
-            const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
-            if (!turnstileToken) {
-                cfStatus.innerHTML = 'Please complete the security check.';
-                cfStatus.style.color = '#ff6b6b';
-                return;
-            }
-            const formData = new FormData(cfForm);
-            const payload = {
-                name: formData.get('name') || '',
-                email: formData.get('email') || '',
-                phone: formData.get('phone') || '',
-                subject: 'Custom Egypt Tour Request',
-                message: `Group Size: ${formData.get('group_size') || 'Not specified'}\nTour Type: ${formData.get('tour_type') || 'Not specified'}\nDuration: ${formData.get('duration') || 'Not specified'}\nDestinations: ${formData.get('destinations') || 'Not specified'}\nDates: ${formData.get('dates') || 'Not specified'}\nMessage: ${formData.get('message') || ''}`,
-                turnstileToken: turnstileToken
-            };
-            try {
-                const response = await fetch(WORKER_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                if (response.ok && result.success) {
-                    cfStatus.innerHTML = '✅ Message sent successfully! We will get back to you within 2 hours.';
-                    cfStatus.style.color = '#4ade80';
-                    cfForm.reset();
-                    if (typeof turnstile !== 'undefined') turnstile.reset();
-                } else {
-                    cfStatus.innerHTML = result.error || 'Something went wrong. Please try again.';
-                    cfStatus.style.color = '#ff6b6b';
-                }
-            } catch (err) {
-                cfStatus.innerHTML = 'Network error. Please check your connection.';
-                cfStatus.style.color = '#ff6b6b';
-                console.error(err);
-            }
-        });
-    }
+(function () {
+'use strict';
+var $ = function (s) { return document.querySelector(s); };
+var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var on = function (el, ev, fn, opt) { if (el) el.addEventListener(ev, fn, opt || false); };
+var hamburger = $('#hamburger'), hamIcon = $('#ham-icon'), mobileNav = $('#mobile-nav'), navOverlay = $('#nav-overlay'), siteHeader = $('#site-header'), navbar = $('#navbar'), isMenuOpen = false;
+function getTop() { return Math.round((siteHeader ? siteHeader.getBoundingClientRect().height : 60) + (navbar ? navbar.getBoundingClientRect().height : 56)); }
+function openMenu() { isMenuOpen = true; mobileNav.style.top = getTop() + 'px'; mobileNav.classList.add('is-open'); mobileNav.setAttribute('aria-hidden', 'false'); navOverlay.classList.add('is-open'); navOverlay.setAttribute('aria-hidden', 'false'); hamburger.setAttribute('aria-expanded', 'true'); hamIcon.className = 'fas fa-times'; document.body.style.overflow = 'hidden'; }
+function closeMenu() { isMenuOpen = false; mobileNav.classList.remove('is-open'); mobileNav.setAttribute('aria-hidden', 'true'); navOverlay.classList.remove('is-open'); navOverlay.setAttribute('aria-hidden', 'true'); hamburger.setAttribute('aria-expanded', 'false'); hamIcon.className = 'fas fa-bars'; document.body.style.overflow = ''; }
+on(hamburger, 'click', function () { isMenuOpen ? closeMenu() : openMenu(); });
+on(navOverlay, 'click', closeMenu);
+$$('#mobile-nav a').forEach(function (l) { on(l, 'click', closeMenu); });
+var langWrap = $('#lang-wrap'), langToggle = $('#lang-toggle'), langMenu = $('#lang-menu'), isLangOpen = false;
+function openLang() { isLangOpen = true; langWrap.setAttribute('data-open', 'true'); langToggle.setAttribute('aria-expanded', 'true'); langMenu.setAttribute('aria-hidden', 'false'); langMenu.style.display = 'block'; }
+function closeLang() { isLangOpen = false; langWrap.setAttribute('data-open', 'false'); langToggle.setAttribute('aria-expanded', 'false'); langMenu.setAttribute('aria-hidden', 'true'); langMenu.style.display = 'none'; }
+on(langToggle, 'click', function (e) { e.stopPropagation(); isLangOpen ? closeLang() : openLang(); });
+on(document, 'click', function (e) { if (isLangOpen && langWrap && !langWrap.contains(e.target)) closeLang(); });
+$$('.lang-item').forEach(function (item) {
+on(item, 'click', function (e) { e.preventDefault(); var h = item.getAttribute('href'); if (h && h !== window.location.pathname) window.location.href = h; });
 });
-
-function preloadCriticalImages() {
-    const criticalImages = [
-        '/images/egypt-dress-code-women-locals-vs-tourist-expectations-2026.jpg',
-        '/images/egypt-photography-tours-logo.jpg'
-    ];
-
-    criticalImages.forEach(src => {
-        const img = new Image();
-        img.src = src;
-        img.onerror = () => console.warn(`Failed to preload: ${src}`);
-    });
+on(document, 'keydown', function (e) { if (e.key === 'Escape') { if (isMenuOpen) closeMenu(); if (isLangOpen) closeLang(); } });
+var faqItems = $$('.faq-item');
+faqItems.forEach(function (item) {
+on(item, 'toggle', function () {
+if (item.open) { faqItems.forEach(function (other) { if (other !== item) other.open = false; }); }
+});
+});
+var cookieBar = $('#cookie-bar'), cAccept = $('#c-accept'), cDecline = $('#c-decline');
+var existing = document.cookie.split('; ').find(function (r) { return r.startsWith('cookie_consent='); });
+if (!existing && cookieBar) cookieBar.style.display = 'block';
+on(cAccept, 'click', function () { document.cookie = 'cookie_consent=accepted; max-age=31536000; path=/; SameSite=Lax'; if (cookieBar) cookieBar.style.display = 'none'; });
+on(cDecline, 'click', function () { document.cookie = 'cookie_consent=declined; max-age=31536000; path=/; SameSite=Lax'; if (cookieBar) cookieBar.style.display = 'none'; });
+var yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
+var cfForm = document.getElementById('contactForm');
+var cfStatus = document.getElementById('form-status');
+var WORKER_URL = 'https://contact-worker.hussam01112.workers.dev';
+if (cfForm) {
+cfForm.addEventListener('submit', async function (e) {
+e.preventDefault();
+cfStatus.innerHTML = 'Sending...';
+cfStatus.style.color = '#fff';
+var turnstileInput = document.querySelector('[name="cf-turnstile-response"]');
+var turnstileToken = turnstileInput ? turnstileInput.value : '';
+if (!turnstileToken) {
+cfStatus.innerHTML = 'Please complete the security check.';
+cfStatus.style.color = '#ff6b6b';
+return;
 }
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', preloadCriticalImages);
+var formData = new FormData(cfForm);
+var payload = {
+name: formData.get('name') || '',
+email: formData.get('email') || '',
+phone: formData.get('phone') || '',
+subject: 'Custom Egypt Tour Request',
+message: 'Group Size: ' + (formData.get('group_size') || 'Not specified') + '\nTour Type: ' + (formData.get('tour_type') || 'Not specified') + '\nDuration: ' + (formData.get('duration') || 'Not specified') + '\nDestinations: ' + (formData.get('destinations') || 'Not specified') + '\nDates: ' + (formData.get('dates') || 'Not specified') + '\nMessage: ' + (formData.get('message') || ''),
+turnstileToken: turnstileToken
+};
+try {
+var response = await fetch(WORKER_URL, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
+var result = await response.json();
+if (response.ok && result.success) {
+cfStatus.innerHTML = '✅ Message sent successfully! We will get back to you within 2 hours.';
+cfStatus.style.color = '#4ade80';
+cfForm.reset();
+if (typeof turnstile !== 'undefined') turnstile.reset();
 } else {
-    preloadCriticalImages();
+cfStatus.innerHTML = result.error || 'Something went wrong. Please try again.';
+cfStatus.style.color = '#ff6b6b';
 }
+} catch (err) {
+cfStatus.innerHTML = 'Network error. Please check your connection.';
+cfStatus.style.color = '#ff6b6b';
+console.error(err);
+}
+});
+}
+})();
 </script>
-</body>
+</div></section></main></body>
 </html>
