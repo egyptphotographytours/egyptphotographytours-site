@@ -12,7 +12,7 @@ import crypto from 'node:crypto';
 /* ---------------------------- config ---------------------------- */
 const SITE = (process.env.SITE_URL || 'https://www.egyptphotographytours.com').replace(/\/+$/, '');
 const HOST = new URL(SITE).host;
-const MAXPAGES = Math.max(50, parseInt(process.env.MAXPAGES || '20000', 10));
+const MAX_PAGES = Math.max(50, parseInt(process.env.MAXPAGES || '20000', 10));
 const CONCURRENCY = Math.max(1, parseInt(process.env.CONCURRENCY || '6', 10));
 const OUTDIR = process.env.OUTDIR || 'dist-sitemaps';
 const LASTMOD = /^\d{4}-\d{2}-\d{2}$/.test(process.env.LASTMOD || '')
@@ -195,6 +195,7 @@ async function crawl(url) {
     words,
     hash,
     type: classify(pn),
+    status: status,   // ✅ ADDED
   });
 
   const anchors = html.match(/<a[^>]+href\s*=\s*["'][^"']*["'][^>]*>/gi) || [];
@@ -214,7 +215,7 @@ async function worker() {
   for (;;) {
     const url = queue.shift();
     if (!url) { if (inflight === 0) return; await sleep(100); continue; }
-    if (pages.length + problems.notFound.length >= MAX_PAGES) continue;
+    if (pages.length + problems.notFound.length >= MAX_PAGES) continue;  // ✅ Changed to MAX_PAGES
     inflight++;
     try { await crawl(url); } catch (e) { problems.fetchErrors.push({ url, error: String(e?.message || e) }); }
     inflight--;
@@ -222,14 +223,14 @@ async function worker() {
 }
 
 /* ---------------------------- run crawl ---------------------------- */
-console.log(`🕷️  Crawling ${SITE} · max ${MAX_PAGES} pages · folders: ${LANG_FOLDERS.join(', ')}`);
+console.log(`🕷️  Crawling ${SITE} · max ${MAX_PAGES} pages · folders: ${LANG_FOLDERS.join(', ')}`);  // ✅ Now works
 const t0 = Date.now();
 await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
 console.log(`Crawl finished in ${((Date.now() - t0) / 1000).toFixed(1)}s — ${pages.length} HTML pages fetched.`);
 
 /* ---------------------------- analysis ---------------------------- */
 const ok = pages
-  .filter(p => p.status === 200 && !p.noindex && !p.soft404)
+  .filter(p => p.status === 200 && !p.noindex && !p.soft404)  // ✅ Now status exists
   .sort((a, b) => a.url.localeCompare(b.url));
 const okSet = new Set(ok.map(p => p.url));
 
