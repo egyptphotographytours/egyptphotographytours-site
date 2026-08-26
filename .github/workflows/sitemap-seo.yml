@@ -1,0 +1,153 @@
+name: SEO Sitemap Factory
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Website base URL"
+        required: true
+        default: "https://www.egyptphotographytours.com"
+      max_pages:
+        description: "Max pages to crawl"
+        required: true
+        default: "20000"
+      languages:
+        description: "Folders: en=root, plus every language folder you have"
+        required: true
+        default: "en,ar,es,fr,de,it,pt,ru,ja,zh-CN,ko,hi,nl,sv,pl,tr,vi,th,id,cs,ro,tl,no,da,fi"
+      deploy_mode:
+        description: "commit = push to this repo & replace old files (recommended)"
+        type: choice
+        options: [commit, ssh, ftp, artifact]
+        default: commit
+      submittogsc:
+        description: "Auto-submit /sitemap.xml to Google Search Console?"
+        type: choice
+        options: ["no", "yes"]
+        default: "no"
+
+permissions:
+  contents: write
+
+concurrency: sitemap-factory
+
+jobs:
+  generate-and-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Today's date → becomes EVERY lastmod in every sitemap
+        id: today
+        run: echo "d=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Crawl site + build all sitemaps + robots.txt + .htaccess + audit
+        env:
+          SITE_URL: ${{ inputs.base_url }}
+          MAXPAGES: ${{ inputs.max_pages }}
+          LANGUAGES: ${{ inputs.languages }}
+          LASTMOD: ${{ steps.today.outputs.d }}
+          OUT_DIR: dist-sitemaps
+        run: node scripts/generate-sitemaps.mjs
+
+      - name: Backup artifact (always kept for 30 days)
+        uses: actions/upload-artifact@v4
+        with:
+          name: sitemaps-${{ steps.today.outputs.d }}
+          path: dist-sitemaps
+          retention-days: 30
+
+      - name: Deploy / replace old files
+        env:
+          DEPLOY_MODE: ${{ inputs.deploy_mode }}
+          LASTMOD_DATE: ${{ steps.today.outputs.d }}
+          SSHPRIVATEKEY: ${{ secrets.DEPLOYSSHKEY }}
+          SSHHOST: ${{ secrets.DEPLOYSSH_HOST }}
+          SSHUSER: ${{ secrets.DEPLOYSSH_USER }}
+          SSHPORT: ${{ secrets.DEPLOYSSH_PORT }}
+          REMOTEDIR: ${{ secrets.DEPLOYREMOTE_DIR }}
+          FTPHOST: ${{ secrets.FTPHOST }}
+          FTPUSER: ${{ secrets.FTPUSER }}
+          FTPPASS: ${{ secrets.FTPPASS }}
+          FTPREMOTEDIR: ${{ secrets.FTPREMOTEDIR }}
+        run: |
+          set -euo pipefail
+          MODE="${DEPLOY_MODE:-commit}"
+          GEN="$GITHUB_WORKSPACE/dist-sitemaps"
+
+          if [ "$MODE" = "ssh" ]; then
+            mkdir -p ~/.ssh
+            printf '%s\n' "$SSHPRIVATEKEY" > ~/.ssh/id_deploy
+            chmod 600 ~/.ssh/id_deploy
+            PORT="${SSH_PORT:-22}"
+            ssh-keyscan -p "$PORT" "$SSHHOST" >> ~/.ssh/knownhosts 2>/dev/null || true
+            rsync -az -e "ssh -p $PORT -i ~/.ssh/id_deploy -o StrictHostKeyChecking=no" \
+              "$GEN/" "$SSHUSER@$SSHHOST:${REMOTE_DIR:-/var/www/html/}"
+            echo '✔ Uploaded via SSH/rsync'
+
+          elif [ "$MODE" = "ftp" ]; then
+            cd "$GEN"
+            find . -type f | while IFS= read -r f; do
+              rel="${f#./}"
+              curl -sS --fail --ftp-create-dirs -T "$f" \
+                "ftp://$FTPHOST/${FTPREMOTE_DIR:-/}/$rel" \
+                --user "$FTPUSER:$FTPPASS"
+            done
+            echo '✔ Uploaded via FTP'
+
+          elif [ "$MODE" = "artifact" ]; then
+            echo 'Artifact mode — download this run artifact and upload files manually.'
+
+          else
+            # ============ COMMIT MODE: push straight to this repo ============
+            cd "$GITHUB_WORKSPACE"
+            # Copy every generated file/folder to the repo root,
+            # overwriting the old sitemap / robots / .htaccess / redirects.
+            find dist-sitemaps -mindepth 1 -maxdepth 1 ! -name 'audit.json' -exec cp -r {} . \;
+            rm -rf dist-sitemaps
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            if git diff --cached --quiet; then
+              echo 'No changes to commit.'
+            else
+              git commit -m "chore(seo): regenerate sitemaps, robots.txt, .htaccess & redirects — lastmod $LASTMOD_DATE"
+              git push
+              echo '✔ Pushed directly to GitHub — old sitemap/robots/.htaccess/redirects replaced.'
+            fi
+          fi
+
+      # -------- OPTIONAL: auto-submit to Google Search Console --------
+      # This step runs only if you set submittogsc = "yes" AND have the secret GSCSAJSON.
+      # It also requires the file scripts/gsc-submit.mjs to exist in your repo.
+      - name: Auto-submit sitemap to Google Search Console (optional)
+        if: inputs.submittogsc == 'yes' && env.GSCSAJSON != ''
+        env:
+          GSCSAJSON: ${{ secrets.GSCSAJSON }}
+          GSC_PROPERTY: ${{ vars.GSC_PROPERTY }}
+          SITE_URL: ${{ inputs.base_url }}
+        run: node scripts/gsc-submit.mjs
+
+      - name: Verify live sitemap index
+        if: inputs.deploy_mode != 'artifact'
+        continue-on-error: true
+        run: |
+          sleep 15
+          code=$(curl -s -o sm.xml -w '%{http_code}' -L '${{ inputs.base_url }}/sitemap.xml')
+          echo "HTTP $code for /sitemap.xml"
+          head -c 300 sm.xml; echo
+          grep -qi '<sitemapindex' sm.xml && echo 'Sitemap index looks valid ✔'
+          {
+            echo '## Sitemap verification'
+            echo "HTTP $code for /sitemap.xml"
+            echo '```'
+            head -c 200 sm.xml
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
