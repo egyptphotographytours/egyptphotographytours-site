@@ -14,7 +14,7 @@ const SITE = (process.env.SITE_URL || 'https://www.egyptphotographytours.com').r
 const HOST = new URL(SITE).host;
 const MAX_PAGES = Math.max(50, parseInt(process.env.MAXPAGES || '20000', 10));
 const CONCURRENCY = Math.max(1, parseInt(process.env.CONCURRENCY || '6', 10));
-const OUTDIR = process.env.OUTDIR || 'dist-sitemaps';
+const OUT_DIR = process.env.OUT_DIR || 'dist-sitemaps';
 const LASTMOD = /^\d{4}-\d{2}-\d{2}$/.test(process.env.LASTMOD || '')
   ? process.env.LASTMOD
   : new Date().toISOString().slice(0, 10); // ← workflow run date = every lastmod
@@ -195,7 +195,7 @@ async function crawl(url) {
     words,
     hash,
     type: classify(pn),
-    status: status,   // ✅ ADDED
+    status: status,
   });
 
   const anchors = html.match(/<a[^>]+href\s*=\s*["'][^"']*["'][^>]*>/gi) || [];
@@ -215,7 +215,7 @@ async function worker() {
   for (;;) {
     const url = queue.shift();
     if (!url) { if (inflight === 0) return; await sleep(100); continue; }
-    if (pages.length + problems.notFound.length >= MAX_PAGES) continue;  // ✅ Changed to MAX_PAGES
+    if (pages.length + problems.notFound.length >= MAX_PAGES) continue;
     inflight++;
     try { await crawl(url); } catch (e) { problems.fetchErrors.push({ url, error: String(e?.message || e) }); }
     inflight--;
@@ -223,14 +223,14 @@ async function worker() {
 }
 
 /* ---------------------------- run crawl ---------------------------- */
-console.log(`🕷️  Crawling ${SITE} · max ${MAX_PAGES} pages · folders: ${LANG_FOLDERS.join(', ')}`);  // ✅ Now works
+console.log(`🕷️  Crawling ${SITE} · max ${MAX_PAGES} pages · folders: ${LANG_FOLDERS.join(', ')}`);
 const t0 = Date.now();
 await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
 console.log(`Crawl finished in ${((Date.now() - t0) / 1000).toFixed(1)}s — ${pages.length} HTML pages fetched.`);
 
 /* ---------------------------- analysis ---------------------------- */
 const ok = pages
-  .filter(p => p.status === 200 && !p.noindex && !p.soft404)  // ✅ Now status exists
+  .filter(p => p.status === 200 && !p.noindex && !p.soft404)
   .sort((a, b) => a.url.localeCompare(b.url));
 const okSet = new Set(ok.map(p => p.url));
 
@@ -333,7 +333,7 @@ function urlEntry(p) {
 const langsPresent = LANG_FOLDERS.filter(f => byLang.has(f));
 for (const lang of langsPresent) {
   const list = byLang.get(lang);
-  const dir = lang === 'en' ? OUTDIR : path.join(OUTDIR, lang);
+  const dir = lang === 'en' ? OUT_DIR : path.join(OUT_DIR, lang);
   fs.mkdirSync(dir, { recursive: true });
   const parts = chunks(list, CHUNK);
   parts.forEach((part, i) => {
@@ -549,6 +549,6 @@ console.log(`Child sitemaps   : ${indexEntries.length} → index: ${SITE}/sitema
 console.log(`lastmod (all)    : ${LASTMOD}`);
 console.log(`301 rules        : ${dedupRedirects.length} (.htaccess keeps first ${HTACCESS_MAX_RULES})`);
 console.log(`Files replaced   : sitemap.xml, sitemap-en.xml, /<lang>/sitemap.xml, robots.txt, .htaccess, redirects, sitemap.html`);
-console.log(`Output dir       : ${OUTDIR}/`);
+console.log(`Output dir       : ${OUT_DIR}/`);
 console.log('============================\n');
 if (!ok.length) { console.error('❌ No indexable pages found — check the site is reachable.'); process.exit(1); }
