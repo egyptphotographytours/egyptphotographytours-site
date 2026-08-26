@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Ultimate Smart Incremental Translation & SEO Pipeline v3.1
+Ultimate Smart Incremental Translation & SEO Pipeline v3.2
 ==========================================================
 ✅ DOM Firewall: Prevents <html><body> injection bugs using html.parser & new_tag()
 ✅ DOM Cleanup: Automatically deletes broken nested tags from previous buggy runs
 ✅ .html Preservation: Keeps .html extensions in canonicals and internal links
 ✅ Content Hashing: Only translates when actual text changes
+✅ Safe Chunking: Limits to 40 strings per chunk to prevent Google Translate blocks
 ✅ Force Translate: Manually trigger a specific file via GitHub Actions
 ✅ --seo-only mode: Instantly repairs hreflang, menus & DOM WITHOUT translating
 ✅ Sitemap: REMOVED — handled by separate workflow
@@ -48,9 +49,10 @@ IGNORE_TAGS = {
 
 TIMEOUT_SECONDS = 15
 MAX_RETRIES = 3
-CHUNK_SIZE = 4500
-CHUNK_DELAY_MIN = 2.0
-CHUNK_DELAY_MAX = 4.5
+CHUNK_SIZE = 2000
+MAX_STRINGS_PER_CHUNK = 40
+CHUNK_DELAY_MIN = 3.0
+CHUNK_DELAY_MAX = 6.0
 COOLDOWN_AFTER_FAILURE = 90
 ENGINE_SWITCH_THRESHOLD = 2
 
@@ -203,7 +205,7 @@ def get_relative_url(lang_code, base_path):
     if base_path == 'index.html':
         clean = ''
     else:
-        clean = base_path
+        clean = base_path 
         
     if lang_code == 'en':
         return f"/{clean}" if clean else "/"
@@ -256,7 +258,8 @@ def safe_translate(texts, target_lang, engine):
     for t in texts:
         clean_t = t.replace('\n', ' ').replace('\r', ' ').strip() or t
         add_len = len(clean_t) + 1
-        if current_len + add_len > CHUNK_SIZE and current_chunk:
+        # 🛡️ SAFE CHUNKING: Limits to 40 strings OR 2000 chars to prevent Google blocks
+        if (current_len + add_len > CHUNK_SIZE or len(current_chunk) >= MAX_STRINGS_PER_CHUNK) and current_chunk:
             chunks.append(current_chunk)
             current_chunk, current_len = [], 0
         current_chunk.append(clean_t)
@@ -476,7 +479,7 @@ def main():
     args = parser.parse_args()
 
     print("=" * 60, flush=True)
-    print("🚀 Smart Incremental Translation & SEO Pipeline v3.1", flush=True)
+    print("🚀 Smart Incremental Translation & SEO Pipeline v3.2", flush=True)
     print("=" * 60, flush=True)
 
     if args.seo_only:
