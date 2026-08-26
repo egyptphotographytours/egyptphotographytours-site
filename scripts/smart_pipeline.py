@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
-Ultimate Smart Incremental Translation & SEO Pipeline v3.2
+Ultimate Smart Incremental Translation & SEO Pipeline v3.0
 ==========================================================
 ✅ DOM Firewall: Prevents <html><body> injection bugs using html.parser & new_tag()
 ✅ DOM Cleanup: Automatically deletes broken nested tags from previous buggy runs
-✅ .html Preservation: Keeps .html extensions in canonicals and internal links
-✅ Content Hashing: Only translates when actual text changes
-✅ Safe Chunking: Limits to 40 strings per chunk to prevent Google Translate blocks
-✅ Force Translate: Manually trigger a specific file via GitHub Actions
-✅ --seo-only mode: Instantly repairs hreflang, menus & DOM WITHOUT translating
-✅ Sitemap: REMOVED — handled by separate workflow
+✅ .html Preservation: Keeps .html extensions in canonicals, sitemaps, and internal links
+✅ Advanced Sitemap: Generates Google-optimized XML with real <lastmod>, <priority>, & <changefreq>
+✅ --seo-only mode: Instantly repairs hreflang, menus, DOM structure & sitemap WITHOUT translating
 """
 
 import os
@@ -24,7 +21,7 @@ import subprocess
 import concurrent.futures
 from bs4 import BeautifulSoup, Comment, NavigableString, Doctype, Declaration, ProcessingInstruction
 from deep_translator import GoogleTranslator
-from datetime import datetime
+from datetime import datetime, timezone
 
 sys.stdout.reconfigure(line_buffering=True)
 
@@ -49,10 +46,9 @@ IGNORE_TAGS = {
 
 TIMEOUT_SECONDS = 15
 MAX_RETRIES = 3
-CHUNK_SIZE = 2000
-MAX_STRINGS_PER_CHUNK = 40
-CHUNK_DELAY_MIN = 3.0
-CHUNK_DELAY_MAX = 6.0
+CHUNK_SIZE = 4500
+CHUNK_DELAY_MIN = 2.0
+CHUNK_DELAY_MAX = 4.5
 COOLDOWN_AFTER_FAILURE = 90
 ENGINE_SWITCH_THRESHOLD = 2
 
@@ -202,6 +198,7 @@ def batch_commit_and_push(count, retries=3):
 # URL HELPERS (.html PRESERVED)
 # ==========================================
 def get_relative_url(lang_code, base_path):
+    # Keeps .html extension for SEO and Sitemap accuracy
     if base_path == 'index.html':
         clean = ''
     else:
@@ -213,6 +210,14 @@ def get_relative_url(lang_code, base_path):
 
 def get_absolute_url(lang_code, base_path):
     return f"{DOMAIN}{get_relative_url(lang_code, base_path)}"
+
+def get_file_lastmod(rel_path):
+    try:
+        mtime = os.path.getmtime(rel_path)
+        file_dt = datetime.fromtimestamp(mtime, tz=timezone.utc)
+        return file_dt.strftime('%Y-%m-%dT%H:%M:%S+00:00')
+    except Exception:
+        return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S+00:00')
 
 # ==========================================
 # GIT DETECTION
@@ -258,8 +263,7 @@ def safe_translate(texts, target_lang, engine):
     for t in texts:
         clean_t = t.replace('\n', ' ').replace('\r', ' ').strip() or t
         add_len = len(clean_t) + 1
-        # 🛡️ SAFE CHUNKING: Limits to 40 strings OR 2000 chars to prevent Google blocks
-        if (current_len + add_len > CHUNK_SIZE or len(current_chunk) >= MAX_STRINGS_PER_CHUNK) and current_chunk:
+        if current_len + add_len > CHUNK_SIZE and current_chunk:
             chunks.append(current_chunk)
             current_chunk, current_len = [], 0
         current_chunk.append(clean_t)
@@ -384,6 +388,7 @@ def inject_dynamic_lang_menu(soup, target_lang, base_path):
     en_url = get_relative_url('en', base_path)
     en_active = "is-active" if target_lang == 'en' else ""
     
+    # 🛠️ FIX: Use html.parser to prevent <html><body> wrapping
     en_link_html = (
         f'<a href="{en_url}" class="lang-item language-item {en_active}" role="menuitem">'
         f'<span class="lang-flag flag-icon" aria-hidden="true">🇺🇸</span><span class="lang-name language-text">English</span></a>'
@@ -404,10 +409,10 @@ def inject_dynamic_lang_menu(soup, target_lang, base_path):
     return soup
 
 # ==========================================
-# GLOBAL SEO (NO SITEMAP — handled separately)
+# GLOBAL SEO & ADVANCED SITEMAP
 # ==========================================
-def inject_global_seo():
-    print("\n🔗 Injecting SEO Tags & Cleaning DOM...", flush=True)
+def inject_global_seo_and_sitemap():
+    print("\n🔗 Injecting SEO Tags, Cleaning DOM & Generating Advanced Sitemap...", flush=True)
     page_map = {}
     for root, dirs, files in os.walk('.'):
         dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['scripts', 'node_modules', '.github']]
@@ -429,7 +434,7 @@ def inject_global_seo():
             with open(rel_path, 'r', encoding='utf-8') as f:
                 soup = BeautifulSoup(f, 'lxml')
 
-            # 🧹 CLEANUP: Nuke any stray nested <html>, <head>, or <body> tags
+            # 🧹 CLEANUP: Nuke any stray nested <html>, <head>, or <body> tags left by previous buggy runs
             for nested_html in soup.find_all('html'):
                 if nested_html != soup.html: nested_html.decompose()
             for nested_body in soup.find_all('body'):
@@ -444,27 +449,61 @@ def inject_global_seo():
             head = soup.find('head')
             if not head: continue
 
-            # Inject clean canonical tag
+            # 🛠️ FIX: Use soup.new_tag() to create clean tags without parser wrappers
             canon = soup.new_tag('link', rel='canonical', href=get_absolute_url(lang_code, base))
             head.append(canon)
             
-            # Inject clean hreflang alternate tags
             for sib_lang in langs:
                 hl = 'zh' if sib_lang == 'zh-CN' else sib_lang
                 alt = soup.new_tag('link', rel='alternate', hreflang=hl, href=get_absolute_url(sib_lang, base))
                 head.append(alt)
-            
-            # Inject x-default
+                
             x_default = soup.new_tag('link', rel='alternate', hreflang='x-default', href=get_absolute_url("en", base))
             head.append(x_default)
 
-            # Inject language menu
             soup = inject_dynamic_lang_menu(soup, lang_code, base)
-            
             with open(rel_path, 'w', encoding='utf-8') as f:
                 f.write(str(soup))
             repaired += 1
     print(f"   ✅ SEO tags injected & DOM cleaned on {repaired} files.", flush=True)
+
+    # 🚀 ADVANCED SITEMAP GENERATION
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
+    ]
+    
+    for base, langs in page_map.items():
+        for lang_code, rel_path in langs.items():
+            if '404.html' in rel_path or 'sitemap.html' in rel_path: continue
+            
+            url = get_absolute_url(lang_code, base).replace(' ', '%20')
+            lastmod = get_file_lastmod(rel_path)
+            
+            # Smart Priority & Frequency
+            priority = "1.0" if base == 'index.html' else "0.8" if lang_code == 'en' else "0.6"
+            changefreq = "weekly" if base == 'index.html' else "monthly"
+            
+            xml_lines.append(f'  <url>')
+            xml_lines.append(f'    <loc>{url}</loc>')
+            xml_lines.append(f'    <lastmod>{lastmod}</lastmod>')
+            xml_lines.append(f'    <changefreq>{changefreq}</changefreq>')
+            xml_lines.append(f'    <priority>{priority}</priority>')
+            
+            for sib_lang in langs:
+                hl = 'zh' if sib_lang == 'zh-CN' else sib_lang
+                alt_url = get_absolute_url(sib_lang, base).replace(' ', '%20')
+                xml_lines.append(f'    <xhtml:link rel="alternate" hreflang="{hl}" href="{alt_url}" />')
+            
+            x_default_url = get_absolute_url("en", base).replace(' ', '%20')
+            xml_lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{x_default_url}" />')
+            xml_lines.append(f'  </url>')
+            
+    xml_lines.append('</urlset>')
+    
+    with open('sitemap.xml', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(xml_lines))
+    print("   ✅ Advanced sitemap.xml generated with real timestamps & priorities.", flush=True)
 
 # ==========================================
 # MAIN EXECUTION
@@ -475,16 +514,16 @@ def main():
     parser.add_argument('--force', action='store_true', help='Re-translate ALL files')
     parser.add_argument('--force-file', type=str, help='Force re-translate a specific file')
     parser.add_argument('--seo-only', action='store_true',
-                        help='Skip translation — only repair hreflang, language menus & DOM')
+                        help='Skip translation — only repair hreflang, language menus, DOM & sitemap')
     args = parser.parse_args()
 
     print("=" * 60, flush=True)
-    print("🚀 Smart Incremental Translation & SEO Pipeline v3.2", flush=True)
+    print("🚀 Smart Incremental Translation & SEO Pipeline v3.0", flush=True)
     print("=" * 60, flush=True)
 
     if args.seo_only:
         print("🔧 SEO-ONLY REPAIR MODE — no translation will happen.", flush=True)
-        inject_global_seo()
+        inject_global_seo_and_sitemap()
         batch_commit_and_push(0)
         print("\n🎉 Repair complete!", flush=True)
         return
@@ -586,7 +625,7 @@ def main():
         if files_since_push > 0:
             batch_commit_and_push(files_since_push)
         print("\n🔒 Final safety step: injecting SEO, hreflang & language menus...", flush=True)
-        inject_global_seo()
+        inject_global_seo_and_sitemap()
 
     if failed_manifest:
         print(f"\n⚠️ {len(failed_manifest)} file(s) still incomplete — will retry next run.", flush=True)
