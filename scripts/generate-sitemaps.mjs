@@ -64,7 +64,10 @@ function normalize(raw) {
   for (const k of [...u.searchParams.keys()]) if (TRACKING.has(k.toLowerCase())) u.searchParams.delete(k);
   u.search = ''; // clean-URL policy: drop ALL query strings (kills duplicate params)
   let p = u.pathname.replace(/\/{2,}/g, '/');
-  if (p.length > 1 && !path.extname(p) && !p.endsWith('/')) p += '/';
+  // Remove trailing slash for all non‑root paths (keeps /faqs instead of /faqs/)
+  if (p.length > 1 && !path.extname(p) && p.endsWith('/')) {
+    p = p.replace(/\/+$/, '');
+  }
   if (!p) p = '/';
   u.pathname = p;
   return u.toString();
@@ -285,7 +288,8 @@ function bestMatch(deadPath) {
     if (score > bestScore) { bestScore = score; best = p; }
   }
   if (best && bestScore >= 0.35) return { to: best.url, confidence: (bestScore * 100).toFixed(0) + '%' };
-  const cat = (byFirst.get(first) || []).find(p => p.path === `/${first}/`);
+  // adjusted to match non-trailing-slash category path
+  const cat = (byFirst.get(first) || []).find(p => p.path === `/${first}`);
   if (cat) return { to: cat.url, confidence: 'category' };
   return { to: SITE + '/', confidence: 'homepage' };
 }
