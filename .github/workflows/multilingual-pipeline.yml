@@ -1,0 +1,84 @@
+name: Multilingual Translation Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.html'
+      - '!sitemap.xml'
+      - '!scripts/**'
+      - '!.github/**'
+  workflow_dispatch:
+    inputs:
+      seo_only:
+        description: '🔧 Repair mode: Fix DOM, hreflang & language menus (Fast, NO translation)'
+        type: boolean
+        default: false
+      force_file:
+        description: 'Force re-translate a specific file (e.g. index.html)'
+        type: string
+        required: false
+
+concurrency:
+  group: multilingual-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  translate-and-seo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4 deep-translator lxml translators
+
+      - name: Configure Git for Pushing
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Run Translation Pipeline
+        if: ${{ github.event.inputs.seo_only != 'true' }}
+        continue-on-error: true
+        env:
+          PYTHONUNBUFFERED: 1
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.force_file }}" ]; then
+            echo "🚀 Forcing translation for: ${{ github.event.inputs.force_file }}"
+            python scripts/translate_engine.py --force-file "${{ github.event.inputs.force_file }}"
+          else
+            python scripts/translate_engine.py
+          fi
+
+      - name: SEO Repair (DOM Cleanup + hreflang + Language Menus)
+        if: always()
+        env:
+          PYTHONUNBUFFERED: 1
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: python scripts/translate_engine.py --seo-only
+
+      - name: Final Commit and Push
+        if: always()
+        run: |
+          git add .
+          if git diff --staged --quiet; then
+            echo "✅ No leftover changes. Everything already pushed!"
+          else
+            git commit -m "🤖 Final SEO & DOM cleanup [skip ci]"
+            git pull --rebase --autostash || true
+            git push
+          fi
