@@ -1,8 +1,8 @@
-// ════════════════════════════════════════════════════════════════════
-//  scripts/generate-sitemaps.mjs
+// ==================================================================
+//  OTHER FILE 1 OF 2
 //  Save exactly as:  scripts/generate-sitemaps.mjs
 //  (create folder "scripts" in the repo root)
-// ════════════════════════════════════════════════════════════════════
+// ==================================================================
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -19,7 +19,7 @@ const URLSFILE = process.env.URLSFILE || 'urls.txt';
 const WPMODE = (process.env.WPHTACCESS || 'yes').toLowerCase() !== 'no';
 const LASTMOD = /^\d{4}-\d{2}-\d{2}$/.test(process.env.LASTMOD || '')
   ? process.env.LASTMOD
-  : new Date().toISOString().slice(0, 10); // ← workflow run date = every lastmod
+  : new Date().toISOString().slice(0, 10); // workflow run date = every lastmod
 
 const LANG_FOLDERS = [...new Set((process.env.LANGUAGES ||
   'en,ar,es,fr,de,it,pt,ru,ja,zh-CN,ko,hi,nl,sv,pl,tr,vi,th,id,cs,ro,tl,no,da,fi')
@@ -63,7 +63,7 @@ const segsOf = p => p.split('/').filter(Boolean);
 function normalize(raw) {
   let u; try { u = new URL(raw, SITE); } catch { return null; }
   if (!ALLOWED_HOSTS.has(u.host) || !/^https?:$/.test(u.protocol)) return null;
-  u.protocol = 'https:'; u.host = HOST; // canonical protocol + host
+  u.protocol = 'https:'; u.host = HOST;
   u.hash = '';
   for (const k of [...u.searchParams.keys()]) if (TRACKING.has(k.toLowerCase())) u.searchParams.delete(k);
   u.search = ''; // clean-URL policy: drop ALL query strings
@@ -92,22 +92,7 @@ function classify(pn) {
   return 'page';
 }
 function chunks(arr, n) { const r = []; for (let i = 0; i  [i]);
-  for (let j = 1; j  values harvested from sitemaps
-const sitemapSeen = new Set();
-const pages = [];
-const unverified = [];
-const problems = { notFound: [], serverError: [], other4xx: [], chains: [], loops: [], externalRedirects: [], fetchErrors: [] };
-
-function enqueue(rawUrl, markSeeded) {
-  const n = normalize(rawUrl);
-  if (n && !seen.has(n)) { seen.add(n); queue.push(n); if (markSeeded) seeded.add(n); return true; }
-  return false;
-}
-
-/ ---------------- PHASE 1: seed from your EXISTING sitemaps ---------------- /
-async function fetchText(url, ms = 25000, accept = 'text/xml,application/xml,/') {
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), ms);
+  for (let j = 1; j  ctrl.abort(), ms);
   try {
     const res = await fetch(url, { signal: ctrl.signal, redirect: 'follow', headers: { 'user-agent': UA, accept } });
     if (!res.ok) return null;
@@ -121,13 +106,52 @@ async function harvestSitemap(url, depth = 0) {
   const txt = await fetchText(url);
   if (!txt || !/]/i.test(txt)) return;
   const locs = [...txt.matchAll(/\s([^/gi)].map(m => decodeXml(m[1]).trim());
-  if (/ s.trim()).filter(s => s && !s.startsWith('#'));
+  if (/ ${locs.length} child sitemaps);
+    for (const l of locs) {
+      if (!/^https?:/i.test(l)) continue;
+      try { await harvestSitemap(new URL(l, url).toString(), depth + 1); } catch {}
+    }
+  } else {
+    let added = 0;
+    for (const l of locs) {
+      if (!/^https?:/i.test(l)) continue;
+      let abs; try { abs = new URL(l, url).toString(); } catch { continue; }
+      if (!foundLocs.has(abs)) { foundLocs.add(abs); added++; }
+    }
+    console.log(  - sitemap: ${url} -> ${added} new URLs);
+  }
+}
+async function seedPhase() {
+  console.log('PHASE 1 - harvesting URLs from existing sitemaps & robots.txt ...');
+  const candidates = new Set([
+    ${SITE}/sitemap.xml, ${SITE}/sitemap_index.xml, ${SITE}/sitemap-index.xml,
+    ${SITE}/wp-sitemap.xml, ${SITE}/post-sitemap.xml, ${SITE}/page-sitemap.xml,
+    ${SITE}/category-sitemap.xml, ${SITE}/product-sitemap.xml, ${SITE}/author-sitemap.xml,
+    ${SITE}/sitemap-en.xml,
+  ]);
+  for (const f of LANG_FOLDERS) {
+    if (f === 'en') continue;
+    candidates.add(${SITE}/${f}/sitemap.xml);
+    candidates.add(${SITE}/sitemap-${f}.xml);
+    candidates.add(${SITE}/${f}/sitemap_index.xml);
+  }
+  const robots = await fetchText(${SITE}/robots.txt, 15000, 'text/plain,/');
+  if (robots) for (const m of robots.matchAll(/^\sSitemap:\s(\S+)/gim)) {
+    try { candidates.add(new URL(m[1], SITE).toString()); } catch {}
+  }
+  for (const c of candidates) await harvestSitemap(c, 0);
+  let n = 0;
+  for (const raw of foundLocs) if (enqueue(raw, true)) n++;
+  console.log(  => ${n} unique URLs seeded from existing sitemaps.);
+
+  if (fs.existsSync(URLS_FILE)) {
+    const lines = fs.readFileSync(URLS_FILE, 'utf8').split(/\r?\n/).map(s => s.trim()).filter(s => s && !s.startsWith('#'));
     let addedFromFile = 0;
     for (const l of lines) {
       let abs; try { abs = new URL(l, SITE).toString(); } catch { continue; }
       if (enqueue(abs, true)) addedFromFile++;
     }
-    console.log(  → ${addedFromFile} extra URLs from ${URLS_FILE}.);
+    console.log(  => ${addedFromFile} extra URLs from ${URLS_FILE}.);
   }
 }
 
@@ -163,12 +187,10 @@ async function fetchChain(startUrl) {
 }
 async function fetchChainSafe(url) {
   try { return await fetchChain(url); }
-  catch { await sleep(800); return await fetchChain(url); } // one automatic retry
+  catch { await sleep(800); return await fetchChain(url); }
 }
 
 function addSynthetic(url) {
-  // URL asserted by YOUR old sitemap / urls.txt but unreachable right now →
-  // still included so Google doesn't lose it; flagged in the report.
   const pn = new URL(url).pathname;
   const lang = langOf(pn);
   unverified.push(url);
@@ -227,7 +249,7 @@ async function crawl(url) {
     let abs; try { abs = new URL(href, finalNorm).toString(); } catch { continue; }
     enqueue(abs, false);
   }
-  if (pages.length % 500 === 0) console.log(… ${pages.length} HTML pages processed · queue ${queue.length});
+  if (pages.length % 500 === 0) console.log(... ${pages.length} HTML pages processed, queue ${queue.length});
 }
 
 let inflight = 0;
@@ -239,7 +261,7 @@ async function worker() {
     inflight++;
     try { await crawl(url); }
     catch (e) {
-      if (seeded.has(url)) addSynthetic(url); // keep URLs your old sitemap promised
+      if (seeded.has(url)) addSynthetic(url);
       else problems.fetchErrors.push({ url, error: String(e?.message || e) });
     }
     inflight--;
@@ -249,10 +271,10 @@ async function worker() {
 / ---------------------------- run ---------------------------- /
 enqueue(SITE + '/', false);
 await seedPhase();
-console.log(🕷️  PHASE 2 — fetching ${queue.length} queued URLs with ${CONCURRENCY} workers …);
+console.log(PHASE 2 - fetching ${queue.length} queued URLs with ${CONCURRENCY} workers ...);
 const t0 = Date.now();
 await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
-console.log(Done in ${((Date.now() - t0) / 1000).toFixed(1)}s — ${pages.length} pages processed.);
+console.log(Done in ${((Date.now() - t0) / 1000).toFixed(1)}s - ${pages.length} pages processed.);
 
 / ---------------------------- analysis ---------------------------- /
 const ok = pages
@@ -260,7 +282,7 @@ const ok = pages
   .sort((a, b) => a.url.localeCompare(b.url));
 const okSet = new Set(ok.map(p => p.url));
 
-const altMap = new Map(); // hreflang groups — reciprocal by construction
+const altMap = new Map();
 for (const p of ok) {
   if (!altMap.has(p.key)) altMap.set(p.key, new Map());
   altMap.get(p.key).set(p.lang, p.url);
@@ -380,7 +402,7 @@ const indexXml = \n\n +
 fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), indexXml);
 
 / ---------------------------- robots.txt ---------------------------- /
-fs.writeFileSync(path.join(OUT_DIR, 'robots.txt'), # robots.txt — auto-generated ${LASTMOD}
+fs.writeFileSync(path.join(OUT_DIR, 'robots.txt'), # robots.txt - auto-generated ${LASTMOD}
 User-agent: *
 Allow: /
 Disallow: /search
@@ -398,7 +420,7 @@ Disallow: /?gclid=
 Disallow: /?fbclid=
 Allow: /wp-admin/admin-ajax.php
 
-Sitemap index — submit THIS URL in Google Search Console
+Sitemap index - submit THIS URL in Google Search Console
 Sitemap: ${SITE}/sitemap.xml
 );
 
@@ -411,7 +433,7 @@ Sitemap: ${SITE}/sitemap.xml
     return RewriteRule ${pat} ${r.to} [R=301,L];
   }).join('\n');
   const extraNote = dedupRedirects.length > HTACCESSMAXRULES
-    ? # … ${dedupRedirects.length - HTACCESSMAXRULES} lower-confidence rules kept in redirects-apache.conf\n
+    ? # ... ${dedupRedirects.length - HTACCESSMAXRULES} more rules kept in redirects-apache.conf\n
     : '';
   const wpBlock = WP_MODE ? # BEGIN WordPress
 
@@ -425,7 +447,7 @@ RewriteRule . /index.php [L]
 END WordPress
  : # WordPress block disabled (workflow input wordpress=no). If this IS WordPress, switch it back to yes!;
   const htaccess = # ============================================================
-AUTO-GENERATED by SEO Sitemap Factory — ${LASTMOD}
+AUTO-GENERATED by SEO Sitemap Factory - ${LASTMOD}
 Replaces the previous .htaccess (old copy stays in git history).
 ============================================================
 
@@ -463,8 +485,8 @@ ${wpBlock};
 
 / ---------------------------- redirect files ---------------------------- /
 {
-  let apache = # AUTO-GENERATED ${LASTMOD} — FULL list of 301 rules (${dedupRedirects.length} rules)\n# First ${HTACCESSMAXRULES} already included in .htaccess; this file is the master list.\n\nRewriteEngine On\n;
-  let nginx = # AUTO-GENERATED ${LASTMOD} — include inside your server { } block (nginx)\n;
+  let apache = # AUTO-GENERATED ${LASTMOD} - FULL list of 301 rules (${dedupRedirects.length} rules)\n# First ${HTACCESSMAXRULES} already included in .htaccess; this file is the master list.\n\nRewriteEngine On\n;
+  let nginx = # AUTO-GENERATED ${LASTMOD} - include inside your server { } block (nginx)\n;
   for (const r of dedupRedirects) {
     const clean = r.from.replace(/^\/+|\/+$/g, '');
     apache += RewriteRule ^${escRe(clean)}/?$ ${r.to} [R=301,L]\n;
@@ -476,7 +498,7 @@ ${wpBlock};
 
 / ---------------------------- HTML sitemap ---------------------------- /
 {
-  let h = \n\n\n\n\nSitemap — ${escXml(HOST)}\n +
+  let h = \n\n\n\n\nSitemap - ${escXml(HOST)}\n +
     body{font-family:system-ui,Segoe UI,Arial,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.6} +
     h1{border-bottom:3px solid #c9a227;padding-bottom:.5rem}h2{margin-top:2rem;color:#1a3c5e}ul{columns:2;column-gap:2rem}li{margin:.25rem 0}a{color:#1a6fb5;text-decoration:none}a:hover{text-decoration:underline}@media(max-width:700px){ul{columns:1}} +
     \n\n\nSitemapEvery page of this website, grouped by language. Updated ${LASTMOD}.\n;
@@ -508,7 +530,7 @@ ${wpBlock};
 
 / ---------------------------- SEO FIX REPORT ---------------------------- /
 {
-  const cap = (arr, n = 100) => arr.length > n ? arr.slice(0, n).map(String).concat([… and ${arr.length - n} more (see audit.json / canonicals.csv)]) : arr.map(String);
+  const cap = (arr, n = 100) => arr.length > n ? arr.slice(0, n).map(String).concat([... and ${arr.length - n} more (see audit.json / canonicals.csv)]) : arr.map(String);
   const stats = {
     crawledHtml: pages.length, indexedInSitemaps: ok.length, languages: langsPresent,
     seededFromOldSitemaps: seeded.size, unverifiedIncluded: unverified.length,
@@ -523,44 +545,44 @@ ${wpBlock};
   fs.writeFileSync(path.join(OUT_DIR, 'audit.json'),
     JSON.stringify({ generatedAt: new Date().toISOString(), stats, problems, dupGroups, unverified: unverified.slice(0, 5000), redirectSuggestions: dedupRedirects.slice(0, 8000) }, null, 2));
 
-  let md = # 🩺 SEO FIX REPORT — ${HOST}\n\n +
-    Run: ${LASTMOD} · every lastmod = ${LASTMOD} · ${indexEntries.length} child sitemaps · ${ok.length} URLs · languages: ${langsPresent.join(', ')}\n\n +
-    URL discovery: ${seeded.size} URLs seeded from your old sitemaps/robots.txt · ${unverified.length} included without live re-verification · ${problems.notFound.length} dead URLs from old sitemaps converted into 301 rules.\n\n +
-    ## ✅ What this run already fixed automatically\n +
-    - Replaced: \/sitemap.xml\ (index), \/sitemap-en.xml\, every \//sitemap.xml\, \/robots.txt\, \/.htaccess\, redirect files.\n +
-    - Reciprocal hreflang (\xhtml:link\ + \x-default\) on every URL that has translations.\n +
-    - Self-canonical map → canonicals.csv (apply via Rank Math / Yoast).\n +
+  let md = # SEO FIX REPORT - ${HOST}\n\n +
+    Run: ${LASTMOD} - every lastmod = ${LASTMOD} - ${indexEntries.length} child sitemaps - ${ok.length} URLs - languages: ${langsPresent.join(', ')}\n\n +
+    URL discovery: ${seeded.size} URLs seeded from your old sitemaps/robots.txt - ${unverified.length} included without live re-verification - ${problems.notFound.length} dead URLs from old sitemaps converted into 301 rules.\n\n +
+    ## What this run already fixed automatically\n +
+    - Replaced: /sitemap.xml (index), /sitemap-en.xml, every //sitemap.xml, /robots.txt, /.htaccess, redirect files.\n +
+    - Reciprocal hreflang (xhtml:link + x-default) on every URL that has translations.\n +
+    - Self-canonical map -> canonicals.csv (apply via Rank Math / Yoast).\n +
     - Only final-200 URLs listed (no redirects, no 404s, no noindex, no soft-404s).\n +
-    - \.htaccess\: HTTPS+www canonicalization, ${Math.min(dedupRedirects.length, HTACCESSMAXRULES)} smart 301 rules, cache + security headers${WP_MODE ? ', WordPress core rules preserved' : ''}.\n\n +
-    ## 🎯 Your GSC errors → fix location\n +
+    - .htaccess: HTTPS+www canonicalization, ${Math.min(dedupRedirects.length, HTACCESSMAXRULES)} smart 301 rules, cache + security headers${WP_MODE ? ', WordPress core rules preserved' : ''}.\n\n +
+    ## Your GSC errors -> fix location\n +
     | GSC error | Fix delivered |\n|---|---|\n +
-    | Alternate page with proper canonical tag (1,503) | Healthy — keep canonicals.csv consistent |\n +
-    | Crawled – currently not indexed (465) | Thin pages removed from sitemap; HTML sitemap; enrich content |\n +
+    | Alternate page with proper canonical tag (1,503) | Healthy - keep canonicals.csv consistent |\n +
+    | Crawled - currently not indexed (465) | Thin pages removed from sitemap; HTML sitemap; enrich content |\n +
     | Not found 404 (5,033) | .htaccess + redirects-apache.conf 301 rules + excluded from sitemap |\n +
-    | Duplicate without user-selected canonical (1,559) | canonicals.csv → set suggested canonicals |\n +
+    | Duplicate without user-selected canonical (1,559) | canonicals.csv -> set suggested canonicals |\n +
     | Page with redirect (94) | Only final-200 URLs listed; chains flattened |\n +
-    | Redirect error (4) | Loop list below — break the loop |\n +
-    | Soft 404 (1) | List below — return real 404 or add content |\n +
-    | Server error 5xx (1) | List below — fix server, then "Validate fix" |\n +
+    | Redirect error (4) | Loop list below - break the loop |\n +
+    | Soft 404 (1) | List below - return real 404 or add content |\n +
+    | Server error 5xx (1) | List below - fix server, then "Validate fix" |\n +
     | Duplicate, Google chose different canonical (33) | Self-canonicals + hreflang consistency |\n +
-    | Discovered – currently not indexed | Clean sitemap, internal linking, resubmit index |\n\n +
-    ## 🧭 Next steps\n +
+    | Discovered - currently not indexed | Clean sitemap, internal linking, resubmit index |\n\n +
+    ## Next steps\n +
     1. Sync your hosting with the GitHub repo (files already pushed).\n +
-    2. GSC → Sitemaps → remove old ones → submit ${SITE}/sitemap.xml.\n +
-    3. Link \/sitemap.html\ in your footer.\n +
-    4. After 24–72h click Validate fix on each GSC report.\n\n +
-    ## ⚠️ Included without live re-verification (${unverified.length})\n +
-    ${unverified.length ? 'These URLs were in YOUR old sitemaps but did not answer during this run. Check a sample manually.\n' + cap(unverified, 50).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ## 🔎 Detected issues\n +
-    ### 🔁 Redirect loops (${problems.loops.length})\n${problems.loops.length ? cap(problems.loops.map(l => ${l.url} → ${l.chain.map(c => c.to).join(' → ')}), 50).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ### 🔗 Redirect chains flattened (${problems.chains.length})\n${problems.chains.length ? cap(problems.chains.slice(0, 50).map(c => ${c.url} → ${c.final}), 50).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ### 🕳️ 404 / 410 (${problems.notFound.length})\n${problems.notFound.length ? cap(problems.notFound.map(d => d.url), 100).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ### 👻 Soft 404s (${soft404Pages.length})\n${soft404Pages.length ? cap(soft404Pages.map(s => ${s.url} (≈${s.words} words, "${s.title}")), 50).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ### 💥 Server errors 5xx (${problems.serverError.length})\n${problems.serverError.length ? cap(problems.serverError.map(s => s.url), 50).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ### 🏷️ Missing canonical (${missingCanonical.length})\n${missingCanonical.length ? cap(missingCanonical, 100).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ### 🔀 Canonical mismatch (${canonicalMismatch.length})\n${canonicalMismatch.length ? cap(canonicalMismatch.map(c => ${c.url} → ${c.canonical}${c.targetInSitemap ? '' : ' (target NOT in sitemap!)'}), 100).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ### 👯 Duplicate groups (${dupGroups.length})\n${dupGroups.length ? cap(dupGroups.map(g => canonical → ${g.canonical} | dupes: ${g.alternates.join(' , ')}), 50).map(s => - ${s}).join('\n') : '- none 🎉'}\n\n +
-    ### 🔠 Dirty URLs\nUppercase paths: ${dirty.uppercase.length}${dirty.uppercase.length ? '\n' + cap(dirty.uppercase, 30).map(s =>   - ${s}).join('\n') : ' 🎉'}\nUnderscores: ${dirty.underscore.length}${dirty.underscore.length ? '\n' + cap(dirty.underscore, 30).map(s =>   - ${s}).join('\n') : ' 🎉'}\n\n +
+    2. GSC -> Sitemaps -> remove old ones -> submit ${SITE}/sitemap.xml.\n +
+    3. Link /sitemap.html in your footer.\n +
+    4. After 24-72h click Validate fix on each GSC report.\n\n +
+    ## Included without live re-verification (${unverified.length})\n +
+    ${unverified.length ? 'These URLs were in YOUR old sitemaps but did not answer during this run. Check a sample manually.\n' + cap(unverified, 50).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ## Detected issues\n +
+    ### Redirect loops (${problems.loops.length})\n${problems.loops.length ? cap(problems.loops.map(l => ${l.url} -> ${l.chain.map(c => c.to).join(' -> ')}), 50).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ### Redirect chains flattened (${problems.chains.length})\n${problems.chains.length ? cap(problems.chains.slice(0, 50).map(c => ${c.url} -> ${c.final}), 50).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ### 404 / 410 (${problems.notFound.length})\n${problems.notFound.length ? cap(problems.notFound.map(d => d.url), 100).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ### Soft 404s (${soft404Pages.length})\n${soft404Pages.length ? cap(soft404Pages.map(s => ${s.url} (about ${s.words} words, "${s.title}")), 50).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ### Server errors 5xx (${problems.serverError.length})\n${problems.serverError.length ? cap(problems.serverError.map(s => s.url), 50).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ### Missing canonical (${missingCanonical.length})\n${missingCanonical.length ? cap(missingCanonical, 100).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ### Canonical mismatch (${canonicalMismatch.length})\n${canonicalMismatch.length ? cap(canonicalMismatch.map(c => ${c.url} -> ${c.canonical}${c.targetInSitemap ? '' : ' (target NOT in sitemap!)'}), 100).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ### Duplicate groups (${dupGroups.length})\n${dupGroups.length ? cap(dupGroups.map(g => canonical -> ${g.canonical} | dupes: ${g.alternates.join(' , ')}), 50).map(s => - ${s}).join('\n') : '- none'}\n\n +
+    ### Dirty URLs\nUppercase paths: ${dirty.uppercase.length}${dirty.uppercase.length ? '\n' + cap(dirty.uppercase, 30).map(s =>   - ${s}).join('\n') : ' - none'}\nUnderscores: ${dirty.underscore.length}${dirty.underscore.length ? '\n' + cap(dirty.underscore, 30).map(s =>   - ${s}).join('\n') : ' - none'}\n\n +
     ---\nGenerated by scripts/generate-sitemaps.mjs on ${LASTMOD}. Re-run whenever content changes.\n;
   fs.writeFileSync(path.join(OUT_DIR, 'SEO-FIX-REPORT.md'), md);
 }
@@ -570,10 +592,74 @@ console.log('\n========== RESULT ==========');
 console.log(Seeded from old sitemaps : ${seeded.size});
 console.log(Indexed URLs             : ${ok.length});
 console.log(Languages                : ${langsPresent.join(', ')});
-console.log(Child sitemaps           : ${indexEntries.length} → index: ${SITE}/sitemap.xml);
+console.log(Child sitemaps           : ${indexEntries.length} -> index: ${SITE}/sitemap.xml);
 console.log(lastmod (all)            : ${LASTMOD});
 console.log(301 rules                : ${dedupRedirects.length} (.htaccess keeps first ${HTACCESSMAXRULES}));
 console.log(Unverified (kept)        : ${unverified.length});
 console.log(Output dir               : ${OUT_DIR}/);
 console.log('============================\n');
-if (!ok.length) { console.error('❌ No indexable pages found — check the site is reachable / not blocking the workflow.'); process.exit(1); }
+if (!ok.length) { console.error('No indexable pages found - check the site is reachable / not blocking the workflow.'); process.exit(1); }
+
+// ==================================================================
+//  OTHER FILE 2 OF 2
+//  Save exactly as:  scripts/gsc-submit.mjs
+//  Used ONLY when you choose submittogsc = "yes" at run time.
+//  Secret needed: GSCSAJSON (service-account JSON).
+//  Add that service-account email as OWNER in GSC Users & permissions.
+// ==================================================================
+import crypto from 'node:crypto';
+
+const saRaw = process.env.GSCSAJSON || '';
+if (!saRaw) { console.log('No GSCSAJSON secret configured - skipping GSC submission.'); process.exit(0); }
+
+let sa;
+try { sa = JSON.parse(saRaw); } catch { console.error('GSCSAJSON is not valid JSON'); process.exit(1); }
+if (!sa.clientemail || !sa.privatekey) { console.error('GSCSAJSON missing clientemail/privatekey'); process.exit(1); }
+
+const site = (process.env.SITE_URL || 'https://www.egyptphotographytours.com').replace(/\/+$/, '');
+const property = process.env.GSC_PROPERTY || ${site}/;
+const feed = ${site}/sitemap.xml;
+
+const b64url = b => Buffer.from(b).toString('base64url');
+const now = Math.floor(Date.now() / 1000);
+const head = b64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
+const claim = b64url(JSON.stringify({
+  iss: sa.client_email,
+  scope: 'https://www.googleapis.com/auth/webmasters',
+  aud: sa.token_uri || 'https://oauth2.googleapis.com/token',
+  iat: now, exp: now + 3600,
+}));
+const sig = b64url(crypto.sign('RSA-SHA256', Buffer.from(${head}.${claim}), sa.private_key));
+
+const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  body: new URLSearchParams({
+    grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+    assertion: ${head}.${claim}.${sig},
+  }),
+});
+const tok = await tokenRes.json();
+if (!tok.access_token) { console.error('OAuth token failed:', tok); process.exit(1); }
+const auth = { Authorization: Bearer ${tok.access_token} };
+
+const put = await fetch(
+  https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(property)}/sitemaps/${encodeURIComponent(feed)},
+  { method: 'PUT', headers: auth },
+);
+console.log(Submitted ${feed} -> HTTP ${put.status}${put.status === 200 ? ' (submitted)' : ''});
+if (put.status !== 200) console.error(await put.text());
+
+const list = await fetch(
+  https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(property)}/sitemaps,
+  { headers: auth },
+);
+if (list.ok) {
+  const data = await list.json();
+  for (const s of data.sitemap || []) {
+    console.log( - ${s.path} | indexed:${s.contents?.[0]?.indexed ?? '?'} submitted:${s.contents?.[0]?.submitted ?? '?'});
+  }
+} else {
+  console.error('Could not list sitemaps:', list.status, await list.text());
+}
+console.log('Open GSC -> Sitemaps and watch "Indexed pages" climb.');
