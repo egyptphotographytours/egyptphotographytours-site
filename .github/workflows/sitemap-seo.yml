@@ -1,15 +1,11 @@
 name: SEO Sitemap Factory
 
-================================================================
-MANUAL ONLY: this workflow has NO push / schedule triggers.
-It runs ONLY when you click:
-GitHub repo -> Actions tab -> "SEO Sitemap Factory" -> Run workflow
-================================================================
 HOW TO FIX THE LINE-3 ERROR:
-Make sure the VERY FIRST line of this file is:  name: SEO Sitemap Factory
-Do NOT paste the  markers, and nothing before "name:".
-Save this exact file as: .github/workflows/sitemap-seo.yml
-================================================================
+1) Delete the entire content of .github/workflows/sitemap-seo.yml
+2) Paste ONLY what is below (nothing above "name:", no  marks)
+3) Make sure your editor uses SPACES, not TABS (tabs break YAML)
+4) Save / commit. The workflow runs ONLY manually:
+repo -> Actions -> "SEO Sitemap Factory" -> "Run workflow" button
 
 on:
   workflow_dispatch:
@@ -19,27 +15,35 @@ on:
         required: true
         default: "https://www.egyptphotographytours.com"
       max_pages:
-        description: "Max pages to process (seed + crawl)"
+        description: "Max pages to process"
         required: true
         default: "50000"
       languages:
-        description: "Folders: en=root, plus every language folder you have"
+        description: "en=root plus every language folder"
         required: true
         default: "en,ar,es,fr,de,it,pt,ru,ja,zh-CN,ko,hi,nl,sv,pl,tr,vi,th,id,cs,ro,tl,no,da,fi"
       wordpress:
-        description: "Is this a WordPress site? (keeps WP rules inside .htaccess)"
+        description: "Is this a WordPress site?"
         type: choice
-        options: ["yes", "no"]
+        options:
+          - "yes"
+          - "no"
         default: "yes"
       deploy_mode:
-        description: "commit = push to this repo and replace old files (recommended)"
+        description: "commit = push to this repo and replace old files"
         type: choice
-        options: [commit, ssh, ftp, artifact]
+        options:
+          - commit
+          - ssh
+          - ftp
+          - artifact
         default: commit
       submittogsc:
-        description: "Auto-submit /sitemap.xml to Google Search Console? (needs GSCSAJSON secret)"
+        description: "Auto-submit to Google Search Console?"
         type: choice
-        options: ["no", "yes"]
+        options:
+          - "no"
+          - "yes"
         default: "no"
 
 permissions:
@@ -76,14 +80,15 @@ jobs:
           URLS_FILE: urls.txt
         run: node scripts/generate-sitemaps.mjs
 
-      - name: Show how many URLs each sitemap now contains
+      - name: Show URL counts per sitemap
         run: |
-          echo "### URL counts per file" >> "$GITHUBSTEPSUMMARY"
-          echo '' >> "$GITHUBSTEPSUMMARY"
-          find dist-sitemaps -name '*.xml' | sort | while read -r f; do
-            echo "$f -> $(grep -o '' "$f" | wc -l) "
-          done | tee -a "$GITHUBSTEPSUMMARY"
-          echo '' >> "$GITHUBSTEPSUMMARY"
+          {
+            echo "### URL counts per file"
+            echo ""
+            find dist-sitemaps -name '*.xml' | sort | while read -r f; do
+              echo "- $f -> $(grep -o '' "$f" | wc -l) URLs"
+            done
+          } >> "$GITHUBSTEPSUMMARY"
 
       - name: Backup artifact (kept 30 days)
         uses: actions/upload-artifact@v4
@@ -109,32 +114,25 @@ jobs:
           set -euo pipefail
           MODE="${DEPLOY_MODE:-commit}"
           GEN="$GITHUB_WORKSPACE/dist-sitemaps"
-
           if [ "$MODE" = "ssh" ]; then
             mkdir -p ~/.ssh
             printf '%s\n' "$SSHPRIVATEKEY" > ~/.ssh/id_deploy
             chmod 600 ~/.ssh/id_deploy
             PORT="${SSH_PORT:-22}"
             ssh-keyscan -p "$PORT" "$SSHHOST" >> ~/.ssh/knownhosts 2>/dev/null || true
-            rsync -az -e "ssh -p $PORT -i ~/.ssh/id_deploy -o StrictHostKeyChecking=no" \
-              "$GEN/" "$SSHUSER@$SSHHOST:${REMOTE_DIR:-/var/www/html/}"
-            echo 'Uploaded via SSH/rsync'
-
+            rsync -az -e "ssh -p $PORT -i ~/.ssh/iddeploy -o StrictHostKeyChecking=no" "$GEN/" "$SSHUSER@$SSHHOST:${REMOTEDIR:-/var/www/html/}"
+            echo "Uploaded via SSH/rsync"
           elif [ "$MODE" = "ftp" ]; then
             TGT=""
             if [ -n "${FTPREMOTEDIR:-}" ]; then TGT="/${FTPREMOTEDIR%/}"; fi
             cd "$GEN"
             find . -type f | while IFS= read -r f; do
               rel="${f#./}"
-              curl -sS --fail --ftp-create-dirs -T "$f" \
-                "ftp://$FTP_HOST$TGT/$rel" \
-                --user "$FTPUSER:$FTPPASS"
+              curl -sS --fail --ftp-create-dirs -T "$f" "ftp://$FTPHOST$TGT/$rel" --user "$FTPUSER:$FTP_PASS"
             done
-            echo 'Uploaded via FTP'
-
+            echo "Uploaded via FTP"
           elif [ "$MODE" = "artifact" ]; then
-            echo 'Artifact mode - download the artifact and upload files manually.'
-
+            echo "Artifact mode - download the artifact and upload files manually."
           else
             cd "$GITHUB_WORKSPACE"
             find dist-sitemaps -mindepth 1 -maxdepth 1 ! -name 'audit.json' -exec cp -r {} . \;
@@ -143,11 +141,11 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
             if git diff --cached --quiet; then
-              echo 'No changes to commit.'
+              echo "No changes to commit."
             else
               git commit -m "chore(seo): regenerate sitemaps, robots.txt, .htaccess and redirects - lastmod $LASTMOD_DATE"
               git push
-              echo 'Pushed directly to GitHub - old sitemap/robots/.htaccess/redirects replaced.'
+              echo "Pushed to GitHub - old sitemap/robots/.htaccess/redirects replaced."
             fi
           fi
 
@@ -156,12 +154,13 @@ jobs:
         continue-on-error: true
         run: |
           sleep 15
-          code=$(curl -s -o sm.xml -w '%{httpcode}' -L '${{ inputs.baseurl }}/sitemap.xml')
+          code=$(curl -s -o sm.xml -w '%{httpcode}' -L "${{ inputs.baseurl }}/sitemap.xml")
           echo "HTTP $code for /sitemap.xml"
-          head -c 300 sm.xml; echo
-          grep -qi '<sitemapindex' sm.xml && echo 'Sitemap index is live' || echo 'Not served yet - wait for hosting/CDN sync'
+          head -c 300 sm.xml
+          echo ""
+          grep -qi '<sitemapindex' sm.xml && echo "Sitemap index is live" || echo "Not served yet - wait for hosting/CDN sync"
 
-      - name: Auto-submit sitemap to Google Search Console (optional)
+      - name: Auto-submit sitemap to Google Search Console
         if: inputs.submittogsc == 'yes'
         continue-on-error: true
         env:
