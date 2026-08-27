@@ -1,3 +1,8 @@
+════════════════════════════════════════════════════════════════════
+.github/workflows/sitemap-seo.yml
+Save exactly as:  .github/workflows/sitemap-seo.yml
+(create folders: .github → workflows)
+════════════════════════════════════════════════════════════════════
 name: SEO Sitemap Factory
 
 on:
@@ -8,20 +13,25 @@ on:
         required: true
         default: "https://www.egyptphotographytours.com"
       max_pages:
-        description: "Max pages to crawl"
+        description: "Max pages to process (seed + crawl)"
         required: true
-        default: "20000"
+        default: "50000"
       languages:
         description: "Folders: en=root, plus every language folder you have"
         required: true
         default: "en,ar,es,fr,de,it,pt,ru,ja,zh-CN,ko,hi,nl,sv,pl,tr,vi,th,id,cs,ro,tl,no,da,fi"
+      wordpress:
+        description: "Is this a WordPress site? (keeps WP rules inside .htaccess)"
+        type: choice
+        options: ["yes", "no"]
+        default: "yes"
       deploy_mode:
         description: "commit = push to this repo & replace old files (recommended)"
         type: choice
         options: [commit, ssh, ftp, artifact]
         default: commit
       submittogsc:
-        description: "Auto-submit /sitemap.xml to Google Search Console?"
+        description: "Auto-submit /sitemap.xml to Google Search Console? (needs GSCSAJSON secret)"
         type: choice
         options: ["no", "yes"]
         default: "no"
@@ -34,7 +44,7 @@ concurrency: sitemap-factory
 jobs:
   generate-and-push:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 240
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -48,16 +58,28 @@ jobs:
         id: today
         run: echo "d=$(date -u +%F)" >> "$GITHUB_OUTPUT"
 
-      - name: Crawl site + build all sitemaps + robots.txt + .htaccess + audit
+      - name: Seed from old sitemaps + crawl + build everything
         env:
-          SITE_URL: ${{ inputs.base_url }}
-          MAXPAGES: ${{ inputs.max_pages }}
+          SITEURL: ${{ inputs.baseurl }}
+          MAXPAGES: ${{ inputs.maxpages }}
+          CONCURRENCY: "8"
           LANGUAGES: ${{ inputs.languages }}
           LASTMOD: ${{ steps.today.outputs.d }}
           OUT_DIR: dist-sitemaps
+          WP_HTACCESS: ${{ inputs.wordpress }}
+          URLS_FILE: urls.txt
         run: node scripts/generate-sitemaps.mjs
 
-      - name: Backup artifact (always kept for 30 days)
+      - name: Show how many URLs each sitemap now contains
+        run: |
+          echo "### URL counts per file" >> "$GITHUBSTEPSUMMARY"
+          echo '' >> "$GITHUBSTEPSUMMARY"
+          find dist-sitemaps -name '*.xml' | sort | while read -r f; do
+            echo "$f → $(grep -o '' "$f" | wc -l) "
+          done | tee -a "$GITHUBSTEPSUMMARY"
+          echo '' >> "$GITHUBSTEPSUMMARY"
+
+      - name: Backup artifact (kept 30 days)
         uses: actions/upload-artifact@v4
         with:
           name: sitemaps-${{ steps.today.outputs.d }}
@@ -66,7 +88,7 @@ jobs:
 
       - name: Deploy / replace old files
         env:
-          DEPLOY_MODE: ${{ inputs.deploy_mode }}
+          DEPLOYMODE: ${{ inputs.deploymode }}
           LASTMOD_DATE: ${{ steps.today.outputs.d }}
           SSHPRIVATEKEY: ${{ secrets.DEPLOYSSHKEY }}
           SSHHOST: ${{ secrets.DEPLOYSSH_HOST }}
@@ -93,23 +115,22 @@ jobs:
             echo '✔ Uploaded via SSH/rsync'
 
           elif [ "$MODE" = "ftp" ]; then
+            TGT=""
+            if [ -n "${FTPREMOTEDIR:-}" ]; then TGT="/${FTPREMOTEDIR%/}"; fi
             cd "$GEN"
             find . -type f | while IFS= read -r f; do
               rel="${f#./}"
               curl -sS --fail --ftp-create-dirs -T "$f" \
-                "ftp://$FTPHOST/${FTPREMOTE_DIR:-/}/$rel" \
+                "ftp://$FTP_HOST$TGT/$rel" \
                 --user "$FTPUSER:$FTPPASS"
             done
             echo '✔ Uploaded via FTP'
 
           elif [ "$MODE" = "artifact" ]; then
-            echo 'Artifact mode — download this run artifact and upload files manually.'
+            echo 'Artifact mode — download the artifact and upload files manually.'
 
           else
-            # ============ COMMIT MODE: push straight to this repo ============
             cd "$GITHUB_WORKSPACE"
-            # Copy every generated file/folder to the repo root,
-            # overwriting the old sitemap / robots / .htaccess / redirects.
             find dist-sitemaps -mindepth 1 -maxdepth 1 ! -name 'audit.json' -exec cp -r {} . \;
             rm -rf dist-sitemaps
             git config user.name "github-actions[bot]"
@@ -124,30 +145,21 @@ jobs:
             fi
           fi
 
-      # -------- OPTIONAL: auto-submit to Google Search Console --------
-      # This step runs only if you set submittogsc = "yes" AND have the secret GSCSAJSON.
-      # It also requires the file scripts/gsc-submit.mjs to exist in your repo.
-      - name: Auto-submit sitemap to Google Search Console (optional)
-        if: inputs.submittogsc == 'yes' && env.GSCSAJSON != ''
-        env:
-          GSCSAJSON: ${{ secrets.GSCSAJSON }}
-          GSC_PROPERTY: ${{ vars.GSC_PROPERTY }}
-          SITE_URL: ${{ inputs.base_url }}
-        run: node scripts/gsc-submit.mjs
-
       - name: Verify live sitemap index
         if: inputs.deploy_mode != 'artifact'
         continue-on-error: true
         run: |
           sleep 15
-          code=$(curl -s -o sm.xml -w '%{http_code}' -L '${{ inputs.base_url }}/sitemap.xml')
+          code=$(curl -s -o sm.xml -w '%{httpcode}' -L '${{ inputs.baseurl }}/sitemap.xml')
           echo "HTTP $code for /sitemap.xml"
           head -c 300 sm.xml; echo
-          grep -qi '<sitemapindex' sm.xml && echo 'Sitemap index looks valid ✔'
-          {
-            echo '## Sitemap verification'
-            echo "HTTP $code for /sitemap.xml"
-            echo '```'
-            head -c 200 sm.xml
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
+          grep -qi '<sitemapindex' sm.xml && echo '✔ Sitemap index is live' || echo '⚠ Not served yet — wait for hosting/CDN sync'
+
+      - name: Auto-submit sitemap to Google Search Console (optional)
+        if: inputs.submittogsc == 'yes'
+        continue-on-error: true
+        env:
+          GSCSAJSON: ${{ secrets.GSCSAJSON }}
+          GSCPROPERTY: ${{ vars.GSCPROPERTY }}
+          SITEURL: ${{ inputs.baseurl }}
+        run: node scripts/gsc-submit.mjs
