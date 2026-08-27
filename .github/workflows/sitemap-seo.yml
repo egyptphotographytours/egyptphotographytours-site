@@ -1,9 +1,15 @@
-════════════════════════════════════════════════════════════════════
-.github/workflows/sitemap-seo.yml
-Save exactly as:  .github/workflows/sitemap-seo.yml
-(create folders: .github → workflows)
-════════════════════════════════════════════════════════════════════
 name: SEO Sitemap Factory
+
+================================================================
+MANUAL ONLY: this workflow has NO push / schedule triggers.
+It runs ONLY when you click:
+GitHub repo -> Actions tab -> "SEO Sitemap Factory" -> Run workflow
+================================================================
+HOW TO FIX THE LINE-3 ERROR:
+Make sure the VERY FIRST line of this file is:  name: SEO Sitemap Factory
+Do NOT paste the  markers, and nothing before "name:".
+Save this exact file as: .github/workflows/sitemap-seo.yml
+================================================================
 
 on:
   workflow_dispatch:
@@ -26,7 +32,7 @@ on:
         options: ["yes", "no"]
         default: "yes"
       deploy_mode:
-        description: "commit = push to this repo & replace old files (recommended)"
+        description: "commit = push to this repo and replace old files (recommended)"
         type: choice
         options: [commit, ssh, ftp, artifact]
         default: commit
@@ -54,7 +60,7 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Today's date → becomes EVERY lastmod in every sitemap
+      - name: Get today's date (becomes every lastmod)
         id: today
         run: echo "d=$(date -u +%F)" >> "$GITHUB_OUTPUT"
 
@@ -75,7 +81,7 @@ jobs:
           echo "### URL counts per file" >> "$GITHUBSTEPSUMMARY"
           echo '' >> "$GITHUBSTEPSUMMARY"
           find dist-sitemaps -name '*.xml' | sort | while read -r f; do
-            echo "$f → $(grep -o '' "$f" | wc -l) "
+            echo "$f -> $(grep -o '' "$f" | wc -l) "
           done | tee -a "$GITHUBSTEPSUMMARY"
           echo '' >> "$GITHUBSTEPSUMMARY"
 
@@ -86,7 +92,7 @@ jobs:
           path: dist-sitemaps
           retention-days: 30
 
-      - name: Deploy / replace old files
+      - name: Deploy and replace old files
         env:
           DEPLOYMODE: ${{ inputs.deploymode }}
           LASTMOD_DATE: ${{ steps.today.outputs.d }}
@@ -112,7 +118,7 @@ jobs:
             ssh-keyscan -p "$PORT" "$SSHHOST" >> ~/.ssh/knownhosts 2>/dev/null || true
             rsync -az -e "ssh -p $PORT -i ~/.ssh/id_deploy -o StrictHostKeyChecking=no" \
               "$GEN/" "$SSHUSER@$SSHHOST:${REMOTE_DIR:-/var/www/html/}"
-            echo '✔ Uploaded via SSH/rsync'
+            echo 'Uploaded via SSH/rsync'
 
           elif [ "$MODE" = "ftp" ]; then
             TGT=""
@@ -124,10 +130,10 @@ jobs:
                 "ftp://$FTP_HOST$TGT/$rel" \
                 --user "$FTPUSER:$FTPPASS"
             done
-            echo '✔ Uploaded via FTP'
+            echo 'Uploaded via FTP'
 
           elif [ "$MODE" = "artifact" ]; then
-            echo 'Artifact mode — download the artifact and upload files manually.'
+            echo 'Artifact mode - download the artifact and upload files manually.'
 
           else
             cd "$GITHUB_WORKSPACE"
@@ -139,9 +145,9 @@ jobs:
             if git diff --cached --quiet; then
               echo 'No changes to commit.'
             else
-              git commit -m "chore(seo): regenerate sitemaps, robots.txt, .htaccess & redirects — lastmod $LASTMOD_DATE"
+              git commit -m "chore(seo): regenerate sitemaps, robots.txt, .htaccess and redirects - lastmod $LASTMOD_DATE"
               git push
-              echo '✔ Pushed directly to GitHub — old sitemap/robots/.htaccess/redirects replaced.'
+              echo 'Pushed directly to GitHub - old sitemap/robots/.htaccess/redirects replaced.'
             fi
           fi
 
@@ -153,7 +159,7 @@ jobs:
           code=$(curl -s -o sm.xml -w '%{httpcode}' -L '${{ inputs.baseurl }}/sitemap.xml')
           echo "HTTP $code for /sitemap.xml"
           head -c 300 sm.xml; echo
-          grep -qi '<sitemapindex' sm.xml && echo '✔ Sitemap index is live' || echo '⚠ Not served yet — wait for hosting/CDN sync'
+          grep -qi '<sitemapindex' sm.xml && echo 'Sitemap index is live' || echo 'Not served yet - wait for hosting/CDN sync'
 
       - name: Auto-submit sitemap to Google Search Console (optional)
         if: inputs.submittogsc == 'yes'
@@ -163,3 +169,4 @@ jobs:
           GSCPROPERTY: ${{ vars.GSCPROPERTY }}
           SITEURL: ${{ inputs.baseurl }}
         run: node scripts/gsc-submit.mjs
+```
