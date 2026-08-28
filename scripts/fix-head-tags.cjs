@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 /*
- * fix-head-tags.js — SITEMAP FORGE head-tag cleaner
- * ─────────────────────────────────────────────────
+ * fix-head-tags.cjs — SITEMAP FORGE head-tag cleaner (CommonJS build)
+ * ────────────────────────────────────────────────────────────────────
+ * The .cjs extension guarantees CommonJS mode even in repos with
+ * "type": "module" in package.json.
+ *
  * Rewrites on every .html page of YOUR domain only:
  *   • <link rel="canonical">            → clean URL
  *   • <link rel="alternate" hreflang>   → clean URL  +  hreflang "zh" → "zh-CN"
@@ -12,9 +15,9 @@
  * Safety: dry-run · per-file tag-count validation · backups · atomic writes
  *
  * Usage:
- *   node scripts/fix-head-tags.js ./site --dry       ← report only (run first)
- *   node scripts/fix-head-tags.js ./site             ← apply + backups
- *   node scripts/fix-head-tags.js ./site --links     ← also clean <a> links
+ *   node scripts/fix-head-tags.cjs ./site --dry      ← report only (run first)
+ *   node scripts/fix-head-tags.cjs ./site            ← apply + backups
+ *   node scripts/fix-head-tags.cjs ./site --links    ← also clean <a> links
  */
 'use strict';
 
@@ -27,6 +30,15 @@ var positional = args.filter(function (a) { return a.indexOf('--') !== 0; });
 var DRY = flags.indexOf('--dry') !== -1;
 var LINKS = flags.indexOf('--links') !== -1;
 var ROOT = positional[0] || '.';
+
+/* hardening: strip stray backslashes, fall back to repo root if the folder is invalid */
+ROOT = String(ROOT).replace(/\\/g, '').trim();
+if (ROOT === '') ROOT = '.';
+if (!fs.existsSync(ROOT)) {
+  console.warn('WARN: folder "' + ROOT + '" not found — falling back to "." (repo root)');
+  ROOT = '.';
+}
+
 var BACKUP_DIR = '.head-fix-backups';
 var DOMAIN = 'https://www.egyptphotographytours.com';
 
@@ -129,6 +141,8 @@ function validate(before, after) {
 function flatName(p) { return p.replace(/[\\\/]/g, '__'); }
 
 /* ---------- main ---------- */
+console.log('SITEMAP FORGE cleaner · root: ' + ROOT + ' · mode: ' + (DRY ? 'DRY RUN' : 'APPLY') + (LINKS ? ' · links: yes' : ''));
+
 walk(ROOT, function (p) {
   totals.files++;
   var src = fs.readFileSync(p, 'utf8');
@@ -165,6 +179,7 @@ walk(ROOT, function (p) {
 var lines = [];
 lines.push('SITEMAP FORGE — head-tags report');
 lines.push('Mode: ' + (DRY ? 'DRY RUN (nothing written)' : 'APPLIED (backups in ' + BACKUP_DIR + '/)'));
+lines.push('Root folder: ' + ROOT);
 lines.push('Links mode: ' + (LINKS ? 'yes (internal <a> links included)' : 'no'));
 lines.push('------------------------------------');
 lines.push('Scanned .html files : ' + totals.files);
