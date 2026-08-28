@@ -1,0 +1,114 @@
+name: SEO Head-Tags Cleaner
+
+# ──────────────────────────────────────────────────────────────
+# SITEMAP FORGE — clean-URL canonical + hreflang automation
+# Run manually: Actions tab → this workflow → "Run workflow"
+#   mode=dry-run  → report only (always do this first)
+#   mode=apply    → fixes files + opens a Pull Request
+# Every Monday 03:00 UTC it re-checks in dry-run mode so new
+# pages can never drift back to .html tags.
+# ──────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run = report only · apply = fix + open Pull Request"
+        type: choice
+        options: [dry-run, apply]
+        default: dry-run
+      site_dir:
+        description: "Folder containing your .html pages (repo-relative, e.g. . or public)"
+        required: true
+        default: "."
+      fix_links:
+        description: "Phase 2: also rewrite internal <a href> links"
+        type: choice
+        options: ["no", "yes"]
+        default: "no"
+  schedule:
+    - cron: "0 3 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  clean-head-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run the cleaner
+        env:
+          MODE: \${{ github.event_name == 'schedule' && 'dry-run' || inputs.mode }}
+          DIR: \${{ inputs.site_dir || '.' }}
+          LINKS: \${{ inputs.fix_links }}
+        run: |
+          ARGS="$DIR"
+          if [ "$MODE" != "apply" ]; then ARGS="$ARGS --dry"; fi
+          if [ "$LINKS" = "yes" ]; then ARGS="$ARGS --links"; fi
+          echo "→ node scripts/fix-head-tags.js $ARGS"
+          node scripts/fix-head-tags.js $ARGS
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: head-fix-report
+          path: head-fix-report.txt
+
+      - name: Package backups (apply runs only)
+        if: inputs.mode == 'apply' && github.event_name == 'workflow_dispatch'
+        run: |
+          if [ -d .head-fix-backups ]; then
+            zip -qr head-fix-backups.zip .head-fix-backups
+            echo "Backups zipped: $(du -h head-fix-backups.zip | cut -f1)"
+          fi
+
+      - name: Upload backups artifact
+        if: inputs.mode == 'apply' && github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: head-fix-backups
+          path: head-fix-backups.zip
+          if-no-files-found: ignore
+
+      - name: Keep backups out of the commit
+        run: |
+          rm -rf .head-fix-backups head-fix-backups.zip
+          echo ".head-fix-backups/" >> .gitignore
+
+      - name: Open Pull Request with the fixes
+        if: inputs.mode == 'apply' && github.event_name == 'workflow_dispatch'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: seo/clean-canonical-hreflang
+          delete-branch: true
+          add-paths: |
+            *.html
+            **/*.html
+            .gitignore
+          commit-message: "chore(seo): canonical + hreflang + og:url + JSON-LD to clean URLs (auto)"
+          title: "SEO: clean-URL canonical & hreflang across all pages (automated)"
+          body: |
+            Automated by the SITEMAP FORGE head-tags cleaner.
+
+            **What changed**
+            - `rel=canonical` → clean URLs (matches sitemaps + Vercel cleanUrls)
+            - all `hreflang` alternates + `x-default` → clean URLs
+            - `hreflang="zh"` corrected to `hreflang="zh-CN"`
+            - `og:url` → clean URLs
+            - JSON-LD `url` / `@id` / breadcrumb items → clean URLs (fragments kept)
+
+            **Safety**
+            - every changed file was tag-count validated before writing
+            - originals saved as backups artifact (download from the run)
+            - nothing goes live until this PR is merged
+
+            Review a few files in the diff, then merge → Vercel auto-deploys.
