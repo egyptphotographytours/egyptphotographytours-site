@@ -1,17 +1,27 @@
-# robots.txt — auto-generated 2026-08-27
+# ══════════════════════════════════════════════════════════
+# robots.txt — www.egyptphotographytours.com
+# Cleaned by SITEMAP FORGE for a STATIC multilingual site on Vercel
+# ══════════════════════════════════════════════════════════
+#
+# Why this file is shorter than the auto-generated one:
+#
+#  • /wp-admin · /wp-login.php · /xmlrpc.php
+#      → WordPress paths. You are not on WordPress — dead rules.
+#
+#  • /cart · /checkout · /my-account · /login · /search · /*?s=
+#      → Shop/search paths that don't exist on this site.
+#
+#  • /?utm_ · /?gclid= · /?fbclid=
+#      → Tracking parameters are NOT an indexing problem.
+#        Your self-canonical tags already collapse them, and
+#        Google explicitly recommends NOT blocking them in robots
+#        (blocking only hides signals and wastes directives).
+
 User-agent: *
 Allow: /
-Disallow: /search
-Disallow: /*?s=
-Disallow: /cart
-Disallow: /checkout
-Disallow: /my-account/
-Disallow: /login
-Disallow: /wp-admin/
-Disallow: /wp-login.php
-Disallow: /xmlrpc.php
-Disallow: /?utm_
-Disallow: /?gclid=
-Disallow: /?fbclid=
 
+# Verification orphan — keep out of the index
+Disallow: /pinterest-71221
+
+# One entry point — all 25 language sitemaps live inside it
 Sitemap: https://www.egyptphotographytours.com/sitemap.xml
