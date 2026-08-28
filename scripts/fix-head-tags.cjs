@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 /*
- * fix-head-tags.cjs — SITEMAP FORGE head-tag cleaner (CommonJS build)
- * The .cjs extension guarantees CommonJS mode even in repos with
- * "type": "module" in package.json.
+ * fix-head-tags.cjs — SITEMAP FORGE v3 head-tag cleaner (CommonJS build)
+ * Works in any repo regardless of package.json "type".
  *
  * Rewrites on every .html page of YOUR domain only:
  *   • <link rel="canonical">            → clean URL
@@ -11,12 +10,13 @@
  *   • JSON-LD "url" / "@id" / crumbs    → clean URL (keeps #fragments)
  *   • optional --links: internal <a href> links → clean URL
  *
- * Safety: dry-run · per-file tag-count validation · backups · atomic writes
+ * v3: machine-readable counters (head-fix-changed.txt, head-fix-summary.json),
+ *     fatal errors exit non-zero, everything else identical & idempotent.
  *
  * Usage:
- *   node scripts/fix-head-tags.cjs . --dry       ← report only (run first)
- *   node scripts/fix-head-tags.cjs .             ← apply + backups
- *   node scripts/fix-head-tags.cjs . --links     ← also clean <a> links
+ *   node scripts/fix-head-tags.cjs . --dry
+ *   node scripts/fix-head-tags.cjs .
+ *   node scripts/fix-head-tags.cjs . --links
  */
 'use strict';
 
@@ -30,16 +30,10 @@ var DRY = flags.indexOf('--dry') !== -1;
 var LINKS = flags.indexOf('--links') !== -1;
 var ROOT = positional[0] || '.';
 
-/* hardening: strip stray backslashes, fall back to repo root if invalid */
 ROOT = String(ROOT).replace(/\\/g, '').trim();
 if (ROOT === '') ROOT = '.';
-if (!fs.existsSync(ROOT)) {
-  console.warn('WARN: folder "' + ROOT + '" not found — falling back to "." (repo root)');
-  ROOT = '.';
-}
 
 var BACKUP_DIR = '.head-fix-backups';
-var DOMAIN = 'https://www.egyptphotographytours.com';
 
 var totals = { files: 0, changed: 0, skipped: 0, canonical: 0, hreflang: 0, zh: 0, og: 0, jsonld: 0, links: 0 };
 var report = [];
@@ -131,57 +125,87 @@ function validate(before, after) {
 
 function flatName(p) { return p.replace(/[\\\/]/g, '__'); }
 
-console.log('SITEMAP FORGE cleaner · root: ' + ROOT + ' · mode: ' + (DRY ? 'DRY RUN' : 'APPLY') + (LINKS ? ' · links: yes' : ''));
-
-walk(ROOT, function (p) {
-  totals.files++;
-  var src = fs.readFileSync(p, 'utf8');
-  var res = transform(src);
-  var changes = res.n.canonical + res.n.hreflang + res.n.zh + res.n.og + res.n.jsonld + res.n.links;
-  if (changes === 0) return;
-
-  var problem = validate(src, res.out);
-  if (problem) {
-    totals.skipped++;
-    report.push('SKIPPED (' + problem + '): ' + p);
-    return;
+function main() {
+  if (!fs.existsSync(ROOT)) {
+    console.warn('WARN: folder "' + ROOT + '" not found — falling back to "." (repo root)');
+    ROOT = '.';
   }
 
-  totals.changed++;
-  totals.canonical += res.n.canonical;
-  totals.hreflang += res.n.hreflang;
-  totals.zh += res.n.zh;
-  totals.og += res.n.og;
-  totals.jsonld += res.n.jsonld;
-  totals.links += res.n.links;
-  report.push((DRY ? 'WOULD FIX' : 'FIXED') + ' (' + changes + ' tags): ' + p);
+  console.log('SITEMAP FORGE v3 · root: ' + ROOT + ' · mode: ' + (DRY ? 'DRY RUN' : 'APPLY') + (LINKS ? ' · links: yes' : ''));
 
-  if (!DRY) {
-    if (!fs.existsSync(BACKUP_DIR)) fs.mkdirSync(BACKUP_DIR, { recursive: true });
-    fs.writeFileSync(path.join(BACKUP_DIR, flatName(p) + '.bak'), src);
-    var tmp = p + '.tmp';
-    fs.writeFileSync(tmp, res.out);
-    fs.renameSync(tmp, p);
-  }
-});
+  walk(ROOT, function (p) {
+    totals.files++;
+    var src = fs.readFileSync(p, 'utf8');
+    var res = transform(src);
+    var changes = res.n.canonical + res.n.hreflang + res.n.zh + res.n.og + res.n.jsonld + res.n.links;
+    if (changes === 0) return;
 
-var lines = [];
-lines.push('SITEMAP FORGE — head-tags report');
-lines.push('Mode: ' + (DRY ? 'DRY RUN (nothing written)' : 'APPLIED (backups in ' + BACKUP_DIR + '/)'));
-lines.push('Root folder: ' + ROOT);
-lines.push('Links mode: ' + (LINKS ? 'yes (internal <a> links included)' : 'no'));
-lines.push('------------------------------------');
-lines.push('Scanned .html files : ' + totals.files);
-lines.push((DRY ? 'Would change       : ' : 'Changed files      : ') + totals.changed);
-lines.push('Skipped (protected) : ' + totals.skipped);
-lines.push('canonical rewrites  : ' + totals.canonical);
-lines.push('hreflang rewrites   : ' + totals.hreflang);
-lines.push('zh -> zh-CN fixes   : ' + totals.zh);
-lines.push('og:url rewrites     : ' + totals.og);
-lines.push('JSON-LD URL fixes   : ' + totals.jsonld);
-lines.push('internal <a> links  : ' + totals.links);
-lines.push('------------------------------------');
-lines.push(report.join('\n'));
-var text = lines.join('\n');
-console.log(text);
-fs.writeFileSync('head-fix-report.txt', text);
+    var problem = validate(src, res.out);
+    if (problem) {
+      totals.skipped++;
+      report.push('SKIPPED (' + problem + '): ' + p);
+      return;
+    }
+
+    totals.changed++;
+    totals.canonical += res.n.canonical;
+    totals.hreflang += res.n.hreflang;
+    totals.zh += res.n.zh;
+    totals.og += res.n.og;
+    totals.jsonld += res.n.jsonld;
+    totals.links += res.n.links;
+    report.push((DRY ? 'WOULD FIX' : 'FIXED') + ' (' + changes + ' tags): ' + p);
+
+    if (!DRY) {
+      if (!fs.existsSync(BACKUP_DIR)) fs.mkdirSync(BACKUP_DIR, { recursive: true });
+      fs.writeFileSync(path.join(BACKUP_DIR, flatName(p) + '.bak'), src);
+      var tmp = p + '.tmp';
+      fs.writeFileSync(tmp, res.out);
+      fs.renameSync(tmp, p);
+    }
+  });
+
+  var lines = [];
+  lines.push('SITEMAP FORGE v3 — head-tags report');
+  lines.push('Mode: ' + (DRY ? 'DRY RUN (nothing written)' : 'APPLIED (backups in ' + BACKUP_DIR + '/)'));
+  lines.push('Root folder: ' + ROOT);
+  lines.push('Links mode: ' + (LINKS ? 'yes' : 'no'));
+  lines.push('------------------------------------');
+  lines.push('Scanned .html files : ' + totals.files);
+  lines.push((DRY ? 'Would change       : ' : 'Changed files      : ') + totals.changed);
+  lines.push('Skipped (protected) : ' + totals.skipped);
+  lines.push('canonical rewrites  : ' + totals.canonical);
+  lines.push('hreflang rewrites   : ' + totals.hreflang);
+  lines.push('zh -> zh-CN fixes   : ' + totals.zh);
+  lines.push('og:url rewrites     : ' + totals.og);
+  lines.push('JSON-LD URL fixes   : ' + totals.jsonld);
+  lines.push('internal <a> links  : ' + totals.links);
+  lines.push('------------------------------------');
+  lines.push(report.join('\n'));
+  var text = lines.join('\n');
+  console.log(text);
+
+  fs.writeFileSync('head-fix-report.txt', text);
+  fs.writeFileSync('head-fix-changed.txt', String(totals.changed));
+  fs.writeFileSync('head-fix-summary.json', JSON.stringify({
+    mode: DRY ? 'dry-run' : 'apply',
+    links: LINKS,
+    root: ROOT,
+    files: totals.files,
+    changed: totals.changed,
+    skipped: totals.skipped,
+    canonical: totals.canonical,
+    hreflang: totals.hreflang,
+    zhToZhCN: totals.zh,
+    ogUrl: totals.og,
+    jsonld: totals.jsonld,
+    linksRewritten: totals.links
+  }, null, 2));
+}
+
+try {
+  main();
+} catch (err) {
+  console.error('FATAL: ' + (err && err.stack ? err.stack : err));
+  process.exit(1);
+}
