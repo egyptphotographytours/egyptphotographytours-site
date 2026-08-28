@@ -3,12 +3,7 @@ name: SEO Head-Tags Cleaner
 # ──────────────────────────────────────────────────────────────
 # SITEMAP FORGE — clean-URL canonical + hreflang automation
 # v2: calls scripts/fix-head-tags.cjs (works with "type": "module")
-#     + sanitizes the site_dir input
-#
-# Run manually: Actions tab → this workflow → "Run workflow"
-#   mode=dry-run  → report only (always do this first)
-#   mode=apply    → fixes files + opens a Pull Request
-# Every Monday 03:00 UTC it re-checks in dry-run mode.
+# IMPORTANT: this file must live on the DEFAULT branch (main)
 # ──────────────────────────────────────────────────────────────
 
 on:
@@ -54,7 +49,7 @@ jobs:
           LINKS: \${{ inputs.fix_links }}
         run: |
           D="$DIR"
-          D="${D//\\/}"                     # strip stray backslashes
+          D="${D//\\/}"
           if [ -z "$D" ]; then D="."; fi
           if [ ! -d "$D" ]; then
             echo "::warning::folder '$D' not found — falling back to repo root"
