@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * fix-head-tags.cjs — SITEMAP FORGE v3 head-tag cleaner (CommonJS build)
+ * fix-head-tags.cjs — SITEMAP FORGE v3.1 head-tag cleaner (CommonJS build)
  * Works in any repo regardless of package.json "type".
  *
  * Rewrites on every .html page of YOUR domain only:
@@ -10,13 +10,9 @@
  *   • JSON-LD "url" / "@id" / crumbs    → clean URL (keeps #fragments)
  *   • optional --links: internal <a href> links → clean URL
  *
- * v3: machine-readable counters (head-fix-changed.txt, head-fix-summary.json),
- *     fatal errors exit non-zero, everything else identical & idempotent.
- *
- * Usage:
- *   node scripts/fix-head-tags.cjs . --dry
- *   node scripts/fix-head-tags.cjs .
- *   node scripts/fix-head-tags.cjs . --links
+ * Outputs: head-fix-report.txt · head-fix-changed.txt · head-fix-summary.json
+ * Safety: dry-run · per-file tag-count validation · backups · atomic writes
+ * Fatal errors exit non-zero (the workflow turns red instead of faking success).
  */
 'use strict';
 
@@ -26,15 +22,11 @@ var path = require('path');
 var args = process.argv.slice(2);
 var flags = args.filter(function (a) { return a.indexOf('--') === 0; });
 var positional = args.filter(function (a) { return a.indexOf('--') !== 0; });
-var DRY = flags.indexOf('--dry') !== -1;
-var LINKS = flags.indexOf('--links') !== -1;
-var ROOT = positional[0] || '.';
-
-ROOT = String(ROOT).replace(/\\/g, '').trim();
-if (ROOT === '') ROOT = '.';
+var DRY = flags.some(function (f) { return f.trim() === '--dry'; });
+var LINKS = flags.some(function (f) { return f.trim() === '--links'; });
+var ROOT = (positional[0] || '.').replace(/\\/g, '').trim() || '.';
 
 var BACKUP_DIR = '.head-fix-backups';
-
 var totals = { files: 0, changed: 0, skipped: 0, canonical: 0, hreflang: 0, zh: 0, og: 0, jsonld: 0, links: 0 };
 var report = [];
 
@@ -127,11 +119,11 @@ function flatName(p) { return p.replace(/[\\\/]/g, '__'); }
 
 function main() {
   if (!fs.existsSync(ROOT)) {
-    console.warn('WARN: folder "' + ROOT + '" not found — falling back to "." (repo root)');
+    console.warn('WARN: folder "' + ROOT + '" not found - falling back to "." (repo root)');
     ROOT = '.';
   }
 
-  console.log('SITEMAP FORGE v3 · root: ' + ROOT + ' · mode: ' + (DRY ? 'DRY RUN' : 'APPLY') + (LINKS ? ' · links: yes' : ''));
+  console.log('SITEMAP FORGE v3.1 - root: ' + ROOT + ' - mode: ' + (DRY ? 'DRY RUN' : 'APPLY') + (LINKS ? ' - links: yes' : ''));
 
   walk(ROOT, function (p) {
     totals.files++;
@@ -166,7 +158,7 @@ function main() {
   });
 
   var lines = [];
-  lines.push('SITEMAP FORGE v3 — head-tags report');
+  lines.push('SITEMAP FORGE v3.1 - head-tags report');
   lines.push('Mode: ' + (DRY ? 'DRY RUN (nothing written)' : 'APPLIED (backups in ' + BACKUP_DIR + '/)'));
   lines.push('Root folder: ' + ROOT);
   lines.push('Links mode: ' + (LINKS ? 'yes' : 'no'));
@@ -188,18 +180,10 @@ function main() {
   fs.writeFileSync('head-fix-report.txt', text);
   fs.writeFileSync('head-fix-changed.txt', String(totals.changed));
   fs.writeFileSync('head-fix-summary.json', JSON.stringify({
-    mode: DRY ? 'dry-run' : 'apply',
-    links: LINKS,
-    root: ROOT,
-    files: totals.files,
-    changed: totals.changed,
-    skipped: totals.skipped,
-    canonical: totals.canonical,
-    hreflang: totals.hreflang,
-    zhToZhCN: totals.zh,
-    ogUrl: totals.og,
-    jsonld: totals.jsonld,
-    linksRewritten: totals.links
+    mode: DRY ? 'dry-run' : 'apply', links: LINKS, root: ROOT,
+    files: totals.files, changed: totals.changed, skipped: totals.skipped,
+    canonical: totals.canonical, hreflang: totals.hreflang, zhToZhCN: totals.zh,
+    ogUrl: totals.og, jsonld: totals.jsonld, linksRewritten: totals.links
   }, null, 2));
 }
 
