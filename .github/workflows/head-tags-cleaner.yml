@@ -1,21 +1,30 @@
-name: SEO Head-Tags Cleaner
+name: SEO Head-Tags Cleaner v3
 
 # ──────────────────────────────────────────────────────────────
-# SITEMAP FORGE — clean-URL canonical + hreflang automation
-# v2: calls scripts/fix-head-tags.cjs (works with "type": "module")
-# IMPORTANT: this file must live on the DEFAULT branch (main)
+# SITEMAP FORGE v3 — branch-agnostic auto-commit engine
+# Works on ANY default branch name (Main-Match2 included) —
+# the branch is read from GitHub itself, never hardcoded.
+#
+# Modes:
+#   dry-run      → report only (always run this first)
+#   commit       → apply + commit + push to the default branch
+#                  (auto-fallback to a Pull Request if the
+#                  branch is protected and rejects the push)
+#   pull-request → apply + open a PR for manual review
+#
+# Every apply run uploads: head-fix-report + originals backup zip.
 # ──────────────────────────────────────────────────────────────
 
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "dry-run = report only · apply = fix + open Pull Request"
+        description: "dry-run = report · commit = apply + push to default branch · pull-request = apply + PR"
         type: choice
-        options: [dry-run, apply]
+        options: [dry-run, commit, pull-request]
         default: dry-run
       site_dir:
-        description: "Folder containing your .html pages — type . for repo root"
+        description: "Folder containing your .html pages — . for repo root"
         required: true
         default: "."
       fix_links:
@@ -29,6 +38,10 @@ on:
 permissions:
   contents: write
   pull-requests: write
+
+concurrency:
+  group: head-tags-cleaner
+  cancel-in-progress: false
 
 jobs:
   clean-head-tags:
@@ -48,6 +61,7 @@ jobs:
           DIR: \${{ inputs.site_dir || '.' }}
           LINKS: \${{ inputs.fix_links }}
         run: |
+          echo "Repository branch: \${{ github.ref_name }} · Trigger: \${{ github.event_name }} · Mode: $MODE"
           D="$DIR"
           D="${D//\\/}"
           if [ -z "$D" ]; then D="."; fi
@@ -56,19 +70,47 @@ jobs:
             D="."
           fi
           ARGS="$D"
-          if [ "$MODE" != "apply" ]; then ARGS="$ARGS --dry"; fi
+          if [ "$MODE" != "commit" ] && [ "$MODE" != "pull-request" ]; then
+            ARGS="$ARGS --dry"
+          fi
           if [ "$LINKS" = "yes" ]; then ARGS="$ARGS --links"; fi
           echo "→ node scripts/fix-head-tags.cjs $ARGS"
           node scripts/fix-head-tags.cjs $ARGS
 
+      - name: Decision gate + job summary
+        id: gate
+        run: |
+          CHANGED=$(cat head-fix-changed.txt)
+          SKIPPED=$(node -e "console.log(JSON.parse(require('fs').readFileSync('head-fix-summary.json')).skipped)" 2>/dev/null || echo 0)
+          FILES=$(node -e "console.log(JSON.parse(require('fs').readFileSync('head-fix-summary.json')).files)" 2>/dev/null || echo 0)
+          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
+          {
+            echo "## SITEMAP FORGE v3 — run summary"
+            echo ""
+            echo "| Metric | Value |"
+            echo "|---|---|"
+            echo "| Branch | \${{ github.ref_name }} |"
+            echo "| Scanned .html files | $FILES |"
+            echo "| Changed | $CHANGED |"
+            echo "| Skipped (protected) | $SKIPPED |"
+            echo ""
+            if [ "$CHANGED" = "0" ]; then
+              echo "✅ **Nothing to change — the site is already clean. No commit was made (this is correct).**"
+            fi
+          } >> "$GITHUB_SUMMARY"
+          echo "Scanned: $FILES · Changed: $CHANGED · Skipped: $SKIPPED"
+
       - name: Upload report artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: head-fix-report
-          path: head-fix-report.txt
+          path: |
+            head-fix-report.txt
+            head-fix-summary.json
 
-      - name: Package backups (apply runs only)
-        if: inputs.mode == 'apply' && github.event_name == 'workflow_dispatch'
+      - name: Package backups
+        if: steps.gate.outputs.changed != '0' && inputs.mode != 'dry-run' && github.event_name == 'workflow_dispatch'
         run: |
           if [ -d .head-fix-backups ]; then
             zip -qr head-fix-backups.zip .head-fix-backups
@@ -76,43 +118,60 @@ jobs:
           fi
 
       - name: Upload backups artifact
-        if: inputs.mode == 'apply' && github.event_name == 'workflow_dispatch'
+        if: steps.gate.outputs.changed != '0' && inputs.mode != 'dry-run' && github.event_name == 'workflow_dispatch'
         uses: actions/upload-artifact@v4
         with:
           name: head-fix-backups
           path: head-fix-backups.zip
           if-no-files-found: ignore
 
-      - name: Keep backups out of the commit
+      - name: Clean helper files before committing
+        if: steps.gate.outputs.changed != '0' && inputs.mode != 'dry-run' && github.event_name == 'workflow_dispatch'
         run: |
-          rm -rf .head-fix-backups head-fix-backups.zip
-          echo ".head-fix-backups/" >> .gitignore
+          rm -rf .head-fix-backups head-fix-backups.zip head-fix-changed.txt
+          grep -qxF '.head-fix-backups/' .gitignore 2>/dev/null || echo ".head-fix-backups/" >> .gitignore
 
-      - name: Open Pull Request with the fixes
-        if: inputs.mode == 'apply' && github.event_name == 'workflow_dispatch'
+      - name: Commit + push to the default branch (commit mode)
+        if: inputs.mode == 'commit' && steps.gate.outputs.changed != '0' && github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          CHANGED: \${{ steps.gate.outputs.changed }}
+        run: |
+          git config user.name "sitemap-forge-bot"
+          git config user.email "sitemap-forge-bot@users.noreply.github.com"
+          git add -A '*.html' .gitignore
+          git commit -m "chore(seo): clean-URL canonical/hreflang/og/JSON-LD on $CHANGED pages (auto, validated, backups artifact)"
+          if git push origin "HEAD:\${{ github.ref_name }}"; then
+            echo "✅ Committed & pushed to \${{ github.ref_name }} — $CHANGED pages updated." >> "$GITHUB_SUMMARY"
+            echo "✅ Pushed to \${{ github.ref_name }}"
+          else
+            echo "::notice::Direct push rejected (branch protection) — opening a Pull Request instead"
+            BR="seo/head-tags-auto-$(date +%Y%m%d%H%M%S)"
+            git checkout -b "$BR"
+            git push -u origin "$BR"
+            gh pr create --base "\${{ github.ref_name }}" --head "$BR" \
+              --title "SEO: clean-URL canonical + hreflang on $CHANGED pages (auto, validated)" \
+              --body "Automated by SITEMAP FORGE v3. Changed $CHANGED pages. Originals are in the head-fix-backups artifact of this run. Review and merge to deploy."
+            echo "🔀 Branch is protected — opened a Pull Request instead of direct push." >> "$GITHUB_SUMMARY"
+          fi
+
+      - name: Open Pull Request (pull-request mode)
+        if: inputs.mode == 'pull-request' && steps.gate.outputs.changed != '0' && github.event_name == 'workflow_dispatch'
         uses: peter-evans/create-pull-request@v6
         with:
+          base: \${{ github.ref_name }}
           branch: seo/clean-canonical-hreflang
           delete-branch: true
           add-paths: |
             *.html
             **/*.html
             .gitignore
-          commit-message: "chore(seo): canonical + hreflang + og:url + JSON-LD to clean URLs (auto)"
-          title: "SEO: clean-URL canonical & hreflang across all pages (automated)"
+          commit-message: "chore(seo): clean-URL canonical/hreflang/og/JSON-LD (auto, validated)"
+          title: "SEO: clean-URL canonical & hreflang across pages (automated v3)"
           body: |
-            Automated by the SITEMAP FORGE head-tags cleaner.
-
-            **What changed**
-            - `rel=canonical` → clean URLs (matches sitemaps + Vercel cleanUrls)
-            - all `hreflang` alternates + `x-default` → clean URLs
-            - `hreflang="zh"` corrected to `hreflang="zh-CN"`
-            - `og:url` → clean URLs
-            - JSON-LD `url` / `@id` / breadcrumb items → clean URLs (fragments kept)
-
-            **Safety**
-            - every changed file was tag-count validated before writing
-            - originals saved as backups artifact (download from the run)
-            - nothing goes live until this PR is merged
-
-            Review a few files in the diff, then merge → Vercel auto-deploys.
+            Automated by SITEMAP FORGE v3.
+            - canonical / hreflang / og:url / JSON-LD → clean URLs
+            - hreflang "zh" → "zh-CN"
+            - every changed file passed tag-count validation
+            - originals: head-fix-backups artifact of this run
+            Review the diff, merge, Vercel auto-deploys.
