@@ -2,11 +2,13 @@ name: SEO Head-Tags Cleaner
 
 # ──────────────────────────────────────────────────────────────
 # SITEMAP FORGE — clean-URL canonical + hreflang automation
+# v2: calls scripts/fix-head-tags.cjs (works with "type": "module")
+#     + sanitizes the site_dir input
+#
 # Run manually: Actions tab → this workflow → "Run workflow"
 #   mode=dry-run  → report only (always do this first)
 #   mode=apply    → fixes files + opens a Pull Request
-# Every Monday 03:00 UTC it re-checks in dry-run mode so new
-# pages can never drift back to .html tags.
+# Every Monday 03:00 UTC it re-checks in dry-run mode.
 # ──────────────────────────────────────────────────────────────
 
 on:
@@ -18,7 +20,7 @@ on:
         options: [dry-run, apply]
         default: dry-run
       site_dir:
-        description: "Folder containing your .html pages (repo-relative, e.g. . or public)"
+        description: "Folder containing your .html pages — type . for repo root"
         required: true
         default: "."
       fix_links:
@@ -51,11 +53,18 @@ jobs:
           DIR: \${{ inputs.site_dir || '.' }}
           LINKS: \${{ inputs.fix_links }}
         run: |
-          ARGS="$DIR"
+          D="$DIR"
+          D="${D//\\/}"                     # strip stray backslashes
+          if [ -z "$D" ]; then D="."; fi
+          if [ ! -d "$D" ]; then
+            echo "::warning::folder '$D' not found — falling back to repo root"
+            D="."
+          fi
+          ARGS="$D"
           if [ "$MODE" != "apply" ]; then ARGS="$ARGS --dry"; fi
           if [ "$LINKS" = "yes" ]; then ARGS="$ARGS --links"; fi
-          echo "→ node scripts/fix-head-tags.js $ARGS"
-          node scripts/fix-head-tags.js $ARGS
+          echo "→ node scripts/fix-head-tags.cjs $ARGS"
+          node scripts/fix-head-tags.cjs $ARGS
 
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
