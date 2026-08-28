@@ -1,14 +1,43 @@
-# 📦 Dependencies (CRITICAL - stops 10,000+ files from uploading)
+# ══════════════════════════════════════════════════════════
+# .gitignore — www.egyptphotographytours.com (Vercel-ready)
+# Upgraded by SITEMAP FORGE — your old rules kept + gaps fixed
+# ══════════════════════════════════════════════════════════
+
+# ── Dependencies (stops 10,000+ files from uploading) ──
 node_modules/
 
-# 📝 NPM logs
-npm-debug.log*
+# ── Vercel (CRITICAL: contains deploy tokens & metadata) ──
+.vercel
 
-# 🔒 Local environment variables (in case you add API keys later)
+# ── Build outputs ──
+dist/
+build/
+out/
+.cache/
+
+# ── Environment variables (ALL variants, never commit secrets) ──
 .env
+.env.*
+!.env.example
 
-# 💻 OS & Editor clutter
+# ── Logs ──
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# ── OS clutter ──
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# ── Editor clutter ──
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# ── IMPORTANT: do NOT add *.xml here ──
+# Your sitemaps (sitemap.xml + language sitemaps) must stay
+# committed so Vercel deploys them automatically.
