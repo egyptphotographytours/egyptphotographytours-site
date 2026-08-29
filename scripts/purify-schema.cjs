@@ -48,7 +48,8 @@ var totals = {
 var report = [];
 var alerts = [];
 
-var LD_BLOCK_SRC = '(<script nonce=""\\b[^>]*type\\s*=\\s*["\']application\\/ld\\+json["\'][^>]*>)([\\s\\S]*?)(<\\/script>)';
+// UPDATED: match ANY script tag with type="application/ld+json"
+var LD_BLOCK_SRC = '(<script\\b[^>]*\\btype\\s*=\\s*["\']application\\/ld\\+json["\'][^>]*>)([\\s\\S]*?)(<\\/script>)';
 
 function walkDir(dir, cb) {
   var entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -153,11 +154,17 @@ function purifyFile(src, stats) {
 }
 
 /* ---------- safety gates ---------- */
+function countJsonLd(s) {
+  return countRe(s, /<script\b[^>]*\btype\s*=\s*["']application\/ld\+json["'][^>]*>/gi);
+}
+
 function postValidate(before, after) {
-  if (countRe(before, /<script nonce=""\b/g) !== countRe(after, /<script nonce=""\b/g)) return 'script tag count changed';
+  // Ensure the number of JSON-LD script blocks remains unchanged
+  if (countJsonLd(before) !== countJsonLd(after)) return 'JSON-LD script tag count changed';
   if (countRe(before, /<link\b/g) !== countRe(after, /<link\b/g)) return 'link tag count changed';
   if (countRe(before, /<meta\b/g) !== countRe(after, /<meta\b/g)) return 'meta tag count changed';
   if (after.indexOf('</html>') === -1) return 'document structure lost (</html> missing)';
+
   var re = new RegExp(LD_BLOCK_SRC, 'gi');
   var m;
   while ((m = re.exec(after)) !== null) {
