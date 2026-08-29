@@ -1,22 +1,30 @@
 #!/usr/bin/env node
 /*
- * fix-head-tags.cjs — SITEMAP FORGE v4 (brute-force JSON-LD edition)
+ * fix-head-tags.cjs — SITEMAP FORGE v6 (SAFE DEEP CLEAN)
  * CommonJS — works in any repo regardless of package.json "type".
  *
- * v4 upgrades:
- *   • JSON-LD cleaning is brute-force: every site URL inside every
- *     application/ld+json block gets .html stripped, looped to a fixed point.
- *   • No lookahead fragility — trailing "#fragment" and closing quotes survive.
- *   • Post-pass audit: if any ld+json block is still dirty, the file is
- *     REFUSED (never written) and the run exits with code 2 — fails loud.
- *   • Everything else identical to v3: canonical, hreflang (+zh→zh-CN),
- *     og:url, optional internal links, dry-run, backups, atomic writes,
- *     tag-count validation, machine-readable counters.
+ * Removes every .html remnant of egyptphotographytours.com URLs from:
+ *   • <link rel="canonical"> and all hreflang alternates (+ zh -> zh-CN)
+ *   • <meta property="og:url">
+ *   • ALL application/ld+json blocks (absolute AND root-relative URLs),
+ *     cleaned with a fixed-point loop
+ *   • optional --links: internal <a href> links
+ *
+ * SAFETY LAYERS (a file is written only if ALL pass):
+ *   1. something actually matched
+ *   2. residue re-scan of every ld+json block = zero
+ *   3. link/meta/script/hreflang/canonical tag counts unchanged
+ *   4. every ld+json block still passes JSON.parse after cleaning
+ *   5. </html> still present (document structure intact)
+ *   Failing any layer = file REFUSED and left untouched.
+ *   Originals are backed up; writes are atomic (temp file + rename).
  *
  * Usage:
- *   node scripts/fix-head-tags.cjs . --dry       (report only — run first)
- *   node scripts/fix-head-tags.cjs .             (apply + backups)
- *   node scripts/fix-head-tags.cjs . --links     (also clean internal <a> links)
+ *   node scripts/fix-head-tags.cjs . --dry
+ *   node scripts/fix-head-tags.cjs .
+ *   node scripts/fix-head-tags.cjs . --links
+ *
+ * Exit codes: 0 ok · 1 fatal error · 2 refused files present
  */
 'use strict';
 
@@ -24,16 +32,15 @@ var fs = require('fs');
 var path = require('path');
 
 var args = process.argv.slice(2);
-var flags = args.filter(function (a) { return a.indexOf('--') === 0; });
+var DRY = args.some(function (a) { return a.trim() === '--dry'; });
+var LINKS = args.some(function (a) { return a.trim() === '--links'; });
 var positional = args.filter(function (a) { return a.indexOf('--') !== 0; });
-var DRY = flags.some(function (f) { return f.trim() === '--dry'; });
-var LINKS = flags.some(function (f) { return f.trim() === '--links'; });
 var ROOT = (positional[0] || '.').replace(/\\/g, '').trim() || '.';
 
 var BACKUP_DIR = '.head-fix-backups';
 var DOMAIN_SRC = 'https:\\/\\/www\\.egyptphotographytours\\.com';
 
-var totals = { files: 0, changed: 0, skipped: 0, canonical: 0, hreflang: 0, zh: 0, og: 0, jsonld: 0, links: 0 };
+var totals = { files: 0, changed: 0, skipped: 0, canonical: 0, hreflang: 0, zh: 0, og: 0, jsonld: 0, links: 0, jsonBrokenBefore: 0 };
 var report = [];
 var alerts = [];
 
@@ -52,8 +59,22 @@ function walk(dir, cb) {
 }
 
 function countRe(s, re) { return (s.match(re) || []).length; }
+function tryParse(s) { try { JSON.parse(s); return true; } catch (e) { return false; } }
 
-/* ---------- targeted head passes (canonical + hreflang) ---------- */
+/* ---------- ld+json helpers ---------- */
+var LD_BLOCK_SRC = '(<script nonce=""\\b[^>]*type\\s*=\\s*["\']application\\/ld\\+json["\'][^>]*>)([\\s\\S]*?)(<\\/script>)';
+var LD_BLOCK_RE = new RegExp(LD_BLOCK_SRC, 'gi');
+var LD_DIRTY_RE = new RegExp(DOMAIN_SRC + '\\/[^"\\\\<>]*?\\.html');
+
+function collectLdBodies(html) {
+  var out = [];
+  var re = new RegExp(LD_BLOCK_SRC, 'gi');
+  var m;
+  while ((m = re.exec(html)) !== null) out.push(m[2]);
+  return out;
+}
+
+/* ---------- head-tag cleaning ---------- */
 function stripDotHtml(tag, counter) {
   return tag.replace(
     /(href\s*=\s*)(["'])((?:https:\/\/www\.egyptphotographytours\.com)?\/[^"']*?)\.html(?=[#?]|\2)/g,
@@ -61,19 +82,26 @@ function stripDotHtml(tag, counter) {
   );
 }
 
-/* ---------- v4 brute-force JSON-LD cleaner ---------- */
-var LD_BLOCK_RE = /(<script nonce=""\b[^>]*type\s*=\s*["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi;
-var LD_DIRTY_RE = new RegExp(DOMAIN_SRC + '\\/[^"\\\\<>]*?\\.html');
-
+/* ---------- v6 two-pass brute-force schema cleaner ---------- */
 function cleanJsonLdBody(body, counter) {
-  var stripRe = new RegExp('(' + DOMAIN_SRC + '\\/[^"\\\\<>]*?)\\.html', 'g');
   var out = body;
-  for (var guard = 0; guard < 50; guard++) {
-    var c = 0;
-    var next = out.replace(stripRe, function (m, url) { c++; return url; });
-    if (c === 0) break;
-    counter.n += c;
-    out = next;
+  /* pass 1: absolute site URLs — fixed-point loop */
+  var absRe = new RegExp('(' + DOMAIN_SRC + '\\/[^"\\\\<>]*?)\\.html', 'g');
+  for (var g1 = 0; g1 < 50; g1++) {
+    var c1 = 0;
+    var next1 = out.replace(absRe, function (m, url) { c1++; return url; });
+    if (c1 === 0) break;
+    counter.n += c1;
+    out = next1;
+  }
+  /* pass 2: root-relative path strings like "/resources.html" */
+  var relRe = /"(\/[a-z0-9][a-z0-9\-\/]*?)\.html"/g;
+  for (var g2 = 0; g2 < 50; g2++) {
+    var c2 = 0;
+    var next2 = out.replace(relRe, function (m, p) { c2++; return '"' + p + '"'; });
+    if (c2 === 0) break;
+    counter.n += c2;
+    out = next2;
   }
   return out;
 }
@@ -110,15 +138,15 @@ function transform(src) {
     return t;
   });
 
-  /* 3) JSON-LD — brute force, fixed-point loop */
-  out = out.replace(LD_BLOCK_RE, function (m, openTag, body, closeTag) {
+  /* 3) every ld+json block — brute force, fixed point */
+  out = out.replace(new RegExp(LD_BLOCK_SRC, 'gi'), function (m, openTag, body, closeTag) {
     var c = { n: 0 };
     var fixed = cleanJsonLdBody(body, c);
     n.jsonld += c.n;
     return openTag + fixed + closeTag;
   });
 
-  /* 4) optional: internal <a href> links */
+  /* 4) optional internal <a href> links */
   if (LINKS) {
     out = out.replace(
       /(<a\b[^>]*?)(href\s*=\s*)(["'])((?:https:\/\/www\.egyptphotographytours\.com)?\/[^"']*?)\.html(?=[#?]|\3)([^>]*>)/g,
@@ -129,23 +157,27 @@ function transform(src) {
   return { out: out, n: n };
 }
 
-/* v4 audit: refuse any file where a JSON-LD block is still dirty */
+/* ---------- v6 deep validation ---------- */
 function jsonLdResidue(out) {
   var found = 0;
-  out.replace(LD_BLOCK_RE, function (m, openTag, body) {
+  out.replace(new RegExp(LD_BLOCK_SRC, 'gi'), function (m, openTag, body) {
     if (LD_DIRTY_RE.test(body)) found++;
     return m;
   });
   return found;
 }
 
-/* ---------- validation: structure must be identical ---------- */
-function validate(before, after) {
+function deepValidate(before, after) {
   if (countRe(before, /<link\b/g) !== countRe(after, /<link\b/g)) return 'link tag count changed';
   if (countRe(before, /<meta\b/g) !== countRe(after, /<meta\b/g)) return 'meta tag count changed';
   if (countRe(before, /<script nonce=""\b/g) !== countRe(after, /<script nonce=""\b/g)) return 'script tag count changed';
   if (countRe(before, /hreflang\s*=/g) !== countRe(after, /hreflang\s*=/g)) return 'hreflang count changed';
   if (countRe(before, /rel\s*=\s*["']canonical/g) !== countRe(after, /rel\s*=\s*["']canonical/g)) return 'canonical count changed';
+  if (after.indexOf('</html>') === -1) return 'document structure lost (</html> missing)';
+  var bodies = collectLdBodies(after);
+  for (var i = 0; i < bodies.length; i++) {
+    if (!tryParse(bodies[i])) return 'JSON-LD block failed JSON.parse after cleaning';
+  }
   return null;
 }
 
@@ -157,28 +189,40 @@ function main() {
     ROOT = '.';
   }
 
-  console.log('SITEMAP FORGE v4 - root: ' + ROOT + ' - mode: ' + (DRY ? 'DRY RUN' : 'APPLY') + (LINKS ? ' - links: yes' : ''));
+  console.log('SITEMAP FORGE v6 SAFE DEEP CLEAN - root: ' + ROOT + ' - mode: ' + (DRY ? 'DRY RUN' : 'APPLY') + (LINKS ? ' - links: yes' : ''));
 
   walk(ROOT, function (p) {
     totals.files++;
     var src = fs.readFileSync(p, 'utf8');
+
+    /* pre-existing JSON health note (informational) */
+    var preBodies = collectLdBodies(src);
+    var preBroken = 0;
+    preBodies.forEach(function (b) { if (!tryParse(b)) preBroken++; });
+    if (preBroken > 0) {
+      totals.jsonBrokenBefore += preBroken;
+      report.push('NOTE (pre-existing invalid JSON-LD, regex-clean only): ' + p);
+    }
+
     var res = transform(src);
     var changes = res.n.canonical + res.n.hreflang + res.n.zh + res.n.og + res.n.jsonld + res.n.links;
     if (changes === 0) return;
 
-    /* v4 refuse-not-break guard */
+    /* safety layer: zero residue */
     var dirty = jsonLdResidue(res.out);
     if (dirty > 0) {
       totals.skipped++;
       alerts.push(p);
-      report.push('REFUSED (JSON-LD residue survived - manual check needed): ' + p);
+      report.push('REFUSED (residue survived): ' + p);
       return;
     }
 
-    var problem = validate(src, res.out);
+    /* safety layers: tags + JSON.parse + structure */
+    var problem = deepValidate(src, res.out);
     if (problem) {
       totals.skipped++;
-      report.push('SKIPPED (' + problem + '): ' + p);
+      alerts.push(p);
+      report.push('REFUSED (' + problem + '): ' + p);
       return;
     }
 
@@ -201,20 +245,21 @@ function main() {
   });
 
   var lines = [];
-  lines.push('SITEMAP FORGE v4 - head-tags report');
+  lines.push('SITEMAP FORGE v6 - SAFE DEEP CLEAN report');
   lines.push('Mode: ' + (DRY ? 'DRY RUN (nothing written)' : 'APPLIED (backups in ' + BACKUP_DIR + '/)'));
   lines.push('Root folder: ' + ROOT);
   lines.push('Links mode: ' + (LINKS ? 'yes' : 'no'));
   lines.push('------------------------------------');
-  lines.push('Scanned .html files : ' + totals.files);
-  lines.push((DRY ? 'Would change       : ' : 'Changed files      : ') + totals.changed);
-  lines.push('Skipped / refused   : ' + totals.skipped);
-  lines.push('canonical rewrites  : ' + totals.canonical);
-  lines.push('hreflang rewrites   : ' + totals.hreflang);
-  lines.push('zh -> zh-CN fixes   : ' + totals.zh);
-  lines.push('og:url rewrites     : ' + totals.og);
-  lines.push('JSON-LD URL fixes   : ' + totals.jsonld);
-  lines.push('internal <a> links  : ' + totals.links);
+  lines.push('Scanned .html files      : ' + totals.files);
+  lines.push((DRY ? 'Would change            : ' : 'Changed files           : ') + totals.changed);
+  lines.push('Skipped / refused        : ' + totals.skipped);
+  lines.push('canonical rewrites       : ' + totals.canonical);
+  lines.push('hreflang rewrites        : ' + totals.hreflang);
+  lines.push('zh -> zh-CN fixes        : ' + totals.zh);
+  lines.push('og:url rewrites          : ' + totals.og);
+  lines.push('JSON-LD URL fixes        : ' + totals.jsonld);
+  lines.push('internal <a> link fixes  : ' + totals.links);
+  lines.push('pre-existing bad JSON-LD : ' + totals.jsonBrokenBefore + ' block(s) (flagged, regex-cleaned only)');
   lines.push('------------------------------------');
   lines.push(report.join('\n'));
   var text = lines.join('\n');
@@ -223,7 +268,7 @@ function main() {
   fs.writeFileSync('head-fix-report.txt', text);
   fs.writeFileSync('head-fix-changed.txt', String(totals.changed));
   fs.writeFileSync('head-fix-summary.json', JSON.stringify({
-    version: 'v4',
+    version: 'v6-safe-deep-clean',
     mode: DRY ? 'dry-run' : 'apply',
     links: LINKS,
     root: ROOT,
@@ -236,11 +281,12 @@ function main() {
     zhToZhCN: totals.zh,
     ogUrl: totals.og,
     jsonld: totals.jsonld,
-    linksRewritten: totals.links
+    linksRewritten: totals.links,
+    jsonBrokenBefore: totals.jsonBrokenBefore
   }, null, 2));
 
   if (alerts.length > 0) {
-    console.error('ATTENTION: ' + alerts.length + ' file(s) REFUSED - see REFUSED lines in the report.');
+    console.error('ATTENTION: ' + alerts.length + ' file(s) REFUSED by the safety gates - see report.');
     process.exit(2);
   }
 }
