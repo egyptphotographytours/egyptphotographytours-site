@@ -1,0 +1,165 @@
+name: Structured Data Purifier
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run = report | commit = apply + push to default branch | pull-request = apply + open PR"
+        type: choice
+        options: [dry-run, commit, pull-request]
+        default: dry-run
+      site_dir:
+        description: "Folder containing your .html pages (use . for repo root)"
+        required: true
+        default: "."
+  schedule:
+    - cron: "30 3 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: schema-purifier
+  cancel-in-progress: false
+
+jobs:
+  purify-structured-data:
+    runs-on: ubuntu-latest
+    env:
+      RUN_MODE: ${{ github.event_name == 'schedule' && 'dry-run' || inputs.mode }}
+      SITE_DIR: ${{ inputs.site_dir || '.' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Prepare purifier (CRLF guard)
+        run: |
+          if [ ! -f scripts/purify-schema.cjs ]; then
+            echo "ERROR: scripts/purify-schema.cjs is missing. Add it to the repo first."
+            exit 1
+          fi
+          sed -i 's/\r$//' scripts/purify-schema.cjs
+          echo "Purifier ready."
+
+      - name: Purify structured data (JSON-LD only)
+        run: |
+          D="$SITE_DIR"
+          D="${D//\\/}"
+          if [ -z "$D" ]; then D="."; fi
+          if [ ! -d "$D" ]; then
+            echo "WARNING: folder $D not found - using repo root"
+            D="."
+          fi
+          ARGS="$D"
+          if [ "$RUN_MODE" != "commit" ] && [ "$RUN_MODE" != "pull-request" ]; then
+            ARGS="$ARGS --dry"
+          fi
+          echo "branch=${GITHUB_REF_NAME} mode=${RUN_MODE} folder=${D}"
+          echo "command: node scripts/purify-schema.cjs ${ARGS}"
+          node scripts/purify-schema.cjs ${ARGS}
+
+      - name: Purify decision gate
+        id: gate
+        run: |
+          if [ ! -f schema-purify-changed.txt ]; then
+            echo "ERROR: the purifier produced no counters - check the step above."
+            exit 1
+          fi
+          CHANGED="$(cat schema-purify-changed.txt)"
+          echo "changed=${CHANGED}" >> "$GITHUB_OUTPUT"
+          echo "Purified files: ${CHANGED}"
+          if [ "${CHANGED}" = "0" ]; then
+            echo "RESULT: structured data already clean - nothing to commit (success)."
+            echo "### Structured Data Purifier" >> "${GITHUB_SUMMARY:-/dev/null}"
+            echo "All schema blocks already clean. No changes, no commit." >> "${GITHUB_SUMMARY:-/dev/null}"
+          fi
+
+      - name: Upload purify report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schema-purify-report
+          path: |
+            schema-purify-report.txt
+            schema-purify-summary.json
+          if-no-files-found: ignore
+
+      - name: Package schema backups
+        if: steps.gate.outputs.changed != '0' && env.RUN_MODE != 'dry-run' && github.event_name == 'workflow_dispatch'
+        run: |
+          if [ -d .schema-purify-backups ]; then
+            zip -qr schema-purify-backups.zip .schema-purify-backups
+            echo "Backups zipped."
+          fi
+
+      - name: Upload schema backups
+        if: steps.gate.outputs.changed != '0' && env.RUN_MODE != 'dry-run' && github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: schema-purify-backups
+          path: schema-purify-backups.zip
+          if-no-files-found: ignore
+
+      - name: Clean helper files before committing
+        if: steps.gate.outputs.changed != '0' && env.RUN_MODE != 'dry-run' && github.event_name == 'workflow_dispatch'
+        run: |
+          rm -rf .schema-purify-backups schema-purify-backups.zip schema-purify-changed.txt schema-purify-summary.json
+          if ! grep -qxF '.schema-purify-backups/' .gitignore 2>/dev/null; then
+            echo ".schema-purify-backups/" >> .gitignore
+          fi
+
+      - name: Commit purified schema to the default branch (commit mode)
+        if: env.RUN_MODE == 'commit' && steps.gate.outputs.changed != '0' && github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHANGED_COUNT: ${{ steps.gate.outputs.changed }}
+        run: |
+          git config user.name "schema-purifier-bot"
+          git config user.email "schema-purifier-bot@users.noreply.github.com"
+          git add '*.html' .gitignore
+          if git diff --cached --quiet; then
+            echo "No staged changes - nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore(schema): purge .html from structured data on ${CHANGED_COUNT} pages (auto, JSON-validated)"
+          if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+            echo "Pushed ${CHANGED_COUNT} purified pages to ${GITHUB_REF_NAME}."
+            echo "### Structured Data Purifier" >> "${GITHUB_SUMMARY:-/dev/null}"
+            echo "Committed and pushed **${CHANGED_COUNT} purified pages** to **${GITHUB_REF_NAME}**." >> "${GITHUB_SUMMARY:-/dev/null}"
+          else
+            echo "Direct push rejected (branch protection) - opening a Pull Request instead."
+            BR="schema-purify/auto-$(date +%Y%m%d%H%M%S)"
+            git checkout -b "$BR"
+            git push -u origin "$BR"
+            gh pr create --base "${GITHUB_REF_NAME}" --head "$BR" --title "Schema: purge .html from structured data on ${CHANGED_COUNT} pages (auto)" --body "Automated by the Structured Data Purifier (JSON-aware engine). Originals are in the schema-purify-backups artifact of this run. Review and merge to deploy."
+            echo "### Structured Data Purifier" >> "${GITHUB_SUMMARY:-/dev/null}"
+            echo "Branch is protected - opened a **Pull Request** with ${CHANGED_COUNT} purified pages." >> "${GITHUB_SUMMARY:-/dev/null}"
+          fi
+
+      - name: Open schema Pull Request (pull-request mode)
+        if: env.RUN_MODE == 'pull-request' && steps.gate.outputs.changed != '0' && github.event_name == 'workflow_dispatch'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          base: ${{ github.ref_name }}
+          branch: schema-purify/auto
+          delete-branch: true
+          add-paths: |
+            *.html
+            **/*.html
+            .gitignore
+          commit-message: "chore(schema): purge .html from structured data (auto, JSON-validated)"
+          title: "Schema: purge .html from structured data (automated, JSON-aware)"
+          body: |
+            Automated by the Structured Data Purifier (JSON-aware engine).
+            - JSON.parse → recursive value walk → .html stripped from every schema URL
+            - absolute + root-relative URLs, all entity types, any nesting depth
+            - unparseable blocks handled by regex fallback
+            - every rebuilt block re-validated with JSON.parse before writing
+            - originals saved in the schema-purify-backups artifact of this run
+            Review the diff, then merge. Vercel deploys automatically.
