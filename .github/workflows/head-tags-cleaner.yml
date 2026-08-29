@@ -1,4 +1,4 @@
-name: SEO Head-Tags Cleaner v3
+name: SEO Head-Tags Cleaner v6
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ on:
         required: true
         default: "."
       fix_links:
-        description: "Phase 2: also rewrite internal <a href> links"
+        description: "Also rewrite internal <a href> links"
         type: choice
         options: ["no", "yes"]
         default: "no"
@@ -53,7 +53,7 @@ jobs:
           sed -i 's/\r$//' scripts/fix-head-tags.cjs
           echo "Script ready."
 
-      - name: Run the cleaner
+      - name: Run the cleaner (repo)
         run: |
           D="$SITE_DIR"
           D="${D//\\/}"
@@ -84,9 +84,9 @@ jobs:
           echo "changed=${CHANGED}" >> "$GITHUB_OUTPUT"
           echo "Changed files: ${CHANGED}"
           if [ "${CHANGED}" = "0" ]; then
-            echo "RESULT: site already clean - nothing to commit (this is a success)."
-            echo "### Result" >> "$GITHUB_SUMMARY"
-            echo "Site already clean. No changes, no commit." >> "$GITHUB_SUMMARY"
+            echo "RESULT: repo already clean - nothing to commit (this is a success)."
+            echo "### Result" >> "${GITHUB_SUMMARY:-/dev/null}"
+            echo "Repo already clean. No changes, no commit." >> "${GITHUB_SUMMARY:-/dev/null}"
           fi
 
       - name: Upload report artifact
@@ -124,7 +124,7 @@ jobs:
           fi
 
       - name: Commit and push to the default branch (commit mode)
-        if: inputs.mode == 'commit' && steps.gate.outputs.changed != '0' && github.event_name == 'workflow_dispatch'
+        if: env.RUN_MODE == 'commit' && steps.gate.outputs.changed != '0' && github.event_name == 'workflow_dispatch'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CHANGED_COUNT: ${{ steps.gate.outputs.changed }}
@@ -139,20 +139,20 @@ jobs:
           git commit -m "chore(seo): clean-URL canonical and hreflang on ${CHANGED_COUNT} pages (auto, validated)"
           if git push origin "HEAD:${GITHUB_REF_NAME}"; then
             echo "Pushed ${CHANGED_COUNT} fixed pages to ${GITHUB_REF_NAME}."
-            echo "### Result" >> "$GITHUB_SUMMARY"
-            echo "Committed and pushed **${CHANGED_COUNT} pages** to **${GITHUB_REF_NAME}**. Vercel deploys automatically." >> "$GITHUB_SUMMARY"
+            echo "### Result" >> "${GITHUB_SUMMARY:-/dev/null}"
+            echo "Committed and pushed **${CHANGED_COUNT} pages** to **${GITHUB_REF_NAME}**." >> "${GITHUB_SUMMARY:-/dev/null}"
           else
             echo "Direct push rejected (branch protection) - opening a Pull Request instead."
             BR="seo/head-tags-auto-$(date +%Y%m%d%H%M%S)"
             git checkout -b "$BR"
             git push -u origin "$BR"
-            gh pr create --base "${GITHUB_REF_NAME}" --head "$BR" --title "SEO: clean canonical and hreflang on ${CHANGED_COUNT} pages (auto)" --body "Automated by SITEMAP FORGE v3.1. Originals are in the head-fix-backups artifact of this run. Review and merge to deploy."
-            echo "### Result" >> "$GITHUB_SUMMARY"
-            echo "Branch is protected - opened a **Pull Request** with ${CHANGED_COUNT} fixed pages." >> "$GITHUB_SUMMARY"
+            gh pr create --base "${GITHUB_REF_NAME}" --head "$BR" --title "SEO: clean canonical and hreflang on ${CHANGED_COUNT} pages (auto)" --body "Automated by SITEMAP FORGE v6 (safe deep clean). Originals are in the head-fix-backups artifact of this run. Review and merge to deploy."
+            echo "### Result" >> "${GITHUB_SUMMARY:-/dev/null}"
+            echo "Branch is protected - opened a **Pull Request** with ${CHANGED_COUNT} fixed pages." >> "${GITHUB_SUMMARY:-/dev/null}"
           fi
 
       - name: Open Pull Request (pull-request mode)
-        if: inputs.mode == 'pull-request' && steps.gate.outputs.changed != '0' && github.event_name == 'workflow_dispatch'
+        if: env.RUN_MODE == 'pull-request' && steps.gate.outputs.changed != '0' && github.event_name == 'workflow_dispatch'
         uses: peter-evans/create-pull-request@v6
         with:
           base: ${{ github.ref_name }}
@@ -165,9 +165,9 @@ jobs:
           commit-message: "chore(seo): clean-URL canonical and hreflang (auto, validated)"
           title: "SEO: clean-URL canonical and hreflang across pages (automated)"
           body: |
-            Automated by SITEMAP FORGE v3.1.
+            Automated by SITEMAP FORGE v6 (safe deep clean).
             - canonical / hreflang / og:url / JSON-LD converted to clean URLs
             - hreflang "zh" corrected to "zh-CN"
-            - every changed file passed tag-count validation
+            - two-pass schema sweep with JSON.parse integrity gates
             - originals saved in the head-fix-backups artifact of this run
             Review the diff, then merge. Vercel deploys automatically.
