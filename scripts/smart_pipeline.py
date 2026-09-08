@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Ultimate Smart Incremental Translation & SEO Pipeline v3.0
+Ultimate Smart Incremental Translation & SEO Pipeline v3.1
 ==========================================================
 ✅ DOM Firewall: Prevents <html><body> injection bugs using html.parser & new_tag()
 ✅ DOM Cleanup: Automatically deletes broken nested tags from previous buggy runs
 ✅ .html Preservation: Keeps .html extensions in canonicals, sitemaps, and internal links
-✅ Advanced Sitemap: Generates Google-optimized XML with real <lastmod>, <priority>, & <changefreq>
-✅ --seo-only mode: Instantly repairs hreflang, menus, DOM structure & sitemap WITHOUT translating
+✅ Trailing Slash Fix: Removes trailing slashes from language folders in hreflang, menus, and sitemaps
+✅ Sitemap Cleaner: Surgically removes trailing slashes from existing XML files without altering other data
 """
 
 import os
@@ -182,7 +182,7 @@ def batch_commit_and_push(count, retries=3):
             if not status.stdout.strip():
                 print("   ℹ️ No changes to push.", flush=True)
                 return
-            msg = f'🤖 Batch translation ({count} files) [skip ci]' if count > 0 else '🤖 SEO repair [skip ci]'
+            msg = f'🤖 Batch translation ({count} files) [skip ci]' if count > 0 else '🤖 SEO repair & Sitemap cleanup [skip ci]'
             subprocess.run(['git', 'commit', '-m', msg], check=True, capture_output=True)
             subprocess.run(['git', 'pull', '--rebase', '--autostash'], check=True, capture_output=True)
             subprocess.run(['git', 'push'], check=True, capture_output=True)
@@ -195,7 +195,7 @@ def batch_commit_and_push(count, retries=3):
             else: print("   ❌ Push failed after retries.", flush=True)
 
 # ==========================================
-# URL HELPERS (.html PRESERVED)
+# URL HELPERS (.html PRESERVED, NO TRAILING SLASHES ON LANGS)
 # ==========================================
 def get_relative_url(lang_code, base_path):
     # Keeps .html extension for SEO and Sitemap accuracy
@@ -206,7 +206,12 @@ def get_relative_url(lang_code, base_path):
         
     if lang_code == 'en':
         return f"/{clean}" if clean else "/"
-    return f"/{lang_code}/{clean}" if clean else f"/{lang_code}/"
+    
+    # 🛠️ FIX: Removed trailing slash for language folders (e.g. /fr/ -> /fr)
+    if clean:
+        return f"/{lang_code}/{clean}"
+    else:
+        return f"/{lang_code}"
 
 def get_absolute_url(lang_code, base_path):
     return f"{DOMAIN}{get_relative_url(lang_code, base_path)}"
@@ -375,7 +380,8 @@ def fix_internal_links(soup, target_lang):
         if target_lang == 'en':
             a['href'] = f"/{clean_href}" if clean_href else "/"
         else:
-            a['href'] = f"/{target_lang}/{clean_href}" if clean_href else f"/{target_lang}/"
+            # 🛠️ FIX: Removed trailing slash for language roots
+            a['href'] = f"/{target_lang}/{clean_href}" if clean_href else f"/{target_lang}"
     return soup
 
 def inject_dynamic_lang_menu(soup, target_lang, base_path):
@@ -505,6 +511,40 @@ def inject_global_seo_and_sitemap():
         f.write('\n'.join(xml_lines))
     print("   ✅ Advanced sitemap.xml generated with real timestamps & priorities.", flush=True)
 
+def fix_existing_sitemaps():
+    """Surgically removes trailing slashes from existing XML files without altering other data."""
+    print("\n🧹 Fixing trailing slashes in existing sitemap files...", flush=True)
+    fixed_count = 0
+    
+    # Regex to match URLs ending with a slash, EXCEPT the root domain
+    pattern_abs = r'(https://www\.egyptphotographytours\.com/[^<"\s]+)/(\s*</loc>|\s*"/>)'
+    pattern_rel = r'(<loc>/.+)/(\s*</loc>)'
+    
+    for root, dirs, files in os.walk('.'):
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ['scripts', 'node_modules', '.github']]
+        for f in files:
+            if f.endswith('.xml'):
+                filepath = os.path.join(root, f)
+                try:
+                    with open(filepath, 'r', encoding='utf-8') as file:
+                        content = file.read()
+                    
+                    new_content, num_subs1 = re.subn(pattern_abs, r'\1\2', content)
+                    new_content, num_subs2 = re.subn(pattern_rel, r'\1\2', new_content)
+                    
+                    if num_subs1 > 0 or num_subs2 > 0:
+                        with open(filepath, 'w', encoding='utf-8') as file:
+                            file.write(new_content)
+                        print(f"   ✅ Fixed {num_subs1 + num_subs2} trailing slashes in {filepath}", flush=True)
+                        fixed_count += 1
+                except Exception as e:
+                    print(f"   ⚠️ Error processing {filepath}: {e}", flush=True)
+                    
+    if fixed_count > 0:
+        print(f"   ✅ Finished fixing existing sitemaps. Updated {fixed_count} files.", flush=True)
+    else:
+        print("   ℹ️ No trailing slashes found in existing XML files.", flush=True)
+
 # ==========================================
 # MAIN EXECUTION
 # ==========================================
@@ -518,12 +558,13 @@ def main():
     args = parser.parse_args()
 
     print("=" * 60, flush=True)
-    print("🚀 Smart Incremental Translation & SEO Pipeline v3.0", flush=True)
+    print("🚀 Smart Incremental Translation & SEO Pipeline v3.1", flush=True)
     print("=" * 60, flush=True)
 
     if args.seo_only:
         print("🔧 SEO-ONLY REPAIR MODE — no translation will happen.", flush=True)
         inject_global_seo_and_sitemap()
+        fix_existing_sitemaps()
         batch_commit_and_push(0)
         print("\n🎉 Repair complete!", flush=True)
         return
@@ -626,6 +667,7 @@ def main():
             batch_commit_and_push(files_since_push)
         print("\n🔒 Final safety step: injecting SEO, hreflang & language menus...", flush=True)
         inject_global_seo_and_sitemap()
+        fix_existing_sitemaps()
 
     if failed_manifest:
         print(f"\n⚠️ {len(failed_manifest)} file(s) still incomplete — will retry next run.", flush=True)
