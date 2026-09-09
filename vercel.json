@@ -18,6 +18,21 @@
       "permanent": true
     },
     {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path(.*)",
+      "destination": "/:path",
+      "permanent": true
+    },
+    {
+      "source": "/:l1(ar|cs|da|de|es|fi|fr|hi|id|it|ja|ko|nl|no|pl|pt|ro|ru|sv|th|tl|tr|vi|zh-CN)/:l2(ar|cs|da|de|es|fi|fr|hi|id|it|ja|ko|nl|no|pl|pt|ro|ru|sv|th|tl|tr|vi|zh-CN)/:rest(.*)",
+      "destination": "/:l1/:rest",
+      "permanent": true
+    },
+    {
       "source": "/old-pyramids-tour.html",
       "destination": "/pyramids-tour",
       "permanent": true
