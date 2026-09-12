@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <!--
 ════════════════════════════════════════════════════════════════════
-EGYPT PHOTOGRAPHY TOURS — HOMEPAGE v15 (Google Business URL fix)
+EGYPT PHOTOGRAPHY TOURS — HOMEPAGE v16 (Correct logo asset)
 ════════════════════════════════════════════════════════════════════
-FIXED IN THIS BUILD (vs v14):
-• Google Business review URL corrected in BOTH places:
-  "CRiFZvb5dH4wEBM" → "CRiFZvb5dH4wEAI"
-  1) JSON-LD  Organization.sameAs[0]
-  2) Footer   "Read & Leave Google Reviews" button href
-  (Zero occurrences of "EBM" remain in the file.)
+FIXED IN THIS BUILD (vs v15):
+• Logo now points at the CORRECT Cloudinary asset in all 4 places:
+  https://res.cloudinary.com/dai7wqayo/image/upload/v1782736987/egypt-photography-tours-logo_a50qyp.png
+  1) Header  #header-logo-img (+ w_88 / w_176 srcset for 1x/2x DPR)
+  2) Lightbox .logo-modal-img  (w_600)
+  3) Footer  .logo-img         (w_120)
+  4) JSON-LD Organization.logo (clean, untransformed URL — safest for
+     Google's logo validation, no width/height guessed)
+• Logo rendering switched object-fit:cover → object-fit:contain with a
+  white pad, so a non-square PNG logo is never cropped inside the
+  circular badges. (Lighthouse's image-aspect-ratio audit skips any
+  image whose object-fit is not "fill", so this stays audit-clean.)
 
-Everything from v14 is kept intact:
-• ARIA fix — social links are a real <ul>/<li> (no role="listitem" on <a>)
-• CSP — frame-ancestors removed from <meta> (must be an HTTP header)
-• .logo-modal-img has object-fit:cover → aspect-ratio audit passes
-• positionPanel()/offsetHeight deleted → .mobile-nav top is pure CSS calc()
-• All inline style="" attributes removed (.form-title, .turnstile-wrap,
+Everything from v14/v15 kept intact:
+• Google Business URL is CRiFZvb5dH4wEAI (zero "EBM" occurrences)
+• social links = real <ul>/<li> (no role="listitem" on <a>)
+• CSP meta has no frame-ancestors
+• no positionPanel()/offsetHeight → .mobile-nav top is pure CSS calc()
+• zero inline style="" attributes (.form-title, .turnstile-wrap,
   .form-status, .btn-block, .btn-group-center, .map-iframe,
   .cookie-bar.is-visible, .section-gold overrides)
-• Plain-text email obfuscated everywhere via .js-email data-u/data-d,
-  and the plaintext "email" property dropped from JSON-LD
-• OG / Twitter / schema images all on Cloudinary
-• Title + meta description aligned to "Egyptologist guide" / "golden hour"
-• challenges.cloudflare.com downgraded preconnect → dns-prefetch
-• AggregateRating object on the Organization (5.0 / best 5 / worst 1 /
-  ratingCount 6 / reviewCount 6) matching the 6 visible testimonials
+• plaintext email obfuscated via .js-email data-u/data-d
+• OG / Twitter / schema images on Cloudinary
+• title + meta aligned to "Egyptologist guide" / "golden hour"
+• AggregateRating (5.0 / best 5 / worst 1 / ratingCount 6 / reviewCount 6)
+  on the Organization, matching the 6 visible testimonials
+• Service node carries NO aggregateRating/offers (invalid on Service)
+• EntryPoint target carries only urlTemplate
 
 ══════════════════ SERVER NOTES (not fixable in HTML) ══════════════
-A) Send CSP as an HTTP response header (then frame-ancestors works):
+A) Send CSP as an HTTP header so frame-ancestors is honoured:
    Content-Security-Policy: frame-ancestors 'self';
-B) AI crawlers are currently blocked by the AWS WAF managed rules.
-   Allow them in the WAF rule set AND publish this robots.txt:
-
-   User-agent: GPTBot
-   Allow: /
-   User-agent: OAI-SearchBot
-   Allow: /
-   User-agent: ChatGPT-User
-   Allow: /
-   User-agent: Google-Extended
-   Allow: /
-   User-agent: ClaudeBot
-   Allow: /
-   User-agent: Claude-Web
-   Allow: /
-   User-agent: anthropic-ai
-   Allow: /
-   User-agent: PerplexityBot
-   Allow: /
-   User-agent: Applebot-Extended
-   Allow: /
-   User-agent: *
-   Allow: /
+B) AI crawlers are blocked by the AWS WAF rules. Allow them there AND
+   publish this robots.txt:
+   User-agent: GPTBot / Allow: /
+   User-agent: OAI-SearchBot / Allow: /
+   User-agent: ChatGPT-User / Allow: /
+   User-agent: Google-Extended / Allow: /
+   User-agent: ClaudeBot / Allow: /
+   User-agent: Claude-Web / Allow: /
+   User-agent: anthropic-ai / Allow: /
+   User-agent: PerplexityBot / Allow: /
+   User-agent: Applebot-Extended / Allow: /
+   User-agent: * / Allow: /
    Sitemap: https://www.egyptphotographytours.com/sitemap.xml
 ════════════════════════════════════════════════════════════════════
 -->
@@ -134,7 +129,8 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0;background:none;border:none;padding:0;text-align:left}
-.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);flex-shrink:0;cursor:zoom-in;background:#1a202c}
+/* v16: contain + white pad → the PNG logo is never cropped in the circle */
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:contain;background:#fff;padding:2px;border:2px solid var(--c-gold);flex-shrink:0;cursor:zoom-in}
 .logo-copy{display:flex;flex-direction:column}
 .logo-name{font-size:15px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap}
 .logo-tag{font-size:10px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px}
@@ -438,7 +434,8 @@ body.cookie-visible .wa-float{bottom:calc(88px + var(--safe-b))}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .logo-modal-content{position:relative;max-width:90vw;text-align:center;animation:zoomIn .3s ease}
 @keyframes zoomIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
-.logo-modal-img{width:100%;max-width:300px;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:4px solid var(--c-gold);box-shadow:0 0 40px rgba(255,215,0,.4)}
+/* v16: contain + pad → full logo visible, no crop, aspect-ratio audit safe */
+.logo-modal-img{width:100%;max-width:300px;height:auto;aspect-ratio:1/1;object-fit:contain;background:#fff;padding:14px;border-radius:50%;border:4px solid var(--c-gold);box-shadow:0 0 40px rgba(255,215,0,.4)}
 .logo-modal-close{position:absolute;top:-50px;right:0;color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.1);border:none;transition:all var(--transition)}
 .logo-modal-close:hover{background:var(--c-gold);color:var(--c-dark)}
 .logo-modal-caption{color:#fff;font-size:18px;font-weight:700;margin-top:24px;text-shadow:0 2px 4px rgba(0,0,0,.5);line-height:1.4}
@@ -452,11 +449,11 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"/></noscript>
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.egyptphotographytours.com/images/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.egyptphotographytours.com/images/favicon-16x16.png"/>
-<link rel="icon" type="image/svg+xml" href="https://www.egyptphotographytours.com/images/favicon.svg"/>
-<link rel="shortcut icon" href="https://www.egyptphotographytours.com/images/favicon.ico"/>
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.egyptphotographytours.com/images/apple-touch-icon.jpg"/>
+<link rel="preload" as="image" href="https://res.cloudinary.com/dai7wqayo/image/upload/w_120,f_auto,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png" fetchpriority="high"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dai7wqayo/image/upload/w_32,h_32,c_fill,f_png,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dai7wqayo/image/upload/w_16,h_16,c_fill,f_png,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png"/>
+<link rel="shortcut icon" href="https://res.cloudinary.com/dai7wqayo/image/upload/w_64,h_64,c_fill,f_ico,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dai7wqayo/image/upload/w_180,h_180,c_fill,f_png,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png"/>
 <link rel="manifest" href="https://www.egyptphotographytours.com/site.webmanifest" crossorigin="use-credentials"/>
 <meta name="msapplication-TileColor" content="#FFD700"/>
 <meta name="theme-color" content="#FFD700"/>
@@ -565,13 +562,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
       "alternateName": "Pyramids Photoshoot Tours",
       "description": "Egypt's premier photography tour company: golden-hour Egypt photoshoots at the Pyramids with a private photographer and Egyptologist guide, plus full tours with photography in Cairo, Luxor and Aswan.",
       "url": "https://www.egyptphotographytours.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/dai7wqayo/image/upload/w_400,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp",
-        "width": 400,
-        "height": 400,
-        "caption": "Egypt Photography Tours logo"
-      },
+      "logo": "https://res.cloudinary.com/dai7wqayo/image/upload/v1782736987/egypt-photography-tours-logo_a50qyp.png",
       "image": [
         "https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936974/egypt-photography-tours/seed/egypt-photography-tours-hero-image.webp",
         "https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp",
@@ -855,7 +846,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <button type="button" class="logo-modal-close" id="logo-modal-close" aria-label="Close logo view">
 <svg class="ic" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 </button>
-<img class="logo-modal-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours large logo" width="300" height="300" loading="lazy" decoding="async" sizes="(max-width:600px) 80vw, 300px"/>
+<img class="logo-modal-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,f_auto,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png" alt="Egypt Photography Tours large logo" width="300" height="300" loading="lazy" decoding="async" sizes="(max-width:600px) 80vw, 300px"/>
 <p class="logo-modal-caption">Egypt Photography Tours<br/><small>Egypt Photoshoots &amp; Photography Tours Since 2015</small></p>
 </div>
 </div>
@@ -866,7 +857,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <header class="header" id="site-header">
 <div class="wrap header-inner">
 <a class="logo" href="/" aria-label="Egypt Photography Tours – home" title="Egypt Photography Tours">
-<img id="header-logo-img" class="logo-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_120,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_88,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp 1x, https://res.cloudinary.com/dai7wqayo/image/upload/w_176,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp 2x" alt="Egypt Photography Tours – Pyramids Photoshoots &amp; Photography Tours" title="Click to view large logo" width="44" height="44" loading="eager" fetchpriority="high" decoding="async"/>
+<img id="header-logo-img" class="logo-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_120,f_auto,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_88,f_auto,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png 1x, https://res.cloudinary.com/dai7wqayo/image/upload/w_176,f_auto,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png 2x" alt="Egypt Photography Tours – Pyramids Photoshoots &amp; Photography Tours" title="Click to view large logo" width="44" height="44" loading="eager" fetchpriority="high" decoding="async"/>
 <span class="logo-copy"><span class="logo-name">Egypt Photography Tours</span><span class="logo-tag">Egypt Photoshoots Since 2015</span></span>
 </a>
 <div class="header-contacts">
@@ -1390,7 +1381,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="wrap"><div class="footer-grid">
 <div>
 <a class="logo" href="/" aria-label="Egypt Photography Tours – home">
-<img class="logo-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_120,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours logo" width="44" height="44" loading="lazy" decoding="async"/>
+<img class="logo-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_120,f_auto,q_auto/v1782736987/egypt-photography-tours-logo_a50qyp.png" alt="Egypt Photography Tours logo" width="44" height="44" loading="lazy" decoding="async"/>
 <span class="logo-copy"><span class="logo-name">Egypt Photography Tours</span><span class="logo-tag">Egypt Photoshoots Since 2015</span></span>
 </a>
 <p class="f-brand-desc">Egypt's premier photography tour company. Golden-hour Egypt photoshoots at the Pyramids, full tours with a private photographer and Egyptologist guides, luxury transport included.</p>
