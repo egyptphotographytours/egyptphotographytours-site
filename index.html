@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <!--
 ════════════════════════════════════════════════════════════════════
-EGYPT PHOTOGRAPHY TOURS — HOMEPAGE v13 (Schema validation clean)
+EGYPT PHOTOGRAPHY TOURS — HOMEPAGE v15 (Google Business URL fix)
 ════════════════════════════════════════════════════════════════════
-FIXED IN THIS BUILD (vs v12):
-1. Service node: removed the unsupported "aggregateRating" property.
-   schema.org/Service does NOT support aggregateRating or review —
-   Google flags it as an invalid property. The rating now lives ONLY
-   on the TravelAgency/LocalBusiness node (where the reviews are),
-   which is the single correct place.
-2. ReserveAction > target EntryPoint: stripped the invalid extra
-   properties ("inLanguage", "httpMethod", "actionApplication" —
-   actionApplication is an Action property, not an EntryPoint one).
-   The EntryPoint now contains only "urlTemplate", exactly as the
-   spec requires.
-3. Kept from v12: the AggregateRating object on the Organization
-   (ratingValue 5.0 / bestRating 5 / worstRating 1 / ratingCount 6 /
-   reviewCount 6) which resolves the "multiple reviews without
-   aggregateRating" error, plus all 6 full Review objects matching
-   the 6 testimonials visible on the page and the visible
-   "Rated 5.0 out of 5 · 6 verified reviews" block.
-4. Kept: Cloudinary heroes (w_800/1200/1920 + f_auto + q_auto),
-   hero-slide visibility:hidden a11y fix, \n-escaped form payload,
-   focus trap in logo modal, carousel aria/tabindex handling,
-   .form-select:focus, 60vh mobile hero, priceValidUntil 2027-06-30,
-   full Twitter set, speakable, map facade, lazy Turnstile,
-   noscript fallbacks, safe-area insets, 16px inputs.
+FIXED IN THIS BUILD (vs v14):
+• Google Business review URL corrected in BOTH places:
+  "CRiFZvb5dH4wEBM" → "CRiFZvb5dH4wEAI"
+  1) JSON-LD  Organization.sameAs[0]
+  2) Footer   "Read & Leave Google Reviews" button href
+  (Zero occurrences of "EBM" remain in the file.)
+
+Everything from v14 is kept intact:
+• ARIA fix — social links are a real <ul>/<li> (no role="listitem" on <a>)
+• CSP — frame-ancestors removed from <meta> (must be an HTTP header)
+• .logo-modal-img has object-fit:cover → aspect-ratio audit passes
+• positionPanel()/offsetHeight deleted → .mobile-nav top is pure CSS calc()
+• All inline style="" attributes removed (.form-title, .turnstile-wrap,
+  .form-status, .btn-block, .btn-group-center, .map-iframe,
+  .cookie-bar.is-visible, .section-gold overrides)
+• Plain-text email obfuscated everywhere via .js-email data-u/data-d,
+  and the plaintext "email" property dropped from JSON-LD
+• OG / Twitter / schema images all on Cloudinary
+• Title + meta description aligned to "Egyptologist guide" / "golden hour"
+• challenges.cloudflare.com downgraded preconnect → dns-prefetch
+• AggregateRating object on the Organization (5.0 / best 5 / worst 1 /
+  ratingCount 6 / reviewCount 6) matching the 6 visible testimonials
+
+══════════════════ SERVER NOTES (not fixable in HTML) ══════════════
+A) Send CSP as an HTTP response header (then frame-ancestors works):
+   Content-Security-Policy: frame-ancestors 'self';
+B) AI crawlers are currently blocked by the AWS WAF managed rules.
+   Allow them in the WAF rule set AND publish this robots.txt:
+
+   User-agent: GPTBot
+   Allow: /
+   User-agent: OAI-SearchBot
+   Allow: /
+   User-agent: ChatGPT-User
+   Allow: /
+   User-agent: Google-Extended
+   Allow: /
+   User-agent: ClaudeBot
+   Allow: /
+   User-agent: Claude-Web
+   Allow: /
+   User-agent: anthropic-ai
+   Allow: /
+   User-agent: PerplexityBot
+   Allow: /
+   User-agent: Applebot-Extended
+   Allow: /
+   User-agent: *
+   Allow: /
+   Sitemap: https://www.egyptphotographytours.com/sitemap.xml
 ════════════════════════════════════════════════════════════════════
 -->
 <html lang="en">
@@ -37,11 +64,12 @@ FIXED IN THIS BUILD (vs v12):
 <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com data:; frame-src 'self' https://www.google.com https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://contact-worker.hussam01112.workers.dev; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; upgrade-insecure-requests;"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com data:; frame-src 'self' https://www.google.com https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://challenges.cloudflare.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://contact-worker.hussam01112.workers.dev; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; upgrade-insecure-requests;"/>
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin=""/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin=""/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link rel="preconnect" href="https://challenges.cloudflare.com" crossorigin=""/>
+<link rel="dns-prefetch" href="https://challenges.cloudflare.com"/>
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com"/>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
 <link rel="dns-prefetch" href="https://www.google.com"/>
 <link rel="preload" as="image" fetchpriority="high" href="https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp" imagesrcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 800w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 1200w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 1920w" imagesizes="100vw"/>
@@ -79,6 +107,9 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .section-dark p,.section-accent p{color:rgba(255,255,255,.9)}
 .eyebrow{display:inline-block;background:rgba(255,215,0,.18);color:#7A5C00;border:1px solid rgba(255,215,0,.5);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px}
 .section-dark .eyebrow,.section-accent .eyebrow{background:rgba(255,215,0,.2);color:var(--c-gold);border-color:rgba(255,215,0,.4)}
+.section-gold .eyebrow{background:rgba(26,32,44,.12);color:#1a202c;border-color:rgba(26,32,44,.2)}
+.section-gold h1,.section-gold h2,.section-gold h3{color:var(--c-dark)}
+.section-gold p,.section-gold .sec-sub{color:rgba(26,32,44,.82)}
 .text-c{text-align:center}
 .text-c .sec-sub{margin-inline:auto}
 .sec-sub{font-size:clamp(14px,1.8vw,17px);color:var(--c-muted);max-width:660px;line-height:1.7;margin-top:12px}
@@ -97,7 +128,9 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .btn-wa:hover{background:#20ba59;transform:translateY(-2px)}
 .btn-sm{padding:9px 18px;font-size:13px;min-height:44px}
 .btn-lg{padding:16px 36px;font-size:16px}
+.btn-block{width:100%;margin-bottom:12px}
 .btn-group{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn-group-center{justify-content:center}
 .header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0;background:none;border:none;padding:0;text-align:left}
@@ -138,7 +171,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .lang-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lang-menu::-webkit-scrollbar{width:4px}
 .lang-menu::-webkit-scrollbar-thumb{background:rgba(255,215,0,.35);border-radius:2px}
-.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;top:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:390;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:8px 0 calc(48px + var(--safe-b));border-top:2px solid var(--c-gold);animation:slideDown .22s ease-out}
+.mobile-nav{display:none;flex-direction:column;position:fixed;left:0;right:0;top:calc(var(--header-height) + var(--nav-height));bottom:0;background:rgba(15,20,35,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:390;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:8px 0 calc(48px + var(--safe-b));border-top:2px solid var(--c-gold);animation:slideDown .22s ease-out}
 .mobile-nav.is-open{display:flex}
 @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 @media(min-width:900px){.mobile-nav{display:none!important}}
@@ -253,19 +286,22 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 @media(min-width:900px){.trip-builder{grid-template-columns:1.1fr 1fr}}
 .trip-form-box{background:var(--c-white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
 @media(max-width:767px){.trip-form-box{padding:24px 18px}}
+.form-title{color:var(--c-dark);margin-bottom:20px;font-size:20px}
 .form-row{margin-bottom:16px}
 .form-label{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px;cursor:pointer}
 .form-req{color:#ef4444}
 .form-input,.form-select,.form-textarea{width:100%;padding:13px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:16px;font-family:inherit;color:var(--c-text);transition:border-color var(--transition),box-shadow var(--transition);background:#fff;min-height:48px;touch-action:manipulation;-webkit-appearance:none;appearance:none}
 .form-select{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235A6475' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
-.form-input::placeholder,.form-textarea::placeholder{color:#9aa3b2}
 .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
+.form-input::placeholder,.form-textarea::placeholder{color:#9aa3b2}
 .form-textarea{min-height:100px;resize:vertical}
 .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:480px){.form-row-2{grid-template-columns:1fr}}
+.turnstile-wrap{margin-bottom:20px;display:flex;justify-content:center}
 .form-submit{width:100%;padding:15px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;font-weight:800;font-size:16px;transition:all var(--transition);min-height:52px;display:flex;align-items:center;justify-content:center;gap:8px}
 .form-submit:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4)}
 .form-submit[disabled]{opacity:.7;cursor:wait;transform:none}
+.form-status{margin-top:15px;text-align:center;font-size:.9rem;color:var(--c-text)}
 .spinner{width:16px;height:16px;border:2.5px solid rgba(26,32,44,.25);border-top-color:var(--c-dark);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .trip-contacts{display:flex;flex-direction:column;gap:20px;justify-content:center}
@@ -366,6 +402,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .f-contact-r a:hover{color:var(--c-gold)}
 .f-contact-r .ic{color:var(--c-gold);margin-top:2px}
 .social-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.social-row li{display:flex}
 .social-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:44px;padding:0 14px;border-radius:22px;background:rgba(255,255,255,.1);color:#fff;font-size:12px;font-weight:600;transition:all var(--transition);text-decoration:none}
 .social-btn:hover{background:var(--c-gold);color:var(--c-dark)}
 .social-btn .ic{color:inherit}
@@ -375,14 +412,15 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .map-facade::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,215,0,.14) 1px,transparent 1px);background-size:22px 22px;opacity:.7}
 .map-load-btn{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;background:var(--c-gold);color:var(--c-dark);border:none;border-radius:30px;padding:13px 24px;font-weight:700;font-size:14px;cursor:pointer;transition:all var(--transition);min-height:48px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
 .map-load-btn:hover{background:var(--c-gold-d);transform:translateY(-2px)}
-.map-facade iframe{width:100%;height:100%;border:none;border-radius:var(--radius-sm)}
+.map-iframe{width:100%;height:100%;border:0;border-radius:var(--radius-sm)}
 .map-review{text-align:center;margin-top:16px}
 .footer-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:8px;text-align:center}
 @media(min-width:640px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
 .footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.65)}
 .footer-bottom a:hover{color:var(--c-gold)}
 .f-legal{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.cookie-bar{position:fixed;bottom:0;left:0;right:0;background:#1e293b;border-top:2px solid var(--c-gold);padding:13px 16px calc(13px + var(--safe-b));z-index:50000;display:none}
+.cookie-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#1e293b;border-top:2px solid var(--c-gold);padding:13px 16px calc(13px + var(--safe-b));z-index:50000}
+.cookie-bar.is-visible{display:block}
 .cookie-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
 .cookie-txt{font-size:13px;color:rgba(255,255,255,.92);flex:1;min-width:200px}
 .cookie-txt a{color:var(--c-gold);text-decoration:underline}
@@ -400,7 +438,7 @@ body.cookie-visible .wa-float{bottom:calc(88px + var(--safe-b))}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .logo-modal-content{position:relative;max-width:90vw;text-align:center;animation:zoomIn .3s ease}
 @keyframes zoomIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
-.logo-modal-img{width:100%;max-width:300px;height:auto;border-radius:50%;border:4px solid var(--c-gold);box-shadow:0 0 40px rgba(255,215,0,.4)}
+.logo-modal-img{width:100%;max-width:300px;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:4px solid var(--c-gold);box-shadow:0 0 40px rgba(255,215,0,.4)}
 .logo-modal-close{position:absolute;top:-50px;right:0;color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.1);border:none;transition:all var(--transition)}
 .logo-modal-close:hover{background:var(--c-gold);color:var(--c-dark)}
 .logo-modal-caption{color:#fff;font-size:18px;font-weight:700;margin-top:24px;text-shadow:0 2px 4px rgba(0,0,0,.5);line-height:1.4}
@@ -422,10 +460,11 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <link rel="manifest" href="https://www.egyptphotographytours.com/site.webmanifest" crossorigin="use-credentials"/>
 <meta name="msapplication-TileColor" content="#FFD700"/>
 <meta name="theme-color" content="#FFD700"/>
-<title>Pyramids Photoshoot &amp; Egypt Photoshoot Tours | Book 2026</title>
-<meta name="description" content="Book your Egypt photoshoot at the Pyramids or a full Egypt tour with photography. Private photographer, luxury transport &amp; expert Egyptologist guides. 150–300 edited photos in 48 hours."/>
+<title>Pyramids Photoshoot &amp; Egypt Photoshoot Tours | Egyptologist Guide</title>
+<meta name="description" content="Book an Egypt photoshoot at the Pyramids with a private photographer &amp; Egyptologist guide. Golden-hour Pyramids photoshoot, full Egypt tours with photography, 150–300 edited photos in 48 hrs."/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
 <meta name="author" content="Egypt Photography Tours"/>
+<meta name="keywords" content="Pyramids photoshoot, Egypt photoshoot, photoshoot in Egypt, golden hour Pyramids photos, Egypt photographer, Egyptologist guide, Egypt photography tours"/>
 <link rel="sitemap" type="application/xml" title="Main Sitemap" href="https://www.egyptphotographytours.com/sitemap.xml"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Egypt Photography Tours"/>
@@ -455,22 +494,22 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <meta property="og:locale:alternate" content="vi_VN"/>
 <meta property="og:locale:alternate" content="zh_CN"/>
 <meta property="og:url" content="https://www.egyptphotographytours.com/"/>
-<meta property="og:title" content="Pyramids Photoshoot &amp; Egypt Photoshoot Tours | Book 2026"/>
-<meta property="og:description" content="Book your Egypt photoshoot at the Pyramids or a full Egypt tour with a private photographer. Luxury transport, expert guides, 150–300 edited photos in 48 hours."/>
-<meta property="og:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp"/>
-<meta property="og:image:secure_url" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp"/>
+<meta property="og:title" content="Pyramids Photoshoot &amp; Egypt Photoshoot Tours | Egyptologist Guide"/>
+<meta property="og:description" content="Golden-hour Egypt photoshoot at the Pyramids with a private photographer and Egyptologist guide. Full Egypt tours with photography — 150–300 edited photos in 48 hours."/>
+<meta property="og:image" content="https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936974/egypt-photography-tours/seed/egypt-photography-tours-hero-image.webp"/>
+<meta property="og:image:secure_url" content="https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936974/egypt-photography-tours/seed/egypt-photography-tours-hero-image.webp"/>
 <meta property="og:image:type" content="image/webp"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Egypt photoshoot at the Pyramids of Giza with a professional photographer"/>
+<meta property="og:image:alt" content="Golden-hour Egypt photoshoot at the Pyramids of Giza with a private photographer and Egyptologist guide"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@egyptphotographytours"/>
 <meta name="twitter:creator" content="@egyptphotographytours"/>
 <meta name="twitter:url" content="https://www.egyptphotographytours.com/"/>
-<meta name="twitter:title" content="Pyramids Photoshoot &amp; Egypt Photoshoot Tours | Book 2026"/>
-<meta name="twitter:description" content="Book your Egypt photoshoot at the Pyramids or a full tour with photography. 150–300 edited photos in 48 hours."/>
-<meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp"/>
-<meta name="twitter:image:alt" content="Egypt photoshoot at the Pyramids of Giza"/>
+<meta name="twitter:title" content="Pyramids Photoshoot &amp; Egypt Photoshoot Tours | Egyptologist Guide"/>
+<meta name="twitter:description" content="Golden-hour Egypt photoshoot at the Pyramids with a private photographer &amp; Egyptologist guide. 150–300 edited photos in 48 hrs."/>
+<meta name="twitter:image" content="https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936974/egypt-photography-tours/seed/egypt-photography-tours-hero-image.webp"/>
+<meta name="twitter:image:alt" content="Golden-hour Egypt photoshoot at the Pyramids of Giza"/>
 <meta name="geo.region" content="EG-C"/>
 <meta name="geo.placename" content="Cairo, Egypt"/>
 <meta name="geo.position" content="30.0444;31.2357"/>
@@ -484,7 +523,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
       "@id": "https://www.egyptphotographytours.com/#website",
       "url": "https://www.egyptphotographytours.com/",
       "name": "Egypt Photography Tours",
-      "description": "Professional Egypt photoshoots and full Egypt tours with photography — private photographers at the Pyramids, luxury transport and expert Egyptologist guides.",
+      "description": "Professional Egypt photoshoots and full Egypt tours with photography — private photographers and Egyptologist guides at the Pyramids, luxury transport, golden-hour timing.",
       "inLanguage": "en",
       "publisher": { "@id": "https://www.egyptphotographytours.com/#organization" }
     },
@@ -492,16 +531,16 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
       "@type": "WebPage",
       "@id": "https://www.egyptphotographytours.com/#webpage",
       "url": "https://www.egyptphotographytours.com/",
-      "name": "Pyramids Photoshoot & Egypt Photoshoot Tours | Book 2026",
-      "description": "Book your Egypt photoshoot at the Pyramids or a full Egypt tour with photography. Private photographer, luxury transport and expert Egyptologist guides. 150–300 edited photos in 48 hours.",
+      "name": "Pyramids Photoshoot & Egypt Photoshoot Tours | Egyptologist Guide",
+      "description": "Book an Egypt photoshoot at the Pyramids with a private photographer and Egyptologist guide. Golden-hour Pyramids photoshoot, full Egypt tours with photography, 150–300 edited photos in 48 hrs.",
       "isPartOf": { "@id": "https://www.egyptphotographytours.com/#website" },
       "about": { "@id": "https://www.egyptphotographytours.com/#organization" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp",
+        "url": "https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936974/egypt-photography-tours/seed/egypt-photography-tours-hero-image.webp",
         "width": 1200,
         "height": 630,
-        "caption": "Egypt photoshoot at the Pyramids of Giza"
+        "caption": "Golden-hour Egypt photoshoot at the Pyramids of Giza"
       },
       "breadcrumb": { "@id": "https://www.egyptphotographytours.com/#breadcrumb" },
       "inLanguage": "en",
@@ -524,22 +563,21 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
       "@id": "https://www.egyptphotographytours.com/#organization",
       "name": "Egypt Photography Tours",
       "alternateName": "Pyramids Photoshoot Tours",
-      "description": "Egypt's premier photography tour company: professional Egypt photoshoots at the Pyramids, full tours with a private photographer, luxury transport and expert Egyptologist guides in Cairo, Luxor and Aswan.",
+      "description": "Egypt's premier photography tour company: golden-hour Egypt photoshoots at the Pyramids with a private photographer and Egyptologist guide, plus full tours with photography in Cairo, Luxor and Aswan.",
       "url": "https://www.egyptphotographytours.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp",
-        "width": 200,
-        "height": 200,
+        "url": "https://res.cloudinary.com/dai7wqayo/image/upload/w_400,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp",
+        "width": 400,
+        "height": 400,
         "caption": "Egypt Photography Tours logo"
       },
       "image": [
-        "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp",
+        "https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936974/egypt-photography-tours/seed/egypt-photography-tours-hero-image.webp",
         "https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp",
         "https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp"
       ],
       "telephone": "+20-155-073-5673",
-      "email": "info@egyptphotographytours.com",
       "foundingDate": "2015",
       "address": {
         "@type": "PostalAddress",
@@ -554,10 +592,11 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
       "knowsAbout": [
         "Egypt Photoshoot",
         "Pyramids Photoshoot",
+        "Golden Hour Pyramids Photography",
         "Photoshoot in Egypt",
         "Egypt Photography Tours",
-        "Professional Photographer Giza",
-        "Golden Hour Desert Photography"
+        "Egyptologist Guided Photo Tours",
+        "Professional Photographer Giza"
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -581,12 +620,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
             "name": "Sarah & Mark",
             "address": { "@type": "PostalAddress", "addressCountry": "GB" }
           },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           "datePublished": "2024-03-15",
           "inLanguage": "en",
           "reviewBody": "Our honeymoon Pyramids photoshoot was pure magic. Hossam knew every angle and the golden-hour light was perfect. The photos are breathtaking and the tour itself was seamlessly organised."
@@ -603,12 +637,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
             "name": "James Thompson",
             "address": { "@type": "PostalAddress", "addressCountry": "US" }
           },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           "datePublished": "2024-02-20",
           "inLanguage": "en",
           "reviewBody": "We booked the 7-day Egypt tour with photography for our family of 5. Every day was flawless – 5-star hotels, private transport, expert guides, and stunning family portraits at every site."
@@ -625,12 +654,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
             "name": "Emma Larsson",
             "address": { "@type": "PostalAddress", "addressCountry": "SE" }
           },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           "datePublished": "2024-05-08",
           "inLanguage": "en",
           "reviewBody": "As a solo female traveler I felt completely safe from day one. My solo portraits at Luxor and Aswan exceeded every expectation — and the guide's history knowledge made every photo meaningful."
@@ -647,12 +671,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
             "name": "Miguel Rodriguez",
             "address": { "@type": "PostalAddress", "addressCountry": "ES" }
           },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           "datePublished": "2024-07-12",
           "inLanguage": "en",
           "reviewBody": "The small-group photo tour was incredible. Our Egyptologist's knowledge was unreal – I learned more in one day than from any documentary, and my photos finally do the sites justice."
@@ -669,12 +688,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
             "name": "Lily K.",
             "address": { "@type": "PostalAddress", "addressCountry": "AU" }
           },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           "datePublished": "2024-09-30",
           "inLanguage": "en",
           "reviewBody": "200+ edited images delivered to my drive in 36 hours. My Egypt content has been my best-performing ever — the photographer knew angles I didn't even know existed."
@@ -691,19 +705,14 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
             "name": "Anna & Pierre",
             "address": { "@type": "PostalAddress", "addressCountry": "FR" }
           },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           "datePublished": "2025-01-18",
           "inLanguage": "en",
           "reviewBody": "Booked last-minute for our anniversary and they arranged everything in 3 hours. Private felucca, Pyramids at golden hour, romantic dinner – absolute perfection in every photo."
         }
       ],
       "sameAs": [
-        "https://g.page/r/CRiFZvb5dH4wEBM/review",
+        "https://g.page/r/CRiFZvb5dH4wEAI/review",
         "https://www.facebook.com/egyptphotographytours",
         "https://www.instagram.com/hossam_artistic/",
         "https://www.tiktok.com/@egyptphotographytours",
@@ -725,7 +734,6 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
         "@type": "ContactPoint",
         "telephone": "+20-155-073-5673",
         "contactType": "reservations",
-        "email": "info@egyptphotographytours.com",
         "areaServed": "EG",
         "availableLanguage": ["en", "ar"]
       },
@@ -741,18 +749,14 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
       "@type": "Service",
       "@id": "https://www.egyptphotographytours.com/#egypt-photoshoot",
       "serviceType": "Egypt Photoshoot",
-      "name": "Egypt Photoshoot at the Pyramids",
+      "name": "Golden-Hour Egypt Photoshoot at the Pyramids with Egyptologist Guide",
       "description": "Professional Egypt photoshoot at the Pyramids of Giza and the Sphinx with a private photographer and Egyptologist guide. Golden-hour timing, outfit and posing guidance, 150–300 retouched photos delivered in 48 hours.",
       "provider": { "@id": "https://www.egyptphotographytours.com/#organization" },
       "areaServed": { "@type": "Place", "name": "Giza Plateau, Egypt" },
       "availableChannel": {
         "@type": "ServiceChannel",
         "serviceUrl": "https://www.egyptphotographytours.com/#customize-trip",
-        "servicePhone": {
-          "@type": "ContactPoint",
-          "telephone": "+20-155-073-5673",
-          "contactType": "reservations"
-        }
+        "servicePhone": { "@type": "ContactPoint", "telephone": "+20-155-073-5673", "contactType": "reservations" }
       }
     },
     {
@@ -837,7 +841,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
-<div class="cookie-bar" id="cookie-bar" role="dialog" aria-labelledby="cookie-msg" style="display:none">
+<div class="cookie-bar" id="cookie-bar" role="dialog" aria-labelledby="cookie-msg">
 <div class="cookie-inner">
 <p class="cookie-txt" id="cookie-msg">We use cookies to enhance your experience. <a href="/privacy-policy">Privacy Policy</a></p>
 <div class="cookie-btns">
@@ -851,7 +855,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <button type="button" class="logo-modal-close" id="logo-modal-close" aria-label="Close logo view">
 <svg class="ic" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 </button>
-<img class="logo-modal-img" src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours large logo" width="300" height="300" loading="lazy" decoding="async" sizes="(max-width:600px) 80vw, 300px"/>
+<img class="logo-modal-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours large logo" width="300" height="300" loading="lazy" decoding="async" sizes="(max-width:600px) 80vw, 300px"/>
 <p class="logo-modal-caption">Egypt Photography Tours<br/><small>Egypt Photoshoots &amp; Photography Tours Since 2015</small></p>
 </div>
 </div>
@@ -862,14 +866,14 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <header class="header" id="site-header">
 <div class="wrap header-inner">
 <a class="logo" href="/" aria-label="Egypt Photography Tours – home" title="Egypt Photography Tours">
-<img id="header-logo-img" class="logo-img" src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours – Pyramids Photoshoots &amp; Photography Tours" title="Click to view large logo" width="44" height="44" loading="eager" fetchpriority="high" decoding="async"/>
+<img id="header-logo-img" class="logo-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_120,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_88,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp 1x, https://res.cloudinary.com/dai7wqayo/image/upload/w_176,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp 2x" alt="Egypt Photography Tours – Pyramids Photoshoots &amp; Photography Tours" title="Click to view large logo" width="44" height="44" loading="eager" fetchpriority="high" decoding="async"/>
 <span class="logo-copy"><span class="logo-name">Egypt Photography Tours</span><span class="logo-tag">Egypt Photoshoots Since 2015</span></span>
 </a>
 <div class="header-contacts">
 <a class="hc-link" href="https://wa.me/201550735673" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Egypt Photography Tours at +20 155 073 5673" title="WhatsApp us">
 <svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> +20 155 073 5673</a>
-<a class="hc-link" href="mailto:info@egyptphotographytours.com" aria-label="Email Egypt Photography Tours" title="Email us">
-<svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@egyptphotographytours.com</a>
+<a class="hc-link js-email" data-u="info" data-d="egyptphotographytours.com" href="/contact" aria-label="Email Egypt Photography Tours" title="Email us">
+<svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <span>Email Us</span></a>
 </div>
 </div>
 </header>
@@ -944,7 +948,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="mobile-nav-sep" role="separator"></div>
 <div class="mobile-nav-contact">
 <a href="https://wa.me/201550735673" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us at +20 155 073 5673"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> WhatsApp: +20 155 073 5673</a>
-<a href="mailto:info@egyptphotographytours.com" aria-label="Email us at info@egyptphotographytours.com"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@egyptphotographytours.com</a>
+<a class="js-email" data-u="info" data-d="egyptphotographytours.com" href="/contact" aria-label="Email Egypt Photography Tours"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email Us</a>
 <a class="mn-cta" href="#customize-trip" aria-label="Book your Egypt photoshoot"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Book Your Photoshoot</a>
 </div>
 </nav>
@@ -952,23 +956,23 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="sr-only" id="carousel-status" role="status" aria-live="polite" aria-atomic="true"></div>
 <section class="hero" id="hero" aria-label="Pyramids photoshoot and Egypt photography tours" aria-roledescription="carousel">
 <div class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="Slide 1 of 5: Pyramids Photoshoot">
-<img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 800w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 1200w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 1920w" sizes="100vw" alt="Professional Pyramids photoshoot at the Giza Plateau with private photographer and Egyptologist guide" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async"/>
+<img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 800w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 1200w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 1920w" sizes="100vw" alt="Golden-hour Pyramids photoshoot at the Giza Plateau with a private photographer and Egyptologist guide" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async"/>
 <div class="hero-body"><div class="hero-card">
 <div class="hero-badge"><svg class="ic" aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Egypt's Premier Photoshoot Company</div>
-<h1 class="hero-title">Pyramids Photoshoot &amp; <em>Luxury Egypt Photoshoot Tours</em></h1>
-<p class="hero-sub">Book your Egypt photoshoot at the Pyramids, the Sphinx, Luxor &amp; the Nile — private photographer, luxury transport and 150–300 edited photos delivered in 48 hours.</p>
+<h1 class="hero-title">Pyramids Photoshoot &amp; <em>Egypt Photoshoot Tours</em> with an Egyptologist Guide</h1>
+<p class="hero-sub">Golden-hour Egypt photoshoot at the Pyramids, the Sphinx, Luxor &amp; the Nile — private photographer, luxury transport and 150–300 edited photos delivered in 48 hours.</p>
 <div class="hero-btns">
 <a class="btn btn-gold btn-lg" href="/tour-pyramids-private" aria-label="Book a private Pyramids photoshoot">Book Pyramids Photoshoot</a>
 <a class="btn btn-outline-white btn-lg" href="/tours" aria-label="View all Egypt photography tours">View Photo Tours</a>
 </div>
 </div></div>
 </div>
-<div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 5: Egypt Photoshoot Locations">
+<div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 5: Couples Egypt Photoshoot">
 <img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp 800w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp 1200w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp 1920w" sizes="100vw" alt="Couples Egypt photoshoot at the Pyramids of Giza during golden hour" width="1920" height="1080" loading="lazy" decoding="async"/>
 <div class="hero-body"><div class="hero-card">
-<div class="hero-badge hero-badge-light">📸 Egypt Photoshoot · Golden Hour Magic</div>
+<div class="hero-badge hero-badge-light">📸 Golden-Hour Egypt Photoshoot</div>
 <h2 class="hero-title">Couples &amp; Honeymoon <em>Photoshoots</em> at the Pyramids</h2>
-<p class="hero-sub">Magazine-quality portraits at sunrise and sunset. Outfit guidance, posing direction and every iconic angle — captured by professionals who shoot here weekly.</p>
+<p class="hero-sub">Magazine-quality portraits at sunrise and golden hour. Outfit guidance, posing direction and every iconic angle — captured by professionals who shoot here weekly.</p>
 <div class="hero-btns">
 <a class="btn btn-gold btn-lg" href="/tour-pyramids-private" aria-label="Book a couples photoshoot at the Pyramids">Book Your Shoot</a>
 <a class="btn btn-outline-white btn-lg" href="/gallery" aria-label="View Egypt photoshoot gallery">View Gallery</a>
@@ -976,7 +980,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </div></div>
 </div>
 <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 5: Full Egypt Tours with Photography">
-<img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp 800w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp 1200w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp 1920w" sizes="100vw" alt="Full Egypt tour with photography – Cairo, Luxor temples and the Nile" width="1920" height="1080" loading="lazy" decoding="async"/>
+<img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp 800w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp 1200w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp 1920w" sizes="100vw" alt="Full Egypt tour with photography – Cairo, Luxor temples and the Nile with an Egyptologist guide" width="1920" height="1080" loading="lazy" decoding="async"/>
 <div class="hero-body"><div class="hero-card">
 <div class="hero-badge">✈️ Full Egypt Tours with a Private Photographer</div>
 <h2 class="hero-title">Cairo · Luxor · Aswan — <em>Your Whole Trip</em>, Beautifully Photographed</h2>
@@ -1034,14 +1038,14 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="wrap">
 <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">›</span><span class="cur" aria-current="page">Egypt Photoshoot &amp; Photography Tours</span></nav>
 <div class="prose mt-24">
-<h2 id="main-h2">Egypt Photoshoot Specialists — Pyramids Photography &amp; Full Tours with a Private Photographer</h2>
-<p><strong>Planning an Egypt photoshoot?</strong> Egypt Photography Tours is Egypt's dedicated photography tour company. Since 2015 we have photographed thousands of travelers at the <strong>Pyramids of Giza</strong>, the <strong>Great Sphinx</strong>, the temples of <strong>Luxor</strong> and the banks of the <strong>Nile in Aswan</strong> — combining a professional <strong>photoshoot in Egypt</strong> with full luxury tours, expert Egyptologist guides and private transport.</p>
-<p>Whether you want a <strong>Pyramids photoshoot</strong> for your honeymoon, family portraits in front of the Sphinx, reel-ready content as a creator, or <strong>full Egypt tours with photography</strong> from Cairo to Abu Simbel — our photographers know every angle, every permit rule and every minute of golden-hour light on the Giza Plateau. You relax and enjoy Egypt; we bring home the photos.</p>
+<h2 id="main-h2">Egypt Photoshoot Specialists — Golden-Hour Pyramids Photography with an Egyptologist Guide</h2>
+<p><strong>Planning an Egypt photoshoot?</strong> Egypt Photography Tours is Egypt's dedicated photography tour company. Since 2015 we have photographed thousands of travelers at the <strong>Pyramids of Giza</strong>, the <strong>Great Sphinx</strong>, the temples of <strong>Luxor</strong> and the banks of the <strong>Nile in Aswan</strong> — combining a professional <strong>photoshoot in Egypt</strong> with full luxury tours, expert <strong>Egyptologist guides</strong> and private transport.</p>
+<p>Whether you want a <strong>golden-hour Pyramids photoshoot</strong> for your honeymoon, family portraits in front of the Sphinx, reel-ready content as a creator, or <strong>full Egypt tours with photography</strong> from Cairo to Abu Simbel — our photographers know every angle, every permit rule and every minute of golden light on the Giza Plateau. You relax and enjoy Egypt; we bring home the photos.</p>
 <div class="why-grid mt-24" aria-label="Why book an Egypt photoshoot with us">
 <div class="why-c"><span class="why-icon" aria-hidden="true">📸</span><div class="why-label">Professional Photographers</div></div>
 <div class="why-c"><span class="why-icon" aria-hidden="true">🏛️</span><div class="why-label">Expert Egyptologist Guides</div></div>
+<div class="why-c"><span class="why-icon" aria-hidden="true">🌅</span><div class="why-label">Golden-Hour Timing</div></div>
 <div class="why-c"><span class="why-icon" aria-hidden="true">⚡</span><div class="why-label">48-Hour Photo Delivery</div></div>
-<div class="why-c"><span class="why-icon" aria-hidden="true">🚗</span><div class="why-label">Luxury Private Transport</div></div>
 <div class="why-c"><span class="why-icon" aria-hidden="true">⭐</span><div class="why-label">5.0★ Google Rated</div></div>
 <div class="why-c"><span class="why-icon" aria-hidden="true">🎨</span><div class="why-label">100% Custom Shot Lists</div></div>
 </div>
@@ -1053,10 +1057,10 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="text-c">
 <div class="eyebrow">Egypt Photoshoot Experiences</div>
 <h2 id="shoot-h2">Choose Your Egypt Photoshoot</h2>
-<p class="sec-sub">Every shoot includes a professional photographer, private transport, golden-hour timing and 150–300 retouched photos</p>
+<p class="sec-sub">Every shoot includes a professional photographer, an Egyptologist guide, private transport, golden-hour timing and 150–300 retouched photos</p>
 </div>
 <div class="shoot-grid">
-<div class="shoot-c"><span class="shoot-icon" aria-hidden="true">🔺</span><div class="shoot-title">Pyramids &amp; Sphinx Photoshoot</div><p class="shoot-desc">The iconic Egypt photoshoot: portraits at the Great Pyramid, the panorama alignment point and the Sphinx — timed for the best light of the day.</p><div class="shoot-foot"><span class="shoot-price">From $150</span><a class="shoot-link" href="/tour-pyramids-private">Book →</a></div></div>
+<div class="shoot-c"><span class="shoot-icon" aria-hidden="true">🔺</span><div class="shoot-title">Pyramids &amp; Sphinx Photoshoot</div><p class="shoot-desc">The iconic Egypt photoshoot: portraits at the Great Pyramid, the panorama alignment point and the Sphinx — timed for golden hour.</p><div class="shoot-foot"><span class="shoot-price">From $150</span><a class="shoot-link" href="/tour-pyramids-private">Book →</a></div></div>
 <div class="shoot-c"><span class="shoot-icon" aria-hidden="true">🕌</span><div class="shoot-title">Old Cairo Street Photoshoot</div><p class="shoot-desc">Islamic Cairo's lantern-lit alleys, Khan el-Khalili bazaar colors and historic mosques — editorial street portraits with local flavor.</p><div class="shoot-foot"><span class="shoot-price">From $120</span><a class="shoot-link" href="/tour-cairo-giza-2day">Book →</a></div></div>
 <div class="shoot-c"><span class="shoot-icon" aria-hidden="true">🏺</span><div class="shoot-title">Luxor Temple Photography</div><p class="shoot-desc">Golden colossi, hieroglyph walls and hot-air-balloon sunrises over the Valley of the Kings — Egypt's most dramatic backdrops.</p><div class="shoot-foot"><span class="shoot-price">From $180</span><a class="shoot-link" href="/tours?city=luxor">Book →</a></div></div>
 <div class="shoot-c"><span class="shoot-icon" aria-hidden="true">⛵</span><div class="shoot-title">Nile &amp; Felucca Photoshoot</div><p class="shoot-desc">Golden-hour sailing portraits on a private felucca in Aswan, with palm islands and desert light reflected on the water.</p><div class="shoot-foot"><span class="shoot-price">From $140</span><a class="shoot-link" href="/tours?type=nile-cruise">Book →</a></div></div>
@@ -1072,13 +1076,13 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="text-c">
 <div class="eyebrow">Signature Photography Tours</div>
 <h2 id="tours-h2">Full Egypt Tours with Photography</h2>
-<p class="sec-sub">Complete tours where a professional photographer travels with you — every site, every golden hour, every memory preserved</p>
+<p class="sec-sub">Complete tours where a professional photographer and an Egyptologist guide travel with you — every site, every golden hour, every memory preserved</p>
 </div>
 <div class="tours-grid">
 <article class="tc" itemscope itemtype="https://schema.org/Product">
 <meta itemprop="name" content="Private Pyramids Photoshoot Tour"/>
-<meta itemprop="description" content="The signature Egypt photoshoot: cinematic portraits at the Pyramids and Sphinx with a private photographer and Egyptologist guide — 150–300 retouched photos in 48 hours."/>
-<meta itemprop="image" content="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp"/>
+<meta itemprop="description" content="The signature golden-hour Egypt photoshoot: cinematic portraits at the Pyramids and Sphinx with a private photographer and Egyptologist guide — 150–300 retouched photos in 48 hours."/>
+<meta itemprop="image" content="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp"/>
 <meta itemprop="brand" content="Egypt Photography Tours"/>
 <link itemprop="url" href="https://www.egyptphotographytours.com/tour-pyramids-private"/>
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -1090,20 +1094,20 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <link itemprop="url" href="https://www.egyptphotographytours.com/tour-pyramids-private"/>
 </div>
 <div class="tc-img-w">
-<img class="tc-img" src="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp" alt="Private Pyramids photoshoot tour at Giza with professional photographer" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
+<img class="tc-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp" alt="Private Pyramids photoshoot tour at Giza with professional photographer and Egyptologist guide" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
 <span class="tc-badge badge-hot">Most Booked</span>
 </div>
 <div class="tc-body">
 <h3 class="tc-title"><a href="/tour-pyramids-private">Private Pyramids Photoshoot Tour</a></h3>
-<p class="tc-desc">The signature Egypt photoshoot: cinematic portraits at the Pyramids and Sphinx with your private photographer, plus an Egyptologist guide who reveals 4,500 years of history between shots.</p>
+<p class="tc-desc">The signature Egypt photoshoot: cinematic golden-hour portraits at the Pyramids and Sphinx with your private photographer, plus an Egyptologist guide who reveals 4,500 years of history between shots.</p>
 <div class="tc-meta"><span>⏱ 3–5 hrs</span><span>👑 Fully Private</span><span>📸 150–300 Photos</span></div>
 <div class="tc-foot"><div class="tc-price">From $150<small>per group</small></div><a class="btn btn-dark btn-sm" href="/tour-pyramids-private" aria-label="Book the private Pyramids photoshoot tour">Book Now</a></div>
 </div>
 </article>
 <article class="tc" itemscope itemtype="https://schema.org/Product">
 <meta itemprop="name" content="Cairo &amp; Giza 2-Day Photo Tour"/>
-<meta itemprop="description" content="Two-day Cairo and Giza tour with daily professional photography — Pyramids photoshoot, Grand Egyptian Museum and Islamic Cairo."/>
-<meta itemprop="image" content="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp"/>
+<meta itemprop="description" content="Two-day Cairo and Giza tour with daily professional photography — golden-hour Pyramids photoshoot, Grand Egyptian Museum and Islamic Cairo."/>
+<meta itemprop="image" content="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp"/>
 <meta itemprop="brand" content="Egypt Photography Tours"/>
 <link itemprop="url" href="https://www.egyptphotographytours.com/tour-cairo-giza-2day"/>
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -1115,20 +1119,20 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <link itemprop="url" href="https://www.egyptphotographytours.com/tour-cairo-giza-2day"/>
 </div>
 <div class="tc-img-w">
-<img class="tc-img" src="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp" alt="Cairo and Giza 2-day tour with professional photography" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
+<img class="tc-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp" alt="Cairo and Giza 2-day tour with professional photography" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
 <span class="tc-badge badge-best">Best Value</span>
 </div>
 <div class="tc-body">
 <h3 class="tc-title"><a href="/tour-cairo-giza-2day">Cairo &amp; Giza 2-Day Photo Tour</a></h3>
-<p class="tc-desc">The complete Cairo story with a photographer beside you: Pyramids photoshoot at sunrise, the Grand Egyptian Museum, Saladin Citadel and the lantern-lit streets of Islamic Cairo.</p>
+<p class="tc-desc">The complete Cairo story with a photographer beside you: Pyramids photoshoot at golden hour, the Grand Egyptian Museum, Saladin Citadel and the lantern-lit streets of Islamic Cairo.</p>
 <div class="tc-meta"><span>⏱ 2 days</span><span>👑 Private / Small Group</span><span>🍽 Gourmet Options</span></div>
 <div class="tc-foot"><div class="tc-price">From $350<small>per group</small></div><a class="btn btn-dark btn-sm" href="/tour-cairo-giza-2day" aria-label="Book the Cairo and Giza 2-day photo tour">Book Now</a></div>
 </div>
 </article>
 <article class="tc" itemscope itemtype="https://schema.org/Product">
 <meta itemprop="name" content="Alexandria Photo Day Trip"/>
-<meta itemprop="description" content="Luxury day trip from Cairo to Alexandria with professional photographer — Bibliotheca, Qaitbay Citadel and Mediterranean coast portraits."/>
-<meta itemprop="image" content="https://www.egyptphotographytours.com/images/alexandria-tour.webp"/>
+<meta itemprop="description" content="Luxury day trip from Cairo to Alexandria with a professional photographer — Bibliotheca, Qaitbay Citadel and Mediterranean coast portraits."/>
+<meta itemprop="image" content="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936975/egypt-photography-tours/seed/hero-image5.webp"/>
 <meta itemprop="brand" content="Egypt Photography Tours"/>
 <link itemprop="url" href="https://www.egyptphotographytours.com/tour-alexandria"/>
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -1140,7 +1144,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <link itemprop="url" href="https://www.egyptphotographytours.com/tour-alexandria"/>
 </div>
 <div class="tc-img-w">
-<img class="tc-img" src="https://www.egyptphotographytours.com/images/alexandria-tour.webp" alt="Alexandria photo day trip from Cairo – Mediterranean coast photography" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
+<img class="tc-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936975/egypt-photography-tours/seed/hero-image5.webp" alt="Alexandria photo day trip from Cairo – Mediterranean coast photography" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
 <span class="tc-badge badge-photo">Day Trip</span>
 </div>
 <div class="tc-body">
@@ -1152,8 +1156,8 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </article>
 <article class="tc" itemscope itemtype="https://schema.org/Product">
 <meta itemprop="name" content="7-Day Egypt Photography Tour"/>
-<meta itemprop="description" content="The full Egypt tour with photography: Cairo, Giza, Alexandria, Luxor and Aswan with 5-star hotels and a daily private photographer."/>
-<meta itemprop="image" content="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp"/>
+<meta itemprop="description" content="The full Egypt tour with photography: Cairo, Giza, Alexandria, Luxor and Aswan with 5-star hotels, Egyptologist guides and a daily private photographer."/>
+<meta itemprop="image" content="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp"/>
 <meta itemprop="brand" content="Egypt Photography Tours"/>
 <link itemprop="url" href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day"/>
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -1165,7 +1169,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <link itemprop="url" href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day"/>
 </div>
 <div class="tc-img-w">
-<img class="tc-img" src="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp" alt="7-day full Egypt photography tour – Luxor Valley of the Kings and Aswan Nile" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
+<img class="tc-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp" alt="7-day full Egypt photography tour – Luxor Valley of the Kings and Aswan Nile" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
 <span class="tc-badge badge-luxury">Ultimate Luxury</span>
 </div>
 <div class="tc-body">
@@ -1188,7 +1192,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </div>
 <div class="how-grid">
 <div class="how-c"><div class="how-n" aria-hidden="true">1</div><div class="how-title">Tell Us Your Vision</div><p class="how-desc">Fill the form or WhatsApp us. We reply within 2 hours with options, pricing and availability for your dates.</p></div>
-<div class="how-c"><div class="how-n" aria-hidden="true">2</div><div class="how-title">Plan Your Shot List</div><p class="how-desc">We design the shoot together: locations, timing for the best light, outfit advice and any special requests.</p></div>
+<div class="how-c"><div class="how-n" aria-hidden="true">2</div><div class="how-title">Plan Your Shot List</div><p class="how-desc">We design the shoot together: locations, golden-hour timing, outfit advice and any special requests.</p></div>
 <div class="how-c"><div class="how-n" aria-hidden="true">3</div><div class="how-title">Shoot at Golden Hour</div><p class="how-desc">Private transport picks you up. Your photographer and Egyptologist guide handle tickets, permits, crowds and angles.</p></div>
 <div class="how-c"><div class="how-n" aria-hidden="true">4</div><div class="how-title">Receive Your Photos</div><p class="how-desc">150–300 professionally retouched images arrive in a private online gallery within 48 hours — ready to print and share.</p></div>
 </div>
@@ -1221,7 +1225,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </div>
 <div class="trip-builder">
 <div class="trip-form-box">
-<h3 style="color:var(--c-dark);margin-bottom:20px;font-size:20px">Request Your Photoshoot</h3>
+<h3 class="form-title">Request Your Photoshoot</h3>
 <form id="contactForm" aria-label="Egypt photoshoot and photography tour request form" novalidate data-msg-sending="Sending your request..." data-msg-success="✅ Request sent! We will reply within 2 hours." data-msg-error="Something went wrong. Please try again." data-msg-network="Network error. Please check your connection." data-msg-turnstile="Please complete the security check.">
 <div class="form-row-2">
 <div class="form-row"><label class="form-label" for="f-name">Your Name <span class="form-req" aria-hidden="true">*</span></label><input class="form-input" type="text" id="f-name" name="name" placeholder="e.g. Sarah Johnson" required autocomplete="name" autocapitalize="words" enterkeyhint="next"/></div>
@@ -1238,14 +1242,14 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="form-row"><label class="form-label" for="f-destinations">Locations of Interest</label><input class="form-input" type="text" id="f-destinations" name="destinations" placeholder="e.g. Pyramids, Sphinx, Luxor temples, Nile…" enterkeyhint="next"/></div>
 <div class="form-row"><label class="form-label" for="f-dates">Approximate Travel Dates</label><input class="form-input" type="text" id="f-dates" name="dates" placeholder="e.g. March, flexible, 2 weeks from now…" enterkeyhint="next"/></div>
 <div class="form-row"><label class="form-label" for="f-message">Your Dream Shots &amp; Style <span class="form-req" aria-hidden="true">*</span></label><textarea class="form-textarea" id="f-message" name="message" placeholder="Describe your dream photos — style, outfits, must-have spots…" required enterkeyhint="send"></textarea></div>
-<div class="cf-turnstile" data-sitekey="0x4AAAAAADksi_3_nH-4QjMP" data-size="normal" data-theme="dark" style="margin-bottom:20px;display:flex;justify-content:center"></div>
+<div class="cf-turnstile turnstile-wrap" data-sitekey="0x4AAAAAADksi_3_nH-4QjMP" data-size="normal" data-theme="dark"></div>
 <button type="submit" class="form-submit" aria-label="Submit your photoshoot request"><span class="submit-label">Request My Photoshoot</span><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
-<p id="form-status" role="status" aria-live="polite" style="margin-top:15px;text-align:center;font-size:.9rem;color:#2d3748"></p>
+<p class="form-status" id="form-status" role="status" aria-live="polite"></p>
 </form>
 </div>
 <div class="trip-contacts">
-<div class="contact-card"><span class="contact-card-icon" aria-hidden="true">💬</span><h3>WhatsApp Concierge</h3><p>The fastest way to book your photoshoot. We reply within 2 hours, 7 days a week.</p><a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20book%20an%20Egypt%20photoshoot." target="_blank" rel="noopener noreferrer" aria-label="Chat with our concierge on WhatsApp" style="width:100%;margin-bottom:12px">Chat on WhatsApp</a><p class="contact-small">+20 155 073 5673</p></div>
-<div class="contact-card contact-card-email"><span class="contact-card-icon" aria-hidden="true">✉️</span><h3>Email Our Team</h3><p>Prefer email? Send your dates and style ideas — we'll respond with a full plan and quote within 24 hours.</p><a class="btn btn-dark btn-lg" href="mailto:info@egyptphotographytours.com?subject=Egypt%20Photoshoot%20Request" aria-label="Email us your photoshoot request" style="width:100%;margin-bottom:12px">Send an Email</a><p class="contact-small">info@egyptphotographytours.com</p></div>
+<div class="contact-card"><span class="contact-card-icon" aria-hidden="true">💬</span><h3>WhatsApp Concierge</h3><p>The fastest way to book your photoshoot. We reply within 2 hours, 7 days a week.</p><a class="btn btn-wa btn-lg btn-block" href="https://wa.me/201550735673?text=Hello!%20I%20would%20like%20to%20book%20an%20Egypt%20photoshoot." target="_blank" rel="noopener noreferrer" aria-label="Chat with our concierge on WhatsApp">Chat on WhatsApp</a><p class="contact-small">+20 155 073 5673</p></div>
+<div class="contact-card contact-card-email"><span class="contact-card-icon" aria-hidden="true">✉️</span><h3>Email Our Team</h3><p>Prefer email? Send your dates and style ideas — we'll respond with a full plan and quote within 24 hours.</p><a class="btn btn-dark btn-lg btn-block js-email" data-u="info" data-d="egyptphotographytours.com" data-subject="Egypt Photoshoot Request" href="/contact" aria-label="Email us your photoshoot request">Send an Email</a><p class="contact-small">24-hour response guarantee</p></div>
 </div>
 </div>
 </div>
@@ -1255,15 +1259,15 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="text-c">
 <div class="eyebrow">Photo Locations</div>
 <h2 id="dest-h2">Egypt's Most Photogenic Places</h2>
-<p class="sec-sub">From the Pyramids of Giza to the Nubian temples of Aswan — we photograph every legendary site</p>
+<p class="sec-sub">From the Pyramids of Giza to the Nubian temples of Aswan — we photograph every legendary site at golden hour</p>
 </div>
 <div class="dest-grid">
-<a class="dest" href="/tour-pyramids-private" aria-label="Pyramids of Giza photoshoots"><img src="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp" alt="Pyramids of Giza photoshoot – golden hour portraits" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Giza Pyramids</span><span class="dest-cnt">Photoshoots</span></div></a>
-<a class="dest" href="/tours?city=cairo" aria-label="Cairo photography tours"><img src="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp" alt="Cairo photography tour – Islamic Cairo and Grand Egyptian Museum" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Cairo</span><span class="dest-cnt">Street &amp; History</span></div></a>
-<a class="dest" href="/tours?city=luxor" aria-label="Luxor temple photography tours"><img src="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp" alt="Luxor photography tour – Valley of the Kings and Karnak Temple" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Luxor</span><span class="dest-cnt">Ancient Thebes</span></div></a>
-<a class="dest" href="/tours?city=aswan" aria-label="Aswan Nile photography tours"><img src="https://www.egyptphotographytours.com/images/hero-image4.webp" alt="Aswan Nile photography – felucca sunset and Abu Simbel" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Aswan</span><span class="dest-cnt">Nile Golden Hour</span></div></a>
-<a class="dest" href="/tour-alexandria" aria-label="Alexandria photo day trips"><img src="https://www.egyptphotographytours.com/images/alexandria-tour.webp" alt="Alexandria photo day trip – Mediterranean coast photography" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Alexandria</span><span class="dest-cnt">Mediterranean</span></div></a>
-<a class="dest" href="/tours?type=nile-cruise" aria-label="Nile cruise photography packages"><img src="https://www.egyptphotographytours.com/images/hero-image5.webp" alt="Nile cruise photography – luxury Dahabiya sailing portraits" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Nile Cruise</span><span class="dest-cnt">Dahabiya</span></div></a>
+<a class="dest" href="/tour-pyramids-private" aria-label="Pyramids of Giza photoshoots"><img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,h_800,c_fill,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp" alt="Pyramids of Giza photoshoot – golden hour portraits" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Giza Pyramids</span><span class="dest-cnt">Photoshoots</span></div></a>
+<a class="dest" href="/tours?city=cairo" aria-label="Cairo photography tours"><img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,h_800,c_fill,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp" alt="Cairo photography tour – Islamic Cairo and Grand Egyptian Museum" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Cairo</span><span class="dest-cnt">Street &amp; History</span></div></a>
+<a class="dest" href="/tours?city=luxor" aria-label="Luxor temple photography tours"><img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,h_800,c_fill,f_auto,q_auto/v1782936970/egypt-photography-tours/seed/hero-image3.webp" alt="Luxor photography tour – Valley of the Kings and Karnak Temple" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Luxor</span><span class="dest-cnt">Ancient Thebes</span></div></a>
+<a class="dest" href="/tours?city=aswan" aria-label="Aswan Nile photography tours"><img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,h_800,c_fill,f_auto,q_auto/v1782936972/egypt-photography-tours/seed/hero-image4.webp" alt="Aswan Nile photography – felucca sunset and Abu Simbel" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Aswan</span><span class="dest-cnt">Nile Golden Hour</span></div></a>
+<a class="dest" href="/tour-alexandria" aria-label="Alexandria photo day trips"><img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,h_800,c_fill,f_auto,q_auto/v1782936975/egypt-photography-tours/seed/hero-image5.webp" alt="Alexandria photo day trip – Mediterranean coast photography" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Alexandria</span><span class="dest-cnt">Mediterranean</span></div></a>
+<a class="dest" href="/tours?type=nile-cruise" aria-label="Nile cruise photography packages"><img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_600,h_800,c_fill,f_auto,q_auto/v1782936974/egypt-photography-tours/seed/egypt-photography-tours-hero-image.webp" alt="Nile cruise photography – luxury Dahabiya sailing portraits" width="300" height="400" sizes="(max-width:639px) 50vw, (max-width:1023px) 33vw, 16vw" loading="lazy" decoding="async"/><div class="dest-label"><span class="dest-name">Nile Cruise</span><span class="dest-cnt">Dahabiya</span></div></a>
 </div>
 </div>
 </section>
@@ -1275,14 +1279,14 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <p class="sec-sub">Whatever you dream of capturing, we build the shoot around you</p>
 </div>
 <div class="types-grid">
-<a class="type-card" href="/tour-pyramids-private" aria-label="Pyramids photoshoot"><span class="type-icon" aria-hidden="true">🔺</span><div><div class="type-title">Pyramids Photoshoot</div><div class="type-desc">Sunrise portraits, panorama point, Sphinx angles</div></div></a>
+<a class="type-card" href="/tour-pyramids-private" aria-label="Pyramids photoshoot"><span class="type-icon" aria-hidden="true">🔺</span><div><div class="type-title">Pyramids Photoshoot</div><div class="type-desc">Golden hour, panorama point, Sphinx angles</div></div></a>
 <a class="type-card" href="/tours?type=honeymoon" aria-label="Honeymoon photoshoot Egypt"><span class="type-icon" aria-hidden="true">💍</span><div><div class="type-title">Honeymoon &amp; Couples</div><div class="type-desc">Romantic sunset shoots and engagement sessions</div></div></a>
 <a class="type-card" href="/tours?type=family" aria-label="Family photoshoot Egypt"><span class="type-icon" aria-hidden="true">👨‍👩‍👧‍👦</span><div><div class="type-title">Family Portraits</div><div class="type-desc">Kid-friendly sessions with camels and laughter</div></div></a>
 <a class="type-card" href="/tours?type=solo-female" aria-label="Solo traveler photoshoot Egypt"><span class="type-icon" aria-hidden="true">👩</span><div><div class="type-title">Solo Portraits</div><div class="type-desc">Safe, guided shoots for solo travelers</div></div></a>
 <a class="type-card" href="/tours?type=content-creator" aria-label="Content creator photoshoot Egypt"><span class="type-icon" aria-hidden="true">📱</span><div><div class="type-title">Content Creator</div><div class="type-desc">Reel-ready video and photo at exclusive angles</div></div></a>
 <a class="type-card" href="/tour-cairo-giza-2day" aria-label="Historical photography tour Egypt"><span class="type-icon" aria-hidden="true">🏛️</span><div><div class="type-title">Historical Photo Tours</div><div class="type-desc">Egyptologist-guided tours with daily photography</div></div></a>
 <a class="type-card" href="/tours?type=nile-cruise" aria-label="Nile cruise photography"><span class="type-icon" aria-hidden="true">⛵</span><div><div class="type-title">Nile Photography</div><div class="type-desc">Felucca sunsets and Dahabiya sailing portraits</div></div></a>
-<a class="type-card" href="/tours?type=sunrise" aria-label="Sunrise photography tour Egypt"><span class="type-icon" aria-hidden="true">🌅</span><div><div class="type-title">Sunrise &amp; Golden Hour</div><div class="type-desc">Empty sites and dramatic desert light</div></div></a>
+<a class="type-card" href="/tours?type=sunrise" aria-label="Golden hour photography tour Egypt"><span class="type-icon" aria-hidden="true">🌅</span><div><div class="type-title">Sunrise &amp; Golden Hour</div><div class="type-desc">Empty sites and dramatic desert light</div></div></a>
 <a class="type-card" href="/tours?type=group" aria-label="Small group photo tours"><span class="type-icon" aria-hidden="true">👥</span><div><div class="type-title">Small Group Photo Tours</div><div class="type-desc">Max 8 guests with shared photographer time</div></div></a>
 <a class="type-card" href="/tours?type=luxury" aria-label="Luxury all-inclusive photo tours"><span class="type-icon" aria-hidden="true">✨</span><div><div class="type-title">Luxury All-Inclusive</div><div class="type-desc">5-star hotels, private flights, photographer included</div></div></a>
 <a class="type-card" href="/tours?type=day-trip" aria-label="Photo day trips Egypt"><span class="type-icon" aria-hidden="true">🚌</span><div><div class="type-title">Photo Day Trips</div><div class="type-desc">Alexandria, Luxor, Aswan with private transfers</div></div></a>
@@ -1299,7 +1303,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </div>
 <div class="pkg-grid">
 <div class="pkg"><div class="pkg-head"><div class="pkg-tier">Group</div><div class="pkg-name">Photo Explorer</div><div class="pkg-dur">Max 8 guests · Full day · Luxury transport</div><div class="pkg-price-row"><span class="pkg-price">$79</span><span class="pkg-unit">per person</span></div></div><div class="pkg-body"><ul class="pkg-list"><li>Expert Egyptologist guide</li><li>Group photo sessions at each site</li><li>Giza Pyramids &amp; Sphinx</li><li>Grand Egyptian Museum</li><li>All entrance fees</li><li>Gourmet lunch options</li></ul><a class="btn btn-dark pkg-btn" href="/contact?pkg=group" aria-label="Book the group photo explorer package">Book Group Tour</a></div></div>
-<div class="pkg is-featured"><div class="best-badge">⭐ Most Booked</div><div class="pkg-head"><div class="pkg-tier gold-tier">Private Photoshoot</div><div class="pkg-name">Signature Egypt Photoshoot</div><div class="pkg-dur">Fully private · Half/full day · Cinematic shoot</div><div class="pkg-price-row"><span class="pkg-price">$150</span><span class="pkg-unit">per group</span></div></div><div class="pkg-body"><ul class="pkg-list"><li>Private professional photographer</li><li>Egyptologist guide included</li><li>Luxury private vehicle</li><li>All entrance fees &amp; permits</li><li>150–300 retouched photos</li><li>Custom shot list &amp; outfit guidance</li><li>48-hour gallery delivery</li></ul><a class="btn btn-gold pkg-btn" href="/contact?pkg=private-photo" aria-label="Book the signature Egypt photoshoot">Book Private Shoot</a></div></div>
+<div class="pkg is-featured"><div class="best-badge">⭐ Most Booked</div><div class="pkg-head"><div class="pkg-tier gold-tier">Private Photoshoot</div><div class="pkg-name">Signature Egypt Photoshoot</div><div class="pkg-dur">Fully private · Half/full day · Golden-hour cinematic shoot</div><div class="pkg-price-row"><span class="pkg-price">$150</span><span class="pkg-unit">per group</span></div></div><div class="pkg-body"><ul class="pkg-list"><li>Private professional photographer</li><li>Egyptologist guide included</li><li>Luxury private vehicle</li><li>All entrance fees &amp; permits</li><li>150–300 retouched photos</li><li>Custom shot list &amp; outfit guidance</li><li>48-hour gallery delivery</li></ul><a class="btn btn-gold pkg-btn" href="/contact?pkg=private-photo" aria-label="Book the signature Egypt photoshoot">Book Private Shoot</a></div></div>
 <div class="pkg"><div class="pkg-head"><div class="pkg-tier">Ultra-Luxury</div><div class="pkg-name">7-Day Egypt Photography Tour</div><div class="pkg-dur">Private · 7 days · 5-Star All-Inclusive</div><div class="pkg-price-row"><span class="pkg-price">$2,000</span><span class="pkg-unit">per group</span></div></div><div class="pkg-body"><ul class="pkg-list"><li>Cairo · Giza · Luxor · Aswan</li><li>5-star hotel suites (6 nights)</li><li>Private domestic flights</li><li>Daily professional photography</li><li>Exclusive Nile Dahabiya</li><li>Abu Simbel &amp; Philae visits</li><li>All gourmet dining included</li></ul><a class="btn btn-dark pkg-btn" href="/contact?pkg=7day" aria-label="Book the 7-day Egypt photography tour">Book Photo Journey</a></div></div>
 </div>
 </div>
@@ -1321,7 +1325,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </section>
 <section class="section cv-auto" id="photoshoot-guide" aria-labelledby="guide-h2">
 <div class="wrap"><div class="prose">
-<h2 id="guide-h2">The Complete Egypt Photoshoot Guide (2026): Pyramids, Timing, Outfits &amp; Prices</h2>
+<h2 id="guide-h2">The Complete Egypt Photoshoot Guide (2026): Pyramids, Golden Hour, Outfits &amp; Prices</h2>
 <h3>Best Time for Pyramids Photos: Sunrise &amp; Golden Hour</h3>
 <p>The best photos at the Pyramids happen at <strong>gate opening (8am)</strong> and during the <strong>golden hour before sunset</strong>. Morning light is soft and crowds are thin; late afternoon turns the limestone amber and paints long shadows across the plateau. October to April offers the clearest skies and most comfortable temperatures for a <strong>photoshoot in Egypt</strong>.</p>
 <h3>What to Wear for Your Egypt Photoshoot</h3>
@@ -1331,9 +1335,9 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <h3>Best Photo Spots at Giza: Panorama Point, Sphinx &amp; the Palm View</h3>
 <p>Beyond the classic postcard shot, our photographers take you to the <strong>desert panorama viewpoint</strong> where all three pyramids align in a single frame, the <strong>Sphinx profile angle</strong> with the Great Pyramid behind, and quiet corners most visitors never find. Each spot is timed to its best light of the day.</p>
 <h3>How Much Does an Egypt Photoshoot Cost?</h3>
-<p>A private <strong>Egypt photoshoot</strong> at the Pyramids starts from <strong>$150 per group</strong> and includes the photographer, guide, transport, entrance fees and 150–300 retouched photos. Multi-location shoots (Pyramids + Old Cairo, or Luxor + Nile) and full photography tours are quoted transparently — no hidden fees, ever.</p>
+<p>A private <strong>Egypt photoshoot</strong> at the Pyramids starts from <strong>$150 per group</strong> and includes the photographer, an Egyptologist guide, transport, entrance fees and 150–300 retouched photos. Multi-location shoots (Pyramids + Old Cairo, or Luxor + Nile) and full photography tours are quoted transparently — no hidden fees, ever.</p>
 <h3>Full Egypt Tours with Photography: Cairo, Luxor &amp; Aswan</h3>
-<p>For the complete story, our <strong>full Egypt tours with photography</strong> pair a private photographer with an Egyptologist guide from Cairo to Abu Simbel: the Pyramids at sunrise, Karnak's columns at golden hour, felucca sails on the Nile and desert stars over the White Desert — every day documented, every memory delivered within 48 hours of each shoot.</p>
+<p>For the complete story, our <strong>full Egypt tours with photography</strong> pair a private photographer with an Egyptologist guide from Cairo to Abu Simbel: the Pyramids at golden hour, Karnak's columns in warm light, felucca sails on the Nile and desert stars over the White Desert — every day documented, every memory delivered within 48 hours of each shoot.</p>
 </div></div>
 </section>
 <section class="section section-dark cv-auto" id="testimonials" aria-labelledby="rev-h2">
@@ -1372,10 +1376,10 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </section>
 <section class="section section-gold cv-auto" id="cta" aria-labelledby="cta-h2">
 <div class="wrap text-c">
-<div class="eyebrow" style="background:rgba(26,32,44,.12);color:#1a202c;border-color:rgba(26,32,44,.2)">Begin Your Story</div>
-<h2 id="cta-h2" style="color:var(--c-dark)">Book Your Egypt Photoshoot Today</h2>
-<p class="sec-sub" style="color:rgba(26,32,44,.82)">Professional Egypt photoshoots, full tours with photography, and memories delivered in 48 hours. Our concierge replies within 2 hours — every day.</p>
-<div class="btn-group mt-32" style="justify-content:center">
+<div class="eyebrow">Begin Your Story</div>
+<h2 id="cta-h2">Book Your Egypt Photoshoot Today</h2>
+<p class="sec-sub">Professional Egypt photoshoots, full tours with photography, and memories delivered in 48 hours. Our concierge replies within 2 hours — every day.</p>
+<div class="btn-group btn-group-center mt-32">
 <a class="btn btn-dark btn-lg" href="#customize-trip" aria-label="Book your Pyramids photoshoot now">Book My Photoshoot</a>
 <a class="btn btn-wa btn-lg" href="https://wa.me/201550735673?text=Hello!%20I%20want%20to%20book%20an%20Egypt%20photoshoot." target="_blank" rel="noopener noreferrer" aria-label="Chat with our concierge on WhatsApp">WhatsApp Concierge</a>
 </div>
@@ -1386,18 +1390,18 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="wrap"><div class="footer-grid">
 <div>
 <a class="logo" href="/" aria-label="Egypt Photography Tours – home">
-<img class="logo-img" src="https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours logo" width="44" height="44" loading="lazy" decoding="async"/>
+<img class="logo-img" src="https://res.cloudinary.com/dai7wqayo/image/upload/w_120,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/egypt-photography-tours-logo.webp" alt="Egypt Photography Tours logo" width="44" height="44" loading="lazy" decoding="async"/>
 <span class="logo-copy"><span class="logo-name">Egypt Photography Tours</span><span class="logo-tag">Egypt Photoshoots Since 2015</span></span>
 </a>
-<p class="f-brand-desc">Egypt's premier photography tour company. Professional Egypt photoshoots at the Pyramids, full tours with a private photographer, luxury transport and expert Egyptologist guides.</p>
+<p class="f-brand-desc">Egypt's premier photography tour company. Golden-hour Egypt photoshoots at the Pyramids, full tours with a private photographer and Egyptologist guides, luxury transport included.</p>
 <h3 class="f-h" id="social-heading">Follow Us</h3>
-<div class="social-row" role="list" aria-labelledby="social-heading">
-<a role="listitem" class="social-btn" href="https://www.facebook.com/egyptphotographytours" target="_blank" rel="noopener noreferrer" aria-label="Follow Egypt Photography Tours on Facebook" title="Follow us on Facebook"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span class="social-label">Facebook</span></a>
-<a role="listitem" class="social-btn" href="https://www.instagram.com/hossam_artistic/" target="_blank" rel="noopener noreferrer" aria-label="Follow Egypt Photography Tours on Instagram" title="Follow us on Instagram"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span class="social-label">Instagram</span></a>
-<a role="listitem" class="social-btn" href="https://www.tiktok.com/@egyptphotographytours" target="_blank" rel="noopener noreferrer" aria-label="Follow Egypt Photography Tours on TikTok" title="Follow us on TikTok"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.03-1.5.03-1.68.81-3.32 2.11-4.41 1.29-1.12 3.03-1.68 4.7-1.55.04 1.36-.02 2.72-.02 4.08-.79-.25-1.72-.23-2.45.23-.75.45-1.27 1.25-1.39 2.11-.13.88.13 1.82.72 2.51.61.71 1.55 1.12 2.5 1.12 1.06.02 2.13-.5 2.77-1.35.58-.76.84-1.75.84-2.7.02-3.35.01-6.7.01-10.05z"/></svg><span class="social-label">TikTok</span></a>
-<a role="listitem" class="social-btn" href="https://www.youtube.com/@Egyptphotographytours" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Egypt Photography Tours on YouTube" title="Subscribe on YouTube"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span class="social-label">YouTube</span></a>
-<a role="listitem" class="social-btn" href="https://wa.me/201550735673" target="_blank" rel="noopener noreferrer" aria-label="Chat with Egypt Photography Tours on WhatsApp" title="Chat on WhatsApp"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span class="social-label">WhatsApp</span></a>
-</div>
+<ul class="social-row" aria-labelledby="social-heading">
+<li><a class="social-btn" href="https://www.facebook.com/egyptphotographytours" target="_blank" rel="noopener noreferrer" aria-label="Follow Egypt Photography Tours on Facebook" title="Follow us on Facebook"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span class="social-label">Facebook</span></a></li>
+<li><a class="social-btn" href="https://www.instagram.com/hossam_artistic/" target="_blank" rel="noopener noreferrer" aria-label="Follow Egypt Photography Tours on Instagram" title="Follow us on Instagram"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span class="social-label">Instagram</span></a></li>
+<li><a class="social-btn" href="https://www.tiktok.com/@egyptphotographytours" target="_blank" rel="noopener noreferrer" aria-label="Follow Egypt Photography Tours on TikTok" title="Follow us on TikTok"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.03-1.5.03-1.68.81-3.32 2.11-4.41 1.29-1.12 3.03-1.68 4.7-1.55.04 1.36-.02 2.72-.02 4.08-.79-.25-1.72-.23-2.45.23-.75.45-1.27 1.25-1.39 2.11-.13.88.13 1.82.72 2.51.61.71 1.55 1.12 2.5 1.12 1.06.02 2.13-.5 2.77-1.35.58-.76.84-1.75.84-2.7.02-3.35.01-6.7.01-10.05z"/></svg><span class="social-label">TikTok</span></a></li>
+<li><a class="social-btn" href="https://www.youtube.com/@Egyptphotographytours" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Egypt Photography Tours on YouTube" title="Subscribe on YouTube"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span class="social-label">YouTube</span></a></li>
+<li><a class="social-btn" href="https://wa.me/201550735673" target="_blank" rel="noopener noreferrer" aria-label="Chat with Egypt Photography Tours on WhatsApp" title="Chat on WhatsApp"><svg class="ic" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span class="social-label">WhatsApp</span></a></li>
+</ul>
 </div>
 <div><h3 class="f-h">Photoshoots &amp; Tours</h3><ul class="f-links">
 <li><a href="/tour-pyramids-private"><svg class="ic" aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg> Pyramids Photoshoot</a></li>
@@ -1420,7 +1424,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div><h3 class="f-h">Concierge Desk</h3><div class="f-contact-r">
 <a href="https://wa.me/201550735673" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us at +20 155 073 5673"><svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>+20 155 073 5673 (WhatsApp)</span></a>
 <a href="tel:+201550735673" aria-label="Call us at +20 155 073 5673"><svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+20 155 073 5673</span></a>
-<a href="mailto:info@egyptphotographytours.com" aria-label="Email us at info@egyptphotographytours.com"><svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@egyptphotographytours.com</span></a>
+<a class="js-email" data-u="info" data-d="egyptphotographytours.com" href="/contact" aria-label="Email Egypt Photography Tours"><svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Email Us</span></a>
 <div><svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Nazlet El-Samman, Giza – Near the Pyramids</span></div>
 <div><svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>24/7 Concierge Support</span></div>
 </div></div>
@@ -1429,7 +1433,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <button type="button" class="map-load-btn" id="map-load-btn" aria-label="Load interactive Google Map of Egypt Photography Tours location">🗺️ View our location on Google Maps</button>
 <noscript><a class="map-load-btn" href="https://maps.app.goo.gl/tPPx9cuDsjTE6nmN9" target="_blank" rel="noopener noreferrer">🗺️ View on Google Maps</a></noscript>
 </div>
-<div class="map-review"><a class="btn btn-gold btn-sm" href="https://g.page/r/CRiFZvb5dH4wEBM/review" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18A10.97 10.97 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg> Read &amp; Leave Google Reviews</a></div>
+<div class="map-review"><a class="btn btn-gold btn-sm" href="https://g.page/r/CRiFZvb5dH4wEAI/review" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18A10.97 10.97 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg> Read &amp; Leave Google Reviews</a></div>
 </div>
 </div>
 <div class="footer-bottom">
@@ -1447,6 +1451,19 @@ var qsa=function(sel,root){return Array.prototype.slice.call((root||document).qu
 var listen=function(el,ev,fn,opts){if(el)el.addEventListener(ev,fn,opts||false)};
 var reducedMotion=window.matchMedia?window.matchMedia("(prefers-reduced-motion: reduce)").matches:false;
 var mqMobile=window.matchMedia?window.matchMedia("(max-width:899px)"):null;
+
+/* ---------- Email obfuscation (no plaintext address in HTML) ---------- */
+(function(){
+qsa(".js-email").forEach(function(anchor){
+var user=anchor.getAttribute("data-u");
+var domain=anchor.getAttribute("data-d");
+var subject=anchor.getAttribute("data-subject");
+if(!user||!domain)return;
+var target="mailto:"+user+"@"+domain;
+if(subject)target+="?subject="+encodeURIComponent(subject);
+anchor.setAttribute("href",target);
+});
+})();
 
 /* ---------- Logo lightbox ---------- */
 (function(){
@@ -1477,7 +1494,7 @@ if(evt.key==="Tab"){evt.preventDefault();closeBtn.focus()}
 });
 })();
 
-/* ---------- Mobile navigation ---------- */
+/* ---------- Mobile navigation (no layout reads → no forced reflow) ---------- */
 (function(){
 var burgerBtn=qs("#hamburger");
 var navPanel=qs("#mobile-nav");
@@ -1491,14 +1508,8 @@ burgerIcon.innerHTML=isOpenState
 ?'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>'
 :'<line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>';
 }
-function positionPanel(){
-var headerH=qs("#site-header")?qs("#site-header").offsetHeight:60;
-var navbarH=qs("#navbar")?qs("#navbar").offsetHeight:56;
-navPanel.style.top=(headerH+navbarH)+"px";
-}
 function setNav(nextState){
 navOpen=nextState;
-positionPanel();
 navPanel.classList.toggle("is-open",navOpen);
 navPanel.setAttribute("aria-hidden",String(!navOpen));
 if(overlayEl){overlayEl.classList.toggle("is-open",navOpen);overlayEl.setAttribute("aria-hidden",String(!navOpen))}
@@ -1512,10 +1523,7 @@ listen(burgerBtn,"click",function(){setNav(!navOpen)});
 if(overlayEl)listen(overlayEl,"click",function(){if(navOpen)setNav(false)});
 listen(document,"keydown",function(evt){if(evt.key==="Escape"&&navOpen)setNav(false)});
 qsa("#mobile-nav a").forEach(function(link){listen(link,"click",function(){if(navOpen)setNav(false)})});
-listen(window,"resize",function(){
-if(mqMobile&&!mqMobile.matches&&navOpen)setNav(false);
-else if(navOpen)positionPanel();
-});
+if(mqMobile&&mqMobile.addEventListener)mqMobile.addEventListener("change",function(){if(!mqMobile.matches&&navOpen)setNav(false)});
 })();
 
 /* ---------- Language dropdown ---------- */
@@ -1652,8 +1660,8 @@ gaScript.async=true;
 gaScript.src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F";
 document.head.appendChild(gaScript);
 }
-function showBar(){consentBar.style.display="block";document.body.classList.add("cookie-visible")}
-function hideBar(){consentBar.style.display="none";document.body.classList.remove("cookie-visible")}
+function showBar(){consentBar.classList.add("is-visible");document.body.classList.add("cookie-visible")}
+function hideBar(){consentBar.classList.remove("is-visible");document.body.classList.remove("cookie-visible")}
 var storedConsent=readConsent();
 if(storedConsent){if(storedConsent.indexOf("accepted")!==-1)loadAnalytics();hideBar()}else{showBar()}
 listen(acceptBtn,"click",function(){writeConsent("accepted");hideBar();loadAnalytics()});
@@ -1675,7 +1683,7 @@ error:contactForm.dataset.msgError||"Something went wrong. Please try again.",
 network:contactForm.dataset.msgNetwork||"Network error. Please check your connection.",
 turnstile:contactForm.dataset.msgTurnstile||"Please complete the security check."
 };
-function setStatus(html,color){if(statusEl){statusEl.innerHTML=html;statusEl.style.color=color}}
+function setStatus(html,color){if(statusEl){statusEl.innerHTML=html;if(color)statusEl.style.color=color}}
 function setLoading(on){
 if(!submitBtn)return;
 submitBtn.disabled=on;
@@ -1756,7 +1764,7 @@ targetEl.scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
 });
 })();
 
-/* ---------- Map facade (click-to-load) ---------- */
+/* ---------- Map facade (click-to-load, class-styled iframe) ---------- */
 (function(){
 var mapFacade=qs("#map-facade");
 var mapBtn=qs("#map-load-btn");
@@ -1765,12 +1773,12 @@ listen(mapBtn,"click",function(){
 var mapSrc=mapFacade.getAttribute("data-src");
 if(!mapSrc)return;
 var mapFrame=document.createElement("iframe");
+mapFrame.className="map-iframe";
 mapFrame.src=mapSrc;
 mapFrame.title="Egypt Photography Tours location map – Near the Giza Pyramids, Egypt";
 mapFrame.setAttribute("loading","lazy");
 mapFrame.setAttribute("allowfullscreen","");
 mapFrame.setAttribute("referrerpolicy","no-referrer-when-downgrade");
-mapFrame.style.cssText="width:100%;height:100%;border:0;border-radius:8px";
 mapFacade.innerHTML="";
 mapFacade.appendChild(mapFrame);
 });
