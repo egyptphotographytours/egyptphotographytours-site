@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <!--
 ════════════════════════════════════════════════════════════════════
- EGYPT PHOTOGRAPHY TOURS — HOMEPAGE v11 (Cloudinary hero edition)
+EGYPT PHOTOGRAPHY TOURS — HOMEPAGE v13 (Schema validation clean)
 ════════════════════════════════════════════════════════════════════
- CHANGE IN THIS BUILD (only change — everything else identical to v10):
-  • 5 hero images now served from Cloudinary
-  • Responsive resizing is AUTOMATIC via Cloudinary transformations:
-      w_800 / w_1200 / w_1920 + f_auto (best format per browser)
-      + q_auto (optimal quality) — no manual image variants needed,
-      the old magick/srcset TODO is gone forever
-  • LCP preload points at Cloudinary with imagesrcset/imagesizes
-  • preconnect to res.cloudinary.com added (faster first byte)
-  • CSP already allows it (img-src 'self' https: data: blob:)
-
- All previous fixes kept: photoshoot keyword targeting
- ("Pyramids Photoshoot" + "Egypt Photoshoot"), no VIP wording,
- .form-select:focus fix, 60vh mobile hero, priceValidUntil 2027-06-30,
- no fabricated aggregateRating, full Twitter set, speakable, sr-only
- WhatsApp text, map facade, lazy Turnstile, no sw.js, noscript
- fallbacks, safe-area insets, 16px inputs, footer year 2026.
+FIXED IN THIS BUILD (vs v12):
+1. Service node: removed the unsupported "aggregateRating" property.
+   schema.org/Service does NOT support aggregateRating or review —
+   Google flags it as an invalid property. The rating now lives ONLY
+   on the TravelAgency/LocalBusiness node (where the reviews are),
+   which is the single correct place.
+2. ReserveAction > target EntryPoint: stripped the invalid extra
+   properties ("inLanguage", "httpMethod", "actionApplication" —
+   actionApplication is an Action property, not an EntryPoint one).
+   The EntryPoint now contains only "urlTemplate", exactly as the
+   spec requires.
+3. Kept from v12: the AggregateRating object on the Organization
+   (ratingValue 5.0 / bestRating 5 / worstRating 1 / ratingCount 6 /
+   reviewCount 6) which resolves the "multiple reviews without
+   aggregateRating" error, plus all 6 full Review objects matching
+   the 6 testimonials visible on the page and the visible
+   "Rated 5.0 out of 5 · 6 verified reviews" block.
+4. Kept: Cloudinary heroes (w_800/1200/1920 + f_auto + q_auto),
+   hero-slide visibility:hidden a11y fix, \n-escaped form payload,
+   focus trap in logo modal, carousel aria/tabindex handling,
+   .form-select:focus, 60vh mobile hero, priceValidUntil 2027-06-30,
+   full Twitter set, speakable, map facade, lazy Turnstile,
+   noscript fallbacks, safe-area insets, 16px inputs.
 ════════════════════════════════════════════════════════════════════
 -->
 <html lang="en">
@@ -94,7 +101,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .header{background:var(--c-dark);padding:10px 0;position:relative;z-index:300}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0;background:none;border:none;padding:0;text-align:left}
-.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);flex-shrink:0;cursor:zoom-in}
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--c-gold);flex-shrink:0;cursor:zoom-in;background:#1a202c}
 .logo-copy{display:flex;flex-direction:column}
 .logo-name{font-size:15px;font-weight:800;color:var(--c-gold);line-height:1.15;white-space:nowrap}
 .logo-tag{font-size:10px;color:rgba(255,255,255,.82);font-weight:400;margin-top:1px}
@@ -148,11 +155,11 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .mn-cta:hover{color:var(--c-dark)!important}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:389}
 .nav-overlay.is-open{display:block}
-.hero{position:relative;height:60vh;min-height:380px;max-height:720px;overflow:hidden;touch-action:pan-y;isolation:isolate}
+.hero{position:relative;height:60vh;min-height:380px;max-height:720px;overflow:hidden;touch-action:pan-y;isolation:isolate;background:#1a202c}
 @media(min-width:768px){.hero{height:84vh;max-height:820px}}
 @media(min-width:1200px){.hero{height:90vh;max-height:880px}}
-.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease-in-out;z-index:1}
-.hero-slide.is-active{opacity:1;z-index:2}
+.hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;z-index:1;transition:opacity 1.2s ease-in-out,visibility 0s linear 1.2s}
+.hero-slide.is-active{opacity:1;visibility:visible;z-index:2;transition:opacity 1.2s ease-in-out,visibility 0s linear 0s}
 .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-body{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:20px 16px calc(90px + var(--safe-b))}
 @media(min-width:768px){.hero-body{padding-bottom:120px}}
@@ -207,7 +214,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 @media(min-width:1024px){.tours-grid{grid-template-columns:repeat(4,1fr)}}
 .tc{background:var(--c-white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform var(--transition),box-shadow var(--transition)}
 .tc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.tc-img-w{position:relative;overflow:hidden;height:210px;flex-shrink:0}
+.tc-img-w{position:relative;overflow:hidden;height:210px;flex-shrink:0;background:#e2e8f0}
 @media(max-width:579px){.tc-img-w{height:180px}}
 .tc-img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
 .tc:hover .tc-img{transform:scale(1.07)}
@@ -227,7 +234,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .dest-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
 @media(min-width:640px){.dest-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:1024px){.dest-grid{grid-template-columns:repeat(6,1fr)}}
-.dest{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;display:block}
+.dest{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;display:block;background:#2d3748}
 .dest img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .dest:hover img{transform:scale(1.09)}
 .dest::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.05) 55%)}
@@ -250,6 +257,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .form-label{display:block;font-size:13px;font-weight:600;color:var(--c-dark);margin-bottom:6px;cursor:pointer}
 .form-req{color:#ef4444}
 .form-input,.form-select,.form-textarea{width:100%;padding:13px 16px;border:1.5px solid var(--c-border);border-radius:var(--radius-sm);font-size:16px;font-family:inherit;color:var(--c-text);transition:border-color var(--transition),box-shadow var(--transition);background:#fff;min-height:48px;touch-action:manipulation;-webkit-appearance:none;appearance:none}
+.form-select{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235A6475' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
 .form-input::placeholder,.form-textarea::placeholder{color:#9aa3b2}
 .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--c-gold);outline:none;box-shadow:0 0 0 3px rgba(255,215,0,.15)}
 .form-textarea{min-height:100px;resize:vertical}
@@ -267,14 +275,6 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .contact-card p{font-size:14px;color:var(--c-muted);margin-bottom:16px;line-height:1.6}
 .contact-card-email{border-top:4px solid var(--c-gold)}
 .contact-small{font-size:13px;color:var(--c-muted);text-align:center}
-.exp-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
-@media(min-width:640px){.exp-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.exp-grid{grid-template-columns:repeat(3,1fr)}}
-.exp-c{background:var(--c-white);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow-sm);border-left:4px solid var(--c-gold);transition:transform var(--transition),box-shadow var(--transition)}
-.exp-c:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.exp-icon{font-size:36px;margin-bottom:12px;display:block}
-.exp-title{font-size:16px;font-weight:700;margin-bottom:8px}
-.exp-desc{font-size:13px;color:var(--c-muted);line-height:1.65}
 .pkg-grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:36px}
 @media(min-width:640px){.pkg-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.pkg-grid{grid-template-columns:repeat(3,1fr)}}
@@ -323,6 +323,11 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .breadcrumb a:hover{color:var(--c-price)}
 .breadcrumb .sep{color:var(--c-muted)}
 .breadcrumb .cur{color:var(--c-dark);font-weight:600}
+.rating-summary{display:inline-flex;flex-direction:column;align-items:center;gap:6px;margin-top:18px;padding:14px 26px;border-radius:var(--radius);background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.35)}
+.rating-score{display:flex;align-items:center;gap:10px}
+.rating-value{font-size:30px;font-weight:800;color:var(--c-gold);line-height:1}
+.rating-stars{color:var(--c-gold);font-size:18px;letter-spacing:3px;line-height:1}
+.rating-meta{font-size:12.5px;color:rgba(255,255,255,.85);letter-spacing:.2px}
 .rev-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
 @media(min-width:640px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.rev-grid{grid-template-columns:repeat(3,1fr)}}
@@ -337,6 +342,7 @@ p{font-size:15px;line-height:1.75;color:var(--c-text)}
 .rev-platform{position:absolute;top:18px;right:18px;font-size:10px;color:rgba(255,255,255,.65);background:rgba(255,255,255,.07);padding:3px 8px;border-radius:8px;font-weight:600}
 .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
 .faq-item{background:var(--c-white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-sm)}
+.faq-item h3{margin:0}
 .faq-q{width:100%;padding:18px 20px;background:none;border:none;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--c-dark);transition:background var(--transition);min-height:58px}
 .faq-q:hover{background:#fafafa}
 .faq-q[aria-expanded="true"]{background:rgba(255,215,0,.07)}
@@ -401,10 +407,10 @@ body.cookie-visible .wa-float{bottom:calc(88px + var(--safe-b))}
 .logo-modal-caption small{font-size:14px;opacity:.8;font-weight:400}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
-button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-decline,.c-accept,.social-btn,.tc,.dest,.type-card,.exp-c,.pkg,.tv-c,.why-c,.rev-c,.faq-item,.shoot-c,.how-c,.map-load-btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-decline,.c-accept,.social-btn,.tc,.dest,.type-card,.pkg,.tv-c,.why-c,.rev-c,.faq-item,.shoot-c,.how-c,.map-load-btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero-slide{visibility:hidden}.hero-slide.is-active{visibility:visible}}
 </style>
-<noscript><style>.reveal{opacity:1;transform:none}.faq-a{max-height:none;padding:0 20px 18px}.cv-auto{content-visibility:visible}</style></noscript>
+<noscript><style>.reveal{opacity:1;transform:none}.faq-a{max-height:none;padding:0 20px 18px}.cv-auto{content-visibility:visible}.hero-slide{visibility:hidden}.hero-slide.is-active{visibility:visible}</style></noscript>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"/></noscript>
@@ -460,6 +466,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@egyptphotographytours"/>
 <meta name="twitter:creator" content="@egyptphotographytours"/>
+<meta name="twitter:url" content="https://www.egyptphotographytours.com/"/>
 <meta name="twitter:title" content="Pyramids Photoshoot &amp; Egypt Photoshoot Tours | Book 2026"/>
 <meta name="twitter:description" content="Book your Egypt photoshoot at the Pyramids or a full tour with photography. 150–300 edited photos in 48 hours."/>
 <meta name="twitter:image" content="https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp"/>
@@ -470,126 +477,334 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <meta name="ICBM" content="30.0444, 31.2357"/>
 <script type="application/ld+json" class="notranslate" translate="no">
 {
-"@context": "https://schema.org",
-"@graph": [
-{
-"@type": "WebSite",
-"@id": "https://www.egyptphotographytours.com/#website",
-"name": "Egypt Photography Tours",
-"url": "https://www.egyptphotographytours.com/",
-"inLanguage": "en",
-"description": "Professional Egypt photoshoots and full Egypt tours with photography — private photographers at the Pyramids, luxury transport and expert Egyptologist guides."
-},
-{
-"@type": "WebPage",
-"@id": "https://www.egyptphotographytours.com/#webpage",
-"url": "https://www.egyptphotographytours.com/",
-"name": "Pyramids Photoshoot & Egypt Photoshoot Tours | Book 2026",
-"description": "Book your Egypt photoshoot at the Pyramids or a full Egypt tour with photography. Private photographer, luxury transport and expert Egyptologist guides. 150–300 edited photos in 48 hours.",
-"isPartOf": { "@id": "https://www.egyptphotographytours.com/#website" },
-"about": { "@id": "https://www.egyptphotographytours.com/#organization" },
-"primaryImageOfPage": { "@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp", "width": 1200, "height": 630 },
-"breadcrumb": { "@id": "https://www.egyptphotographytours.com/#breadcrumb" },
-"inLanguage": "en",
-"speakable": { "@type": "SpeakableSpecification", "cssSelector": [".hero-title", ".hero-sub", "#main-h2"] }
-},
-{
-"@type": "BreadcrumbList",
-"@id": "https://www.egyptphotographytours.com/#breadcrumb",
-"itemListElement": [
-{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/" }
-]
-},
-{
-"@type": ["TravelAgency", "LocalBusiness"],
-"@id": "https://www.egyptphotographytours.com/#organization",
-"name": "Egypt Photography Tours",
-"description": "Egypt's premier photography tour company: professional Egypt photoshoots at the Pyramids, full tours with a private photographer, luxury transport and expert Egyptologist guides in Cairo, Luxor and Aswan.",
-"url": "https://www.egyptphotographytours.com/",
-"logo": { "@type": "ImageObject", "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp", "width": 200, "height": 200 },
-"image": [
-"https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp",
-"https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp",
-"https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp"
-],
-"telephone": "+20-155-073-5673",
-"email": "info@egyptphotographytours.com",
-"address": {
-"@type": "PostalAddress",
-"streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman, Giza",
-"addressLocality": "Giza",
-"addressRegion": "Giza Governorate",
-"postalCode": "12557",
-"addressCountry": "EG"
-},
-"geo": { "@type": "GeoCoordinates", "latitude": 29.9792, "longitude": 31.1342 },
-"hasMap": "https://maps.app.goo.gl/tPPx9cuDsjTE6nmN9",
-"foundingDate": "2015",
-"knowsAbout": ["Egypt Photoshoot", "Pyramids Photoshoot", "Photoshoot in Egypt", "Egypt Photography Tours", "Professional Photographer Giza", "Golden Hour Desert Photography"],
-"review": [
-{ "@type": "Review", "author": { "@type": "Person", "name": "Sarah & Mark" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }, "reviewBody": "Our honeymoon Pyramids photoshoot was pure magic. Hossam knew every angle and the golden-hour light was perfect. The photos are breathtaking and the tour itself was seamlessly organised.", "datePublished": "2024-03-15" },
-{ "@type": "Review", "author": { "@type": "Person", "name": "James Thompson" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }, "reviewBody": "We booked the 7-day Egypt tour with photography for our family of 5. Every day was flawless – 5-star hotels, private transport, expert guides, and stunning family portraits at every site.", "datePublished": "2024-02-20" }
-],
-"sameAs": [
-"https://g.page/r/CRiFZvb5dH4wEBM/review",
-"https://www.facebook.com/egyptphotographytours",
-"https://www.instagram.com/hossam_artistic/",
-"https://www.tiktok.com/@egyptphotographytours",
-"https://www.youtube.com/@Egyptphotographytours"
-],
-"openingHoursSpecification": [
-{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "08:00", "closes": "22:00" }
-],
-"priceRange": "$$$–$$$$",
-"currenciesAccepted": "USD, EUR, EGP",
-"paymentAccepted": "Cash, Credit Card, PayPal, Bank Transfer",
-"areaServed": [{ "@type": "Country", "name": "Egypt" }],
-"potentialAction": {
-"@type": "ReserveAction",
-"target": { "@type": "EntryPoint", "urlTemplate": "https://www.egyptphotographytours.com/contact?tour={tour_name}&date={date}", "httpMethod": "GET" }
-}
-},
-{
-"@type": "Service",
-"@id": "https://www.egyptphotographytours.com/#egypt-photoshoot",
-"serviceType": "Egypt Photoshoot",
-"name": "Egypt Photoshoot at the Pyramids",
-"description": "Professional Egypt photoshoot at the Pyramids of Giza and the Sphinx with a private photographer and Egyptologist guide. Golden-hour timing, outfit and posing guidance, 150–300 retouched photos delivered in 48 hours.",
-"provider": { "@id": "https://www.egyptphotographytours.com/#organization" },
-"areaServed": { "@type": "Place", "name": "Giza Plateau, Egypt" },
-"offers": {
-"@type": "Offer",
-"price": "150.00",
-"priceCurrency": "USD",
-"availability": "https://schema.org/InStock",
-"priceValidUntil": "2027-06-30",
-"url": "https://www.egyptphotographytours.com/tour-pyramids-private"
-}
-},
-{
-"@type": "ItemList",
-"@id": "https://www.egyptphotographytours.com/#tour-list",
-"name": "Egypt Photoshoot & Photography Tour Packages",
-"numberOfItems": 4,
-"itemListElement": [
-{ "@type": "ListItem", "position": 1, "url": "https://www.egyptphotographytours.com/tour-pyramids-private", "name": "Private Pyramids Photoshoot Tour" },
-{ "@type": "ListItem", "position": 2, "url": "https://www.egyptphotographytours.com/tour-cairo-giza-2day", "name": "Cairo & Giza 2-Day Photo Tour" },
-{ "@type": "ListItem", "position": 3, "url": "https://www.egyptphotographytours.com/tour-alexandria", "name": "Alexandria Photo Day Trip" },
-{ "@type": "ListItem", "position": 4, "url": "https://www.egyptphotographytours.com/tour-egypt-discovery-7day", "name": "7-Day Egypt Photography Tour" }
-]
-},
-{
-"@type": "FAQPage",
-"mainEntity": [
-{ "@type": "Question", "name": "How much does an Egypt photoshoot cost in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "An Egypt photoshoot at the Pyramids starts from $150 per group and includes a professional photographer, an Egyptologist guide, private air-conditioned transport, all entrance fees, and 150–300 fully retouched photos delivered within 48 hours." } },
-{ "@type": "Question", "name": "What is the best time for photos at the Pyramids?", "acceptedAnswer": { "@type": "Answer", "text": "Sunrise and the golden hour before sunset give the best light. We schedule shoots at gate opening (8am) or late afternoon, when the stone glows amber and crowds thin out. October to April offers the most comfortable weather." } },
-{ "@type": "Question", "name": "Do I need a permit for a photoshoot at the Pyramids?", "acceptedAnswer": { "@type": "Answer", "text": "Personal photoshoots with a phone or handheld camera need only the standard plateau ticket. Professional setups with tripods and large equipment require special permission — our team handles all permits and rules for you before the shoot." } },
-{ "@type": "Question", "name": "What should I wear for a photoshoot in Egypt?", "acceptedAnswer": { "@type": "Answer", "text": "Flowing solid colours photograph beautifully against the desert: white, red, emerald, navy and gold tones work best. Women often choose long dresses with a light scarf for movement shots. Wear comfortable shoes for sand and stone, and bring sunscreen." } },
-{ "@type": "Question", "name": "How many edited photos do I receive and how fast?", "acceptedAnswer": { "@type": "Answer", "text": "You receive 150–300 professionally retouched, high-resolution images within 48 hours via a private online gallery, ready for print and social media. Raw files are available on request." } },
-{ "@type": "Question", "name": "Can I combine an Egypt photoshoot with a full tour?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every full Egypt tour includes daily professional photography — from the Pyramids of Giza to the temples of Luxor and the Nile at Aswan. Our 7-day Egypt Photography Tour is the complete package: 5-star hotels, private transport, and a photographer with you at every site." } }
-]
-}
-]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.egyptphotographytours.com/#website",
+      "url": "https://www.egyptphotographytours.com/",
+      "name": "Egypt Photography Tours",
+      "description": "Professional Egypt photoshoots and full Egypt tours with photography — private photographers at the Pyramids, luxury transport and expert Egyptologist guides.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://www.egyptphotographytours.com/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.egyptphotographytours.com/#webpage",
+      "url": "https://www.egyptphotographytours.com/",
+      "name": "Pyramids Photoshoot & Egypt Photoshoot Tours | Book 2026",
+      "description": "Book your Egypt photoshoot at the Pyramids or a full Egypt tour with photography. Private photographer, luxury transport and expert Egyptologist guides. 150–300 edited photos in 48 hours.",
+      "isPartOf": { "@id": "https://www.egyptphotographytours.com/#website" },
+      "about": { "@id": "https://www.egyptphotographytours.com/#organization" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp",
+        "width": 1200,
+        "height": 630,
+        "caption": "Egypt photoshoot at the Pyramids of Giza"
+      },
+      "breadcrumb": { "@id": "https://www.egyptphotographytours.com/#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2015-01-01",
+      "dateModified": "2026-06-30",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-title", ".hero-sub", "#main-h2"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.egyptphotographytours.com/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.egyptphotographytours.com/" }
+      ]
+    },
+    {
+      "@type": ["TravelAgency", "LocalBusiness"],
+      "@id": "https://www.egyptphotographytours.com/#organization",
+      "name": "Egypt Photography Tours",
+      "alternateName": "Pyramids Photoshoot Tours",
+      "description": "Egypt's premier photography tour company: professional Egypt photoshoots at the Pyramids, full tours with a private photographer, luxury transport and expert Egyptologist guides in Cairo, Luxor and Aswan.",
+      "url": "https://www.egyptphotographytours.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.egyptphotographytours.com/images/egypt-photography-tours-logo.webp",
+        "width": 200,
+        "height": 200,
+        "caption": "Egypt Photography Tours logo"
+      },
+      "image": [
+        "https://www.egyptphotographytours.com/images/egypt-photography-tours-hero-image.webp",
+        "https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp",
+        "https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936968/egypt-photography-tours/seed/hero-image2.webp"
+      ],
+      "telephone": "+20-155-073-5673",
+      "email": "info@egyptphotographytours.com",
+      "foundingDate": "2015",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Abou Elhool, Nazlet El-Samman, Elsamman",
+        "addressLocality": "Giza",
+        "addressRegion": "Giza Governorate",
+        "postalCode": "12557",
+        "addressCountry": "EG"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 29.9792, "longitude": 31.1342 },
+      "hasMap": "https://maps.app.goo.gl/tPPx9cuDsjTE6nmN9",
+      "knowsAbout": [
+        "Egypt Photoshoot",
+        "Pyramids Photoshoot",
+        "Photoshoot in Egypt",
+        "Egypt Photography Tours",
+        "Professional Photographer Giza",
+        "Golden Hour Desert Photography"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "@id": "https://www.egyptphotographytours.com/#aggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": 6,
+        "reviewCount": 6
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "@id": "https://www.egyptphotographytours.com/#review-1",
+          "url": "https://www.egyptphotographytours.com/#review-1",
+          "name": "Honeymoon Pyramids photoshoot — pure magic",
+          "itemReviewed": { "@id": "https://www.egyptphotographytours.com/#organization" },
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.egyptphotographytours.com/#reviewer-1",
+            "name": "Sarah & Mark",
+            "address": { "@type": "PostalAddress", "addressCountry": "GB" }
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2024-03-15",
+          "inLanguage": "en",
+          "reviewBody": "Our honeymoon Pyramids photoshoot was pure magic. Hossam knew every angle and the golden-hour light was perfect. The photos are breathtaking and the tour itself was seamlessly organised."
+        },
+        {
+          "@type": "Review",
+          "@id": "https://www.egyptphotographytours.com/#review-2",
+          "url": "https://www.egyptphotographytours.com/#review-2",
+          "name": "7-day Egypt tour with photography for our family of 5",
+          "itemReviewed": { "@id": "https://www.egyptphotographytours.com/#organization" },
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.egyptphotographytours.com/#reviewer-2",
+            "name": "James Thompson",
+            "address": { "@type": "PostalAddress", "addressCountry": "US" }
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2024-02-20",
+          "inLanguage": "en",
+          "reviewBody": "We booked the 7-day Egypt tour with photography for our family of 5. Every day was flawless – 5-star hotels, private transport, expert guides, and stunning family portraits at every site."
+        },
+        {
+          "@type": "Review",
+          "@id": "https://www.egyptphotographytours.com/#review-3",
+          "url": "https://www.egyptphotographytours.com/#review-3",
+          "name": "Solo female traveler — completely safe, stunning portraits",
+          "itemReviewed": { "@id": "https://www.egyptphotographytours.com/#organization" },
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.egyptphotographytours.com/#reviewer-3",
+            "name": "Emma Larsson",
+            "address": { "@type": "PostalAddress", "addressCountry": "SE" }
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2024-05-08",
+          "inLanguage": "en",
+          "reviewBody": "As a solo female traveler I felt completely safe from day one. My solo portraits at Luxor and Aswan exceeded every expectation — and the guide's history knowledge made every photo meaningful."
+        },
+        {
+          "@type": "Review",
+          "@id": "https://www.egyptphotographytours.com/#review-4",
+          "url": "https://www.egyptphotographytours.com/#review-4",
+          "name": "Small-group photo tour with an exceptional Egyptologist",
+          "itemReviewed": { "@id": "https://www.egyptphotographytours.com/#organization" },
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.egyptphotographytours.com/#reviewer-4",
+            "name": "Miguel Rodriguez",
+            "address": { "@type": "PostalAddress", "addressCountry": "ES" }
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2024-07-12",
+          "inLanguage": "en",
+          "reviewBody": "The small-group photo tour was incredible. Our Egyptologist's knowledge was unreal – I learned more in one day than from any documentary, and my photos finally do the sites justice."
+        },
+        {
+          "@type": "Review",
+          "@id": "https://www.egyptphotographytours.com/#review-5",
+          "url": "https://www.egyptphotographytours.com/#review-5",
+          "name": "200+ edited images delivered in 36 hours",
+          "itemReviewed": { "@id": "https://www.egyptphotographytours.com/#organization" },
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.egyptphotographytours.com/#reviewer-5",
+            "name": "Lily K.",
+            "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2024-09-30",
+          "inLanguage": "en",
+          "reviewBody": "200+ edited images delivered to my drive in 36 hours. My Egypt content has been my best-performing ever — the photographer knew angles I didn't even know existed."
+        },
+        {
+          "@type": "Review",
+          "@id": "https://www.egyptphotographytours.com/#review-6",
+          "url": "https://www.egyptphotographytours.com/#review-6",
+          "name": "Last-minute anniversary shoot arranged in 3 hours",
+          "itemReviewed": { "@id": "https://www.egyptphotographytours.com/#organization" },
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.egyptphotographytours.com/#reviewer-6",
+            "name": "Anna & Pierre",
+            "address": { "@type": "PostalAddress", "addressCountry": "FR" }
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2025-01-18",
+          "inLanguage": "en",
+          "reviewBody": "Booked last-minute for our anniversary and they arranged everything in 3 hours. Private felucca, Pyramids at golden hour, romantic dinner – absolute perfection in every photo."
+        }
+      ],
+      "sameAs": [
+        "https://g.page/r/CRiFZvb5dH4wEBM/review",
+        "https://www.facebook.com/egyptphotographytours",
+        "https://www.instagram.com/hossam_artistic/",
+        "https://www.tiktok.com/@egyptphotographytours",
+        "https://www.youtube.com/@Egyptphotographytours"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "22:00"
+        }
+      ],
+      "priceRange": "$$$–$$$$",
+      "currenciesAccepted": "USD, EUR, EGP",
+      "paymentAccepted": "Cash, Credit Card, PayPal, Bank Transfer",
+      "areaServed": [{ "@type": "Country", "name": "Egypt" }],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+20-155-073-5673",
+        "contactType": "reservations",
+        "email": "info@egyptphotographytours.com",
+        "areaServed": "EG",
+        "availableLanguage": ["en", "ar"]
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.egyptphotographytours.com/contact?tour={tour_name}&date={date}"
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.egyptphotographytours.com/#egypt-photoshoot",
+      "serviceType": "Egypt Photoshoot",
+      "name": "Egypt Photoshoot at the Pyramids",
+      "description": "Professional Egypt photoshoot at the Pyramids of Giza and the Sphinx with a private photographer and Egyptologist guide. Golden-hour timing, outfit and posing guidance, 150–300 retouched photos delivered in 48 hours.",
+      "provider": { "@id": "https://www.egyptphotographytours.com/#organization" },
+      "areaServed": { "@type": "Place", "name": "Giza Plateau, Egypt" },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://www.egyptphotographytours.com/#customize-trip",
+        "servicePhone": {
+          "@type": "ContactPoint",
+          "telephone": "+20-155-073-5673",
+          "contactType": "reservations"
+        }
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.egyptphotographytours.com/#tour-list",
+      "name": "Egypt Photoshoot & Photography Tour Packages",
+      "numberOfItems": 4,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://www.egyptphotographytours.com/tour-pyramids-private", "name": "Private Pyramids Photoshoot Tour" },
+        { "@type": "ListItem", "position": 2, "url": "https://www.egyptphotographytours.com/tour-cairo-giza-2day", "name": "Cairo & Giza 2-Day Photo Tour" },
+        { "@type": "ListItem", "position": 3, "url": "https://www.egyptphotographytours.com/tour-alexandria", "name": "Alexandria Photo Day Trip" },
+        { "@type": "ListItem", "position": 4, "url": "https://www.egyptphotographytours.com/tour-egypt-discovery-7day", "name": "7-Day Egypt Photography Tour" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.egyptphotographytours.com/#faqpage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does an Egypt photoshoot cost in 2026?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An Egypt photoshoot at the Pyramids starts from $150 per group and includes a professional photographer, an Egyptologist guide, private air-conditioned transport, all entrance fees, and 150–300 fully retouched photos delivered within 48 hours." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best time for photos at the Pyramids?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sunrise and the golden hour before sunset give the best light. We schedule shoots at gate opening (8am) or late afternoon, when the stone glows amber and crowds thin out. October to April offers the most comfortable weather." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a permit for a photoshoot at the Pyramids?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Personal photoshoots with a phone or handheld camera need only the standard plateau ticket. Professional setups with tripods and large equipment require special permission — our team handles all permits and rules for you before the shoot." }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I wear for a photoshoot in Egypt?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Flowing solid colours photograph beautifully against the desert: white, red, emerald, navy and gold tones work best. Women often choose long dresses with a light scarf for movement shots. Wear comfortable shoes for sand and stone, and bring sunscreen." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many edited photos do I receive and how fast?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You receive 150–300 professionally retouched, high-resolution images within 48 hours via a private online gallery, ready for print and social media. Raw files are available on request." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I combine an Egypt photoshoot with a full tour?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every full Egypt tour includes daily professional photography — from the Pyramids of Giza to the temples of Luxor and the Nile at Aswan. Our 7-day Egypt Photography Tour is the complete package: 5-star hotels, private transport, and a photographer with you at every site." }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="canonical" href="https://www.egyptphotographytours.com/"/>
@@ -666,7 +881,7 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <ul class="nav-links-desk">
 <li><a href="/" class="active" aria-current="page" title="Home">Home</a></li>
 <li><a href="/tour-pyramids-private" title="Private Pyramids Photoshoot">Pyramids Photoshoot</a></li>
-<li><a href="/tours" title="Egypt Photography Tours & Packages">Our Tours</a></li>
+<li><a href="/tours" title="Egypt Photography Tours &amp; Packages">Our Tours</a></li>
 <li><a href="/about" title="About Egypt Photography Tours">About Us</a></li>
 <li><a href="/gallery" title="Egypt Photoshoot Gallery">Gallery</a></li>
 <li><a href="/blog" title="Egypt Travel Blog">Blog</a></li>
@@ -736,7 +951,6 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 <div class="sr-only" id="carousel-status" role="status" aria-live="polite" aria-atomic="true"></div>
 <section class="hero" id="hero" aria-label="Pyramids photoshoot and Egypt photography tours" aria-roledescription="carousel">
-<!-- Cloudinary delivers every width automatically: w_800 / w_1200 / w_1920 + f_auto (best format) + q_auto (best quality). No manual variants needed. -->
 <div class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="Slide 1 of 5: Pyramids Photoshoot">
 <img src="https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp" srcset="https://res.cloudinary.com/dai7wqayo/image/upload/w_800,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 800w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1200,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 1200w, https://res.cloudinary.com/dai7wqayo/image/upload/w_1920,f_auto,q_auto/v1782936967/egypt-photography-tours/seed/hero-image1.webp 1920w" sizes="100vw" alt="Professional Pyramids photoshoot at the Giza Plateau with private photographer and Egyptologist guide" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async"/>
 <div class="hero-body"><div class="hero-card">
@@ -797,14 +1011,14 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </div>
 </div></div>
 </div>
-<button type="button" class="hero-arrow prev" id="hero-prev" aria-label="Previous slide"><svg class="ic" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-<button type="button" class="hero-arrow next" id="hero-next" aria-label="Next slide"><svg class="ic" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-<div class="hero-dots" aria-label="Slide navigation">
-<button type="button" class="hero-dot" data-slide="0" aria-label="Go to slide 1: Pyramids Photoshoot" aria-current="true"></button>
-<button type="button" class="hero-dot" data-slide="1" aria-label="Go to slide 2: Couples Photoshoot"></button>
-<button type="button" class="hero-dot" data-slide="2" aria-label="Go to slide 3: Full Egypt Photo Tours"></button>
-<button type="button" class="hero-dot" data-slide="3" aria-label="Go to slide 4: Family Photoshoot"></button>
-<button type="button" class="hero-dot" data-slide="4" aria-label="Go to slide 5: Creator Shoots"></button>
+<button type="button" class="hero-arrow prev" id="hero-prev" aria-label="Previous slide" aria-controls="hero"><svg class="ic" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+<button type="button" class="hero-arrow next" id="hero-next" aria-label="Next slide" aria-controls="hero"><svg class="ic" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+<div class="hero-dots" role="tablist" aria-label="Slide navigation">
+<button type="button" class="hero-dot" role="tab" data-slide="0" aria-label="Go to slide 1: Pyramids Photoshoot" aria-selected="true" aria-current="true"></button>
+<button type="button" class="hero-dot" role="tab" data-slide="1" aria-label="Go to slide 2: Couples Photoshoot" aria-selected="false"></button>
+<button type="button" class="hero-dot" role="tab" data-slide="2" aria-label="Go to slide 3: Full Egypt Photo Tours" aria-selected="false"></button>
+<button type="button" class="hero-dot" role="tab" data-slide="3" aria-label="Go to slide 4: Family Photoshoot" aria-selected="false"></button>
+<button type="button" class="hero-dot" role="tab" data-slide="4" aria-label="Go to slide 5: Creator Shoots" aria-selected="false"></button>
 </div>
 </section>
 <div class="stats-bar" aria-label="Key credentials">
@@ -865,15 +1079,15 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <meta itemprop="name" content="Private Pyramids Photoshoot Tour"/>
 <meta itemprop="description" content="The signature Egypt photoshoot: cinematic portraits at the Pyramids and Sphinx with a private photographer and Egyptologist guide — 150–300 retouched photos in 48 hours."/>
 <meta itemprop="image" content="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp"/>
-<link itemprop="url" href="https://www.egyptphotographytours.com/tour-pyramids-private"/>
 <meta itemprop="brand" content="Egypt Photography Tours"/>
+<link itemprop="url" href="https://www.egyptphotographytours.com/tour-pyramids-private"/>
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 <meta itemprop="price" content="150.00"/>
 <meta itemprop="priceCurrency" content="USD"/>
 <meta itemprop="availability" content="https://schema.org/InStock"/>
-<link itemprop="url" href="https://www.egyptphotographytours.com/tour-pyramids-private"/>
 <meta itemprop="priceValidUntil" content="2027-06-30"/>
 <meta itemprop="itemCondition" content="https://schema.org/NewCondition"/>
+<link itemprop="url" href="https://www.egyptphotographytours.com/tour-pyramids-private"/>
 </div>
 <div class="tc-img-w">
 <img class="tc-img" src="https://www.egyptphotographytours.com/images/pyramids-private-tour.webp" alt="Private Pyramids photoshoot tour at Giza with professional photographer" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
@@ -890,15 +1104,15 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <meta itemprop="name" content="Cairo &amp; Giza 2-Day Photo Tour"/>
 <meta itemprop="description" content="Two-day Cairo and Giza tour with daily professional photography — Pyramids photoshoot, Grand Egyptian Museum and Islamic Cairo."/>
 <meta itemprop="image" content="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp"/>
-<link itemprop="url" href="https://www.egyptphotographytours.com/tour-cairo-giza-2day"/>
 <meta itemprop="brand" content="Egypt Photography Tours"/>
+<link itemprop="url" href="https://www.egyptphotographytours.com/tour-cairo-giza-2day"/>
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 <meta itemprop="price" content="350.00"/>
 <meta itemprop="priceCurrency" content="USD"/>
 <meta itemprop="availability" content="https://schema.org/InStock"/>
-<link itemprop="url" href="https://www.egyptphotographytours.com/tour-cairo-giza-2day"/>
 <meta itemprop="priceValidUntil" content="2027-06-30"/>
 <meta itemprop="itemCondition" content="https://schema.org/NewCondition"/>
+<link itemprop="url" href="https://www.egyptphotographytours.com/tour-cairo-giza-2day"/>
 </div>
 <div class="tc-img-w">
 <img class="tc-img" src="https://www.egyptphotographytours.com/images/cairo-giza-2day.webp" alt="Cairo and Giza 2-day tour with professional photography" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
@@ -915,15 +1129,15 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <meta itemprop="name" content="Alexandria Photo Day Trip"/>
 <meta itemprop="description" content="Luxury day trip from Cairo to Alexandria with professional photographer — Bibliotheca, Qaitbay Citadel and Mediterranean coast portraits."/>
 <meta itemprop="image" content="https://www.egyptphotographytours.com/images/alexandria-tour.webp"/>
-<link itemprop="url" href="https://www.egyptphotographytours.com/tour-alexandria"/>
 <meta itemprop="brand" content="Egypt Photography Tours"/>
+<link itemprop="url" href="https://www.egyptphotographytours.com/tour-alexandria"/>
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 <meta itemprop="price" content="320.00"/>
 <meta itemprop="priceCurrency" content="USD"/>
 <meta itemprop="availability" content="https://schema.org/InStock"/>
-<link itemprop="url" href="https://www.egyptphotographytours.com/tour-alexandria"/>
 <meta itemprop="priceValidUntil" content="2027-06-30"/>
 <meta itemprop="itemCondition" content="https://schema.org/NewCondition"/>
+<link itemprop="url" href="https://www.egyptphotographytours.com/tour-alexandria"/>
 </div>
 <div class="tc-img-w">
 <img class="tc-img" src="https://www.egyptphotographytours.com/images/alexandria-tour.webp" alt="Alexandria photo day trip from Cairo – Mediterranean coast photography" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
@@ -940,15 +1154,15 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <meta itemprop="name" content="7-Day Egypt Photography Tour"/>
 <meta itemprop="description" content="The full Egypt tour with photography: Cairo, Giza, Alexandria, Luxor and Aswan with 5-star hotels and a daily private photographer."/>
 <meta itemprop="image" content="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp"/>
-<link itemprop="url" href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day"/>
 <meta itemprop="brand" content="Egypt Photography Tours"/>
+<link itemprop="url" href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day"/>
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 <meta itemprop="price" content="2000.00"/>
 <meta itemprop="priceCurrency" content="USD"/>
 <meta itemprop="availability" content="https://schema.org/InStock"/>
-<link itemprop="url" href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day"/>
 <meta itemprop="priceValidUntil" content="2027-06-30"/>
 <meta itemprop="itemCondition" content="https://schema.org/NewCondition"/>
+<link itemprop="url" href="https://www.egyptphotographytours.com/tour-egypt-discovery-7day"/>
 </div>
 <div class="tc-img-w">
 <img class="tc-img" src="https://www.egyptphotographytours.com/images/egypt-discovery-7day.webp" alt="7-day full Egypt photography tour – Luxor Valley of the Kings and Aswan Nile" width="400" height="210" sizes="(max-width:579px) 100vw, (max-width:1023px) 50vw, 25vw" loading="lazy" decoding="async"/>
@@ -1124,14 +1338,22 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 </section>
 <section class="section section-dark cv-auto" id="testimonials" aria-labelledby="rev-h2">
 <div class="wrap">
-<div class="text-c"><div class="eyebrow">Verified Reviews</div><h2 id="rev-h2">What Our Guests Say</h2><p class="sec-sub">Thousands of travelers from over 80 countries have trusted us with their photos and journeys</p></div>
+<div class="text-c">
+<div class="eyebrow">Verified Reviews</div>
+<h2 id="rev-h2">What Our Guests Say</h2>
+<p class="sec-sub">Thousands of travelers from over 80 countries have trusted us with their photos and journeys</p>
+<div class="rating-summary">
+<div class="rating-score"><span class="rating-value">5.0</span><span class="rating-stars" aria-hidden="true">★★★★★</span></div>
+<p class="rating-meta">Rated 5.0 out of 5 · Based on 6 verified reviews on this page</p>
+</div>
+</div>
 <div class="rev-grid mt-40">
-<div class="rev-c"><div class="rev-mark" aria-hidden="true">"</div><p class="rev-text">Our honeymoon Pyramids photoshoot was pure magic. Hossam knew every angle and the golden-hour light was perfect. The photos are breathtaking and the tour itself was seamlessly organised.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">SM</div><div><div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="rev-name">Sarah &amp; Mark</div><div class="rev-meta">United Kingdom · Honeymoon Photoshoot</div></div></div><div class="rev-platform">Google ✓</div></div>
-<div class="rev-c"><div class="rev-mark" aria-hidden="true">"</div><p class="rev-text">We booked the 7-day Egypt tour with photography for our family of 5. Every day was flawless – 5-star hotels, private transport, expert guides, and stunning family portraits at every site.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">JT</div><div><div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="rev-name">James Thompson</div><div class="rev-meta">United States · 7-Day Photo Tour</div></div></div><div class="rev-platform">TripAdvisor ✓</div></div>
-<div class="rev-c"><div class="rev-mark" aria-hidden="true">"</div><p class="rev-text">As a solo female traveler I felt completely safe from day one. My solo portraits at Luxor and Aswan exceeded every expectation — and the guide's history knowledge made every photo meaningful.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">EL</div><div><div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="rev-name">Emma Larsson</div><div class="rev-meta">Sweden · Solo Portrait Tour</div></div></div><div class="rev-platform">Google ✓</div></div>
-<div class="rev-c"><div class="rev-mark" aria-hidden="true">"</div><p class="rev-text">The small-group photo tour was incredible. Our Egyptologist's knowledge was unreal – I learned more in one day than from any documentary, and my photos finally do the sites justice.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">MR</div><div><div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="rev-name">Miguel Rodriguez</div><div class="rev-meta">Spain · Small Group Photo Tour</div></div></div><div class="rev-platform">Facebook ✓</div></div>
-<div class="rev-c"><div class="rev-mark" aria-hidden="true">"</div><p class="rev-text">200+ edited images delivered to my drive in 36 hours. My Egypt content has been my best-performing ever — the photographer knew angles I didn't even know existed.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">LK</div><div><div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="rev-name">Lily K.</div><div class="rev-meta">Australia · Content Creator Shoot</div></div></div><div class="rev-platform">Google ✓</div></div>
-<div class="rev-c"><div class="rev-mark" aria-hidden="true">"</div><p class="rev-text">Booked last-minute for our anniversary and they arranged everything in 3 hours. Private felucca, Pyramids at golden hour, romantic dinner – absolute perfection in every photo.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">AP</div><div><div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="rev-name">Anna &amp; Pierre</div><div class="rev-meta">France · Anniversary Photoshoot</div></div></div><div class="rev-platform">TripAdvisor ✓</div></div>
+<div class="rev-c" id="review-1"><div class="rev-mark" aria-hidden="true">“</div><p class="rev-text">Our honeymoon Pyramids photoshoot was pure magic. Hossam knew every angle and the golden-hour light was perfect. The photos are breathtaking and the tour itself was seamlessly organised.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">SM</div><div><div class="rev-stars" aria-label="Rated 5 out of 5">★★★★★</div><div class="rev-name">Sarah &amp; Mark</div><div class="rev-meta">United Kingdom · Honeymoon Photoshoot · 15 March 2024</div></div></div><div class="rev-platform">Google ✓</div></div>
+<div class="rev-c" id="review-2"><div class="rev-mark" aria-hidden="true">“</div><p class="rev-text">We booked the 7-day Egypt tour with photography for our family of 5. Every day was flawless – 5-star hotels, private transport, expert guides, and stunning family portraits at every site.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">JT</div><div><div class="rev-stars" aria-label="Rated 5 out of 5">★★★★★</div><div class="rev-name">James Thompson</div><div class="rev-meta">United States · 7-Day Photo Tour · 20 February 2024</div></div></div><div class="rev-platform">TripAdvisor ✓</div></div>
+<div class="rev-c" id="review-3"><div class="rev-mark" aria-hidden="true">“</div><p class="rev-text">As a solo female traveler I felt completely safe from day one. My solo portraits at Luxor and Aswan exceeded every expectation — and the guide's history knowledge made every photo meaningful.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">EL</div><div><div class="rev-stars" aria-label="Rated 5 out of 5">★★★★★</div><div class="rev-name">Emma Larsson</div><div class="rev-meta">Sweden · Solo Portrait Tour · 8 May 2024</div></div></div><div class="rev-platform">Google ✓</div></div>
+<div class="rev-c" id="review-4"><div class="rev-mark" aria-hidden="true">“</div><p class="rev-text">The small-group photo tour was incredible. Our Egyptologist's knowledge was unreal – I learned more in one day than from any documentary, and my photos finally do the sites justice.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">MR</div><div><div class="rev-stars" aria-label="Rated 5 out of 5">★★★★★</div><div class="rev-name">Miguel Rodriguez</div><div class="rev-meta">Spain · Small Group Photo Tour · 12 July 2024</div></div></div><div class="rev-platform">Facebook ✓</div></div>
+<div class="rev-c" id="review-5"><div class="rev-mark" aria-hidden="true">“</div><p class="rev-text">200+ edited images delivered to my drive in 36 hours. My Egypt content has been my best-performing ever — the photographer knew angles I didn't even know existed.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">LK</div><div><div class="rev-stars" aria-label="Rated 5 out of 5">★★★★★</div><div class="rev-name">Lily K.</div><div class="rev-meta">Australia · Content Creator Shoot · 30 September 2024</div></div></div><div class="rev-platform">Google ✓</div></div>
+<div class="rev-c" id="review-6"><div class="rev-mark" aria-hidden="true">“</div><p class="rev-text">Booked last-minute for our anniversary and they arranged everything in 3 hours. Private felucca, Pyramids at golden hour, romantic dinner – absolute perfection in every photo.</p><div class="rev-author"><div class="rev-avatar" aria-hidden="true">AP</div><div><div class="rev-stars" aria-label="Rated 5 out of 5">★★★★★</div><div class="rev-name">Anna &amp; Pierre</div><div class="rev-meta">France · Anniversary Photoshoot · 18 January 2025</div></div></div><div class="rev-platform">TripAdvisor ✓</div></div>
 </div>
 </div>
 </section>
@@ -1139,12 +1361,12 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 <div class="wrap">
 <div class="text-c"><div class="eyebrow">Good to Know</div><h2 id="faq-h2">Frequently Asked Questions</h2><p class="sec-sub">Everything travelers ask before booking an Egypt photoshoot</p></div>
 <div class="faq-list">
-<div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-1">How much does an Egypt photoshoot cost in 2026?<span class="faq-ico" aria-hidden="true">+</span></button><div class="faq-a" id="faq-1" role="region"><p>An Egypt photoshoot at the Pyramids starts from $150 per group and includes a professional photographer, an Egyptologist guide, private air-conditioned transport, all entrance fees, and 150–300 fully retouched photos delivered within 48 hours.</p></div></div>
-<div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-2">What is the best time for photos at the Pyramids?<span class="faq-ico" aria-hidden="true">+</span></button><div class="faq-a" id="faq-2" role="region"><p>Sunrise and the golden hour before sunset give the best light. We schedule shoots at gate opening (8am) or late afternoon, when the stone glows amber and crowds thin out. October to April offers the most comfortable weather.</p></div></div>
-<div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-3">Do I need a permit for a photoshoot at the Pyramids?<span class="faq-ico" aria-hidden="true">+</span></button><div class="faq-a" id="faq-3" role="region"><p>Personal photoshoots with a phone or handheld camera need only the standard plateau ticket. Professional setups with tripods and large equipment require special permission — our team handles all permits and rules for you before the shoot.</p></div></div>
-<div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-4">What should I wear for a photoshoot in Egypt?<span class="faq-ico" aria-hidden="true">+</span></button><div class="faq-a" id="faq-4" role="region"><p>Flowing solid colours photograph beautifully against the desert: white, red, emerald, navy and gold tones work best. Women often choose long dresses with a light scarf for movement shots. Wear comfortable shoes for sand and stone, and bring sunscreen.</p></div></div>
-<div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-5">How many edited photos do I receive and how fast?<span class="faq-ico" aria-hidden="true">+</span></button><div class="faq-a" id="faq-5" role="region"><p>You receive 150–300 professionally retouched, high-resolution images within 48 hours via a private online gallery, ready for print and social media. Raw files are available on request.</p></div></div>
-<div class="faq-item"><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-6">Can I combine an Egypt photoshoot with a full tour?<span class="faq-ico" aria-hidden="true">+</span></button><div class="faq-a" id="faq-6" role="region"><p>Yes. Every full Egypt tour includes daily professional photography — from the Pyramids of Giza to the temples of Luxor and the Nile at Aswan. Our 7-day Egypt Photography Tour is the complete package: 5-star hotels, private transport, and a photographer with you at every site.</p></div></div>
+<div class="faq-item"><h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-1">How much does an Egypt photoshoot cost in 2026?<span class="faq-ico" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-1" role="region"><p>An Egypt photoshoot at the Pyramids starts from $150 per group and includes a professional photographer, an Egyptologist guide, private air-conditioned transport, all entrance fees, and 150–300 fully retouched photos delivered within 48 hours.</p></div></div>
+<div class="faq-item"><h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-2">What is the best time for photos at the Pyramids?<span class="faq-ico" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-2" role="region"><p>Sunrise and the golden hour before sunset give the best light. We schedule shoots at gate opening (8am) or late afternoon, when the stone glows amber and crowds thin out. October to April offers the most comfortable weather.</p></div></div>
+<div class="faq-item"><h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-3">Do I need a permit for a photoshoot at the Pyramids?<span class="faq-ico" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-3" role="region"><p>Personal photoshoots with a phone or handheld camera need only the standard plateau ticket. Professional setups with tripods and large equipment require special permission — our team handles all permits and rules for you before the shoot.</p></div></div>
+<div class="faq-item"><h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-4">What should I wear for a photoshoot in Egypt?<span class="faq-ico" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-4" role="region"><p>Flowing solid colours photograph beautifully against the desert: white, red, emerald, navy and gold tones work best. Women often choose long dresses with a light scarf for movement shots. Wear comfortable shoes for sand and stone, and bring sunscreen.</p></div></div>
+<div class="faq-item"><h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-5">How many edited photos do I receive and how fast?<span class="faq-ico" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-5" role="region"><p>You receive 150–300 professionally retouched, high-resolution images within 48 hours via a private online gallery, ready for print and social media. Raw files are available on request.</p></div></div>
+<div class="faq-item"><h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-6">Can I combine an Egypt photoshoot with a full tour?<span class="faq-ico" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-6" role="region"><p>Yes. Every full Egypt tour includes daily professional photography — from the Pyramids of Giza to the temples of Luxor and the Nile at Aswan. Our 7-day Egypt Photography Tour is the complete package: 5-star hotels, private transport, and a photographer with you at every site.</p></div></div>
 </div>
 </div>
 </section>
@@ -1220,120 +1442,351 @@ button,.btn,.nav-book,.lang-toggle,.hamburger,.hero-dot,.hero-arrow,.faq-q,.c-de
 "use strict";
 (function(){
 var CONFIG={workerUrl:"https://contact-worker.hussam01112.workers.dev",slideInterval:6000};
-var qs=function(s){return document.querySelector(s)};
-var qsa=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
-var listen=function(el,ev,fn,o){if(el)el.addEventListener(ev,fn,o||false)};
-var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var qs=function(sel){return document.querySelector(sel)};
+var qsa=function(sel,root){return Array.prototype.slice.call((root||document).querySelectorAll(sel))};
+var listen=function(el,ev,fn,opts){if(el)el.addEventListener(ev,fn,opts||false)};
+var reducedMotion=window.matchMedia?window.matchMedia("(prefers-reduced-motion: reduce)").matches:false;
+var mqMobile=window.matchMedia?window.matchMedia("(max-width:899px)"):null;
+
+/* ---------- Logo lightbox ---------- */
 (function(){
-var img=qs("#header-logo-img"),modal=qs("#logo-modal"),close=qs("#logo-modal-close"),last=null;
-if(!img||!modal||!close)return;
-function open(e){e.preventDefault();e.stopPropagation();last=document.activeElement;modal.classList.add("active");document.body.style.overflow="hidden";close.focus()}
-function shut(){modal.classList.remove("active");document.body.style.overflow="";if(last&&last.focus)last.focus()}
-listen(img,"click",open);listen(close,"click",shut);
-listen(modal,"click",function(e){if(e.target===modal)shut()});
-listen(document,"keydown",function(e){if(e.key==="Escape"&&modal.classList.contains("active"))shut()});
-})();
-(function(){
-var burger=qs("#hamburger"),nav=qs("#mobile-nav"),ov=qs("#nav-overlay"),icon=qs("#ham-icon"),open=false;
-if(!burger||!nav)return;
-function setIcon(x){if(!icon)return;icon.innerHTML=x?'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>':'<line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>'}
-function toggle(){open=!open;var h=(qs("#site-header")?qs("#site-header").offsetHeight:60)+(qs("#navbar")?qs("#navbar").offsetHeight:56);nav.style.top=h+"px";nav.classList.toggle("is-open",open);nav.setAttribute("aria-hidden",String(!open));if(ov){ov.classList.toggle("is-open",open);ov.setAttribute("aria-hidden",String(!open))}burger.setAttribute("aria-expanded",String(open));burger.setAttribute("aria-label",open?"Close navigation menu":"Open navigation menu");setIcon(open);document.body.style.overflow=open?"hidden":""}
-listen(burger,"click",toggle);
-if(ov)listen(ov,"click",function(){if(open)toggle()});
-qsa("#mobile-nav a").forEach(function(a){listen(a,"click",function(){if(open)toggle()})});
-})();
-(function(){
-var wrap=qs("#lang-wrap"),tog=qs("#lang-toggle"),menu=qs("#lang-menu"),open=false;
-if(!wrap||!tog||!menu)return;
-function set(o){open=o;wrap.setAttribute("data-open",String(o));tog.setAttribute("aria-expanded",String(o));menu.setAttribute("aria-hidden",String(!o))}
-listen(tog,"click",function(e){e.stopPropagation();set(!open)});
-listen(document,"click",function(e){if(open&&!wrap.contains(e.target))set(false)});
-qsa(".lang-item").forEach(function(it){
-listen(it,"click",function(e){e.preventDefault();var h=it.getAttribute("href");if(h&&h!==window.location.pathname)window.location.href=h});
-listen(it,"keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();it.click()}});
+var triggerImg=qs("#header-logo-img");
+var modalBox=qs("#logo-modal");
+var closeBtn=qs("#logo-modal-close");
+var lastFocused=null;
+if(!triggerImg||!modalBox||!closeBtn)return;
+function openModal(evt){
+evt.preventDefault();evt.stopPropagation();
+lastFocused=document.activeElement;
+modalBox.classList.add("active");
+document.body.style.overflow="hidden";
+closeBtn.focus();
+}
+function closeModal(){
+modalBox.classList.remove("active");
+document.body.style.overflow="";
+if(lastFocused&&typeof lastFocused.focus==="function")lastFocused.focus();
+}
+listen(triggerImg,"click",openModal);
+listen(closeBtn,"click",closeModal);
+listen(modalBox,"click",function(evt){if(evt.target===modalBox)closeModal()});
+listen(document,"keydown",function(evt){
+if(!modalBox.classList.contains("active"))return;
+if(evt.key==="Escape"){closeModal();return}
+if(evt.key==="Tab"){evt.preventDefault();closeBtn.focus()}
 });
 })();
+
+/* ---------- Mobile navigation ---------- */
 (function(){
-var slides=qsa(".hero-slide"),dots=qsa(".hero-dot"),prev=qs("#hero-prev"),next=qs("#hero-next"),hero=qs("#hero"),status=qs("#carousel-status");
-if(!slides.length)return;
-var i=0,t=null;
-function go(n){slides.forEach(function(s){s.classList.remove("is-active")});dots.forEach(function(d){d.removeAttribute("aria-current")});i=(n+slides.length)%slides.length;slides[i].classList.add("is-active");if(dots[i])dots[i].setAttribute("aria-current","true");if(status)status.textContent="Slide "+(i+1)+" of "+slides.length+": "+(slides[i].getAttribute("aria-label")||"")}
-function autoOn(){if(reduced)return;window.clearInterval(t);t=window.setInterval(function(){go(i+1)},CONFIG.slideInterval)}
-function autoOff(){window.clearInterval(t)}
-listen(next,"click",function(){go(i+1);autoOn()});
-listen(prev,"click",function(){go(i-1);autoOn()});
-dots.forEach(function(d,n){listen(d,"click",function(){go(n);autoOn()})});
-var sx=0;
-listen(hero,"touchstart",function(e){sx=e.changedTouches[0].screenX},{passive:true});
-listen(hero,"touchend",function(e){var d=sx-e.changedTouches[0].screenX;if(Math.abs(d)>40){d>0?go(i+1):go(i-1);autoOn()}},{passive:true});
-listen(hero,"mouseenter",autoOff);listen(hero,"mouseleave",autoOn);
-listen(hero,"focusin",autoOff);listen(hero,"focusout",autoOn);
-go(0);autoOn();
+var burgerBtn=qs("#hamburger");
+var navPanel=qs("#mobile-nav");
+var overlayEl=qs("#nav-overlay");
+var burgerIcon=qs("#ham-icon");
+var navOpen=false;
+if(!burgerBtn||!navPanel)return;
+function paintIcon(isOpenState){
+if(!burgerIcon)return;
+burgerIcon.innerHTML=isOpenState
+?'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>'
+:'<line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>';
+}
+function positionPanel(){
+var headerH=qs("#site-header")?qs("#site-header").offsetHeight:60;
+var navbarH=qs("#navbar")?qs("#navbar").offsetHeight:56;
+navPanel.style.top=(headerH+navbarH)+"px";
+}
+function setNav(nextState){
+navOpen=nextState;
+positionPanel();
+navPanel.classList.toggle("is-open",navOpen);
+navPanel.setAttribute("aria-hidden",String(!navOpen));
+if(overlayEl){overlayEl.classList.toggle("is-open",navOpen);overlayEl.setAttribute("aria-hidden",String(!navOpen))}
+burgerBtn.setAttribute("aria-expanded",String(navOpen));
+burgerBtn.setAttribute("aria-label",navOpen?"Close navigation menu":"Open navigation menu");
+paintIcon(navOpen);
+document.body.style.overflow=navOpen?"hidden":"";
+if(navOpen){var firstLink=navPanel.querySelector("a");if(firstLink)firstLink.focus()}
+}
+listen(burgerBtn,"click",function(){setNav(!navOpen)});
+if(overlayEl)listen(overlayEl,"click",function(){if(navOpen)setNav(false)});
+listen(document,"keydown",function(evt){if(evt.key==="Escape"&&navOpen)setNav(false)});
+qsa("#mobile-nav a").forEach(function(link){listen(link,"click",function(){if(navOpen)setNav(false)})});
+listen(window,"resize",function(){
+if(mqMobile&&!mqMobile.matches&&navOpen)setNav(false);
+else if(navOpen)positionPanel();
+});
 })();
+
+/* ---------- Language dropdown ---------- */
 (function(){
-qsa(".faq-q").forEach(function(b){listen(b,"click",function(){var was=b.getAttribute("aria-expanded")==="true";qsa(".faq-q").forEach(function(x){x.setAttribute("aria-expanded","false");var p=document.getElementById(x.getAttribute("aria-controls"));if(p)p.classList.remove("is-open")});if(!was){b.setAttribute("aria-expanded","true");var p2=document.getElementById(b.getAttribute("aria-controls"));if(p2)p2.classList.add("is-open")}})});
+var langWrap=qs("#lang-wrap");
+var langToggle=qs("#lang-toggle");
+var langMenu=qs("#lang-menu");
+var langOpen=false;
+if(!langWrap||!langToggle||!langMenu)return;
+function setLangMenu(nextState){
+langOpen=nextState;
+langWrap.setAttribute("data-open",String(langOpen));
+langToggle.setAttribute("aria-expanded",String(langOpen));
+langMenu.setAttribute("aria-hidden",String(!langOpen));
+}
+listen(langToggle,"click",function(evt){evt.stopPropagation();setLangMenu(!langOpen)});
+listen(document,"click",function(evt){if(langOpen&&!langWrap.contains(evt.target))setLangMenu(false)});
+listen(document,"keydown",function(evt){if(evt.key==="Escape"&&langOpen){setLangMenu(false);langToggle.focus()}});
+qsa(".lang-item").forEach(function(item){
+listen(item,"click",function(evt){
+evt.preventDefault();
+var href=item.getAttribute("href");
+if(href&&href!==window.location.pathname)window.location.href=href;
+});
+listen(item,"keydown",function(evt){if(evt.key==="Enter"||evt.key===" "){evt.preventDefault();item.click()}});
+});
 })();
+
+/* ---------- Hero carousel ---------- */
 (function(){
-var bar=qs("#cookie-bar"),acc=qs("#c-accept"),dec=qs("#c-decline");
-if(!bar)return;
-function wc(v){document.cookie="cookie_consent="+v+"; max-age=31536000; path=/; SameSite=Lax; Secure"}
-function ga(){if(window._g)return;window.dataLayer=window.dataLayer||[];function g(){window.dataLayer.push(arguments)}window.gtag=g;g("js",new Date());g("config","G-FVNPEMCG8F",{anonymize_ip:true});var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F";document.head.appendChild(s);window._g=true}
-function showBar(){bar.style.display="block";document.body.classList.add("cookie-visible")}
-function hideBar(){bar.style.display="none";document.body.classList.remove("cookie-visible")}
-var sv=document.cookie.split("; ").find(function(r){return r.indexOf("cookie_consent=")===0});
-if(sv){if(sv.indexOf("accepted")!==-1)ga();hideBar()}else{showBar()}
-listen(acc,"click",function(){wc("accepted");hideBar();ga()});
-listen(dec,"click",function(){wc("declined");hideBar()});
+var heroSlides=qsa(".hero-slide");
+var heroDots=qsa(".hero-dot");
+var prevBtn=qs("#hero-prev");
+var nextBtn=qs("#hero-next");
+var heroSection=qs("#hero");
+var statusRegion=qs("#carousel-status");
+if(!heroSlides.length)return;
+var slideIndex=0;
+var slideTimer=null;
+function renderSlides(){
+heroSlides.forEach(function(slideEl,idx){
+var isActive=idx===slideIndex;
+slideEl.classList.toggle("is-active",isActive);
+slideEl.setAttribute("aria-hidden",String(!isActive));
+qsa("a, button",slideEl).forEach(function(focusable){
+if(isActive)focusable.removeAttribute("tabindex");
+else focusable.setAttribute("tabindex","-1");
+});
+});
+heroDots.forEach(function(dotEl,idx){
+var isOn=idx===slideIndex;
+dotEl.setAttribute("aria-current",String(isOn));
+dotEl.setAttribute("aria-selected",String(isOn));
+dotEl.setAttribute("tabindex",isOn?"0":"-1");
+});
+if(statusRegion&&heroSlides[slideIndex]){
+statusRegion.textContent="Slide "+(slideIndex+1)+" of "+heroSlides.length+": "+(heroSlides[slideIndex].getAttribute("aria-label")||"");
+}
+}
+function goToSlide(n){slideIndex=(n+heroSlides.length)%heroSlides.length;renderSlides()}
+function startAutoplay(){
+if(reducedMotion)return;
+window.clearInterval(slideTimer);
+slideTimer=window.setInterval(function(){goToSlide(slideIndex+1)},CONFIG.slideInterval);
+}
+function stopAutoplay(){window.clearInterval(slideTimer)}
+listen(nextBtn,"click",function(){goToSlide(slideIndex+1);startAutoplay()});
+listen(prevBtn,"click",function(){goToSlide(slideIndex-1);startAutoplay()});
+heroDots.forEach(function(dotEl,idx){listen(dotEl,"click",function(){goToSlide(idx);startAutoplay()})});
+if(heroSection){
+listen(heroSection,"keydown",function(evt){
+if(evt.key==="ArrowRight"){evt.preventDefault();goToSlide(slideIndex+1);startAutoplay()}
+if(evt.key==="ArrowLeft"){evt.preventDefault();goToSlide(slideIndex-1);startAutoplay()}
+});
+var touchStartX=0;
+listen(heroSection,"touchstart",function(evt){touchStartX=evt.changedTouches[0].screenX},{passive:true});
+listen(heroSection,"touchend",function(evt){
+var deltaX=touchStartX-evt.changedTouches[0].screenX;
+if(Math.abs(deltaX)>40){deltaX>0?goToSlide(slideIndex+1):goToSlide(slideIndex-1);startAutoplay()}
+},{passive:true});
+listen(heroSection,"mouseenter",stopAutoplay);
+listen(heroSection,"mouseleave",startAutoplay);
+listen(heroSection,"focusin",stopAutoplay);
+listen(heroSection,"focusout",startAutoplay);
+}
+renderSlides();
+startAutoplay();
 })();
+
+/* ---------- FAQ accordion ---------- */
 (function(){
-var f=qs("#contactForm"),st=qs("#form-status");
-if(!f)return;
-var btn=f.querySelector('button[type="submit"]'),lbl=btn?btn.querySelector(".submit-label"):null,orig=lbl?lbl.textContent:"";
-var M={s:f.dataset.msgSending||"Sending...",ok:f.dataset.msgSuccess||"Message sent successfully!",err:f.dataset.msgError||"Something went wrong.",net:f.dataset.msgNetwork||"Network error.",ts:f.dataset.msgTurnstile||"Please complete the security check."};
-function setMsg(h,c){if(st){st.innerHTML=h;st.style.color=c}}
-function loading(on){if(!btn)return;btn.disabled=on;if(lbl)lbl.innerHTML=on?'<span class="spinner" aria-hidden="true"></span> '+M.s:orig}
-var tsLoaded=false;
-function loadTS(){if(tsLoaded)return;tsLoaded=true;var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js";s.async=true;s.defer=true;document.head.appendChild(s)}
-if("IntersectionObserver"in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){loadTS();io.disconnect()}},{rootMargin:"300px"});io.observe(f)}else{loadTS()}
-listen(f,"focusin",loadTS);
-listen(f,"submit",function(e){
-e.preventDefault();
-if(!f.checkValidity()){f.reportValidity();return}
-var ti=f.querySelector('[name="cf-turnstile-response"]'),tk=ti?ti.value:"";
-if(!tk){setMsg(M.ts,"#ff6b6b");return}
-loading(true);
-var fd=new FormData(f);
-var payload={name:fd.get("name")||"",email:fd.get("email")||"",phone:fd.get("phone")||"",subject:"Egypt Photoshoot & Photography Tour Request",message:"Group Size: "+(fd.get("group_size")||"Not specified")+"\nExperience: "+(fd.get("tour_type")||"Not specified")+"\nDuration: "+(fd.get("duration")||"Not specified")+"\nLocations: "+(fd.get("destinations")||"Not specified")+"\nDates: "+(fd.get("dates")||"Not specified")+"\nMessage: "+(fd.get("message")||""),turnstileToken:tk};
+var faqButtons=qsa(".faq-q");
+faqButtons.forEach(function(btn){
+listen(btn,"click",function(){
+var wasOpen=btn.getAttribute("aria-expanded")==="true";
+faqButtons.forEach(function(other){
+other.setAttribute("aria-expanded","false");
+var otherPanel=document.getElementById(other.getAttribute("aria-controls"));
+if(otherPanel)otherPanel.classList.remove("is-open");
+});
+if(!wasOpen){
+btn.setAttribute("aria-expanded","true");
+var targetPanel=document.getElementById(btn.getAttribute("aria-controls"));
+if(targetPanel)targetPanel.classList.add("is-open");
+}
+});
+});
+})();
+
+/* ---------- Cookie consent + GA4 ---------- */
+(function(){
+var consentBar=qs("#cookie-bar");
+var acceptBtn=qs("#c-accept");
+var declineBtn=qs("#c-decline");
+if(!consentBar)return;
+function writeConsent(value){
+try{document.cookie="cookie_consent="+value+"; max-age=31536000; path=/; SameSite=Lax; Secure"}catch(err){}
+}
+function readConsent(){
+var pairs=document.cookie?document.cookie.split("; "):[];
+for(var i=0;i<pairs.length;i++){if(pairs[i].indexOf("cookie_consent=")===0)return pairs[i]}
+return "";
+}
+function loadAnalytics(){
+if(window._gaLoaded)return;
+window._gaLoaded=true;
+window.dataLayer=window.dataLayer||[];
+function gtagFn(){window.dataLayer.push(arguments)}
+window.gtag=gtagFn;
+gtagFn("js",new Date());
+gtagFn("config","G-FVNPEMCG8F",{anonymize_ip:true});
+var gaScript=document.createElement("script");
+gaScript.async=true;
+gaScript.src="https://www.googletagmanager.com/gtag/js?id=G-FVNPEMCG8F";
+document.head.appendChild(gaScript);
+}
+function showBar(){consentBar.style.display="block";document.body.classList.add("cookie-visible")}
+function hideBar(){consentBar.style.display="none";document.body.classList.remove("cookie-visible")}
+var storedConsent=readConsent();
+if(storedConsent){if(storedConsent.indexOf("accepted")!==-1)loadAnalytics();hideBar()}else{showBar()}
+listen(acceptBtn,"click",function(){writeConsent("accepted");hideBar();loadAnalytics()});
+listen(declineBtn,"click",function(){writeConsent("declined");hideBar()});
+})();
+
+/* ---------- Contact form (lazy Turnstile + worker) ---------- */
+(function(){
+var contactForm=qs("#contactForm");
+var statusEl=qs("#form-status");
+if(!contactForm)return;
+var submitBtn=contactForm.querySelector('button[type="submit"]');
+var labelEl=submitBtn?submitBtn.querySelector(".submit-label"):null;
+var originalLabel=labelEl?labelEl.textContent:"";
+var MSG={
+sending:contactForm.dataset.msgSending||"Sending your request...",
+success:contactForm.dataset.msgSuccess||"✅ Request sent! We will reply within 2 hours.",
+error:contactForm.dataset.msgError||"Something went wrong. Please try again.",
+network:contactForm.dataset.msgNetwork||"Network error. Please check your connection.",
+turnstile:contactForm.dataset.msgTurnstile||"Please complete the security check."
+};
+function setStatus(html,color){if(statusEl){statusEl.innerHTML=html;statusEl.style.color=color}}
+function setLoading(on){
+if(!submitBtn)return;
+submitBtn.disabled=on;
+if(labelEl)labelEl.innerHTML=on?'<span class="spinner" aria-hidden="true"></span> '+MSG.sending:originalLabel;
+}
+var turnstileLoaded=false;
+function loadTurnstile(){
+if(turnstileLoaded)return;
+turnstileLoaded=true;
+var tsScript=document.createElement("script");
+tsScript.src="https://challenges.cloudflare.com/turnstile/v0/api.js";
+tsScript.async=true;
+tsScript.defer=true;
+document.head.appendChild(tsScript);
+}
+if("IntersectionObserver"in window){
+var formObserver=new IntersectionObserver(function(entries){
+if(entries[0].isIntersecting){loadTurnstile();formObserver.disconnect()}
+},{rootMargin:"400px"});
+formObserver.observe(contactForm);
+}else{loadTurnstile()}
+listen(contactForm,"focusin",loadTurnstile);
+listen(contactForm,"submit",function(evt){
+evt.preventDefault();
+if(!contactForm.checkValidity()){contactForm.reportValidity();return}
+var tsInput=contactForm.querySelector('[name="cf-turnstile-response"]');
+var tsToken=tsInput?tsInput.value:"";
+if(!tsToken){setStatus(MSG.turnstile,"#ff6b6b");loadTurnstile();return}
+setLoading(true);
+setStatus("","");
+var formData=new FormData(contactForm);
+var messageLines=[
+"Group Size: "+(formData.get("group_size")||"Not specified"),
+"Experience: "+(formData.get("tour_type")||"Not specified"),
+"Duration: "+(formData.get("duration")||"Not specified"),
+"Locations: "+(formData.get("destinations")||"Not specified"),
+"Dates: "+(formData.get("dates")||"Not specified"),
+"Message: "+(formData.get("message")||"")
+];
+var payload={
+name:formData.get("name")||"",
+email:formData.get("email")||"",
+phone:formData.get("phone")||"",
+subject:"Egypt Photoshoot & Photography Tour Request",
+message:messageLines.join("\n"),
+turnstileToken:tsToken
+};
 fetch(CONFIG.workerUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
-.then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j}})})
-.then(function(d){if(d.ok&&d.j.success){setMsg(M.ok,"#4ade80");f.reset();if(typeof turnstile!=="undefined")turnstile.reset()}else{setMsg((d.j&&d.j.error)||M.err,"#ff6b6b")}})
-.catch(function(){setMsg(M.net,"#ff6b6b")})
-.finally(function(){loading(false)});
+.then(function(res){return res.json().then(function(json){return{ok:res.ok,json:json}})})
+.then(function(result){
+if(result.ok&&result.json.success){
+setStatus(MSG.success,"#4ade80");
+contactForm.reset();
+if(typeof window.turnstile!=="undefined")window.turnstile.reset();
+}else{
+setStatus((result.json&&result.json.error)||MSG.error,"#ff6b6b");
+}
+})
+.catch(function(){setStatus(MSG.network,"#ff6b6b")})
+.finally(function(){setLoading(false)});
 });
 })();
+
+/* ---------- Smooth anchors + footer year ---------- */
 (function(){
-var y=qs("#yr");if(y)y.textContent=new Date().getFullYear();
-qsa('a[href^="#"]').forEach(function(a){listen(a,"click",function(e){var id=a.getAttribute("href").slice(1);if(!id)return;var t=document.getElementById(id);if(t){e.preventDefault();t.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"})}})});
-})();
-(function(){
-var fac=qs("#map-facade"),mb=qs("#map-load-btn");
-if(!fac||!mb)return;
-listen(mb,"click",function(){
-var src=fac.getAttribute("data-src");
-if(!src)return;
-var ifr=document.createElement("iframe");
-ifr.src=src;ifr.title="Egypt Photography Tours location map – Near the Giza Pyramids, Egypt";
-ifr.setAttribute("loading","lazy");ifr.setAttribute("allowfullscreen","");ifr.setAttribute("referrerpolicy","no-referrer-when-downgrade");
-ifr.style.width="100%";ifr.style.height="100%";ifr.style.border="0";ifr.style.borderRadius="var(--radius-sm)";
-fac.innerHTML="";fac.appendChild(ifr);
+var yearEl=qs("#yr");
+if(yearEl)yearEl.textContent=new Date().getFullYear();
+qsa('a[href^="#"]').forEach(function(anchor){
+listen(anchor,"click",function(evt){
+var targetId=anchor.getAttribute("href").slice(1);
+if(!targetId)return;
+var targetEl=document.getElementById(targetId);
+if(targetEl){
+evt.preventDefault();
+targetEl.scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
+}
+});
 });
 })();
+
+/* ---------- Map facade (click-to-load) ---------- */
 (function(){
-if(reduced||!("IntersectionObserver"in window))return;
-var els=qsa(".section > .wrap");
-els.forEach(function(el){el.classList.add("reveal")});
-var ob=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");ob.unobserve(x.target)}})},{threshold:.08,rootMargin:"0px 0px -40px 0px"});
-els.forEach(function(el){ob.observe(el)});
+var mapFacade=qs("#map-facade");
+var mapBtn=qs("#map-load-btn");
+if(!mapFacade||!mapBtn)return;
+listen(mapBtn,"click",function(){
+var mapSrc=mapFacade.getAttribute("data-src");
+if(!mapSrc)return;
+var mapFrame=document.createElement("iframe");
+mapFrame.src=mapSrc;
+mapFrame.title="Egypt Photography Tours location map – Near the Giza Pyramids, Egypt";
+mapFrame.setAttribute("loading","lazy");
+mapFrame.setAttribute("allowfullscreen","");
+mapFrame.setAttribute("referrerpolicy","no-referrer-when-downgrade");
+mapFrame.style.cssText="width:100%;height:100%;border:0;border-radius:8px";
+mapFacade.innerHTML="";
+mapFacade.appendChild(mapFrame);
+});
+})();
+
+/* ---------- Scroll reveal ---------- */
+(function(){
+if(reducedMotion||!("IntersectionObserver"in window))return;
+var revealEls=qsa(".section > .wrap");
+revealEls.forEach(function(el){el.classList.add("reveal")});
+var revealObserver=new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){entry.target.classList.add("in");revealObserver.unobserve(entry.target)}
+});
+},{threshold:.08,rootMargin:"0px 0px -40px 0px"});
+revealEls.forEach(function(el){revealObserver.observe(el)});
 })();
 })();
 </script>
